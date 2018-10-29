@@ -1,6 +1,6 @@
 package tournament.pool;
 
-import tournament.matchschedule.Match;
+import tournament.Match;
 
 import java.util.List;
 

@@ -1,6 +1,7 @@
-package tournament.matchschedule;
+package tournament;
 
 import tournament.Team;
+import tournament.matchschedule.Field;
 
 public class Match {
     private String name;
