@@ -1,20 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TournamentSetupController">
    <children>
-      <VBox prefHeight="269.0" prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="340.0" text="Exit">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="93.0" prefWidth="1240.0" text="Creating tournament" textAlignment="CENTER">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label alignment="TOP_CENTER" prefHeight="40.0" prefWidth="2054.0" text="Step 1: Tournament setup">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="901.0" prefWidth="1920.0">
+         <children>
+            <Pane prefHeight="1007.0" prefWidth="947.0">
+               <children>
+                  <VBox alignment="BOTTOM_CENTER" layoutX="40.0" prefHeight="850.0" prefWidth="300.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                           <children>
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 1" wrappingWidth="150.0" y="30.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="610.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                           <children>
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 2" wrappingWidth="150.0" y="30.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="410.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                           <children>
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 3" wrappingWidth="150.0" y="30.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="410.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                           <children>
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 4" wrappingWidth="150.0" y="30.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                           <children>
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 5" wrappingWidth="150.0" y="30.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="9.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                           <children>
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 6" wrappingWidth="150.0" y="30.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="142.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                           <children>
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 7" wrappingWidth="150.0" y="30.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="10.0" layoutY="581.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                           <children>
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 8" wrappingWidth="150.0" y="30.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <VBox prefHeight="894.0" prefWidth="1609.0">
+               <children>
+                  <GridPane prefHeight="617.0" prefWidth="920.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="340.0" minWidth="10.0" prefWidth="292.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="430.0" minWidth="10.0" prefWidth="408.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField fx:id="tournamentName" prefHeight="40.0" prefWidth="244.0" GridPane.columnIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament name" wrappingWidth="334.13671875">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <ComboBox fx:id="tournamentTypeCombobox" prefHeight="40.0" prefWidth="434.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament type" wrappingWidth="334.13671875" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year/skill pools" wrappingWidth="346.13671875" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amount of fields" wrappingWidth="334.13671875" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Start date" wrappingWidth="334.13671875" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="End date" wrappingWidth="334.13671875" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="poolChoosingButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="464.0" text=" Choose" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Button>
+                        <ComboBox fx:id="fieldNumberCombobox" prefHeight="40.0" prefWidth="456.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <DatePicker layoutY="140.0" prefHeight="40.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <DatePicker prefHeight="40.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+                  <Pane prefHeight="278.0" prefWidth="1291.0">
+                     <children>
+                        <Button layoutY="80.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="346.0" text="Back">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="400.0" layoutY="80.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="346.0" text="Next step">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </children>
-</GridPane>
+</VBox>
