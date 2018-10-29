@@ -21,4 +21,8 @@ public class Match {
     public boolean isFinished() {
         return finished;
     }
+
+    public void updateMatchResult(){
+
+    }
 }

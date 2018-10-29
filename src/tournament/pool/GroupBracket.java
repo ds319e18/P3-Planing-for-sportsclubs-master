@@ -9,4 +9,9 @@ public class GroupBracket implements Bracket{
     public String getType() {
         return null;
     }
+
+    @Override
+    public void editBracket() {
+
+    }
 }

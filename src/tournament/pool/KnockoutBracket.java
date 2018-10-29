@@ -12,4 +12,9 @@ public class KnockoutBracket implements Bracket{
     public String getType() {
         return null;
     }
+
+    @Override
+    public void editBracket() {
+
+    }
 }

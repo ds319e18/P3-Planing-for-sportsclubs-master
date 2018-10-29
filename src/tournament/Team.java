@@ -3,7 +3,7 @@ package tournament;
 public class Team {
     private String name;
     private int points;
-    private Character skillLevel;
+    private char skillLevel;
     private int yearGroup;
 
 
