@@ -1,6 +1,6 @@
 package tournament.pool;
 
-import tournament.Team;
+import tournament.*;
 
 import java.util.List;
 
