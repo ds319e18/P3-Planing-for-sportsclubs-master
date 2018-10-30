@@ -158,7 +158,7 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <ComboBox fx:id="groupNrCombobax" prefHeight="40.0" prefWidth="456.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="groupNrCombobax" prefHeight="40.0" prefWidth="456.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pool:" wrappingWidth="95.20337677001953" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="27.0" />
