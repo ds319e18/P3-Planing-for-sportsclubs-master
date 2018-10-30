@@ -15,7 +15,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TournamentSetupController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
@@ -34,7 +33,12 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label alignment="TOP_CENTER" prefHeight="40.0" prefWidth="2054.0" text="Step 1: Tournament setup">
+            <Label alignment="BOTTOM_CENTER" prefHeight="93.0" prefWidth="164.0" text="Steps:">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" prefHeight="93.0" prefWidth="1592.0" text="Step 1: Tournament setup">
                <font>
                   <Font size="28.0" />
                </font>
@@ -43,7 +47,7 @@
       </HBox>
       <HBox prefHeight="901.0" prefWidth="1920.0">
          <children>
-            <Pane prefHeight="1007.0" prefWidth="947.0">
+            <Pane prefHeight="894.0" prefWidth="796.0">
                <children>
                   <VBox alignment="BOTTOM_CENTER" layoutX="40.0" prefHeight="850.0" prefWidth="300.0">
                      <children>
@@ -55,43 +59,43 @@
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="610.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
                            <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adding teams" wrappingWidth="150.0" />
                               <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 2" wrappingWidth="150.0" y="30.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="410.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
                            <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creating groups" wrappingWidth="150.0" />
                               <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 3" wrappingWidth="150.0" y="30.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="410.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
                            <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verify Groups/Pools" wrappingWidth="150.0" />
                               <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 4" wrappingWidth="150.0" y="30.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
                            <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creating final stage" wrappingWidth="150.0" />
                               <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 5" wrappingWidth="150.0" y="30.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="9.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
                            <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verify final stage" wrappingWidth="150.0" />
                               <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 6" wrappingWidth="150.0" y="30.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="142.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
                            <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creating match schedule" wrappingWidth="150.0" />
                               <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 7" wrappingWidth="150.0" y="30.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane layoutX="10.0" layoutY="581.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
                            <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
+                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verify match schedule" wrappingWidth="150.0" />
                               <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 8" wrappingWidth="150.0" y="30.0" />
                            </children>
                         </AnchorPane>
@@ -159,11 +163,6 @@
                   </GridPane>
                   <Pane prefHeight="278.0" prefWidth="1291.0">
                      <children>
-                        <Button layoutY="80.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="346.0" text="Back">
-                           <font>
-                              <Font size="27.0" />
-                           </font>
-                        </Button>
                         <Button layoutX="400.0" layoutY="80.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="346.0" text="Next step">
                            <font>
                               <Font size="27.0" />
