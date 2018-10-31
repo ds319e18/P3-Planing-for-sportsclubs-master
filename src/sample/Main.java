@@ -10,15 +10,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-<<<<<<< HEAD
         Parent root = FXMLLoader.load(getClass().getResource("AddingTeams.fxml"));
         primaryStage.setTitle("Tournament planner");
         primaryStage.setScene(new Scene(root, 300, 275));
-=======
         Parent root = FXMLLoader.load(getClass().getResource("CreatingGroups.fxml"));
         primaryStage.setTitle("CreatingGroup");
         primaryStage.setScene(new Scene(root, 1920, 1080));
->>>>>>> Dev
         primaryStage.show();
     }
 
