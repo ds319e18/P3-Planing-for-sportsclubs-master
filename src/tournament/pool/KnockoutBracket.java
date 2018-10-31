@@ -1,11 +1,8 @@
 package tournament.pool;
 
-<<<<<<< HEAD
 import tournament.matchschedule.*;
 import tournament.*;
-=======
 import tournament.Match;
->>>>>>> Dev
 
 import java.util.List;
 
