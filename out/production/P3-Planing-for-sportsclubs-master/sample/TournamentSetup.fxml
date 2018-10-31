@@ -157,13 +157,13 @@
                            </font>
                         </Button>
                         <ComboBox fx:id="fieldNumberCombobox" prefHeight="40.0" prefWidth="456.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <DatePicker layoutY="140.0" prefHeight="40.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <DatePicker prefHeight="40.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="endDatePicker" layoutY="140.0" prefHeight="40.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="40.0" prefWidth="450.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
                   <Pane prefHeight="278.0" prefWidth="1291.0">
                      <children>
-                        <Button layoutX="400.0" layoutY="80.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="346.0" text="Next step">
+                        <Button layoutX="400.0" layoutY="80.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefHeight="53.0" prefWidth="346.0" text="Next step">
                            <font>
                               <Font size="27.0" />
                            </font>
