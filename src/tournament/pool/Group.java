@@ -17,4 +17,8 @@ public class Group {
     public void removeTeam(Team team) {
         teamList.remove(team);
     }
+
+    public ArrayList<Team> getTeamList() {
+        return teamList;
+    }
 }

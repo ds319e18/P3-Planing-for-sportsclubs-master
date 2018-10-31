@@ -4,22 +4,24 @@ import tournament.pool.*;
 import tournament.matchschedule.*;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Tournament {
     private String name;
-    private Date date;
+    private Date startDate;
+    private Date endDate;
     private boolean active = false;
     private String tournamentType;
     private List<Pool> poolList;
     private MatchSchedule matchSchedule;
 
-
     // Create tournament
-    public Tournament(String name, Date date, String tournamentType) {
+    public Tournament(String name, Date startDate, Date endDate, String tournamentType) {
         this.name = name;
-        this.date = date;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.tournamentType = tournamentType;
     }
 
@@ -39,7 +41,11 @@ public class Tournament {
         }
     }
 
-    public void createMatchSchedule(int timeBetweenMatches, List<Pool> poolList) {
+    public void createMatchSchedule(int timeBetweenMatches, ArrayList<Pool> poolList) {
         this.matchSchedule = new MatchSchedule(timeBetweenMatches, poolList);
+    }
+
+    public List<Pool> getPoolList() {
+        return poolList;
     }
 }

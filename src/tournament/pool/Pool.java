@@ -30,4 +30,8 @@ public class Pool {
     public int getYearGroup() {
         return yearGroup;
     }
+
+    public GroupBracket getGroupBracket() {
+        return groupBracket;
+    }
 }

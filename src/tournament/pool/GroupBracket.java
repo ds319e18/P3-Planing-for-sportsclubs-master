@@ -24,6 +24,10 @@ public class GroupBracket implements Bracket{
         }
     }
 
+    public ArrayList<Group> getGroupList() {
+        return groupList;
+    }
+
     @Override
     public String getType() {
         return null;
