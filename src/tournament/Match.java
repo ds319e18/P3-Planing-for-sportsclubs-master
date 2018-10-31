@@ -26,4 +26,8 @@ public class Match {
     public void updateMatchResult(){
 
     }
+
+    public  void addFild() {
+
+    }
 }
