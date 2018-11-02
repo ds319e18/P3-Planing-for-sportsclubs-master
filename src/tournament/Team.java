@@ -19,4 +19,15 @@ public class Team {
         this.skillLevel = skillLevel;
         this.yearGroup = yearGroup;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Team{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

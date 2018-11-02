@@ -35,12 +35,22 @@ public class Tournament {
         poolList.add(new Pool(skill, year));
     }
 
-    public void createTeam(String name, int year, String skill, String contact) {
+    // Method that creates a team object when the button "Add team" is pressed. It also calls a method "Add team" in
+    // correct pool object, and also finds out how many teams from the same club is already in the tournament.
+    public void createTeam(String name, int year, String skill) {
+        int count = 1;
         for (Pool pools : poolList) {
-            if (pools.getSkillLevel().equals(skill) && pools.getYearGroup() == year) {
-                pools.addTeam(new Team(name, skill, year, contact));
+            for (Team teams : pools.getTeamList()) {
+                if (teams.getName().equals(name + " "  + Integer.toString(count))) {
+                    count++;
+                }
+            }
+                pools.addTeam(new Team(name + " " + Integer.toString(count), year, skill));
             }
         }
+
+    public List<Pool> getPoolList() {
+        return poolList;
     }
 
     public void createMatchSchedule(int timeBetweenMatches, ArrayList<Pool> poolList) {

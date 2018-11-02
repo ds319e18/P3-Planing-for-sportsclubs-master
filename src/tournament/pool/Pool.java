@@ -2,10 +2,11 @@ package tournament.pool;
 
 import tournament.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pool {
-    private List<Team> teamList;
+    private ArrayList<Team> teamList = new ArrayList<>();
     private GroupBracket groupBracket;
     private KnockoutBracket knockoutBracket;
     private String skillLevel;
@@ -17,6 +18,7 @@ public class Pool {
     }
 
     public Pool() {
+
     }
 
     public void addTeam(Team team) {
@@ -29,6 +31,10 @@ public class Pool {
 
     public int getYearGroup() {
         return yearGroup;
+    }
+
+    public List<Team> getTeamList() {
+        return teamList;
     }
 
     public GroupBracket getGroupBracket() {
