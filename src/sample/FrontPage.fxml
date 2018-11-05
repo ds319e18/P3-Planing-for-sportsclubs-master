@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -10,14 +12,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FrontPageController">
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FrontPageController">
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LARGE TEXT" textAlignment="CENTER" wrappingWidth="639.162109375">
-         <font>
-            <Font size="50.0" />
-         </font>
-      </Text>
-      <GridPane fx:id="gp1" maxWidth="-Infinity" prefHeight="72.0" prefWidth="617.0">
+      <ImageView fitHeight="178.0" fitWidth="1922.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+         <image>
+            <Image url="@../../../../../../Downloads/45467529_293230887959043_8989061899907760128_n.png" />
+         </image>
+         <VBox.margin>
+            <Insets left="600.0" />
+         </VBox.margin>
+      </ImageView>
+      <GridPane maxWidth="-Infinity" prefHeight="90.0" prefWidth="1850.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -25,18 +31,29 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NAME" wrappingWidth="132.13671875" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="STATUS" wrappingWidth="132.13671875" GridPane.columnIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DATES" wrappingWidth="132.13671875" GridPane.columnIndex="2" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BUTTONS" wrappingWidth="132.13671875" GridPane.columnIndex="3" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="View" wrappingWidth="466.93663787841797">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="466.93663787841797" GridPane.columnIndex="1">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Text>
+            <Text layoutX="490.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="466.93663787841797" GridPane.columnIndex="2">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Text>
          </children>
       </GridPane>
-      <ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="329.0" prefWidth="640.0">
+      <ScrollPane prefHeight="784.0" prefWidth="1920.0">
          <content>
-            <GridPane fx:id="gp" prefHeight="50.0" prefWidth="617.0">
+            <GridPane fx:id="gp" maxHeight="-Infinity" prefHeight="90.0" prefWidth="1850.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -48,10 +65,10 @@
       </ScrollPane>
       <Button fx:id="loginBtn" mnemonicParsing="false" text="Login">
          <font>
-            <Font size="20.0" />
+            <Font size="36.0" />
          </font>
          <VBox.margin>
-            <Insets left="280.0" />
+            <Insets left="870.0" />
          </VBox.margin>
       </Button>
    </children>
