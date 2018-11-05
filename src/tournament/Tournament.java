@@ -57,10 +57,6 @@ public class Tournament {
         this.matchSchedule = new MatchSchedule(timeBetweenMatches, poolList);
     }
 
-    public List<Pool> getPoolList() {
-        return poolList;
-    }
-
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
