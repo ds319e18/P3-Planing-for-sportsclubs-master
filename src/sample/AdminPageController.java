@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 
-public class FrontPageController {
+public class AdminPageController {
     @FXML
     GridPane gp;
 
@@ -19,8 +19,9 @@ public class FrontPageController {
             Text txt = new Text("Tournament name " + i);
             Text status = new Text("ACTIVE");
             Text date = new Text("date: 26/2/2008\ndate: 27/2/2009");
-            Button btn = new Button("View");
-            gp.addRow(i, txt, status, date, btn);
+            Button btnView = new Button("View");
+            Button btnEdit = new Button("Edit");
+            gp.addRow(i, txt, status, date, btnView, btnEdit);
         }
     }
 }
