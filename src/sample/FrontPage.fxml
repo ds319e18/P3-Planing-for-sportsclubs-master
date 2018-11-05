@@ -12,18 +12,17 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FrontPageController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FrontPageController">
    <children>
-      <ImageView fitHeight="178.0" fitWidth="1922.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+      <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
          <image>
-            <Image url="@../../../../../../Downloads/45467529_293230887959043_8989061899907760128_n.png" />
+            <Image url="@45467529_293230887959043_8989061899907760128_n.png" />
          </image>
          <VBox.margin>
-            <Insets left="600.0" />
+            <Insets left="500.0" />
          </VBox.margin>
       </ImageView>
-      <GridPane maxWidth="-Infinity" prefHeight="90.0" prefWidth="1850.0">
+      <GridPane maxWidth="-Infinity" prefHeight="101.0" prefWidth="1240.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -36,24 +35,24 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="View" wrappingWidth="466.93663787841797">
                <font>
-                  <Font size="64.0" />
+                  <Font size="36.0" />
                </font>
             </Text>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="466.93663787841797" GridPane.columnIndex="1">
                <font>
-                  <Font size="64.0" />
+                  <Font size="36.0" />
                </font>
             </Text>
             <Text layoutX="490.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" wrappingWidth="466.93663787841797" GridPane.columnIndex="2">
                <font>
-                  <Font size="64.0" />
+                  <Font size="36.0" />
                </font>
             </Text>
          </children>
       </GridPane>
-      <ScrollPane prefHeight="784.0" prefWidth="1920.0">
+      <ScrollPane hbarPolicy="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="1280.0">
          <content>
-            <GridPane fx:id="gp" maxHeight="-Infinity" prefHeight="90.0" prefWidth="1850.0">
+            <GridPane fx:id="gp" maxHeight="-Infinity" prefHeight="90.0" prefWidth="1240.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -63,12 +62,12 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Button fx:id="loginBtn" mnemonicParsing="false" text="Login">
+      <Button fx:id="loginBtn" mnemonicParsing="false" prefHeight="39.0" prefWidth="180.0" text="Login">
          <font>
-            <Font size="36.0" />
+            <Font size="18.0" />
          </font>
          <VBox.margin>
-            <Insets left="870.0" />
+            <Insets left="575.0" top="100.0" />
          </VBox.margin>
       </Button>
    </children>
