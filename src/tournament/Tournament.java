@@ -40,8 +40,6 @@ public class Tournament {
             if (createdPools.getSkillLevel().equals(skill) && createdPools.getYearGroup() == yearGroup) {
                 return createdPools;
             }
-                pools.addTeam(new Team(name + " " + Integer.toString(count), year, skill));
-            }
         }
         return null;
     }

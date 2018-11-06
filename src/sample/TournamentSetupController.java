@@ -55,11 +55,11 @@ public class TournamentSetupController {
     private ObservableList<String> fieldList = FXCollections.observableArrayList(
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
-    @FXML
+    /*@FXML
     private void nextButtonPressed() {
         tournament = new Tournament(tournamentName.getText(), startDatePicker.getValue(), endDatePicker.getValue()
         ,tournamentTypeCombobox.getValue().toString());
-    }
+    }*/
 
 
 

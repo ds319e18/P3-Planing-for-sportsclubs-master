@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import tournament.Database;
 import tournament.Team;
 import tournament.Tournament;
+import tournament.TournamentType;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -28,7 +29,7 @@ public class Main extends Application {
         //myDatabase.connect();
         LocalDate local = LocalDate.now();
 
-        Tournament tournament = new Tournament("asd",local, local, "adas");
+        Tournament tournament = new Tournament("asd",local, local, TournamentType.GroupAndKnockout);
 
         tournament.createPools("A", 6);
 
@@ -39,7 +40,7 @@ public class Main extends Application {
 
         System.out.println(tournament.getPoolList().get(0).getTeamList());
 
-        //launch(args);
+        launch(args);
 
     }
 }
