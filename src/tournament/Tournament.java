@@ -14,50 +14,41 @@ public class Tournament {
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean active = false;
-    private String tournamentType;
-    private List<Pool> poolList;
+    private ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
     private ArrayList<Field> fieldList;
+    private TournamentType type;
+
+    //This first part of the class deals with creating the tournament
 
     // Create tournament
-    public Tournament(String name, LocalDate startDate, LocalDate endDate ,String tournamentType) {
+    public Tournament(String name, LocalDate startDate, LocalDate endDate, TournamentType tournamentType) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.tournamentType = tournamentType;
-    }
-
-    public boolean isActive() {
-        return active;
+        this.type = tournamentType;
+        poolList = new ArrayList<>();
     }
 
     public void createPools(String skill, int year) {
         poolList.add(new Pool(skill, year));
     }
 
-    // Method that creates a team object when the button "Add team" is pressed. It also calls a method "Add team" in
-    // correct pool object, and also finds out how many teams from the same club is already in the tournament.
-    public void createTeam(String name, int year, String skill) {
-        int count = 1;
-        for (Pool pools : poolList) {
-            for (Team teams : pools.getTeamList()) {
-                if (teams.getName().equals(name + " "  + Integer.toString(count))) {
-                    count++;
-                }
-            }
-                pools.addTeam(new Team(name + " " + Integer.toString(count), year, skill));
+    // Method to find the correct pool when adding or removing teams to the tournament
+    public Pool findCorrectPool(String skill, int yearGroup) {
+        for (Pool createdPools : poolList) {
+            if (createdPools.getSkillLevel().equals(skill) && createdPools.getYearGroup() == yearGroup) {
+                return createdPools;
             }
         }
-
-    public List<Pool> getPoolList() {
-        return poolList;
+        return null;
     }
 
-    public void createMatchSchedule(int timeBetweenMatches, ArrayList<Pool> poolList) {
-        this.matchSchedule = new MatchSchedule(timeBetweenMatches, poolList);
+    public boolean isActive() {
+        return active;
     }
 
-    public List<Pool> getPoolList() {
+    public ArrayList<Pool> getPoolList() {
         return poolList;
     }
 
@@ -68,4 +59,6 @@ public class Tournament {
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
+
+    //This next part of the class deals with updating the tournament while active
 }
