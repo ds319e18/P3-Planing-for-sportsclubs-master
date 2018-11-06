@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
+import tournament.TournamentType;
 import tournament.pool.Pool;
 
 import java.io.IOException;
@@ -18,6 +19,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static tournament.TournamentType.Group;
+import static tournament.TournamentType.GroupAndKnockout;
+import static tournament.pool.KnockoutChoice.Knockout;
 
 public class TournamentSetupController {
     private final int YEAR_GROUP_MAX = 15;
@@ -30,7 +35,7 @@ public class TournamentSetupController {
     private TextField tournamentName;
 
     @FXML
-    private ComboBox tournamentTypeCombobox;
+    private ComboBox<TournamentType> tournamentTypeCombobox;
 
     @FXML
     private ComboBox fieldNumberCombobox;
@@ -48,14 +53,10 @@ public class TournamentSetupController {
 
     // this method will be called after loading the FxML document
     public void initialize() {
-        tournamentTypeCombobox.setItems(tournamentList);
+        tournamentTypeCombobox.setItems(FXCollections.observableArrayList(
+                TournamentType.values()));
         fieldNumberCombobox.setItems(fieldList);
     }
-
-    private ObservableList<String> tournamentList = FXCollections.observableArrayList(
-            "Only group",
-            "Only knockout",
-            "Group + knockout");
 
     private ObservableList<String> fieldList = FXCollections.observableArrayList(
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
@@ -63,7 +64,7 @@ public class TournamentSetupController {
     @FXML
     private void nextButtonPressed() {
         tournament = new Tournament(tournamentName.getText(),startDatePicker.getValue(),
-                endDatePicker.getValue(), tournamentTypeCombobox.getValue().toString(),
+                endDatePicker.getValue(), tournamentTypeCombobox.getValue(),
                 Integer.parseInt(fieldNumberCombobox.getValue().toString()),
                 getSelectedPools());
     }

@@ -19,7 +19,7 @@
             <Image url="@45398293_468759136948179_6752360962147221504_n.png" />
          </image>
          <VBox.margin>
-            <Insets left="500.0" />
+            <Insets left="497.5" />
          </VBox.margin>
       </ImageView>
       <GridPane maxWidth="-Infinity" prefHeight="101.0" prefWidth="1240.0">

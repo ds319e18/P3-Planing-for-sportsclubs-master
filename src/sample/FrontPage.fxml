@@ -16,7 +16,7 @@
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
          <image>
-            <Image url="@45467529_293230887959043_8989061899907760128_n.png" />
+            <Image url="@45398293_468759136948179_6752360962147221504_n.png" />
          </image>
          <VBox.margin>
             <Insets left="500.0" />
@@ -62,7 +62,7 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Button fx:id="loginBtn" mnemonicParsing="false" prefHeight="39.0" prefWidth="180.0" text="Login">
+      <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#setOnLoginButtonClicked" prefHeight="39.0" prefWidth="180.0" text="Login">
          <font>
             <Font size="18.0" />
          </font>

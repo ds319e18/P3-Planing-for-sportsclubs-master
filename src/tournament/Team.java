@@ -1,8 +1,9 @@
 package tournament;
 
-import javafx.beans.property.SimpleStringProperty;
+import java.util.Comparator;
+import java.util.Objects;
 
-public class Team {
+public class Team implements Comparable<Team>{
     private String name;
     private int points;
     private String skillLevel;
@@ -22,13 +23,6 @@ public class Team {
         this.yearGroup = yearGroup;
     }
 
-    @Override
-    public String toString() {
-        return "Team{" +
-                "name='" + name + '\'' +
-                '}';
-    }
-
     public String getName() {
         return name;
     }
@@ -37,43 +31,30 @@ public class Team {
         this.name = name;
     }
 
-    public SimpleStringProperty nameProperty() {
-        return new SimpleStringProperty(name);
+    @Override
+    public String toString() {
+        return "Team{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
-    public String getSkillLevel() {
-        return skillLevel;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Team)) return false;
+        Team team = (Team) o;
+        return yearGroup == team.yearGroup &&
+                Objects.equals(name, team.name) &&
+                Objects.equals(skillLevel, team.skillLevel);
     }
 
-    public void setSkillLevel(String skillLevel) {
-        this.skillLevel = skillLevel;
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, skillLevel, yearGroup);
     }
 
-    public SimpleStringProperty skillLevelProperty() {
-        return new SimpleStringProperty(skillLevel);
-    }
-
-    public int getYearGroup() {
-        return yearGroup;
-    }
-
-    public void setYearGroup(int yearGroup) {
-        this.yearGroup = yearGroup;
-    }
-
-    public SimpleStringProperty yearGroupProperty() {
-        return new SimpleStringProperty(String.valueOf(yearGroup));
-    }
-
-    public String getContact() {
-        return contact;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
-    public SimpleStringProperty contactProperty() {
-        return new SimpleStringProperty(contact);
+    @Override
+    public int compareTo(Team o) {
+        return this.getName().compareTo(o.getName());
     }
 }

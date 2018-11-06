@@ -1,11 +1,13 @@
 package tournament;
 
+import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 import java.util.Properties;
 
 public class Database {
     Connection con;
 
+    // Connects the java program to the database, right now its a local database.
     public Database() {
         this.con = connect();
     }
