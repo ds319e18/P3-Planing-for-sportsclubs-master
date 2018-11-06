@@ -15,16 +15,20 @@ public class Tournament {
     private LocalDate endDate;
     private boolean active = false;
     private String tournamentType;
-    private List<Pool> poolList;
+    private ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
     private ArrayList<Field> fieldList;
+    private int fieldNumber;
 
     // Create tournament
-    public Tournament(String name, LocalDate startDate, LocalDate endDate ,String tournamentType) {
+    public Tournament(String name, LocalDate startDate, LocalDate endDate ,String tournamentType, int fieldNumber,
+                      ArrayList<Pool> poolList) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.tournamentType = tournamentType;
+        this.fieldNumber = fieldNumber;
+        this.poolList = poolList;
     }
 
     public boolean isActive() {
@@ -63,5 +67,21 @@ public class Tournament {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTournamentType(String tournamentType) {
+        this.tournamentType = tournamentType;
+    }
+
+    public void setFieldNumber(int fieldNumber) {
+        this.fieldNumber = fieldNumber;
+    }
+
+    public String getName() {
+        return name;
     }
 }
