@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="Demo@127.0.0.1">
+<<<<<<< HEAD
   <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
+=======
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.8">
+>>>>>>> Dev
     <root id="1">
       <DefaultCasing>mixed/mixed</DefaultCasing>
     </root>
@@ -1109,22 +1113,38 @@
     </table>
     <column id="279" parent="277" name="name">
       <Position>1</Position>
+<<<<<<< HEAD
       <DataType>varchar(50)|0</DataType>
+=======
+      <DataType>varchar(50)|0s</DataType>
+>>>>>>> Dev
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="280" parent="277" name="last">
       <Position>2</Position>
+<<<<<<< HEAD
       <DataType>varchar(50)|0</DataType>
+=======
+      <DataType>varchar(50)|0s</DataType>
+>>>>>>> Dev
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="281" parent="278" name="name">
       <Position>1</Position>
+<<<<<<< HEAD
       <DataType>varchar(50)|0</DataType>
+=======
+      <DataType>varchar(50)|0s</DataType>
+>>>>>>> Dev
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="282" parent="278" name="last">
       <Position>2</Position>
+<<<<<<< HEAD
       <DataType>varchar(50)|0</DataType>
+=======
+      <DataType>varchar(50)|0s</DataType>
+>>>>>>> Dev
       <ColumnKind>normal</ColumnKind>
     </column>
   </database-model>
