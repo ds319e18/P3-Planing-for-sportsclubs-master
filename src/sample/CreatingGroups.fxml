@@ -18,7 +18,7 @@
    <children>
       <HBox>
          <children>
-            <Button mnemonicParsing="false" text="Exit">
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitButtonAction" text="Exit">
                <font>
                   <Font size="27.0" />
                </font>
@@ -162,7 +162,7 @@
                            <children>
                               <Pane>
                                  <children>
-                                    <Label alignment="CENTER" contentDisplay="CENTER" text="Coose pool" textAlignment="CENTER">
+                                    <Label fx:id="poolLabel" alignment="CENTER" contentDisplay="CENTER" text="Coose pool" textAlignment="CENTER">
                                        <font>
                                           <Font size="27.0" />
                                        </font>
@@ -171,7 +171,7 @@
                               </Pane>
                               <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-box-border: transparent;" VBox.vgrow="ALWAYS">
                                  <content>
-                                    <ListView editable="true" />
+                                    <ListView fx:id="groupListView" editable="true" />
                                  </content>
                               </ScrollPane>
                            </children>
@@ -190,7 +190,7 @@
                                                 <Insets />
                                              </VBox.margin>
                                           </Label>
-                                          <ListView onMouseClicked="#initialize" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                                          <ListView fx:id="poolListView" prefWidth="100.0" VBox.vgrow="ALWAYS" />
                                        </children>
                                     </VBox>
                                     <VBox HBox.hgrow="ALWAYS">
@@ -200,7 +200,7 @@
                                                 <Font size="27.0" />
                                              </font>
                                           </Label>
-                                          <ListView onMouseClicked="#initialize" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                                          <ListView fx:id="checkListView" onMouseClicked="#checkListMouseClick" prefWidth="100.0" VBox.vgrow="ALWAYS" />
                                        </children>
                                     </VBox>
                                  </children>
@@ -219,7 +219,7 @@
                                     <Font size="27.0" />
                                  </font>
                               </Text>
-                              <Label layoutX="110.0" layoutY="20.0" text="-">
+                              <Label fx:id="poolLabel" layoutX="110.0" layoutY="20.0" text="-">
                                  <font>
                                     <Font size="27.0" />
                                  </font>
@@ -229,7 +229,7 @@
                                     <Font size="27.0" />
                                  </font>
                               </Text>
-                              <Label layoutX="260.0" layoutY="70.0" text="-">
+                              <Label fx:id="amountOfTeamsLabel" layoutX="260.0" layoutY="70.0" text="-">
                                  <font>
                                     <Font size="27.0" />
                                  </font>
@@ -244,12 +244,12 @@
                                     <Font size="27.0" />
                                  </font>
                               </Text>
-                              <ComboBox fx:id="fieldNumberCombobox1" layoutX="50.0" layoutY="360.0">
+                              <ComboBox fx:id="vsNrCombobax" layoutX="50.0" layoutY="360.0">
                                  <padding>
                                     <Insets bottom="3.0" left="100.0" right="100.0" top="3.0" />
                                  </padding>
                               </ComboBox>
-                              <Button layoutX="120.0" layoutY="450.0" mnemonicParsing="false" text="Save">
+                              <Button fx:id="saveButton" layoutX="120.0" layoutY="450.0" mnemonicParsing="false" onAction="#saveButtonAction" text="Save">
                                  <font>
                                     <Font size="27.0" />
                                  </font>
@@ -260,12 +260,12 @@
                   </HBox>
                   <Pane>
                      <children>
-                        <Button layoutX="900.0" mnemonicParsing="false" text="Next step">
+                        <Button fx:id="nextButton" layoutX="900.0" mnemonicParsing="false" onAction="#nextButtonAction" text="Next step">
                            <font>
                               <Font size="27.0" />
                            </font>
                         </Button>
-                        <Button layoutX="750.0" mnemonicParsing="false" text="Back">
+                        <Button fx:id="backButton" layoutX="750.0" mnemonicParsing="false" onAction="#backButtonAction" text="Back">
                            <font>
                               <Font size="27.0" />
                            </font>
