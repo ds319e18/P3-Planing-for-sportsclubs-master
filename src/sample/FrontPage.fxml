@@ -24,7 +24,7 @@
       </ImageView>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Main menu" textAlignment="CENTER" wrappingWidth="1280.0">
          <font>
-            <Font size="20.0" />
+            <Font name="System Italic" size="20.0" />
          </font>
          <VBox.margin>
             <Insets bottom="30.0" top="10.0" />
@@ -41,7 +41,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournaments" textAlignment="CENTER" wrappingWidth="220.0">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament" textAlignment="CENTER" wrappingWidth="220.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -56,12 +56,17 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="View tournament" textAlignment="CENTER" wrappingWidth="220.0" GridPane.columnIndex="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
          </children>
          <VBox.margin>
             <Insets left="200.0" />
          </VBox.margin>
       </GridPane>
-      <ScrollPane hbarPolicy="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="880.0">
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="880.0">
          <content>
             <GridPane fx:id="gp" gridLinesVisible="true" maxHeight="-Infinity" prefHeight="90.0" prefWidth="880.0">
               <columnConstraints>
