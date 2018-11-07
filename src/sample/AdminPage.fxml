@@ -88,12 +88,12 @@
             <Insets left="200.0" />
          </VBox.margin>
       </ScrollPane>
-      <Button fx:id="loginBtn" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Create tournament">
+      <Button fx:id="createTournamentBtn" mnemonicParsing="false" onAction="#setOnCreateTournamentButtonClicked" prefHeight="30.0" prefWidth="120.0" text="Create tournament">
          <VBox.margin>
             <Insets left="200.0" top="30.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="loginBtn1" layoutX="585.0" layoutY="548.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Log out">
+      <Button fx:id="logoutBtn" layoutX="585.0" layoutY="548.0" mnemonicParsing="false" onAction="#setOnLogoutButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Log out">
          <VBox.margin>
             <Insets left="200.0" top="30.0" />
          </VBox.margin>
