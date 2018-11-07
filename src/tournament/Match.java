@@ -19,6 +19,11 @@ public class Match {
         this.secondTeam = secondTeam;
     }
 
+    public Match(String name, boolean finished) {
+        this.name = name;
+        this.finished = finished;
+    }
+
     public boolean isFinished() {
         return finished;
     }

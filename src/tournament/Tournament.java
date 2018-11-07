@@ -14,40 +14,43 @@ public class Tournament {
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean active = false;
-    private String tournamentType;
-    private List<Pool> poolList;
+    private ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
     private ArrayList<Field> fieldList;
+    private int fieldNumber;
+    private TournamentType type;
+
+    //This first part of the class deals with creating the tournament
 
     // Create tournament
-    public Tournament(String name, LocalDate startDate, LocalDate endDate ,String tournamentType) {
+    public Tournament(String name, LocalDate startDate, LocalDate endDate , TournamentType type, int fieldNumber,
+                      ArrayList<Pool> poolList) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.tournamentType = tournamentType;
-    }
-
-    public boolean isActive() {
-        return active;
+        this.type = type;
+        this.poolList = new ArrayList<>();
     }
 
     public void createPools(String skill, int year) {
         poolList.add(new Pool(skill, year));
     }
 
-    public void createTeam(String name, int year, String skill, String contact) {
-        for (Pool pools : poolList) {
-            if (pools.getSkillLevel().equals(skill) && pools.getYearGroup() == year) {
-                pools.addTeam(new Team(name, skill, year, contact));
+    // Method to find the correct pool when adding or removing teams to the tournament
+    public Pool findCorrectPool(String skill, int yearGroup) {
+        for (Pool createdPools : poolList) {
+            if (createdPools.getSkillLevel().equals(skill) && createdPools.getYearGroup() == yearGroup) {
+                return createdPools;
             }
         }
+        return null;
     }
 
-    public void createMatchSchedule(int timeBetweenMatches, ArrayList<Pool> poolList) {
-        this.matchSchedule = new MatchSchedule(timeBetweenMatches, poolList);
+    public boolean isActive() {
+        return active;
     }
 
-    public List<Pool> getPoolList() {
+    public ArrayList<Pool> getPoolList() {
         return poolList;
     }
 

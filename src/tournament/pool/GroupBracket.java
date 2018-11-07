@@ -5,23 +5,25 @@ import tournament.Team;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GroupBracket implements Bracket{
+public class GroupBracket implements Bracket {
     private ArrayList<Group> groupList = new ArrayList<>();
+    private int advancingTeamsPrGroup;
     private int matchesPrTeamAgainstOpponentInGroup;
 
-    public GroupBracket(int amountOfGroups, List<Team> teamList, int matchesPrTeamAgainstOpponentInGroup) {
-        this.matchesPrTeamAgainstOpponentInGroup = matchesPrTeamAgainstOpponentInGroup;
-        createGroups(amountOfGroups, teamList);
+    //This first part of the class deals with creating the tournament
+
+    public GroupBracket(int amountOfGroups, ArrayList<Team> teamList) {
+        createBracket(amountOfGroups, teamList);
     }
 
-    private void createGroups(int amountOfGroups, List<Team> teamListInPool) {
-        for (int i = 0; i < amountOfGroups; i++) {                              // Det ønskede antal grupper oprettes
-            groupList.add(new Group());
-        }
+    // Use this method when choosing how many teams advance from each group
+    public void setAdvancingTeamsPrGroup(int advancingTeamsPrGroup) {
+        this.advancingTeamsPrGroup = advancingTeamsPrGroup;
+    }
 
-        for (int i = 0; i < teamListInPool.size(); i++) {
-            groupList.get(i % amountOfGroups).addTeam(teamListInPool.get(i));   // Holdene fordeles så ligeligt som muligt i grupperne
-        }
+    // Use this method when choosing how many matches against each opponent each team should have
+    public void setMatchesPrTeamAgainstOpponentInGroup(int matchesPrTeamAgainstOpponentInGroup) {
+        this.matchesPrTeamAgainstOpponentInGroup = matchesPrTeamAgainstOpponentInGroup;
     }
 
     public ArrayList<Group> getGroupList() {
@@ -29,12 +31,27 @@ public class GroupBracket implements Bracket{
     }
 
     @Override
-    public String getType() {
-        return null;
+    public void createBracket(int amountOfGroups, ArrayList<Team> teamListInPool) {
+        // The desired number of groups is created
+        for (int i = 0; i < amountOfGroups; i++) {
+            groupList.add(new Group());
+        }
+        // The teams is distributed in groups as equally as possible, switching between each group adding one team at a time
+        for (int i = 0; i < teamListInPool.size(); i++) {
+            groupList.get(i % amountOfGroups).addTeam(teamListInPool.get(i));
+        }
     }
+
+
+    //This next part of the class deals with updating the tournament while active
 
     @Override
     public void editBracket() {
 
     }
+
+    public int getGroupListSize() {
+        return this.groupList.size();
+    }
+
 }
