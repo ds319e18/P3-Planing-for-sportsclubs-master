@@ -39,6 +39,19 @@ public class LoginController {
     }
 
     @FXML
+    public void checkPassword(ActionEvent event) throws IOException {
+        if(usernameTextField.getText().equals("username") && passwordTextField.getText().equals("password")) {
+            Parent newWindow = FXMLLoader.load(getClass().getResource("AdminPage.FXML"));
+            Scene newScene = new Scene(newWindow);
+
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            window.setScene(newScene);
+            window.show();
+        }
+    }
+
+    @FXML
     public void initialize() {
 
     }
