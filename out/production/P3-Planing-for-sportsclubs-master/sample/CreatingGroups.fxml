@@ -190,7 +190,7 @@
                                                 <Insets />
                                              </VBox.margin>
                                           </Label>
-                                          <ListView fx:id="poolListView" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                                          <ListView fx:id="poolListView" editable="true" VBox.vgrow="ALWAYS" />
                                        </children>
                                     </VBox>
                                     <VBox HBox.hgrow="ALWAYS">

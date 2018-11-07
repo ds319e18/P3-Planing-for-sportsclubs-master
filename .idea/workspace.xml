@@ -1,57 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f4ff31f-9b65-4a66-8c4d-5f46eebbaced" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Login.fxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/LoginController.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/TournamentType.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/KnockoutBracket$1.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/KnockoutChoice.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/sample/Login.fxml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/sample/LoginController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/tournament/TournamentType.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/tournament/pool/KnockoutChoice.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fbb8010d-8b5f-412e-b5a6-601bc874a164.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/fbb8010d-8b5f-412e-b5a6-601bc874a164.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/AdminPage.fxml" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/AdminPage.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/AdminPageController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/AdminPageController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/ChooseYearPools.fxml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/ChooseYearPoolsController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/FrontPage.fxml" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/FrontPage.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/FrontPageController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/FrontPageController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/StartScreen.fxml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/StartScreenController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/TournamentSetupController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/TournamentSetupController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Database.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Database.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Team.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Team.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Bracket.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Bracket.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/GroupBracket.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/GroupBracket.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/KnockoutBracket.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/KnockoutBracket.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" />
-      <change beforePath="$PROJECT_DIR$/src/sample/AdminPage.fxml" afterPath="$PROJECT_DIR$/src/sample/AdminPage.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/sample/AdminPageController.java" afterPath="$PROJECT_DIR$/src/sample/AdminPageController.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/FrontPage.fxml" afterPath="$PROJECT_DIR$/src/sample/FrontPage.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/sample/FrontPageController.java" afterPath="$PROJECT_DIR$/src/sample/FrontPageController.java" />
-=======
+    <list default="true" id="827018f3-0a42-47b8-a884-bd45e7ff2f82" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/CreatingGroupController.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/sample/CreatingGroupController.java" afterPath="$PROJECT_DIR$/src/sample/CreatingGroupController.java" />
       <change beforePath="$PROJECT_DIR$/src/sample/CreatingGroups.fxml" afterPath="$PROJECT_DIR$/src/sample/CreatingGroups.fxml" />
->>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/TournamentSetupController.java" afterPath="$PROJECT_DIR$/src/sample/TournamentSetupController.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/Database.java" afterPath="$PROJECT_DIR$/src/tournament/Database.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/Match.java" afterPath="$PROJECT_DIR$/src/tournament/Match.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/Team.java" afterPath="$PROJECT_DIR$/src/tournament/Team.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/Tournament.java" afterPath="$PROJECT_DIR$/src/tournament/Tournament.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/Bracket.java" afterPath="$PROJECT_DIR$/src/tournament/pool/Bracket.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/GroupBracket.java" afterPath="$PROJECT_DIR$/src/tournament/pool/GroupBracket.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/KnockoutBracket.java" afterPath="$PROJECT_DIR$/src/tournament/pool/KnockoutBracket.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/Pool.java" afterPath="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,129 +17,27 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TournamentSetupController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetupController.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="-138">
-              <caret line="67" column="76" lean-forward="true" selection-start-line="67" selection-start-column="76" selection-end-line="67" selection-end-column="76" />
-=======
-            <state relative-caret-position="154">
-              <caret line="12" column="85" lean-forward="false" selection-start-line="12" selection-start-column="85" selection-end-line="12" selection-end-column="85" />
->>>>>>> Stashed changes
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< Updated upstream
-      <file leaf-file-name="FrontPageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FrontPageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-=======
+    <leaf>
       <file leaf-file-name="CreatingGroupController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/CreatingGroupController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="106" column="24" lean-forward="true" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="24" />
+            <state relative-caret-position="153">
+              <caret line="61" column="52" lean-forward="true" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
->>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< Updated upstream
-      <file leaf-file-name="FrontPage.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/FrontPage.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-=======
       <file leaf-file-name="CreatingGroups.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/CreatingGroups.fxml">
->>>>>>> Stashed changes
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TournamentType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tournament/TournamentType.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="36">
-              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-              <folding>
-                <element signature="e#229#230#0" expanded="true" />
-                <element signature="e#289#290#0" expanded="true" />
-                <element signature="e#335#336#0" expanded="true" />
-                <element signature="e#376#377#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="45398293_468759136948179_6752360962147221504_n.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/45398293_468759136948179_6752360962147221504_n.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddingTeams.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/AddingTeams.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-            <state relative-caret-position="124">
-              <caret line="258" column="32" lean-forward="false" selection-start-line="258" selection-start-column="32" selection-end-line="258" selection-end-column="32" />
->>>>>>> Stashed changes
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddingTeamsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/AddingTeamsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-18">
-              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TournamentSetup.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetup.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="366" column="107" lean-forward="true" selection-start-line="366" selection-start-column="87" selection-end-line="366" selection-end-column="116" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tournament.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="231">
+              <caret line="192" column="43" lean-forward="false" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -190,13 +46,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="144">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-=======
-            <state relative-caret-position="460">
-              <caret line="220" column="7" lean-forward="false" selection-start-line="220" selection-start-column="7" selection-end-line="220" selection-end-column="7" />
->>>>>>> Stashed changes
+            <state relative-caret-position="150">
+              <caret line="19" column="76" lean-forward="false" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -204,26 +55,26 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
-<<<<<<< Updated upstream
-        <option value="$PROJECT_DIR$/src/tournament/Tournament.java" />
-        <option value="$PROJECT_DIR$/src/tournament/TournamentType.java" />
-        <option value="$PROJECT_DIR$/src/sample/TournamentSetupController.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="1" />
-    <option name="width" value="1198" />
-    <option name="height" value="907" />
-=======
+        <option value="$PROJECT_DIR$/src/sample/Cell.java" />
         <option value="$PROJECT_DIR$/src/sample/CreatingGroupController.java" />
       </list>
     </option>
@@ -234,12 +85,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="524" />
-    <option name="y" value="63" />
-    <option name="width" value="1486" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="433" />
+    <option name="y" value="78" />
+    <option name="width" value="1500" />
     <option name="height" value="931" />
->>>>>>> Stashed changes
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -250,15 +100,15 @@
       <hideEmptyPackages />
       <abbreviatePackageNames />
       <autoscrollToSource />
-      <autoscrollFromSource />
+      <autoscrollFromSource ProjectPane="true" />
       <sortByType />
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -277,21 +127,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Event Handling Examples" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -419,19 +264,21 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="827018f3-0a42-47b8-a884-bd45e7ff2f82" name="Default" comment="" />
+      <created>1541578731840</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541578731840</updated>
+      <workItem from="1541578734487" duration="14444000" />
+    </task>
     <servers />
   </component>
-<<<<<<< Updated upstream
-  <component name="ToolWindowManager">
-    <frame x="-1" y="1" width="1198" height="907" extended-state="0" />
-    <editor active="true" />
-    <layout>
-=======
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30656000" />
+    <option name="totallyTimeSpent" value="14444000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="524" y="63" width="1486" height="931" extended-state="1" />
+    <frame x="433" y="78" width="1500" height="931" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -442,448 +289,149 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3144737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23049645" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25632024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
->>>>>>> Stashed changes
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32619646" sideWeight="0.48455805" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5058939" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2745592" sideWeight="0.69056976" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25126904" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39660656" sideWeight="0.4970458" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962587" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.49410608" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>133</line>
+          <properties />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>135</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>136</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>57</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>56</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>126</line>
+          <properties field="editButton" class="sample.CreatingGroupController.Cell" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>127</line>
+          <properties field="poolLabel" class="sample.CreatingGroupController.Cell" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>125</line>
+          <properties field="hbox" class="sample.CreatingGroupController.Cell" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/sample/CreatingGroupController.java</url>
+          <line>128</line>
+          <properties field="pane" class="sample.CreatingGroupController.Cell" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="11" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="396">
-          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
-          <folding />
-=======
-        <state relative-caret-position="84">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
->>>>>>> Stashed changes
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/45398293_468759136948179_6752360962147221504_n.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ChooseYearPoolsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ChooseYearPools.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/CreatingGroupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="378">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/Team.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-=======
-        <state relative-caret-position="84">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
->>>>>>> Stashed changes
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-        <state relative-caret-position="421">
-          <caret line="58" column="17" lean-forward="false" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="37" />
->>>>>>> Stashed changes
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ChooseYearPoolsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="198">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-=======
-        <state relative-caret-position="36">
-          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
->>>>>>> Stashed changes
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ChooseYearPools.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/CreatingGroupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/CreatingGroupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="72">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <marker date="1541514073121" expanded="false" signature="683:694" ph=" { " />
-            <marker date="1541514073121" expanded="true" signature="753:761" ph="{}" />
-            <marker date="1541514073121" expanded="true" signature="790:798" ph="{}" />
-=======
-        <state relative-caret-position="216">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#820#821#0" expanded="false" />
-            <element signature="e#849#850#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#955#956#0" expanded="false" />
-            <element signature="e#1474#1475#0" expanded="false" />
-            <element signature="e#1505#1506#0" expanded="false" />
-            <element signature="e#1558#1559#0" expanded="false" />
-            <element signature="e#1600#1601#0" expanded="false" />
-            <element signature="e#1649#1650#0" expanded="false" />
-            <element signature="e#1687#1688#0" expanded="false" />
->>>>>>> Stashed changes
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-331">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <marker date="1541514073113" expanded="true" signature="328:1314" ph="{...}" />
-            <marker date="1541514073113" expanded="true" signature="1342:1917" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ChooseYearPools.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ChooseYearPoolsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/Team.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/sample/45398293_468759136948179_6752360962147221504_n.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/AddingTeams.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/AddingTeamsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-=======
->>>>>>> Stashed changes
-    <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetup.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="366" column="107" lean-forward="true" selection-start-line="366" selection-start-column="87" selection-end-line="366" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-2499">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FrontPageController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="72">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="150">
+          <caret line="19" column="76" lean-forward="false" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
           <folding />
-=======
-        <state relative-caret-position="216">
-          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#820#821#0" expanded="false" />
-            <element signature="e#849#850#0" expanded="false" />
-            <element signature="e#904#905#0" expanded="false" />
-            <element signature="e#955#956#0" expanded="false" />
-            <element signature="e#1474#1475#0" expanded="false" />
-            <element signature="e#1505#1506#0" expanded="false" />
-            <element signature="e#1558#1559#0" expanded="false" />
-            <element signature="e#1600#1601#0" expanded="false" />
-            <element signature="e#1649#1650#0" expanded="false" />
-            <element signature="e#1687#1688#0" expanded="false" />
-          </folding>
->>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/FrontPage.fxml">
+    <entry file="file://$PROJECT_DIR$/src/sample/Cell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="160">
+          <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
           <folding />
         </state>
       </provider>
-<<<<<<< Updated upstream
-=======
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/CreatingGroups.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="258" column="32" lean-forward="false" selection-start-line="258" selection-start-column="32" selection-end-line="258" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/ChooseYearPools.fxml">
->>>>>>> Stashed changes
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/TournamentType.java">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-        <state relative-caret-position="36">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding>
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#335#336#0" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="67" column="76" lean-forward="true" selection-start-line="67" selection-start-column="76" selection-end-line="67" selection-end-column="76" />
-=======
-        <state relative-caret-position="460">
-          <caret line="220" column="7" lean-forward="false" selection-start-line="220" selection-start-column="7" selection-end-line="220" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/AddingTeamsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
->>>>>>> Stashed changes
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/sample/StartScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-42">
-          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
->>>>>>> Stashed changes
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="85" lean-forward="false" selection-start-line="12" selection-start-column="85" selection-end-line="12" selection-end-column="85" />
+        <state relative-caret-position="231">
+          <caret line="192" column="43" lean-forward="false" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/CreatingGroupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="106" column="24" lean-forward="true" selection-start-line="106" selection-start-column="24" selection-end-line="106" selection-end-column="24" />
+        <state relative-caret-position="153">
+          <caret line="61" column="52" lean-forward="true" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
