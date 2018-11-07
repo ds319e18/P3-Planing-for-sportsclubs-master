@@ -3,12 +3,16 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,7 +26,6 @@ public class FrontPageController {
 
     @FXML
     public void setOnLoginButtonClicked(ActionEvent event) throws IOException {
-
         Parent newWindow = FXMLLoader.load(getClass().getResource("Login.FXML"));
         Scene newScene = new Scene(newWindow);
 
@@ -41,13 +44,15 @@ public class FrontPageController {
 
     @FXML
     public void initialize() {
-        gp.setVgap(10);
+        for (ColumnConstraints column : gp.getColumnConstraints())
+            column.setHalignment(HPos.CENTER);
+
         for (int i = 0; i < 10; i++) { // Iterates through a list of tournament-objects.
             Text txt = new Text("Tournament name " + i);
             Text status = new Text("ACTIVE");
             Text date = new Text("Start: 26/2/2008\nEnd: 27/2/2009");
-            Button btn = new Button("View");
-            gp.addRow(i, txt, status, date, btn);
+            Button btnView = new Button("View");
+            gp.addRow(i, txt, status, date, btnView);
         }
     }
 }
