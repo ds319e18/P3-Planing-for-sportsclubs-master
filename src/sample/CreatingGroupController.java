@@ -104,6 +104,6 @@ public class CreatingGroupController{
     @FXML public void checkListMouseClick(MouseEvent arg0) {
         // System.out.println("clicked on " + checkListView.getSelectionModel().getSelectedItem());
         //checkListView.get(0).nameProperty().set("Changing");
-        checkListView.set(checkListView.getSelectionModel().getSelectedItems(), "Done");
+        //checkListView.set(checkListView.getSelectionModel().getSelectedItems(), "Done");
     }
 }
