@@ -14,7 +14,6 @@ public class AdminPageController {
 
     @FXML
     public void initialize() {
-        gp.setVgap(10);
         for (int i = 0; i < 10; i++) { // Iterates through a list of tournament-objects.
             Text txt = new Text("Tournament name " + i);
             Text status = new Text("ACTIVE");
