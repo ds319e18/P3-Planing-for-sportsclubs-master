@@ -18,7 +18,7 @@ public class AdminPageController {
     public void initialize() {
         for (ColumnConstraints column : gp.getColumnConstraints())
             column.setHalignment(HPos.CENTER);
-        
+
         for (int i = 0; i < 10; i++) { // Iterates through a list of tournament-objects.
             Text txt = new Text("Tournament name " + i);
             Text status = new Text("ACTIVE");

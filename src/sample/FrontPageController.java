@@ -51,8 +51,8 @@ public class FrontPageController {
             Text txt = new Text("Tournament name " + i);
             Text status = new Text("ACTIVE");
             Text date = new Text("Start: 26/2/2008\nEnd: 27/2/2009");
-            Button btn = new Button("View");
-            gp.addRow(i, txt, status, date, btn);
+            Button btnView = new Button("View");
+            gp.addRow(i, txt, status, date, btnView);
         }
     }
 }
