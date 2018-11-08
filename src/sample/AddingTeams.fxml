@@ -4,8 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,11 +16,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TournamentSetupController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddingTeamsController">
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Downloads/45398293_468759136948179_6752360962147221504_n.png" />
+            <Image url="@45398293_468759136948179_6752360962147221504_n.png" />
          </image>
          <VBox.margin>
             <Insets left="497.5" />
@@ -35,7 +34,7 @@
             <Insets bottom="30.0" top="10.0" />
          </VBox.margin>
       </Text>
-      <HBox minHeight="-Infinity" prefHeight="502.0" prefWidth="1280.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="1280.0">
          <children>
             <VBox prefHeight="279.0" prefWidth="160.0">
                <HBox.margin>
@@ -246,10 +245,10 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField GridPane.columnIndex="1" />
-                              <TextField layoutX="243.0" layoutY="27.0" prefHeight="26.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <ComboBox prefHeight="26.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <ComboBox prefHeight="26.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="teamNameTextField" GridPane.columnIndex="1" />
+                              <TextField fx:id="contactTextField" layoutX="243.0" layoutY="27.0" prefHeight="26.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="yearGroupComboBox" prefHeight="26.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="skillLevelComboBox" prefHeight="26.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                         <GridPane prefHeight="178.0" prefWidth="434.0">
@@ -263,7 +262,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="81.0" text="Add team" GridPane.columnIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#addTeam" prefHeight="31.0" prefWidth="81.0" text="Add team" GridPane.columnIndex="1" />
                               <Label prefHeight="27.0" prefWidth="375.0" text="Upload with Excel" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="18.0" />
@@ -277,7 +276,7 @@
                </children>
             </HBox>
             <VBox prefHeight="200.0" prefWidth="100.0" />
-            <VBox prefHeight="502.0" prefWidth="300.0">
+            <VBox prefHeight="437.0" prefWidth="300.0">
                <children>
                   <Label prefHeight="34.0" prefWidth="303.0" text="Team participants">
                      <font>
@@ -285,14 +284,32 @@
                      </font>
                   </Label>
                   <ComboBox prefHeight="26.0" prefWidth="303.0" />
-                  <TableView prefHeight="441.0" prefWidth="300.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="Team name" />
-                      <TableColumn prefWidth="75.0" text="Year group" />
-                        <TableColumn prefWidth="75.0" text="Skill level" />
-                        <TableColumn prefWidth="75.0" text="Contact" />
-                    </columns>
-                  </TableView>
+                  <ScrollPane prefHeight="337.0" prefWidth="300.0">
+                     <content>
+                        <GridPane fx:id="gp" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="335.0" prefWidth="298.0" style="-fx-border-color: black;">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Back">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Next">
+                           <HBox.margin>
+                              <Insets left="45.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>

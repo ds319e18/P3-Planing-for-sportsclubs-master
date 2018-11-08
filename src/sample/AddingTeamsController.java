@@ -8,46 +8,51 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import tournament.Team;
+import tournament.Tournament;
 
 
 public class AddingTeamsController {
     @FXML
-    TableView<Team> tw = new TableView<>();
+    GridPane gp = new GridPane();
     @FXML
     TextField teamNameTextField = new TextField();
     @FXML
-    ComboBox<String> yearGroupTextField = new ComboBox<>();
+    ComboBox<String> yearGroupComboBox = new ComboBox<>();
     @FXML
-    ComboBox<String> skillLevelTextField = new ComboBox<>();
+    ComboBox<String> skillLevelComboBox = new ComboBox<>();
     @FXML
     TextField contactTextField = new TextField();
-    @FXML
-    TableColumn<Team, String> teamNameColumn;
-    @FXML
-    TableColumn<Team, String> yearGroupColumn;
-    @FXML
-    TableColumn<Team, String> skillLevelColumn;
-    @FXML
-    TableColumn<Team, String> contactColumn;
 
-    private ObservableList<Team> teamList = FXCollections.observableArrayList(
-            new Team("Team-A", "skillLevel", 123, "contact"),
-            new Team("Team-B", "skillLevel", 123, "contact")
-    );
+    Tournament tournament;
+
+    /*public AddingTeamsController(Tournament tournament) {
+        this.tournament = tournament;
+    }*/
+
+    public void setTournament(Tournament tournament) {
+        this.tournament = tournament;
+    }
 
     @FXML
     void initialize() {
-        teamNameColumn.setCellValueFactory(new PropertyValueFactory<Team, String>("name"));
-        yearGroupColumn.setCellValueFactory(new PropertyValueFactory<Team, String>("yearGroup"));
-        skillLevelColumn.setCellValueFactory(new PropertyValueFactory<Team, String>("skillLevel"));
-        contactColumn.setCellValueFactory(new PropertyValueFactory<Team, String>("contact"));
-        tw.setItems(teamList);
+
     }
 
     @FXML
     void addTeam() {
-        teamList.add(new Team(teamNameTextField.getText(), "Skill", 12, contactTextField.getText()));
+        /*tournament.findCorrectPool(skillLevelComboBox.getValue(), Integer.parseInt(yearGroupComboBox.getValue()))
+                .addTeam(new Team(teamNameTextField.getText(), skillLevelComboBox.getValue(),
+                        Integer.parseInt(yearGroupComboBox.getValue()), contactTextField.getText()));*/
+
+        Text name = new Text(teamNameTextField.getText());
+        Text contact = new Text(contactTextField.getText());
+        Text yearGroup = new Text(yearGroupComboBox.getValue());
+        Text skillLevel = new Text(skillLevelComboBox.getValue());
+
+        gp.addRow(gp.getRowCount() + 1, name, contact, yearGroup, skillLevel);
     }
 
 }
