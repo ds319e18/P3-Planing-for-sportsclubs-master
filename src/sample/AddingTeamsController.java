@@ -30,6 +30,8 @@ public class AddingTeamsController {
     @FXML
     ComboBox<String> skillLevelComboBox = new ComboBox<>();
     @FXML
+    ComboBox<String>  teamParticipants = new ComboBox<>();
+    @FXML
     TextField contactTextField = new TextField();
     @FXML
     Button backButton;
@@ -38,12 +40,17 @@ public class AddingTeamsController {
 
     Tournament tournament;
 
-    /*public AddingTeamsController(Tournament tournament) {
+    /*
+    public AddingTeamsController(Tournament tournament) {
         this.tournament = tournament;
-    }*/
+    }
+
+    */
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
+        setComboBoxItems();
+        setTeamparticipant();
     }
 
     @FXML
@@ -86,5 +93,29 @@ public class AddingTeamsController {
 
         gp.addRow(gp.getRowCount() + 1, name, yearGroup, skillLevel, contact);
     }
+
+    void setComboBoxItems() {
+        ObservableList<String> YearGroupComboBoxlist = FXCollections.observableArrayList();
+        ObservableList<String> SkillLevelComboBoxlist = FXCollections.observableArrayList();
+        for (Pool pool : tournament.getPoolList()) {
+            YearGroupComboBoxlist.add(Integer.toString(pool.getYearGroup()));
+            SkillLevelComboBoxlist.add(pool.getSkillLevel());
+        }
+        yearGroupComboBox.setItems(YearGroupComboBoxlist);
+        skillLevelComboBox.setItems(SkillLevelComboBoxlist);
+
+    }
+
+    void setTeamparticipant(){
+        ObservableList<String> allInOne = FXCollections.observableArrayList();
+        for(Pool pool : tournament.getPoolList() ) {
+            allInOne.add(Integer.toString(pool.getYearGroup()) + pool.getSkillLevel());
+        }
+
+        teamParticipants.setItems(allInOne);
+
+
+    }
+
 
 }
