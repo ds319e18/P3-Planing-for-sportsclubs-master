@@ -28,7 +28,7 @@ import static tournament.TournamentType.GroupAndKnockout;
 import static tournament.pool.KnockoutChoice.Knockout;
 
 public class TournamentSetupController {
-    private final int YEAR_GROUP_MAX = 15;
+    private final int YEAR_GROUP_MAX = 16;
     private final int SKILL_LEVEL_MAX = 3;
 
     @FXML

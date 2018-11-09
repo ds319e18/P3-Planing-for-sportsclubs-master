@@ -553,7 +553,7 @@
                                                             </HBox>
                                                          </content>
                                                       </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="Senior">
+                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U21">
                                                          <content>
                                                             <HBox prefHeight="99.0" prefWidth="322.0">
                                                                <children>

@@ -15,6 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Team;
 import tournament.Tournament;
+import tournament.pool.Pool;
 
 import java.io.IOException;
 

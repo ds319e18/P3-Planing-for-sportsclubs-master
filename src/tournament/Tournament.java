@@ -10,14 +10,14 @@ import java.util.Date;
 import java.util.List;
 
 public class Tournament {
-    public String name;
+    private String name;
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean active = false;
-    private ArrayList<Pool> poolList;
+    public ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
     private ArrayList<Field> fieldList;
-    public int fieldNumber;
+    private int fieldNumber;
     private TournamentType type;
 
     //This first part of the class deals with creating the tournament
@@ -31,6 +31,7 @@ public class Tournament {
         this.type = type;
         this.poolList = new ArrayList<>();
         this.fieldNumber = fieldNumber;
+        this.poolList = poolList;
     }
 
     public void createPools(String skill, int year) {
