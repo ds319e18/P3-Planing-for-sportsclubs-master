@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
@@ -77,11 +78,11 @@ public class TournamentSetupController {
                 getSelectedPools());
 
         FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("AddingTeams.FXML"));
         Parent newWindow = loader.load();
-        loader.setLocation(TournamentSetupController.class.getResource("AddingTeams.FXML"));
 
         AddingTeamsController atc = loader.getController();
-        //atc.setTournament(tournament);
+        atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
 
@@ -121,10 +122,10 @@ public class TournamentSetupController {
         // the selected pools will be saved in a list
         for (int i = 0; i < YEAR_GROUP_MAX; i++) {
             TitledPane titledPane = poolAccordion.getPanes().get(i);
-            AnchorPane anchorPane = (AnchorPane) titledPane.getContent();
+            HBox hbox = (HBox) titledPane.getContent();
 
             for (int j = 0; j < SKILL_LEVEL_MAX; j++) {
-                CheckBox checkBox = (CheckBox) anchorPane.getChildren().get(j);
+                CheckBox checkBox = (CheckBox) hbox.getChildren().get(j);
 
                 if (checkBox.isSelected()) {
 

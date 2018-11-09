@@ -594,7 +594,7 @@
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="nextButton" mnemonicParsing="false" onAction="#setOnNextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Next">
+                        <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Next">
                            <HBox.margin>
                               <Insets left="45.0" top="10.0" />
                            </HBox.margin>

@@ -46,7 +46,9 @@ public class AddingTeamsController {
     }
 
     @FXML
-    void initialize() { }
+    void initialize() {
+
+    }
 
     @FXML
     public void setOnBackButtonClicked(ActionEvent event) throws IOException {
