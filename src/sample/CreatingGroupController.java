@@ -106,7 +106,7 @@ public class CreatingGroupController{
     @FXML
     private void exitButtonAction(ActionEvent event) {
         if(event.getSource()== exitButton){ //Check if the event is called with the saveButton
-            System.out.println("3");//action
+            System.out.println("3"); //action
         }
     }
     @FXML public void checkListMouseClick(MouseEvent arg0) {
