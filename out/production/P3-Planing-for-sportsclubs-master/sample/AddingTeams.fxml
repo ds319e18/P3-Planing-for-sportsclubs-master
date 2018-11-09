@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -283,36 +283,15 @@
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="teamParticipants" prefHeight="26.0" prefWidth="303.0" promptText="Choose pool" />
-                  <GridPane>
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <ComboBox fx:id="teamParticipants" onAction="#drawGridPane" prefHeight="26.0" prefWidth="303.0" promptText="Choose pool" />
+                  <HBox prefHeight="335.0" prefWidth="200.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="75.0" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" wrappingWidth="75.0" GridPane.columnIndex="3" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Skill level" wrappingWidth="75.0" GridPane.columnIndex="2" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year group" wrappingWidth="75.0" GridPane.columnIndex="1" />
+                        <ListView fx:id="nameColumn" prefHeight="200.0" prefWidth="200.0" />
+                        <ListView fx:id="yearGroupColumn" prefHeight="200.0" prefWidth="200.0" />
+                        <ListView fx:id="skillLevelColumn" prefHeight="200.0" prefWidth="200.0" />
+                        <ListView fx:id="contactColumn" prefHeight="200.0" prefWidth="200.0" />
                      </children>
-                  </GridPane>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="337.0" prefWidth="300.0">
-                     <content>
-                        <GridPane fx:id="gp" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="335.0" prefWidth="300.0" style="-fx-border-color: black;">
-                          <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                          </columnConstraints>
-                        </GridPane>
-                     </content>
-                  </ScrollPane>
+                  </HBox>
                   <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <Button mnemonicParsing="false" onAction="#setOnBackButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Back">

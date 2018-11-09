@@ -8,10 +8,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Team;
@@ -20,16 +19,9 @@ import tournament.pool.Pool;
 
 import java.io.IOException;
 
-
-public class AddingTeamsController {
+public class AddingTeamsControllerBackup {
     @FXML
-    ListView<String> nameColumn;
-    @FXML
-    ListView<String> yearGroupColumn;
-    @FXML
-    ListView<String> skillLevelColumn;
-    @FXML
-    ListView<String> contactColumn;
+    GridPane gp = new GridPane();
     @FXML
     TextField teamNameTextField = new TextField();
     @FXML
@@ -96,29 +88,18 @@ public class AddingTeamsController {
 
     @FXML
     void drawGridPane() {
-        ObservableList<String> nameList, yearGroupList, skillLevelList, contactList;
-        nameList = FXCollections.observableArrayList();
-        yearGroupList = FXCollections.observableArrayList();
-        skillLevelList = FXCollections.observableArrayList();
-        contactList = FXCollections.observableArrayList();
+        gp.getChildren().remove(0, gp.getChildren().size());
 
         try {
             for (Team team : tournament.findCorrectPool(Integer.parseInt(teamParticipants.getValue().substring(0, 1)),
                     teamParticipants.getValue().substring(1, 2)).getTeamList()) {
-                nameList.add(team.getName());
-                yearGroupList.add(String.valueOf(team.getYearGroup()));
-                skillLevelList.add(team.getSkillLevel());
-                contactList.add(team.getContact());
-
-                /*Text name = new Text(team.getName());
+                Text name = new Text(team.getName());
                 Text yearGroup = new Text(Integer.toString(team.getYearGroup()));
                 Text skillLevel = new Text(team.getSkillLevel());
-                Text contact = new Text(team.getContact());*/
+                Text contact = new Text(team.getContact());
+
+                gp.addRow(gp.getRowCount(), name, yearGroup, skillLevel, contact);
             }
-            nameColumn.setItems(nameList);
-            yearGroupColumn.setItems(yearGroupList);
-            skillLevelColumn.setItems(skillLevelList);
-            contactColumn.setItems(contactList);
         } catch (Exception e) {
             System.out.println("Error occurred");
         }
@@ -146,6 +127,4 @@ public class AddingTeamsController {
 
 
     }
-
-
 }

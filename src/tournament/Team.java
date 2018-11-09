@@ -38,6 +38,14 @@ public class Team implements Comparable<Team>{
         this.contact = contact;
     }
 
+    public String getSkillLevel() {
+        return skillLevel;
+    }
+
+    public int getYearGroup() {
+        return yearGroup;
+    }
+
     @Override
     public String toString() {
         return "Team{" +
