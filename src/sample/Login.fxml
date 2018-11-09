@@ -56,7 +56,7 @@
                <children>
                   <TextField fx:id="usernameTextField" GridPane.rowIndex="1" />
                   <PasswordField fx:id="passwordTextField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Button fx:id="backBtn" layoutX="260.0" layoutY="200.0" mnemonicParsing="false" onAction="#checkPassword" prefHeight="6.0" prefWidth="95.0" text="Back" GridPane.rowIndex="2">
+                  <Button fx:id="backBtn" layoutX="260.0" layoutY="200.0" mnemonicParsing="false" onAction="#setOnBackButtonClicked" prefHeight="6.0" prefWidth="95.0" text="Back" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
