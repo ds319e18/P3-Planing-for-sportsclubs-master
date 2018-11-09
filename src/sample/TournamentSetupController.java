@@ -70,11 +70,25 @@ public class TournamentSetupController {
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
     @FXML
-    private void nextButtonPressed() {
+    private void nextButtonPressed(ActionEvent event) throws IOException {
         tournament = new Tournament(tournamentName.getText(),startDatePicker.getValue(),
                 endDatePicker.getValue(), tournamentTypeCombobox.getValue(),
                 Integer.parseInt(fieldNumberCombobox.getValue().toString()),
                 getSelectedPools());
+
+        FXMLLoader loader = new FXMLLoader();
+        Parent newWindow = loader.load();
+        loader.setLocation(TournamentSetupController.class.getResource("AddingTeams.FXML"));
+
+        AddingTeamsController atc = loader.getController();
+        //atc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 
     @FXML
