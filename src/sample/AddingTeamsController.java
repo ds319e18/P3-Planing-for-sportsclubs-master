@@ -29,13 +29,7 @@ import java.util.stream.Collectors;
 
 public class AddingTeamsController {
     @FXML
-    ListView<String> nameColumn;
-    @FXML
-    ListView<String> yearGroupColumn;
-    @FXML
-    ListView<String> skillLevelColumn;
-    @FXML
-    ListView<String> contactColumn;
+    GridPane gridPane;
     @FXML
     TextField teamNameTextField = new TextField();
     @FXML
@@ -53,15 +47,6 @@ public class AddingTeamsController {
         this.tournament = tournament;
         setComboBoxItems();
         setTeamparticipant();
-        tournament.createPools("A", 9);
-        tournament.createPools("B", 9);
-        tournament.createPools("C", 9);
-        tournament.findCorrectPool(9, "A").addTeam(new Team("name1", 9, "A"));
-        tournament.findCorrectPool(9, "C").addTeam(new Team("name2", 9, "C"));
-        tournament.findCorrectPool(9, "B").addTeam(new Team("name3", 9, "B"));
-        tournament.findCorrectPool(9, "A").addTeam(new Team("name4", 9, "A"));
-        tournament.findCorrectPool(9, "B").addTeam(new Team("name4", 9, "B"));
-        tournament.findCorrectPool(9, "A").addTeam(new Team("name4", 9, "A"));
     }
 
     @FXML
@@ -113,32 +98,23 @@ public class AddingTeamsController {
         skillLevelComboBox.setItems(SkillLevelComboBoxlist);
     }
 
-
     @FXML
     void drawGridPane() {
-        ObservableList<String> nameList, yearGroupList, skillLevelList, contactList;
-        nameList = FXCollections.observableArrayList();
-        yearGroupList = FXCollections.observableArrayList();
-        skillLevelList = FXCollections.observableArrayList();
-        contactList = FXCollections.observableArrayList();
+        //gridPane = new GridPane();
+        //gridPane.setGridLinesVisible(true);
+        gridPane.getChildren().remove(0, gridPane.getChildren().size());
 
         try {
-            for (Team team : tournament.findCorrectPool(Integer.parseInt(teamParticipants.getValue().substring(0, 1)),
-                    teamParticipants.getValue().substring(1, 2)).getTeamList()) {
-                nameList.add(team.getName());
-                yearGroupList.add(String.valueOf(team.getYearGroup()));
-                skillLevelList.add(team.getSkillLevel());
-                contactList.add(team.getContact());
+            String teamYearGroup = (teamParticipants.getValue().length() == 3 ? teamParticipants.getValue().substring(0, 2)
+            : teamParticipants.getValue().substring(0, 1));
+            String teamSkillLevel = (teamParticipants.getValue().length() == 3 ? teamParticipants.getValue().substring(2, 3)
+                    : teamParticipants.getValue().substring(1, 2));
+            for (Team team : tournament.findCorrectPool(Integer.parseInt(teamYearGroup), teamSkillLevel).getTeamList()) {
+                Text name = new Text(team.getName());
+                Text contact = new Text(team.getContact());
 
-                /*Text name = new Text(team.getName());
-                Text yearGroup = new Text(Integer.toString(team.getYearGroup()));
-                Text skillLevel = new Text(team.getSkillLevel());
-                Text contact = new Text(team.getContact());*/
+                gridPane.addRow(gridPane.getRowCount(), name, contact);
             }
-            nameColumn.setItems(nameList);
-            yearGroupColumn.setItems(yearGroupList);
-            skillLevelColumn.setItems(skillLevelList);
-            contactColumn.setItems(contactList);
         } catch (Exception e) {
             System.out.println("Error occurred");
         }
