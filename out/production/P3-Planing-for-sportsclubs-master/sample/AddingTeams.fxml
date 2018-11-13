@@ -300,6 +300,7 @@
                   </HBox>
                   <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
+                        <Button mnemonicParsing="false" onAction="#removeTeams" prefHeight="31.0" prefWidth="81.0" text="Remove teams" />
                         <Button mnemonicParsing="false" onAction="#setOnBackButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Back">
                            <HBox.margin>
                               <Insets top="10.0" />

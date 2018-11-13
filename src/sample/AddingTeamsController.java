@@ -113,11 +113,28 @@ public class AddingTeamsController {
                 Text name = new Text(team.getName());
                 Text contact = new Text(team.getContact());
 
-                gridPane.addRow(gridPane.getRowCount(), name, contact);
+                CheckBox checkBox = new CheckBox();
+
+                gridPane.addRow(gridPane.getRowCount(), name, contact, checkBox);
             }
         } catch (Exception e) {
             System.out.println("Error occurred");
         }
+    }
+
+    @FXML
+    void removeTeams() {
+
+        for (int i = gridPane.getRowCount() - 1; i >= 0; i--) {
+            // 3 Children in each Row. This finds the 3rd child in the row.
+            CheckBox checkBox = (CheckBox) gridPane.getChildren().get((i+1)*3 - 1);
+
+            if (checkBox.isSelected()) {
+                System.out.println(i);
+                gridPane.getChildren().remove((i)*3, (i)*3 + 3);
+            }
+        }
+
     }
 
     void setComboBoxItems() {
