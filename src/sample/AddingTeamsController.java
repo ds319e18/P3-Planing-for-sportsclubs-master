@@ -2,6 +2,7 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableSet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +20,11 @@ import tournament.Tournament;
 import tournament.pool.Pool;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 public class AddingTeamsController {
@@ -90,9 +96,23 @@ public class AddingTeamsController {
         tournament.findCorrectPool(Integer.parseInt(yearGroupComboBox.getValue()), skillLevelComboBox.getValue())
                 .addTeam(new Team(teamNameTextField.getText(), skillLevelComboBox.getValue(),
                         Integer.parseInt(yearGroupComboBox.getValue()), contactTextField.getText()));
-
         drawGridPane();
     }
+
+
+    @FXML
+    void test() {
+        ObservableList<String> SkillLevelComboBoxlist = FXCollections.observableArrayList();
+        for (Pool pool : tournament.getPoolList() ) {
+            if (yearGroupComboBox.getValue().equals(Integer.toString(pool.getYearGroup()))) {
+                SkillLevelComboBoxlist.add(pool.getSkillLevel());
+
+            }
+
+        }
+        skillLevelComboBox.setItems(SkillLevelComboBoxlist);
+    }
+
 
     @FXML
     void drawGridPane() {
@@ -125,14 +145,28 @@ public class AddingTeamsController {
     }
 
     void setComboBoxItems() {
+        int i = 0;
+        Set<Integer> YearGroupComboSet = new HashSet<>();
         ObservableList<String> YearGroupComboBoxlist = FXCollections.observableArrayList();
-        ObservableList<String> SkillLevelComboBoxlist = FXCollections.observableArrayList();
+
         for (Pool pool : tournament.getPoolList()) {
-            YearGroupComboBoxlist.add(Integer.toString(pool.getYearGroup()));
-            SkillLevelComboBoxlist.add(pool.getSkillLevel());
+            YearGroupComboSet.add(pool.getYearGroup());
         }
+
+        Collections.sort(YearGroupComboBoxlist);
+
+        ArrayList<Integer> list = new ArrayList<>();
+        for (Integer yearGroup : YearGroupComboSet) {
+            list.add(yearGroup);
+        }
+
+        Collections.sort(list);
+
+        for (Integer yearGroup : list) {
+            YearGroupComboBoxlist.add(Integer.toString(yearGroup));
+        }
+
         yearGroupComboBox.setItems(YearGroupComboBoxlist);
-        skillLevelComboBox.setItems(SkillLevelComboBoxlist);
 
     }
 
