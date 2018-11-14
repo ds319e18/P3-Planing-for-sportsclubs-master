@@ -100,8 +100,6 @@ public class AddingTeamsController {
 
     @FXML
     void drawGridPane() {
-        //gridPane = new GridPane();
-        //gridPane.setGridLinesVisible(true);
         gridPane.getChildren().remove(0, gridPane.getChildren().size());
 
         try {
@@ -120,11 +118,13 @@ public class AddingTeamsController {
         } catch (Exception e) {
             System.out.println("Error occurred");
         }
+        gridPane.setGridLinesVisible(false);
+        gridPane.setGridLinesVisible(true);
     }
 
     @FXML
     void removeTeams() {
-
+        // Goes through every row of the GridPane.
         for (int i = gridPane.getRowCount() - 1; i >= 0; i--) {
             // 3 Children in each Row. This finds the 3rd child in the row.
             CheckBox checkBox = (CheckBox) gridPane.getChildren().get((i+1)*3 - 1);
