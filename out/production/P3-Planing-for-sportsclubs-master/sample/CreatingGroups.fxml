@@ -271,9 +271,9 @@
                   <Label prefHeight="17.0" prefWidth="106.0" text="Pool" />
                   <Label layoutX="10.0" layoutY="52.0" prefHeight="17.0" prefWidth="106.0" text="Amount of Groups" GridPane.rowIndex="2" />
                   <Label layoutX="10.0" layoutY="153.0" prefHeight="17.0" prefWidth="106.0" text="Matches pr group" GridPane.rowIndex="3" />
-                  <Button mnemonicParsing="false" onAction="#setOnBackButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Save" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Button mnemonicParsing="false" onAction="#setOnBackButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.rowIndex="6" />
+                  <Button mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.rowIndex="6" />
                   <Label layoutX="10.0" layoutY="203.0" prefHeight="17.0" prefWidth="106.0" text="Amount of Teams" GridPane.rowIndex="1" />
                   <ComboBox prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <ComboBox layoutX="110.0" layoutY="101.0" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />

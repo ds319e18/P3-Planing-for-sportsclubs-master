@@ -40,14 +40,12 @@ public class Pool {
 
     // Removes a team by first finding the correct pool, then after removing the correct team in the pool.
     public void removeTeam(String name) {
-
-        for (Team teams : this.teamList) {
-            if (teams.getName().equals(name)) {
-                this.teamList.remove(teams);
+        for (int i = teamList.size() - 1; i >= 0; i--) {
+            if (teamList.get(i).getName().equals(name)) {
+                teamList.remove(teamList.get(i));
             }
         }
         Collections.sort(this.teamList);
-
     }
 
     @Override
