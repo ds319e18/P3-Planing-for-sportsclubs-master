@@ -18,8 +18,6 @@ public class Tournament {
     private ArrayList<Field> fieldList;
     private ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
-    private ArrayList<Field> fieldList;
-    private TournamentType type;
 
     // This first part of the class deals with creating the tournament
 

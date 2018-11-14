@@ -68,13 +68,6 @@ public class Main extends Application {
 
         sad.addGroupBracket(new StdGroup());
         sad.addKnockoutBracket(new Knockout());
-
-
-
-
-
-
-
         //launch(args);
 
     }
