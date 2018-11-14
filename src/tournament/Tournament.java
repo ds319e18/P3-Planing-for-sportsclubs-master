@@ -11,31 +11,28 @@ import java.util.List;
 
 public class Tournament {
     private String name;
+    private boolean active = false;
     private LocalDate startDate;
     private LocalDate endDate;
-    private boolean active = false;
-    public ArrayList<Pool> poolList;
+    private TournamentType type;
+    private ArrayList<Field> fieldList;
+    private ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
     private ArrayList<Field> fieldList;
-    private int fieldNumber;
     private TournamentType type;
 
-    //This first part of the class deals with creating the tournament
+    // This first part of the class deals with creating the tournament
 
     // Create tournament
-    public Tournament(String name, LocalDate startDate, LocalDate endDate , TournamentType type, int fieldNumber,
-                      ArrayList<Pool> poolList) {
-        this.name = name;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.type = type;
-        this.poolList = new ArrayList<>();
-        this.fieldNumber = fieldNumber;
-        this.poolList = poolList;
-    }
-
-    public void createPools(String skill, int year) {
-        poolList.add(new Pool(skill, year));
+    public Tournament(TournamentBuilder builder) {
+        this.name = builder.getName();
+        this.active = builder.isActive();
+        this.startDate = builder.getStartDate();
+        this.endDate = builder.getEndDate();
+        this.type = builder.getType();
+        this.fieldList = builder.getFieldList();
+        this.poolList = builder.getPoolList();
+        this.matchSchedule = builder.getMatchSchedule();
     }
 
     // Method to find the correct pool when adding or removing teams to the tournament
@@ -48,6 +45,7 @@ public class Tournament {
         return null;
     }
 
+    // Getters
     public boolean isActive() {
         return active;
     }
@@ -56,11 +54,5 @@ public class Tournament {
         return poolList;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
+    // This next part of the class deals with updating the tournament while active
 }

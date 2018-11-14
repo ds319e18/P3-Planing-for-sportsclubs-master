@@ -17,7 +17,7 @@ public class MatchSchedule {
         this.poolList = poolList;
     }
 
-    private void createMatches() { // VIRKER MÅSKE
+    /*private void createMatches() { // VIRKER MÅSKE
         for (Pool pool : poolList) {
             for (Group group : pool.getGroupBracket().getGroupList()) {
 
@@ -29,7 +29,7 @@ public class MatchSchedule {
                 }
             }
         }
-    }
+    }*/
 
     private void updateMatchSchedule() {
 
