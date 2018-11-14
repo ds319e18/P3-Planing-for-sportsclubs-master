@@ -6,17 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
-<<<<<<< Updated upstream
 import tournament.Database;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.TournamentType;
-=======
 import tournament.*;
 import tournament.pool.Knockout;
 import tournament.pool.Pool;
 import tournament.pool.StdGroup;
->>>>>>> Stashed changes
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -26,13 +23,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-<<<<<<< Updated upstream
 
         Parent root = FXMLLoader.load(getClass().getResource("TournamentSetup.FXML"));
 
-=======
-        Parent root = FXMLLoader.load(getClass().getResource("FrontPage.fxml"));
->>>>>>> Stashed changes
         primaryStage.setTitle("Tournament planner");
         primaryStage.setScene(new Scene(root, 1280, 800));
         primaryStage.setResizable(true);
@@ -47,16 +40,12 @@ public class Main extends Application {
         /*
         LocalDate local = LocalDate.now();
 
-<<<<<<< Updated upstream
         Tournament tournament = new Tournament("asd",local, local, TournamentType.GroupAndKnockout);
-=======
         TournamentBuilder builder = new TournamentBuilder()
                 .setPoolList(new Pool("A", 6), new Pool("B", 6))
                 .setActive(true)
                 .setEndDate(local)
                 .setStartDate(local);
->>>>>>> Stashed changes
-
         Tournament tournament = new Tournament(builder);
 
         tournament.findCorrectPool("A", 6).addTeam(new Team("Jetsmark IF", 6, "A"));
@@ -65,10 +54,8 @@ public class Main extends Application {
         tournament.findCorrectPool("A", 6).addTeam(new Team("Jetsmark IF", 6, "A"));
 
         System.out.println(tournament.getPoolList().get(0).getTeamList());
-<<<<<<< Updated upstream
         */
         launch(args);
-=======
 
         Pool sad = new Pool("A", 6);
         ArrayList<Pool> test = new ArrayList<>();
@@ -89,7 +76,6 @@ public class Main extends Application {
 
 
         //launch(args);
->>>>>>> Stashed changes
 
     }
 
