@@ -39,9 +39,9 @@ public class AddingTeamsControllerBackup {
         this.tournament = tournament;
         setComboBoxItems();
         setTeamparticipant();
-        tournament.createPools("A", 9);
+        /*tournament.createPools("A", 9);
         tournament.createPools("B", 9);
-        tournament.createPools("C", 9);
+        tournament.createPools("C", 9);*/
         tournament.findCorrectPool(9, "A").addTeam(new Team("name1", 9, "A"));
         tournament.findCorrectPool(9, "C").addTeam(new Team("name2", 9, "C"));
         tournament.findCorrectPool(9, "B").addTeam(new Team("name3", 9, "B"));

@@ -5,22 +5,27 @@ import tournament.*;
 import java.util.*;
 
 public class Pool {
-    private ArrayList<Team> teamList;
-    private GroupBracket groupBracket;
-    private KnockoutBracket knockoutBracket;
     private String skillLevel;
     private int yearGroup;
+    private GroupBracket groupBracket;
+    private KnockoutBracket knockoutBracket;
+    private ArrayList<Team> teamList;
+
 
     //This first part of the class deals with creating the tournament
 
     public Pool(String skillLevel, int yearGroup) {
         this.skillLevel = skillLevel;
         this.yearGroup = yearGroup;
-        teamList = new ArrayList<>();
+        this.teamList = new ArrayList<>();
     }
 
-    public void addKnockoutBracket() {
-        //this.knockoutBracket = new KnockoutBracket();
+    public void addGroupBracket(GroupBracket groupBracketType) {
+        this.groupBracket = groupBracketType.createGroupBracket(teamList);
+    }
+
+    public void addKnockoutBracket(KnockoutBracket knockoutBracketType) {
+        this.knockoutBracket = knockoutBracketType.createKnockoutBracket(this.groupBracket);
     }
 
     // Adding team to the correct pool
