@@ -2,10 +2,7 @@ package tournament.pool;
 
 import tournament.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Pool {
     private ArrayList<Team> teamList;
@@ -43,14 +40,26 @@ public class Pool {
 
     // Removes a team by first finding the correct pool, then after removing the correct team in the pool.
     public void removeTeam(String name) {
-
-        for (Team teams : this.teamList) {
-            if (teams.getName().equals(name)) {
-                this.teamList.remove(teams);
+        for (int i = teamList.size() - 1; i >= 0; i--) {
+            if (teamList.get(i).getName().equals(name)) {
+                teamList.remove(teamList.get(i));
             }
         }
         Collections.sort(this.teamList);
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pool pool = (Pool) o;
+        return yearGroup == pool.yearGroup;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(yearGroup);
     }
 
     public String getSkillLevel() {
@@ -71,3 +80,4 @@ public class Pool {
 
     //This next part of the class deals with updating the tournament while active
 }
+

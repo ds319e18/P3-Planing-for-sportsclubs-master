@@ -2,12 +2,15 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
@@ -25,7 +28,7 @@ import static tournament.TournamentType.GroupAndKnockout;
 import static tournament.pool.KnockoutChoice.Knockout;
 
 public class TournamentSetupController {
-    private final int YEAR_GROUP_MAX = 15;
+    private final int YEAR_GROUP_MAX = 16;
     private final int SKILL_LEVEL_MAX = 3;
 
     @FXML
@@ -46,6 +49,12 @@ public class TournamentSetupController {
     @FXML
     private DatePicker endDatePicker;
 
+    @FXML
+    private Button backButton;
+
+    @FXML
+    private Button nextButton;
+
     private Tournament tournament;
 
     public TournamentSetupController() {
@@ -62,13 +71,48 @@ public class TournamentSetupController {
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
     @FXML
-    private void nextButtonPressed() {
+    private void nextButtonPressed(ActionEvent event) throws IOException {
         tournament = new Tournament(tournamentName.getText(),startDatePicker.getValue(),
                 endDatePicker.getValue(), tournamentTypeCombobox.getValue(),
                 Integer.parseInt(fieldNumberCombobox.getValue().toString()),
                 getSelectedPools());
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("AddingTeams.FXML"));
+        Parent newWindow = loader.load();
+
+        AddingTeamsController atc = loader.getController();
+        atc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 
+    @FXML
+    public void setOnBackButtonClicked(ActionEvent event) throws IOException {
+        Parent newWindow = FXMLLoader.load(getClass().getResource("AdminPage.FXML"));
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
+    }
+
+    @FXML
+    public void setOnNextButtonClicked(ActionEvent event) throws IOException {
+        Parent newWindow = FXMLLoader.load(getClass().getResource("AddingTeams.FXML"));
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
+    }
 
     private ArrayList<Pool> getSelectedPools() {
         ArrayList<Pool> poolList = new ArrayList<>();
@@ -78,10 +122,10 @@ public class TournamentSetupController {
         // the selected pools will be saved in a list
         for (int i = 0; i < YEAR_GROUP_MAX; i++) {
             TitledPane titledPane = poolAccordion.getPanes().get(i);
-            AnchorPane anchorPane = (AnchorPane) titledPane.getContent();
+            HBox hbox = (HBox) titledPane.getContent();
 
             for (int j = 0; j < SKILL_LEVEL_MAX; j++) {
-                CheckBox checkBox = (CheckBox) anchorPane.getChildren().get(j);
+                CheckBox checkBox = (CheckBox) hbox.getChildren().get(j);
 
                 if (checkBox.isSelected()) {
 

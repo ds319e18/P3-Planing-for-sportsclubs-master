@@ -1,6 +1,5 @@
 package tournament;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 public class Team implements Comparable<Team>{
@@ -29,6 +28,22 @@ public class Team implements Comparable<Team>{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getSkillLevel() {
+        return skillLevel;
+    }
+
+    public int getYearGroup() {
+        return yearGroup;
     }
 
     @Override
