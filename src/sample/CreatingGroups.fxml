@@ -230,6 +230,22 @@
             <VBox layoutX="375.0" layoutY="10.0" prefHeight="502.0" prefWidth="88.0" />
             <VBox prefHeight="502.0" prefWidth="163.0">
                <children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints />
+                    </rowConstraints>
+                     <VBox.margin>
+                        <Insets top="35.0" />
+                     </VBox.margin>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pool" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
                   <ScrollPane prefHeight="372.0" prefWidth="290.0">
                      <content>
                         <GridPane fx:id="gridPane1" gridLinesVisible="true" prefHeight="368.0" prefWidth="160.0">
@@ -239,15 +255,12 @@
                            </columnConstraints>
                            <rowConstraints>
                               <RowConstraints />
+                              <RowConstraints />
                            </rowConstraints>
-                           <children>
-                              <Label text=" Pool" />
-                              <Label layoutX="10.0" layoutY="10.0" text=" Status" GridPane.columnIndex="1" />
-                           </children>
                         </GridPane>
                      </content>
                      <VBox.margin>
-                        <Insets top="35.0" />
+                        <Insets />
                      </VBox.margin>
                   </ScrollPane>
                </children>
