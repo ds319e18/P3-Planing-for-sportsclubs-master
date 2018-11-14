@@ -6,6 +6,7 @@ import javafx.collections.ObservableSet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -110,7 +111,6 @@ public class AddingTeamsController {
             for (Team team : tournament.findCorrectPool(Integer.parseInt(teamYearGroup), teamSkillLevel).getTeamList()) {
                 Text name = new Text(team.getName());
                 Text contact = new Text(team.getContact());
-
                 CheckBox checkBox = new CheckBox();
 
                 gridPane.addRow(gridPane.getRowCount(), name, contact, checkBox);
