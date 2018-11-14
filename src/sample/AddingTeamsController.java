@@ -66,13 +66,13 @@ public class AddingTeamsController {
         window.show();
     }
 
-    @FXML //TODO: Is not connected to SceneBuilder.
+    @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("CreatingGroups.FXML"));
         Parent newWindow = loader.load();
 
-        AddingTeamsController atc = loader.getController();
+        CreatingGroupController atc = loader.getController();
         atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
