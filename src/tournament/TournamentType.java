@@ -1,5 +1,16 @@
 package tournament;
 
 public enum TournamentType {
-    Group, Knockout, GroupAndKnockout;
+    Group("Only Group"), Knockout("Only Knockout"), GroupAndKnockout("Group and Knockout");
+
+    private String tournamentTypeName;
+
+    TournamentType(String tournamentTypeName) {
+        this.tournamentTypeName = tournamentTypeName;
+    }
+
+    @Override
+    public String toString() {
+        return tournamentTypeName;
+    }
 }

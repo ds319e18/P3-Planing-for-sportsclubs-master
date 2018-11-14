@@ -14,20 +14,24 @@ public class Tournament {
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean active = false;
-    private ArrayList<Pool> poolList;
+    public ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
     private ArrayList<Field> fieldList;
+    private int fieldNumber;
     private TournamentType type;
 
     //This first part of the class deals with creating the tournament
 
     // Create tournament
-    public Tournament(String name, LocalDate startDate, LocalDate endDate, TournamentType tournamentType) {
+    public Tournament(String name, LocalDate startDate, LocalDate endDate , TournamentType type, int fieldNumber,
+                      ArrayList<Pool> poolList) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.type = tournamentType;
-        poolList = new ArrayList<>();
+        this.type = type;
+        this.poolList = new ArrayList<>();
+        this.fieldNumber = fieldNumber;
+        this.poolList = poolList;
     }
 
     public void createPools(String skill, int year) {
@@ -35,7 +39,7 @@ public class Tournament {
     }
 
     // Method to find the correct pool when adding or removing teams to the tournament
-    public Pool findCorrectPool(String skill, int yearGroup) {
+    public Pool findCorrectPool(int yearGroup, String skill) {
         for (Pool createdPools : poolList) {
             if (createdPools.getSkillLevel().equals(skill) && createdPools.getYearGroup() == yearGroup) {
                 return createdPools;
@@ -59,6 +63,4 @@ public class Tournament {
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
-
-    //This next part of the class deals with updating the tournament while active
 }

@@ -4,10 +4,12 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import tournament.Database;
 import tournament.Team;
 import tournament.Tournament;
+import tournament.TournamentType;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -16,9 +18,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("CreatingGroups.fxml"));
+
+        Parent root = FXMLLoader.load(getClass().getResource("TournamentSetup.FXML"));
+
         primaryStage.setTitle("Tournament planner");
-        primaryStage.setScene(new Scene(root));
+        primaryStage.setScene(new Scene(root, 1280, 800));
+        primaryStage.setResizable(true);
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 
@@ -26,9 +32,10 @@ public class Main extends Application {
     public static void main(String[] args) {
         //Database myDatabase = new Database();
         //myDatabase.connect();
+        /*
         LocalDate local = LocalDate.now();
 
-        Tournament tournament = new Tournament("asd",local, local, "adas");
+        Tournament tournament = new Tournament("asd",local, local, TournamentType.GroupAndKnockout);
 
         tournament.createPools("A", 6);
 
@@ -38,8 +45,9 @@ public class Main extends Application {
         tournament.findCorrectPool("A", 6).addTeam(new Team("Jetsmark IF", 6, "A"));
 
         System.out.println(tournament.getPoolList().get(0).getTeamList());
-
-        //launch(args);
+        */
+        launch(args);
 
     }
+
 }
