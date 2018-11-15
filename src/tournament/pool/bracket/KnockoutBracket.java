@@ -1,8 +1,4 @@
-package tournament.pool;
-
-import tournament.Team;
-
-import java.util.ArrayList;
+package tournament.pool.bracket;
 
 public interface KnockoutBracket {
     KnockoutBracket createKnockoutBracket(GroupBracket groupBracket);

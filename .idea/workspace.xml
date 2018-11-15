@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <list default="true" id="71834812-8aaf-45cf-b54f-7b537fc0bf2d" name="Default" comment="">
 <<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
@@ -31,14 +32,35 @@
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/StdGroup.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/sample/AddingTeamsControllerBackup.java" afterPath="$PROJECT_DIR$/src/sample/AddingTeamsControllerBackup.java" />
+=======
+    <list default="true" id="a405cb0f-b990-4df7-a1fe-4b74124ca792" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/sample/TournamentSetupController.java" afterPath="$PROJECT_DIR$/src/sample/TournamentSetupController.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/Database.java" afterPath="$PROJECT_DIR$/src/database/Database.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/Match.java" afterPath="$PROJECT_DIR$/src/tournament/Match.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/MatchBuilder.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/tournament/Tournament.java" afterPath="$PROJECT_DIR$/src/tournament/Tournament.java" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/tournament/pool/PlacementAndKnockout 2.java" afterPath="" />
 >>>>>>> Stashed changes
 =======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Group.class" afterPath="" />
 >>>>>>> Stashed changes
+=======
+      <change beforePath="$PROJECT_DIR$/src/tournament/TournamentBuilder.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/TournamentType.java" afterPath="$PROJECT_DIR$/src/tournament/TournamentType.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/GroupBracket.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/Knockout.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/KnockoutBracket.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutBracket.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/Placement.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/PlacementAndKnockout.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/Pool.java" afterPath="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/StdGroup.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" />
+>>>>>>> Dev
     </list>
 =======
     <list default="true" id="187dc767-ec2b-4f0a-9984-809193de2b43" name="Default" comment="" />
@@ -56,22 +78,37 @@
     <leaf>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
 =======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
 >>>>>>> Stashed changes
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+=======
+      <file leaf-file-name="Group.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/Group.java">
+>>>>>>> Stashed changes
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="793">
               <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
 =======
+            <state relative-caret-position="221">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+>>>>>>> Dev
+              <folding>
+                <element signature="e#314#315#0" expanded="true" />
+                <element signature="e#351#352#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Tournament.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="52">
               <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
 =======
@@ -102,6 +139,14 @@
               <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="82" selection-end-column="22" />
 >>>>>>> Stashed changes
               <folding />
+=======
+            <state relative-caret-position="-52">
+              <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="31" />
+              <folding>
+                <element signature="e#1641#1642#0" expanded="true" />
+                <element signature="e#1681#1682#0" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -109,6 +154,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             <state relative-caret-position="234">
               <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
@@ -127,21 +173,28 @@
               <caret line="38" column="79" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="79" />
 >>>>>>> Stashed changes
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddingTeamsControllerBackup.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/AddingTeamsControllerBackup.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="43" column="41" lean-forward="false" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
-              <folding />
+=======
+            <state relative-caret-position="379">
+              <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
 >>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Match.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="58" column="4" lean-forward="true" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
@@ -168,14 +221,28 @@
               <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
 >>>>>>> Stashed changes
               <folding />
+=======
+      <file leaf-file-name="Pool.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/Pool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1404">
+              <caret line="120" column="24" lean-forward="false" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
+              <folding>
+                <element signature="e#1794#1795#0" expanded="true" />
+                <element signature="e#1840#1841#0" expanded="true" />
+              </folding>
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Dev
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -190,6 +257,7 @@
     <option name="CHANGED_PATHS">
       <list>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
 <<<<<<< Updated upstream
 =======
@@ -198,6 +266,16 @@
 >>>>>>> Stashed changes
 =======
         <option value="$PROJECT_DIR$/src/sample/CreatingGroupController.java" />
+>>>>>>> Stashed changes
+=======
+        <option value="$PROJECT_DIR$/src/sample/TournamentSetupController.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/Group.java" />
+        <option value="$PROJECT_DIR$/src/tournament/TournamentBuilder.java" />
+        <option value="$PROJECT_DIR$/src/tournament/Tournament.java" />
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/tournament/MatchBuilder.java" />
+        <option value="$PROJECT_DIR$/src/tournament/Match.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
 >>>>>>> Stashed changes
       </list>
     </option>
@@ -213,6 +291,9 @@
 <<<<<<< Updated upstream
 =======
   <component name="ProjectFrameBounds">
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+>>>>>>> Stashed changes
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="693" />
@@ -224,6 +305,7 @@
     <option name="height" value="1048" />
 >>>>>>> Stashed changes
   </component>
+<<<<<<< HEAD
 >>>>>>> Stashed changes
 =======
   <component name="ProjectFrameBounds">
@@ -232,6 +314,8 @@
     <option name="height" value="777" />
   </component>
 >>>>>>> Stashed changes
+=======
+>>>>>>> Dev
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -247,13 +331,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <pane id="PackagesPane" />
 <<<<<<< Updated upstream
+=======
+>>>>>>> Dev
       <pane id="Scratches" />
+<<<<<<< Updated upstream
       <pane id="Scope" />
 <<<<<<< Updated upstream
 =======
+>>>>>>> Stashed changes
+=======
+      <pane id="PackagesPane" />
 >>>>>>> Stashed changes
       <pane id="AndroidView" />
 =======
@@ -279,6 +370,8 @@
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> Stashed changes
               <item name="src" type="462c0819:PsiDirectoryNode" />
 =======
 >>>>>>> Stashed changes
@@ -290,7 +383,11 @@
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="sample" type="462c0819:PsiDirectoryNode" />
+=======
+<<<<<<< Updated upstream
+>>>>>>> Dev
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
@@ -307,10 +404,15 @@
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
               <item name="tournament" type="462c0819:PsiDirectoryNode" />
               <item name="pool" type="462c0819:PsiDirectoryNode" />
+=======
+=======
+              <item name="tournament" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Dev
 >>>>>>> Stashed changes
             </path>
 <<<<<<< Updated upstream
@@ -318,9 +420,6 @@
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-<<<<<<< Updated upstream
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-=======
               <item name="tournament" type="462c0819:PsiDirectoryNode" />
               <item name="matchschedule" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -330,7 +429,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tournament" type="462c0819:PsiDirectoryNode" />
               <item name="pool" type="462c0819:PsiDirectoryNode" />
->>>>>>> Stashed changes
             </path>
 =======
 >>>>>>> Stashed changes
@@ -352,8 +450,11 @@
       <pane id="Scratches" />
 >>>>>>> Stashed changes
 =======
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="AndroidView" />
+=======
+>>>>>>> Dev
       <pane id="Scope" />
 >>>>>>> Stashed changes
     </panes>
@@ -378,21 +479,48 @@
     <configuration default="true" type="Applet" factoryName="Applet">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <module />
       <option name="HTML_USED" value="false" />
 =======
       <option name="HTML_USED" value="false" />
       <module />
+>>>>>>> Stashed changes
+=======
+      <option name="HTML_USED" value="false" />
 >>>>>>> Stashed changes
 =======
       <option name="HTML_USED" value="false" />
 >>>>>>> Stashed changes
       <option name="WIDTH" value="400" />
+      <module />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
 <<<<<<< Updated upstream
+=======
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="sample.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="P3-Planing-for-sportsclubs-master" />
+      <envs />
+    </configuration>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 =======
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -489,15 +617,21 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
 =======
+=======
+>>>>>>> Stashed changes
     <recent_temporary>
       <list size="1">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -508,6 +642,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       <changelist id="71834812-8aaf-45cf-b54f-7b537fc0bf2d" name="Default" comment="" />
@@ -534,9 +669,19 @@
       <workItem from="1542193898921" duration="1543000" />
 >>>>>>> Stashed changes
 =======
+<<<<<<< HEAD
       <workItem from="1542195792313" duration="2321000" />
       <workItem from="1542225645512" duration="373000" />
       <workItem from="1542270585768" duration="63000" />
+=======
+      <changelist id="a405cb0f-b990-4df7-a1fe-4b74124ca792" name="Default" comment="" />
+      <created>1542203178096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542203178096</updated>
+      <workItem from="1542203179397" duration="594000" />
+      <workItem from="1542271416682" duration="2195000" />
+>>>>>>> Dev
 >>>>>>> Stashed changes
     </task>
     <servers />
@@ -560,10 +705,17 @@
 >>>>>>> Stashed changes
     <editor active="true" />
 =======
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="2757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+=======
+    <option name="totallyTimeSpent" value="2789000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="693" extended-state="6" />
+>>>>>>> Dev
 >>>>>>> Stashed changes
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -630,13 +782,23 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> Dev
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767368" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> Dev
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -648,7 +810,11 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> Dev
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -668,6 +834,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 =======
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="793">
@@ -720,11 +887,14 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Dev
 >>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< Updated upstream
 =======
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -736,10 +906,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+=======
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/sample/AdminPageController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -752,16 +925,27 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetupController.java">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="793">
           <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
 =======
-    <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
+        <state relative-caret-position="51">
+          <caret line="87" column="40" lean-forward="false" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
+>>>>>>> Dev
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/PlacementAndKnockout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
+<<<<<<< Updated upstream
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
 =======
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
@@ -769,10 +953,14 @@
         <state relative-caret-position="189">
           <caret line="21" column="76" lean-forward="true" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
 >>>>>>> Stashed changes
+=======
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/sample/AddingTeamsControllerBackup.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -784,16 +972,49 @@
         <state relative-caret-position="189">
           <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="82" selection-end-column="22" />
 >>>>>>> Stashed changes
+=======
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/TournamentBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetupController.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
+>>>>>>> Stashed changes
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        <state relative-caret-position="-52">
+          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="31" />
+          <folding>
+            <element signature="e#1641#1642#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/MatchBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="19" lean-forward="true" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
           <folding />
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
     <entry file="file://$PROJECT_DIR$/src/sample/CreatingGroupController.java">
@@ -801,6 +1022,37 @@
         <state relative-caret-position="215">
           <caret line="81" column="29" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
           <folding />
+>>>>>>> Stashed changes
+=======
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="65" column="24" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="58" column="4" lean-forward="true" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/Pool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1404">
+          <caret line="120" column="24" lean-forward="false" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
+          <folding>
+            <element signature="e#1794#1795#0" expanded="true" />
+            <element signature="e#1840#1841#0" expanded="true" />
+          </folding>
 >>>>>>> Stashed changes
         </state>
       </provider>

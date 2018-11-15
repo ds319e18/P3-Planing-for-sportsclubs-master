@@ -4,20 +4,15 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableView;
 import javafx.stage.Stage;
-import tournament.Database;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.TournamentType;
-import tournament.*;
-import tournament.pool.Knockout;
+import tournament.pool.bracket.KnockoutPlay;
 import tournament.pool.Pool;
-import tournament.pool.StdGroup;
+import tournament.pool.bracket.StandardGroupPlay;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Main extends Application {
 
@@ -55,7 +50,11 @@ public class Main extends Application {
 
         System.out.println(tournament.getPoolList().get(0).getTeamList());
         */
-        launch(args);
+
+        Tournament tournament = new Tournament.Builder("Frederiks Turnering")
+                .setActive(true)
+                .setType(TournamentType.Group)
+                .build();
 
         Pool sad = new Pool("A", 6);
         ArrayList<Pool> test = new ArrayList<>();
@@ -66,8 +65,8 @@ public class Main extends Application {
         ss.add(testtwo);
         ss.add(testtww);
 
-        sad.addGroupBracket(new StdGroup());
-        sad.addKnockoutBracket(new Knockout());
+        sad.addGroupBracket(new StandardGroupPlay());
+        sad.addKnockoutBracket(new KnockoutPlay());
         //launch(args);
 
     }

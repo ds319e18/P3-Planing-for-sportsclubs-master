@@ -1,19 +1,18 @@
-package tournament.pool;
+package tournament.pool.bracket;
 
 import tournament.Match;
-import tournament.MatchBuilder;
 import tournament.Team;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Placement implements KnockoutBracket {
+public class PlacementPlay implements KnockoutBracket {
     ArrayList<Match> matches = new ArrayList<>();
     HashMap<Integer, Team> result = new HashMap<>();
 
     // Hvis gruppestørrelsen er større end 2 skal der throwes en exception
     @Override
-    public Placement createKnockoutBracket(GroupBracket groupBracket) {
+    public PlacementPlay createKnockoutBracket(GroupBracket groupBracket) {
         if (groupBracket.getAmountOfGroups() > 2) {
             // throw some exception
         } else {
@@ -22,7 +21,7 @@ public class Placement implements KnockoutBracket {
 
             while (iter < groupBracket.getGroups().get(0).getTeamList().size() && iter < groupBracket.getGroups().get(1).getTeamList().size()) {
                 builder
-                        .setName("Placement match " + iter + 1)
+                        .setName("PlacementPlay match " + iter + 1)
                         .setFinished(false)
                         .setFirstTeam(groupBracket.getGroups().get(0).getTeamList().get(iter))
                         .setSecondTeam(groupBracket.getGroups().get(1).getTeamList().get(iter));

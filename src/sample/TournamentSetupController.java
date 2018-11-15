@@ -9,23 +9,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.TournamentType;
 import tournament.pool.Pool;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import static tournament.TournamentType.Group;
-import static tournament.TournamentType.GroupAndKnockout;
-import static tournament.pool.KnockoutChoice.Knockout;
 
 public class TournamentSetupController {
     private final int YEAR_GROUP_MAX = 16;
@@ -72,10 +63,14 @@ public class TournamentSetupController {
 
     @FXML
     private void nextButtonPressed(ActionEvent event) throws IOException {
-        tournament = new Tournament(tournamentName.getText(),startDatePicker.getValue(),
-                endDatePicker.getValue(), tournamentTypeCombobox.getValue(),
-                Integer.parseInt(fieldNumberCombobox.getValue().toString()),
-                getSelectedPools());
+        TournamentBuilder builder = new TournamentBuilder();
+        builder
+                .setName(tournamentName.getText())
+                .setStartDate(startDatePicker.getValue())
+                .setEndDate(endDatePicker.getValue())
+                .setType(tournamentTypeCombobox.getValue());
+
+        Tournament tournament = new Tournament(builder);
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("AddingTeams.FXML"));
