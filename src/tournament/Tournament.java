@@ -3,6 +3,7 @@ package tournament;
 import tournament.pool.*;
 import tournament.matchschedule.*;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -82,9 +83,8 @@ public class Tournament {
             return this;
         }
 
-        public Builder setPoolList(Pool... pools) {
-            ArrayList<Pool> temp = new ArrayList<>(Arrays.asList(pools));
-            this.poolList.addAll(temp);
+        public Builder setPoolList(ArrayList<Pool> poolList) {
+            this.poolList.addAll(poolList);
             return this;
         }
 

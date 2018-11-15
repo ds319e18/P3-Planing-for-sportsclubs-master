@@ -63,14 +63,12 @@ public class TournamentSetupController {
 
     @FXML
     private void nextButtonPressed(ActionEvent event) throws IOException {
-        TournamentBuilder builder = new TournamentBuilder();
-        builder
-                .setName(tournamentName.getText())
+        Tournament tournament = new Tournament.Builder(tournamentName.getText())
                 .setStartDate(startDatePicker.getValue())
                 .setEndDate(endDatePicker.getValue())
-                .setType(tournamentTypeCombobox.getValue());
-
-        Tournament tournament = new Tournament(builder);
+                .setType(tournamentTypeCombobox.getValue())
+                .setPoolList(getSelectedPools())
+                .build();
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("AddingTeams.FXML"));
@@ -126,7 +124,10 @@ public class TournamentSetupController {
 
                     yearString = titledPane.getText().replace(String.valueOf
                             (titledPane.getText().charAt(0)), "");
-                    poolList.add(new Pool(checkBox.getText(), Integer.parseInt(yearString)));
+                    poolList.add(new Pool.Builder()
+                    .setSkilllLevel(checkBox.getText())
+                    .setYearGroup(Integer.parseInt(yearString))
+                    .build());
                 }
             }
         }
