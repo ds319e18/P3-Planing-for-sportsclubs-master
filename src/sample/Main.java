@@ -56,17 +56,12 @@ public class Main extends Application {
                 .setType(TournamentType.Group)
                 .build();
 
-        Pool sad = new Pool("A", 6);
         ArrayList<Pool> test = new ArrayList<>();
-        test.add(sad);
         Team testtwo = new Team("Vino", 6, "A");
         Team testtww = new Team("Fred", 6, "A");
         ArrayList<Team> ss = new ArrayList<>();
         ss.add(testtwo);
         ss.add(testtww);
-
-        sad.addGroupBracket(new StandardGroupPlay());
-        sad.addKnockoutBracket(new KnockoutPlay());
         //launch(args);
 
     }

@@ -13,14 +13,12 @@ public class KnockoutPlay implements KnockoutBracket {
     // This method creates the size of the match-array by creating empty matches
     @Override
     public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket) {
-        MatchBuilder builder = new MatchBuilder();
         int numberOfMatches = (groupBracket.getAmountOfGroups() * groupBracket.getAmountOfAdvancingTeamsPrGroup()) - 1;
-        for (int i = 0; i < numberOfMatches; i++) {
-            builder
-                    .setName("KnockoutPlay Match" + i + 1)
-                    .setFinished(false);
-
-            this.matches.add(new Match(builder));
+        for (int i = 1; i < numberOfMatches; i++) {
+            this.matches.add(new Match.Builder()
+                                                .setName("Knockout-Play Match" + i)
+                                                .setFinished(false)
+                                                .build());
         }
         return this;
     }

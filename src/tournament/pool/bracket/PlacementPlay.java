@@ -16,17 +16,16 @@ public class PlacementPlay implements KnockoutBracket {
         if (groupBracket.getAmountOfGroups() > 2) {
             // throw some exception
         } else {
-            MatchBuilder builder = new MatchBuilder();
             int iter = 0;
 
             while (iter < groupBracket.getGroups().get(0).getTeamList().size() && iter < groupBracket.getGroups().get(1).getTeamList().size()) {
-                builder
-                        .setName("PlacementPlay match " + iter + 1)
-                        .setFinished(false)
-                        .setFirstTeam(groupBracket.getGroups().get(0).getTeamList().get(iter))
-                        .setSecondTeam(groupBracket.getGroups().get(1).getTeamList().get(iter));
-
-                this.matches.add(new Match(builder));
+                this.matches.add(new Match.Builder()
+                                                    .setName("Placement-Play Match" + iter + 1)
+                                                    .setFinished(false)
+                                                    .setFirstTeam(groupBracket.getGroups().get(0).getTeamList().get(iter))
+                                                    .setSecondTeam(groupBracket.getGroups().get(1).getTeamList().get(iter))
+                                                    .build());
+                iter++;
             }
         }
 
