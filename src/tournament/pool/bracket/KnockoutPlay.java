@@ -1,25 +1,24 @@
-package tournament.pool;
+package tournament.pool.bracket;
 
 import tournament.Match;
-import tournament.MatchBuilder;
 import tournament.Team;
+import tournament.pool.bracket.GroupBracket;
+import tournament.pool.bracket.KnockoutBracket;
 
 import java.util.ArrayList;
 
-public class Knockout implements KnockoutBracket {
+public class KnockoutPlay implements KnockoutBracket {
     ArrayList<Match> matches = new ArrayList<>();
 
     // This method creates the size of the match-array by creating empty matches
     @Override
     public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket) {
-        MatchBuilder builder = new MatchBuilder();
         int numberOfMatches = (groupBracket.getAmountOfGroups() * groupBracket.getAmountOfAdvancingTeamsPrGroup()) - 1;
-        for (int i = 0; i < numberOfMatches; i++) {
-            builder
-                    .setName("Knockout Match" + i + 1)
-                    .setFinished(false);
-
-            this.matches.add(new Match(builder));
+        for (int i = 1; i < numberOfMatches; i++) {
+            this.matches.add(new Match.Builder()
+                                                .setName("Knockout-Play Match" + i)
+                                                .setFinished(false)
+                                                .build());
         }
         return this;
     }

@@ -1,374 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <list default="true" id="71834812-8aaf-45cf-b54f-7b537fc0bf2d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
-=======
-    <list default="true" id="b45d6d42-4a7f-4aa7-bc62-ca20c6460e4f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace 2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/AddingTeamsController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/CreatingGroupController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/TournamentSetupController.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/MatchBuilder.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Result.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Team.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/TournamentBuilder.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/TournamentType.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchSchedule.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Group.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/GroupBracket.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Knockout.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/KnockoutBracket.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Placement.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/PlacementAndKnockout.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/StdGroup.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/sample/AddingTeamsControllerBackup.java" afterPath="$PROJECT_DIR$/src/sample/AddingTeamsControllerBackup.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/Tournament.java" afterPath="$PROJECT_DIR$/src/tournament/Tournament.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/PlacementAndKnockout 2.java" afterPath="" />
->>>>>>> Stashed changes
-    </list>
-=======
-    <list default="true" id="187dc767-ec2b-4f0a-9984-809193de2b43" name="Default" comment="" />
->>>>>>> Stashed changes
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="955">
-              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-=======
-      <file leaf-file-name="Tournament.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-=======
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="21" column="76" lean-forward="true" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddingTeamsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/AddingTeamsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="82" selection-end-column="22" />
->>>>>>> Stashed changes
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< Updated upstream
-            <state relative-caret-position="234">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-=======
-            <state relative-caret-position="215">
-              <caret line="81" column="29" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminPageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/AdminPageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="38" column="79" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="79" />
->>>>>>> Stashed changes
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddingTeamsControllerBackup.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/AddingTeamsControllerBackup.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="43" column="41" lean-forward="false" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
-              <folding />
->>>>>>> Stashed changes
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< Updated upstream
-=======
-      <file leaf-file-name="TournamentSetupController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetupController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
->>>>>>> Stashed changes
-    </leaf>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-<<<<<<< Updated upstream
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
-<<<<<<< Updated upstream
-=======
-        <option value="$PROJECT_DIR$/src/sample/AddingTeamsControllerBackup.java" />
-        <option value="$PROJECT_DIR$/src/sample/TournamentSetupController.java" />
->>>>>>> Stashed changes
-=======
-        <option value="$PROJECT_DIR$/src/sample/CreatingGroupController.java" />
->>>>>>> Stashed changes
-      </list>
-    </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="693" />
-=======
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
->>>>>>> Stashed changes
-  </component>
->>>>>>> Stashed changes
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-<<<<<<< Updated upstream
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
-      <pane id="AndroidView" />
-=======
->>>>>>> Stashed changes
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-=======
->>>>>>> Stashed changes
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
->>>>>>> Stashed changes
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-<<<<<<< Updated upstream
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-<<<<<<< Updated upstream
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-=======
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
-              <item name="matchschedule" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
-              <item name="pool" type="462c0819:PsiDirectoryNode" />
->>>>>>> Stashed changes
-            </path>
-=======
->>>>>>> Stashed changes
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
->>>>>>> Stashed changes
-=======
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
->>>>>>> Stashed changes
-    </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      <module />
-      <option name="HTML_USED" value="false" />
-=======
-      <option name="HTML_USED" value="false" />
-      <module />
->>>>>>> Stashed changes
-=======
-      <option name="HTML_USED" value="false" />
->>>>>>> Stashed changes
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
     </configuration>
-<<<<<<< Updated upstream
-=======
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <module name="P3-Planing-for-sportsclubs-master" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="P3-Planing-for-sportsclubs-master" />
-      <envs />
     </configuration>
->>>>>>> Stashed changes
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" />
@@ -378,24 +28,13 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
-      <envs />
       <patterns />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
@@ -408,17 +47,21 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
-      <envs />
       <properties />
       <listeners />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -426,232 +69,10 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-<<<<<<< Updated upstream
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-=======
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <list>
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
->>>>>>> Stashed changes
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      <changelist id="71834812-8aaf-45cf-b54f-7b537fc0bf2d" name="Default" comment="" />
-      <created>1542195789510</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1542195789510</updated>
-      <workItem from="1542195792313" duration="906000" />
-=======
-      <changelist id="b45d6d42-4a7f-4aa7-bc62-ca20c6460e4f" name="Default" comment="" />
-      <created>1542202913302</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1542202913302</updated>
-      <workItem from="1542202914670" duration="135000" />
->>>>>>> Stashed changes
-=======
-      <changelist id="187dc767-ec2b-4f0a-9984-809193de2b43" name="Default" comment="" />
-      <created>1542193897785</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1542193897785</updated>
-      <workItem from="1542193898921" duration="1543000" />
->>>>>>> Stashed changes
-    </task>
-    <servers />
-  </component>
-  <component name="TimeTrackingManager">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <option name="totallyTimeSpent" value="906000" />
-=======
-    <option name="totallyTimeSpent" value="135000" />
->>>>>>> Stashed changes
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="777" extended-state="0" />
-=======
-    <option name="totallyTimeSpent" value="1543000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
->>>>>>> Stashed changes
-    <editor active="true" />
-    <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32991204" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32850242" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
->>>>>>> Stashed changes
-=======
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
->>>>>>> Stashed changes
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> Stashed changes
-=======
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> Stashed changes
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-=======
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
->>>>>>> Stashed changes
-=======
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
->>>>>>> Stashed changes
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-    </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
-  <component name="editorHistoryManager">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
->>>>>>> Stashed changes
-=======
-    <entry file="file://$PROJECT_DIR$/src/sample/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/AdminPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="38" column="79" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="79" />
->>>>>>> Stashed changes
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="955">
-          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-=======
-    <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="21" column="76" lean-forward="true" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
->>>>>>> Stashed changes
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/sample/AddingTeamsControllerBackup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="43" column="41" lean-forward="false" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/sample/AddingTeamsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="70" column="7" lean-forward="false" selection-start-line="70" selection-start-column="7" selection-end-line="82" selection-end-column="22" />
->>>>>>> Stashed changes
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< Updated upstream
-    <entry file="file://$PROJECT_DIR$/src/sample/TournamentSetupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="87" column="0" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
->>>>>>> Stashed changes
-=======
-    <entry file="file://$PROJECT_DIR$/src/sample/CreatingGroupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="81" column="29" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-          <folding />
->>>>>>> Stashed changes
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

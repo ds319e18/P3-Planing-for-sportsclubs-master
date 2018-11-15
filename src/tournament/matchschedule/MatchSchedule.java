@@ -1,8 +1,6 @@
 package tournament.matchschedule;
 
 import tournament.Match;
-import tournament.Team;
-import tournament.pool.Group;
 import tournament.pool.Pool;
 
 import java.util.ArrayList;

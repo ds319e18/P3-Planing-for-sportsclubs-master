@@ -1,4 +1,4 @@
-package tournament;
+package database;
 
 import javax.swing.plaf.nimbus.State;
 import java.sql.*;
