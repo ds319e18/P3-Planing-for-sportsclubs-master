@@ -1,10 +1,11 @@
-package tournament.pool;
+package tournament.pool.bracket;
 
 import tournament.Team;
+import tournament.pool.Group;
 
 import java.util.ArrayList;
 
-public class StdGroup implements GroupBracket {
+public class StandardGroupPlay implements GroupBracket {
     private ArrayList<Group> groups = new ArrayList<>();
     private int advancingTeamsPrGroup;
     private int matchesPrTeamAgainstOpponentInGroup;
@@ -22,7 +23,7 @@ public class StdGroup implements GroupBracket {
 
     // This method creates the group bracket
     @Override
-    public StdGroup createGroupBracket(ArrayList<Team> poolTeamList) {
+    public StandardGroupPlay createGroupBracket(ArrayList<Team> poolTeamList) {
         // The desired number of groups is created
         for (int i = 0; i < this.amountOfGroups; i++) {
             this.groups.add(new Group());

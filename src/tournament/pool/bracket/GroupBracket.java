@@ -1,5 +1,7 @@
-package tournament.pool;
+package tournament.pool.bracket;
 import tournament.Team;
+import tournament.pool.Group;
+
 import java.util.ArrayList;
 
 public interface GroupBracket {
