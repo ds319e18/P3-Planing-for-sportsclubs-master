@@ -14,7 +14,7 @@ public class Tournament {
     private LocalDate startDate;
     private LocalDate endDate;
     private boolean active = false;
-    private ArrayList<Pool> poolList;
+    public ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
     private ArrayList<Field> fieldList;
     private int fieldNumber;
@@ -30,6 +30,8 @@ public class Tournament {
         this.endDate = endDate;
         this.type = type;
         this.poolList = new ArrayList<>();
+        this.fieldNumber = fieldNumber;
+        this.poolList = poolList;
     }
 
     public void createPools(String skill, int year) {
@@ -37,7 +39,7 @@ public class Tournament {
     }
 
     // Method to find the correct pool when adding or removing teams to the tournament
-    public Pool findCorrectPool(String skill, int yearGroup) {
+    public Pool findCorrectPool(int yearGroup, String skill) {
         for (Pool createdPools : poolList) {
             if (createdPools.getSkillLevel().equals(skill) && createdPools.getYearGroup() == yearGroup) {
                 return createdPools;

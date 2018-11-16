@@ -10,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
@@ -27,8 +29,12 @@ import static tournament.TournamentType.GroupAndKnockout;
 import static tournament.pool.KnockoutChoice.Knockout;
 
 public class TournamentSetupController {
-    private final int YEAR_GROUP_MAX = 15;
+    private final int YEAR_GROUP_MAX = 16;
     private final int SKILL_LEVEL_MAX = 3;
+    private final int stepNumber = 0;
+
+    @FXML
+    private VBox progressBox;
 
     @FXML
     private Accordion poolAccordion;
@@ -64,17 +70,33 @@ public class TournamentSetupController {
         tournamentTypeCombobox.setItems(FXCollections.observableArrayList(
                 TournamentType.values()));
         fieldNumberCombobox.setItems(fieldList);
+        highlightProgressBox();
     }
 
     private ObservableList<String> fieldList = FXCollections.observableArrayList(
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
     @FXML
-    private void nextButtonPressed() {
+    private void nextButtonPressed(ActionEvent event) throws IOException {
         tournament = new Tournament(tournamentName.getText(),startDatePicker.getValue(),
                 endDatePicker.getValue(), tournamentTypeCombobox.getValue(),
                 Integer.parseInt(fieldNumberCombobox.getValue().toString()),
                 getSelectedPools());
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("AddingTeams.FXML"));
+        Parent newWindow = loader.load();
+
+        AddingTeamsController atc = loader.getController();
+        atc.setTournament(tournament);
+        atc.setProgressBox(progressBox);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 
     @FXML
@@ -107,10 +129,10 @@ public class TournamentSetupController {
         // the selected pools will be saved in a list
         for (int i = 0; i < YEAR_GROUP_MAX; i++) {
             TitledPane titledPane = poolAccordion.getPanes().get(i);
-            AnchorPane anchorPane = (AnchorPane) titledPane.getContent();
+            HBox hbox = (HBox) titledPane.getContent();
 
             for (int j = 0; j < SKILL_LEVEL_MAX; j++) {
-                CheckBox checkBox = (CheckBox) anchorPane.getChildren().get(j);
+                CheckBox checkBox = (CheckBox) hbox.getChildren().get(j);
 
                 if (checkBox.isSelected()) {
 
@@ -123,5 +145,10 @@ public class TournamentSetupController {
         return poolList;
     }
 
+    private void highlightProgressBox() {
+        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
+        stepBox.setStyle("-fx-border-color: #0000CD");
+        stepBox.setStyle("-fx-background-color: #A9A9A9");
+    }
 
 }

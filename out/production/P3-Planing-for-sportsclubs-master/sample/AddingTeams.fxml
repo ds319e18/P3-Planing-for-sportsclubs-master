@@ -1,232 +1,293 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddingTeamsController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddingTeamsController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@45398293_468759136948179_6752360962147221504_n.png" />
+         </image>
+         <VBox.margin>
+            <Insets left="497.5" />
+         </VBox.margin>
+      </ImageView>
+      <VBox prefHeight="66.0" prefWidth="1280.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="93.0" prefWidth="340.0" text="Exit">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tilføjelse af hold" textAlignment="CENTER" wrappingWidth="1280.0">
                <font>
-                  <Font size="27.0" />
+                  <Font name="System Italic" size="20.0" />
                </font>
-            </Button>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="93.0" prefWidth="1240.0" text="Creating tournament" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets bottom="30.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin til oprettelse af turnering:" translateX="30.0" translateY="-5.0" wrappingWidth="641.13671875">
                <font>
-                  <Font size="50.0" />
+                  <Font size="20.0" />
                </font>
-            </Label>
+            </Text>
          </children>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      </VBox>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="1280.0">
          <children>
-            <Label alignment="TOP_CENTER" prefHeight="40.0" prefWidth="2054.0" text="Step 2: Adding teams">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-      <HBox prefHeight="901.0" prefWidth="1920.0">
-         <children>
-            <Pane prefHeight="889.0" prefWidth="531.0">
+            <VBox prefHeight="200.0" prefWidth="28.0" />
+            <VBox fx:id="progressBox" prefHeight="502.0" prefWidth="270.0" style="-fx-border-color: black;">
                <children>
-                  <VBox alignment="BOTTOM_CENTER" layoutX="40.0" prefHeight="850.0" prefWidth="300.0">
+                  <VBox maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black;">
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turneringsopsætning" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 1" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="11.0" layoutY="11.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tilføjelse af hold" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 2" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="11.0" layoutY="11.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af grupper" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 3" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="11.0" layoutY="82.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="235.0" style="-fx-border-color: Black; -fx-border-width: 1;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af slutspillet" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 4" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="11.0" layoutY="153.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 5" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="11.0" layoutY="224.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Verificering af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 6" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="11.0" layoutY="295.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;" />
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <HBox prefHeight="502.0" prefWidth="329.0">
+               <children>
+                  <VBox prefHeight="485.0" prefWidth="321.0">
+                     <children>
+                        <Label prefHeight="39.0" prefWidth="467.0" text="Add teams manually">
+                           <font>
+                              <Font name="System Bold Italic" size="18.0" />
+                           </font>
+                        </Label>
+                        <GridPane prefHeight="233.0" prefWidth="466.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
                            <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="150.0" />
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 1" wrappingWidth="150.0" y="30.0" />
+                              <Label alignment="TOP_LEFT" prefHeight="18.0" prefWidth="237.0" text="Team name">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="26.0" prefHeight="18.0" prefWidth="237.0" text="Contact nr." GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="84.0" prefHeight="18.0" prefWidth="237.0" text="Year group" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="26.0" prefHeight="18.0" prefWidth="237.0" text="Skill level" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="teamNameTextField" GridPane.columnIndex="1" />
+                              <TextField fx:id="contactTextField" layoutX="243.0" layoutY="27.0" prefHeight="26.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ComboBox fx:id="yearGroupComboBox" onAction="#test" prefHeight="26.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="skillLevelComboBox" prefHeight="26.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="610.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+                        </GridPane>
+                        <GridPane prefHeight="178.0" prefWidth="434.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
                            <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adding teams" wrappingWidth="150.0" />
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 2" wrappingWidth="150.0" y="30.0" />
+                              <Button mnemonicParsing="false" onAction="#addTeam" prefHeight="31.0" prefWidth="81.0" text="Add team" GridPane.columnIndex="1" />
+                              <Label prefHeight="27.0" prefWidth="375.0" text="Upload with Excel" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="243.0" layoutY="24.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="81.0" text="Import" GridPane.rowIndex="2" />
                            </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="410.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
-                           <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creating groups" wrappingWidth="150.0" />
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 3" wrappingWidth="150.0" y="30.0" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="410.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
-                           <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verify groups/pools" wrappingWidth="150.0" />
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 4" wrappingWidth="150.0" y="30.0" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
-                           <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creating final stage" wrappingWidth="150.0" />
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 5" wrappingWidth="150.0" y="30.0" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="9.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
-                           <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verify final stage" wrappingWidth="150.0" />
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 6" wrappingWidth="150.0" y="30.0" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="142.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
-                           <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create match schedule" wrappingWidth="150.0" />
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 7" wrappingWidth="150.0" y="30.0" />
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="10.0" layoutY="581.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
-                           <children>
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verify match schedule" wrappingWidth="150.0" />
-                              <Text layoutX="80.0" layoutY="35.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Step 8" wrappingWidth="150.0" y="30.0" />
-                           </children>
-                        </AnchorPane>
+                        </GridPane>
                      </children>
                   </VBox>
                </children>
-            </Pane>
-            <VBox prefHeight="894.0" prefWidth="479.0">
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="437.0" prefWidth="300.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add teams manually:" wrappingWidth="482.13671875">
+                  <Label prefHeight="34.0" prefWidth="303.0" text="Team participants">
                      <font>
-                        <Font name="System Bold" size="27.0" />
+                        <Font name="System Bold Italic" size="18.0" />
                      </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <GridPane vgap="20.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  </Label>
+                  <ComboBox fx:id="teamParticipants" onAction="#drawGridPane" prefHeight="26.0" prefWidth="303.0" promptText="Choose pool" />
+                  <HBox prefHeight="335.0" prefWidth="200.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Team name">
-                           <font>
-                              <Font size="27.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contact nr." GridPane.rowIndex="1">
-                           <font>
-                              <Font size="27.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Year group" GridPane.rowIndex="2">
-                           <font>
-                              <Font size="27.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Skill level" GridPane.rowIndex="3">
-                           <font>
-                              <Font size="27.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="teamNameTextField" GridPane.columnIndex="1" />
-                        <TextField fx:id="contactTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <ComboBox fx:id="yearGroupTextField" prefHeight="25.0" prefWidth="268.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <ComboBox fx:id="skillLevelTextField" prefHeight="25.0" prefWidth="291.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                     </children>
-                  </GridPane>
-                  <Button mnemonicParsing="false" onMouseClicked="#addTeam" text="Add team">
-                     <font>
-                        <Font size="27.0" />
-                     </font>
-                  </Button>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0">
-                     <font>
-                        <Font size="43.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add teams by importing excel file:">
-                     <font>
-                        <Font name="System Bold" size="27.0" />
-                     </font>
-                  </Text>
-                  <Button mnemonicParsing="false" text="Import">
-                     <font>
-                        <Font size="27.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
-            <VBox prefHeight="894.0" prefWidth="116.0" />
-            <VBox prefHeight="880.0" prefWidth="581.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Team participants:">
-                     <font>
-                        <Font name="System Bold" size="27.0" />
-                     </font>
-                  </Text>
-                  <ComboBox prefHeight="25.0" prefWidth="588.0" />
-                  <HBox prefHeight="414.0" prefWidth="588.0">
-                     <children>
-                        <TableView fx:id="tw" prefHeight="414.0" prefWidth="588.0">
-                          <columns>
-                            <TableColumn fx:id="teamNameColumn" prefWidth="75.0" text="Team name" />
-                            <TableColumn fx:id="yearGroupColumn" prefWidth="75.0" text="Year group" />
-                              <TableColumn fx:id="skillLevelColumn" prefWidth="75.0" text="Skill level" />
-                              <TableColumn fx:id="contactColumn" prefWidth="75.0" text="Contact" />
-                          </columns>
-                           <columnResizePolicy>
-                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                           </columnResizePolicy>
-                        </TableView>
+                        <ScrollPane prefHeight="335.0" prefWidth="347.0">
+                           <content>
+                              <GridPane fx:id="gridPane" gridLinesVisible="true" prefHeight="331.0" prefWidth="285.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
                      </children>
                   </HBox>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                  <Button mnemonicParsing="false" text="Remove team">
-                     <font>
-                        <Font size="27.0" />
-                     </font>
-                  </Button>
-                  <GridPane vgap="30.0">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Back" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                           <font>
-                              <Font size="27.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" text="Next step" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                           <font>
-                              <Font size="27.0" />
-                           </font>
-                        </Button>
+                        <Button mnemonicParsing="false" onAction="#removeTeams" prefHeight="31.0" prefWidth="174.0" text="Remove checked teams" textAlignment="RIGHT" />
+                        <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#setOnBackButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Back">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Next">
+                                 <HBox.margin>
+                                    <Insets left="45.0" top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
                      </children>
-                  </GridPane>
+                  </VBox>
                </children>
             </VBox>
          </children>

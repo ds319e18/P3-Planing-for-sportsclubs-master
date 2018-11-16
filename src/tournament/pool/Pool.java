@@ -2,10 +2,7 @@ package tournament.pool;
 
 import tournament.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Pool {
     private ArrayList<Team> teamList;
@@ -53,6 +50,20 @@ public class Pool {
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pool pool = (Pool) o;
+        return yearGroup == pool.yearGroup;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(yearGroup);
+    }
+
     public String getSkillLevel() {
         return skillLevel;
     }
@@ -71,3 +82,4 @@ public class Pool {
 
     //This next part of the class deals with updating the tournament while active
 }
+
