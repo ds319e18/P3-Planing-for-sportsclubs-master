@@ -1,13 +1,11 @@
-package sample;
+package controller;
 
-import Controller.AddingTeamsController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
@@ -21,7 +19,6 @@ import tournament.Team;
 import tournament.Tournament;
 import tournament.pool.Pool;
 
-import java.awt.*;
 import java.io.IOException;
 
 
@@ -69,7 +66,7 @@ public class CreatingGroupController
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("AddingTeams.FXML"));
+        loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
         Parent newWindow = loader.load();
 
         AddingTeamsController atc = loader.getController();

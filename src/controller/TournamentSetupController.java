@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -77,7 +77,7 @@ public class TournamentSetupController {
                 .build();
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("AddingTeams.FXML"));
+        loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
         Parent newWindow = loader.load();
         
         AddingTeamsController atc = loader.getController();
@@ -93,18 +93,7 @@ public class TournamentSetupController {
 
     @FXML
     public void setOnBackButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("AdminPage.FXML"));
-        Scene newScene = new Scene(newWindow);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(newScene);
-        window.show();
-    }
-
-    @FXML
-    public void setOnNextButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("AddingTeams.FXML"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
