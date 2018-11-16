@@ -5,6 +5,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import tournament.MatchDay;
+import tournament.Team;
+import tournament.Tournament;
+import tournament.TournamentType;
+import tournament.pool.bracket.KnockoutPlay;
+import tournament.pool.Pool;
+import tournament.pool.bracket.StandardGroupPlay;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
+
+import static java.time.temporal.ChronoUnit.DAYS;
+
 
 public class Main extends Application {
 
@@ -24,7 +38,8 @@ public class Main extends Application {
         //Database myDatabase = new Database();
         //myDatabase.connect();
 
-        launch(args);
+
+        //launch(args);
 
     }
 

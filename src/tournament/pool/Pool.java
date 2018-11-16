@@ -12,13 +12,14 @@ public class Pool {
     private ArrayList<Team> teamList;
     private GroupBracket groupBracket;
     private KnockoutBracket knockoutBracket;
+    private int matchDurationInMinutes;
 
     public void addGroupBracket(GroupBracket groupBracketType) {
-        this.groupBracket = groupBracketType.createGroupBracket(teamList);
+        this.groupBracket = groupBracketType.createGroupBracket(teamList, matchDurationInMinutes);
     }
 
     public void addKnockoutBracket(KnockoutBracket knockoutBracketType) {
-        this.knockoutBracket = knockoutBracketType.createKnockoutBracket(this.groupBracket);
+        this.knockoutBracket = knockoutBracketType.createKnockoutBracket(this.groupBracket, matchDurationInMinutes);
     }
 
     // Adding team to the correct pool
@@ -84,6 +85,7 @@ public class Pool {
         private ArrayList<Team> teamList = new ArrayList<>();
         private GroupBracket groupBracket;
         private KnockoutBracket knockoutBracket;
+        private int matchDurationInMinutes;
 
         public Builder setSkilllLevel(String skillLevel) {
             this.skillLevel = skillLevel;
@@ -110,6 +112,11 @@ public class Pool {
             return this;
         }
 
+        public Builder setMatchDurationInMinutes(int matchDurationInMinutes) {
+            this.matchDurationInMinutes = matchDurationInMinutes;
+            return this;
+        }
+
         public Pool build() {
             Pool pool = new Pool();
             pool.skillLevel = this.skillLevel;
@@ -117,6 +124,7 @@ public class Pool {
             pool.teamList = this.teamList;
             pool.groupBracket = this.groupBracket;
             pool.knockoutBracket = this.knockoutBracket;
+            pool.matchDurationInMinutes = this.matchDurationInMinutes;
 
             return pool;
         }

@@ -12,14 +12,14 @@ public class PlacementPlay implements KnockoutBracket {
 
     // Hvis gruppestørrelsen er større end 2 skal der throwes en exception
     @Override
-    public PlacementPlay createKnockoutBracket(GroupBracket groupBracket) {
+    public PlacementPlay createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         if (groupBracket.getAmountOfGroups() > 2) {
             // throw some exception
         } else {
             int iter = 0;
 
             while (iter < groupBracket.getGroups().get(0).getTeamList().size() && iter < groupBracket.getGroups().get(1).getTeamList().size()) {
-                this.matches.add(new Match.Builder()
+                this.matches.add(new Match.Builder(matchDurationInMinutes)
                                                     .setName("Placement-Play Match" + iter + 1)
                                                     .setFinished(false)
                                                     .setFirstTeam(groupBracket.getGroups().get(0).getTeamList().get(iter))
@@ -30,6 +30,11 @@ public class PlacementPlay implements KnockoutBracket {
         }
 
         return this;
+    }
+
+    @Override
+    public ArrayList<Match> getMatches() {
+        return this.matches;
     }
 
     // Should only be called when the matches have been played
