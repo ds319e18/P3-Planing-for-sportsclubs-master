@@ -116,7 +116,7 @@ public class AddingTeamsController {
                 gridPane.addRow(gridPane.getRowCount(), name, contact, checkBox);
             }
         } catch (Exception e) {
-            System.out.println("Error occurred");
+            System.out.println("Error drawing GridPane");
         }
         gridPane.setGridLinesVisible(false);
         gridPane.setGridLinesVisible(true);
@@ -169,12 +169,12 @@ public class AddingTeamsController {
     }
 
     void setTeamparticipant(){
-        ObservableList<String> allInOne = FXCollections.observableArrayList();
+        ObservableList<String> poolList = FXCollections.observableArrayList();
         for(Pool pool : tournament.getPoolList() ) {
-            allInOne.add(Integer.toString(pool.getYearGroup()) + pool.getSkillLevel());
+            poolList.add(Integer.toString(pool.getYearGroup()) + pool.getSkillLevel());
         }
 
-        teamParticipants.setItems(allInOne);
+        teamParticipants.setItems(poolList);
 
 
     }

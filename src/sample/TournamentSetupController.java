@@ -12,7 +12,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import tournament.Tournament;
-import tournament.TournamentBuilder;
 import tournament.TournamentType;
 import tournament.pool.Pool;
 

@@ -1,10 +1,10 @@
 package sample;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
@@ -12,19 +12,18 @@ import javafx.scene.text.Text;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.Scene;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.pool.Pool;
 
+import java.awt.*;
 import java.io.IOException;
 
 
 public class CreatingGroupController
 {
     Tournament tournament;
-
-    @FXML
-    ComboBox poolComboBox;
 
     @FXML
     GridPane poolNamesGridPane;
@@ -47,16 +46,20 @@ public class CreatingGroupController
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        setPoolComboBox();
+        setPoolStatusGridPane();
     }
 
-    private void setPoolComboBox() {
-        ObservableList<String> allInOne = FXCollections.observableArrayList();
+    private void setPoolStatusGridPane() {
         for(Pool pool : tournament.getPoolList() ) {
-            allInOne.add(Integer.toString(pool.getYearGroup()) + pool.getSkillLevel());
+            Text text = new Text(pool.getYearGroup() + "" + pool.getSkillLevel());
+            text.setWrappingWidth(80);
+            text.setTextAlignment(TextAlignment.CENTER);
+            Text status = new Text("Not done");
+            status.setWrappingWidth(80);
+            status.setTextAlignment(TextAlignment.CENTER);
+            GridPane.setMargin(text, new Insets(10,0,10,0));
+            poolStatusGridPane.addRow(poolStatusGridPane.getRowCount(), text, status);
         }
-
-        poolComboBox.setItems(allInOne);
     }
 
     @FXML
@@ -78,11 +81,11 @@ public class CreatingGroupController
 
     @FXML
     private void mouseClicked(MouseEvent e) {
-        Node source = (Node)e.getSource();
-        Integer colIndex = GridPane.getColumnIndex(source);
-        Integer rowIndex = GridPane.getRowIndex(source);
-        System.out.println("Mouse clicked cell [" + colIndex + ", " + rowIndex + "].");
-        System.out.println();
+        for(Node node : poolStatusGridPane.getChildren())
+            node.setStyle("-fx-font-weight: normal;");
+
+        Text poolClicked = (Text) poolStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2 + 1);
+        poolClicked.setStyle("-fx-font-weight: bold;");
     }
 
 }
