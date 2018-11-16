@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddingTeamsController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddingTeamsController">
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -271,7 +271,7 @@
                         <Button mnemonicParsing="false" onAction="#removeTeams" prefHeight="31.0" prefWidth="174.0" text="Fjern hold" textAlignment="RIGHT" />
                         <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#setOnBackButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Tilbage">
+                              <Button mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Tilbage">
                                  <HBox.margin>
                                     <Insets top="10.0" />
                                  </HBox.margin>
