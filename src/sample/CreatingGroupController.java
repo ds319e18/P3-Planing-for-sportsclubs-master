@@ -14,6 +14,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.Scene;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import tournament.Team;
 import tournament.Tournament;
 import tournament.pool.Pool;
 
@@ -86,6 +87,28 @@ public class CreatingGroupController
 
         Text poolClicked = (Text) poolStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2 + 1);
         poolClicked.setStyle("-fx-font-weight: bold;");
+
+        drawGridPane(poolClicked.getText());
     }
+
+    @FXML
+    void drawGridPane(String poolClicked) {
+        poolNamesGridPane.getChildren().remove(0, poolNamesGridPane.getChildren().size());
+        try {
+            String teamYearGroup = (poolClicked.length() == 3 ? poolClicked.substring(0, 2)
+                    : poolClicked.substring(0, 1));
+            String teamSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
+                    : poolClicked.substring(1, 2));
+            for (Team team : tournament.findCorrectPool(Integer.parseInt(teamYearGroup), teamSkillLevel).getTeamList()) {
+                Text name = new Text(team.getName());
+                poolNamesGridPane.addRow(poolNamesGridPane.getRowCount(), name);
+            }
+        } catch (Exception e) {
+            System.out.println("Error drawing GridPane");
+        }
+        poolNamesGridPane.setGridLinesVisible(false);
+        poolNamesGridPane.setGridLinesVisible(true);
+    }
+
 
 }
