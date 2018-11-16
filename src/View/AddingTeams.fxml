@@ -20,7 +20,7 @@
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@45398293_468759136948179_6752360962147221504_n.png" />
+            <Image url="@../sample/45398293_468759136948179_6752360962147221504_n.png" />
          </image>
          <VBox.margin>
             <Insets left="497.5" />
@@ -271,7 +271,7 @@
                         <Button mnemonicParsing="false" onAction="#removeTeams" prefHeight="31.0" prefWidth="174.0" text="Fjern hold" textAlignment="RIGHT" />
                         <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Tilbage">
+                              <Button mnemonicParsing="false" onAction="#setOnBackButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Tilbage">
                                  <HBox.margin>
                                     <Insets top="10.0" />
                                  </HBox.margin>

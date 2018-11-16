@@ -1,4 +1,4 @@
-package sample;
+package Controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.TournamentType;
@@ -80,10 +79,9 @@ public class TournamentSetupController {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("AddingTeams.FXML"));
         Parent newWindow = loader.load();
-
+        
         AddingTeamsController atc = loader.getController();
         atc.setTournament(tournament);
-        atc.setProgressBox(progressBox);
 
         Scene newScene = new Scene(newWindow);
 

@@ -1,4 +1,4 @@
-package sample;
+package Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,7 +29,7 @@ public class LoginController {
     @FXML
     public void setOnBackButtonClicked(ActionEvent event) throws IOException {
 
-        Parent newWindow = FXMLLoader.load(getClass().getResource("FrontPage.FXML"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/FrontPage.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -41,7 +41,7 @@ public class LoginController {
     @FXML
     public void checkPassword(ActionEvent event) throws IOException {
         if(usernameTextField.getText().equals("username") && passwordTextField.getText().equals("password")) {
-            Parent newWindow = FXMLLoader.load(getClass().getResource("AdminPage.FXML"));
+            Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.fxml"));
             Scene newScene = new Scene(newWindow);
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -1,10 +1,9 @@
-package sample;
+package Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -26,7 +24,7 @@ public class FrontPageController {
 
     @FXML
     public void setOnLoginButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("Login.FXML"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/Login.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

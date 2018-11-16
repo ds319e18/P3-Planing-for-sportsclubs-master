@@ -1,4 +1,4 @@
-package sample;
+package Controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,7 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -51,10 +50,6 @@ public class AddingTeamsController {
         setTeamparticipant();
     }
 
-    public void setProgressBox(VBox progressBox) {
-        this.progressBox = progressBox;
-    }
-
     @FXML
     void initialize() {
         highlightProgressBox();
@@ -62,7 +57,7 @@ public class AddingTeamsController {
 
     @FXML
     public void backButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("TournamentSetup.FXML"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/TournamentSetup.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

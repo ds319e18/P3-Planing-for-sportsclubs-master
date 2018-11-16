@@ -1,4 +1,4 @@
-package sample;
+package Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,7 +27,7 @@ public class AdminPageController {
 
     @FXML
     public void setOnCreateTournamentButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("TournamentSetup.FXML"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/TournamentSetup.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -37,7 +37,7 @@ public class AdminPageController {
     }
     @FXML
     public void setOnLogoutButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("FrontPage.FXML"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/FrontPage.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
