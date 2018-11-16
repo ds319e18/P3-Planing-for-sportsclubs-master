@@ -1,26 +1,24 @@
 package tournament.pool;
 
 import tournament.*;
+import tournament.pool.bracket.GroupBracket;
+import tournament.pool.bracket.KnockoutBracket;
 
 import java.util.*;
 
 public class Pool {
+    private String skillLevel;
+    private int yearGroup;
     private ArrayList<Team> teamList;
     private GroupBracket groupBracket;
     private KnockoutBracket knockoutBracket;
-    private String skillLevel;
-    private int yearGroup;
 
-    //This first part of the class deals with creating the tournament
-
-    public Pool(String skillLevel, int yearGroup) {
-        this.skillLevel = skillLevel;
-        this.yearGroup = yearGroup;
-        teamList = new ArrayList<>();
+    public void addGroupBracket(GroupBracket groupBracketType) {
+        this.groupBracket = groupBracketType.createGroupBracket(teamList);
     }
 
-    public void addKnockoutBracket() {
-        //this.knockoutBracket = new KnockoutBracket();
+    public void addKnockoutBracket(KnockoutBracket knockoutBracketType) {
+        this.knockoutBracket = knockoutBracketType.createKnockoutBracket(this.groupBracket);
     }
 
     // Adding team to the correct pool
@@ -40,14 +38,12 @@ public class Pool {
 
     // Removes a team by first finding the correct pool, then after removing the correct team in the pool.
     public void removeTeam(String name) {
-
-        for (Team teams : this.teamList) {
-            if (teams.getName().equals(name)) {
-                this.teamList.remove(teams);
+        for (int i = teamList.size() - 1; i >= 0; i--) {
+            if (teamList.get(i).getName().equals(name)) {
+                teamList.remove(teamList.get(i));
             }
         }
         Collections.sort(this.teamList);
-
     }
 
     @Override
@@ -60,7 +56,6 @@ public class Pool {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(yearGroup);
     }
 
@@ -81,5 +76,50 @@ public class Pool {
     }
 
     //This next part of the class deals with updating the tournament while active
+
+    // Inner Builder-class
+    public static class Builder {
+        private String skillLevel;
+        private int yearGroup;
+        private ArrayList<Team> teamList = new ArrayList<>();
+        private GroupBracket groupBracket;
+        private KnockoutBracket knockoutBracket;
+
+        public Builder setSkilllLevel(String skillLevel) {
+            this.skillLevel = skillLevel;
+            return this;
+        }
+
+        public Builder setYearGroup(int yearGroup) {
+            this.yearGroup = yearGroup;
+            return this;
+        }
+
+        public Builder setTeamList(Team team) {
+            this.teamList.add(team);
+            return this;
+        }
+
+        public Builder setGroupBracket(GroupBracket groupBracket) {
+            this.groupBracket = groupBracket;
+            return this;
+        }
+
+        public Builder setKnockoutBracket(KnockoutBracket knockoutBracket) {
+            this.knockoutBracket = knockoutBracket;
+            return this;
+        }
+
+        public Pool build() {
+            Pool pool = new Pool();
+            pool.skillLevel = this.skillLevel;
+            pool.yearGroup = this.yearGroup;
+            pool.teamList = this.teamList;
+            pool.groupBracket = this.groupBracket;
+            pool.knockoutBracket = this.knockoutBracket;
+
+            return pool;
+        }
+    }
 }
 

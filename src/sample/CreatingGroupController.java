@@ -1,151 +1,91 @@
 package sample;
 
-import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
-import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.Scene;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
+import tournament.Tournament;
+import tournament.pool.Pool;
+
+import java.awt.*;
+import java.io.IOException;
 
 
-public class CreatingGroupController{
+public class CreatingGroupController
+{
+    Tournament tournament;
 
     @FXML
-    private ListView<String> checkListView;
-    @FXML
-    private ListView<Cell> poolListView;
-    @FXML
-    private ListView<String> groupListView;
-    @FXML
-    private ListView<String> teamListView;
-    @FXML
-    private ComboBox groupNrCombobax;
-    @FXML
-    private ComboBox vsNrCombobax;
-    @FXML
-    private Label poolLabel;
-    @FXML
-    private Label amountOfTeamsLabel;
-    @FXML
-    private Button saveButton;
-    @FXML
-    private Button nextButton;
-    @FXML
-    private Button backButton;
-    @FXML
-    private Button exitButton;
+    GridPane poolNamesGridPane;
 
-    public void initialize(){
-        Cell cell1 = new Cell();
-        Cell cell2 = new Cell();
-        Cell cell3 = new Cell();
-        groupNrCombobax.setItems(groupNrList);
-        vsNrCombobax.setItems(vsNrList);
-        poolListView.setItems(FXCollections.observableArrayList(cell1));
-        checkListView.setItems(checkListObservable);
-        groupListView.setItems(groupListObservable);
-        //teamListView.setItems(teamListObservable);
-        saveButton.setOnAction(this::saveButtonAction);
-        nextButton.setOnAction(this::nextButtonAction);
-        backButton.setOnAction(this::backButtonAction);
-        exitButton.setOnAction(this::exitButtonAction);
+    @FXML
+    GridPane poolStatusGridPane;
+
+    @FXML
+    Text poolNameText;
+
+    @FXML
+    Text amountOfTeamsText;
+
+    @FXML
+    ComboBox amountOfGroupsComboBox;
+
+    @FXML
+    ComboBox matchesPrGroupsComboBox;
+
+
+    public void setTournament(Tournament tournament) {
+        this.tournament = tournament;
+        setPoolStatusGridPane();
+    }
+
+    private void setPoolStatusGridPane() {
+        for(Pool pool : tournament.getPoolList() ) {
+            Text text = new Text(pool.getYearGroup() + "" + pool.getSkillLevel());
+            text.setWrappingWidth(80);
+            text.setTextAlignment(TextAlignment.CENTER);
+            Text status = new Text("Not done");
+            status.setWrappingWidth(80);
+            status.setTextAlignment(TextAlignment.CENTER);
+            GridPane.setMargin(text, new Insets(10,0,10,0));
+            poolStatusGridPane.addRow(poolStatusGridPane.getRowCount(), text, status);
+        }
+    }
+
+    @FXML
+    public void setBackButtonPressed(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("AddingTeams.FXML"));
+        Parent newWindow = loader.load();
+
+        AddingTeamsController atc = loader.getController();
+        atc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 
     @FXML
-    private ObservableList<String> groupNrList = FXCollections.observableArrayList(
-            "1", "2","3","4","5","6"
-    );
-    private ObservableList<String> vsNrList = FXCollections.observableArrayList(
-            "1", "2","3","4","5"
-    );
-    private ObservableList<String> checkListObservable = FXCollections.observableArrayList(
-            "Check 1", "Check 2"
-    );
-    private ObservableList<String> groupListObservable = FXCollections.observableArrayList(
-            "Group 1", "Group 2"
-    );
-    private ObservableList<String> teamListObservable = FXCollections.observableArrayList(
-            "Team 1", "Team 2", "Team 3", "Team 4"
-    );
-    @FXML
-    private void saveButtonAction(ActionEvent event) {
-        if(event.getSource()== saveButton){ //Check if the event is called with the saveButton
-            System.out.println("0");//action
-            checkListObservable.set(poolListView.getSelectionModel().getSelectedIndex(), "Done");
-        }
-    }
-    @FXML
-    private void nextButtonAction(ActionEvent event) {
-        if(event.getSource()== nextButton){ //Check if the event is called with the saveButton
-            System.out.println("1");//action
-        }
-    }
-    @FXML
-    private void backButtonAction(ActionEvent event) {
-        if(event.getSource()== backButton){ //Check if the event is called with the saveButton
-            System.out.println("2");//action
-        }
-    }
-    @FXML
-    private void exitButtonAction(ActionEvent event) {
-        if(event.getSource()== exitButton){ //Check if the event is called with the saveButton
-            System.out.println("3"); //action
-        }
-    }
-    @FXML public void checkListMouseClick(MouseEvent arg0) {
-        // System.out.println("clicked on " + checkListView.getSelectionModel().getSelectedItem());
-        //checkListView.get(0).nameProperty().set("Changing");
-        //checkListView.set(checkListView.getSelectionModel().select(0), "Done");
-        //checkListView.getSelectionModel().getSelectedItem().setText("Done");
+    private void mouseClicked(MouseEvent e) {
+        for(Node node : poolStatusGridPane.getChildren())
+            node.setStyle("-fx-font-weight: normal;");
 
-        //list.set(index,text)
-        //checkListObservable.set(checkListView.getSelectionModel().getSelectedIndex(), "Done");
-    }
-
-    //Function for the list of pools
-    static class Cell extends ListCell<String>{
-
-        //Components for list
-        HBox hbox = new HBox();
-        Button editButton = new Button("Edit");
-        Label poolLabel = new Label("Pool");
-        Pane pane = new Pane();
-
-        //Setup list
-        public Cell(){
-            super(); //?
-            hbox.getChildren().addAll(poolLabel, pane, editButton);
-            System.out.println(editButton);
-            HBox.setHgrow(pane, Priority.ALWAYS);
-            editButton.setOnAction(event -> poolLabel.setText("U16")); //Action on button
-        }
-
-        //Override method for updating list
-        public void updateItem(String name, Boolean empty){
-            setText(null);
-            setGraphic(null);
-            if(name != null && !empty){
-                poolLabel.setText("Add pool");
-                setGraphic(hbox);
-            }
-        }
+        Text poolClicked = (Text) poolStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2 + 1);
+        poolClicked.setStyle("-fx-font-weight: bold;");
     }
 
 }

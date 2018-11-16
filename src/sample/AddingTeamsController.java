@@ -2,16 +2,13 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.ObservableSet;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
@@ -26,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 
 public class AddingTeamsController {
@@ -65,7 +61,7 @@ public class AddingTeamsController {
     }
 
     @FXML
-    public void setOnBackButtonClicked(ActionEvent event) throws IOException {
+    public void backButtonClicked(ActionEvent event) throws IOException {
         Parent newWindow = FXMLLoader.load(getClass().getResource("TournamentSetup.FXML"));
         Scene newScene = new Scene(newWindow);
 
@@ -75,12 +71,18 @@ public class AddingTeamsController {
         window.show();
     }
 
-    @FXML //TODO: Is not connected to SceneBuilder.
-    public void setOnNextButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource(".FXML"));
+    @FXML
+    public void nextButtonClicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("CreatingGroups.FXML"));
+        Parent newWindow = loader.load();
+
+        CreatingGroupController atc = loader.getController();
+        atc.setTournament(tournament);
+
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
         window.show();
@@ -96,12 +98,11 @@ public class AddingTeamsController {
 
 
     @FXML
-    void test() {
+    void setSkillLevelComboBoxItems() {
         ObservableList<String> SkillLevelComboBoxlist = FXCollections.observableArrayList();
         for (Pool pool : tournament.getPoolList() ) {
             if (yearGroupComboBox.getValue().equals(Integer.toString(pool.getYearGroup()))) {
                 SkillLevelComboBoxlist.add(pool.getSkillLevel());
-
             }
 
         }
@@ -125,7 +126,7 @@ public class AddingTeamsController {
                 gridPane.addRow(gridPane.getRowCount(), name, contact, checkBox);
             }
         } catch (Exception e) {
-            System.out.println("Error occurred");
+            System.out.println("Error drawing GridPane");
         }
         gridPane.setGridLinesVisible(false);
         gridPane.setGridLinesVisible(true);
@@ -136,18 +137,23 @@ public class AddingTeamsController {
         // Goes through every row of the GridPane.
         for (int i = gridPane.getRowCount() - 1; i >= 0; i--) {
             // 3 Children in each Row. This finds the 3rd child in the row.
-            CheckBox checkBox = (CheckBox) gridPane.getChildren().get((i+1)*3 - 1);
+            CheckBox checkBox = (CheckBox) gridPane.getChildren().get((i)*3 + 2);
 
             if (checkBox.isSelected()) {
-                System.out.println(i);
-                gridPane.getChildren().remove((i)*3, (i)*3 + 3);
+                String teamYearGroup = (teamParticipants.getValue().length() == 3 ? teamParticipants.getValue().substring(0, 2)
+                        : teamParticipants.getValue().substring(0, 1));
+                String teamSkillLevel = (teamParticipants.getValue().length() == 3 ? teamParticipants.getValue().substring(2, 3)
+                        : teamParticipants.getValue().substring(1, 2));
+                Text teamName = (Text) gridPane.getChildren().get(i*3);
+
+                tournament.findCorrectPool(Integer.parseInt(teamYearGroup), teamSkillLevel)
+                        .removeTeam(teamName.getText());
             }
         }
-
+        drawGridPane();
     }
 
     void setComboBoxItems() {
-        int i = 0;
         Set<Integer> YearGroupComboSet = new HashSet<>();
         ObservableList<String> YearGroupComboBoxlist = FXCollections.observableArrayList();
 
@@ -173,12 +179,12 @@ public class AddingTeamsController {
     }
 
     void setTeamparticipant(){
-        ObservableList<String> allInOne = FXCollections.observableArrayList();
+        ObservableList<String> poolList = FXCollections.observableArrayList();
         for(Pool pool : tournament.getPoolList() ) {
-            allInOne.add(Integer.toString(pool.getYearGroup()) + pool.getSkillLevel());
+            poolList.add(Integer.toString(pool.getYearGroup()) + pool.getSkillLevel());
         }
 
-        teamParticipants.setItems(allInOne);
+        teamParticipants.setItems(poolList);
 
 
     }

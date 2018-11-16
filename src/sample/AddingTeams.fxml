@@ -215,7 +215,7 @@
                               </Label>
                               <TextField fx:id="teamNameTextField" GridPane.columnIndex="1" />
                               <TextField fx:id="contactTextField" layoutX="243.0" layoutY="27.0" prefHeight="26.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <ComboBox fx:id="yearGroupComboBox" onAction="#test" prefHeight="26.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ComboBox fx:id="yearGroupComboBox" onAction="#setSkillLevelComboBoxItems" prefHeight="26.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <ComboBox fx:id="skillLevelComboBox" prefHeight="26.0" prefWidth="233.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
