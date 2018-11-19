@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -53,9 +53,6 @@ public class TournamentSetupController {
 
     private Tournament tournament;
 
-    public TournamentSetupController() {
-    }
-
     // this method will be called after loading the FxML document
     public void initialize() {
         tournamentTypeCombobox.setItems(FXCollections.observableArrayList(
@@ -77,7 +74,7 @@ public class TournamentSetupController {
                 .build();
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("AddingTeams.FXML"));
+        loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
         Parent newWindow = loader.load();
         
         AddingTeamsController atc = loader.getController();
@@ -93,7 +90,7 @@ public class TournamentSetupController {
 
     @FXML
     public void setOnBackButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("AdminPage.FXML"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -131,9 +128,9 @@ public class TournamentSetupController {
                     yearString = titledPane.getText().replace(String.valueOf
                             (titledPane.getText().charAt(0)), "");
                     poolList.add(new Pool.Builder()
-                    .setSkilllLevel(checkBox.getText())
-                    .setYearGroup(Integer.parseInt(yearString))
-                    .build());
+                                                    .setSkilllLevel(checkBox.getText())
+                                                    .setYearGroup(Integer.parseInt(yearString))
+                                                    .build());
                 }
             }
         }
