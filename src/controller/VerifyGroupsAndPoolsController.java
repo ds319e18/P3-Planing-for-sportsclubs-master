@@ -1,16 +1,23 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.pool.Group;
 import tournament.pool.Pool;
+
+import java.io.IOException;
 
 public class VerifyGroupsAndPoolsController {
     Tournament tournament;
@@ -23,9 +30,6 @@ public class VerifyGroupsAndPoolsController {
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        System.out.println(tournament.getPoolList().get(0).getGroupBracket().getAmountOfGroups());
-        for (Group group : tournament.getPoolList().get(0).getGroupBracket().getGroups())
-            System.out.println(group.getTeamList());
         setPoolStatusGridPane();
     }
 
@@ -83,5 +87,22 @@ public class VerifyGroupsAndPoolsController {
 
             groupsGridPane.addColumn(groupsGridPane.getColumnCount(), gridPane);
         }
+    }
+
+    @FXML
+    public void setBackButtonPressed(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/CreatingGroups.FXML"));
+        Parent newWindow = loader.load();
+
+        CreatingGroupController atc = loader.getController();
+        atc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 }

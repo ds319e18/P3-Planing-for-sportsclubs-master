@@ -12,4 +12,11 @@ public interface GroupBracket {
     int getAmountOfAdvancingTeamsPrGroup();
     int getAmountOfGroups();
     ArrayList<Group> getGroups();
+    // Use this method when choosing how many teams advance from each group
+    void setAdvancingTeamsPrGroup(int advancingTeamsPrGroup);
+
+    // Use this method when choosing how many matches against each opponent each team should have
+    void setMatchesPrTeamAgainstOpponentInGroup(int matchesPrTeamAgainstOpponentInGroup);
+
+    int getMatchesPrTeamAgainstOpponentInGroup();
 }

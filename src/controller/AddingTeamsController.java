@@ -121,7 +121,7 @@ public class AddingTeamsController {
                 gridPane.addRow(gridPane.getRowCount(), name, contact, checkBox);
             }
         } catch (Exception e) {
-            System.out.println("Error drawing GridPane");
+            System.out.println("No choice selected in the combobox!");
         }
         gridPane.setGridLinesVisible(false);
         gridPane.setGridLinesVisible(true);

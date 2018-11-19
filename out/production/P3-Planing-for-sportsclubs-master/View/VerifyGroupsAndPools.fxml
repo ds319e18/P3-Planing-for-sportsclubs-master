@@ -299,7 +299,7 @@
                   <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Verify" GridPane.columnIndex="10" />
                   <Button layoutX="1075.0" layoutY="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Edit" GridPane.columnIndex="9" />
                   <Button layoutX="862.0" layoutY="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.columnIndex="10" GridPane.rowIndex="2" />
-                  <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                  <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.columnIndex="9" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children>

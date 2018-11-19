@@ -26,6 +26,7 @@ public class StandardGroupPlay implements GroupBracket {
         this.matchesPrTeamAgainstOpponentInGroup = matchesPrTeamAgainstOpponentInGroup;
     }
 
+
     // This method creates the group bracket
     @Override
     public StandardGroupPlay createGroupBracket(ArrayList<Team> poolTeamList) {
@@ -112,5 +113,9 @@ public class StandardGroupPlay implements GroupBracket {
     @Override
     public ArrayList<Group> getGroups() {
         return groups;
+    }
+
+    public int getMatchesPrTeamAgainstOpponentInGroup() {
+        return matchesPrTeamAgainstOpponentInGroup;
     }
 }
