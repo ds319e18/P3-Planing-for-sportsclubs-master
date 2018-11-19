@@ -243,7 +243,7 @@
                   </VBox>
                </children>
             </HBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="502.0" prefWidth="53.0" />
             <VBox prefHeight="437.0" prefWidth="300.0">
                <children>
                   <Label prefHeight="34.0" prefWidth="303.0" text="Holddeltagere">
@@ -281,6 +281,7 @@
                                     <Insets left="45.0" top="10.0" />
                                  </HBox.margin>
                               </Button>
+                              <VBox prefHeight="200.0" prefWidth="100.0" />
                            </children>
                            <VBox.margin>
                               <Insets top="20.0" />

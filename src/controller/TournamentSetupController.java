@@ -53,9 +53,6 @@ public class TournamentSetupController {
 
     private Tournament tournament;
 
-    public TournamentSetupController() {
-    }
-
     // this method will be called after loading the FxML document
     public void initialize() {
         tournamentTypeCombobox.setItems(FXCollections.observableArrayList(
@@ -120,9 +117,9 @@ public class TournamentSetupController {
                     yearString = titledPane.getText().replace(String.valueOf
                             (titledPane.getText().charAt(0)), "");
                     poolList.add(new Pool.Builder()
-                    .setSkilllLevel(checkBox.getText())
-                    .setYearGroup(Integer.parseInt(yearString))
-                    .build());
+                                                    .setSkilllLevel(checkBox.getText())
+                                                    .setYearGroup(Integer.parseInt(yearString))
+                                                    .build());
                 }
             }
         }

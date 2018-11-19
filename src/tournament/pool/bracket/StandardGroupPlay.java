@@ -12,6 +12,10 @@ public class StandardGroupPlay implements GroupBracket {
     private int matchesPrTeamAgainstOpponentInGroup;
     private int amountOfGroups;
 
+    public StandardGroupPlay(int amountOfGroups) {
+        this.amountOfGroups = amountOfGroups;
+    }
+
     // Use this method when choosing how many teams advance from each group
     public void setAdvancingTeamsPrGroup(int advancingTeamsPrGroup) {
         this.advancingTeamsPrGroup = advancingTeamsPrGroup;
@@ -21,6 +25,7 @@ public class StandardGroupPlay implements GroupBracket {
     public void setMatchesPrTeamAgainstOpponentInGroup(int matchesPrTeamAgainstOpponentInGroup) {
         this.matchesPrTeamAgainstOpponentInGroup = matchesPrTeamAgainstOpponentInGroup;
     }
+
 
     // This method creates the group bracket
     @Override
@@ -108,5 +113,9 @@ public class StandardGroupPlay implements GroupBracket {
     @Override
     public ArrayList<Group> getGroups() {
         return groups;
+    }
+
+    public int getMatchesPrTeamAgainstOpponentInGroup() {
+        return matchesPrTeamAgainstOpponentInGroup;
     }
 }

@@ -57,6 +57,7 @@ public class Tournament {
             this.name = name;
         }
 
+
         public Builder setActive(boolean active) {
             this.active = active;
             return this;
