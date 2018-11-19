@@ -2,12 +2,14 @@ package tournament.pool.bracket;
 
 import tournament.Match;
 import tournament.Team;
+import tournament.TeamPointsComp;
 import tournament.pool.Group;
 
 import java.util.ArrayList;
 
 public class StandardGroupPlay implements GroupBracket {
     private ArrayList<Group> groups = new ArrayList<>();
+    private ArrayList<Match> matches = new ArrayList<>();
     private int advancingTeamsPrGroup;
     private int matchesPrTeamAgainstOpponentInGroup;
     private int amountOfGroups;
@@ -16,11 +18,13 @@ public class StandardGroupPlay implements GroupBracket {
         this.amountOfGroups = amountOfGroups;
     }
 
+    @Override
     // Use this method when choosing how many teams advance from each group
     public void setAdvancingTeamsPrGroup(int advancingTeamsPrGroup) {
         this.advancingTeamsPrGroup = advancingTeamsPrGroup;
     }
 
+    @Override
     // Use this method when choosing how many matches against each opponent each team should have
     public void setMatchesPrTeamAgainstOpponentInGroup(int matchesPrTeamAgainstOpponentInGroup) {
         this.matchesPrTeamAgainstOpponentInGroup = matchesPrTeamAgainstOpponentInGroup;
@@ -49,6 +53,7 @@ public class StandardGroupPlay implements GroupBracket {
     @Override
     public ArrayList<Team> advanceTeams() {
         ArrayList<Team> advancingTeams = new ArrayList<>();
+
         int count = 0;
         for (Group group : this.groups) {
             int teamsAdded = 0;
@@ -61,7 +66,7 @@ public class StandardGroupPlay implements GroupBracket {
                 }
             } else {
                 for (int iter = advancingTeamsPrGroup; iter > 0; iter--) {
-                    advancingTeams.add(group.getTeamList().get(iter));
+                    advancingTeams.add(group.getTeamList().get(iter - 1));
                 }
 
             }
@@ -72,8 +77,7 @@ public class StandardGroupPlay implements GroupBracket {
     }
 
     @Override
-    public ArrayList<Match> createMatches(int matchDurationInMinutes) {
-        ArrayList<Match> matches = new ArrayList<>();
+    public void createMatches(int matchDurationInMinutes) {
         int secondTeamIndex = 0;
 
         for (int iter = 0; iter < matchesPrTeamAgainstOpponentInGroup; iter++) {
@@ -85,19 +89,17 @@ public class StandardGroupPlay implements GroupBracket {
                     // the away teams. This makes sure that we dont get any duplicate matches.
                     for (int firstTeamIndex = 0; firstTeamIndex < group.getTeamList().size() - 1; firstTeamIndex++) {
                         for (secondTeamIndex = firstTeamIndex + 1; secondTeamIndex < group.getTeamList().size(); secondTeamIndex++) {
-                            matches.add(new Match.Builder(matchDurationInMinutes)
+                            this.matches.add(new Match.Builder(matchDurationInMinutes)
                                     .setFirstTeam(group.getTeamList().get(firstTeamIndex))
                                     .setSecondTeam(group.getTeamList().get(secondTeamIndex))
                                     .setFinished(false)
-                                    .setName("Pool Match")
+                                    .setName("Group Match:" + '\t')
                                     .build());
                         }
                     }
                 }
             }
         }
-
-        return matches;
     }
 
     @Override
@@ -115,7 +117,8 @@ public class StandardGroupPlay implements GroupBracket {
         return groups;
     }
 
-    public int getMatchesPrTeamAgainstOpponentInGroup() {
-        return matchesPrTeamAgainstOpponentInGroup;
+    @Override
+    public ArrayList<Match> getMatches() {
+        return this.matches;
     }
 }

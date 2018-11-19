@@ -14,10 +14,13 @@ public class KnockoutPlay implements KnockoutBracket {
     @Override
     public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         int numberOfMatches = (groupBracket.getAmountOfGroups() * groupBracket.getAmountOfAdvancingTeamsPrGroup()) - 1;
-        for (int i = 1; i < numberOfMatches; i++) {
+
+        for (int i = 1; i < numberOfMatches + 1; i++) {
             this.matches.add(new Match.Builder(matchDurationInMinutes)
-                                                .setName("Knockout-Play Match" + i)
+                                                .setName("Knockout Match:")
                                                 .setFinished(false)
+                                                .setFirstTeam(new Team("TBD"))
+                                                .setSecondTeam(new Team("TBD"))
                                                 .build());
         }
         return this;
@@ -31,11 +34,12 @@ public class KnockoutPlay implements KnockoutBracket {
     // This method creates each next round of the final stage by adding teams to the matches
     // This method should only be called when a round has finished
     // We can add the teams one at a time because they are already sorted correctly by the group stage
+    @Override
     public void createNextRound(ArrayList<Team> advancingTeams) {
         int first = 0;
         int second = 1;
         for (Match match : this.matches) {
-            if (!match.isFinished()) {
+            if (!match.isFinished() && first < advancingTeams.size()) {
                 match.setFirstTeam(advancingTeams.get(first));
                 match.setSecondTeam(advancingTeams.get(second));
                 first = first + 2;
@@ -45,6 +49,7 @@ public class KnockoutPlay implements KnockoutBracket {
     }
 
     // This method finds the teams advancing onto the next round. Should be called as a parameter to createNextRound()
+    @Override
     public ArrayList<Team> advanceTeams() {
         ArrayList<Team> advancingTeams = new ArrayList<>();
 

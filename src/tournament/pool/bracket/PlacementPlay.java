@@ -37,6 +37,16 @@ public class PlacementPlay implements KnockoutBracket {
         return this.matches;
     }
 
+    @Override
+    public void createNextRound(ArrayList<Team> advancingTeams) {
+
+    }
+
+    @Override
+    public ArrayList<Team> advanceTeams() {
+        return null;
+    }
+
     // Should only be called when the matches have been played
     public void calculateResults() {
         // The match-list should already be sorted in a way such that first is the match for 1. place, then for 3. place and so on.

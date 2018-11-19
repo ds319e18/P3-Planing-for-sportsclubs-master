@@ -36,6 +36,25 @@ public class Tournament {
         return active;
     }
 
+    public MatchSchedule getMatchSchedule() {
+        return matchSchedule;
+    }
+
+    public ArrayList<Field> getFieldList() {
+        return fieldList;
+    }
+
+    public ArrayList<Match> getAllMatches() {
+        ArrayList<Match> allMatches = new ArrayList<>();
+
+        for (Pool pool : this.poolList) {
+            allMatches.addAll(pool.getGroupBracket().getMatches());
+            allMatches.addAll(pool.getKnockoutBracket().getMatches());
+        }
+
+        return allMatches;
+    }
+
     public ArrayList<Pool> getPoolList() {
         return poolList;
     }

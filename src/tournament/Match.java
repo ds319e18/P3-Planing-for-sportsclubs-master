@@ -17,8 +17,19 @@ public class Match implements Comparable<Match> {
     private Team winner;
     private Team loser;
     private boolean drawn;
+    private boolean planned;
 
     // Setters for creating a match (used in the knockout stage)
+
+
+    public void setPlanned(boolean planned) {
+        this.planned = planned;
+    }
+
+    public boolean isPlanned() {
+        return planned;
+    }
+
     public void setFirstTeam(Team firstTeam) {
         this.firstTeam = firstTeam;
     }
@@ -40,12 +51,17 @@ public class Match implements Comparable<Match> {
         if (result.getFirstTeamScore() > result.getSecondTeamScore()) {
             this.winner = firstTeam;
             this.loser = secondTeam;
+            firstTeam.setPoints(3);
         } else if (result.getFirstTeamScore() < result.getSecondTeamScore()) {
             this.winner = secondTeam;
+            secondTeam.setPoints(3);
             this.loser = firstTeam;
         } else {
             this.drawn = true;
+            firstTeam.setPoints(1);
+            secondTeam.setPoints(1);
         }
+        this.finished = true;
     }
 
     public Team getWinner() {
@@ -60,17 +76,31 @@ public class Match implements Comparable<Match> {
         return duration;
     }
 
+    public Field getField() {
+        return field;
+    }
+
     public boolean isFinished() {
         return finished;
     }
 
-    public void updateMatchResult(){
+    public void updateMatchResult() {
 
     }
 
     // Sorting matches based on year group to sort in the MatchDay class
     public int compareTo(Match o) {
         return this.firstTeam.getYearGroup() - o.firstTeam.getYearGroup();
+    }
+
+    @Override
+    public String toString() {
+        return  name + '\t' +
+                timestamp +
+                " " + firstTeam.getName() +
+                " - " + secondTeam.getName() +
+                " at " + field + '\n';
+
     }
 
     // Inner Match-builder
@@ -127,6 +157,7 @@ public class Match implements Comparable<Match> {
             match.field = this.field;
             match.firstTeam = this.firstTeam;
             match.secondTeam = this.secondTeam;
+            match.planned = false;
 
             return match;
         }

@@ -1,10 +1,11 @@
 package tournament;
 
+import java.util.Comparator;
 import java.util.Objects;
 
-public class Team implements Comparable<Team>{
+public class Team {
     private String name;
-    private int points;
+    private int points = 0;
     private String skillLevel;
     private int yearGroup;
     private String contact;
@@ -22,12 +23,24 @@ public class Team implements Comparable<Team>{
         this.yearGroup = yearGroup;
     }
 
+    public Team(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setPoints(int points) {
+        this.points += points;
+    }
+
+    public int getPoints() {
+        return points;
     }
 
     public String getContact() {
@@ -66,10 +79,5 @@ public class Team implements Comparable<Team>{
     @Override
     public int hashCode() {
         return Objects.hash(name, skillLevel, yearGroup);
-    }
-
-    @Override
-    public int compareTo(Team o) {
-        return this.getName().compareTo(o.getName());
     }
 }

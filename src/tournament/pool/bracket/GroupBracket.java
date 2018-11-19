@@ -8,15 +8,12 @@ import java.util.ArrayList;
 public interface GroupBracket {
     GroupBracket createGroupBracket(ArrayList<Team> poolTeamList);
     ArrayList<Team> advanceTeams();
-    ArrayList<Match> createMatches(int matchDurationInMinutes);
+    void createMatches(int matchDurationInMinutes);
     int getAmountOfAdvancingTeamsPrGroup();
     int getAmountOfGroups();
+    ArrayList<Match> getMatches();
     ArrayList<Group> getGroups();
-    // Use this method when choosing how many teams advance from each group
     void setAdvancingTeamsPrGroup(int advancingTeamsPrGroup);
-
-    // Use this method when choosing how many matches against each opponent each team should have
     void setMatchesPrTeamAgainstOpponentInGroup(int matchesPrTeamAgainstOpponentInGroup);
 
-    int getMatchesPrTeamAgainstOpponentInGroup();
 }
