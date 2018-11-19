@@ -15,7 +15,7 @@ public class Pool {
     private int matchDurationInMinutes;
 
     public void addGroupBracket(GroupBracket groupBracketType) {
-        this.groupBracket = groupBracketType.createGroupBracket(teamList, matchDurationInMinutes);
+        this.groupBracket = groupBracketType.createGroupBracket(teamList);
     }
 
     public void addKnockoutBracket(KnockoutBracket knockoutBracketType) {
@@ -68,7 +68,7 @@ public class Pool {
         return yearGroup;
     }
 
-    public List<Team> getTeamList() {
+    public ArrayList<Team> getTeamList() {
         return teamList;
     }
 

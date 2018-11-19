@@ -12,13 +12,13 @@ class KnockoutPlayTest {
 
     @Test
     void createKnockoutBracket() {
-        private ArrayList<Group> testgroups = new ArrayList<>();
-        StandardGroupPlay testGroupBracket = new StandardGroupPlay();
+        ArrayList<Group> testgroups = new ArrayList<>();
+        StandardGroupPlay testGroupBracket = new StandardGroupPlay(2);
 
         testGroupBracket.setAdvancingTeamsPrGroup(1);
         testGroupBracket.setMatchesPrTeamAgainstOpponentInGroup(1);
 
-        testGroupBracket.createGroupBracket();
+        //testGroupBracket.createGroupBracket();
         //assertEquals(KnockoutBracket);
     }
 }
