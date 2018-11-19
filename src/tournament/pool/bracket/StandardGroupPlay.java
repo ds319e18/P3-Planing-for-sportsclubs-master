@@ -1,5 +1,6 @@
 package tournament.pool.bracket;
 
+import tournament.Match;
 import tournament.Team;
 import tournament.pool.Group;
 
@@ -66,6 +67,35 @@ public class StandardGroupPlay implements GroupBracket {
     }
 
     @Override
+    public ArrayList<Match> createMatches(int matchDurationInMinutes) {
+        ArrayList<Match> matches = new ArrayList<>();
+        int secondTeamIndex = 0;
+
+        for (int iter = 0; iter < matchesPrTeamAgainstOpponentInGroup; iter++) {
+            if (this.groups.isEmpty() ) {
+                // throw exception
+            } else {
+                for (Group group : this.groups) {
+                    // Imagine to pointer vising the team and the groups. The one pointer chooses the home teams, and the other pointer chooses
+                    // the away teams. This makes sure that we dont get any duplicate matches.
+                    for (int firstTeamIndex = 0; firstTeamIndex < group.getTeamList().size() - 1; firstTeamIndex++) {
+                        for (secondTeamIndex = firstTeamIndex + 1; secondTeamIndex < group.getTeamList().size(); secondTeamIndex++) {
+                            matches.add(new Match.Builder(matchDurationInMinutes)
+                                    .setFirstTeam(group.getTeamList().get(firstTeamIndex))
+                                    .setSecondTeam(group.getTeamList().get(secondTeamIndex))
+                                    .setFinished(false)
+                                    .setName("Pool Match")
+                                    .build());
+                        }
+                    }
+                }
+            }
+        }
+
+        return matches;
+    }
+
+    @Override
     public int getAmountOfAdvancingTeamsPrGroup() {
         return this.advancingTeamsPrGroup;
     }
@@ -78,13 +108,5 @@ public class StandardGroupPlay implements GroupBracket {
     @Override
     public ArrayList<Group> getGroups() {
         return groups;
-    }
-
-    public int getAdvancingTeamsPrGroup() {
-        return advancingTeamsPrGroup;
-    }
-
-    public int getMatchesPrTeamAgainstOpponentInGroup() {
-        return matchesPrTeamAgainstOpponentInGroup;
     }
 }

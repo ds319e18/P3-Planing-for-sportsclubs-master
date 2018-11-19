@@ -2,9 +2,13 @@ package tournament;
 
 import tournament.matchschedule.Field;
 
-public class Match {
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
+public class Match implements Comparable<Match> {
     private String name;
     private int duration;
+    private LocalTime timestamp;
     private boolean finished;
     private Field field;
     private Team firstTeam;
@@ -17,6 +21,14 @@ public class Match {
     // Setters for creating a match (used in the knockout stage)
     public void setFirstTeam(Team firstTeam) {
         this.firstTeam = firstTeam;
+    }
+
+    public void setTimestamp(LocalTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public void setField(Field field) {
+        this.field = field;
     }
 
     public void setSecondTeam(Team secondTeam) {
@@ -44,6 +56,10 @@ public class Match {
         return loser;
     }
 
+    public int getDuration() {
+        return duration;
+    }
+
     public boolean isFinished() {
         return finished;
     }
@@ -52,28 +68,35 @@ public class Match {
 
     }
 
-    public  void addFild() {
-
+    // Sorting matches based on year group to sort in the MatchDay class
+    public int compareTo(Match o) {
+        return this.firstTeam.getYearGroup() - o.firstTeam.getYearGroup();
     }
 
     // Inner Match-builder
     public static class Builder {
         private String name;
         private int duration;
+        private LocalTime timestamp;
         private boolean finished;
         private Field field;
         private Team firstTeam;
         private Team secondTeam;
+
+        public Builder(int duration) {
+            this.duration = duration;
+        }
 
         public Builder setName(String name) {
             this.name = name;
             return this;
         }
 
-        public Builder setDuration(int duration) {
-            this.duration = duration;
+        public Builder setTimestamp(LocalTime timestamp) {
+            this.timestamp = timestamp;
             return this;
         }
+
 
         public Builder setFinished(boolean finished) {
             this.finished = finished;
@@ -99,6 +122,7 @@ public class Match {
             Match match = new Match();
             match.name = this.name;
             match.duration = this.duration;
+            match.timestamp = this.timestamp;
             match.finished = this.finished;
             match.field = this.field;
             match.firstTeam = this.firstTeam;

@@ -276,7 +276,7 @@
                                     <Insets top="10.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Næste">
+                              <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Næste">
                                  <HBox.margin>
                                     <Insets left="45.0" top="10.0" />
                                  </HBox.margin>

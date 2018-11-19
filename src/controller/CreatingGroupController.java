@@ -1,6 +1,6 @@
 package controller;
 
-import controller.AddingTeamsController;
+import Controller.AddingTeamsController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -67,7 +67,7 @@ public class CreatingGroupController
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("AddingTeams.FXML"));
+        loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
         Parent newWindow = loader.load();
 
         AddingTeamsController atc = loader.getController();

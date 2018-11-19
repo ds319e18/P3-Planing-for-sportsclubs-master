@@ -99,17 +99,6 @@ public class TournamentSetupController {
         window.show();
     }
 
-    @FXML
-    public void setOnNextButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("AddingTeams.FXML"));
-        Scene newScene = new Scene(newWindow);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(newScene);
-        window.show();
-    }
-
     private ArrayList<Pool> getSelectedPools() {
         ArrayList<Pool> poolList = new ArrayList<>();
 
