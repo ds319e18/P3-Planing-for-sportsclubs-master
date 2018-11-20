@@ -43,6 +43,7 @@ public class CreatingMatchScheduleController {
         for (int i = 0; i < 4; i++) {
             tournament.getPoolList().add(new Pool.Builder().setSkilllLevel("A").setYearGroup(i+8).build());
         }
+
         setPools();
         setMatchDays();
 
@@ -64,7 +65,7 @@ public class CreatingMatchScheduleController {
     //inputs match days into the tableView
     private void setMatchDays() {
         ObservableList<Pool> matchDayList = FXCollections.observableArrayList();
-        matchDayList.addAll(tournament.getMatchSchedule().getMatchDays());
+        //matchDayList.addAll(tournament.getMatchSchedule().getMatchDays());
 
 
         TableColumn<MatchDay, ?> poolNameColumn = matchDayTableView.getColumns().get(0);
