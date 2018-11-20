@@ -254,7 +254,7 @@
                   </Label>
                   <HBox prefHeight="360.0" prefWidth="586.0">
                      <children>
-                        <ScrollPane prefHeight="360.0" prefWidth="596.0">
+                        <ScrollPane onMouseClicked="#mouseClickedEdit" prefHeight="360.0" prefWidth="596.0">
                            <content>
                               <GridPane fx:id="groupsGridPane" prefWidth="586.0">
                                  <rowConstraints>
@@ -296,9 +296,9 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Verify" GridPane.columnIndex="10" />
+                  <Button mnemonicParsing="false" onAction="#verifyButton" prefHeight="30.0" prefWidth="90.0" text="Verify" GridPane.columnIndex="10" />
                   <Button layoutX="1075.0" layoutY="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Edit" GridPane.columnIndex="9" />
-                  <Button layoutX="862.0" layoutY="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.columnIndex="10" GridPane.rowIndex="2" />
+                  <Button layoutX="862.0" layoutY="12.0" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.columnIndex="10" GridPane.rowIndex="2" />
                   <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.columnIndex="9" GridPane.rowIndex="2" />
                </children>
             </GridPane>
