@@ -7,9 +7,12 @@ import java.util.ArrayList;
 public class EqualMatchesPlay implements KnockoutBracket {
     private int amountOfMatches;
 
+    public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket) {
+        return null;
+    }
 
     @Override
-    public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket) {
+    public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         return null;
     }
 

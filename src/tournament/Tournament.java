@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import static java.time.temporal.ChronoUnit.DAYS;
+
 public class Tournament {
     private String name;
     private boolean active = false;
@@ -29,6 +31,18 @@ public class Tournament {
             }
         }
         return null;
+    }
+
+    public MatchSchedule getMatchSchedule() {
+        return matchSchedule;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
     }
 
     // Getters

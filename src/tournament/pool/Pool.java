@@ -1,25 +1,32 @@
 package tournament.pool;
 
+import javafx.scene.control.TextField;
 import tournament.*;
 import tournament.pool.bracket.GroupBracket;
 import tournament.pool.bracket.KnockoutBracket;
 
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class Pool {
+    private String name;
     private String skillLevel;
     private int yearGroup;
     private ArrayList<Team> teamList;
     private GroupBracket groupBracket;
     private KnockoutBracket knockoutBracket;
-    private int matchDurationInMinutes;
+    private TextField matchDurationTextField;
+
+    public void setMatchDuration() {
+    }
 
     public void addGroupBracket(GroupBracket groupBracketType) {
-        this.groupBracket = groupBracketType.createGroupBracket(teamList, matchDurationInMinutes);
+        this.groupBracket = groupBracketType.createGroupBracket(teamList);
     }
 
     public void addKnockoutBracket(KnockoutBracket knockoutBracketType) {
-        this.knockoutBracket = knockoutBracketType.createKnockoutBracket(this.groupBracket, matchDurationInMinutes);
+        this.knockoutBracket = knockoutBracketType.createKnockoutBracket(this.groupBracket, Integer.parseInt(matchDurationTextField.getText()));
     }
 
     // Adding team to the correct pool
@@ -68,12 +75,20 @@ public class Pool {
         return yearGroup;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public List<Team> getTeamList() {
         return teamList;
     }
 
     public GroupBracket getGroupBracket() {
         return groupBracket;
+    }
+
+    public TextField getMatchDurationTextField() {
+        return matchDurationTextField;
     }
 
     //This next part of the class deals with updating the tournament while active
@@ -121,11 +136,12 @@ public class Pool {
             Pool pool = new Pool();
             pool.skillLevel = this.skillLevel;
             pool.yearGroup = this.yearGroup;
+            if (skillLevel != null)
+                pool.name = "U" + String.valueOf(pool.yearGroup) + " " + pool.skillLevel;
             pool.teamList = this.teamList;
             pool.groupBracket = this.groupBracket;
             pool.knockoutBracket = this.knockoutBracket;
-            pool.matchDurationInMinutes = this.matchDurationInMinutes;
-
+            pool.matchDurationTextField = new TextField("");
             return pool;
         }
     }

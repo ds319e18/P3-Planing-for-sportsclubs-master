@@ -24,9 +24,6 @@ public class MatchSchedule {
         return (DAYS.between(this.startDate, this.endDate) + 1);
     }
 
-
-
-
     private void updateMatchSchedule() {
     }
 }
