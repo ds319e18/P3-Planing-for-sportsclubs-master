@@ -124,9 +124,6 @@ public class Pool {
             pool.yearGroup = this.yearGroup;
             if (skillLevel != null)
                 pool.name = "U" + String.valueOf(pool.yearGroup) + " " + pool.skillLevel;
-            pool.teamList = this.teamList;
-            pool.groupBracket = this.groupBracket;
-            pool.knockoutBracket = this.knockoutBracket;
             pool.matchDurationTextField = new TextField("");
             return pool;
         }

@@ -8,7 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
-import tournament.MatchDay;
+import tournament.matchschedule.MatchDay;
 import tournament.Tournament;
 import tournament.pool.Pool;
 

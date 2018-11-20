@@ -121,4 +121,8 @@ public class StandardGroupPlay implements GroupBracket {
     public ArrayList<Match> getMatches() {
         return this.matches;
     }
+
+    public int getMatchesPrTeamAgainstOpponentInGroup() {
+        return matchesPrTeamAgainstOpponentInGroup;
+    }
 }

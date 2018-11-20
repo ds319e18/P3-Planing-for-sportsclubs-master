@@ -15,5 +15,5 @@ public interface GroupBracket {
     ArrayList<Group> getGroups();
     void setAdvancingTeamsPrGroup(int advancingTeamsPrGroup);
     void setMatchesPrTeamAgainstOpponentInGroup(int matchesPrTeamAgainstOpponentInGroup);
-
+    int getMatchesPrTeamAgainstOpponentInGroup();
 }

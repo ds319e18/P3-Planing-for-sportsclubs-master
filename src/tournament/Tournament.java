@@ -50,10 +50,6 @@ public class Tournament {
         return active;
     }
 
-    public MatchSchedule getMatchSchedule() {
-        return matchSchedule;
-    }
-
     public ArrayList<Field> getFieldList() {
         return fieldList;
     }
