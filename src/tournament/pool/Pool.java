@@ -13,7 +13,7 @@ public class Pool {
     private String name;
     private String skillLevel;
     private int yearGroup;
-    private ArrayList<Team> teamList;
+    private ArrayList<Team> teamList = new ArrayList<>();
     private GroupBracket groupBracket;
     private KnockoutBracket knockoutBracket;
     private TextField matchDurationTextField;
@@ -40,7 +40,7 @@ public class Pool {
 
         team.setName(team.getName() + " " + Integer.toString(count));
         this.teamList.add(team);
-        Collections.sort(this.teamList);
+        this.teamList.sort(new TeamNameComp());
     }
 
 
@@ -51,7 +51,7 @@ public class Pool {
                 teamList.remove(teamList.get(i));
             }
         }
-        Collections.sort(this.teamList);
+        this.teamList.sort(new TeamNameComp());
     }
 
     @Override
@@ -79,7 +79,7 @@ public class Pool {
         return name;
     }
 
-    public List<Team> getTeamList() {
+    public ArrayList<Team> getTeamList() {
         return teamList;
     }
 
@@ -91,15 +91,16 @@ public class Pool {
         return matchDurationTextField;
     }
 
+    public KnockoutBracket getKnockoutBracket() {
+        return knockoutBracket;
+    }
+
     //This next part of the class deals with updating the tournament while active
 
     // Inner Builder-class
     public static class Builder {
         private String skillLevel;
         private int yearGroup;
-        private ArrayList<Team> teamList = new ArrayList<>();
-        private GroupBracket groupBracket;
-        private KnockoutBracket knockoutBracket;
         private int matchDurationInMinutes;
 
         public Builder setSkilllLevel(String skillLevel) {
@@ -109,21 +110,6 @@ public class Pool {
 
         public Builder setYearGroup(int yearGroup) {
             this.yearGroup = yearGroup;
-            return this;
-        }
-
-        public Builder setTeamList(Team team) {
-            this.teamList.add(team);
-            return this;
-        }
-
-        public Builder setGroupBracket(GroupBracket groupBracket) {
-            this.groupBracket = groupBracket;
-            return this;
-        }
-
-        public Builder setKnockoutBracket(KnockoutBracket knockoutBracket) {
-            this.knockoutBracket = knockoutBracket;
             return this;
         }
 

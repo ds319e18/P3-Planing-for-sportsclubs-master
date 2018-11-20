@@ -38,6 +38,16 @@ public class GoldAndBronzePlay implements KnockoutBracket {
         return matches;
     }
 
+    @Override
+    public void createNextRound(ArrayList<Team> advancingTeams) {
+
+    }
+
+    @Override
+    public ArrayList<Team> advanceTeams() {
+        return null;
+    }
+
     //Should only be called after the games are played
     public void setPlacements() {
         if (goldMatch.isFinished()) {

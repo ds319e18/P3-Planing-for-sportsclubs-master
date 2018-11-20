@@ -1,11 +1,6 @@
 package tournament.matchschedule;
 
-import tournament.Match;
-import tournament.MatchDay;
-import tournament.pool.Pool;
-
 import java.time.LocalDate;
-import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 
 import static java.time.temporal.ChronoUnit.DAYS;
@@ -20,8 +15,12 @@ public class MatchSchedule {
         this.endDate = endDate;
     }
 
-    private long getNumberOfMatchDays() {
+    public long getNumberOfMatchDays() {
         return (DAYS.between(this.startDate, this.endDate) + 1);
+    }
+
+    public ArrayList<MatchDay> getMatchDays() {
+        return matchDays;
     }
 
     private void updateMatchSchedule() {
