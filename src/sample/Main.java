@@ -42,7 +42,7 @@ public class Main extends Application {
         //Database myDatabase = new Database();
         //myDatabase.connect();
 
-        //launch(args);
+        launch(args);
     }
 
 }
