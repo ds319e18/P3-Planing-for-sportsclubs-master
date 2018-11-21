@@ -21,7 +21,7 @@ public class VerifyFinalStageController {
     GridPane poolKnockoutStatusGridPane;
 
     @FXML
-    GridPane poolStatusGridPane;
+    GridPane finalStageGridPane;
 
     @FXML
     Text poolNameText;
@@ -75,6 +75,23 @@ public class VerifyFinalStageController {
         }
         poolKnockoutStatusGridPane.setGridLinesVisible(false);
         poolKnockoutStatusGridPane.setGridLinesVisible(true);
+    }
+
+    @FXML
+    void drawFinalStageGridPane() {
+        finalStageGridPane.getChildren().remove(0, finalStageGridPane.getChildren().size());
+
+        int poolYearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
+                : poolClicked.substring(0, 1));
+        String poolSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
+                : poolClicked.substring(1, 2));
+
+        int amountOfMatches = tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getKnockoutBracket().getMatches().size();
+
+
+
+        finalStageGridPane.setGridLinesVisible(false);
+        finalStageGridPane.setGridLinesVisible(true);
     }
 
 
