@@ -8,11 +8,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.Text;
+import javafx.scene.Scene;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import tournament.Team;
@@ -26,7 +27,10 @@ import java.io.IOException;
 public class CreatingGroupController
 {
     Tournament tournament;
+    private final int stepNumber = 2;
 
+    @FXML
+    private VBox progressBox;
 
     @FXML
     GridPane poolNamesGridPane;
@@ -53,6 +57,7 @@ public class CreatingGroupController
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         setPoolStatusGridPane();
+        highlightProgressBox();
     }
 
     @FXML
@@ -78,7 +83,7 @@ public class CreatingGroupController
             boolean isDone = pool.getGroupBracket() != null
                     && pool.getGroupBracket().getAmountOfGroups() > 0
                     && pool.getGroupBracket().getMatchesPrTeamAgainstOpponentInGroup() > 0;
-            Text status = (isDone ? new Text("Færdig") : new Text("Ikke færdig"));
+            Text status = (isDone ? new Text("Done") : new Text("Not done"));
             status.setWrappingWidth(80);
             status.setTextAlignment(TextAlignment.CENTER);
             GridPane.setMargin(text, new Insets(10,0,10,0));
@@ -131,11 +136,11 @@ public class CreatingGroupController
         poolClicked.setStyle("-fx-font-weight: bold;");
 
         setComboBoxItemsAndLabels();
-        drawPoolNamesGridPane();
+        drawGridPane();
     }
 
     @FXML
-    void drawPoolNamesGridPane() {
+    void drawGridPane() {
         String poolClickedText = poolClicked.getText();
         poolNamesGridPane.getChildren().remove(0, poolNamesGridPane.getChildren().size());
         try {
@@ -172,4 +177,9 @@ public class CreatingGroupController
         amountOfGroupsComboBox.setItems(amountOfGroups);
     }
 
+    private void highlightProgressBox() {
+        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
+        stepBox.setStyle("-fx-border-color: #0000CD");
+        stepBox.setStyle("-fx-background-color: #A9A9A9");
+    }
 }
