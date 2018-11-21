@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class EqualMatchesPlay implements KnockoutBracket {
     private int amountOfMatches;
 
+
     @Override
     public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         return null;
