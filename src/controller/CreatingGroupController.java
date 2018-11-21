@@ -27,6 +27,7 @@ public class CreatingGroupController
 {
     Tournament tournament;
 
+
     @FXML
     GridPane poolNamesGridPane;
 

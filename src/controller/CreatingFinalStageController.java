@@ -13,6 +13,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -28,8 +29,11 @@ public class CreatingFinalStageController {
 
 
     Tournament tournament;
-
     String poolClicked;
+    private final int stepNumber = 4;
+
+    @FXML
+    private VBox progressBox;
 
     @FXML
     GridPane poolStatusGridPane;
@@ -60,6 +64,7 @@ public class CreatingFinalStageController {
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         setPoolStatusGridPane();
+        highlightProgressBox();
     }
 
 
@@ -194,5 +199,9 @@ public class CreatingFinalStageController {
         advancingComboBox.setItems(amountOfGroups);
     }
 
-
+    private void highlightProgressBox() {
+        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
+        stepBox.setStyle("-fx-border-color: #0000CD");
+        stepBox.setStyle("-fx-background-color: #A9A9A9");
+    }
 }
