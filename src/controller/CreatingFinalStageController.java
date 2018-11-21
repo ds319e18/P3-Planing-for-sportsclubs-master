@@ -114,10 +114,10 @@ public class CreatingFinalStageController {
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/VerifyGroupsAndPools.FXML"));
+        loader.setLocation(getClass().getResource("../View/VerifyFinalStage.FXML"));
         Parent newWindow = loader.load();
 
-        VerifyGroupsAndPoolsController atc = loader.getController();
+        VerifyFinalStageController atc = loader.getController();
         atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
