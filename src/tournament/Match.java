@@ -80,6 +80,10 @@ public class Match implements Comparable<Match> {
         return field;
     }
 
+    public Team getFirstTeam() {
+        return firstTeam;
+    }
+
     public boolean isFinished() {
         return finished;
     }

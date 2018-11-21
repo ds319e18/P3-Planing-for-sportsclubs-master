@@ -1,5 +1,6 @@
 package sample;
 
+import exceptions.IllegalAmountOfGroupsException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +13,7 @@ import tournament.matchschedule.MatchSchedule;
 import tournament.pool.Group;
 import tournament.pool.Pool;
 import tournament.pool.bracket.KnockoutPlay;
+import tournament.pool.bracket.PlacementPlay;
 import tournament.pool.bracket.StandardGroupPlay;
 
 import java.time.LocalDate;
@@ -40,8 +42,7 @@ public class Main extends Application {
         //myDatabase.connect();
 
 
-        launch(args);
-
+        //launch(args);
     }
 
 }

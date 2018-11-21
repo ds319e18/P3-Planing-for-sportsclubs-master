@@ -6,9 +6,11 @@ import tournament.pool.bracket.GroupBracket;
 import tournament.pool.bracket.KnockoutBracket;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class KnockoutPlay implements KnockoutBracket {
     ArrayList<Match> matches = new ArrayList<>();
+    HashMap<Integer, Team> result = new HashMap<>();
 
     // This method creates the size of the match-array by creating empty matches
     @Override
@@ -62,4 +64,14 @@ public class KnockoutPlay implements KnockoutBracket {
         return advancingTeams;
     }
 
+    @Override
+    public void calculateResults() {
+        this.result.put(1, this.matches.get(this.matches.size() - 1).getWinner());
+        this.result.put(2, this.matches.get(this.matches.size() - 1).getLoser());
+    }
+
+    @Override
+    public HashMap<Integer, Team> getResults() {
+        return this.result;
+    }
 }

@@ -63,4 +63,15 @@ public class GoldAndBronzePlay implements KnockoutBracket {
             //Throw exception: games not played
         }
     }
+
+    @Override
+    public void calculateResults() {
+
+    }
+
+    @Override
+    public HashMap<Integer, Team> getResults() {
+
+        return null;
+    }
 }
