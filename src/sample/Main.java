@@ -40,8 +40,8 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        Database myDatabase = new Database();
-        myDatabase.connect();
+        //Database myDatabase = new Database();
+        //myDatabase.connect();
 
         launch(args);
     }

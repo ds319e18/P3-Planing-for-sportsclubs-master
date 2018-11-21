@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="e2e78b2c-0dd1-499d-8a8e-86cc82d0bddc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingFinalStageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingFinalStageController.class" afterDir="false" />
@@ -11,6 +12,43 @@
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/TournamentSetupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/TournamentSetupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" afterDir="false" />
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    <list default="true" id="d9d0018c-f4c3-4a0e-85ba-8e815fd0439b" name="Default" comment="" />
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    <list default="true" id="e2e78b2c-0dd1-499d-8a8e-86cc82d0bddc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/CreatingMatchSchedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/CreatingMatchSchedule.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CreatingFinalStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/CreatingFinalStage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/VerifyGroupsAndPools.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/VerifyGroupsAndPools.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CreatingGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CreatingGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/Pool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/pool/Pool.java" afterDir="false" />
+=======
+    <list default="true" id="e05b6ebf-6cd4-49ff-9b6b-d0b2a340f01a" name="Default" comment="">
+=======
+    <list default="true" id="addd5766-234e-4e46-81da-c265c9a40e67" name="Default" comment="">
+>>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+=======
+    <list default="true" id="df58d13d-496c-4dc5-a9cc-3eccc1fe1e4c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingFinalStageController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingFinalStageController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingGroupController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingGroupController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/VerifyGroupsAndPoolsController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/VerifyGroupsAndPoolsController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/VerifyGroupsAndPools.fxml" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/VerifyGroupsAndPools.fxml" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool$Builder.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool$Builder.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CreatingGroupController.java" afterPath="$PROJECT_DIR$/src/controller/CreatingGroupController.java" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
+>>>>>>> Dev
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +60,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="VerifyFinalStageController.java" pinned="false" current-in-tab="true">
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+      <file leaf-file-name="VerifyFinalStageController.java" pinned="false" current-in-tab="false">
+>>>>>>> Dev
         <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -34,51 +78,150 @@
       <file leaf-file-name="VerifyGroupsAndPoolsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="731">
               <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="76" selection-end-column="47" />
+=======
+            <state relative-caret-position="168">
+              <caret line="14" column="54" lean-forward="true" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+=======
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+>>>>>>> Stashed changes
+              <folding />
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="KnockoutPlay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+=======
+<<<<<<< Updated upstream
+      <file leaf-file-name="StandardGroupPlay.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-630">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+=======
+      <file leaf-file-name="TournamentSetupController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/TournamentSetupController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="27" selection-end-column="29" />
+>>>>>>> Stashed changes
+              <folding />
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="StandardGroupPlay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="64" column="37" lean-forward="true" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
+=======
+<<<<<<< Updated upstream
+      <file leaf-file-name="CreatingFinalStageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/CreatingFinalStageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="-664">
+              <caret line="132" column="36" lean-forward="false" selection-start-line="132" selection-start-column="36" selection-end-line="132" selection-end-column="36" />
+=======
+            <state relative-caret-position="1303">
+              <caret line="128" column="5" lean-forward="false" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+=======
+      <file leaf-file-name="CreatingGroupController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-916">
+              <caret line="114" column="8" lean-forward="false" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
+=======
+      <file leaf-file-name="CreatingGroupController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+>>>>>>> Stashed changes
+              <folding />
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< HEAD
   <component name="FindInProjectRecents">
     <findStrings>
       <find>groupsgrid</find>
     </findStrings>
+=======
+<<<<<<< Updated upstream
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+>>>>>>> Dev
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
         <option value="$PROJECT_DIR$/src/controller/CreatingGroupController.java" />
         <option value="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" />
         <option value="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" />
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+>>>>>>> Dev
+>>>>>>> Dev
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/controller/TournamentSetupController.java" />
         <option value="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" />
         <option value="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" />
+<<<<<<< HEAD
+=======
+=======
+=======
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" />
+        <option value="$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
+=======
+>>>>>>> Stashed changes
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/controller/TournamentSetupController.java" />
+        <option value="$PROJECT_DIR$/src/controller/CreatingGroupController.java" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+>>>>>>> Dev
+=======
+>>>>>>> Stashed changes
+>>>>>>> Dev
       </list>
     </option>
   </component>
@@ -88,15 +231,77 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+<<<<<<< HEAD
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
+=======
+<<<<<<< Updated upstream
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="693" />
+>>>>>>> Dev
+>>>>>>> Dev
+>>>>>>> Dev
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <pane id="PackagesPane" />
+=======
+=======
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1107" />
+=======
+    <option name="x" value="246" />
+    <option name="y" value="69" />
+    <option name="width" value="1353" />
+>>>>>>> Stashed changes
+    <option name="height" value="910" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource ProjectPane="true" />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+      <pane id="Scope" />
+>>>>>>> Dev
+>>>>>>> Dev
+=======
+>>>>>>> Stashed changes
+>>>>>>> Dev
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -118,6 +323,19 @@
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> Dev
+=======
+>>>>>>> Stashed changes
+>>>>>>> Dev
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -125,6 +343,11 @@
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Dev
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
@@ -152,13 +375,45 @@
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> Dev
+=======
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
+=======
+>>>>>>> Stashed changes
+>>>>>>> Dev
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+>>>>>>> Dev
       <pane id="Scope" />
       <pane id="AndroidView" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <pane id="Scope" />
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> Dev
+=======
+>>>>>>> Stashed changes
+>>>>>>> Dev
     </panes>
   </component>
   <component name="RunDashboard">
@@ -237,17 +492,70 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+      <changelist id="d9d0018c-f4c3-4a0e-85ba-8e815fd0439b" name="Default" comment="" />
+      <created>1542792712013</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542792712013</updated>
+      <workItem from="1542792718857" duration="8619000" />
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+>>>>>>> Dev
       <changelist id="e2e78b2c-0dd1-499d-8a8e-86cc82d0bddc" name="Default" comment="" />
       <created>1542788315891</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542788315891</updated>
+<<<<<<< HEAD
       <workItem from="1542788321396" duration="16156000" />
+=======
+      <workItem from="1542788321396" duration="3571000" />
+=======
+      <changelist id="e05b6ebf-6cd4-49ff-9b6b-d0b2a340f01a" name="Default" comment="" />
+      <created>1542788722037</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542788722037</updated>
+      <workItem from="1542788723392" duration="975000" />
+>>>>>>> Dev
+=======
+      <changelist id="addd5766-234e-4e46-81da-c265c9a40e67" name="Default" comment="" />
+      <created>1542798039535</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542798039535</updated>
+      <workItem from="1542798040818" duration="80000" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
+=======
+      <changelist id="df58d13d-496c-4dc5-a9cc-3eccc1fe1e4c" name="Default" comment="" />
+      <created>1542804560294</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542804560294</updated>
+      <workItem from="1542804561788" duration="189000" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="12396000" />
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="8619000" />
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="3571000" />
+>>>>>>> Dev
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
@@ -280,6 +588,67 @@
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+<<<<<<< HEAD
+=======
+=======
+    <option name="totallyTimeSpent" value="975000" />
+=======
+    <option name="totallyTimeSpent" value="80000" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
+=======
+    <option name="totallyTimeSpent" value="189000" />
+>>>>>>> Stashed changes
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+>>>>>>> Dev
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+>>>>>>> Stashed changes
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> Dev
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> Stashed changes
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+>>>>>>> Dev
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="5" />
@@ -316,7 +685,18 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/controller/AdminPageController.java">
+=======
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+>>>>>>> Dev
+>>>>>>> Dev
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
@@ -381,12 +761,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="731">
           <caret line="73" column="8" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="76" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
+=======
+        <state relative-caret-position="-664">
+          <caret line="132" column="36" lean-forward="false" selection-start-line="132" selection-start-column="36" selection-end-line="132" selection-end-column="36" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+>>>>>>> Stashed changes
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+    <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
+>>>>>>> Dev
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="64" column="37" lean-forward="true" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
@@ -395,6 +792,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state>
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
         </state>
@@ -404,6 +802,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="90" selection-start-line="90" selection-end-line="90" />
+=======
+        <state relative-caret-position="168">
+          <caret line="14" column="54" lean-forward="true" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/controller/TournamentSetupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="27" selection-end-column="29" />
+>>>>>>> Stashed changes
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-630">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/Pool.java">
+=======
+=======
+>>>>>>> Stashed changes
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="-916">
+          <caret line="114" column="8" lean-forward="false" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+>>>>>>> Dev
+=======
+        <state relative-caret-position="168">
+          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+>>>>>>> Stashed changes
+          <folding />
+>>>>>>> Dev
         </state>
       </provider>
     </entry>
