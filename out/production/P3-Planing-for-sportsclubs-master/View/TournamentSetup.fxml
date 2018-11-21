@@ -49,8 +49,8 @@
       </VBox>
       <HBox minHeight="-Infinity" prefHeight="502.0" prefWidth="1280.0">
          <children>
-            <VBox prefHeight="502.0" prefWidth="48.0" />
-            <VBox fx:id="progressBox" prefHeight="502.0" prefWidth="270.0" style="-fx-border-color: black;">
+            <VBox maxWidth="35.0" minWidth="35.0" prefHeight="502.0" prefWidth="35.0" />
+            <VBox fx:id="progressBox" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" style="-fx-border-color: black;">
                <children>
                   <VBox maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
@@ -112,6 +112,20 @@
                         </Text>
                      </children>
                   </VBox>
+                  <VBox layoutX="11.0" layoutY="295.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af grupper" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 4" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
                   <VBox layoutX="11.0" layoutY="82.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="235.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af slutspillet" textAlignment="CENTER" wrappingWidth="246.0">
@@ -122,7 +136,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 4" textAlignment="CENTER" wrappingWidth="246.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 5" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -142,7 +156,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 5" textAlignment="CENTER" wrappingWidth="246.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 6" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -154,7 +168,7 @@
                   </VBox>
                   <VBox layoutX="11.0" layoutY="224.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Verificering af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -162,7 +176,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 6" textAlignment="CENTER" wrappingWidth="246.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 7" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -172,7 +186,6 @@
                         </Text>
                      </children>
                   </VBox>
-                  <VBox layoutX="11.0" layoutY="295.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;" />
                </children>
             </VBox>
             <VBox prefHeight="502.0" prefWidth="723.0">
