@@ -41,6 +41,7 @@ public class StandardGroupPlay implements GroupBracket {
         // The teams is distributed in groups as equally as possible, switching between each group adding one team at a time
         for (int i = 0; i < poolTeamList.size(); i++) {
             this.groups.get(i % this.amountOfGroups).addTeam(poolTeamList.get(i));
+            poolTeamList.get(i).setGroupNumber((i % this.amountOfGroups) + 1);
         }
 
         return this;
@@ -113,6 +114,11 @@ public class StandardGroupPlay implements GroupBracket {
     }
 
     @Override
+    public int getMatchesPrTeamAgainstOpponentInGroup() {
+        return this.matchesPrTeamAgainstOpponentInGroup;
+    }
+
+    @Override
     public ArrayList<Group> getGroups() {
         return groups;
     }
@@ -120,10 +126,6 @@ public class StandardGroupPlay implements GroupBracket {
     @Override
     public ArrayList<Match> getMatches() {
         return this.matches;
-    }
-
-    public int getMatchesPrTeamAgainstOpponentInGroup() {
-        return matchesPrTeamAgainstOpponentInGroup;
     }
 
     /*

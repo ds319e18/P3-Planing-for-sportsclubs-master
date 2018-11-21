@@ -9,6 +9,7 @@ public class Team {
     private String skillLevel;
     private int yearGroup;
     private String contact;
+    private int groupNumber;
 
     public Team(String name, String skillLevel, int yearGroup, String contact) {
         this.name = name;
@@ -57,6 +58,14 @@ public class Team {
 
     public int getYearGroup() {
         return yearGroup;
+    }
+
+    public void setGroupNumber(int groupNumber) {
+        this.groupNumber = groupNumber;
+    }
+
+    public int getGroupNumber() {
+        return groupNumber;
     }
 
     @Override
