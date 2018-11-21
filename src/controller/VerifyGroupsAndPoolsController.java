@@ -79,13 +79,13 @@ public class VerifyGroupsAndPoolsController {
             Group group = tournament.findCorrectPool(teamYearGroup, teamSkillLevel).getGroupBracket().getGroups().get(i);
 
             GridPane gridPane = new GridPane();
-            Text groupNumberText = new Text("Group" + i);
+            Text groupNumberText = new Text("  Gruppe " + i + "  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
             gridPane.add(groupNumberText, 0,0);
 
             int rowCount = 1;
             for (Team team : group.getTeamList()) {
-                gridPane.add(new Text(team.getName()), 0, rowCount++);
+                gridPane.add(new Text("  " + team.getName() + "  "), 0, rowCount++);
             }
 
             gridPane.setGridLinesVisible(false);

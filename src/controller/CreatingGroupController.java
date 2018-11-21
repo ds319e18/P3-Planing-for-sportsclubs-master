@@ -8,11 +8,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.*;
-import javafx.scene.text.Text;
+import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.Scene;
+import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import tournament.Team;
@@ -77,7 +77,7 @@ public class CreatingGroupController
             boolean isDone = pool.getGroupBracket() != null
                     && pool.getGroupBracket().getAmountOfGroups() > 0
                     && pool.getGroupBracket().getMatchesPrTeamAgainstOpponentInGroup() > 0;
-            Text status = (isDone ? new Text("Done") : new Text("Not done"));
+            Text status = (isDone ? new Text("Færdig") : new Text("Ikke færdig"));
             status.setWrappingWidth(80);
             status.setTextAlignment(TextAlignment.CENTER);
             GridPane.setMargin(text, new Insets(10,0,10,0));
@@ -130,11 +130,11 @@ public class CreatingGroupController
         poolClicked.setStyle("-fx-font-weight: bold;");
 
         setComboBoxItemsAndLabels();
-        drawGridPane();
+        drawPoolNamesGridPane();
     }
 
     @FXML
-    void drawGridPane() {
+    void drawPoolNamesGridPane() {
         String poolClickedText = poolClicked.getText();
         poolNamesGridPane.getChildren().remove(0, poolNamesGridPane.getChildren().size());
         try {
