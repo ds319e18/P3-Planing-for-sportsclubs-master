@@ -16,7 +16,7 @@ public class Pool {
     private ArrayList<Team> teamList = new ArrayList<>();
     private GroupBracket groupBracket;
     private KnockoutBracket knockoutBracket;
-    private TextField matchDurationTextField;
+    private int matchDurationTextField;
 
     public void setMatchDuration() {
     }
@@ -26,7 +26,7 @@ public class Pool {
     }
 
     public void addKnockoutBracket(KnockoutBracket knockoutBracketType) {
-        this.knockoutBracket = knockoutBracketType.createKnockoutBracket(this.groupBracket, Integer.parseInt(matchDurationTextField.getText()));
+        this.knockoutBracket = knockoutBracketType.createKnockoutBracket(this.groupBracket, matchDurationTextField);
     }
 
     // Adding team to the correct pool
@@ -87,7 +87,7 @@ public class Pool {
         return groupBracket;
     }
 
-    public TextField getMatchDurationTextField() {
+    public int getMatchDuration() {
         return matchDurationTextField;
     }
 
@@ -124,7 +124,7 @@ public class Pool {
             pool.yearGroup = this.yearGroup;
             if (skillLevel != null)
                 pool.name = "U" + String.valueOf(pool.yearGroup) + " " + pool.skillLevel;
-            pool.matchDurationTextField = new TextField("");
+            pool.matchDurationTextField = 0;
             return pool;
         }
     }

@@ -77,7 +77,7 @@ public class CreatingGroupController
             boolean isDone = pool.getGroupBracket() != null
                     && pool.getGroupBracket().getAmountOfGroups() > 0
                     && pool.getGroupBracket().getMatchesPrTeamAgainstOpponentInGroup() > 0;
-            Text status = (isDone ? new Text("Done") : new Text("Not done"));
+            Text status = (isDone ? new Text("Færdig") : new Text("Ikke færdig"));
             status.setWrappingWidth(80);
             status.setTextAlignment(TextAlignment.CENTER);
             GridPane.setMargin(text, new Insets(10,0,10,0));
@@ -130,11 +130,11 @@ public class CreatingGroupController
         poolClicked.setStyle("-fx-font-weight: bold;");
 
         setComboBoxItemsAndLabels();
-        drawGridPane();
+        drawPoolNamesGridPane();
     }
 
     @FXML
-    void drawGridPane() {
+    void drawPoolNamesGridPane() {
         String poolClickedText = poolClicked.getText();
         poolNamesGridPane.getChildren().remove(0, poolNamesGridPane.getChildren().size());
         try {

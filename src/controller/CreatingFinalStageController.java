@@ -16,13 +16,11 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import tournament.Team;
 import tournament.Tournament;
 import tournament.pool.Group;
 import tournament.pool.Pool;
-import tournament.pool.bracket.KnockoutBracket;
 import tournament.pool.bracket.KnockoutPlay;
-import tournament.pool.bracket.StandardGroupPlay;
+import tournament.pool.bracket.PlacementPlay;
 
 import java.io.IOException;
 
@@ -64,21 +62,30 @@ public class CreatingFinalStageController {
         setPoolStatusGridPane();
     }
 
-    /*
+
     @FXML
     private void saveButton() {
-        String poolClickedText = poolClicked;
-        int yearGroup = Integer.parseInt(poolClickedText.length() == 3 ? poolClickedText.substring(0, 2)
-                : poolClickedText.substring(0, 1));
-        String skillLevel = (poolClickedText.length() == 3 ? poolClickedText.substring(2, 3)
-                : poolClickedText.substring(1, 2));
-        tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(
-                new KnockoutPlay().createKnockoutBracket(tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket(), 90));
-        tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(Integer.parseInt(matchesPrGroupsComboBox.getValue().toString()));
+        int yearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
+                : poolClicked.substring(0, 1));
+        String skillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
+                : poolClicked.substring(1, 2));
+
+        // The amount of teams to advance on the the final stage is set
+        tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
+
+        if (knockoutRadioButton.isSelected()) {
+            tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new KnockoutPlay()
+                    .createKnockoutBracket(tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket(),
+                            tournament.findCorrectPool(yearGroup, skillLevel).getMatchDuration()));
+        } else if (placementRadioButton.isSelected()) {
+            tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new PlacementPlay()
+                    .createKnockoutBracket(tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket(),
+                            tournament.findCorrectPool(yearGroup, skillLevel).getMatchDuration()));
+        }
 
         setPoolStatusGridPane();
     }
-    */
+
 
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
@@ -118,16 +125,22 @@ public class CreatingFinalStageController {
 
     @FXML
     private void setPoolStatusGridPane() {
+        poolStatusGridPane.getChildren().remove(0, poolStatusGridPane.getChildren().size());
         for(Pool pool : tournament.getPoolList() ) {
             Text text = new Text(pool.getYearGroup() + "" + pool.getSkillLevel());
             text.setWrappingWidth(80);
             text.setTextAlignment(TextAlignment.CENTER);
-            Text status = new Text("Not done");
+            boolean isDone = pool.getKnockoutBracket() != null
+                    && pool.getGroupBracket().getAmountOfAdvancingTeamsPrGroup() > 0;
+            Text status = (isDone ? new Text("Done") : new Text("Not done"));
             status.setWrappingWidth(80);
             status.setTextAlignment(TextAlignment.CENTER);
             GridPane.setMargin(text, new Insets(10,0,10,0));
             poolStatusGridPane.addRow(poolStatusGridPane.getRowCount(), text, status);
         }
+
+        poolStatusGridPane.setGridLinesVisible(false);
+        poolStatusGridPane.setGridLinesVisible(true);
     }
 
     @FXML
@@ -157,7 +170,7 @@ public class CreatingFinalStageController {
         for(Node node : poolStatusGridPane.getChildren())
             node.setStyle("-fx-font-weight: normal;");
 
-        Text poolClickedText = (Text) poolStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2 + 1);
+        Text poolClickedText = (Text) poolStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2);
 
         poolClickedText.setStyle("-fx-font-weight: bold;");
 
