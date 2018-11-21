@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreatingGroupController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreatingFinalStageController">
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -27,7 +27,7 @@
             <Insets left="497.5" />
          </VBox.margin>
       </ImageView>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Creating final stage" textAlignment="CENTER" wrappingWidth="1280.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lav slutspil" textAlignment="CENTER" wrappingWidth="1280.0">
          <font>
             <Font name="System Italic" size="20.0" />
          </font>
@@ -219,13 +219,13 @@
                         <Insets top="35.0" />
                      </VBox.margin>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pool" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pulje" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                   <ScrollPane prefHeight="372.0" prefWidth="290.0">
                      <content>
-                        <GridPane gridLinesVisible="true" prefHeight="368.0" prefWidth="160.0">
+                        <GridPane fx:id="poolStatusGridPane" gridLinesVisible="true" onMouseClicked="#mouseClicked" prefHeight="368.0" prefWidth="160.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -257,8 +257,8 @@
                         <Insets right="15.0" top="35.0" />
                      </VBox.margin>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Groups" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nr. of teams" GridPane.columnIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grupper" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Antal hold" GridPane.columnIndex="1" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -268,7 +268,7 @@
                      <children>
                         <ScrollPane prefHeight="357.0" prefWidth="321.0">
                            <content>
-                              <GridPane fx:id="poolNamesGridPane" gridLinesVisible="true" prefHeight="358.0" prefWidth="285.0">
+                              <GridPane fx:id="groupsAndTeamsGridPane" gridLinesVisible="true" prefHeight="358.0" prefWidth="285.0">
                                 <columnConstraints>
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -296,24 +296,11 @@
                   <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label layoutX="10.0" layoutY="153.0" prefHeight="17.0" prefWidth="270.0" text="Amount of advancing teams pr. group" GridPane.rowIndex="3">
+                  <Label layoutX="10.0" layoutY="153.0" prefHeight="17.0" prefWidth="270.0" text="Hold til slutspil for hver gruppe" GridPane.rowIndex="3">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font></Label>
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.rowIndex="6" />
-                  <GridPane>
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <Label prefHeight="17.0" prefWidth="106.0" text="Pool:" />
-                        <Label prefHeight="17.0" prefWidth="106.0" text="-" GridPane.columnIndex="1" />
-                     </children>
-                  </GridPane>
+                  <Button mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" GridPane.rowIndex="6" />
                   <GridPane>
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -323,8 +310,8 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label prefHeight="17.0" prefWidth="106.0" text="Pool:" />
-                        <Label prefHeight="17.0" prefWidth="106.0" text="-" GridPane.columnIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="106.0" text="Pulje:" />
+                        <Text fx:id="poolName" strokeType="OUTSIDE" strokeWidth="0.0" text="-" wrappingWidth="128.53675842285156" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                   <GridPane GridPane.rowIndex="1">
@@ -336,15 +323,15 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amount of groups:" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="-" GridPane.columnIndex="1" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Antal af grupper:" />
+                        <Text fx:id="amountOfGroups" strokeType="OUTSIDE" strokeWidth="0.0" text="-" wrappingWidth="131.19886779785156" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
                      <children>
                         <HBox prefHeight="30.0" prefWidth="208.0">
                            <children>
-                              <RadioButton mnemonicParsing="false" text="Knockout">
+                              <RadioButton fx:id="knockoutRadioButton" mnemonicParsing="false" text="Knockout">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="finalStageType" />
                                  </toggleGroup>
@@ -356,25 +343,25 @@
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="208.0">
                            <children>
-                              <RadioButton mnemonicParsing="false" text="Placement" toggleGroup="$finalStageType" />
+                              <RadioButton fx:id="placementRadioButton" mnemonicParsing="false" text="Placement" toggleGroup="$finalStageType" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="208.0">
                            <children>
-                              <RadioButton mnemonicParsing="false" text="Knockout &amp; Placement" toggleGroup="$finalStageType" />
+                              <RadioButton fx:id="knockoutAndPlacementRadioButton" mnemonicParsing="false" text="Knockout &amp; Placement" toggleGroup="$finalStageType" />
                            </children>
                         </HBox>
                      </children>
                   </VBox>
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.rowIndex="6">
+                  <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Næste" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets left="120.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Save" GridPane.rowIndex="5" />
+                  <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Gem" GridPane.rowIndex="5" />
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
                      <children>
-                        <ComboBox prefWidth="150.0" promptText="#" />
+                        <ComboBox fx:id="advancingComboBox" prefWidth="150.0" promptText="#" />
                      </children>
                   </VBox>
                </children>

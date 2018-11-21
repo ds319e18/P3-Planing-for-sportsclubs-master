@@ -21,6 +21,9 @@ import java.io.IOException;
 
 public class VerifyGroupsAndPoolsController {
     Tournament tournament;
+    boolean isBeingEdited = false;
+    Text team1, team2;
+    String poolClicked;
 
     @FXML
     GridPane poolStatusGridPane;
@@ -51,14 +54,17 @@ public class VerifyGroupsAndPoolsController {
         for(Node node : poolStatusGridPane.getChildren())
             node.setStyle("-fx-font-weight: normal;");
 
-        Text poolClicked = (Text) poolStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2 + 1);
-        poolClicked.setStyle("-fx-font-weight: bold;");
+        Text poolClickedText = (Text) poolStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2 + 1);
 
-        drawGridPane(poolClicked.getText());
+        poolClickedText.setStyle("-fx-font-weight: bold;");
+
+        poolClicked = poolClickedText.getText();
+
+        drawGroupsGridPane();
     }
 
     @FXML
-    void drawGridPane(String poolClicked) {
+    void drawGroupsGridPane() {
         int teamYearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
                 : poolClicked.substring(0, 1));
         String teamSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
@@ -85,7 +91,45 @@ public class VerifyGroupsAndPoolsController {
             gridPane.setGridLinesVisible(false);
             gridPane.setGridLinesVisible(true);
 
-            groupsGridPane.addColumn(groupsGridPane.getColumnCount(), gridPane);
+            groupsGridPane.add(gridPane, i % 4, (int)(Math.floor(i / 4)));
+
+        }
+    }
+
+    @FXML
+    private void verifyButton() {
+        System.out.println("BUTTON CLICKED");
+        for (int i = 1; i < poolStatusGridPane.getChildren().size(); i++) {
+            System.out.println("Loop: " + i);
+            Text text = (Text) poolStatusGridPane.getChildren().get(i);
+
+            if (text.getText().equals(poolClicked)) {
+                System.out.println("Ko");
+                Text status = (Text) poolStatusGridPane.getChildren().get(i + 1);
+                status.setText("Done");
+                break;
+            }
+        }
+    }
+
+    @FXML
+    void setEditButton() {
+        isBeingEdited = true;
+    }
+
+     @FXML
+     void mouseClickedEdit(MouseEvent e) {
+        if (isBeingEdited) {
+            if (team1 == null) {
+                team1 = (Text) groupsGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2 + 1);
+
+                team1.setStyle("-fx-font-weight: bold;");
+            } else {
+                team2 = (Text) groupsGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2 + 1);
+
+                team1.setStyle("-fx-font-weight: normal;");
+            }
+            drawGroupsGridPane();
         }
     }
 
@@ -96,6 +140,23 @@ public class VerifyGroupsAndPoolsController {
         Parent newWindow = loader.load();
 
         CreatingGroupController atc = loader.getController();
+        atc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
+    }
+
+    @FXML
+    public void nextButtonClicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/CreatingFinalStage.FXML"));
+        Parent newWindow = loader.load();
+
+        CreatingFinalStageController atc = loader.getController();
         atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
