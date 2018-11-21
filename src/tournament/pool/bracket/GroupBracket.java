@@ -11,7 +11,6 @@ public interface GroupBracket {
     void createMatches(int matchDurationInMinutes);
     int getAmountOfAdvancingTeamsPrGroup();
     int getAmountOfGroups();
-    int getMatchesPrTeamAgainstOpponentInGroup();
     ArrayList<Match> getMatches();
     ArrayList<Group> getGroups();
     void setAdvancingTeamsPrGroup(int advancingTeamsPrGroup);

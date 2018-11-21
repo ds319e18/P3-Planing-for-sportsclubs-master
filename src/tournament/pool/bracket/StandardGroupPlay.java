@@ -128,10 +128,6 @@ public class StandardGroupPlay implements GroupBracket {
         return this.matches;
     }
 
-    public int getMatchesPrTeamAgainstOpponentInGroup() {
-        return matchesPrTeamAgainstOpponentInGroup;
-    }
-
     /*
     public void swapTeams(String name1, String name2) {
         Team team1 = new Team(name1, 0, "Z");

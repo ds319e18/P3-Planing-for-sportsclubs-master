@@ -16,6 +16,7 @@ import tournament.pool.bracket.KnockoutPlay;
 import tournament.pool.bracket.PlacementPlay;
 import tournament.pool.bracket.StandardGroupPlay;
 
+import java.awt.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -40,7 +41,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         //Database myDatabase = new Database();
         //myDatabase.connect();
-
 
         //launch(args);
     }
