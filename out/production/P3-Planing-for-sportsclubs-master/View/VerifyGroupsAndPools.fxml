@@ -24,24 +24,31 @@
             <Insets left="497.5" />
          </VBox.margin>
       </ImageView>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Creating groups" textAlignment="CENTER" wrappingWidth="1280.0">
-         <font>
-            <Font name="System Italic" size="20.0" />
-         </font>
-         <VBox.margin>
-            <Insets bottom="30.0" top="10.0" />
-         </VBox.margin>
-      </Text>
+      <VBox prefHeight="66.0" prefWidth="1280.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af grupper" textAlignment="CENTER" wrappingWidth="1280.0">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin til oprettelse af turnering:" translateX="30.0" translateY="-5.0" wrappingWidth="641.13671875">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="1280.0">
          <children>
-            <VBox prefHeight="279.0" prefWidth="160.0">
-               <HBox.margin>
-                  <Insets left="200.0" />
-               </HBox.margin>
+            <VBox maxWidth="35.0" minWidth="35.0" prefHeight="502.0" prefWidth="35.0" />
+            <VBox fx:id="progressBox" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" style="-fx-border-color: black;">
                <children>
-                  <VBox maxHeight="-Infinity" prefHeight="90.0" prefWidth="160.0" style="-fx-border-color: Black; -fx-border-width: 2;">
+                  <VBox maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turneringsopsætning" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -49,7 +56,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Step 1" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 1" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -59,9 +66,9 @@
                         </Text>
                      </children>
                   </VBox>
-                  <VBox maxHeight="-Infinity" prefHeight="90.0" prefWidth="160.0" style="-fx-border-color: Black; -fx-border-width: 2;">
+                  <VBox layoutX="11.0" layoutY="11.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tilføjelse af hold" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -69,7 +76,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Step 2" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 2" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -79,9 +86,9 @@
                         </Text>
                      </children>
                   </VBox>
-                  <VBox maxHeight="-Infinity" prefHeight="90.0" prefWidth="160.0" style="-fx-border-color: Black; -fx-border-width: 2;">
+                  <VBox layoutX="11.0" layoutY="11.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af grupper" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -89,7 +96,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Step 3" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 3" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -99,9 +106,23 @@
                         </Text>
                      </children>
                   </VBox>
-                  <VBox maxHeight="-Infinity" prefHeight="90.0" prefWidth="160.0" style="-fx-border-color: Black; -fx-border-width: 2;">
+                  <VBox layoutX="11.0" layoutY="295.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af grupper" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 4" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="11.0" layoutY="82.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="235.0" style="-fx-border-color: Black; -fx-border-width: 1;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af slutspillet" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -109,7 +130,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Step 4" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 5" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -119,9 +140,9 @@
                         </Text>
                      </children>
                   </VBox>
-                  <VBox maxHeight="-Infinity" prefHeight="90.0" prefWidth="160.0" style="-fx-border-color: Black; -fx-border-width: 2;">
+                  <VBox layoutX="11.0" layoutY="153.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -129,7 +150,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Step 5" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 6" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -139,9 +160,9 @@
                         </Text>
                      </children>
                   </VBox>
-                  <VBox maxHeight="-Infinity" prefHeight="90.0" prefWidth="160.0" style="-fx-border-color: Black; -fx-border-width: 2;">
+                  <VBox layoutX="11.0" layoutY="224.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -149,47 +170,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Step 6" wrappingWidth="160.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox maxHeight="-Infinity" prefHeight="90.0" prefWidth="160.0" style="-fx-border-color: Black; -fx-border-width: 2;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="160.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Step 7" wrappingWidth="160.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox maxHeight="-Infinity" prefHeight="90.0" prefWidth="160.0" style="-fx-border-color: Black; -fx-border-width: 2;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament setup" wrappingWidth="160.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Step 8" wrappingWidth="160.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 7" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -202,9 +183,9 @@
                </children>
             </VBox>
             <VBox prefHeight="200.0" prefWidth="100.0" />
-            <VBox prefHeight="527.0" prefWidth="156.0">
+            <VBox prefHeight="527.0" prefWidth="180.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Created groups " wrappingWidth="155.88231658935547">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettede grupper " wrappingWidth="180.0">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
@@ -245,16 +226,16 @@
                </children>
             </VBox>
             <VBox layoutX="375.0" layoutY="10.0" prefHeight="502.0" prefWidth="40.0" />
-            <VBox prefHeight="401.0" prefWidth="592.0">
+            <VBox prefHeight="375.0" prefWidth="590.0">
                <children>
-                  <Label prefHeight="34.0" prefWidth="303.0" text="Verify/Edit">
+                  <Label prefHeight="34.0" prefWidth="303.0" text="Godkend/Ændre">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Label>
                   <HBox prefHeight="360.0" prefWidth="586.0">
                      <children>
-                        <ScrollPane onMouseClicked="#mouseClickedEdit" prefHeight="360.0" prefWidth="596.0">
+                        <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#mouseClickedEdit" prefHeight="370.0" prefWidth="588.0">
                            <content>
                               <GridPane fx:id="groupsGridPane" prefWidth="586.0">
                                  <rowConstraints>
@@ -268,41 +249,41 @@
                         </ScrollPane>
                      </children>
                   </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <GridPane prefHeight="100.0" prefWidth="1277.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.5" minWidth="10.0" prefWidth="95.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="97.5" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="76.5" minWidth="10.0" prefWidth="25.5" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#verifyButton" prefHeight="30.0" prefWidth="90.0" text="Verify" GridPane.columnIndex="6" />
+                              <Button layoutX="1075.0" layoutY="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Edit" GridPane.columnIndex="4" />
+                              <Button layoutX="862.0" layoutY="12.0" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                              <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                           </children>
+                           <HBox.margin>
+                              <Insets top="30.0" />
+                           </HBox.margin>
+                        </GridPane>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
             <VBox layoutX="774.0" layoutY="10.0" prefHeight="502.0" prefWidth="38.0" />
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="1143.0">
-         <children>
-            <GridPane prefHeight="100.0" prefWidth="1277.0">
-              <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Button mnemonicParsing="false" onAction="#verifyButton" prefHeight="30.0" prefWidth="90.0" text="Verify" GridPane.columnIndex="10" />
-                  <Button layoutX="1075.0" layoutY="12.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Edit" GridPane.columnIndex="9" />
-                  <Button layoutX="862.0" layoutY="12.0" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.columnIndex="10" GridPane.rowIndex="2" />
-                  <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.columnIndex="9" GridPane.rowIndex="2" />
-               </children>
-            </GridPane>
-         </children>
-      </HBox>
+      <HBox prefHeight="100.0" prefWidth="1143.0" />
    </children>
 </VBox>

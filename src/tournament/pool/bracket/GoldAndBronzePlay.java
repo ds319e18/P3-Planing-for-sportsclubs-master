@@ -1,7 +1,13 @@
 package tournament.pool.bracket;
 
+import exceptions.IllegalAmountOfGroupsException;
+import exceptions.IllegalAmountOfTeamsException;
+import exceptions.IllegalMethodCallToAdvanceTeam;
+import exceptions.MatchNotFinishedException;
 import tournament.Match;
 import tournament.Team;
+import tournament.TeamPointsComp;
+import tournament.pool.Group;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,24 +15,33 @@ import java.util.HashMap;
 public class GoldAndBronzePlay implements KnockoutBracket {
     private Match goldMatch;
     private Match bronzeMatch;
-    private HashMap<String, Team> placements = new HashMap<>();
+    private HashMap<Integer, Team> result = new HashMap<>();
+    private GroupBracket groupBracket;
 
     @Override
     public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
-        //Hardcoding skills on point
-        goldMatch = new Match.Builder(matchDurationInMinutes)
-                                        .setName("Final")
-                                        .setFirstTeam(groupBracket.getGroups().get(0).getTeamList().get(0))
-                                        .setSecondTeam(groupBracket.getGroups().get(1).getTeamList().get(0))
-                                        .setFinished(false)
-                                        .build();
+        if (groupBracket.getAmountOfGroups() != 2) {
+            throw new IllegalAmountOfGroupsException();
+        }
+        else if (groupBracket.getGroups().get(0).getTeamList().size() != groupBracket.getGroups().get(1).getTeamList().size()) {
+            throw new IllegalAmountOfTeamsException();
+        } else {
+            goldMatch = new Match.Builder(matchDurationInMinutes)
+                    .setName("Final Match:" + '\t')
+                    .setFirstTeam(new Team("TBD"))
+                    .setSecondTeam(new Team("TBD"))
+                    .setFinished(false)
+                    .build();
 
-        bronzeMatch = new Match.Builder(matchDurationInMinutes)
-                                        .setName("Bronze Match")
-                                        .setFirstTeam(groupBracket.getGroups().get(0).getTeamList().get(1))
-                                        .setSecondTeam(groupBracket.getGroups().get(1).getTeamList().get(1))
-                                        .setFinished(false)
-                                        .build();
+            bronzeMatch = new Match.Builder(matchDurationInMinutes)
+                    .setName("Bronze Match:" + '\t')
+                    .setFirstTeam(new Team("TBD"))
+                    .setSecondTeam(new Team("TBD"))
+                    .setFinished(false)
+                    .build();
+        }
+
+        this.groupBracket = groupBracket;
         return this;
     }
 
@@ -40,27 +55,38 @@ public class GoldAndBronzePlay implements KnockoutBracket {
 
     @Override
     public void createNextRound(ArrayList<Team> advancingTeams) {
+        goldMatch.setFirstTeam(advancingTeams.get(0));
+        goldMatch.setSecondTeam(advancingTeams.get(2));
+        bronzeMatch.setFirstTeam(advancingTeams.get(1));
+        bronzeMatch.setSecondTeam(advancingTeams.get(3));
+    }
 
+    // Should not be called actually
+    @Override
+    public ArrayList<Team> advanceTeams() {
+        //Throw exception
+        throw new IllegalMethodCallToAdvanceTeam();
     }
 
     @Override
-    public ArrayList<Team> advanceTeams() {
-        return null;
-    }
-
-    //Should only be called after the games are played
-    public void setPlacements() {
+    public void calculateResults() {
         if (goldMatch.isFinished()) {
-            this.placements.put("Gold", goldMatch.getWinner());
-            this.placements.put("Silver", goldMatch.getLoser());
+            this.result.put(1, goldMatch.getWinner());
+            this.result.put(2, goldMatch.getLoser());
         } else {
-            //Throw exception: games not played
+            throw new MatchNotFinishedException();
         }
 
         if (bronzeMatch.isFinished()) {
-            this.placements.put("Bronze", goldMatch.getWinner());
+            this.result.put(3, bronzeMatch.getWinner());
+            this.result.put(4, bronzeMatch.getLoser());
         } else {
-            //Throw exception: games not played
+            throw new MatchNotFinishedException();
         }
+    }
+
+    @Override
+    public HashMap<Integer, Team> getResults() {
+        return this.result;
     }
 }

@@ -184,10 +184,9 @@
                   </HBox>
                   <TableView fx:id="matchDayTableView" prefHeight="300.0" prefWidth="435.0" style="-fx-border-color: black;">
                     <columns>
-                      <TableColumn minWidth="-Infinity" prefWidth="75.0" text="Dag" />
+                        <TableColumn prefWidth="193.0" text="Dato" />
                       <TableColumn minWidth="-Infinity" prefWidth="120.0" text="Starttidspunkt" />
                         <TableColumn prefWidth="120.0" text="Sluttidspunkt" />
-                        <TableColumn prefWidth="120.0" text="Dato" />
                     </columns>
                   </TableView>
                   <VBox prefHeight="20.0" prefWidth="240.0" />

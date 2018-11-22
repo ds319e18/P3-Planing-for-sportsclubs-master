@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
@@ -24,6 +25,10 @@ public class VerifyGroupsAndPoolsController {
     boolean isBeingEdited = false;
     Text team1, team2;
     String poolClicked;
+    private final int stepNumber = 3;
+
+    @FXML
+    private VBox progressBox;
 
     @FXML
     GridPane poolStatusGridPane;
@@ -34,6 +39,7 @@ public class VerifyGroupsAndPoolsController {
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         setPoolStatusGridPane();
+        highlightProgressBox();
     }
 
     private void setPoolStatusGridPane() {
@@ -79,13 +85,13 @@ public class VerifyGroupsAndPoolsController {
             Group group = tournament.findCorrectPool(teamYearGroup, teamSkillLevel).getGroupBracket().getGroups().get(i);
 
             GridPane gridPane = new GridPane();
-            Text groupNumberText = new Text("Group" + i);
+            Text groupNumberText = new Text("  Gruppe " + i + "  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
             gridPane.add(groupNumberText, 0,0);
 
             int rowCount = 1;
             for (Team team : group.getTeamList()) {
-                gridPane.add(new Text(team.getName()), 0, rowCount++);
+                gridPane.add(new Text("  " + team.getName() + "  "), 0, rowCount++);
             }
 
             gridPane.setGridLinesVisible(false);
@@ -165,5 +171,11 @@ public class VerifyGroupsAndPoolsController {
 
         window.setScene(newScene);
         window.show();
+    }
+
+    private void highlightProgressBox() {
+        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
+        stepBox.setStyle("-fx-border-color: #0000CD");
+        stepBox.setStyle("-fx-background-color: #A9A9A9");
     }
 }

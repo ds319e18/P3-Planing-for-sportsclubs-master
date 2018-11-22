@@ -118,11 +118,6 @@ public class Tournament {
             return this;
         }
 
-        public Builder setMatchSchedule(MatchSchedule matchSchedule) {
-            this.matchSchedule = matchSchedule;
-            return this;
-        }
-
         public Tournament build() {
             Tournament tournament = new Tournament();
             tournament.name = this.name;
@@ -132,7 +127,10 @@ public class Tournament {
             tournament.type = this.type;
             tournament.fieldList = this.fieldList;
             tournament.poolList = this.poolList;
-            tournament.matchSchedule = this.matchSchedule;
+            tournament.matchSchedule = new MatchSchedule(this.startDate, this.endDate);
+            for (MatchDay matchDay : tournament.matchSchedule.getMatchDays()) {
+                matchDay.setFieldList(this.fieldList);
+            }
 
             return tournament;
         }

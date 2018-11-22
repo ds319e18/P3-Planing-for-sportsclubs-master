@@ -6,9 +6,11 @@ import tournament.pool.bracket.GroupBracket;
 import tournament.pool.bracket.KnockoutBracket;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class KnockoutPlay implements KnockoutBracket {
     ArrayList<Match> matches = new ArrayList<>();
+    HashMap<Integer, Team> result = new HashMap<>();
 
     // This method creates the size of the match-array by creating empty matches
     @Override
@@ -37,13 +39,25 @@ public class KnockoutPlay implements KnockoutBracket {
     @Override
     public void createNextRound(ArrayList<Team> advancingTeams) {
         int first = 0;
-        int second = 1;
+        int second = 0;
+        if (advancingTeams.size() > 1) {
+            second = advancingTeams.size() - 1;
+        }
+
         for (Match match : this.matches) {
-            if (!match.isFinished() && first < advancingTeams.size()) {
+            if (!match.isFinished() && first < second && match.getFirstTeam().getName().equals("TBD")) {
                 match.setFirstTeam(advancingTeams.get(first));
-                match.setSecondTeam(advancingTeams.get(second));
-                first = first + 2;
-                second = second + 2;
+                first++;
+                if (!match.isFinished() && match.getSecondTeam().getName().equals("TBD")) {
+                    match.setSecondTeam(advancingTeams.get(second));
+                    second--;
+                }
+            } else if (first == second) {
+                if (!match.isFinished() && match.getFirstTeam().getName().equals("TBD")) {
+                    match.setFirstTeam(advancingTeams.get(first));
+                } else if (!match.isFinished() && match.getSecondTeam().getName().equals("TBD")) {
+                    match.setSecondTeam(advancingTeams.get(first));
+                }
             }
         }
     }
@@ -54,12 +68,23 @@ public class KnockoutPlay implements KnockoutBracket {
         ArrayList<Team> advancingTeams = new ArrayList<>();
 
         for (Match match : this.matches) {
-            if (match.isFinished()) {
+            if (match.isFinished() && !match.isChecked()) {
                 advancingTeams.add(match.getWinner());
+                match.setChecked(true);
             }
         }
 
         return advancingTeams;
     }
 
+    @Override
+    public void calculateResults() {
+        this.result.put(1, this.matches.get(this.matches.size() - 1).getWinner());
+        this.result.put(2, this.matches.get(this.matches.size() - 1).getLoser());
+    }
+
+    @Override
+    public HashMap<Integer, Team> getResults() {
+        return this.result;
+    }
 }

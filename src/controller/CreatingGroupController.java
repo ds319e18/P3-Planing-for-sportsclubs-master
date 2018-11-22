@@ -9,6 +9,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -26,6 +27,10 @@ import java.io.IOException;
 public class CreatingGroupController
 {
     Tournament tournament;
+    private final int stepNumber = 2;
+
+    @FXML
+    private VBox progressBox;
 
     @FXML
     GridPane poolNamesGridPane;
@@ -52,6 +57,7 @@ public class CreatingGroupController
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         setPoolStatusGridPane();
+        highlightProgressBox();
     }
 
     @FXML
@@ -171,4 +177,9 @@ public class CreatingGroupController
         amountOfGroupsComboBox.setItems(amountOfGroups);
     }
 
+    private void highlightProgressBox() {
+        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
+        stepBox.setStyle("-fx-border-color: #0000CD");
+        stepBox.setStyle("-fx-background-color: #A9A9A9");
+    }
 }

@@ -4,6 +4,7 @@ import tournament.Match;
 import tournament.Team;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class EqualMatchesPlay implements KnockoutBracket {
     private int amountOfMatches;
@@ -27,6 +28,17 @@ public class EqualMatchesPlay implements KnockoutBracket {
 
     @Override
     public ArrayList<Team> advanceTeams() {
+        return null;
+    }
+
+    @Override
+    public void calculateResults() {
+
+    }
+
+    @Override
+    public HashMap<Integer, Team> getResults() {
+
         return null;
     }
 }

@@ -17,10 +17,11 @@ public class Match implements Comparable<Match> {
     private Team winner;
     private Team loser;
     private boolean drawn;
+    // This field is used when checking whether or not a match has been checked when creating the next round in a knockout play
+    private boolean checked;
     private boolean planned;
 
     // Setters for creating a match (used in the knockout stage)
-
 
     public void setPlanned(boolean planned) {
         this.planned = planned;
@@ -64,6 +65,14 @@ public class Match implements Comparable<Match> {
         this.finished = true;
     }
 
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
     public Team getWinner() {
         return winner;
     }
@@ -72,12 +81,20 @@ public class Match implements Comparable<Match> {
         return loser;
     }
 
+    public Team getSecondTeam() {
+        return secondTeam;
+    }
+
     public int getDuration() {
         return duration;
     }
 
     public Field getField() {
         return field;
+    }
+
+    public Team getFirstTeam() {
+        return firstTeam;
     }
 
     public boolean isFinished() {
@@ -158,6 +175,7 @@ public class Match implements Comparable<Match> {
             match.firstTeam = this.firstTeam;
             match.secondTeam = this.secondTeam;
             match.planned = false;
+            match.checked = false;
 
             return match;
         }
