@@ -1,5 +1,6 @@
 package sample;
 
+import database.Database;
 import exceptions.IllegalAmountOfGroupsException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,7 +29,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("../View/CreatingMatchSchedule.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../View/TournamentSetup.fxml"));
 
         primaryStage.setTitle("Tournament planner");
         primaryStage.setScene(new Scene(root, 1280, 800));
@@ -42,7 +43,7 @@ public class Main extends Application {
         //Database myDatabase = new Database();
         //myDatabase.connect();
 
-        //launch(args);
+        launch(args);
     }
 
 }

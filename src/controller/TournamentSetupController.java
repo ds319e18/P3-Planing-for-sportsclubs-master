@@ -59,6 +59,7 @@ public class TournamentSetupController {
                 TournamentType.values()));
         fieldNumberCombobox.setItems(fieldList);
         highlightProgressBox();
+        System.out.println(fieldNumberCombobox.getClass().getSimpleName());
     }
 
     private ObservableList<String> fieldList = FXCollections.observableArrayList(
