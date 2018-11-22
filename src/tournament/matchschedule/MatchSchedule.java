@@ -13,6 +13,7 @@ public class MatchSchedule {
     public MatchSchedule(LocalDate startDate, LocalDate endDate) {
         this.startDate = startDate;
         this.endDate = endDate;
+        createMatchDays();
     }
 
     public long getNumberOfMatchDays() {
@@ -23,6 +24,9 @@ public class MatchSchedule {
         return matchDays;
     }
 
-    private void updateMatchSchedule() {
+    public void createMatchDays() {
+        for (int iter = 0; iter < getNumberOfMatchDays(); iter++) {
+            this.matchDays.add(new MatchDay(startDate.plusDays(iter)));
+        }
     }
 }

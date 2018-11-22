@@ -17,7 +17,7 @@ public class PlacementPlay implements KnockoutBracket {
 
     @Override
     public PlacementPlay createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
-        if (groupBracket.getAmountOfGroups() > 2) {
+        if (groupBracket.getAmountOfGroups() != 2) {
             throw new IllegalAmountOfGroupsException();
         }
         else if (groupBracket.getGroups().get(0).getTeamList().size() != groupBracket.getGroups().get(1).getTeamList().size()) {

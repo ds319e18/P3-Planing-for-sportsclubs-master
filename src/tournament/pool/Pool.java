@@ -18,9 +18,6 @@ public class Pool {
     private KnockoutBracket knockoutBracket;
     private int matchDuration;
 
-    public void setMatchDuration() {
-    }
-
     public void addGroupBracket(GroupBracket groupBracketType) {
         this.groupBracket = groupBracketType.createGroupBracket(teamList);
     }

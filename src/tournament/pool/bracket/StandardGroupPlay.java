@@ -30,7 +30,6 @@ public class StandardGroupPlay implements GroupBracket {
         this.matchesPrTeamAgainstOpponentInGroup = matchesPrTeamAgainstOpponentInGroup;
     }
 
-
     // This method creates the group bracket
     @Override
     public StandardGroupPlay createGroupBracket(ArrayList<Team> poolTeamList) {
@@ -47,31 +46,21 @@ public class StandardGroupPlay implements GroupBracket {
         return this;
     }
 
-    // We iterate the first half of the groups (eg. 1 and 2 if there is 4). Then we put the advancing teams into different matches,
-    // starting with number 1 of the group, then number 2 of the group. Then we iterate the last of the groups and put the advancing
-    // teams into the matches, starting with the last teams to proceed (eg. if two teams proceed from the group stage then we should
-    // put number 2 into the next match, then number 1 and continue like this for the last groups).
+    // We put the teams that advance through to the knockout play in a list of teams
     @Override
     public ArrayList<Team> advanceTeams() {
         ArrayList<Team> advancingTeams = new ArrayList<>();
 
-        int count = 0;
         for (Group group : this.groups) {
+            group.getTeamList().sort(new TeamPointsComp());
             int teamsAdded = 0;
-            if (count < (this.groups.size() / 2)) {
-                for (Team team : group.getTeamList()) {
-                    if (teamsAdded < this.advancingTeamsPrGroup) {
-                        advancingTeams.add(team);
-                        teamsAdded++;
-                    }
-                }
-            } else {
-                for (int iter = advancingTeamsPrGroup; iter > 0; iter--) {
-                    advancingTeams.add(group.getTeamList().get(iter - 1));
-                }
 
+            for (Team team : group.getTeamList()) {
+                if (teamsAdded < this.advancingTeamsPrGroup) {
+                    advancingTeams.add(team);
+                    teamsAdded++;
+                }
             }
-            count++;
         }
 
         return advancingTeams;
@@ -82,7 +71,7 @@ public class StandardGroupPlay implements GroupBracket {
         int secondTeamIndex = 0;
 
         for (int iter = 0; iter < matchesPrTeamAgainstOpponentInGroup; iter++) {
-            if (this.groups.isEmpty() ) {
+            if (this.groups.isEmpty()) {
                 // throw exception
             } else {
                 for (Group group : this.groups) {
