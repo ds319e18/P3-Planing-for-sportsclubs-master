@@ -2,6 +2,7 @@ package tournament.pool.bracket;
 
 import exceptions.IllegalAmountOfGroupsException;
 import exceptions.IllegalAmountOfTeamsException;
+import exceptions.IllegalMethodCallToAdvanceTeam;
 import tournament.Match;
 import tournament.Team;
 import tournament.TeamPointsComp;
@@ -67,16 +68,12 @@ public class PlacementPlay implements KnockoutBracket {
     }
 
 
-    // This could be not implemented
+    // This should not be called
     @Override
     public ArrayList<Team> advanceTeams() {
-        ArrayList<Team> allTeams = new ArrayList<>();
 
-        for (Group group : this.groupBracket.getGroups()) {
-            allTeams.addAll(group.getTeamList());
-        }
+        throw new IllegalMethodCallToAdvanceTeam();
 
-        return allTeams;
     }
 
     @Override

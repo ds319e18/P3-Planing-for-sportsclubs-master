@@ -75,7 +75,6 @@ class TournamentTest {
                 .setEndDate(LocalDate.now().plusDays(1))
                 .addToFieldList(et, to)
                 .setPoolList(puljer)
-                .setMatchSchedule(new MatchSchedule(LocalDate.now(), LocalDate.now().plusDays(1)))
                 .build();
 
         puljeEt.addTeam(new Team("Jetsmark IF", puljeEt.getYearGroup(), puljeEt.getSkillLevel()));
@@ -112,16 +111,6 @@ class TournamentTest {
         tournament.findCorrectPool(6, "B").addKnockoutBracket(new KnockoutPlay());
 
         // Virker indtil her
-
-        for (int i = 0; i < tournament.getMatchSchedule().getNumberOfMatchDays(); i++) {
-            tournament.getMatchSchedule().getMatchDays().add(new MatchDay.Builder(LocalTime.of(10, 0), LocalTime.of(16, 0))
-                    .setName("Day " + (i + 1))
-                    .setDate(LocalDate.now().plusDays(i))
-                    .setFieldsToUse(tournament.getFieldList())
-                    .setTimeBetweenMatches(5)
-                    .setMatchesNoMix(tournament.getAllMatches())
-                    .build());
-        }
 
         /*for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
             System.out.println(dage.toString());
@@ -209,7 +198,6 @@ class TournamentTest {
                 .setEndDate(LocalDate.now().plusDays(1))
                 .addToFieldList(et, to)
                 .setPoolList(puljer)
-                .setMatchSchedule(new MatchSchedule(LocalDate.now(), LocalDate.now().plusDays(1)))
                 .build();
 
         puljeEt.addTeam(new Team("Jetsmark IF", puljeEt.getYearGroup(), puljeEt.getSkillLevel()));
@@ -247,15 +235,6 @@ class TournamentTest {
 
         // Virker indtil her
 
-        for (int i = 0; i < tournament.getMatchSchedule().getNumberOfMatchDays(); i++) {
-            tournament.getMatchSchedule().getMatchDays().add(new MatchDay.Builder(LocalTime.of(10, 0), LocalTime.of(16, 0))
-                    .setName("Day " + (i + 1))
-                    .setDate(LocalDate.now().plusDays(i))
-                    .setFieldsToUse(tournament.getFieldList())
-                    .setTimeBetweenMatches(5)
-                    .setMatchesNoMix(tournament.getAllMatches())
-                    .build());
-        }
 
         /*for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
             System.out.println(dage.toString());
@@ -342,7 +321,6 @@ class TournamentTest {
                 .setEndDate(LocalDate.now().plusDays(1))
                 .addToFieldList(et, to)
                 .setPoolList(puljer)
-                .setMatchSchedule(new MatchSchedule(LocalDate.now(), LocalDate.now().plusDays(1)))
                 .build();
 
         puljeEt.addTeam(new Team("Jetsmark IF", puljeEt.getYearGroup(), puljeEt.getSkillLevel()));
@@ -376,15 +354,6 @@ class TournamentTest {
         tournament.findCorrectPool(6,"A").addKnockoutBracket(new GoldAndBronzePlay());
         tournament.findCorrectPool(6, "B").addKnockoutBracket(new GoldAndBronzePlay());
 
-        for (int i = 0; i < tournament.getMatchSchedule().getNumberOfMatchDays(); i++) {
-            tournament.getMatchSchedule().getMatchDays().add(new MatchDay.Builder(LocalTime.of(10, 0), LocalTime.of(16, 0))
-                    .setName("Day " + (i + 1))
-                    .setDate(LocalDate.now().plusDays(i))
-                    .setFieldsToUse(tournament.getFieldList())
-                    .setTimeBetweenMatches(5)
-                    .setMatchesNoMix(tournament.getAllMatches())
-                    .build());
-        }
 
         for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
             System.out.println(dage.toString());
@@ -469,7 +438,6 @@ class TournamentTest {
                 .setEndDate(LocalDate.now().plusDays(1))
                 .addToFieldList(et, to)
                 .setPoolList(puljer)
-                .setMatchSchedule(new MatchSchedule(LocalDate.now(), LocalDate.now().plusDays(1)))
                 .build();
 
         puljeEt.addTeam(new Team("Jetsmark IF", puljeEt.getYearGroup(), puljeEt.getSkillLevel()));
@@ -491,16 +459,6 @@ class TournamentTest {
         }
 
         tournament.findCorrectPool(6,"A").addKnockoutBracket(new KnockoutPlay());
-
-        for (int i = 0; i < tournament.getMatchSchedule().getNumberOfMatchDays(); i++) {
-            tournament.getMatchSchedule().getMatchDays().add(new MatchDay.Builder(LocalTime.of(10, 0), LocalTime.of(16, 0))
-                    .setName("Day " + (i + 1))
-                    .setDate(LocalDate.now().plusDays(i))
-                    .setFieldsToUse(tournament.getFieldList())
-                    .setTimeBetweenMatches(5)
-                    .setMatchesNoMix(tournament.getAllMatches())
-                    .build());
-        }
 
         // Print af grupper
         for (Pool pool : tournament.getPoolList()) {
