@@ -73,6 +73,8 @@ public class VerifyFinalStageController {
         }
         poolKnockoutStatusGridPane.setGridLinesVisible(false);
         poolKnockoutStatusGridPane.setGridLinesVisible(true);
+        System.out.println(poolKnockoutStatusGridPane.getChildren());
+
     }
 
     @FXML
@@ -88,7 +90,6 @@ public class VerifyFinalStageController {
         finalStageGridPane.setVgap(30);
         finalStageGridPane.setHgap(30);
 
-        System.out.println(amountOfMatches);
         int iter = amountOfMatches - 1;
         int columnCount = 0;
         if (iter > 2) {
@@ -126,7 +127,6 @@ public class VerifyFinalStageController {
 
         }
         if (iter == 0) {
-            System.out.println("gris");
             int rowCount = 1;
             Team team1 = knockoutBracket.getMatches().get(0).getFirstTeam();
             Team team2 = knockoutBracket.getMatches().get(0).getSecondTeam();
@@ -161,5 +161,45 @@ public class VerifyFinalStageController {
         window.show();
     }
 
+    @FXML
+    private void verifyButton() {
+        for (int i = 0; i < poolKnockoutStatusGridPane.getChildren().size(); i++) {
+            Text text = (Text) poolKnockoutStatusGridPane.getChildren().get(i);
+
+            if (text.getText().equals(poolClicked)) {
+                Text status = (Text) poolKnockoutStatusGridPane.getChildren().get(i + 2);
+                status.setText("Done");
+                break;
+            }
+        }
+    }
+
+    @FXML
+    public void nextButtonClicked(ActionEvent event) throws IOException {
+        boolean value = true;
+        Text temp=new Text();
+        for (int i = 0; i < poolKnockoutStatusGridPane.getRowCount(); i++) {
+            temp = (Text) poolKnockoutStatusGridPane.getChildren().get(i*3 +2);
+            if (!temp.getText().equals("Done")) {
+                value = false;
+            }
+
+        }
+
+        if (value) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/CreatingFinalStage.FXML"));
+            Parent newWindow = loader.load();
+
+            CreatingFinalStageController atc = loader.getController();
+            atc.setTournament(tournament);
+
+            Scene newScene = new Scene(newWindow);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            window.setScene(newScene);window.show();
+        }
+
+    }
 
 }

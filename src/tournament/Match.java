@@ -97,9 +97,6 @@ public class Match implements Comparable<Match> {
         return firstTeam;
     }
 
-    public Team getSecondTeam() {
-        return secondTeam;
-    }
 
     public boolean isFinished() {
         return finished;
