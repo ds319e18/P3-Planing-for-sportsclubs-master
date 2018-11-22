@@ -13,6 +13,7 @@ import tournament.matchschedule.MatchDay;
 import tournament.matchschedule.MatchSchedule;
 import tournament.pool.Group;
 import tournament.pool.Pool;
+import tournament.pool.bracket.GoldAndBronzePlay;
 import tournament.pool.bracket.KnockoutPlay;
 import tournament.pool.bracket.PlacementPlay;
 import tournament.pool.bracket.StandardGroupPlay;

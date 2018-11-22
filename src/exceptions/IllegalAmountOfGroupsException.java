@@ -1,6 +1,5 @@
 package exceptions;
 
-import javafx.scene.control.Alert;
 
 public class IllegalAmountOfGroupsException extends RuntimeException {
     public IllegalAmountOfGroupsException() {

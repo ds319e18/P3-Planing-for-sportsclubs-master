@@ -39,13 +39,25 @@ public class KnockoutPlay implements KnockoutBracket {
     @Override
     public void createNextRound(ArrayList<Team> advancingTeams) {
         int first = 0;
-        int second = 1;
+        int second = 0;
+        if (advancingTeams.size() > 1) {
+            second = advancingTeams.size() - 1;
+        }
+
         for (Match match : this.matches) {
-            if (!match.isFinished() && first < advancingTeams.size()) {
+            if (!match.isFinished() && first < second && match.getFirstTeam().getName().equals("TBD")) {
                 match.setFirstTeam(advancingTeams.get(first));
-                match.setSecondTeam(advancingTeams.get(second));
-                first = first + 2;
-                second = second + 2;
+                first++;
+                if (!match.isFinished() && match.getSecondTeam().getName().equals("TBD")) {
+                    match.setSecondTeam(advancingTeams.get(second));
+                    second--;
+                }
+            } else if (first == second) {
+                if (!match.isFinished() && match.getFirstTeam().getName().equals("TBD")) {
+                    match.setFirstTeam(advancingTeams.get(first));
+                } else if (!match.isFinished() && match.getSecondTeam().getName().equals("TBD")) {
+                    match.setSecondTeam(advancingTeams.get(first));
+                }
             }
         }
     }
@@ -56,8 +68,9 @@ public class KnockoutPlay implements KnockoutBracket {
         ArrayList<Team> advancingTeams = new ArrayList<>();
 
         for (Match match : this.matches) {
-            if (match.isFinished()) {
+            if (match.isFinished() && !match.isChecked()) {
                 advancingTeams.add(match.getWinner());
+                match.setChecked(true);
             }
         }
 

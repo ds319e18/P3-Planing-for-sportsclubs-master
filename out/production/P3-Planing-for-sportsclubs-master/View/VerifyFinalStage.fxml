@@ -255,7 +255,11 @@
                      <children>
                         <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="370.0" prefWidth="454.0">
                            <content>
+<<<<<<< HEAD
                               <GridPane fx:id="finalStageGridPane" prefWidth="450.0">
+=======
+                              <GridPane prefWidth="450.0">
+>>>>>>> Dev
                                  <rowConstraints>
                                     <RowConstraints />
                                  </rowConstraints>
