@@ -6,15 +6,13 @@ import tournament.Team;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class EqualMatchesPlay implements KnockoutBracket {
+public class EqualMatchesPlay extends KnockoutBracket {
     private int amountOfMatches;
-
 
     @Override
     public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         return null;
     }
-
 
     @Override
     public ArrayList<Match> getMatches() {
@@ -24,11 +22,6 @@ public class EqualMatchesPlay implements KnockoutBracket {
     @Override
     public void createNextRound(ArrayList<Team> advancingTeams) {
 
-    }
-
-    @Override
-    public ArrayList<Team> advanceTeams() {
-        return null;
     }
 
     @Override

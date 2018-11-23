@@ -84,6 +84,7 @@ public class VerifyGroupsAndPoolsController {
 
             Group group = tournament.findCorrectPool(teamYearGroup, teamSkillLevel).getGroupBracket().getGroups().get(i);
 
+
             GridPane gridPane = new GridPane();
             Text groupNumberText = new Text("  Gruppe " + i + "  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
@@ -104,13 +105,10 @@ public class VerifyGroupsAndPoolsController {
 
     @FXML
     private void verifyButton() {
-        System.out.println("BUTTON CLICKED");
         for (int i = 1; i < poolStatusGridPane.getChildren().size(); i++) {
-            System.out.println("Loop: " + i);
             Text text = (Text) poolStatusGridPane.getChildren().get(i);
 
             if (text.getText().equals(poolClicked)) {
-                System.out.println("Ko");
                 Text status = (Text) poolStatusGridPane.getChildren().get(i + 1);
                 status.setText("Done");
                 break;
