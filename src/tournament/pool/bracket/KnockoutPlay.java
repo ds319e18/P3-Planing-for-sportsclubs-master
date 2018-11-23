@@ -2,23 +2,18 @@ package tournament.pool.bracket;
 
 import tournament.Match;
 import tournament.Team;
-import tournament.pool.bracket.GroupBracket;
-import tournament.pool.bracket.KnockoutBracket;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class KnockoutPlay implements KnockoutBracket {
-    ArrayList<Match> matches = new ArrayList<>();
-    HashMap<Integer, Team> result = new HashMap<>();
-
+public class KnockoutPlay extends KnockoutBracket {
     // This method creates the size of the match-array by creating empty matches
     @Override
     public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         int numberOfMatches = (groupBracket.getAmountOfGroups() * groupBracket.getAmountOfAdvancingTeamsPrGroup()) - 1;
 
         for (int i = 1; i < numberOfMatches + 1; i++) {
-            this.matches.add(new Match.Builder(matchDurationInMinutes)
+            super.getMatches().add(new Match.Builder(matchDurationInMinutes)
                                                 .setName("Knockout Match:")
                                                 .setFinished(false)
                                                 .setFirstTeam(new Team("TBD"))
@@ -26,11 +21,6 @@ public class KnockoutPlay implements KnockoutBracket {
                                                 .build());
         }
         return this;
-    }
-
-    @Override
-    public ArrayList<Match> getMatches() {
-        return this.matches;
     }
 
     // This method creates each next round of the final stage by adding teams to the matches
@@ -44,7 +34,7 @@ public class KnockoutPlay implements KnockoutBracket {
             second = advancingTeams.size() - 1;
         }
 
-        for (Match match : this.matches) {
+        for (Match match : super.getMatches()) {
             if (!match.isFinished() && first < second && match.getFirstTeam().getName().equals("TBD")) {
                 match.setFirstTeam(advancingTeams.get(first));
                 first++;
@@ -67,7 +57,7 @@ public class KnockoutPlay implements KnockoutBracket {
     public ArrayList<Team> advanceTeams() {
         ArrayList<Team> advancingTeams = new ArrayList<>();
 
-        for (Match match : this.matches) {
+        for (Match match : super.getMatches()) {
             if (match.isFinished() && !match.isChecked()) {
                 advancingTeams.add(match.getWinner());
                 match.setChecked(true);
@@ -79,12 +69,8 @@ public class KnockoutPlay implements KnockoutBracket {
 
     @Override
     public void calculateResults() {
-        this.result.put(1, this.matches.get(this.matches.size() - 1).getWinner());
-        this.result.put(2, this.matches.get(this.matches.size() - 1).getLoser());
+        super.getResults().put(1, super.getMatches().get(super.getMatches().size() - 1).getWinner());
+        super.getResults().put(2, super.getMatches().get(super.getMatches().size() - 1).getLoser());
     }
 
-    @Override
-    public HashMap<Integer, Team> getResults() {
-        return this.result;
-    }
 }

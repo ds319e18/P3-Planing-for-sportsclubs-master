@@ -63,6 +63,7 @@ public class KnockoutBracketTest {
     void testKnockoutPlayCreateKnockoutBracket01() {
         // This test is for 2 groups and an even amount of teams in each group
         tournament.findCorrectPool(6, "A").addKnockoutBracket(new KnockoutPlay());
+
         // 8 teams, 2 groups, 2 teams advancing from each group should give us two semifinals and a final: 3 matches
         assertEquals(tournament.findCorrectPool(6, "A").getKnockoutBracket().getMatches().size(), 3);
     }

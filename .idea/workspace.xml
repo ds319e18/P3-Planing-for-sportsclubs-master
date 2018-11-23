@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="7978a36a-64ff-486b-8d77-c5201b6fe191" name="Default" comment="" />
+=======
+    <list default="true" id="6b5b37e0-0e80-43a5-af85-69be3857750f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Tests/tournament/pool/bracket/KnockoutBracketTest.java" afterPath="$PROJECT_DIR$/Tests/tournament/pool/bracket/KnockoutBracketTest.java" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingFinalStageController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingFinalStageController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingGroupController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingGroupController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/VerifyFinalStageController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/VerifyFinalStageController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/VerifyGroupsAndPoolsController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/VerifyGroupsAndPoolsController.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool$Builder.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool$Builder.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/EqualMatchesPlay.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/EqualMatchesPlay.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GoldAndBronzePlay.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GoldAndBronzePlay.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GroupBracket.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GroupBracket.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutBracket.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutBracket.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutPlay.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutPlay.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/PlacementPlay.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/PlacementPlay.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/StandardGroupPlay.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/StandardGroupPlay.class" />
+      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/TournamentTest.class" afterPath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/TournamentTest.class" />
+      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutBracketTest.class" afterPath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutBracketTest.class" />
+      <change beforePath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" afterPath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/Pool.java" afterPath="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/EqualMatchesPlay.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/EqualMatchesPlay.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/GoldAndBronzePlay.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/GoldAndBronzePlay.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutBracket.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutBracket.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" />
+    </list>
+>>>>>>> Stashed changes
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,21 +44,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< Updated upstream
       <file leaf-file-name="VerifyFinalStageController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="343">
               <caret line="181" column="12" lean-forward="false" selection-start-line="181" selection-start-column="12" selection-end-line="181" selection-end-column="12" />
               <folding />
+=======
+      <file leaf-file-name="Pool.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/Pool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1092">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2417#2418#0" expanded="true" />
+                <element signature="e#2455#2456#0" expanded="true" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="KnockoutPlay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
               <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+=======
+      <file leaf-file-name="GoldAndBronzePlay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/GoldAndBronzePlay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupBracket.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+              <folding>
+                <element signature="e#673#674#0" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
+                <element signature="e#760#761#0" expanded="true" />
+                <element signature="e#802#803#0" expanded="true" />
+                <element signature="e#846#847#0" expanded="true" />
+                <element signature="e#881#882#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#958#959#0" expanded="true" />
+                <element signature="e#1017#1018#0" expanded="true" />
+                <element signature="e#1080#1081#0" expanded="true" />
+                <element signature="e#1466#1467#0" expanded="true" />
+                <element signature="e#1518#1519#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlacementPlay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-358">
+              <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -35,28 +121,75 @@
       <file leaf-file-name="StandardGroupPlay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="84">
               <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+=======
+            <state relative-caret-position="871">
+              <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="KnockoutBracket.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutBracket.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
               <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+=======
+      <file leaf-file-name="EqualMatchesPlay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/EqualMatchesPlay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="KnockoutBracket.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutBracket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#783#784#0" expanded="true" />
+                <element signature="e#818#819#0" expanded="true" />
+                <element signature="e#868#869#0" expanded="true" />
+                <element signature="e#902#903#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KnockoutPlay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="72" column="75" lean-forward="false" selection-start-line="72" selection-start-column="75" selection-end-line="72" selection-end-column="75" />
+>>>>>>> Stashed changes
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="VerifyGroupsAndPoolsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
               <caret line="171" column="5" lean-forward="true" selection-start-line="156" selection-start-column="3" selection-end-line="171" selection-end-column="5" />
+=======
+      <file leaf-file-name="KnockoutBracketTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/bracket/KnockoutBracketTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="421">
+              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -64,11 +197,20 @@
       </file>
     </leaf>
   </component>
+<<<<<<< Updated upstream
   <component name="FindInProjectRecents">
     <findStrings>
       <find>out</find>
       <find>system</find>
     </findStrings>
+=======
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+>>>>>>> Stashed changes
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,10 +223,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/tournament/Match.java" />
         <option value="$PROJECT_DIR$/src/controller/TournamentSetupController.java" />
         <option value="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" />
         <option value="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" />
+=======
+        <option value="$PROJECT_DIR$/Tests/tournament/TournamentTest.java" />
+        <option value="$PROJECT_DIR$/Tests/tournament/pool/bracket/KnockoutBracketTest.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/Knockout.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/GoldAndBronzePlay.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/EqualMatchesPlay.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutBracket.java" />
+>>>>>>> Stashed changes
       </list>
     </option>
   </component>
@@ -150,6 +306,17 @@
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tournament" type="462c0819:PsiDirectoryNode" />
+<<<<<<< Updated upstream
+=======
+              <item name="matchschedule" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tournament" type="462c0819:PsiDirectoryNode" />
+              <item name="pool" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
@@ -315,6 +482,7 @@
       <created>1542884831694</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< Updated upstream
       <updated>1542884831694</updated>
       <workItem from="1542884836385" duration="6970000" />
     </task>
@@ -325,6 +493,50 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+=======
+      <updated>1542877393126</updated>
+      <workItem from="1542877394400" duration="11860000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="KnockoutBracketTest - 2018.11.22 at 10h 56m 22s.xml">
+      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KnockoutBracketTest - 2018.11.22 at 10h 58m 13s.xml">
+      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KnockoutBracketTest - 2018.11.22 at 10h 59m 29s.xml">
+      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KnockoutBracketTest - 2018.11.22 at 13h 01m 20s.xml">
+      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KnockoutBracketTest - 2018.11.22 at 13h 01m 48s.xml">
+      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KnockoutBracketTest - 2018.11.22 at 13h 31m 55s.xml">
+      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KnockoutBracketTest - 2018.11.22 at 13h 33m 45s.xml">
+      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KnockoutBracketTest - 2018.11.22 at 13h 45m 31s.xml">
+      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KnockoutBracketTest - 2018.11.22 at 13h 53m 28s.xml">
+      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KnockoutBracketTest - 2018.11.22 at 13h 55m 47s.xml">
+      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="11860000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="693" extended-state="0" />
+>>>>>>> Stashed changes
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -340,8 +552,13 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Stashed changes
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -352,7 +569,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -384,14 +600,22 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/TournamentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4734">
+          <caret line="461" column="0" lean-forward="false" selection-start-line="461" selection-start-column="0" selection-end-line="461" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -404,22 +628,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="60" column="31" lean-forward="false" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="171" column="5" lean-forward="true" selection-start-line="156" selection-start-column="3" selection-end-line="171" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutBracket.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="84">
           <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+=======
+        <state relative-caret-position="143">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/bracket/KnockoutBracketTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/EqualMatchesPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="871">
+          <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
@@ -434,17 +700,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="84">
           <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+=======
+        <state relative-caret-position="-358">
+          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="181" column="12" lean-forward="false" selection-start-line="181" selection-start-column="12" selection-end-line="181" selection-end-column="12" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="72" column="75" lean-forward="false" selection-start-line="72" selection-start-column="75" selection-end-line="72" selection-end-column="75" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/Pool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1092">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2417#2418#0" expanded="true" />
+            <element signature="e#2455#2456#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/GoldAndBronzePlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="28" column="43" lean-forward="true" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+>>>>>>> Stashed changes
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="23" column="35" lean-forward="true" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding>
+            <element signature="e#673#674#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+            <element signature="e#881#882#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+            <element signature="e#1017#1018#0" expanded="true" />
+            <element signature="e#1080#1081#0" expanded="true" />
+            <element signature="e#1466#1467#0" expanded="true" />
+            <element signature="e#1518#1519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutBracket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#902#903#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
