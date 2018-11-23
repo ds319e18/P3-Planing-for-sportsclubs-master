@@ -42,8 +42,15 @@ public class Main extends Application {
     public static void main(String[] args) {
         //Database myDatabase = new Database();
         //myDatabase.connect();
+        int k = 0;
 
-        launch(args);
+        for(int i = 1; i < 6-1; i++) {
+            for(int j = 6; j >= i; j--){
+                System.out.println(i);
+            }
+        }
+
+        //launch(args);
     }
 
 }

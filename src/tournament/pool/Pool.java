@@ -1,12 +1,10 @@
 package tournament.pool;
 
-import tournament.Team;
-import tournament.TeamNameComp;
+import tournament.*;
 import tournament.pool.bracket.GroupBracket;
 import tournament.pool.bracket.KnockoutBracket;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.*;
 
 public class Pool {
     private String name;

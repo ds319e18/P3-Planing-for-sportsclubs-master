@@ -29,6 +29,7 @@ public class MatchSchedule {
     private void createMatchDays() {
         for (int iter = 0; iter < getNumberOfMatchDays(); iter++) {
             this.matchDays.add(new MatchDay(startDate.plusDays(iter)));
+            this.matchDays.get(iter).setName("Day " + (iter + 1));
         }
     }
 

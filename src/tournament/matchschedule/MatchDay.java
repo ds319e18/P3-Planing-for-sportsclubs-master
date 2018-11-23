@@ -60,6 +60,8 @@ public class MatchDay {
         this.endTime = endTime;
     }
 
+    public void setName(String name) { this.name = name; }
+
     public LocalDate getDate() {
         return date;
     }

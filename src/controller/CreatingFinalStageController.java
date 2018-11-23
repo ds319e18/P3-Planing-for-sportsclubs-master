@@ -79,15 +79,12 @@ public class CreatingFinalStageController {
         tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
 
         if (knockoutRadioButton.isSelected()) {
-            tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new KnockoutPlay()
-                    .createKnockoutBracket(tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket(),
-                            tournament.findCorrectPool(yearGroup, skillLevel).getMatchDuration()));
-        } else if (placementRadioButton.isSelected()) {
-            tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new PlacementPlay()
-                    .createKnockoutBracket(tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket(),
-                            tournament.findCorrectPool(yearGroup, skillLevel).getMatchDuration()));
-        }
+            tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new KnockoutPlay());
+            System.out.println("if " + tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getMatches().size());
 
+        } else if (placementRadioButton.isSelected()) {
+            tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new PlacementPlay());
+        }
         setPoolStatusGridPane();
     }
 
