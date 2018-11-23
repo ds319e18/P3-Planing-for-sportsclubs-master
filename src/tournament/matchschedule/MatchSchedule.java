@@ -1,5 +1,7 @@
 package tournament.matchschedule;
 
+import tournament.Match;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -24,9 +26,18 @@ public class MatchSchedule {
         return matchDays;
     }
 
-    public void createMatchDays() {
+    private void createMatchDays() {
         for (int iter = 0; iter < getNumberOfMatchDays(); iter++) {
             this.matchDays.add(new MatchDay(startDate.plusDays(iter)));
+            this.matchDays.get(iter).setName("Day " + (iter + 1));
         }
     }
+
+    public void setNoMixedMatches(ArrayList<Match> matches) {
+        for (MatchDay matchDay : matchDays) {
+            matchDay.setMatchesNoMix(matches);
+        }
+    }
+
+
 }
