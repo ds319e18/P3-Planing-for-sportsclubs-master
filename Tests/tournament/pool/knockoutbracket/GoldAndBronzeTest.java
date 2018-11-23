@@ -73,13 +73,13 @@ public class GoldAndBronzeTest {
     void testCreateNextRound01(){
         // This test is for 2 groups and 2 advancing teams
         tournament.findCorrectPool(6, "A").addKnockoutBracket(new GoldAndBronzePlay());
-
+        /*
         tournament.getMatchSchedule().getMatchDays().get(0).setStartTime(LocalTime.of(12, 0));
         tournament.getMatchSchedule().getMatchDays().get(0).setEndTime(LocalTime.of(16, 0));
         tournament.getMatchSchedule().getMatchDays().get(1).setStartTime(LocalTime.of(12, 0));
         tournament.getMatchSchedule().getMatchDays().get(1).setEndTime(LocalTime.of(16, 0));
         tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
-
+        */
         // Printer kampe ud hvor gruppe kampe er lavet
         /*for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
             System.out.println(dage.toString());

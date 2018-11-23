@@ -19,21 +19,12 @@ public class MatchDay {
     private ArrayList<Match> matches;
     private ArrayList<Field> fieldList;
 
-
     public MatchDay(LocalDate date) {
         this.date = date;
     }
 
     public ArrayList<Match> getMatches() {
         return matches;
-    }
-
-    public TextField getEndTimeTextField() {
-        return new TextField(endTime.toString());
-    }
-
-    public TextField getStartTimeTextField() {
-        return new TextField(startTime.toString());
     }
 
     public void setFieldList(ArrayList<Field> fieldList) {
@@ -52,12 +43,12 @@ public class MatchDay {
         return endTime;
     }
 
-    public void setStartTime(LocalTime startTime) {
-        this.startTime = startTime;
+    public void setStartTime(String startTimeText) {
+        this.startTime = LocalTime.parse(startTimeText);
     }
 
-    public void setEndTime(LocalTime endTime) {
-        this.endTime = endTime;
+    public void setEndTime(String endTimeText) {
+        this.startTime = LocalTime.parse(endTimeText);
     }
 
     public void setName(String name) { this.name = name; }

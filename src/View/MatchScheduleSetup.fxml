@@ -189,8 +189,8 @@
                   <TableView fx:id="matchDayTableView" prefHeight="300.0" prefWidth="435.0" style="-fx-border-color: black;">
                      <columns>
                         <TableColumn prefWidth="193.0" text="Dato" />
-                        <TableColumn minWidth="-Infinity" prefWidth="120.0" text="Starttidspunkt" />
-                        <TableColumn prefWidth="120.0" text="Sluttidspunkt" />
+                        <TableColumn minWidth="-Infinity" onEditCommit="#changeStartTimeCell" prefWidth="120.0" text="Starttidspunkt" />
+                        <TableColumn onEditCommit="#changeEndTimeCell" prefWidth="120.0" text="Sluttidspunkt" />
                      </columns>
                   </TableView>
                   <VBox prefHeight="20.0" prefWidth="240.0" />
