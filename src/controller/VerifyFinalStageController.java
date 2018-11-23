@@ -107,7 +107,6 @@ public class VerifyFinalStageController {
                 finalStageGridPane.add(gridPane, columnCount, rowCount++);
             }
             columnCount++;
-
         }
         if (3 > iter && iter > 0) {
             int rowCount = 1;
@@ -139,7 +138,9 @@ public class VerifyFinalStageController {
 
             finalStageGridPane.add(gridPane, columnCount, rowCount++);
         }
+        for (int i = amountOfMatches - 1; i >= 0; i--) {
 
+        }
         finalStageGridPane.setGridLinesVisible(false);
         finalStageGridPane.setGridLinesVisible(true);
     }

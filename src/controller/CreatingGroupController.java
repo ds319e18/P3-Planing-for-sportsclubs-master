@@ -33,7 +33,7 @@ public class CreatingGroupController
     private VBox progressBox;
 
     @FXML
-    GridPane poolNamesGridPane;
+    GridPane teamsInPoolGridPane;
 
     @FXML
     GridPane poolStatusGridPane;
@@ -53,7 +53,6 @@ public class CreatingGroupController
     Text poolClicked;
 
 
-
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         setPoolStatusGridPane();
@@ -62,30 +61,38 @@ public class CreatingGroupController
 
     @FXML
     private void saveButton() {
-        String poolClickedText = poolClicked.getText();
-        int yearGroup = Integer.parseInt(poolClickedText.length() == 3 ? poolClickedText.substring(0, 2)
-                : poolClickedText.substring(0, 1));
-        String skillLevel = (poolClickedText.length() == 3 ? poolClickedText.substring(2, 3)
-                : poolClickedText.substring(1, 2));
+        String poolClickedString = poolClicked.getText();
+        int yearGroup = Integer.parseInt(poolClickedString.length() == 3 ? poolClickedString.substring(0, 2)
+                : poolClickedString.substring(0, 1));
+        String skillLevel = (poolClickedString.length() == 3 ? poolClickedString.substring(2, 3)
+                : poolClickedString.substring(1, 2));
         tournament.findCorrectPool(yearGroup, skillLevel)
                 .addGroupBracket(new StandardGroupPlay(Integer.parseInt(amountOfGroupsComboBox.getValue().toString())));
         tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(Integer.parseInt(matchesPrGroupsComboBox.getValue().toString()));
 
-        setPoolStatusGridPane();
+        for (int i = 0; i < poolStatusGridPane.getChildren().size(); i++) {
+            Text poolTextObject = (Text) poolStatusGridPane.getChildren().get(i);
+
+            if (poolTextObject.equals(poolClicked)) {
+                Text statusTextObject = (Text) poolStatusGridPane.getChildren().get(i + 1);
+                statusTextObject.setText("Done");
+                break;
+            }
+        }
     }
 
     private void setPoolStatusGridPane() {
         poolStatusGridPane.getChildren().remove(0, poolStatusGridPane.getChildren().size());
         for(Pool pool : tournament.getPoolList() ) {
             Text text = new Text(pool.getYearGroup() + "" + pool.getSkillLevel());
-            text.setWrappingWidth(80);
-            text.setTextAlignment(TextAlignment.CENTER);
+            text.setWrappingWidth(80);                      // The width of the Text-object.
+            text.setTextAlignment(TextAlignment.CENTER);    // The text of the Text-object is centered.
             boolean isDone = pool.getGroupBracket() != null
                     && pool.getGroupBracket().getAmountOfGroups() > 0
                     && pool.getGroupBracket().getMatchesPrTeamAgainstOpponentInGroup() > 0;
             Text status = (isDone ? new Text("Done") : new Text("Not done"));
-            status.setWrappingWidth(80);
-            status.setTextAlignment(TextAlignment.CENTER);
+            status.setWrappingWidth(80);                    // The width of the Text-object.
+            status.setTextAlignment(TextAlignment.CENTER);  // The text of the Text-object is centered.
             GridPane.setMargin(text, new Insets(10,0,10,0));
             poolStatusGridPane.addRow(poolStatusGridPane.getRowCount(), text, status);
         }
@@ -136,27 +143,32 @@ public class CreatingGroupController
         poolClicked.setStyle("-fx-font-weight: bold;");
 
         setComboBoxItemsAndLabels();
-        drawGridPane();
+        drawTeamsInPoolGridPane();
     }
 
     @FXML
-    void drawGridPane() {
+    void drawTeamsInPoolGridPane() {
         String poolClickedText = poolClicked.getText();
-        poolNamesGridPane.getChildren().remove(0, poolNamesGridPane.getChildren().size());
+        teamsInPoolGridPane.getChildren().remove(0, teamsInPoolGridPane.getChildren().size());
         try {
+            // The following int- og String-values are found to be able to search for the chosen pool via. findCorrectPool.
+            // Finds the first part of the chosen pool's name. Etc, "10A" finds 10.
             int teamYearGroup = Integer.parseInt(poolClickedText.length() == 3 ? poolClickedText.substring(0, 2)
                     : poolClickedText.substring(0, 1));
+            // Finds the last part of the chosen pool's name. Etc, "10A" finds A.
             String teamSkillLevel = (poolClickedText.length() == 3 ? poolClickedText.substring(2, 3)
                     : poolClickedText.substring(1, 2));
+
+            // Runs through the teams in the chosen pool, in order to add them to a list in the GUI.
             for (Team team : tournament.findCorrectPool(teamYearGroup, teamSkillLevel).getTeamList()) {
                 Text name = new Text(team.getName());
-                poolNamesGridPane.addRow(poolNamesGridPane.getRowCount(), name);
+                teamsInPoolGridPane.addRow(teamsInPoolGridPane.getRowCount(), name);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        poolNamesGridPane.setGridLinesVisible(false);
-        poolNamesGridPane.setGridLinesVisible(true);
+        teamsInPoolGridPane.setGridLinesVisible(false);
+        teamsInPoolGridPane.setGridLinesVisible(true);
     }
 
     private void setComboBoxItemsAndLabels() {
