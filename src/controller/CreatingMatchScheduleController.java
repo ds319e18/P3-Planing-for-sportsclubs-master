@@ -1,9 +1,7 @@
 package controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import tournament.Match;
 import tournament.Tournament;
@@ -18,30 +16,19 @@ public class CreatingMatchScheduleController {
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
+        createMatchDayTabs();
     }
     @FXML
     private VBox progressBox;
 
     @FXML
-    private ButtonBar matchDaysButtonBar;
+    private TabPane matchDayTabPane;
 
     @FXML
     private ListView<Match> matchListView;
 
     public void initialize() {
         highlightProgressBox();
-
-        tournament = new Tournament.Builder("Jetsmark IF tournament").
-                setStartDate(LocalDate.of(2018,5,29)).
-                setEndDate(LocalDate.of(2018,6,5))
-                .build();
-
-        for (int i = 0; i < 4; i++) {
-            tournament.getPoolList().add(new Pool.Builder().setSkilllLevel("A").setYearGroup(i+8).build());
-        }
-
-        highlightProgressBox();
-        createMatchDayButtons();
     }
 
     private void highlightProgressBox() {
@@ -50,10 +37,15 @@ public class CreatingMatchScheduleController {
         stepBox.setStyle("-fx-background-color: #A9A9A9");
     }
 
-    private void createMatchDayButtons() {
-        for (int i = 0; i < tournament.getMatchSchedule().getMatchDays().size(); i++) {
-            matchDaysButtonBar.getButtons().add(new Button("Day " + String.valueOf(i)));
+    private void createMatchDayTabs() {
+        for (int i = 1; i <= tournament.getMatchSchedule().getMatchDays().size(); i++) {
+            matchDayTabPane.getTabs().add(new Tab("Dag " + String.valueOf(i)));
+        }
+
+        for (Tab tab : matchDayTabPane.getTabs()) {
+            tab.setStyle("-fx-pref-width: " +
+                    String.valueOf(matchDayTabPane.getPrefWidth()/tournament.getMatchSchedule().
+                            getMatchDays().size()-10));
         }
     }
-
 }

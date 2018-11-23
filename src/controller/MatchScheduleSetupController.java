@@ -13,15 +13,21 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
+import javafx.util.converter.LocalTimeStringConverter;
 import tournament.Match;
 import tournament.matchschedule.MatchDay;
 import tournament.Tournament;
+import tournament.matchschedule.MatchSchedule;
 import tournament.pool.Pool;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class MatchScheduleSetupController {
     private final int stepNumber = 4;
@@ -39,25 +45,25 @@ public class MatchScheduleSetupController {
     @FXML
     private TableView<Pool> poolTableView;
 
+    @FXML
+    private GridPane matchScheduleGridpane;
+
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        //setMatchDays();
-        //setPools();
+        setPoolsTable();
+        setMatchDaysTable();
     }
 
     public void initialize() {
         highlightProgressBox();
         tournament = new Tournament.Builder("Jetsmark IF tournament").
-                setStartDate(LocalDate.of(2018,5,29)).
-                setEndDate(LocalDate.of(2018,6,5))
+                setStartDate(LocalDate.of(2018,6,1)).
+                setEndDate(LocalDate.of(2018,6,2))
                 .build();
 
         for (int i = 0; i < 4; i++) {
             tournament.getPoolList().add(new Pool.Builder().setSkilllLevel("A").setYearGroup(i+8).build());
         }
-
-        setPoolsTable();
-        setMatchDaysTable();
 
     }
 
@@ -76,14 +82,20 @@ public class MatchScheduleSetupController {
 
     //inputs match days into the tableView
     private void setMatchDaysTable() {
+        matchDayTableView.setEditable(true);
+
         TableColumn<MatchDay, ?> matchDateColumn = matchDayTableView.getColumns().get(0);
         matchDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
 
-        TableColumn<MatchDay, ?> startTimeColumn = matchDayTableView.getColumns().get(1);
-        startTimeColumn.setCellValueFactory(new PropertyValueFactory<>("startTimeTextField"));
+        TableColumn<MatchDay, LocalTime> startTimeColumn =
+                (TableColumn<MatchDay, LocalTime>) matchDayTableView.getColumns().get(1);
+        startTimeColumn.setCellValueFactory(new PropertyValueFactory<>("startTime"));
+        startTimeColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LocalTimeStringConverter()));
 
-        TableColumn<MatchDay, ?> endTimeColumn = matchDayTableView.getColumns().get(2);
-        endTimeColumn.setCellValueFactory(new PropertyValueFactory<>("endTimeTextField"));
+        TableColumn<MatchDay, LocalTime> endTimeColumn =
+                (TableColumn<MatchDay, LocalTime>) matchDayTableView.getColumns().get(2);
+        endTimeColumn.setCellValueFactory(new PropertyValueFactory<>("endTime"));
+        endTimeColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LocalTimeStringConverter()));
 
         ObservableList<MatchDay> matchDayList = FXCollections.observableArrayList();
         matchDayList.addAll(tournament.getMatchSchedule().getMatchDays());
@@ -108,14 +120,9 @@ public class MatchScheduleSetupController {
     private void manuallyCreateMatchSchedule(ActionEvent event) throws IOException {
         tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
 
-        setTimeForMatchDays();
-        /*
-        for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
-            System.out.println(String.valueOf(matchDay.getStartTime()) + "-" + String.valueOf(matchDay.getEndTime()));
-        } */
-
+        System.out.println(String.valueOf(tournament.getMatchSchedule().getMatchDays().size()));
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/CreatingMatchSchedule.FXML"));
+        loader.setLocation(getClass().getResource("../View/CreatingMatchSchedule.fxml"));
         Parent newWindow = loader.load();
 
         CreatingMatchScheduleController msc = loader.getController();
@@ -146,14 +153,16 @@ public class MatchScheduleSetupController {
         stepBox.setStyle("-fx-background-color: #A9A9A9");
     }
 
-    private void setTimeForMatchDays() {
-        for (MatchDay matchDay : matchDayTableView.getItems()) {
-
-        }
-        TableColumn<MatchDay, ?> tableColumn = matchDayTableView.getColumns().get(1);
-
-        TextField textField = (TextField) tableColumn.getCellObservableValue(1).getValue();
-        System.out.println(textField.getText());
-
+    @FXML
+    private void changeStartTimeCell(TableColumn.CellEditEvent editEvent) {
+        MatchDay matchDaySelected = matchDayTableView.getSelectionModel().getSelectedItem();
+        matchDaySelected.setStartTime(editEvent.getNewValue().toString());
     }
+
+    @FXML
+    private void changeEndTimeCell(TableColumn.CellEditEvent editEvent) {
+        MatchDay matchDaySelected = matchDayTableView.getSelectionModel().getSelectedItem();
+        matchDaySelected.setEndTime(editEvent.getNewValue().toString());
+    }
+
 }
