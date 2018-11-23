@@ -255,7 +255,7 @@
                      <children>
                         <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="370.0" prefWidth="454.0">
                            <content>
-                              <GridPane prefHeight="40.0" prefWidth="450.0">
+                              <GridPane prefWidth="450.0">
                                  <rowConstraints>
                                     <RowConstraints />
                                  </rowConstraints>

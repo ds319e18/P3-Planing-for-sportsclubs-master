@@ -1,13 +1,12 @@
 package tournament.pool;
 
-import javafx.scene.control.TextField;
-import tournament.*;
+import tournament.Team;
+import tournament.TeamNameComp;
 import tournament.pool.bracket.GroupBracket;
 import tournament.pool.bracket.KnockoutBracket;
 
-import java.awt.*;
-import java.util.*;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class Pool {
     private String name;

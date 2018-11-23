@@ -30,12 +30,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("../View/TournamentSetup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../View/MatchScheduleSetup.fxml"));
 
         primaryStage.setTitle("Tournament planner");
         primaryStage.setScene(new Scene(root, 1280, 800));
         primaryStage.setResizable(true);
-        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 
