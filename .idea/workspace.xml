@@ -9,74 +9,16 @@
       <change beforePath="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" afterPath="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" />
 =======
     <list default="true" id="504cc5a9-4002-4d6c-aaea-7b181b6ceab9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/tournament/TournamentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/tournament/TournamentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/AddingTeams.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/AdminPage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/AutogenerateMatchSchedule.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/CreatingFinalStage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/CreatingGroups.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/CreatingMatchSchedule.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/FrontPage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/Login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/MatchScheduleSetup.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/TournamentSetup.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/VerifyFinalStage.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/VerifyGroupsAndPools.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/AddingTeamsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/AdminPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/AutogenerateMatchScheduleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/CreatingMatchScheduleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/FrontPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/MatchScheduleSetupController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/TournamentSetupController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/VerifyGroupsAndPoolsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/Database.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/IllegalAmountOfGroupsException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/IllegalAmountOfTeamsException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/IllegalMethodCallToAdvanceTeam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/MatchNotFinishedException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/45398293_468759136948179_6752360962147221504_n.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Result.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Team.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/TeamNameComp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/TeamPointsComp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/TournamentType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/Field.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchDay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchSchedule.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Group.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool$Builder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/EqualMatchesPlay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GoldAndBronzePlay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GroupBracket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutBracket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutPlay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/PlacementPlay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/StandardGroupPlay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/controller/TournamentSetupControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/TournamentTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/PoolTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GroupBracketTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutBracketTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/knockoutbracket/GoldAndBronzeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/knockoutbracket/KnockoutBracketTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/knockoutbracket/PlacementBracketTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AutogenerateMatchSchedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AutogenerateMatchSchedule.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/TournamentSetupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/TournamentSetupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tournament/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/Tournament.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tournament/matchschedule/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/matchschedule/Field.java" afterDir="false" />
 >>>>>>> Dev
+=======
+>>>>>>> Stashed changes
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,6 +37,7 @@
               <folding />
 =======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< Updated upstream
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -122,6 +65,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> Stashed changes
       <file leaf-file-name="TournamentSetupController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/TournamentSetupController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -131,6 +76,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="Tournament.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -205,6 +151,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="869">
               <caret line="151" column="96" lean-forward="true" selection-start-line="151" selection-start-column="96" selection-end-line="151" selection-end-column="96" />
+=======
+      <file leaf-file-name="AutogenerateMatchScheduleController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -214,6 +167,11 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>createMatches</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -237,8 +195,8 @@
         <option value="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" />
         <option value="$PROJECT_DIR$/src/tournament/Tournament.java" />
         <option value="$PROJECT_DIR$/src/controller/TournamentSetupController.java" />
-        <option value="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" />
         <option value="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" />
+        <option value="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" />
       </list>
     </option>
   </component>
@@ -313,6 +271,12 @@
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="Tests" type="462c0819:PsiDirectoryNode" />
 >>>>>>> Dev
+            </path>
+            <path>
+              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="tournament" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -486,12 +450,12 @@
       <updated>1542874108933</updated>
       <workItem from="1542874115116" duration="10176000" />
       <workItem from="1542960414314" duration="13052000" />
-      <workItem from="1543220474790" duration="12214000" />
+      <workItem from="1543220474790" duration="17806000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3719000" />
+    <option name="totallyTimeSpent" value="9311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
@@ -507,11 +471,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35663083" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33691755" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3297491" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2574899" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23481782" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297491" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -679,13 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1184">
-          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutBracket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -770,13 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/CreatingMatchSchedule.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
@@ -819,27 +769,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="869">
           <caret line="151" column="96" lean-forward="true" selection-start-line="151" selection-start-column="96" selection-end-line="151" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/tournament/TournamentTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="355" selection-start-line="355" selection-end-line="355" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -853,26 +786,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java">
+    <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="42" column="61" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="17">
           <caret line="95" column="9" lean-forward="true" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
 >>>>>>> Dev
+=======
+        <state relative-caret-position="153">
+          <caret line="105" column="23" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="23" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         <state relative-caret-position="-48">
           <caret line="113" column="9" lean-forward="true" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
@@ -881,6 +817,51 @@
         <state relative-caret-position="204">
           <caret line="113" column="9" lean-forward="true" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
 >>>>>>> Dev
+=======
+        <state relative-caret-position="272">
+          <caret line="117" column="31" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingFinalStageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="78" column="76" selection-start-line="78" selection-start-column="76" selection-end-line="78" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="70" column="76" selection-start-line="70" selection-start-column="76" selection-end-line="70" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/TournamentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="510" column="8" lean-forward="true" selection-start-line="510" selection-start-column="8" selection-end-line="513" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
