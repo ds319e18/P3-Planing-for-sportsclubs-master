@@ -80,7 +80,7 @@ public class CreatingMatchScheduleController {
         MatchDay matchDay = tournament.getMatchSchedule().findMatchDay(tab.getText());
 
         for (Field field : matchDay.getFieldList()) {
-            fieldColumnList.add(new ColumnConstraints());
+            fieldColumnList.add(new ColumnConstraints(100));
         }
 
 

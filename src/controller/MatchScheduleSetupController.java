@@ -50,13 +50,13 @@ public class MatchScheduleSetupController {
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        //setPoolsTable();
-        //setMatchDaysTable();
+        setPoolsTable();
+        setMatchDaysTable();
     }
 
     public void initialize() {
         highlightProgressBox();
-
+        /*
         tournament = new Tournament.Builder("Jetsmark IF tournament").
                 setStartDate(LocalDate.of(2018,6,1)).
                 setEndDate(LocalDate.of(2018,6,2))
@@ -73,8 +73,8 @@ public class MatchScheduleSetupController {
                     setTimestamp(LocalTime.of(20,50)).setField(new Field("field 1", false)).build());
         }
         */
-        setPoolsTable();
-        setMatchDaysTable();
+        //setPoolsTable();
+        //setMatchDaysTable();
     }
 
     private void setPoolsTable() {
