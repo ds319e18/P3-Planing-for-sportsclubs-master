@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class Main extends Application {
 
     @Override
@@ -18,7 +20,6 @@ public class Main extends Application {
         primaryStage.setResizable(true);
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         //Database myDatabase = new Database();
