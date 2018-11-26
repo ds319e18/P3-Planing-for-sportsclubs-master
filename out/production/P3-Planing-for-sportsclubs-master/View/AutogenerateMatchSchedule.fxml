@@ -6,8 +6,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -183,19 +181,11 @@
             </VBox>
             <VBox prefHeight="502.0" prefWidth="600.0">
                <children>
-                  <ComboBox prefWidth="150.0" promptText="Choose day" />
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="400.0" prefWidth="600.0">
+                  <ComboBox fx:id="comboBox" onAction="#drawMatchScheduleGridPane" prefWidth="150.0" promptText="Choose day" />
+                  <ScrollPane fx:id="matchScheduleScrollPane" hbarPolicy="NEVER" prefHeight="400.0" prefWidth="600.0">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin>
-                     <content>
-                        <GridPane fx:id="matchScheduleGridPane" prefHeight="100.0" prefWidth="600.0">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                        </GridPane>
-                     </content>
                   </ScrollPane>
                </children>
                <HBox.margin>

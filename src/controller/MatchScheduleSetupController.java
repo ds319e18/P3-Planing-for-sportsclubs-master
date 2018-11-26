@@ -65,7 +65,7 @@ public class MatchScheduleSetupController {
         for (int i = 0; i < 4; i++) {
             tournament.getPoolList().add(new Pool.Builder().setSkilllLevel("A").setYearGroup(i+8).build());
         }
-        /*
+
         for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
             matchDay.getMatches().add(new Match.Builder(20).
                     setName("match name").setFirstTeam(new Team("team Bacon", 7,"A")).
@@ -125,8 +125,23 @@ public class MatchScheduleSetupController {
     }
 
     @FXML
-    private void autogenerateNoMixedMatches() {
+    private void autogenerateNoMixedMatches(ActionEvent event) throws IOException {
+        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
         tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));
+        Parent newWindow = loader.load();
+
+        AutogenerateMatchScheduleController msc = loader.getController();
+        msc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)(timeBetweenMatches).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 
 

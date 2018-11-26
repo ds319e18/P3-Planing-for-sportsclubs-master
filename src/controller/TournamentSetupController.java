@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.TournamentType;
+import tournament.matchschedule.Field;
 import tournament.pool.Pool;
 
 import java.io.IOException;
@@ -70,6 +71,7 @@ public class TournamentSetupController {
                 .setStartDate(startDatePicker.getValue())
                 .setEndDate(endDatePicker.getValue())
                 .setType(tournamentTypeCombobox.getValue())
+                .createFieldList(Integer.parseInt(fieldNumberCombobox.getValue().toString()))
                 .setPoolList(getSelectedPoolsAndMatchLengths())
                 .build();
 
