@@ -113,6 +113,13 @@ public class Tournament {
             return this;
         }
 
+        public Builder createFieldList(int amountOfFields) {
+            for (int i = 1; i <= amountOfFields; i++) {
+                this.fieldList.add(new Field("Bane " + i, false));
+            }
+            return this;
+        }
+
         public Builder setPoolList(ArrayList<Pool> poolList) {
             this.poolList.addAll(poolList);
             return this;

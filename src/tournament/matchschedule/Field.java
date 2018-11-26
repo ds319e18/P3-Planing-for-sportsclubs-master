@@ -19,6 +19,8 @@ public class Field {
         return fieldEndTime;
     }
 
+    public String getName() { return name; }
+
     public void setFieldEndTime(LocalTime fieldEndTime) {
         this.fieldEndTime = fieldEndTime;
     }

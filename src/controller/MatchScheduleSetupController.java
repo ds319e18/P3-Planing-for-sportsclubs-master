@@ -50,14 +50,14 @@ public class MatchScheduleSetupController {
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        //setPoolsTable();
-        //setMatchDaysTable();
+        setPoolsTable();
+        setMatchDaysTable();
     }
 
     public void initialize() {
         highlightProgressBox();
 
-        tournament = new Tournament.Builder("Jetsmark IF tournament").
+        /*tournament = new Tournament.Builder("Jetsmark IF tournament").
                 setStartDate(LocalDate.of(2018,6,1)).
                 setEndDate(LocalDate.of(2018,6,2))
                 .build();
@@ -65,16 +65,16 @@ public class MatchScheduleSetupController {
         for (int i = 0; i < 4; i++) {
             tournament.getPoolList().add(new Pool.Builder().setSkilllLevel("A").setYearGroup(i+8).build());
         }
-        /*
+
         for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
             matchDay.getMatches().add(new Match.Builder(20).
                     setName("match name").setFirstTeam(new Team("team Bacon", 7,"A")).
                     setSecondTeam(new Team("team Bacon", 7,"A")).setFinished(false).
                     setTimestamp(LocalTime.of(20,50)).setField(new Field("field 1", false)).build());
         }
-        */
+
         setPoolsTable();
-        setMatchDaysTable();
+        setMatchDaysTable();*/
     }
 
     private void setPoolsTable() {
@@ -125,8 +125,23 @@ public class MatchScheduleSetupController {
     }
 
     @FXML
-    private void autogenerateNoMixedMatches() {
+    private void autogenerateNoMixedMatches(ActionEvent event) throws IOException {
+        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
         tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));
+        Parent newWindow = loader.load();
+
+        AutogenerateMatchScheduleController msc = loader.getController();
+        msc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)(timeBetweenMatches).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 
 
