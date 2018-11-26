@@ -89,6 +89,10 @@ public class Pool {
         return knockoutBracket;
     }
 
+    public void setMatchDuration(String matchDuration) {
+        this.matchDuration = Integer.parseInt(matchDuration);
+    }
+
     //This next part of the class deals with updating the tournament while active
 
     // Inner Builder-class

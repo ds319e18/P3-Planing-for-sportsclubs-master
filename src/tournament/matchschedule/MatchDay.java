@@ -48,7 +48,7 @@ public class MatchDay {
     }
 
     public void setEndTime(String endTimeText) {
-        this.startTime = LocalTime.parse(endTimeText);
+        this.endTime = LocalTime.parse(endTimeText);
     }
 
     public void setName(String name) { this.name = name; }
@@ -94,6 +94,10 @@ public class MatchDay {
         for (Field field : this.fieldList) {
             field.setFieldEndTime(this.startTime);
         }
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

@@ -172,18 +172,13 @@
             <VBox layoutX="763.0" layoutY="10.0" prefHeight="502.0" prefWidth="36.0" />
             <VBox prefHeight="502.0" prefWidth="435.0">
                <children>
-                  <HBox prefHeight="36.0" prefWidth="435.0">
+                  <HBox prefHeight="24.0" prefWidth="435.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Tid mellem kampe (min):  " wrappingWidth="224.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Indtast starttidspunkter og sluttidspunkter for kampdage:">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="timeBetweenMatches">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </TextField>
                      </children>
                   </HBox>
                   <TableView fx:id="matchDayTableView" prefHeight="300.0" prefWidth="435.0" style="-fx-border-color: black;">
@@ -193,7 +188,15 @@
                         <TableColumn onEditCommit="#changeEndTimeCell" prefWidth="120.0" text="Sluttidspunkt" />
                      </columns>
                   </TableView>
-                  <VBox prefHeight="20.0" prefWidth="240.0" />
+                  <HBox prefHeight="28.0" prefWidth="435.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Doubleclick på en celle for at redigere værdier for starttidspunkter og sluttidspunkter" wrappingWidth="423.9830722808838">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
                   <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="200.0" text="Rediger dato for turneringen" />
                   <VBox layoutX="10.0" layoutY="346.0" prefHeight="20.0" prefWidth="240.0" />
                   <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="90.0" text="Back" />
@@ -202,11 +205,23 @@
             <VBox prefHeight="502.0" prefWidth="36.0" />
             <VBox prefHeight="502.0" prefWidth="240.0">
                <children>
-                  <HBox prefHeight="36.0" prefWidth="269.0" />
+                  <HBox prefHeight="36.0" prefWidth="269.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Tid mellem kampe (min):  " wrappingWidth="185.13671875">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="timeBetweenMatches" prefHeight="18.0" prefWidth="160.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </TextField>
+                     </children></HBox>
                   <TableView fx:id="poolTableView" prefHeight="300.0" prefWidth="269.0" style="-fx-border-color: black;">
                      <columns>
                         <TableColumn minWidth="-Infinity" prefWidth="82.0" text="Pulje" />
-                        <TableColumn prefWidth="185.0" text="Kampvarighed (minutter)" />
+                        <TableColumn onEditCommit="#changeMatchDurationCell" prefWidth="185.0" text="Kampvarighed (minutter)" />
                      </columns>
                   </TableView>
                   <VBox prefHeight="20.0" prefWidth="240.0" />

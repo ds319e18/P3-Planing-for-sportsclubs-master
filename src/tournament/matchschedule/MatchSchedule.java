@@ -49,4 +49,11 @@ public class MatchSchedule {
         }
     }
 
+    public MatchDay findMatchDay(String name) {
+        for (MatchDay matchDay : matchDays) {
+            if (matchDay.getName().equals(name))
+                return matchDay;
+        }
+        return null;
+    }
 }

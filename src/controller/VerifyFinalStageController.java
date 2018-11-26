@@ -189,16 +189,17 @@ public class VerifyFinalStageController {
 
         if (value) {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/CreatingFinalStage.FXML"));
+            loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
             Parent newWindow = loader.load();
 
-            CreatingFinalStageController atc = loader.getController();
-            atc.setTournament(tournament);
+            MatchScheduleSetupController mss = loader.getController();
+            mss.setTournament(tournament);
 
             Scene newScene = new Scene(newWindow);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            window.setScene(newScene);window.show();
+            window.setScene(newScene);
+            window.show();
         }
 
     }
