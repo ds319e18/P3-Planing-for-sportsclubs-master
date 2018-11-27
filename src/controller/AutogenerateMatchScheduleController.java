@@ -4,15 +4,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.control.ComboBox;
+import javafx.geometry.Orientation;
+import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.VLineTo;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import tournament.Match;
@@ -21,6 +21,7 @@ import tournament.matchschedule.Field;
 import tournament.matchschedule.MatchDay;
 import tournament.pool.Pool;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,8 +70,13 @@ public class AutogenerateMatchScheduleController {
 
         // Text-objects containing field numbers are inserted at the top of the GridPane.
         for (int i = 0; i < tournament.getFieldList().size(); i++) {
-            matchScheduleGridPane.add(new Text("Bane " + (i + 1)), i*2, 0);
-            //matchScheduleGridPane.add(new VLineTo(), i+1, 0);
+            Text fieldText = new Text("Bane " + (i + 1));
+            fieldText.setWrappingWidth(267);
+            fieldText.setTextAlignment(TextAlignment.CENTER);
+            fieldText.setStyle("-fx-font-style: BOLD;");
+            fieldText.setFont(Font.font(15));
+
+            matchScheduleGridPane.add(fieldText, i, 0);
         }
 
         int matchCounter = 1;
@@ -118,8 +124,8 @@ public class AutogenerateMatchScheduleController {
 
         Text poolText = new Text(match.getFirstTeam().getName());
         Text fieldText = new Text(match.getSecondTeam().getName());
-        poolText.setWrappingWidth(80);
-        fieldText.setWrappingWidth(80);
+        poolText.setWrappingWidth(107);
+        fieldText.setWrappingWidth(107);
         poolText.setTextAlignment(TextAlignment.CENTER);
         fieldText.setTextAlignment(TextAlignment.CENTER);
         vBox2.getChildren().addAll(poolText, fieldText);
@@ -129,8 +135,8 @@ public class AutogenerateMatchScheduleController {
 
         Text firstTeamText = new Text("U" + match.getFirstTeam().getYearGroup() + " - " + match.getFirstTeam().getSkillLevel());
         Text secondTeamText = new Text(match.getField().getName());
-        firstTeamText.setWrappingWidth(107);
-        secondTeamText.setWrappingWidth(107);
+        firstTeamText.setWrappingWidth(80);
+        secondTeamText.setWrappingWidth(80);
         firstTeamText.setTextAlignment(TextAlignment.CENTER);
         secondTeamText.setTextAlignment(TextAlignment.CENTER);
         vBox3.getChildren().addAll(firstTeamText, secondTeamText);
