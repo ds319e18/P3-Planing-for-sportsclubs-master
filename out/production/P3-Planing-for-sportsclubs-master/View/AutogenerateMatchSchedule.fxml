@@ -181,7 +181,7 @@
             </VBox>
             <VBox prefHeight="502.0" prefWidth="600.0">
                <children>
-                  <ComboBox fx:id="comboBox" onAction="#drawMatchScheduleGridPane" prefWidth="150.0" promptText="Choose day" />
+                  <ComboBox fx:id="matchDayComboBox" onAction="#drawMatchScheduleGridPane" prefWidth="150.0" promptText="Choose day" />
                   <ScrollPane fx:id="matchScheduleScrollPane" hbarPolicy="NEVER" prefHeight="400.0" prefWidth="600.0">
                      <VBox.margin>
                         <Insets top="30.0" />
