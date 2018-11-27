@@ -22,6 +22,11 @@ public abstract class KnockoutBracket {
         throw new IllegalMethodCallToAdvanceTeam();
     }
 
+    public void setAmountOfMatchesPrTeam(int amountOfMatchesPrTeam) {
+        //Write own exception
+        throw new IllegalMethodCallToAdvanceTeam();
+    }
+
     public ArrayList<Match> getMatches() {
         return this.matches;
     }

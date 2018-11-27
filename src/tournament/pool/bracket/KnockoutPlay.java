@@ -12,7 +12,7 @@ public class KnockoutPlay extends KnockoutBracket {
     public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         int numberOfMatches = (groupBracket.getAmountOfGroups() * groupBracket.getAmountOfAdvancingTeamsPrGroup()) - 1;
 
-        for (int i = 1; i < numberOfMatches + 1; i++) {
+        for (int i = 0; i < numberOfMatches; i++) {
             super.getMatches().add(new Match.Builder(matchDurationInMinutes)
                                                 .setName("Knockout Match:")
                                                 .setFinished(false)
