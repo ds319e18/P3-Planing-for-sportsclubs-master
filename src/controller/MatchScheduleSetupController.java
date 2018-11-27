@@ -1,5 +1,9 @@
 package controller;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,15 +12,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import javafx.util.StringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalTimeStringConverter;
@@ -52,6 +56,7 @@ public class MatchScheduleSetupController {
         this.tournament = tournament;
         setPoolsTable();
         setMatchDaysTable();
+        createMatches();
     }
 
     public void initialize() {
@@ -64,17 +69,16 @@ public class MatchScheduleSetupController {
 
         for (int i = 0; i < 4; i++) {
             tournament.getPoolList().add(new Pool.Builder().setSkilllLevel("A").setYearGroup(i+8).build());
-        }
+        } */
 
-        for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
-            matchDay.getMatches().add(new Match.Builder(20).
-                    setName("match name").setFirstTeam(new Team("team Bacon", 7,"A")).
-                    setSecondTeam(new Team("team Bacon", 7,"A")).setFinished(false).
-                    setTimestamp(LocalTime.of(20,50)).setField(new Field("field 1", false)).build());
-        }
-        */
         //setPoolsTable();
         //setMatchDaysTable();
+    }
+
+    private void createMatches() {
+        for (Pool pool : tournament.getPoolList()) {
+            pool.getGroupBracket().createMatches(pool.getMatchDuration());
+        }
     }
 
     private void setPoolsTable() {
@@ -105,6 +109,7 @@ public class MatchScheduleSetupController {
                 (TableColumn<MatchDay, LocalTime>) matchDayTableView.getColumns().get(1);
         startTimeColumn.setCellValueFactory(new PropertyValueFactory<>("startTime"));
         startTimeColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LocalTimeStringConverter()));
+        //startTimeColumn.setCellFactory();
 
         TableColumn<MatchDay, LocalTime> endTimeColumn =
                 (TableColumn<MatchDay, LocalTime>) matchDayTableView.getColumns().get(2);
@@ -115,6 +120,8 @@ public class MatchScheduleSetupController {
         matchDayList.addAll(tournament.getMatchSchedule().getMatchDays());
 
         matchDayTableView.setItems(matchDayList);
+
+        matchDayTableView.getSelectionModel().selectedItemProperty().addListener(new RowSelectInvalidationListener());
     }
 
     @FXML
@@ -186,6 +193,7 @@ public class MatchScheduleSetupController {
     private void changeStartTimeCell(TableColumn.CellEditEvent editEvent) {
         MatchDay matchDaySelected = matchDayTableView.getSelectionModel().getSelectedItem();
         matchDaySelected.setStartTime(editEvent.getNewValue().toString());
+
     }
 
     @FXML
@@ -199,5 +207,35 @@ public class MatchScheduleSetupController {
         Pool poolSelected = poolTableView.getSelectionModel().getSelectedItem();
         poolSelected.setMatchDuration(editEvent.getNewValue().toString());
     }
+    /*
+    private Callback<TableColumn<MatchDay, LocalTime>, TableCell<MatchDay, LocalTime>> getCellColorFactory() {
+        Callback<TableColumn<MatchDay, LocalTime>, TableCell<MatchDay, LocalTime>> cellFactory;
+        TableCell<MatchDay, LocalTime> tableCell;
 
+        tableCell.itemProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue ==
+
+                )
+        });
+
+        return cellFactory;
+
+    } */
+    private class RowSelectChangeListener implements ChangeListener {
+
+        @Override
+        public void changed(ObservableValue observable, Object oldValue, Object newValue) {
+            MatchDay matchDay = (MatchDay) observable.getValue();
+            MatchDay newStartTime = (MatchDay) newValue;
+            System.out.println(matchDay.getStartTime().toString());
+            System.out.println(newStartTime.getStartTime().toString());
+        }
+    }
+
+    private class RowSelectInvalidationListener implements InvalidationListener {
+
+        @Override
+        public void invalidated(Observable observable) {
+        }
+    }
 }
