@@ -126,6 +126,9 @@ public class MatchScheduleSetupController {
 
     @FXML
     private void autogenerateNoMixedMatches(ActionEvent event) throws IOException {
+        for (Pool pool : tournament.getPoolList()) {
+            pool.getGroupBracket().createMatches(pool.getMatchDuration());
+        }
         tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
         tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
 

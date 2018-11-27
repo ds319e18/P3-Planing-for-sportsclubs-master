@@ -97,6 +97,7 @@ public class Match implements Comparable<Match> {
         return firstTeam;
     }
 
+    public LocalTime getTimeStamp() { return timestamp; }
 
     public boolean isFinished() {
         return finished;
