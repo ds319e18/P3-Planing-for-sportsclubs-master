@@ -2,10 +2,9 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.scene.control.ComboBox;
+import javafx.geometry.Orientation;
+import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -16,6 +15,7 @@ import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.MatchDay;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +54,16 @@ public class AutogenerateMatchScheduleController {
         for (Tab tab : matchDayTabPane.getTabs()) {
             matchDayGridPane = new GridPane();
             scrollPane = new ScrollPane();
+        // Text-objects containing field numbers are inserted at the top of the GridPane.
+        for (int i = 0; i < tournament.getFieldList().size(); i++) {
+            Text fieldText = new Text("Bane " + (i + 1));
+            fieldText.setWrappingWidth(267);
+            fieldText.setTextAlignment(TextAlignment.CENTER);
+            fieldText.setStyle("-fx-font-style: BOLD;");
+            fieldText.setFont(Font.font(15));
+
+            matchScheduleGridPane.add(fieldText, i, 0);
+        }
 
             createFieldColumns(matchDayGridPane, tab);
 
@@ -114,8 +124,8 @@ public class AutogenerateMatchScheduleController {
 
         Text poolText = new Text(match.getFirstTeam().getName());
         Text fieldText = new Text(match.getSecondTeam().getName());
-        poolText.setWrappingWidth(80);
-        fieldText.setWrappingWidth(80);
+        poolText.setWrappingWidth(107);
+        fieldText.setWrappingWidth(107);
         poolText.setTextAlignment(TextAlignment.CENTER);
         fieldText.setTextAlignment(TextAlignment.CENTER);
         vBox2.getChildren().addAll(poolText, fieldText);
@@ -125,8 +135,8 @@ public class AutogenerateMatchScheduleController {
 
         Text firstTeamText = new Text("U" + match.getFirstTeam().getYearGroup() + " - " + match.getFirstTeam().getSkillLevel());
         Text secondTeamText = new Text(match.getField().getName());
-        firstTeamText.setWrappingWidth(107);
-        secondTeamText.setWrappingWidth(107);
+        firstTeamText.setWrappingWidth(80);
+        secondTeamText.setWrappingWidth(80);
         firstTeamText.setTextAlignment(TextAlignment.CENTER);
         secondTeamText.setTextAlignment(TextAlignment.CENTER);
         vBox3.getChildren().addAll(firstTeamText, secondTeamText);
