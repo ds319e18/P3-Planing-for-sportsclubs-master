@@ -2,8 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -179,14 +178,9 @@
                   </VBox>
                </children>
             </VBox>
-            <VBox prefHeight="502.0" prefWidth="600.0">
+            <VBox prefHeight="502.0" prefWidth="637.0">
                <children>
-                  <ComboBox fx:id="matchDayComboBox" onAction="#drawMatchScheduleGridPane" prefWidth="150.0" promptText="Choose day" />
-                  <ScrollPane fx:id="matchScheduleScrollPane" hbarPolicy="NEVER" prefHeight="400.0" prefWidth="600.0">
-                     <VBox.margin>
-                        <Insets top="30.0" />
-                     </VBox.margin>
-                  </ScrollPane>
+                  <TabPane fx:id="matchDayTabPane" prefHeight="502.0" prefWidth="612.0" tabClosingPolicy="UNAVAILABLE" />
                </children>
                <HBox.margin>
                   <Insets left="100.0" />

@@ -69,15 +69,16 @@ public class MatchScheduleSetupController {
 
         for (int i = 0; i < 4; i++) {
             tournament.getPoolList().add(new Pool.Builder().setSkilllLevel("A").setYearGroup(i+8).build());
-        } */
-
+        }
+        */
         //setPoolsTable();
         //setMatchDaysTable();
+        //createMatches();
     }
 
     private void createMatches() {
         for (Pool pool : tournament.getPoolList()) {
-            pool.getGroupBracket().createMatches(pool.getMatchDuration());
+           pool.getGroupBracket().createMatches(pool.getMatchDuration());
         }
     }
 
@@ -133,9 +134,6 @@ public class MatchScheduleSetupController {
 
     @FXML
     private void autogenerateNoMixedMatches(ActionEvent event) throws IOException {
-        for (Pool pool : tournament.getPoolList()) {
-            pool.getGroupBracket().createMatches(pool.getMatchDuration());
-        }
         tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
         tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
 
