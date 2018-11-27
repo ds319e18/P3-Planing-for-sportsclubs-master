@@ -1,7 +1,5 @@
 package controller;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
@@ -9,17 +7,13 @@ import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.VLineTo;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.MatchDay;
-import tournament.pool.Pool;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -29,24 +23,15 @@ public class AutogenerateMatchScheduleController {
     Tournament tournament;
 
     @FXML
-    ScrollPane matchScheduleScrollPane;
-
-    @FXML
     private TabPane matchDayTabPane;
-
-    @FXML
-    ComboBox matchDayComboBox;
 
     // This GridPane will display the matches sorted by fields.
     GridPane matchScheduleGridPane = new GridPane();
 
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
-
-        ObservableList observableList = FXCollections.observableArrayList();
-        for (int i = 1; i <= tournament.getMatchSchedule().getMatchDays().size(); i++)
-            observableList.add("Dag " + i);
-        matchDayComboBox.setItems(observableList);
+        createMatchDayTabs();
+        createMatchScheduleGridpane();
     }
 
     private void createMatchDayTabs() {
@@ -61,13 +46,14 @@ public class AutogenerateMatchScheduleController {
         }
     }
 
-    @FXML
-    void drawMatchScheduleGridPane() {
-        // The matchday chosen in the combobox is found. -1 because day 1 is at index 0 etc.
-        MatchDay matchDay = tournament.getMatchSchedule().getMatchDays().get(Integer.parseInt(matchDayComboBox.getValue().toString().substring(4)) - 1);
-        System.out.println(matchDay.toString()); // TODO Fjern
-        matchScheduleGridPane.getChildren().clear();
+    private void createMatchScheduleGridpane() {
+        GridPane matchDayGridPane;
+        ScrollPane scrollPane;
+        int matchCounter = 1;
 
+        for (Tab tab : matchDayTabPane.getTabs()) {
+            matchDayGridPane = new GridPane();
+            scrollPane = new ScrollPane();
         // Text-objects containing field numbers are inserted at the top of the GridPane.
         for (int i = 0; i < tournament.getFieldList().size(); i++) {
             Text fieldText = new Text("Bane " + (i + 1));
@@ -79,25 +65,39 @@ public class AutogenerateMatchScheduleController {
             matchScheduleGridPane.add(fieldText, i, 0);
         }
 
-        int matchCounter = 1;
-        // List that contains fieldList.size() integers. These integers describe the amount of matches inserted
-        // onto each field in the GridPane.
-        List<Integer> indexList = new ArrayList<>();
-        for (Field f : tournament.getFieldList())
-            indexList.add(1);       //
+            createFieldColumns(matchDayGridPane, tab);
 
-        for (Match match : matchDay.getMatches()) {
-            HBox matchHBox = createHBoxFromMatch(match, matchCounter);
+            List<Integer> indexList = new ArrayList<>();
 
-            matchScheduleGridPane.add(matchHBox, Integer.parseInt(match.getField().getName().substring(5)) - 1
-                    , indexList.get(Integer.parseInt(match.getField().getName().substring(5)) - 1));
+            for (Field f : tournament.getFieldList())
+                indexList.add(1);
 
-            indexList.set(Integer.parseInt(match.getField().getName().substring(5)) - 1
-                    , indexList.get(Integer.parseInt(match.getField().getName().substring(5)) - 1) + 1);
-            matchCounter++;
+            MatchDay matchDay = tournament.getMatchSchedule().findMatchDay(tab.getText());
+
+            for (Match match : matchDay.getMatches()) {
+                HBox matchHBox = createHBoxFromMatch(match, matchCounter);
+
+                matchDayGridPane.add(matchHBox, Integer.parseInt(match.getField().getName().substring(5)) - 1
+                        , indexList.get(Integer.parseInt(match.getField().getName().substring(5)) - 1));
+
+                indexList.set(Integer.parseInt(match.getField().getName().substring(5)) - 1
+                        , indexList.get(Integer.parseInt(match.getField().getName().substring(5)) - 1) + 1);
+                matchCounter++;
+            }
+
+            scrollPane.setContent(matchDayGridPane);
+            tab.setContent(scrollPane);
+        }
+    }
+
+    private void createFieldColumns(GridPane matchDayGridPane, Tab tab) {
+        // Text-objects containing field numbers are inserted at the top of the GridPane.
+        for (int i = 0; i < tournament.getFieldList().size(); i++) {
+            matchDayGridPane.add(new Text("Bane " + (i + 1)), i*2, 0);
+            //matchScheduleGridPane.add(new VLineTo(), i+1, 0);
+
         }
 
-        matchScheduleScrollPane.setContent(matchScheduleGridPane);
     }
 
     private HBox createHBoxFromMatch(Match match, int matchCounter) {

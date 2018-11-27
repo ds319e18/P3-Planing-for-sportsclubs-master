@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
@@ -69,22 +70,20 @@ public class CreatingMatchScheduleController {
 
         for (Tab tab : matchDayTabPane.getTabs()) {
             matchDayGridPane = new GridPane();
-            matchDayGridPane.getColumnConstraints().addAll(createFieldColumns(tab));
+            createFieldColumns(matchDayGridPane, tab);
             tab.setContent(matchDayGridPane);
         }
     }
 
-    private ObservableList<ColumnConstraints> createFieldColumns(Tab tab) {
-        ObservableList<ColumnConstraints> fieldColumnList = FXCollections.observableArrayList();
-
+    private void createFieldColumns(GridPane matchDayGridPane, Tab tab) {
         MatchDay matchDay = tournament.getMatchSchedule().findMatchDay(tab.getText());
+        int columnIndex = 1;
 
         for (Field field : matchDay.getFieldList()) {
-            fieldColumnList.add(new ColumnConstraints(100));
+            matchDayGridPane.add(new Text(field.getName()), columnIndex, 0);
+            columnIndex++;
         }
 
-
-        return fieldColumnList;
     }
 
 }
