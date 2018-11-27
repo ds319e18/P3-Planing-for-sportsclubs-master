@@ -3,89 +3,88 @@ package controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.*;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import tournament.matchschedule.MatchDay;
+import tournament.Match;
 import tournament.Tournament;
+import tournament.matchschedule.Field;
+import tournament.matchschedule.MatchDay;
 import tournament.pool.Pool;
 
 import java.time.LocalDate;
 
 public class CreatingMatchScheduleController {
-    private final int stepNumber = 4;
+    private final int stepNumber = 5;
     private Tournament tournament;
+
+    public void setTournament(Tournament tournament) {
+        this.tournament = tournament;
+        createMatchListView();
+        createMatchDayTabs();
+        createMatchDayGridpanes();
+
+    }
 
     @FXML
     private VBox progressBox;
 
     @FXML
-    private TextField timeBetweenMatches;
+    private TabPane matchDayTabPane;
 
     @FXML
-    private TableView<MatchDay> matchDayTableView;
-
-    @FXML
-    private TableView<Pool> poolTableView;
-
-    public void setTournament(Tournament tournament) {
-        this.tournament = tournament;
-        //setMatchDays();
-        //setPools();
-    }
+    private ListView<Match> matchListView;
 
     public void initialize() {
         highlightProgressBox();
-        tournament = new Tournament.Builder("Jetsmark IF tournament").build();
-
-        for (int i = 0; i < 4; i++) {
-            tournament.getPoolList().add(new Pool.Builder().setSkilllLevel("A").setYearGroup(i+8).build());
-        }
-
-        setPools();
-        setMatchDays();
-
-    }
-
-    private void setPools() {
-        TableColumn<Pool, ?> poolNameColumn = poolTableView.getColumns().get(0);
-        poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-
-        TableColumn<Pool, ?> matchDurationColumn = poolTableView.getColumns().get(1);
-        matchDurationColumn.setCellValueFactory(new PropertyValueFactory<>("matchDurationTextField"));
-
-        ObservableList<Pool> poolObservableList = FXCollections.observableArrayList();
-        poolObservableList.addAll(tournament.getPoolList());
-
-        poolTableView.setItems(poolObservableList);
-    }
-
-    //inputs match days into the tableView
-    private void setMatchDays() {
-        ObservableList<Pool> matchDayList = FXCollections.observableArrayList();
-        //matchDayList.addAll(tournament.getMatchSchedule().getMatchDays());
-
-
-        TableColumn<MatchDay, ?> poolNameColumn = matchDayTableView.getColumns().get(0);
-        poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-    }
-
-    @FXML
-    private void autogenerateMatchSchedule() {
-
-    }
-
-    @FXML
-    private void manuallyCreateMatchSchedule() {
-
     }
 
     private void highlightProgressBox() {
         VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
         stepBox.setStyle("-fx-border-color: #0000CD");
         stepBox.setStyle("-fx-background-color: #A9A9A9");
+    }
+
+    private void createMatchListView() {
+        for (Match match : tournament.getAllMatches()) {
+            matchListView.getItems().add(match);
+        }
+    }
+
+    private void createMatchDayTabs() {
+        for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
+            matchDayTabPane.getTabs().add(new Tab(matchDay.getName()));
+        }
+
+        for (Tab tab : matchDayTabPane.getTabs()) {
+            tab.setStyle("-fx-pref-width: " +
+                    String.valueOf(matchDayTabPane.getPrefWidth()/tournament.getMatchSchedule().
+                            getMatchDays().size()-10));
+        }
+    }
+
+    private void createMatchDayGridpanes() {
+        GridPane matchDayGridPane;
+
+        for (Tab tab : matchDayTabPane.getTabs()) {
+            matchDayGridPane = new GridPane();
+            matchDayGridPane.getColumnConstraints().addAll(createFieldColumns(tab));
+            tab.setContent(matchDayGridPane);
+        }
+    }
+
+    private ObservableList<ColumnConstraints> createFieldColumns(Tab tab) {
+        ObservableList<ColumnConstraints> fieldColumnList = FXCollections.observableArrayList();
+
+        MatchDay matchDay = tournament.getMatchSchedule().findMatchDay(tab.getText());
+
+        for (Field field : matchDay.getFieldList()) {
+            fieldColumnList.add(new ColumnConstraints(100));
+        }
+
+
+        return fieldColumnList;
     }
 
 }

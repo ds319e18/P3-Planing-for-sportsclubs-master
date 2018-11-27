@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.TournamentType;
+import tournament.matchschedule.Field;
 import tournament.pool.Pool;
 
 import java.io.IOException;
@@ -70,7 +71,8 @@ public class TournamentSetupController {
                 .setStartDate(startDatePicker.getValue())
                 .setEndDate(endDatePicker.getValue())
                 .setType(tournamentTypeCombobox.getValue())
-                .setPoolList(getSelectedPools())
+                .createFieldList(Integer.parseInt(fieldNumberCombobox.getValue().toString()))
+                .setPoolList(getSelectedPoolsAndMatchLengths())
                 .build();
 
         FXMLLoader loader = new FXMLLoader();
@@ -99,7 +101,7 @@ public class TournamentSetupController {
         window.show();
     }
 
-    private ArrayList<Pool> getSelectedPools() {
+    /*private ArrayList<Pool> getSelectedPools() {
         ArrayList<Pool> poolList = new ArrayList<>();
 
         String yearString;
@@ -122,6 +124,40 @@ public class TournamentSetupController {
                                                     .build());
                 }
             }
+        }
+        return poolList;
+    }*/
+
+    private ArrayList<Pool> getSelectedPoolsAndMatchLengths() { // and match lengths
+        ArrayList<Pool> poolList = new ArrayList<>();
+
+        String yearString;
+
+        // the selected pools will be saved in a list
+        for (int i = 0; i < YEAR_GROUP_MAX; i++) {
+            TitledPane titledPane = poolAccordion.getPanes().get(i);
+            VBox vbox = (VBox) titledPane.getContent();
+
+            HBox hboxWithCheckboxes = (HBox) vbox.getChildren().get(0);
+            HBox hboxWithMatchDuration = (HBox) vbox.getChildren().get(1);
+            TextField matchDurationTextField = (TextField) hboxWithMatchDuration.getChildren().get(1);
+
+            for (int j = 0; j < SKILL_LEVEL_MAX; j++) {
+                CheckBox checkBox = (CheckBox) hboxWithCheckboxes.getChildren().get(j);
+
+                if (checkBox.isSelected()) {
+
+                    yearString = titledPane.getText().replace(String.valueOf
+                            (titledPane.getText().charAt(0)), "");
+                    poolList.add(new Pool.Builder()
+                            .setSkilllLevel(checkBox.getText())
+                            .setYearGroup(Integer.parseInt(yearString))
+                            .setMatchDurationInMinutes(Integer.parseInt(matchDurationTextField.getText()))
+                            .build());
+                }
+            }
+
+
         }
         return poolList;
     }

@@ -1,13 +1,14 @@
 package tournament.matchschedule;
 
+import javafx.scene.control.TextField;
 import tournament.Match;
 
-import java.awt.*;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Objects;
 
 public class MatchDay {
     private String name;
@@ -26,25 +27,31 @@ public class MatchDay {
         return matches;
     }
 
-    public TextField getStartTimeTextField() {
-        return new TextField(startTime.toString());
-    }
-
-    public TextField getEndTimeTextField() {
-        return new TextField(endTime.toString());
-    }
-
     public void setFieldList(ArrayList<Field> fieldList) {
         this.fieldList = fieldList;
     }
 
-    public void setStartTime(LocalTime startTime) {
-        this.startTime = startTime;
+    public ArrayList<Field> getFieldList() {
+        return fieldList;
     }
 
-    public void setEndTime(LocalTime endTime) {
-        this.endTime = endTime;
+    public LocalTime getStartTime() {
+        return startTime;
     }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+    public void setStartTime(String startTimeText) {
+        this.startTime = LocalTime.parse(startTimeText);
+    }
+
+    public void setEndTime(String endTimeText) {
+        this.endTime = LocalTime.parse(endTimeText);
+    }
+
+    public void setName(String name) { this.name = name; }
 
     public LocalDate getDate() {
         return date;
@@ -63,9 +70,7 @@ public class MatchDay {
         int fieldNumber;
         int matchCounter = 0;
 
-        for (Field field : this.fieldList) {
-            field.setFieldEndTime(this.startTime);
-        }
+        setFieldsEndTime();
 
         for (Match match : inputMatches) {
             fieldNumber = matchCounter % this.fieldList.size();
@@ -78,7 +83,6 @@ public class MatchDay {
                     this.fieldList.get(fieldNumber).setFieldEndTime(this.fieldList.get(fieldNumber).getFieldEndTime().plusMinutes((match.getDuration() + this.timeBetweenMatches)));
                     outputMatches.add(match);
                 }
-
             }
             matchCounter++;
         }
@@ -86,9 +90,33 @@ public class MatchDay {
         this.matches = outputMatches;
     }
 
+    private void setFieldsEndTime() {
+        for (Field field : this.fieldList) {
+            field.setFieldEndTime(this.startTime);
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "                   " + name + ": " + startTime + "-" + endTime + " " + date + '\n' +
                 matches.toString().replace(",", "").replace("[", " ").replace("]", "");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MatchDay matchDay = (MatchDay) o;
+        return Objects.equals(getDate(), matchDay.getDate());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getDate());
     }
 }

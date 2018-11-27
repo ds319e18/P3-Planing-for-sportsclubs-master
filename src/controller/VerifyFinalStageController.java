@@ -107,7 +107,6 @@ public class VerifyFinalStageController {
                 finalStageGridPane.add(gridPane, columnCount, rowCount++);
             }
             columnCount++;
-
         }
         if (3 > iter && iter > 0) {
             int rowCount = 1;
@@ -139,7 +138,9 @@ public class VerifyFinalStageController {
 
             finalStageGridPane.add(gridPane, columnCount, rowCount++);
         }
+        for (int i = amountOfMatches - 1; i >= 0; i--) {
 
+        }
         finalStageGridPane.setGridLinesVisible(false);
         finalStageGridPane.setGridLinesVisible(true);
     }
@@ -188,16 +189,17 @@ public class VerifyFinalStageController {
 
         if (value) {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/CreatingFinalStage.FXML"));
+            loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
             Parent newWindow = loader.load();
 
-            CreatingFinalStageController atc = loader.getController();
-            atc.setTournament(tournament);
+            MatchScheduleSetupController mss = loader.getController();
+            mss.setTournament(tournament);
 
             Scene newScene = new Scene(newWindow);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            window.setScene(newScene);window.show();
+            window.setScene(newScene);
+            window.show();
         }
 
     }
