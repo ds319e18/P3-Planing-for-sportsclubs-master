@@ -192,19 +192,19 @@
                      <children>
                         <VBox prefHeight="133.0" prefWidth="123.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Button">
+                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Godkend">
                                  <VBox.margin>
                                     <Insets left="30.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Button">
+                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Tilbage">
                                  <VBox.margin>
                                     <Insets left="30.0" top="30.0" />
                                  </VBox.margin>
                               </Button>
                            </children>
                         </VBox>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Button">
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Næste">
                            <HBox.margin>
                               <Insets left="30.0" top="60.0" />
                            </HBox.margin>

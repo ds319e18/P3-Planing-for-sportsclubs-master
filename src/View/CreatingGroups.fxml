@@ -264,15 +264,15 @@
                   <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label prefHeight="17.0" prefWidth="106.0" text="Pool" />
-                  <Label layoutX="10.0" layoutY="52.0" prefHeight="17.0" prefWidth="106.0" text="Antal af grupper" GridPane.rowIndex="2" />
-                  <Label layoutX="10.0" layoutY="153.0" prefHeight="17.0" prefWidth="106.0" text="Kampe mod modstander" GridPane.rowIndex="3" />
+                  <Label prefHeight="17.0" prefWidth="106.0" text="Pool:" />
+                  <Label layoutX="10.0" layoutY="52.0" prefHeight="17.0" prefWidth="106.0" text="Antal af grupper:" GridPane.rowIndex="2" />
+                  <Label layoutX="10.0" layoutY="153.0" prefHeight="173.0" prefWidth="117.0" text="Indbyrdes kampe:" GridPane.rowIndex="3" />
                   <Button mnemonicParsing="false" onAction="#saveButton" prefHeight="30.0" prefWidth="90.0" text="Gem" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Næste" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <Button mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" GridPane.rowIndex="6" />
-                  <Label layoutX="10.0" layoutY="203.0" prefHeight="17.0" prefWidth="106.0" text="Antal af hold" GridPane.rowIndex="1" />
-                  <ComboBox fx:id="amountOfGroupsComboBox" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <ComboBox fx:id="matchesPrGroupsComboBox" layoutX="110.0" layoutY="101.0" prefHeight="25.0" prefWidth="45.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label layoutX="10.0" layoutY="203.0" prefHeight="17.0" prefWidth="106.0" text="Antal af hold:" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="amountOfGroupsComboBox" prefHeight="25.0" prefWidth="459.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="matchesPrGroupsComboBox" layoutX="110.0" layoutY="101.0" prefHeight="25.0" prefWidth="132.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Text fx:id="poolNameText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" wrappingWidth="83.13671875" GridPane.columnIndex="1" />
                   <Text fx:id="amountOfTeamsText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" wrappingWidth="81.63671875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>

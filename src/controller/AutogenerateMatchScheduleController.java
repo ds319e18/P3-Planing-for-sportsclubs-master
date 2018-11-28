@@ -2,12 +2,12 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import tournament.Match;
@@ -15,7 +15,6 @@ import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.MatchDay;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,9 +23,6 @@ public class AutogenerateMatchScheduleController {
 
     @FXML
     private TabPane matchDayTabPane;
-
-    // This GridPane will display the matches sorted by fields.
-    GridPane matchScheduleGridPane = new GridPane();
 
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
@@ -52,20 +48,18 @@ public class AutogenerateMatchScheduleController {
         int matchCounter = 1;
 
         for (Tab tab : matchDayTabPane.getTabs()) {
-            matchDayGridPane = new GridPane();
-            scrollPane = new ScrollPane();
-        // Text-objects containing field numbers are inserted at the top of the GridPane.
-        for (int i = 0; i < tournament.getFieldList().size(); i++) {
-            Text fieldText = new Text("Bane " + (i + 1));
-            fieldText.setWrappingWidth(267);
-            fieldText.setTextAlignment(TextAlignment.CENTER);
-            fieldText.setStyle("-fx-font-style: BOLD;");
-            fieldText.setFont(Font.font(15));
+                matchDayGridPane = new GridPane();
+                scrollPane = new ScrollPane();
+            // Text-objects containing field numbers are inserted at the top of the GridPane.
+            for (int i = 0; i < tournament.getFieldList().size(); i++) {
+                Text fieldText = new Text("Bane " + (i + 1));
+                fieldText.setWrappingWidth(267);
+                fieldText.setTextAlignment(TextAlignment.CENTER);
+                fieldText.setStyle("-fx-font-style: BOLD;");
+                fieldText.setFont(Font.font(15));
 
-            matchScheduleGridPane.add(fieldText, i, 0);
-        }
-
-            createFieldColumns(matchDayGridPane, tab);
+                matchDayGridPane.add(fieldText, i, 0);
+            }
 
             List<Integer> indexList = new ArrayList<>();
 
@@ -88,16 +82,6 @@ public class AutogenerateMatchScheduleController {
             scrollPane.setContent(matchDayGridPane);
             tab.setContent(scrollPane);
         }
-    }
-
-    private void createFieldColumns(GridPane matchDayGridPane, Tab tab) {
-        // Text-objects containing field numbers are inserted at the top of the GridPane.
-        for (int i = 0; i < tournament.getFieldList().size(); i++) {
-            matchDayGridPane.add(new Text("Bane " + (i + 1)), i*2, 0);
-            //matchScheduleGridPane.add(new VLineTo(), i+1, 0);
-
-        }
-
     }
 
     private HBox createHBoxFromMatch(Match match, int matchCounter) {

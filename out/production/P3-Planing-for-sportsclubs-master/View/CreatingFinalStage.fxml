@@ -315,7 +315,7 @@
                      <children>
                         <VBox>
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tuneringstype:" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Slutspilstype:" />
                            </children>
                            <VBox.margin>
                               <Insets top="15.0" />
@@ -323,7 +323,7 @@
                         </VBox>
                         <HBox prefHeight="30.0" prefWidth="208.0">
                            <children>
-                              <RadioButton fx:id="knockoutRadioButton" mnemonicParsing="false" text="Knockout">
+                              <RadioButton fx:id="knockoutRadioButton" mnemonicParsing="false" text="Knockout spil">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="finalStageType" />
                                  </toggleGroup>
@@ -335,12 +335,12 @@
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="208.0">
                            <children>
-                              <RadioButton fx:id="placementRadioButton" mnemonicParsing="false" text="Placement" toggleGroup="$finalStageType" />
+                              <RadioButton fx:id="placementRadioButton" mnemonicParsing="false" text="Placerings spil" toggleGroup="$finalStageType" />
                            </children>
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="208.0">
                            <children>
-                              <RadioButton fx:id="knockoutAndPlacementRadioButton" mnemonicParsing="false" text="Knockout &amp; Placement" toggleGroup="$finalStageType" />
+                              <RadioButton fx:id="knockoutAndPlacementRadioButton" mnemonicParsing="false" text="Guld-bronze kamp" toggleGroup="$finalStageType" />
                            </children>
                         </HBox>
                      </children>
@@ -353,7 +353,7 @@
                   <Button mnemonicParsing="false" onAction="#saveButton" prefHeight="30.0" prefWidth="90.0" text="Gem" GridPane.rowIndex="5" />
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
                      <children>
-                        <ComboBox fx:id="advancingComboBox" prefWidth="150.0" promptText="#" />
+                        <ComboBox fx:id="advancingComboBox" prefWidth="150.0" />
                      </children>
                   </VBox>
                </children>

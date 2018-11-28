@@ -26,8 +26,12 @@ public class PlacementPlay extends KnockoutBracket {
                 super.getMatches().add(new Match.Builder(matchDurationInMinutes)
                         .setName("Placement Match " + (iter + 1) + ":")
                         .setFinished(false)
-                        .setFirstTeam(new Team("TBD"))
-                        .setSecondTeam(new Team("TBD"))
+                        .setFirstTeam(new Team("TBD"
+                                , groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup()
+                                , groupBracket.getGroups().get(0).getTeamList().get(0).getSkillLevel()))
+                        .setSecondTeam(new Team("TBD"
+                                , groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup()
+                                , groupBracket.getGroups().get(0).getTeamList().get(0).getSkillLevel()))
                         .build());
                 iter++;
             }
