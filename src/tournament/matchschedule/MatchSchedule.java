@@ -35,7 +35,7 @@ public class MatchSchedule {
 
     public void setTimeBetweenMatchDays(int timeBetweenMatchDays) {
         for (MatchDay matchDay : matchDays) {
-            matchDay.setTimeBetweenMatches((timeBetweenMatchDays));
+            matchDay.setTimeBetweenMatches(timeBetweenMatchDays);
         }
     }
 
