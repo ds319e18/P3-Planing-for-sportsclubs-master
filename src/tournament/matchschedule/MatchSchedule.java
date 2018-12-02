@@ -33,11 +33,27 @@ public class MatchSchedule {
         }
     }
 
+    public void setTimeBetweenMatchDays(int timeBetweenMatchDays) {
+        for (MatchDay matchDay : matchDays) {
+            matchDay.setTimeBetweenMatches(timeBetweenMatchDays);
+        }
+    }
+
+    public void setMixedMatches() {
+
+    }
+
     public void setNoMixedMatches(ArrayList<Match> matches) {
         for (MatchDay matchDay : matchDays) {
             matchDay.setMatchesNoMix(matches);
         }
     }
 
-
+    public MatchDay findMatchDay(String name) {
+        for (MatchDay matchDay : matchDays) {
+            if (matchDay.getName().equals(name))
+                return matchDay;
+        }
+        return null;
+    }
 }

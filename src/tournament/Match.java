@@ -4,6 +4,7 @@ import tournament.matchschedule.Field;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Objects;
 
 public class Match implements Comparable<Match> {
     private String name;
@@ -97,6 +98,9 @@ public class Match implements Comparable<Match> {
         return firstTeam;
     }
 
+    public LocalTime getTimeStamp() { return timestamp; }
+
+    public String getName() { return name; }
 
     public boolean isFinished() {
         return finished;

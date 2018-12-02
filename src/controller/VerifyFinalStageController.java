@@ -7,17 +7,18 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import tournament.Match;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.pool.Pool;
-import tournament.pool.bracket.GroupBracket;
 import tournament.pool.bracket.KnockoutBracket;
+import tournament.pool.bracket.KnockoutPlay;
+import tournament.pool.bracket.PlacementPlay;
 
 import java.io.IOException;
 
@@ -50,7 +51,18 @@ public class VerifyFinalStageController {
 
         poolClicked = poolClickedText.getText();
 
-        drawFinalStageGridPane();
+        int poolYearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
+                : poolClicked.substring(0, 1));
+        String poolSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
+                : poolClicked.substring(1, 2));
+
+        if (tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getKnockoutBracket()
+                .getClass().equals(PlacementPlay.class)) {
+            drawPlacementStageGridPane();
+        } else if (tournament.findCorrectPool(poolYearGroup,poolSkillLevel).getKnockoutBracket().getClass().equals(KnockoutPlay.class)) {
+            drawKnockoutStageGridPane();
+        }
+
     }
 
     void drawPoolKnockoutStatusGridPane() {
@@ -77,8 +89,35 @@ public class VerifyFinalStageController {
 
     }
 
-    @FXML
-    void drawFinalStageGridPane() {
+    private void drawPlacementStageGridPane() {
+        int poolYearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
+                : poolClicked.substring(0, 1));
+        String poolSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
+                : poolClicked.substring(1, 2));
+
+        finalStageGridPane.getChildren().clear();
+        finalStageGridPane.setVgap(30);
+        finalStageGridPane.setHgap(30);
+
+        int counter = 1;
+        for (Match match : tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getKnockoutBracket().getMatches()){
+            GridPane gridPane = new GridPane();
+            Text groupNumberText = new Text("  Placeringspil  ");
+            groupNumberText.setStyle("-fx-font-weight: bold;");
+            gridPane.add(groupNumberText, 0, 0);
+            gridPane.add(new Text("  " + counter + ". plads af gruppe 1" + "  "), 1, 0);
+            gridPane.add(new Text("  " + counter + ". plads af gruppe 2" + "  "), 1, 1);
+            counter++;
+            finalStageGridPane.add(gridPane, 0,finalStageGridPane.getRowCount());
+        }
+
+
+
+        finalStageGridPane.setGridLinesVisible(false);
+        finalStageGridPane.setGridLinesVisible(true);
+    }
+
+    private void drawKnockoutStageGridPane() {
         int poolYearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
                 : poolClicked.substring(0, 1));
         String poolSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
@@ -86,7 +125,7 @@ public class VerifyFinalStageController {
 
         int amountOfMatches = tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getKnockoutBracket().getMatches().size();
         KnockoutBracket knockoutBracket = tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getKnockoutBracket();
-        finalStageGridPane.getChildren().remove(0, finalStageGridPane.getChildren().size());
+        finalStageGridPane.getChildren().clear();
         finalStageGridPane.setVgap(30);
         finalStageGridPane.setHgap(30);
 
@@ -101,13 +140,12 @@ public class VerifyFinalStageController {
                 Text groupNumberText = new Text("  Kvartfinale " + iter + "  ");
                 groupNumberText.setStyle("-fx-font-weight: bold;");
                 gridPane.add(groupNumberText, 0, 0);
-                gridPane.add(new Text("  " + team1 + "  "), 1, 0);
-                gridPane.add(new Text("  " + team2 + "  "), 1, 1);
+                gridPane.add(new Text("  " + team1.getName() + "  "), 1, 0);
+                gridPane.add(new Text("  " + team2.getName() + "  "), 1, 1);
 
                 finalStageGridPane.add(gridPane, columnCount, rowCount++);
             }
             columnCount++;
-
         }
         if (3 > iter && iter > 0) {
             int rowCount = 1;
@@ -118,8 +156,8 @@ public class VerifyFinalStageController {
                 Text groupNumberText = new Text(" Semifinale " + iter + "  ");
                 groupNumberText.setStyle("-fx-font-weight: bold;");
                 gridPane.add(groupNumberText, 0, 0);
-                gridPane.add(new Text("  " + team1 + "  "), 1, 0);
-                gridPane.add(new Text("  " + team2 + "  "), 1, 1);
+                gridPane.add(new Text("  " + team1.getName() + "  "), 1, 0);
+                gridPane.add(new Text("  " + team2.getName() + "  "), 1, 1);
 
                 finalStageGridPane.add(gridPane, columnCount, rowCount++);
             }
@@ -134,12 +172,11 @@ public class VerifyFinalStageController {
             Text groupNumberText = new Text("  Finale "  + "  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
             gridPane.add(groupNumberText, 0, 0);
-            gridPane.add(new Text("  " + team1 + "  "), 1, 0);
-            gridPane.add(new Text("  " + team2 + "  "), 1, 1);
+            gridPane.add(new Text("  " + team1.getName() + "  "), 1, 0);
+            gridPane.add(new Text("  " + team2.getName() + "  "), 1, 1);
 
             finalStageGridPane.add(gridPane, columnCount, rowCount++);
         }
-
         finalStageGridPane.setGridLinesVisible(false);
         finalStageGridPane.setGridLinesVisible(true);
     }
@@ -188,16 +225,17 @@ public class VerifyFinalStageController {
 
         if (value) {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/CreatingFinalStage.FXML"));
+            loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
             Parent newWindow = loader.load();
 
-            CreatingFinalStageController atc = loader.getController();
-            atc.setTournament(tournament);
+            MatchScheduleSetupController mss = loader.getController();
+            mss.setTournament(tournament);
 
             Scene newScene = new Scene(newWindow);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            window.setScene(newScene);window.show();
+            window.setScene(newScene);
+            window.show();
         }
 
     }
