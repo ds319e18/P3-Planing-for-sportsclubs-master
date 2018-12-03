@@ -55,7 +55,7 @@ public class FrontPageController {
             column.setHalignment(HPos.CENTER);
 
         for (int i = 0; i < 5; i++) { // Iterates through a list of tournament-objects.
-            Text txt = new Text("Tournament " + i);
+            Text txt = new Text(tournament.getName());
             Text status = new Text("ACTIVE");
             Text date = new Text("Start: 26/2/2008\nEnd: 27/2/2009");
             Button btnView = new Button("View");
