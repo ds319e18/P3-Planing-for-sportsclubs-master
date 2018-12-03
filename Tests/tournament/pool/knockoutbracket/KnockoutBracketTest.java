@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
 public class KnockoutBracketTest {
-
+    /*
     // This method creates a tournament with 1 pool consisting of 8 teams and 2 groups - no matches has been played
     private static Tournament createEvenTournament() {
         Tournament tournament;
