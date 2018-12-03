@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateAccountController">
+   <children>
+      <VBox layoutX="54.0" layoutY="178.0" prefHeight="450.0" prefWidth="245.0">
+         <children>
+            <TextField fx:id="name" promptText="Navn" />
+            <TextField fx:id="username" promptText="Brugernavn">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <PasswordField fx:id="password" promptText="Kodeord">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </PasswordField>
+            <Button fx:id="createUserBtn" mnemonicParsing="false" onAction="#setOnCreateAccountBtmClicked" text="Opret bruger">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Text layoutX="57.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opret nyt bruger" />
+   </children>
+</AnchorPane>

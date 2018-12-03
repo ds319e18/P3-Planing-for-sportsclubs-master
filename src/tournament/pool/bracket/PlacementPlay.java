@@ -21,8 +21,8 @@ public class PlacementPlay extends KnockoutBracket {
             throw new IllegalAmountOfTeamsException();
         } else {
             int iter = 0;
-
-            while (iter < groupBracket.getGroups().get(0).getTeamList().size() && iter < groupBracket.getGroups().get(1).getTeamList().size()) {
+            groupBracket.setAdvancingTeamsPrGroup(groupBracket.getGroups().get(0).getTeamList().size());
+            while (iter < groupBracket.getAmountOfAdvancingTeamsPrGroup() && iter < groupBracket.getAmountOfAdvancingTeamsPrGroup()) {
                 super.getMatches().add(new Match.Builder(matchDurationInMinutes)
                         .setName("Placement Match " + (iter + 1) + ":")
                         .setFinished(false)
