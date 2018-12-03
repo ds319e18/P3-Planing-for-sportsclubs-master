@@ -64,13 +64,13 @@ public class MatchScheduleSetupController {
         /*
         tournament = new Tournament.Builder("Jetsmark IF tournament").
                 setStartDate(LocalDate.of(2018,6,1)).
-                setEndDate(LocalDate.of(2018,6,2))
+                setEndDate(LocalDate.of(2018,6,2)).createFieldList(3)
                 .build();
 
         for (int i = 0; i < 4; i++) {
             tournament.getPoolList().add(new Pool.Builder().setSkilllLevel("A").setYearGroup(i+8).build());
-        }
-        */
+        } */
+
         //setPoolsTable();
         //setMatchDaysTable();
         //createMatches();

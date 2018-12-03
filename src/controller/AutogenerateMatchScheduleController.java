@@ -8,6 +8,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import tournament.Match;
@@ -21,17 +22,19 @@ import java.util.List;
 
 public class AutogenerateMatchScheduleController {
     Tournament tournament;
+    private final int stepNumber = 5;
+
+    @FXML
+    private VBox progressBox;
 
     @FXML
     private TabPane matchDayTabPane;
-
-    // This GridPane will display the matches sorted by fields.
-    GridPane matchScheduleGridPane = new GridPane();
 
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
         createMatchDayTabs();
         createMatchScheduleGridpane();
+        highlightProgressBox();
     }
 
     private void createMatchDayTabs() {
@@ -55,17 +58,15 @@ public class AutogenerateMatchScheduleController {
             matchDayGridPane = new GridPane();
             scrollPane = new ScrollPane();
         // Text-objects containing field numbers are inserted at the top of the GridPane.
-        for (int i = 0; i < tournament.getFieldList().size(); i++) {
-            Text fieldText = new Text("Bane " + (i + 1));
-            fieldText.setWrappingWidth(267);
-            fieldText.setTextAlignment(TextAlignment.CENTER);
-            fieldText.setStyle("-fx-font-style: BOLD;");
-            fieldText.setFont(Font.font(15));
+            for (int i = 0; i < tournament.getFieldList().size(); i++) {
+                Text fieldText = new Text("Bane " + (i + 1));
+                fieldText.setWrappingWidth(267);
+                fieldText.setTextAlignment(TextAlignment.CENTER);
+                fieldText.setStyle("-fx-font-style: BOLD;");
+                fieldText.setFont(Font.font(15));
 
-            matchScheduleGridPane.add(fieldText, i, 0);
-        }
-
-            createFieldColumns(matchDayGridPane, tab);
+                matchDayGridPane.add(fieldText, i, 0);
+            }
 
             List<Integer> indexList = new ArrayList<>();
 
@@ -90,22 +91,11 @@ public class AutogenerateMatchScheduleController {
         }
     }
 
-    private void createFieldColumns(GridPane matchDayGridPane, Tab tab) {
-        // Text-objects containing field numbers are inserted at the top of the GridPane.
-        for (int i = 0; i < tournament.getFieldList().size(); i++) {
-            matchDayGridPane.add(new Text("Bane " + (i + 1)), i*2, 0);
-            //matchScheduleGridPane.add(new VLineTo(), i+1, 0);
-
-        }
-
-    }
-
     private HBox createHBoxFromMatch(Match match, int matchCounter) {
-        HBox returnHBox = new HBox();
+        HBox matchBoxContainer = new HBox();
 
-        // --- Venstre
-        VBox vBox1 = new VBox();
-        vBox1.setStyle("-fx-border-color: BLACK;");
+        VBox matchTypeBox = new VBox();
+        matchTypeBox.setStyle("-fx-border-color: BLACK;");
 
         Text matchNameText = new Text("Kamp " + matchCounter);
         Text timeIntervalText = new Text(match.getTimeStamp() + " - " + match.getTimeStamp().plusMinutes(match.getDuration()));
@@ -114,42 +104,48 @@ public class AutogenerateMatchScheduleController {
         matchNameText.setTextAlignment(TextAlignment.CENTER);
         timeIntervalText.setTextAlignment(TextAlignment.CENTER);
 
-        vBox1.getChildren().addAll(matchNameText, timeIntervalText);
+        matchTypeBox.getChildren().addAll(matchNameText, timeIntervalText);
 
-        // ---
-        HBox hBox = new HBox();
+        // match object Hbox
+        HBox matchBox = new HBox();
 
-        VBox vBox2 = new VBox();
+        VBox teamTextBox = new VBox();
         //vBox2.setStyle("-fx-border-color: BLACK;");
 
-        Text poolText = new Text(match.getFirstTeam().getName());
-        Text fieldText = new Text(match.getSecondTeam().getName());
-        poolText.setWrappingWidth(107);
-        fieldText.setWrappingWidth(107);
-        poolText.setTextAlignment(TextAlignment.CENTER);
-        fieldText.setTextAlignment(TextAlignment.CENTER);
-        vBox2.getChildren().addAll(poolText, fieldText);
-
-        VBox vBox3 = new VBox();
-        //vBox3.setStyle("-fx-border-color: BLACK;");
-
-        Text firstTeamText = new Text("U" + match.getFirstTeam().getYearGroup() + " - " + match.getFirstTeam().getSkillLevel());
-        Text secondTeamText = new Text(match.getField().getName());
-        firstTeamText.setWrappingWidth(80);
-        secondTeamText.setWrappingWidth(80);
+        Text firstTeamText = new Text(match.getFirstTeam().getName());
+        Text secondTeamText = new Text(match.getSecondTeam().getName());
+        firstTeamText.setWrappingWidth(107);
+        secondTeamText.setWrappingWidth(107);
         firstTeamText.setTextAlignment(TextAlignment.CENTER);
         secondTeamText.setTextAlignment(TextAlignment.CENTER);
-        vBox3.getChildren().addAll(firstTeamText, secondTeamText);
+        teamTextBox.getChildren().addAll(firstTeamText, secondTeamText);
 
-        hBox.getChildren().addAll(vBox2, vBox3);
-        hBox.setStyle("-fx-border-color: BLACK;");
+        VBox teamNameBox = new VBox();
+        //vBox3.setStyle("-fx-border-color: BLACK;");
 
-        returnHBox.getChildren().add(vBox1);
-        returnHBox.getChildren().add(hBox);
+        Text poolText = new Text("U" + match.getFirstTeam().getYearGroup() + " - " + match.getFirstTeam().getSkillLevel());
+        Text fieldText = new Text(match.getField().getName());
+        poolText.setWrappingWidth(80);
+        fieldText.setWrappingWidth(80);
+        poolText.setTextAlignment(TextAlignment.CENTER);
+        fieldText.setTextAlignment(TextAlignment.CENTER);
+        teamNameBox.getChildren().addAll(poolText, fieldText);
 
-        returnHBox.setMargin(hBox, new Insets(0, 30, 0, 0));
+        matchBox.getChildren().addAll(teamTextBox, teamNameBox);
+        matchBox.setStyle("-fx-border-color: BLACK;");
 
-        return returnHBox;
+        matchBoxContainer.getChildren().add(matchTypeBox);
+        matchBoxContainer.getChildren().add(matchBox);
+
+        matchBoxContainer.setMargin(matchBox, new Insets(0, 30, 0, 0));
+
+        return matchBoxContainer;
+    }
+
+    private void highlightProgressBox() {
+        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
+        stepBox.setStyle("-fx-border-color: #0000CD");
+        stepBox.setStyle("-fx-background-color: #A9A9A9");
     }
 
 
