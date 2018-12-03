@@ -75,7 +75,7 @@ public class CreatingGroupController
 
             if (poolTextObject.equals(poolClicked)) {
                 Text statusTextObject = (Text) poolStatusGridPane.getChildren().get(i + 1);
-                statusTextObject.setText("Done");
+                statusTextObject.setText("Færdig");
                 break;
             }
         }
@@ -90,7 +90,7 @@ public class CreatingGroupController
             boolean isDone = pool.getGroupBracket() != null
                     && pool.getGroupBracket().getAmountOfGroups() > 0
                     && pool.getGroupBracket().getMatchesPrTeamAgainstOpponentInGroup() > 0;
-            Text status = (isDone ? new Text("Done") : new Text("Not done"));
+            Text status = (isDone ? new Text("Færdig") : new Text("Ikke færdig"));
             status.setWrappingWidth(80);                    // The width of the Text-object.
             status.setTextAlignment(TextAlignment.CENTER);  // The text of the Text-object is centered.
             GridPane.setMargin(text, new Insets(10,0,10,0));

@@ -1,8 +1,12 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
@@ -11,12 +15,13 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.MatchDay;
 
-import java.awt.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -147,6 +152,10 @@ public class AutogenerateMatchScheduleController {
         stepBox.setStyle("-fx-border-color: #0000CD");
         stepBox.setStyle("-fx-background-color: #A9A9A9");
     }
-
+    @FXML
+    public void setBackButtonPressed(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
+        Parent newWindow = loader.load();
 
 }

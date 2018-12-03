@@ -21,13 +21,17 @@ public class PlacementPlay extends KnockoutBracket {
             throw new IllegalAmountOfTeamsException();
         } else {
             int iter = 0;
-
-            while (iter < groupBracket.getGroups().get(0).getTeamList().size() && iter < groupBracket.getGroups().get(1).getTeamList().size()) {
+            groupBracket.setAdvancingTeamsPrGroup(groupBracket.getGroups().get(0).getTeamList().size());
+            while (iter < groupBracket.getAmountOfAdvancingTeamsPrGroup() && iter < groupBracket.getAmountOfAdvancingTeamsPrGroup()) {
                 super.getMatches().add(new Match.Builder(matchDurationInMinutes)
                         .setName("Placement Match " + (iter + 1) + ":")
                         .setFinished(false)
-                        .setFirstTeam(new Team("TBD"))
-                        .setSecondTeam(new Team("TBD"))
+                        .setFirstTeam(new Team("TBD"
+                                , groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup()
+                                , groupBracket.getGroups().get(0).getTeamList().get(0).getSkillLevel()))
+                        .setSecondTeam(new Team("TBD"
+                                , groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup()
+                                , groupBracket.getGroups().get(0).getTeamList().get(0).getSkillLevel()))
                         .build());
                 iter++;
             }

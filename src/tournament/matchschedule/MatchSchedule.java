@@ -1,6 +1,7 @@
 package tournament.matchschedule;
 
 import tournament.Match;
+import tournament.pool.Pool;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public class MatchSchedule {
 
     public void setTimeBetweenMatchDays(int timeBetweenMatchDays) {
         for (MatchDay matchDay : matchDays) {
-            matchDay.setTimeBetweenMatches((timeBetweenMatchDays));
+            matchDay.setTimeBetweenMatches(timeBetweenMatchDays);
         }
     }
 
@@ -43,9 +44,9 @@ public class MatchSchedule {
 
     }
 
-    public void setNoMixedMatches(ArrayList<Match> matches) {
+    public void setNoMixedMatches(ArrayList<Pool> poolList) {
         for (MatchDay matchDay : matchDays) {
-            matchDay.setMatchesNoMix(matches);
+            matchDay.setNoMixedMatches(poolList);
         }
     }
 

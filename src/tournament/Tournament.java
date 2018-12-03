@@ -33,6 +33,7 @@ public class Tournament {
         return null;
     }
 
+    // Getters
     public MatchSchedule getMatchSchedule() {
         return matchSchedule;
     }
@@ -45,7 +46,6 @@ public class Tournament {
         return endDate;
     }
 
-    // Getters
     public boolean isActive() {
         return active;
     }
@@ -68,6 +68,10 @@ public class Tournament {
     public ArrayList<Pool> getPoolList() {
         return poolList;
     }
+
+    public String getName() { return name; }
+
+
 
     // This next part of the class deals with updating the tournament while active
 
@@ -141,12 +145,5 @@ public class Tournament {
 
             return tournament;
         }
-
-
-
     }
-
-
-
-
 }
