@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestInstance(TestInstance.Lifecycle.PER_METHOD)
 public class PlacementBracketTest {
-
+/*
     // This method creates a tournament with one pool, 8 teams, two groups.
     // Also two teams from each group advance to end play.
     // No matches has been played
@@ -136,15 +136,15 @@ public class PlacementBracketTest {
         /*for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
             System.out.println(dage.toString());
             System.out.println();
-        }*/
+        }
 
         // Sortere alle grupper i gruppespil efter point og kan printe grupper ud med point
-        /*for (Group group : tournament.getPoolList().get(0).getGroupBracket().getGroups()) {
+        for (Group group : tournament.getPoolList().get(0).getGroupBracket().getGroups()) {
             group.getTeamList().sort(new TeamPointsComp());
             for (Team team : group.getTeamList()) {
                             System.out.println("Group: " + team.getGroupNumber() + " Name: " + team.getName() + " Point: " + team.getPoints());
             }
-        }*/
+        }
 
         tournament.findCorrectPool(6,"A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6,"A").getGroupBracket().advanceTeams());
 
@@ -173,5 +173,5 @@ public class PlacementBracketTest {
 
         assertEquals("Jetsmark IF 1", createTournament02().getMatchSchedule().getMatchDays().get(0).getMatches().get(15).getFirstTeam().getName());
         assertEquals("Jetsmark IF 2", createTournament02().getMatchSchedule().getMatchDays().get(0).getMatches().get(15).getSecondTeam().getName());
-    }
+    }*/
 }

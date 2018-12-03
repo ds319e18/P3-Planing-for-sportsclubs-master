@@ -1,13 +1,11 @@
 package tournament.matchschedule;
 
-import javafx.scene.control.TextField;
 import tournament.Match;
+import tournament.pool.Pool;
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Objects;
 
 public class MatchDay {
@@ -65,6 +63,45 @@ public class MatchDay {
         this.matches = matches;
     }
 
+    public void setNoMixedMatches(ArrayList<Pool> poolList) {
+        ArrayList<Match> outputMatches = new ArrayList<>();
+        int fieldNumber = 0;
+
+        setFieldsEndTime();
+
+        for (Pool pool : poolList) {
+            ArrayList<Match> matches = new ArrayList<>();
+            matches.addAll(pool.getGroupBracket().getMatches());
+            matches.addAll(pool.getKnockoutBracket().getMatches());
+
+            for (Match match : matches) {
+                // Tjekker at der ikke tilføjes kampe såldes at tiden overskrider den endtime som er valgt
+                if (fieldNumber < fieldList.size() &&
+                        !((fieldList.get(fieldNumber).getFieldEndTime().plusMinutes(match.getDuration() + this.timeBetweenMatches).isAfter(this.endTime)))) {
+
+                    if (!match.isPlanned()) {
+                        fieldList.get(fieldNumber).setOccupied(true);
+                        match.setTimestamp(this.fieldList.get(fieldNumber).getFieldEndTime()); // Tiden kampen skal spilles sættes.
+                        match.setField(this.fieldList.get(fieldNumber));    // Kampens bane sættes.
+                        match.setPlanned(true); // Kampen sættes til at være planlagt.
+                        // MatchDay'ens
+                        this.fieldList.get(fieldNumber).setFieldEndTime(this.fieldList.get(fieldNumber).getFieldEndTime()
+                                .plusMinutes((match.getDuration() + this.timeBetweenMatches)));
+                        outputMatches.add(match); // Kampen tilføjes til outputMatches.
+                    }
+
+                }
+            }
+
+            if (fieldNumber < fieldList.size() &&
+                    fieldList.get(fieldNumber).isOccupied()) {
+                fieldList.get(fieldNumber).setOccupied(false);
+                fieldNumber++;
+            }
+        }
+        this.matches = outputMatches;
+    }
+
     public void setMatchesNoMix(ArrayList<Match> inputMatches) {
         ArrayList<Match> outputMatches = new ArrayList<>();
         ArrayList<Match> tempMatches = new ArrayList<>();
@@ -90,7 +127,7 @@ public class MatchDay {
                             // Undersøger om det samme hold optræder i de to kampe
                             // Hvis det samme hold optræder, må kampen ikke planlægges hvis kampene overlapper.
                             if (sameTeamInMatches(match, inputMatch) &&
-                                    canMatchBePlannedAtThisTime(match, inputMatch, fieldNumber)) {
+                                    doMatchesOverlap(match, inputMatch, fieldNumber)) {
                                 // Hvis kampene indeholder nogle ens hold og overlapper i tidsinterval,
                                 // sættes canBePlanned til false, og kampen vil ikke blive planlagt.
                                 canBePlanned = false;
@@ -134,7 +171,7 @@ public class MatchDay {
     }
 
     // Check whether a new match will be placed within the timespan of a planned match.
-    private boolean canMatchBePlannedAtThisTime(Match newMatch, Match plannedMatch, int fieldNumber) {
+    private boolean doMatchesOverlap(Match newMatch, Match plannedMatch, int fieldNumber) {
         return (plannedMatch.getTimeStamp().isBefore(this.fieldList.get(fieldNumber).getFieldEndTime()
                 .plusMinutes(newMatch.getDuration())) &&                                                  // Efter starttidpunkt
                 plannedMatch.getTimeStamp().isAfter(this.fieldList.get(fieldNumber).getFieldEndTime())) ||    // Før sluttidspunkt

@@ -124,7 +124,7 @@ public class MatchScheduleSetupController {
     @FXML
     private void autogenerateNoMixedMatches(ActionEvent event) throws IOException {
         tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
+        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));
