@@ -15,25 +15,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-import javafx.util.StringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalTimeStringConverter;
-import tournament.Match;
-import tournament.Team;
-import tournament.matchschedule.Field;
 import tournament.matchschedule.MatchDay;
 import tournament.Tournament;
-import tournament.matchschedule.MatchSchedule;
 import tournament.pool.Pool;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class MatchScheduleSetupController {
@@ -56,7 +46,7 @@ public class MatchScheduleSetupController {
         this.tournament = tournament;
         setPoolsTable();
         setMatchDaysTable();
-        createMatches();
+        createGroupMatches();
     }
 
     public void initialize() {
@@ -73,10 +63,10 @@ public class MatchScheduleSetupController {
         */
         //setPoolsTable();
         //setMatchDaysTable();
-        //createMatches();
+        //createGroupMatches();
     }
 
-    private void createMatches() {
+    private void createGroupMatches() {
         for (Pool pool : tournament.getPoolList()) {
            pool.getGroupBracket().createMatches(pool.getMatchDuration());
         }
@@ -129,13 +119,12 @@ public class MatchScheduleSetupController {
     private void autogenerateMixedMatches() {
         tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
 
-
     }
 
     @FXML
     private void autogenerateNoMixedMatches(ActionEvent event) throws IOException {
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
         tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));

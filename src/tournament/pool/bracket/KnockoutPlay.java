@@ -4,6 +4,7 @@ import tournament.Match;
 import tournament.Team;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class KnockoutPlay extends KnockoutBracket {
@@ -34,6 +35,12 @@ public class KnockoutPlay extends KnockoutBracket {
     public void createNextRound(ArrayList<Team> advancingTeams) {
         int first = 0;
         int second = 0;
+        // When amount of group is uneven first sort it differently
+        if (advancingTeams.get(advancingTeams.size() - 1).getGroupNumber() % 2 != 0) {
+            advancingTeams = sortAdvancingTeams(advancingTeams);
+        }
+
+
         if (advancingTeams.size() > 1) {
             second = advancingTeams.size() - 1;
         }
@@ -56,6 +63,23 @@ public class KnockoutPlay extends KnockoutBracket {
         }
     }
 
+    private ArrayList<Team> sortAdvancingTeams(ArrayList<Team> advancingTeams) {
+        // Amount of swaps is the team size pr. group
+        int amountToSwap = (advancingTeams.size() / advancingTeams.get(advancingTeams.size() - 1).getGroupNumber()) / 2;
+
+        // Which team to start swapping, which is the teams in the middle group
+        int teamToSwap = (advancingTeams.size() / 2) - 1;
+
+
+        for (int iter = 0; iter < amountToSwap; iter++) {
+            Collections.swap(advancingTeams, teamToSwap, iter);
+            teamToSwap++;
+        }
+        System.out.println(advancingTeams);
+        return advancingTeams;
+
+    }
+
     // This method finds the teams advancing onto the next round. Should be called as a parameter to createNextRound()
     @Override
     public ArrayList<Team> advanceTeams() {
@@ -68,6 +92,7 @@ public class KnockoutPlay extends KnockoutBracket {
             }
         }
 
+        System.out.println(advancingTeams);
         return advancingTeams;
     }
 

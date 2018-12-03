@@ -7,12 +7,7 @@ import java.util.Properties;
 public class Database {
     Connection con;
 
-    // Connects the java program to the database, right now its a local database.
-    public Database() {
-        this.con = connect();
-    }
-
-    public Connection connect() {
+    public static Connection connect() {
         Connection con = null;
 
         Properties properties = new Properties();
@@ -31,7 +26,7 @@ public class Database {
         properties.setProperty("", "");
 
         try {
-            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Demo", properties);
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Tournament", properties);
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -40,7 +35,7 @@ public class Database {
         return con;
     }
 
-    public void setName() {
+    /*public void setName() {
 
         try {
             Statement statement = con.createStatement();
@@ -57,5 +52,5 @@ public class Database {
             System.out.println(e.getMessage());
         }
 
-    }
+    }*/
 }

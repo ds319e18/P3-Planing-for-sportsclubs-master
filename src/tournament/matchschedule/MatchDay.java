@@ -67,27 +67,79 @@ public class MatchDay {
 
     public void setMatchesNoMix(ArrayList<Match> inputMatches) {
         ArrayList<Match> outputMatches = new ArrayList<>();
+        ArrayList<Match> tempMatches = new ArrayList<>();
         int fieldNumber;
         int matchCounter = 0;
 
         setFieldsEndTime();
 
-        for (Match match : inputMatches) {
-            fieldNumber = matchCounter % this.fieldList.size();
-            // Tjekker at der ikke tilføjes kampe såldes at tiden overskrider den endtime som er valgt
-            if (!((fieldList.get(fieldNumber).getFieldEndTime().plusMinutes(match.getDuration() + this.timeBetweenMatches).isAfter(this.endTime)))) {
+        do {
+            for (Match match : inputMatches) {
+                if (match.getFirstTeam().getName().equals("TBD")) {
+                    break;
+                }
+
+                boolean canBePlanned = true;
+                fieldNumber = matchCounter % this.fieldList.size();
+                // Tjekker at kampen ikke allerede er tilføjet til en MatchDay
                 if (!match.isPlanned()) {
-                    match.setTimestamp(this.fieldList.get(fieldNumber).getFieldEndTime());
-                    match.setField(this.fieldList.get(fieldNumber));
-                    match.setPlanned(true);
-                    this.fieldList.get(fieldNumber).setFieldEndTime(this.fieldList.get(fieldNumber).getFieldEndTime().plusMinutes((match.getDuration() + this.timeBetweenMatches)));
-                    outputMatches.add(match);
+                    // Tjekker at der ikke tilføjes kampe såldes at tiden overskrider den endtime som er valgt
+                    if (!((fieldList.get(fieldNumber).getFieldEndTime().plusMinutes(match.getDuration() + this.timeBetweenMatches).isAfter(this.endTime)))) {
+                        // Alle de planlagte kampe køres igennem.
+                        for (Match inputMatch : outputMatches) {
+                            // Undersøger om det samme hold optræder i de to kampe
+                            // Hvis det samme hold optræder, må kampen ikke planlægges hvis kampene overlapper.
+                            if (sameTeamInMatches(match, inputMatch) &&
+                                    canMatchBePlannedAtThisTime(match, inputMatch, fieldNumber)) {
+                                // Hvis kampene indeholder nogle ens hold og overlapper i tidsinterval,
+                                // sættes canBePlanned til false, og kampen vil ikke blive planlagt.
+                                canBePlanned = false;
+                                break;
+                            }
+                        }
+
+                        if (canBePlanned) {
+                            match.setTimestamp(this.fieldList.get(fieldNumber).getFieldEndTime()); // Tiden kampen skal spilles sættes.
+                            match.setField(this.fieldList.get(fieldNumber));    // Kampens bane sættes.
+                            match.setPlanned(true); // Kampen sættes til at være planlagt.
+                            // MatchDay'ens
+                            this.fieldList.get(fieldNumber).setFieldEndTime(this.fieldList.get(fieldNumber).getFieldEndTime()
+                                    .plusMinutes((match.getDuration() + this.timeBetweenMatches)));
+                            outputMatches.add(match); // Kampen tilføjes til outputMatches.
+                            matchCounter++; // Når en kamp er tilføjet, tælles matchCounter op.
+                        } else {
+                            // Hvis kampen ikke kan planlægges, lægges den i tempMatches.
+                            tempMatches.add(match);
+                        }
+                    }
                 }
             }
-            matchCounter++;
-        }
+            // alle de kampe der er "Planned" fjernes fra tempMatches.
+            // Jeg kan ikke få kampen fjernet fra tempMatches på samme tid med kampen indsættes i outputMatches.
+            for (int i = 0; i < tempMatches.size(); i++) {
+                if (tempMatches.get(i).isPlanned()) {
+                    tempMatches.remove(i);
+                }
+            }
+        } while (!tempMatches.isEmpty());
 
         this.matches = outputMatches;
+    }
+
+    private boolean sameTeamInMatches(Match match1, Match match2) {
+        return (match2.getFirstTeam().equals(match1.getFirstTeam())
+                || match2.getFirstTeam().equals(match1.getSecondTeam())
+                || match2.getSecondTeam().equals(match1.getFirstTeam())
+                || match2.getSecondTeam().equals(match1.getSecondTeam()));
+    }
+
+    // Check whether a new match will be placed within the timespan of a planned match.
+    private boolean canMatchBePlannedAtThisTime(Match newMatch, Match plannedMatch, int fieldNumber) {
+        return (plannedMatch.getTimeStamp().isBefore(this.fieldList.get(fieldNumber).getFieldEndTime()
+                .plusMinutes(newMatch.getDuration())) &&                                                  // Efter starttidpunkt
+                plannedMatch.getTimeStamp().isAfter(this.fieldList.get(fieldNumber).getFieldEndTime())) ||    // Før sluttidspunkt
+                plannedMatch.getTimeStamp().equals(this.fieldList.get(fieldNumber).getFieldEndTime()) ||      // På starttidspunkt
+                plannedMatch.getTimeStamp().equals(this.fieldList.get(fieldNumber).getFieldEndTime().plusMinutes(newMatch.getDuration()));// På sluttidpunkt
     }
 
     private void setFieldsEndTime() {

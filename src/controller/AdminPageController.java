@@ -1,5 +1,6 @@
 package controller;
 
+import account.Administrator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,10 +13,21 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import tournament.Tournament;
 
 import java.io.IOException;
 
 public class AdminPageController {
+    private Administrator user;
+
+    public void setUser(Administrator user) {
+        this.user = user;
+    }
+
+    public Administrator getUser() {
+        return user;
+    }
+
     @FXML
     GridPane gp;
 
@@ -46,13 +58,43 @@ public class AdminPageController {
         window.show();
     }
 
-
     @FXML
-    public void initialize() {
+    public void draw() {
+        int i = 0;
+        String str;
         for (ColumnConstraints column : gp.getColumnConstraints())
             column.setHalignment(HPos.CENTER);
+            for (Tournament tournaments : user.getTournamens()) {
+                Text txt = new Text(tournaments.getName());
+                Text status = new Text(str = String.valueOf(tournaments.isActive()));
+                Text date = new Text(tournaments.getStartDate().toString() + "\n" + tournaments.getEndDate().toString());
+                Button btnView = new Button("View");
+                Button btnEdit = new Button("Edit");
+                gp.addRow(i, txt, status, date, btnView, btnEdit);
+                i++;
+            }
+    }
 
-        for (int i = 0; i < 10; i++) { // Iterates through a list of tournament-objects.
+    /*@FXML
+    public void initialize() {
+        String str;
+
+        Administrator user = getUser();
+        System.out.println(user.getId());
+
+        /*for (ColumnConstraints column : gp.getColumnConstraints())
+            column.setHalignment(HPos.CENTER);
+            for (Tournament tournaments : user.getTournamens()) {
+                Text txt = new Text(tournaments.getName());
+                Text status = new Text(str = String.valueOf(tournaments.isActive()));
+                Text date = new Text(tournaments.getStartDate().toString() + "\n" + tournaments.getEndDate().toString());
+                Button btnView = new Button("View");
+                Button btnEdit = new Button("Edit");
+                gp.addRow(i, txt, status, date, btnView, btnEdit);
+                i++;
+            }*/
+
+        /*for (int i = 0; i < 10; i++) { // Iterates through a list of tournament-objects.
             Text txt = new Text("Tournament name " + i);
             Text status = new Text("ACTIVE");
             Text date = new Text("Start: 26/2/2008\nEnd: 27/2/2009");
@@ -60,5 +102,5 @@ public class AdminPageController {
             Button btnEdit = new Button("Edit");
             gp.addRow(i, txt, status, date, btnView, btnEdit);
         }
-    }
+    }*/
 }
