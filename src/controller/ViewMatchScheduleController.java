@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
+import tournament.matchschedule.GraphicalObjects.MatchContainer;
 import tournament.matchschedule.MatchDay;
 
 import java.io.IOException;
@@ -78,6 +79,9 @@ public class ViewMatchScheduleController {
             MatchDay matchDay = tournament.getMatchSchedule().findMatchDay(tab.getText());
 
             for (Match match : matchDay.getMatches()) {
+                MatchContainer matchContainer = new MatchContainer(match);
+
+
                 HBox matchHBox = createHBoxFromMatch(match, matchCounter);
 
                 matchDayGridPane.add(matchHBox, Integer.parseInt(match.getField().getName().substring(5)) - 1

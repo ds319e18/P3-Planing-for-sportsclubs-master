@@ -95,10 +95,6 @@ public class CreatingMatchScheduleController {
                 matchDayGridPane.add(fieldText, i, 0);
             }
 
-            List<Integer> indexList = new ArrayList<>();
-            for (Field f : tournament.getFieldList())
-                indexList.add(1);
-
             MatchDay matchDay = tournament.getMatchSchedule().findMatchDay(tab.getText());
 
             LocalTime matchDayStartTime = matchDay.getStartTime();
@@ -311,8 +307,20 @@ public class CreatingMatchScheduleController {
     }
 
     @FXML
-    private void finishMatchScheduleButtonClicked() {
+    private void finishMatchScheduleButtonClicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
+        Parent newWindow = loader.load();
 
+        UpdateMatchController msc = loader.getController();
+        msc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 
     @FXML
