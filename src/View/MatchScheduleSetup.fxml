@@ -234,7 +234,7 @@
                   <VBox layoutX="10.0" layoutY="246.0" prefHeight="20.0" prefWidth="240.0" />
                   <MenuButton mnemonicParsing="false" text="Autogenererer kampprogram">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#autogenerateMixedMatches" style="-fx-border-color: black;" text="Blandede kampe" />
+                        <MenuItem mnemonicParsing="false" onAction="#autogenerateMixedMatches" text="Blandede kampe" />
                         <MenuItem mnemonicParsing="false" onAction="#autogenerateNoMixedMatches" text="Kampe fra en pujle af gangen" />
                      </items>
                   </MenuButton>

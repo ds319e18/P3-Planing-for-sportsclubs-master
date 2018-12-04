@@ -10,6 +10,7 @@ import javafx.scene.text.TextAlignment;
 import tournament.Match;
 
 import java.time.LocalTime;
+import java.util.Objects;
 
 public class MatchContainer extends  HBox{
     private Match match;
@@ -145,5 +146,20 @@ public class MatchContainer extends  HBox{
 
     public LocalTime getMatchEndTime() {
         return this.match.getTimeStamp().plusMinutes(match.getDuration());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MatchContainer that = (MatchContainer) o;
+        return isSelected() == that.isSelected() &&
+                Objects.equals(getMatch(), that.getMatch()) &&
+                Objects.equals(getTimeIntervalText(), that.getTimeIntervalText());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getMatch(), isSelected(), getTimeIntervalText());
     }
 }

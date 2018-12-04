@@ -1,19 +1,25 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.GraphicalObjects.MatchContainer;
 import tournament.matchschedule.MatchDay;
 
+import java.io.IOException;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +43,6 @@ public class CreatingMatchScheduleController {
 
     @FXML
     private ListView<MatchContainer> matchListView;
-
 
     public void initialize() {
         highlightProgressBox();
@@ -224,7 +229,7 @@ public class CreatingMatchScheduleController {
 
 
         // checks if a matchContainer was selected before
-        if (selectedMatchContainer != null) {
+        if (selectedMatchContainer != null && !selectedMatchContainer.equals(otherMatchContainer)) {
 
             // the matchContainers in the gridPane will be swapped
             if (selectedMatchContainer.getParent() instanceof GridPane) {
@@ -252,7 +257,7 @@ public class CreatingMatchScheduleController {
                 }
 
             // the matchContainers in the gridPane and ListView will be swapped
-            } else if (selectedMatchContainer.getParent() instanceof ListView){
+            } else {
 
                 if (otherMatchContainer.getParent() instanceof GridPane) {
                     swapMatchContainerListAndGrid(selectedMatchContainer, otherMatchContainer);
@@ -261,7 +266,6 @@ public class CreatingMatchScheduleController {
         } else {
             otherMatchContainer.setSelected(true);
         }
-
 
     }
 
@@ -304,6 +308,28 @@ public class CreatingMatchScheduleController {
 
         gridPane.add(newGridPaneMatchContainer, GridPane.getColumnIndex(matchContainerInGridPane),
                 GridPane.getRowIndex(matchContainerInGridPane));
+    }
+
+    @FXML
+    private void finishMatchScheduleButtonClicked() {
+
+    }
+
+    @FXML
+    private void backButtonPressed(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
+        Parent newWindow = loader.load();
+
+        MatchScheduleSetupController msc = loader.getController();
+        msc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 
 }

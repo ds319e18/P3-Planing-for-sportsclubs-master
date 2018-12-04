@@ -157,5 +157,5 @@ public class AutogenerateMatchScheduleController {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
         Parent newWindow = loader.load();
-
+    }
 }
