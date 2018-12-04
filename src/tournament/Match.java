@@ -106,6 +106,10 @@ public class Match implements Comparable<Match> {
         return finished;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void updateMatchResult() {
 
     }

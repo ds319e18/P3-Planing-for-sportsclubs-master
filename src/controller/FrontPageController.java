@@ -28,6 +28,27 @@ public class FrontPageController {
 
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
+        for (ColumnConstraints column : gp.getColumnConstraints())
+            column.setHalignment(HPos.CENTER);
+
+        for (int i = 0; i < 5; i++) { // Iterates through a list of tournament-objects.
+            Text txt = new Text(tournament.getName());
+            Text status = new Text("NOT ACTIVE");
+            if (tournament.isActive()) {
+                status = new Text("ACTIVE");
+            }
+            Text date = new Text(tournament.getStartDate().toString() + "\n" + tournament.getEndDate().toString() );
+            Button btnView = new Button("View");
+            btnView.setOnAction(event -> {
+                try {
+                    setViewButtonClicked(event);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            gp.addRow(i, txt, status, date, btnView);
+        }
+
 
     }
 
@@ -51,23 +72,6 @@ public class FrontPageController {
 
     @FXML
     public void initialize() {
-        for (ColumnConstraints column : gp.getColumnConstraints())
-            column.setHalignment(HPos.CENTER);
-
-        for (int i = 0; i < 5; i++) { // Iterates through a list of tournament-objects.
-            Text txt = new Text("Tournament " + i);
-            Text status = new Text("ACTIVE");
-            Text date = new Text("Start: 26/2/2008\nEnd: 27/2/2009");
-            Button btnView = new Button("View");
-            btnView.setOnAction(event -> {
-                try {
-                    setViewButtonClicked(event);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
-            gp.addRow(i, txt, status, date, btnView);
-        }
 
     }
 

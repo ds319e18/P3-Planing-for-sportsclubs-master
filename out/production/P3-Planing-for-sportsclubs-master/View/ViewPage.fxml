@@ -22,7 +22,7 @@
       </ImageView>
       <VBox prefHeight="66.0" prefWidth="1280.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autogenerer kampprogram" textAlignment="CENTER" wrappingWidth="1280.0">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færdigt kampprogram" textAlignment="CENTER" wrappingWidth="1280.0">
                <font>
                   <Font name="System Italic" size="20.0" />
                </font>
