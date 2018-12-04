@@ -158,4 +158,33 @@ public class AutogenerateMatchScheduleController {
         loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
         Parent newWindow = loader.load();
 
+        MatchScheduleSetupController atc = loader.getController();
+        atc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
+    }
+
+
+
+    @FXML
+    public void nextButtonClicked(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/FrontPage.FXML"));
+        Parent newWindow = loader.load();
+
+        FrontPageController atc = loader.getController();
+        atc.setTournament(tournament);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
+    }
 }
