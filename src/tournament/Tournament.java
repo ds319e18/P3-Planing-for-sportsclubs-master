@@ -22,6 +22,7 @@ public class Tournament {
     private ArrayList<Field> fieldList;
     private ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
+    private int tournamentID;
 
     // Method to find the correct pool when adding or removing teams to the tournament
     public Pool findCorrectPool(int yearGroup, String skill) {
@@ -34,6 +35,16 @@ public class Tournament {
     }
 
     // Getters
+
+
+    public int getTournamentID() {
+        return tournamentID;
+    }
+
+    public TournamentType getType() {
+        return type;
+    }
+
     public MatchSchedule getMatchSchedule() {
         return matchSchedule;
     }
@@ -65,13 +76,38 @@ public class Tournament {
         return allMatches;
     }
 
+    // Used to insert all group matches in the database
+    public ArrayList<Match> getAllGroupMatches() {
+        ArrayList<Match> allMatches = new ArrayList<>();
+
+        for (Pool pool : this.poolList) {
+            allMatches.addAll(pool.getGroupBracket().getMatches());
+        }
+        return allMatches;
+
+    }
+
+    // Used to insert all knockout matches in the database
+    public ArrayList<Match> getAllPLayoffMatches() {
+        ArrayList<Match> allMatches = new ArrayList<>();
+
+        for (Pool pool : this.poolList) {
+            allMatches.addAll(pool.getKnockoutBracket().getMatches());
+        }
+        return allMatches;
+    }
+
     public ArrayList<Pool> getPoolList() {
         return poolList;
     }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
-
+    public void setTournamentID(int tournamentID) {
+        this.tournamentID = tournamentID;
+    }
 
     // This next part of the class deals with updating the tournament while active
 

@@ -39,7 +39,14 @@ public class AdminPageController {
 
     @FXML
     public void setOnCreateTournamentButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/TournamentSetup.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/TournamentSetup.fxml"));
+        Parent newWindow = loader.load();
+
+        // Sending the object user to TournamentSetup
+        TournamentSetupController atc = loader.getController();
+        atc.setUser(user);
+
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
