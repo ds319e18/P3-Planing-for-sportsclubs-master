@@ -4,7 +4,7 @@ import tournament.Tournament;
 
 import java.util.ArrayList;
 
-public class Administrator extends Account.User {
+public class Administrator extends account.User {
     private String username;
     private String password;
     private String name;

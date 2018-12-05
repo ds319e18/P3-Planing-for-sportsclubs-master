@@ -2,11 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -14,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MatchScheduleSetupController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewMatchScheduleController">
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -26,7 +22,7 @@
       </ImageView>
       <VBox prefHeight="66.0" prefWidth="1280.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af kampprogram" textAlignment="CENTER" wrappingWidth="1280.0">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Færdigt kampprogram" textAlignment="CENTER" wrappingWidth="1280.0">
                <font>
                   <Font name="System Italic" size="20.0" />
                </font>
@@ -43,8 +39,8 @@
       </VBox>
       <HBox minHeight="-Infinity" prefHeight="502.0" prefWidth="1280.0">
          <children>
-            <VBox prefHeight="502.0" prefWidth="48.0" />
-            <VBox fx:id="progressBox" prefHeight="502.0" prefWidth="270.0" style="-fx-border-color: black;">
+            <VBox maxWidth="35.0" minWidth="35.0" prefHeight="502.0" prefWidth="35.0" />
+            <VBox fx:id="progressBox" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" style="-fx-border-color: black;">
                <children>
                   <VBox maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
@@ -106,6 +102,20 @@
                         </Text>
                      </children>
                   </VBox>
+                  <VBox layoutX="11.0" layoutY="295.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af grupper" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 4" textAlignment="CENTER" wrappingWidth="246.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
                   <VBox layoutX="11.0" layoutY="82.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="235.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af slutspillet" textAlignment="CENTER" wrappingWidth="246.0">
@@ -116,7 +126,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 4" textAlignment="CENTER" wrappingWidth="246.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 5" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -136,7 +146,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 5" textAlignment="CENTER" wrappingWidth="246.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 6" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -148,7 +158,7 @@
                   </VBox>
                   <VBox layoutX="11.0" layoutY="224.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Verificering af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -156,7 +166,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 6" textAlignment="CENTER" wrappingWidth="246.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 7" textAlignment="CENTER" wrappingWidth="246.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -166,83 +176,26 @@
                         </Text>
                      </children>
                   </VBox>
-                  <VBox layoutX="11.0" layoutY="295.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;" />
                </children>
             </VBox>
-            <VBox layoutX="763.0" layoutY="10.0" prefHeight="502.0" prefWidth="36.0" />
-            <VBox prefHeight="502.0" prefWidth="435.0">
+            <VBox prefHeight="502.0" prefWidth="637.0">
                <children>
-                  <HBox prefHeight="24.0" prefWidth="435.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Indtast starttidspunkter og sluttidspunkter for kampdage:">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </HBox>
-                  <TableView fx:id="matchDayTableView" prefHeight="300.0" prefWidth="435.0" style="-fx-border-color: black;">
-                     <columns>
-                        <TableColumn prefWidth="193.0" text="Dato" />
-                        <TableColumn minWidth="-Infinity" onEditCommit="#changeStartTimeCell" prefWidth="120.0" text="Starttidspunkt" />
-                        <TableColumn onEditCommit="#changeEndTimeCell" prefWidth="120.0" text="Sluttidspunkt" />
-                     </columns>
-                  </TableView>
-                  <HBox prefHeight="28.0" prefWidth="435.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Doubleclick på en celle for at redigere værdier for starttidspunkter og sluttidspunkter" wrappingWidth="423.9830722808838">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </HBox>
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="200.0" text="Rediger dato for turneringen" />
-                  <VBox layoutX="10.0" layoutY="346.0" prefHeight="20.0" prefWidth="240.0" />
-                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="90.0" text="Back" />
+                  <TabPane fx:id="matchDayTabPane" prefHeight="502.0" prefWidth="612.0" tabClosingPolicy="UNAVAILABLE" />
                </children>
+               <HBox.margin>
+                  <Insets left="100.0" />
+               </HBox.margin>
             </VBox>
-            <VBox prefHeight="502.0" prefWidth="36.0" />
-            <VBox prefHeight="502.0" prefWidth="240.0">
+            <VBox alignment="BOTTOM_CENTER" prefHeight="502.0" prefWidth="287.0">
                <children>
-                  <HBox prefHeight="36.0" prefWidth="269.0">
+                  <HBox prefHeight="137.0" prefWidth="287.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Tid mellem kampe (min):  " wrappingWidth="185.13671875">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Text>
-                        <TextField fx:id="timeBetweenMatches" prefHeight="18.0" prefWidth="160.0">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </TextField>
-                     </children></HBox>
-                  <TableView fx:id="poolTableView" prefHeight="300.0" prefWidth="269.0" style="-fx-border-color: black;">
-                     <columns>
-                        <TableColumn minWidth="-Infinity" prefWidth="82.0" text="Pulje" />
-                        <TableColumn onEditCommit="#changeMatchDurationCell" prefWidth="185.0" text="Kampvarighed (minutter)" />
-                     </columns>
-                  </TableView>
-                  <VBox prefHeight="20.0" prefWidth="240.0" />
-                  <Button mnemonicParsing="false" onAction="#manuallyCreateMatchSchedule" prefHeight="39.0" prefWidth="211.0" text="Lav kampprogram manuelt" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lav kampprogrammet manuelt ved at trække kampe ind på kampdagene" wrappingWidth="268.9830722808838">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
-                  <VBox layoutX="10.0" layoutY="246.0" prefHeight="20.0" prefWidth="240.0" />
-                  <MenuButton mnemonicParsing="false" text="Autogenererer kampprogram">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#autogenerateMixedMatches" text="Blandede kampe" />
-                        <MenuItem mnemonicParsing="false" onAction="#autogenerateNoMixedMatches" text="Kampe fra en pujle af gangen" />
-                     </items>
-                  </MenuButton>
-                  <Text layoutX="10.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kampene vil automatisk blive tilføjet til kampdagene" wrappingWidth="268.9830722808838">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
+                        <VBox prefHeight="133.0" prefWidth="123.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" />
+                           </children></VBox>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>

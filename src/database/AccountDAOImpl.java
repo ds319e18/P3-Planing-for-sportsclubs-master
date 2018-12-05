@@ -1,6 +1,6 @@
 package database;
 
-import Account.User;
+import account.User;
 import account.Administrator;
 import tournament.Tournament;
 import tournament.TournamentType;

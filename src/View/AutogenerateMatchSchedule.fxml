@@ -197,14 +197,14 @@
                                     <Insets left="30.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Tilbage">
+                              <Button mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage">
                                  <VBox.margin>
                                     <Insets left="30.0" top="30.0" />
                                  </VBox.margin>
                               </Button>
                            </children>
                         </VBox>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Næste">
+                        <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Næste">
                            <HBox.margin>
                               <Insets left="30.0" top="60.0" />
                            </HBox.margin>

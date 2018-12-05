@@ -1,7 +1,9 @@
 package tournament;
 
 import tournament.matchschedule.Field;
+import tournament.matchschedule.MatchDay;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Objects;
@@ -10,6 +12,7 @@ public class Match implements Comparable<Match> {
     private String name;
     private int duration;
     private LocalTime timestamp;
+    private LocalDate date;
     private boolean finished;
     private Field field;
     private Team firstTeam;
@@ -42,6 +45,10 @@ public class Match implements Comparable<Match> {
 
     public void setField(Field field) {
         this.field = field;
+    }
+
+    public Result getResult() {
+        return result;
     }
 
     public void setSecondTeam(Team secondTeam) {
@@ -106,9 +113,13 @@ public class Match implements Comparable<Match> {
         return finished;
     }
 
+    public LocalDate getDate() { return date; }
+
     public void updateMatchResult() {
 
     }
+
+    public void setDate(LocalDate date) { this.date = date; }
 
     // Sorting matches based on year group to sort in the MatchDay class
     public int compareTo(Match o) {
@@ -123,6 +134,23 @@ public class Match implements Comparable<Match> {
                 " - " + secondTeam.getName() +
                 " at " + field + '\n';
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Match match = (Match) o;
+        return Objects.equals(timestamp, match.timestamp) &&
+                Objects.equals(date, match.date) &&
+                Objects.equals(firstTeam, match.firstTeam) &&
+                Objects.equals(secondTeam, match.secondTeam);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(timestamp, date, firstTeam, secondTeam);
     }
 
     // Inner Match-builder

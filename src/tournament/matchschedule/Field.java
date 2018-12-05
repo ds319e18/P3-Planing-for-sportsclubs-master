@@ -29,6 +29,8 @@ public class Field {
         return occupied;
     }
 
+    public void setOccupied(Boolean occupied) { this.occupied = occupied; }
+
     @Override
     public String toString() {
         return name;

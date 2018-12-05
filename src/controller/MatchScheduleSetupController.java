@@ -51,19 +51,6 @@ public class MatchScheduleSetupController {
 
     public void initialize() {
         highlightProgressBox();
-        /*
-        tournament = new Tournament.Builder("Jetsmark IF tournament").
-                setStartDate(LocalDate.of(2018,6,1)).
-                setEndDate(LocalDate.of(2018,6,2))
-                .build();
-
-        for (int i = 0; i < 4; i++) {
-            tournament.getPoolList().add(new Pool.Builder().setSkilllLevel("A").setYearGroup(i+8).build());
-        }
-        */
-        //setPoolsTable();
-        //setMatchDaysTable();
-        //createGroupMatches();
     }
 
     private void createGroupMatches() {
@@ -124,7 +111,7 @@ public class MatchScheduleSetupController {
     @FXML
     private void autogenerateNoMixedMatches(ActionEvent event) throws IOException {
         tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
+        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));
