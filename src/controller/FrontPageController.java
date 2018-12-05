@@ -79,10 +79,10 @@ public class FrontPageController {
     @FXML
     public void setViewButtonClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/ViewPage.FXML"));
+        loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
         Parent newWindow = loader.load();
 
-        ViewMatchScheduleController atc = loader.getController();
+        UpdateMatchController atc = loader.getController();
         atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);

@@ -63,6 +63,38 @@ public class MatchContainer extends  HBox{
         this.setSelected(false);
     }
 
+    // Nyt
+    public MatchContainer(Match match, boolean bool) {
+        this.match = match;
+
+        Text matchNameText = new Text(match.getName());
+        timeIntervalText = new Text(match.getTimeStamp() + " - " + match.getTimeStamp().plusMinutes(match.getDuration()));
+        Text firstTeamText = new Text(match.getFirstTeam().getName());
+        Text secondTeamText = new Text(match.getSecondTeam().getName());
+        Text firstTeamResultText = new Text((match.getResult() == null ? "-" : Integer.toString(match.getResult().getFirstTeamScore())));
+        Text secondTeamResultText = new Text((match.getResult() == null ? "-" : Integer.toString(match.getResult().getSecondTeamScore())));
+        Text poolText = new Text("U" + match.getFirstTeam().getYearGroup() + " - " + match.getFirstTeam().getSkillLevel());
+        Text fieldText = new Text(match.getField().getName());
+
+        setStyleOfText(matchNameText);
+        setStyleOfText(timeIntervalText);
+        setStyleOfText(firstTeamText);
+        setStyleOfText(firstTeamResultText);
+        setStyleOfText(secondTeamResultText);
+        setStyleOfText(secondTeamText);
+        setStyleOfText(poolText);
+        setStyleOfText(fieldText);
+
+        VBox box1 = new VBox(matchNameText, timeIntervalText);
+        VBox box2 = new VBox(firstTeamText, secondTeamText);
+        VBox box3 = new VBox(firstTeamResultText, secondTeamResultText);
+        VBox box4 = new VBox(poolText, fieldText);
+        this.getChildren().addAll(box1, box2, box3, box4);
+        this.setStyle("-fx-border-color: BLACK;");
+        box1.setStyle("-fx-border-color: BLACK;");
+        this.setSelected(false);
+    }
+
     public MatchContainer(Match match, MatchContainer matchContainer) {
         this.match = match;
         LocalTime matchStartTime = LocalTime.parse(matchContainer.getTimeIntervalText().getText().substring(0,5));
