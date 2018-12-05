@@ -1,5 +1,6 @@
 package tournament.matchschedule.GraphicalObjects;
 
+import controller.CreatingMatchScheduleController;
 import javafx.scene.Parent;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
@@ -90,29 +91,6 @@ public class MatchContainer extends  HBox{
         this.match.setTimestamp(matchStartTime);
     }
 
-
-    private void handleSelection() {
-        //Checks whether the matchContainer belongs to a GridPane or a ListView
-        if (this.getParent() instanceof GridPane)
-            handleSelectionInGridPane();
-        else if (this.getParent() instanceof ListView)
-            handleSelectionInListView();
-
-
-    }
-
-    private void handleSelectionInGridPane() {
-        GridPane gridPane = (GridPane) this.getParent();
-
-        selected = true;
-    }
-
-    private void handleSelectionInListView() {
-        ListView listView = (ListView) this.getParent();
-
-        selected = true;
-    }
-
     private void setStyleOfText(Text text) {
         text.setWrappingWidth(80);
         text.setTextAlignment(TextAlignment.CENTER);
@@ -161,5 +139,12 @@ public class MatchContainer extends  HBox{
     @Override
     public int hashCode() {
         return Objects.hash(getMatch(), isSelected(), getTimeIntervalText());
+    }
+
+    public boolean hasMatch() {
+        if (this.match == null)
+            return false;
+        else
+            return true;
     }
 }

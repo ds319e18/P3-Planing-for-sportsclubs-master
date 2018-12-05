@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
+import tournament.matchschedule.GraphicalObjects.MatchContainer;
 import tournament.matchschedule.MatchDay;
 
 import java.io.IOException;
@@ -187,4 +188,5 @@ public class AutogenerateMatchScheduleController {
         window.setScene(newScene);
         window.show();
     }
+
 }

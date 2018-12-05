@@ -161,7 +161,7 @@ public class CreatingMatchScheduleController {
         return null;
     }
 
-    private void handleEmptyMatchContainerSelection(MouseEvent event) {
+    public void handleEmptyMatchContainerSelection(MouseEvent event) {
         MatchContainer emptyMatchContainer = (MatchContainer) event.getSource();
         GridPane gridPane = (GridPane) emptyMatchContainer.getParent();
 
@@ -170,23 +170,11 @@ public class CreatingMatchScheduleController {
         // checks if a matchContainer was selected before
         if (selectedMatchContainer != null) {
 
-            // remove the old matchContainers
             gridPane.getChildren().remove(emptyMatchContainer);
-            if (selectedMatchContainer.getParent() instanceof GridPane) {
-                GridPane gridPane1 = (GridPane) selectedMatchContainer.getParent();
-                gridPane1.getChildren().remove(selectedMatchContainer);
+            // remove the old matchContainer and replace with empty MatchContainer
+            replaceMatchContainerWithEmptyMatchContainer(selectedMatchContainer);
 
-                //Add an empty matchContainer to replace the selected
-                MatchContainer secondEmptyMatchContainer =
-                        new MatchContainer(selectedMatchContainer.getMatch().getTimeStamp());
-
-                gridPane.add(secondEmptyMatchContainer,
-                        GridPane.getColumnIndex(selectedMatchContainer),
-                        GridPane.getRowIndex(selectedMatchContainer));
-
-                secondEmptyMatchContainer.setOnMouseClicked(event1 -> handleEmptyMatchContainerSelection(event1));
-
-            } else {
+            if (selectedMatchContainer.getParent() instanceof ListView){
                 matchListView.getItems().remove(selectedMatchContainer);
             }
 
@@ -281,12 +269,13 @@ public class CreatingMatchScheduleController {
         return matchDay;
     }
 
-    private HBox getMatchContainerFromGridPane(int col, int row, GridPane gridPane) {
-        HBox matchContainer= null;
+    private MatchContainer getMatchContainerFromGridPane(int col, int row, GridPane gridPane) {
+        MatchContainer matchContainer= null;
 
         for (Node node : gridPane.getChildren()) {
-            if(GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == col) {
-                matchContainer = (HBox) node;
+            if(GridPane.getRowIndex(node) == row && GridPane.getColumnIndex(node) == col &&
+                    node instanceof MatchContainer) {
+                matchContainer = (MatchContainer) node;
             }
         }
         return matchContainer;
@@ -330,6 +319,71 @@ public class CreatingMatchScheduleController {
 
         window.setScene(newScene);
         window.show();
+    }
+
+    @FXML
+    private void RemoveMatchButtonClicked() {
+        MatchContainer selectedMatchContainer = getSelectedMatchContainer();
+        GridPane gridPane = (GridPane) selectedMatchContainer.getParent();
+
+        gridPane.getChildren().remove(selectedMatchContainer);
+        matchListView.getItems().add(selectedMatchContainer);
+
+        //add empty match container
+        MatchContainer emptyMatchContainer = new MatchContainer(selectedMatchContainer.getMatch().getTimeStamp());
+        emptyMatchContainer.setOnMouseClicked(event -> handleEmptyMatchContainerSelection(event));
+        gridPane.add(emptyMatchContainer, GridPane.getColumnIndex(selectedMatchContainer),
+                GridPane.getRowIndex(selectedMatchContainer));
+    }
+
+    public void replaceMatchContainerWithEmptyMatchContainer(MatchContainer matchContainer) {
+        if (matchContainer.getParent() instanceof GridPane) {
+            GridPane gridPane = (GridPane) matchContainer.getParent();
+
+            gridPane.getChildren().remove(matchContainer);
+
+            //Check for empty matchContainers above and below the matchContainer
+            if (getMatchContainerFromGridPane(GridPane.getColumnIndex(matchContainer),
+                    GridPane.getRowIndex(matchContainer) +1, gridPane) != null && (
+                    !getMatchContainerFromGridPane(GridPane.getColumnIndex(matchContainer),
+                    GridPane.getRowIndex(matchContainer) +1, gridPane).hasMatch() ||
+                     !getMatchContainerFromGridPane(GridPane.getColumnIndex(matchContainer),
+                    GridPane.getRowIndex(matchContainer) -1, gridPane).hasMatch())) {
+
+                int rowCounter = 1;
+                MatchContainer movingMatchContainer = getMatchContainerFromGridPane(GridPane.getColumnIndex(matchContainer),
+                        GridPane.getRowIndex(matchContainer) + rowCounter, gridPane);
+                MatchContainer tempEmptyMatchContainer = new MatchContainer(matchContainer.getMatch().getTimeStamp());
+                //Move all the matchContainer in the specific column
+                ColumnConstraints column = gridPane.getColumnConstraints().
+                        get(GridPane.getColumnIndex(matchContainer));
+
+                while (movingMatchContainer != null) {
+                    gridPane.add(tempEmptyMatchContainer, GridPane.getColumnIndex(movingMatchContainer),
+                            GridPane.getRowIndex(movingMatchContainer) -1);
+                    gridPane.getChildren().remove(movingMatchContainer);
+
+                    movingMatchContainer = new MatchContainer(movingMatchContainer.getMatch(), tempEmptyMatchContainer);
+                    gridPane.add(movingMatchContainer, GridPane.getColumnIndex(movingMatchContainer),
+                            GridPane.getRowIndex(movingMatchContainer) -1);
+                    movingMatchContainer.setOnMouseClicked(event -> handleMatchContainerSelection(event));
+
+                    gridPane.getChildren().remove(tempEmptyMatchContainer);
+
+                    tempEmptyMatchContainer = new MatchContainer(movingMatchContainer.getMatch().getTimeStamp());
+
+                    rowCounter++;
+                    movingMatchContainer = getMatchContainerFromGridPane(GridPane.getColumnIndex(matchContainer),
+                            GridPane.getRowIndex(matchContainer) + rowCounter, gridPane);
+                }
+
+            } else {
+                MatchContainer emptyMatchContainer = new MatchContainer(matchContainer.getMatch().getTimeStamp());
+                emptyMatchContainer.setOnMouseClicked(event -> handleEmptyMatchContainerSelection(event));
+                gridPane.add(emptyMatchContainer, GridPane.getColumnIndex(matchContainer),
+                        GridPane.getRowIndex(matchContainer));
+            }
+        }
     }
 
 }
