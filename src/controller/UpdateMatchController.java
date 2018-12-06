@@ -136,13 +136,11 @@ public class UpdateMatchController {
                 }
             }
 
-            //updateGroupMatchContainer(selectedMatchContainer);
-
             // TODO: Kan kun kaldes ved ændring af resultat på gruppe kamp.
             advanceTeamsBlahBlah(selectedMatchContainer.getMatch().getFirstTeam().getYearGroup(),
                     selectedMatchContainer.getMatch().getFirstTeam().getSkillLevel());
 
-            createMatchScheduleGridpanes();
+            updateGroupMatchContainer(selectedMatchContainer);
         }
     }
 
@@ -166,30 +164,42 @@ public class UpdateMatchController {
             }
 
             // TODO: KUN EN GANG - should work
-            if (allGroupMatchesHaveResults && !knockoutPhaseStarted.get(i)) {
+            if (allGroupMatchesHaveResults) {
                 tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket()
                         .createNextRound(tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().advanceTeams());
                 knockoutPhaseStarted.add(i, true);
+                createMatchScheduleGridpanes();
             }
 
         } else {
 
             for (Match match : tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getMatches()) {
-                if (!match.isFinished() && !match.getFirstTeam().getName().equals("TBD") &&
-                        !match.getSecondTeam().getName().equals("TBD")) {
+                if (!match.isFinished() && (!match.getFirstTeam().getName().equals("TBD") &&
+                        !match.getSecondTeam().getName().equals("TBD"))) {
                     allKnouckoutMatchesHaveResults = false;
                 }
             }
 
 
             if (allKnouckoutMatchesHaveResults) {
-                tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket()
-                        .createNextRound(tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().advanceTeams());
+                if (tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getClass().getSimpleName()
+                        .equals("KnockoutPlay")) {
+                    tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket()
+                            .createNextRound(tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().advanceTeams());
+                } else if (tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getClass().getSimpleName()
+                        .equals("PlacementPlay")) {
+                    tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().calculateResults();
+                } else if (tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getClass().getSimpleName()
+                        .equals("GoldAndBronzePlay")) {
+                    tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().calculateResults();
+                }
+                createMatchScheduleGridpanes();
             }
+
         }
     }
 
-    /*private void updateGroupMatchContainer(MatchContainer matchContainer) {
+    private void updateGroupMatchContainer(MatchContainer matchContainer) {
         GridPane gridPane = (GridPane) matchContainer.getParent();
 
         MatchContainer newMatchContainer = new MatchContainer(matchContainer.getMatch(),
@@ -207,5 +217,6 @@ public class UpdateMatchController {
 
         gridPane.add(newMatchContainer, GridPane.getColumnIndex(matchContainer),
                 GridPane.getRowIndex(matchContainer));
-    }*/
+    }
+
 }

@@ -48,6 +48,10 @@ public class KnockoutPlay extends KnockoutBracket {
             second = advancingTeams.size() - 1;
         }
 
+        if (advancingTeams.size() == 1) {
+            second = 0;
+        }
+
         for (Match match : super.getMatches()) {
             if (!match.isFinished() && first < second && match.getFirstTeam().getName().equals("TBD")) {
                 match.setFirstTeam(advancingTeams.get(first));
@@ -56,11 +60,20 @@ public class KnockoutPlay extends KnockoutBracket {
                     match.setSecondTeam(advancingTeams.get(second));
                     second--;
                 }
-            } else if (first == second) {
+            } else if (!match.isFinished() && first < second && match.getFirstTeam().getName().equals("TBD") && !match.getSecondTeam().getName().equals("TBD")) {
+                match.setFirstTeam(advancingTeams.get(first));
+                first++;
+            } else if (!match.isFinished() && first < second && !match.getFirstTeam().getName().equals("TBD") && match.getSecondTeam().getName().equals("TBD")) {
+                match.setSecondTeam(advancingTeams.get(second));
+                second--;
+            }
+            else if (first == second) {
                 if (!match.isFinished() && match.getFirstTeam().getName().equals("TBD")) {
                     match.setFirstTeam(advancingTeams.get(first));
+                    first++;
                 } else if (!match.isFinished() && match.getSecondTeam().getName().equals("TBD")) {
                     match.setSecondTeam(advancingTeams.get(first));
+                    second--;
                 }
             }
         }

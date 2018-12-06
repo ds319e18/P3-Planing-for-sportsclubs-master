@@ -86,7 +86,7 @@ public class VerifyGroupsAndPoolsController {
 
 
             GridPane gridPane = new GridPane();
-            Text groupNumberText = new Text("  Gruppe " + i + "  ");
+            Text groupNumberText = new Text("  Gruppe " + (i + 1) + "  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
             gridPane.add(groupNumberText, 0,0);
 

@@ -72,8 +72,11 @@ public class MatchContainer extends  HBox{
         Text secondTeamText = new Text(match.getSecondTeam().getName());
         Text firstTeamResultText = new Text((match.getResult() == null ? "-" : Integer.toString(match.getResult().getFirstTeamScore())));
         Text secondTeamResultText = new Text((match.getResult() == null ? "-" : Integer.toString(match.getResult().getSecondTeamScore())));
-        Text poolText = new Text("U" + match.getFirstTeam().getYearGroup() + " - " + match.getFirstTeam().getSkillLevel());
         Text fieldText = new Text(match.getField().getName());
+
+        String groupNumber = (match.getFirstTeam().getGroupNumber() == match.getSecondTeam().getGroupNumber() && match.getFirstTeam().getGroupNumber() > 0 && match.getName().equals("Group Match:\t")
+                ? " G" + match.getFirstTeam().getGroupNumber() : "");
+        Text poolText = new Text("U" + match.getFirstTeam().getYearGroup() + " - " + match.getFirstTeam().getSkillLevel() + groupNumber);
 
         setStyleOfText(matchNameText);
         setStyleOfText(timeIntervalText);

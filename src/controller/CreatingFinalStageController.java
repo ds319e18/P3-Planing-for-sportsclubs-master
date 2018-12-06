@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.pool.Group;
 import tournament.pool.Pool;
+import tournament.pool.bracket.GoldAndBronzePlay;
 import tournament.pool.bracket.KnockoutPlay;
 import tournament.pool.bracket.PlacementPlay;
 
@@ -54,7 +55,7 @@ public class CreatingFinalStageController {
     RadioButton placementRadioButton;
 
     @FXML
-    RadioButton knockoutAndPlacementRadioButton;
+    RadioButton goldAndBronzeRadioButton;
 
     @FXML
     ComboBox advancingComboBox;
@@ -84,6 +85,8 @@ public class CreatingFinalStageController {
 
         } else if (placementRadioButton.isSelected()) {
             tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new PlacementPlay());
+        } else if (goldAndBronzeRadioButton.isSelected()) {
+            tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new GoldAndBronzePlay());
         }
         setPoolStatusGridPane();
     }

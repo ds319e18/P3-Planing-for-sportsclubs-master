@@ -340,7 +340,7 @@
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="208.0">
                            <children>
-                              <RadioButton fx:id="knockoutAndPlacementRadioButton" mnemonicParsing="false" text="Guld-bronze kamp" toggleGroup="$finalStageType" />
+                              <RadioButton fx:id="goldAndBronzeRadioButton" mnemonicParsing="false" text="Guld-bronze kamp" toggleGroup="$finalStageType" />
                            </children>
                         </HBox>
                      </children>
