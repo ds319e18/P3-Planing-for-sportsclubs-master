@@ -61,10 +61,12 @@ public class KnockoutBracketTest {
         tournament.findCorrectPool(6, "A").addKnockoutBracket(new KnockoutPlay());
 
         // Setting the time for match schedules
-        tournament.getMatchSchedule().getMatchDays().get(0).setStartTime(LocalTime.of(12, 0));
-        tournament.getMatchSchedule().getMatchDays().get(0).setEndTime(LocalTime.of(16, 0));
-        tournament.getMatchSchedule().getMatchDays().get(1).setStartTime(LocalTime.of(12, 0));
-        tournament.getMatchSchedule().getMatchDays().get(1).setEndTime(LocalTime.of(16, 0));
+        tournament.getMatchSchedule().getMatchDays().get(0).setStartTime("09:00");
+        tournament.getMatchSchedule().getMatchDays().get(0).setEndTime("16:00");
+        tournament.getMatchSchedule().getMatchDays().get(0).setTimeBetweenMatches(10);
+        tournament.getMatchSchedule().getMatchDays().get(1).setStartTime("09:00");
+        tournament.getMatchSchedule().getMatchDays().get(1).setEndTime("16:00");
+        tournament.getMatchSchedule().getMatchDays().get(1).setTimeBetweenMatches(10);
         tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
 
         // Printer kampe ud hvor de første to knockout matches er lavet.
@@ -98,8 +100,6 @@ public class KnockoutBracketTest {
         // Sortere alle grupper i gruppespil efter point og kan printe grupper ud med point
         for (Group group : tournament.getPoolList().get(0).getGroupBracket().getGroups()) {
             group.getTeamList().sort(new TeamPointsComp());
-            for (Team team : group.getTeamList()) {
-            }
         }
 
         tournament.findCorrectPool(6, "A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6, "A").getGroupBracket().advanceTeams());
@@ -219,11 +219,11 @@ public class KnockoutBracketTest {
         tournament.findCorrectPool(6, "A").addKnockoutBracket(new KnockoutPlay());
 
         // Setting the time for match schedules
-        tournament.getMatchSchedule().getMatchDays().get(0).setStartTime(LocalTime.of(12, 0));
+        /*tournament.getMatchSchedule().getMatchDays().get(0).setStartTime(LocalTime.of(12, 0));
         tournament.getMatchSchedule().getMatchDays().get(0).setEndTime(LocalTime.of(16, 0));
         tournament.getMatchSchedule().getMatchDays().get(1).setStartTime(LocalTime.of(12, 0));
         tournament.getMatchSchedule().getMatchDays().get(1).setEndTime(LocalTime.of(16, 0));
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
+        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());*/
 
         // Printer kampe ud hvor de første to knockout matches er lavet.
         for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
@@ -406,11 +406,11 @@ public class KnockoutBracketTest {
         tournament.findCorrectPool(6, "A").addKnockoutBracket(new KnockoutPlay());
 
         // Setting the time for match schedules
-        tournament.getMatchSchedule().getMatchDays().get(0).setStartTime(LocalTime.of(12, 0));
+       /* tournament.getMatchSchedule().getMatchDays().get(0).setStartTime(LocalTime.of(12, 0));
         tournament.getMatchSchedule().getMatchDays().get(0).setEndTime(LocalTime.of(16, 0));
         tournament.getMatchSchedule().getMatchDays().get(1).setStartTime(LocalTime.of(12, 0));
         tournament.getMatchSchedule().getMatchDays().get(1).setEndTime(LocalTime.of(16, 0));
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
+        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());*/
 
         // Printer kampe ud hvor de første to knockout matches er lavet.
         for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {

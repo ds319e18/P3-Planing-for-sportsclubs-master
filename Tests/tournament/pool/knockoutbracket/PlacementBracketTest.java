@@ -112,11 +112,11 @@ public class PlacementBracketTest {
         tournament.findCorrectPool(6, "A").addKnockoutBracket(new PlacementPlay());
 
         // Setting the time for match schedules
-        tournament.getMatchSchedule().getMatchDays().get(0).setStartTime(LocalTime.of(12, 0));
+        /*tournament.getMatchSchedule().getMatchDays().get(0).setStartTime(LocalTime.of(12, 0));
         tournament.getMatchSchedule().getMatchDays().get(0).setEndTime(LocalTime.of(16, 0));
         tournament.getMatchSchedule().getMatchDays().get(1).setStartTime(LocalTime.of(12, 0));
         tournament.getMatchSchedule().getMatchDays().get(1).setEndTime(LocalTime.of(16, 0));
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
+        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());*/
 
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).setResult(new Result(1, 2));
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(1).setResult(new Result(1, 2));

@@ -25,10 +25,6 @@ public class MatchDay {
         return matches;
     }
 
-    public void setFieldList(ArrayList<Field> fieldList) {
-        this.fieldList = fieldList;
-    }
-
     public ArrayList<Field> getFieldList() {
         return fieldList;
     }
@@ -39,6 +35,10 @@ public class MatchDay {
 
     public LocalTime getEndTime() {
         return endTime;
+    }
+
+    public void setFieldList(ArrayList<Field> fieldList) {
+        this.fieldList = fieldList;
     }
 
     public void setStartTime(String startTimeText) {
@@ -54,6 +54,8 @@ public class MatchDay {
     public LocalDate getDate() {
         return date;
     }
+
+    public int getTimeBetweenMatches() { return timeBetweenMatches; }
 
     public void setTimeBetweenMatches(int timeBetweenMatches) {
         this.timeBetweenMatches = timeBetweenMatches;

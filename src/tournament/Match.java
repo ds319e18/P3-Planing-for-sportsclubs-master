@@ -109,6 +109,8 @@ public class Match implements Comparable<Match> {
 
     public String getName() { return name; }
 
+    public Result getResult() { return result; }
+
     public boolean isFinished() {
         return finished;
     }

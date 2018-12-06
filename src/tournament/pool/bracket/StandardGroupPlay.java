@@ -50,6 +50,7 @@ public class StandardGroupPlay extends GroupBracket {
 
     @Override
     public void createMatches(int matchDurationInMinutes) {
+        int count = 0;
         int secondTeamIndex = 0;
 
         for (int iter = 0; iter < super.getMatchesPrTeamAgainstOpponentInGroup(); iter++) {
@@ -65,8 +66,9 @@ public class StandardGroupPlay extends GroupBracket {
                                     .setFirstTeam(group.getTeamList().get(firstTeamIndex))
                                     .setSecondTeam(group.getTeamList().get(secondTeamIndex))
                                     .setFinished(false)
-                                    .setName("Group Match:" + '\t')
+                                    .setName("Group Match " + count)
                                     .build());
+                            count++;
                         }
                     }
                 }
