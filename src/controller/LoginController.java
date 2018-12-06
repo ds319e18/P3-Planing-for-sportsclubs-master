@@ -61,7 +61,6 @@ public class LoginController {
     @FXML
     public void setOnLogInButtonClicked(ActionEvent event) throws IOException {
         AccountDAO accountSQL = new AccountDAO();
-        TournamentDAO tournamentSQL = new TournamentDAO();
 
         // Finding the correct user and the tournaments the user has created
         user = accountSQL.findAccount(username.getText(), password.getText());

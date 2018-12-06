@@ -61,10 +61,6 @@ public class MatchDay {
         this.timeBetweenMatches = timeBetweenMatches;
     }
 
-    public int getTimeBetweenMatches() {
-        return timeBetweenMatches;
-    }
-
     public void setMatchesMix(ArrayList<Match> matches) {
         this.matches = matches;
     }

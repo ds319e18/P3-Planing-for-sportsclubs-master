@@ -1,6 +1,5 @@
 package tournament.pool.knockoutbracket;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tournament.*;
 import tournament.matchschedule.Field;
@@ -8,22 +7,19 @@ import tournament.matchschedule.MatchDay;
 import tournament.pool.Group;
 import tournament.pool.Pool;
 import tournament.pool.bracket.GoldAndBronzePlay;
-import tournament.pool.bracket.KnockoutPlay;
 import tournament.pool.bracket.StandardGroupPlay;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GoldAndBronzeTest {
-    Tournament tournament;
-    ArrayList<Pool> pools = new ArrayList<>();
-    ArrayList<Field> fields = new ArrayList<>();
 
-    @BeforeEach
-    public void beforeAll() {
+    private static Tournament createTournamentGoldAndBronze01() {
+        Tournament tournament;
+        ArrayList<Pool> pools = new ArrayList<>();
+
         pools.add(new Pool.Builder()
                 .setYearGroup(6)
                 .setSkilllLevel("A")
@@ -60,33 +56,22 @@ public class GoldAndBronzeTest {
 
         // There must be 2 groups and an even amount of teams to play this type of knockout bracket
         tournament.findCorrectPool(6, "A").addKnockoutBracket(new GoldAndBronzePlay());
+
+        // Setting the time for match schedules
+        tournament.getMatchSchedule().getMatchDays().get(0).setStartTime("12:00");
+        tournament.getMatchSchedule().getMatchDays().get(0).setEndTime("16:00");
+        tournament.getMatchSchedule().getMatchDays().get(1).setStartTime("12:00");
+        tournament.getMatchSchedule().getMatchDays().get(1).setEndTime("16:00");
+        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
+
+        return tournament;
     }
 
-    @Test
-    void testCreateKnockoutBracket01() {
+    // This method sets result for all group matches and advance the two correct teams
+    private static Tournament afterGroupPlay01() {
+        Tournament tournament = createTournamentGoldAndBronze01();
 
-        // This knockout type should always give us 2 matches, a gold match and a bronze match
-        assertEquals(tournament.findCorrectPool(6, "A").getKnockoutBracket().getMatches().size(), 2);
-    }
-
-    @Test
-    void testCreateNextRound01(){
-        // This test is for 2 groups and 2 advancing teams
-        tournament.findCorrectPool(6, "A").addKnockoutBracket(new GoldAndBronzePlay());
-        /*
-        tournament.getMatchSchedule().getMatchDays().get(0).setStartTime(LocalTime.of(12, 0));
-        tournament.getMatchSchedule().getMatchDays().get(0).setEndTime(LocalTime.of(16, 0));
-        tournament.getMatchSchedule().getMatchDays().get(1).setStartTime(LocalTime.of(12, 0));
-        tournament.getMatchSchedule().getMatchDays().get(1).setEndTime(LocalTime.of(16, 0));
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getAllMatches());
-        */
-        // Printer kampe ud hvor gruppe kampe er lavet
-        /*for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
-            System.out.println(dage.toString());
-            System.out.println();*/
-
-
-        // Setting result for group play
+        // Sets result for all group matches
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).setResult(new Result(1, 2));
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(1).setResult(new Result(1, 2));
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(2).setResult(new Result(1, 2));
@@ -100,36 +85,52 @@ public class GoldAndBronzeTest {
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(10).setResult(new Result(1, 2));
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(11).setResult(new Result(1, 2));
 
-        // Sortere alle grupper i gruppespil efter point og kan printe grupper ud med point
-        for (Group group : tournament.getPoolList().get(0).getGroupBracket().getGroups()) {
-            group.getTeamList().sort(new TeamPointsComp());
-            for (Team team : group.getTeamList()) {
-                        System.out.println("Group: " + team.getGroupNumber() + " Name: " + team.getName() + " Point: " + team.getPoints());
-            }
-        }
-
-        // Asserts til hvem der ligger øverst måske.
-        assertEquals("Jetsmark IF 7", tournament.findCorrectPool(6, "A").getGroupBracket().getGroups().get(0).getTeamList().get(0).getName());
-        assertEquals("Jetsmark IF 4", tournament.findCorrectPool(6, "A").getGroupBracket().getGroups().get(1).getTeamList().get(0).getName());
-
+        // Creates final round after the group play has been played
         tournament.findCorrectPool(6, "A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6, "A").getGroupBracket().advanceTeams());
 
-        // Printer kampe ud hvor de første to knockout matches er lavet.
-        for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
-            System.out.println(dage.toString());
-            System.out.println();
+        return tournament;
+    }
+
+    // This method plays the two final matches
+    private static Tournament afterFinal01() {
+        Tournament tournament = afterGroupPlay01();
+
+        // Sets result for the matches in the finals
+        tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(0).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(1).setResult(new Result(1, 2));
+
+        // Gives the correct position in the tournament after the finals for the teams in the finals
+        tournament.findCorrectPool(6,"A").getKnockoutBracket().calculateResults();
+
+        return tournament;
+    }
+
+
+        // This tests that Gold and Bronze type should always give us 2 matches, a gold match and a bronze match
+        @Test
+        void testCreateKnockoutBracket01 () {
+            Tournament tournament = createTournamentGoldAndBronze01();
+
+            // Testing amount of final matches
+            assertEquals(tournament.findCorrectPool(6, "A").getKnockoutBracket().getMatches().size(), 2);
         }
 
-        // Asserts til hvem der går videre i de to første knockout kampe
-        assertEquals("Jetsmark IF 7", tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(8).getFirstTeam().getName());
-        assertEquals("Jetsmark IF 4", tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(8).getSecondTeam().getName());
-        assertEquals("Jetsmark IF 5", tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(9).getFirstTeam().getName());
-        assertEquals("Jetsmark IF 6", tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(9).getSecondTeam().getName());
+        // This test that the correct team advance to the finals
+        @Test
+        void testCreateNextRound01 () {
+            Tournament tournament = afterFinal01();
 
-        // Spiller anden runde så vi finder en finalist
-        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(12).setResult(new Result(1, 2));
-        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(13).setResult(new Result(1, 2));
+            // Testing that the correct teams in in the correct match
+            assertEquals("Jetsmark IF 7", tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(0).getFirstTeam().getName());
+            assertEquals("Jetsmark IF 8", tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(0).getSecondTeam().getName());
+            assertEquals("Jetsmark IF 5", tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(1).getFirstTeam().getName());
+            assertEquals("Jetsmark IF 6", tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(1).getSecondTeam().getName());
 
+            // Testing method calculate result gives the correct teams their position in the tournament
+            assertEquals("Jetsmark IF 8", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(1).getName());
+            assertEquals("Jetsmark IF 7", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(2).getName());
+            assertEquals("Jetsmark IF 6", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(3).getName());
+            assertEquals("Jetsmark IF 5", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(4).getName());
 
+        }
     }
-}

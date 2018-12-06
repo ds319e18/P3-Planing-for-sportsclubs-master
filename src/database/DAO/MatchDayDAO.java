@@ -5,7 +5,6 @@ import tournament.Tournament;
 import tournament.matchschedule.MatchDay;
 
 import java.sql.*;
-import java.time.LocalTime;
 import java.util.Objects;
 
 public class MatchDayDAO {
@@ -36,7 +35,7 @@ public class MatchDayDAO {
                 stmt.executeUpdate();
             }
 
-            matchSQL.updateMatchMatchDay(tournament);
+            matchSQL.updateMatchDayID(tournament);
         } catch(SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -59,5 +58,25 @@ public class MatchDayDAO {
 
         //TODO create exception
         return 0;
+    }
+
+    // Inserting a matchschedule ID into a matchday in the database so we know
+    // whch match schedule a match day is in
+    public void updateMatchScheduleID(Tournament tournament, Connection con) {
+        MatchScheduleDAO matchScheduleSQL = new MatchScheduleDAO();
+
+        try{
+            int matchScheduleID = matchScheduleSQL.findMatchScheduleID(tournament, con);
+            int tournamentID = Objects.hash(tournament.getName());
+
+            String query = "UPDATE MatchDay SET idMatchScheduleMatchDay = ? WHERE idTournamentMatchDay = ?";
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setInt(1, matchScheduleID);
+            stmt.setInt(2, tournamentID);
+            stmt.executeUpdate();
+
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

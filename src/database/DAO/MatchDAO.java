@@ -50,7 +50,6 @@ public class MatchDAO {
             int tournamentID = Objects.hash(tournament.getName());
 
             String query = "select * from MatchTable where idTournamentMatch = " + tournamentID + " AND name = '" + match.getName() + "'";
-            System.out.println(match.getName());
 
             ResultSet set = con.createStatement().executeQuery(query);
 
@@ -67,18 +66,16 @@ public class MatchDAO {
     }
 
     // Giving a match a matchDayID so that we know which day the match is played
-    public void updateMatchMatchDay(Tournament tournament) {
+    public void updateMatchDayID(Tournament tournament) {
         MatchDayDAO matchDaySQL = new MatchDayDAO();
 
         try(Connection con = Database.connect()) {
-            String sql = "UPDATE MatchTable SET idMatchDayMatch = ? WHERE idMatch = ?";
-
-
+            String query = "UPDATE MatchTable SET idMatchDayMatch = ? WHERE idMatch = ?";
             for (MatchDay day : tournament.getMatchSchedule().getMatchDays()) {
                 int matchDayID = matchDaySQL.findMatchDayID(day, tournament, con);
                 for (Match match : day.getMatches()) {
                     int matchID = findMatchID(match, tournament, con);
-                    PreparedStatement stmt = con.prepareStatement(sql);
+                    PreparedStatement stmt = con.prepareStatement(query);
                     stmt.setInt(1, matchDayID);
                     stmt.setInt(2, matchID);
                     stmt.executeUpdate();
@@ -90,4 +87,26 @@ public class MatchDAO {
         }
     }
 
+    // Updating a match first team and second team in the database. This is called when a playoff creates next round
+    public void updateTeamInMatch(Tournament tournament, Match match) {
+        MatchDAO matchSQL = new MatchDAO();
+        TeamDAO teamSQL = new TeamDAO();
+
+        try(Connection con = Database.connect()) {
+            int matchID = matchSQL.findMatchID(match, tournament, con);
+            int firstTeamID = teamSQL.findTeamID(match.getFirstTeam(), con);
+            int secondTeamID = teamSQL.findTeamID(match.getSecondTeam(), con);
+
+            String query = "UPDATE MatchTabel SET idFirstTeam = ? AND idSecondTeam = ? WHERE matchID = ?";
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setInt(1, firstTeamID);
+            stmt.setInt(2, secondTeamID);
+            stmt.setInt(3, matchID);
+            stmt.executeUpdate();
+
+
+        } catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+    }
 }

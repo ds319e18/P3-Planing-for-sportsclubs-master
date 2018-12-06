@@ -16,11 +16,11 @@ public class ResultDAO {
 
         try(Connection con = Database.connect()) {
             String query = "INSERT INTO Result(idMatchResult, firstTeamScore, secondTeamScore) VALUES(?, ?, ?)";
-            //int matchID = matchSQL.findMatchID(match, tournament, con);
+            int matchID = matchSQL.findMatchID(match, tournament, con);
             //System.out.println(matchID);
             PreparedStatement stmt = con.prepareStatement(query);
 
-            //stmt.setInt(1, matchID);
+            stmt.setInt(1, matchID);
             stmt.setInt(2, firstTeamScore);
             stmt.setInt(3, secondTeamScore);
             stmt.executeUpdate();

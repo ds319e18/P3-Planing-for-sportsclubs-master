@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="Tournament@127.0.0.1">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.8">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
     <root id="1">
       <DefaultCasing>mixed/mixed</DefaultCasing>
     </root>
@@ -1119,95 +1119,82 @@
     <table id="282" parent="3" name="MatchDay">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="283" parent="3" name="MatchTable">
+    <table id="283" parent="3" name="MatchSchedule">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="284" parent="3" name="Match_has_Team">
+    <table id="284" parent="3" name="MatchTable">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="285" parent="3" name="PlayoffBracket">
+    <table id="285" parent="3" name="Match_has_Team">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="286" parent="3" name="Pool">
+    <table id="286" parent="3" name="PlayoffBracket">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="287" parent="3" name="Result">
+    <table id="287" parent="3" name="Pool">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="288" parent="3" name="Team">
+    <table id="288" parent="3" name="Result">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="289" parent="3" name="Test">
+    <table id="289" parent="3" name="Team">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="290" parent="3" name="Tournament">
+    <table id="290" parent="3" name="Test">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="291" parent="278" name="idAccount">
+    <table id="291" parent="3" name="Tournament">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="292" parent="278" name="idAccount">
       <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="278" name="username">
+    <column id="293" parent="278" name="username">
       <Position>2</Position>
-<<<<<<< Updated upstream
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-=======
       <DataType>varchar(45)|0</DataType>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="278" name="password">
+    <column id="294" parent="278" name="password">
       <Position>3</Position>
-<<<<<<< Updated upstream
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="290" parent="279" name="name">
-      <Position>4</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
-=======
       <DataType>varchar(45)|0</DataType>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="294" parent="278" name="PRIMARY">
+    <key id="295" parent="278" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idAccount</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="295" parent="279" name="name">
+    <column id="296" parent="279" name="name">
       <Position>1</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="279" name="idField">
+    <column id="297" parent="279" name="idField">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="279" name="idTournamentField">
+    <column id="298" parent="279" name="idTournamentField">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="298" parent="279" name="fk_Field_Tournament1_idx">
+    <index id="299" parent="279" name="fk_Field_Tournament1_idx">
       <ColNames>idTournamentField</ColNames>
     </index>
-    <key id="299" parent="279" name="PRIMARY">
+    <key id="300" parent="279" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idField</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="300" parent="279" name="fk_Field_Tournament1">
+    <foreign-key id="301" parent="279" name="fk_Field_Tournament1">
       <ColNames>idTournamentField</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>tournament</RefTableName>
@@ -1215,42 +1202,39 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="301" parent="280" name="idGroupBracket">
+    <column id="302" parent="280" name="idGroupBracket">
       <Position>1</Position>
-<<<<<<< Updated upstream
-      <DataType>tinyint(1)|0s</DataType>
-=======
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="302" parent="280" name="idPoolGroupBracket">
+    <column id="303" parent="280" name="idPoolGroupBracket">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="280" name="advancingTeams">
+    <column id="304" parent="280" name="advancingTeams">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="304" parent="280" name="matchesPrOpponent">
+    <column id="305" parent="280" name="matchesPrOpponent">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="305" parent="280" name="fk_GroupBracket_Pool_idx">
+    <index id="306" parent="280" name="fk_GroupBracket_Pool_idx">
       <ColNames>idPoolGroupBracket</ColNames>
     </index>
-    <key id="306" parent="280" name="PRIMARY">
+    <key id="307" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idGroupBracket</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="307" parent="280" name="fk_GroupBracket_Pool">
+    <foreign-key id="308" parent="280" name="fk_GroupBracket_Pool">
       <ColNames>idPoolGroupBracket</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>Pool</RefTableName>
@@ -1258,85 +1242,92 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="308" parent="281" name="idGroup">
+    <column id="309" parent="281" name="idGroup">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="281" name="idPoolGroup">
+    <column id="310" parent="281" name="idPoolGroup">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="310" parent="281" name="idTeamGroup">
+    <column id="311" parent="281" name="idTeamGroup">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="311" parent="281" name="groupNumber">
+    <column id="312" parent="281" name="groupNumber">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="312" parent="281" name="PRIMARY">
+    <key id="313" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idGroup</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="313" parent="282" name="idMatchDay">
+    <column id="314" parent="282" name="idMatchDay">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="314" parent="282" name="name">
+    <column id="315" parent="282" name="name">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="315" parent="282" name="startTime">
+    <column id="316" parent="282" name="startTime">
       <Position>3</Position>
       <DataType>time|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="316" parent="282" name="endTime">
+    <column id="317" parent="282" name="endTime">
       <Position>4</Position>
       <DataType>time|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="317" parent="282" name="timeBetweenMatches">
+    <column id="318" parent="282" name="timeBetweenMatches">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="318" parent="282" name="idTournamentMatchDay">
+    <column id="319" parent="282" name="idTournamentMatchDay">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="319" parent="282" name="date">
+    <column id="320" parent="282" name="date">
       <Position>7</Position>
       <DataType>date|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="320" parent="282" name="fk_MatchDay_Tournament_idx">
+    <column id="321" parent="282" name="idMatchScheduleMatchDay">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="322" parent="282" name="fk_MatchDay_Tournament_idx">
       <ColNames>idTournamentMatchDay</ColNames>
     </index>
-    <key id="321" parent="282" name="PRIMARY">
+    <index id="323" parent="282" name="dk_MatchDay_MatchSchedule_idx">
+      <ColNames>idMatchScheduleMatchDay</ColNames>
+    </index>
+    <key id="324" parent="282" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idMatchDay</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="322" parent="282" name="fk_MatchDay_Tournament">
+    <foreign-key id="325" parent="282" name="fk_MatchDay_Tournament">
       <ColNames>idTournamentMatchDay</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>tournament</RefTableName>
@@ -1344,149 +1335,156 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="323" parent="283" name="name">
+    <foreign-key id="326" parent="282" name="fk_MatchDay_MatchSchedule">
+      <ColNames>idMatchScheduleMatchDay</ColNames>
+      <RefSchemaName>Tournament</RefSchemaName>
+      <RefTableName>MatchSchedule</RefTableName>
+      <RefColNames>idmatchschedule</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="327" parent="283" name="idMatchSchedule">
       <Position>1</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="324" parent="283" name="duration">
+    <column id="328" parent="283" name="startDate">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>date|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="325" parent="283" name="timeStamp">
+    <column id="329" parent="283" name="endDate">
       <Position>3</Position>
-<<<<<<< Updated upstream
-      <DataType>varchar(45)|0s</DataType>
-=======
-      <DataType>datetime|0</DataType>
->>>>>>> Stashed changes
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="326" parent="283" name="finishedBoolean">
+    <column id="330" parent="283" name="idTournamentMatchSchedule">
       <Position>4</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="327" parent="283" name="idField">
+    <index id="331" parent="283" name="fk_MatchDay_Tournament_idx">
+      <ColNames>idTournamentMatchSchedule</ColNames>
+    </index>
+    <key id="332" parent="283" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idMatchSchedule</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="333" parent="284" name="name">
+      <Position>1</Position>
+      <DataType>varchar(45)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="334" parent="284" name="duration">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="335" parent="284" name="timeStamp">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="336" parent="284" name="finishedBoolean">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="337" parent="284" name="idField">
       <Position>5</Position>
-<<<<<<< Updated upstream
-      <DataType>varchar(45)|0s</DataType>
-=======
       <DataType>int(11)|0</DataType>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="328" parent="283" name="idFirstTeam">
+    <column id="338" parent="284" name="idFirstTeam">
       <Position>6</Position>
-<<<<<<< Updated upstream
-      <DataType>varchar(45)|0s</DataType>
-=======
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="329" parent="283" name="idSecondTeam">
+    <column id="339" parent="284" name="idSecondTeam">
       <Position>7</Position>
-<<<<<<< Updated upstream
-      <DataType>varchar(45)|0s</DataType>
-=======
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="330" parent="283" name="idResult">
+    <column id="340" parent="284" name="idResult">
       <Position>8</Position>
-<<<<<<< Updated upstream
-      <DataType>varchar(45)|0s</DataType>
-=======
       <DataType>int(11)|0</DataType>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="331" parent="283" name="teamWinner">
+    <column id="341" parent="284" name="teamWinner">
       <Position>9</Position>
-<<<<<<< Updated upstream
-      <DataType>varchar(45)|0s</DataType>
-=======
       <DataType>int(11)|0</DataType>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="332" parent="283" name="teamLoser">
+    <column id="342" parent="284" name="teamLoser">
       <Position>10</Position>
-<<<<<<< Updated upstream
-      <DataType>varchar(45)|0s</DataType>
-=======
       <DataType>int(11)|0</DataType>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="333" parent="283" name="drawnBoolean">
+    <column id="343" parent="284" name="drawnBoolean">
       <Position>11</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>tinyint(1)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="334" parent="283" name="checkedBoolean">
+    <column id="344" parent="284" name="checkedBoolean">
       <Position>12</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>tinyint(1)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="335" parent="283" name="plannedBoolean">
+    <column id="345" parent="284" name="plannedBoolean">
       <Position>13</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>tinyint(1)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="336" parent="283" name="idMatch">
+    <column id="346" parent="284" name="idMatch">
       <Position>14</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="337" parent="283" name="idTournamentMatch">
+    <column id="347" parent="284" name="idTournamentMatch">
       <Position>15</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="338" parent="283" name="idMatchDayMatch">
-      <Position>16</Position>
-<<<<<<< Updated upstream
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-=======
       <DataType>int(11)|0</DataType>
->>>>>>> Stashed changes
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="339" parent="283" name="fk_Match_First_Team_idx">
+    <column id="348" parent="284" name="idMatchDayMatch">
+      <Position>16</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="349" parent="284" name="fk_Match_First_Team_idx">
       <ColNames>idFirstTeam</ColNames>
     </index>
-    <index id="340" parent="283" name="fk_Match_Secound_Team_idx">
+    <index id="350" parent="284" name="fk_Match_Secound_Team_idx">
       <ColNames>idSecondTeam</ColNames>
     </index>
-    <index id="341" parent="283" name="fk_Match_Winner_Team_idx">
+    <index id="351" parent="284" name="fk_Match_Winner_Team_idx">
       <ColNames>teamWinner</ColNames>
     </index>
-    <index id="342" parent="283" name="fk_Match_Loser_Team_idx">
+    <index id="352" parent="284" name="fk_Match_Loser_Team_idx">
       <ColNames>teamLoser</ColNames>
     </index>
-    <index id="343" parent="283" name="fk_Match_Match_Tournament_idx">
+    <index id="353" parent="284" name="fk_Match_Match_Tournament_idx">
       <ColNames>idTournamentMatch</ColNames>
     </index>
-    <index id="344" parent="283" name="fk_Match_MatchDay_idx">
+    <index id="354" parent="284" name="fk_Match_MatchDay_idx">
       <ColNames>idMatchDayMatch</ColNames>
     </index>
-    <key id="345" parent="283" name="PRIMARY">
+    <key id="355" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idMatch</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="346" parent="283" name="fk_Match_First_Team">
+    <foreign-key id="356" parent="284" name="fk_Match_First_Team">
       <ColNames>idFirstTeam</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>team</RefTableName>
@@ -1494,7 +1492,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="347" parent="283" name="fk_Match_Secound_Team">
+    <foreign-key id="357" parent="284" name="fk_Match_Secound_Team">
       <ColNames>idSecondTeam</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>team</RefTableName>
@@ -1502,7 +1500,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="348" parent="283" name="fk_Match_Winner_Team">
+    <foreign-key id="358" parent="284" name="fk_Match_Winner_Team">
       <ColNames>teamWinner</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>Team</RefTableName>
@@ -1510,7 +1508,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="349" parent="283" name="fk_Match_Loser_Team">
+    <foreign-key id="359" parent="284" name="fk_Match_Loser_Team">
       <ColNames>teamLoser</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>Team</RefTableName>
@@ -1518,7 +1516,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="350" parent="283" name="fk_Match_Match_Tournament">
+    <foreign-key id="360" parent="284" name="fk_Match_Match_Tournament">
       <ColNames>idTournamentMatch</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>Tournament</RefTableName>
@@ -1526,7 +1524,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="351" parent="283" name="fk_Match_MatchDay">
+    <foreign-key id="361" parent="284" name="fk_Match_MatchDay">
       <ColNames>idMatchDayMatch</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>matchday</RefTableName>
@@ -1534,68 +1532,68 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="352" parent="284" name="Team_idTeam">
+    <column id="362" parent="285" name="Team_idTeam">
       <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="353" parent="284" name="Match_idMatch">
+    <column id="363" parent="285" name="Match_idMatch">
       <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="354" parent="284" name="fk_Match_has_Team_Team1_idx">
+    <index id="364" parent="285" name="fk_Match_has_Team_Team1_idx">
       <ColNames>Team_idTeam</ColNames>
     </index>
-    <index id="355" parent="284" name="fk_Match_has_Team_Match1_idx">
+    <index id="365" parent="285" name="fk_Match_has_Team_Match1_idx">
       <ColNames>Match_idMatch</ColNames>
     </index>
-    <foreign-key id="356" parent="284" name="fk_Match_has_Team_Team1">
+    <foreign-key id="366" parent="285" name="fk_Match_has_Team_Team1">
       <ColNames>Team_idTeam</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>Team</RefTableName>
       <RefColNames>idteam</RefColNames>
     </foreign-key>
-    <foreign-key id="357" parent="284" name="fk_Match_has_Team_Match1">
+    <foreign-key id="367" parent="285" name="fk_Match_has_Team_Match1">
       <ColNames>Match_idMatch</ColNames>
       <RefSchemaName>tournament</RefSchemaName>
       <RefTableName>MatchTable</RefTableName>
       <RefColNames>idmatch</RefColNames>
     </foreign-key>
-    <column id="358" parent="285" name="idPlayoff">
+    <column id="368" parent="286" name="idPlayoff">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="359" parent="285" name="idMatchPlayoff">
+    <column id="369" parent="286" name="idMatchPlayoff">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="360" parent="285" name="idPoolPlayoff">
+    <column id="370" parent="286" name="idPoolPlayoff">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="361" parent="285" name="teamPlacement">
+    <column id="371" parent="286" name="teamPlacement">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="362" parent="285" name="fk_Pool_PlayoffBracket_idx">
+    <index id="372" parent="286" name="fk_Pool_PlayoffBracket_idx">
       <ColNames>idPoolPlayoff</ColNames>
     </index>
-    <key id="363" parent="285" name="PRIMARY">
+    <key id="373" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idPlayoff</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="364" parent="285" name="fk_Pool_PlayoffBracket">
+    <foreign-key id="374" parent="286" name="fk_Pool_PlayoffBracket">
       <ColNames>idPoolPlayoff</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>pool</RefTableName>
@@ -1603,53 +1601,45 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="365" parent="286" name="yearGroup">
+    <column id="375" parent="287" name="yearGroup">
       <Position>1</Position>
-<<<<<<< Updated upstream
-      <DataType>tinyint(1)|0s</DataType>
-=======
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="366" parent="286" name="skillLevel">
+    <column id="376" parent="287" name="skillLevel">
       <Position>2</Position>
-<<<<<<< Updated upstream
-      <DataType>char(1)|0s</DataType>
-=======
       <DataType>char(1)|0</DataType>
       <NotNull>1</NotNull>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="367" parent="286" name="idPool">
+    <column id="377" parent="287" name="idPool">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="368" parent="286" name="idTournamentPool">
+    <column id="378" parent="287" name="idTournamentPool">
       <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="369" parent="286" name="matchDuration">
+    <column id="379" parent="287" name="matchDuration">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="370" parent="286" name="fk_Pool_Tournament1_idx">
+    <index id="380" parent="287" name="fk_Pool_Tournament1_idx">
       <ColNames>idTournamentPool</ColNames>
     </index>
-    <key id="371" parent="286" name="PRIMARY">
+    <key id="381" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idPool</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="372" parent="286" name="fk_Pool_Tournament1">
+    <foreign-key id="382" parent="287" name="fk_Pool_Tournament1">
       <ColNames>idTournamentPool</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>tournament</RefTableName>
@@ -1657,26 +1647,26 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="373" parent="287" name="idMatchResult">
+    <column id="383" parent="288" name="idMatchResult">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="374" parent="287" name="firstTeamScore">
+    <column id="384" parent="288" name="firstTeamScore">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="375" parent="287" name="secondTeamScore">
+    <column id="385" parent="288" name="secondTeamScore">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="376" parent="287" name="fk_Result_Match_idx">
+    <index id="386" parent="288" name="fk_Result_Match_idx">
       <ColNames>idMatchResult</ColNames>
     </index>
-    <foreign-key id="377" parent="287" name="fk_Result_Match">
+    <foreign-key id="387" parent="288" name="fk_Result_Match">
       <ColNames>idMatchResult</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>matchtable</RefTableName>
@@ -1684,64 +1674,54 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="378" parent="288" name="name">
+    <column id="388" parent="289" name="name">
       <Position>1</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="379" parent="288" name="points">
+    <column id="389" parent="289" name="points">
       <Position>2</Position>
-      <DataType>tinyint(1)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="380" parent="288" name="yearGroup">
-      <Position>3</Position>
-<<<<<<< Updated upstream
-      <DataType>tinyint(1)|0s</DataType>
-      <NotNull>1</NotNull>
-=======
       <DataType>tinyint(1)|0</DataType>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="381" parent="288" name="skillLevel">
+    <column id="390" parent="289" name="yearGroup">
+      <Position>3</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="391" parent="289" name="skillLevel">
       <Position>4</Position>
-<<<<<<< Updated upstream
-      <DataType>char(1)|0s</DataType>
-      <NotNull>1</NotNull>
-=======
       <DataType>char(1)|0</DataType>
->>>>>>> Stashed changes
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="382" parent="288" name="phonenumber">
+    <column id="392" parent="289" name="phonenumber">
       <Position>5</Position>
-      <DataType>char(10)|0s</DataType>
+      <DataType>char(10)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="383" parent="288" name="idTeam">
+    <column id="393" parent="289" name="idTeam">
       <Position>6</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="384" parent="288" name="idTournamentTeam">
+    <column id="394" parent="289" name="idTournamentTeam">
       <Position>7</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="385" parent="288" name="fk_Team_Group1_idx">
+    <index id="395" parent="289" name="fk_Team_Group1_idx">
       <ColNames>idTournamentTeam</ColNames>
     </index>
-    <key id="386" parent="288" name="PRIMARY">
+    <key id="396" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idTeam</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="387" parent="288" name="fk_Team_Group1">
+    <foreign-key id="397" parent="289" name="fk_Team_Group1">
       <ColNames>idTournamentTeam</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>tournament</RefTableName>
@@ -1749,64 +1729,64 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="388" parent="289" name="Test">
+    <column id="398" parent="290" name="Test">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="389" parent="290" name="idTournament">
+    <column id="399" parent="291" name="idTournament">
       <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="390" parent="290" name="name">
+    <column id="400" parent="291" name="name">
       <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(45)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="391" parent="290" name="startDate">
+    <column id="401" parent="291" name="startDate">
       <Position>3</Position>
-      <DataType>date|0s</DataType>
+      <DataType>date|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="392" parent="290" name="endDate">
+    <column id="402" parent="291" name="endDate">
       <Position>4</Position>
-      <DataType>date|0s</DataType>
+      <DataType>date|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="393" parent="290" name="tournamentType">
+    <column id="403" parent="291" name="tournamentType">
       <Position>5</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(45)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="394" parent="290" name="status">
+    <column id="404" parent="291" name="status">
       <Position>6</Position>
-      <DataType>tinyint(4)|0s</DataType>
+      <DataType>tinyint(4)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="395" parent="290" name="amountOfField">
+    <column id="405" parent="291" name="amountOfField">
       <Position>7</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="396" parent="290" name="idAccountTournament">
+    <column id="406" parent="291" name="idAccountTournament">
       <Position>8</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="397" parent="290" name="fk_Tournament_Account_idx">
+    <index id="407" parent="291" name="fk_Tournament_Account_idx">
       <ColNames>idAccountTournament</ColNames>
     </index>
-    <key id="398" parent="290" name="PRIMARY">
+    <key id="408" parent="291" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idTournament</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="399" parent="290" name="fk_Tournament_Account">
+    <foreign-key id="409" parent="291" name="fk_Tournament_Account">
       <ColNames>idAccountTournament</ColNames>
       <RefSchemaName>Tournament</RefSchemaName>
       <RefTableName>Account</RefTableName>

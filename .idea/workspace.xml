@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <list default="true" id="d4f5e6f6-ded9-4205-912e-247fa9861ba7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/controller/UpdateMatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateMatchController.java" afterDir="false" />
 <<<<<<< Updated upstream
@@ -24,44 +25,45 @@
       <change beforePath="" afterPath="$PROJECT_DIR$/src/database/DAO/ResultDAO.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/database/DAO/TeamDAO.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/database/DAO/TournamentDAO.java" />
+=======
+    <list default="true" id="2a9bc478-2ef3-477b-8b99-36891cd09ec0" name="Default" comment="">
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc9b62b4-698a-41a3-b830-e75ab0ab620a.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/cc9b62b4-698a-41a3-b830-e75ab0ab620a.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/GoldAndBronzeTest.java" afterPath="$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/GoldAndBronzeTest.java" />
       <change beforePath="$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/KnockoutBracketTest.java" afterPath="$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/KnockoutBracketTest.java" />
       <change beforePath="$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/PlacementBracketTest.java" afterPath="$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/PlacementBracketTest.java" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/AdminPageController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/AdminPageController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreateAccountController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreateAccountController.class" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/LoginController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/LoginController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/TournamentSetupController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/TournamentSetupController.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/Login.fxml" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/Login.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/AccountDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/AccountDAOImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/TournamentDAO.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/TournamentDAOImpl.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/AccountDAO.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/AccountDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchDAO.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchDayDAO.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchDayDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchScheduleDAO.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchScheduleDAO.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/ResultDAO.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/ResultDAO.class" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match$Builder.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match$Builder.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match.class" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament$Builder.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament$Builder.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament.class" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchDay.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchDay.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchSchedule.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchSchedule.class" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutPlay.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutPlay.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/PlacementPlay.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/PlacementPlay.class" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/StandardGroupPlay.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/StandardGroupPlay.class" />
       <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/knockoutbracket/KnockoutBracketTest.class" afterPath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/knockoutbracket/KnockoutBracketTest.class" />
       <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/knockoutbracket/PlacementBracketTest.class" afterPath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/knockoutbracket/PlacementBracketTest.class" />
-      <change beforePath="$PROJECT_DIR$/src/controller/AdminPageController.java" afterPath="$PROJECT_DIR$/src/controller/AdminPageController.java" />
-      <change beforePath="$PROJECT_DIR$/src/controller/CreateAccountController.java" afterPath="$PROJECT_DIR$/src/controller/CreateAccountController.java" />
       <change beforePath="$PROJECT_DIR$/src/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/controller/LoginController.java" />
-      <change beforePath="$PROJECT_DIR$/src/controller/TournamentSetupController.java" afterPath="$PROJECT_DIR$/src/controller/TournamentSetupController.java" />
       <change beforePath="$PROJECT_DIR$/src/database/AccountDAO.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/database/AccountDAOImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/database/Database.java" afterPath="$PROJECT_DIR$/src/database/Database.java" />
-      <change beforePath="$PROJECT_DIR$/src/database/TournamentDAO.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/database/TournamentDAOImpl.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/database/DAO/AccountDAO.java" afterPath="$PROJECT_DIR$/src/database/DAO/AccountDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/database/DAO/MatchDAO.java" afterPath="$PROJECT_DIR$/src/database/DAO/MatchDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java" afterPath="$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java" afterPath="$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/database/DAO/ResultDAO.java" afterPath="$PROJECT_DIR$/src/database/DAO/ResultDAO.java" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/tournament/Match.java" afterPath="$PROJECT_DIR$/src/tournament/Match.java" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/Tournament.java" afterPath="$PROJECT_DIR$/src/tournament/Tournament.java" />
       <change beforePath="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" afterPath="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java" afterPath="$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" />
       <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" />
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -75,6 +77,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="UpdateMatchController.java" pinned="false" current-in-tab="true">
@@ -84,6 +87,8 @@
             <state relative-caret-position="326">
               <caret line="141" column="66" selection-start-line="141" selection-start-column="66" selection-end-line="141" selection-end-column="66" />
 =======
+=======
+>>>>>>> Stashed changes
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -109,13 +114,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="Tournament: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Tournament@127.0.0.1" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="Tournament: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="MatchTable: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -124,40 +122,50 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+            <state relative-caret-position="232">
+              <caret line="171" column="38" lean-forward="true" selection-start-line="171" selection-start-column="38" selection-end-line="171" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayoffBracketDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/DAO/PlayoffBracketDAO.java">
+      <file leaf-file-name="AccountDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/DAO/AccountDAO.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="276">
               <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
 =======
             <state relative-caret-position="1092">
               <caret line="186" selection-start-line="186" selection-end-line="186" />
 >>>>>>> Stashed changes
+=======
+            <state relative-caret-position="135">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+>>>>>>> Stashed changes
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1543946451212" expanded="true" signature="569:621" ph="INSERT INTO PlayoffBracket... " />
+                <marker date="1544017428597" expanded="true" signature="486:543" ph="select * fro... Account" />
+                <marker date="1544017428597" expanded="true" signature="486:562" ph="select * fro... Account" />
+                <marker date="1544017428597" expanded="true" signature="486:563" ph="select * fro... Account" />
+                <marker date="1544017428597" expanded="true" signature="1381:1434" ph="INSERT INTO Account... " />
+                <marker date="1544017428597" expanded="true" signature="2025:2082" ph="select * fro... Account" />
+                <marker date="1544017428597" expanded="true" signature="2025:2101" ph="select * fro... Account" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StandardGroupPlay.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
+      <file leaf-file-name="KnockoutBracketTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/KnockoutBracketTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="70" column="36" lean-forward="false" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
+            <state relative-caret-position="4995">
+              <caret line="345" column="5" lean-forward="true" selection-start-line="345" selection-start-column="5" selection-end-line="345" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="TeamDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/database/DAO/TeamDAO.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -180,52 +188,32 @@
 <<<<<<< Updated upstream
       <file leaf-file-name="PoolDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/database/DAO/PoolDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding>
-                <marker date="1543926372998" expanded="true" signature="314:354" ph="INSERT INTO Pool... " />
-                <marker date="1543926372998" expanded="true" signature="314:406" ph="INSERT INTO Pool... " />
-                <marker date="1543926372998" expanded="true" signature="1115:1149" ph="select * fro... Pool" />
-                <marker date="1543926372998" expanded="true" signature="1115:1151" ph="select * fro... Pool" />
-                <marker date="1543926372998" expanded="true" signature="1115:1196" ph="select * fro... Pool" />
-                <marker date="1543926372998" expanded="true" signature="1115:1197" ph="select * fro... Pool" />
-                <marker date="1543926372998" expanded="true" signature="1115:1198" ph="select * fro... Pool" />
-                <marker date="1543926372998" expanded="true" signature="1115:1227" ph="select * fro... Pool" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatchDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="80" column="48" lean-forward="false" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
->>>>>>> Stashed changes
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1544003511398" expanded="true" signature="655:756" ph="INSERT INTO Match... " />
-                <marker date="1544003511398" expanded="true" signature="655:757" ph="INSERT INTO Match... " />
-                <marker date="1544003511398" expanded="true" signature="655:781" ph="INSERT INTO Match... " />
-                <marker date="1544003511398" expanded="true" signature="2235:2240" ph="select * fro... MatchTable" />
-                <marker date="1544003511398" expanded="true" signature="2235:2241" ph="select * fro... MatchTable" />
-                <marker date="1544003511398" expanded="true" signature="2877:2936" ph="UPDATE MatchTable... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< Updated upstream
-      <file leaf-file-name="Result.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tournament/Result.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
 =======
-      <file leaf-file-name="MatchDayDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java">
+      <file leaf-file-name="PlacementPlay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java">
+>>>>>>> Stashed changes
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-614">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StandardGroupPlay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeamPointsComp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/TeamPointsComp.java">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="260">
               <caret line="49" column="67" lean-forward="false" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
               <folding>
@@ -242,24 +230,29 @@
             <state relative-caret-position="187">
               <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
 >>>>>>> Stashed changes
+=======
+            <state relative-caret-position="90">
+              <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <file leaf-file-name="AutogenerateMatchScheduleController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2106">
-              <caret line="179" column="27" selection-start-line="179" selection-start-column="27" selection-end-line="179" selection-end-column="27" />
 =======
-      <file leaf-file-name="MatchDay.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/LoginController.java">
+>>>>>>> Stashed changes
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="59" column="68" lean-forward="false" selection-start-line="59" selection-start-column="68" selection-end-line="59" selection-end-column="68" />
+            <state relative-caret-position="119">
+              <caret line="65" column="78" lean-forward="true" selection-start-line="65" selection-start-column="78" selection-end-line="65" selection-end-column="78" />
               <folding />
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
       <file leaf-file-name="StandardGroupPlay.java" pinned="false" current-in-tab="false">
@@ -268,10 +261,13 @@
             <state relative-caret-position="93">
               <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       <file leaf-file-name="CreatingMatchScheduleController.java" pinned="false" current-in-tab="false">
@@ -282,13 +278,20 @@
 =======
       <file leaf-file-name="ResultDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/database/DAO/ResultDAO.java">
+=======
+      <file leaf-file-name="MatchDayDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java">
+>>>>>>> Stashed changes
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+            <state relative-caret-position="290">
+              <caret line="48" column="82" lean-forward="false" selection-start-line="48" selection-start-column="82" selection-end-line="48" selection-end-column="82" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1543957594293" expanded="true" signature="488:570" ph="INSERT INTO Result... " />
+                <marker date="1544011027571" expanded="true" signature="440:559" ph="INSERT INTO MatchDay... " />
+                <marker date="1544011027571" expanded="true" signature="1897:1993" ph="select * fro... MatchTable" />
+                <marker date="1544011027571" expanded="true" signature="1897:2009" ph="select * fro... MatchTable" />
+                <marker date="1544011027571" expanded="true" signature="2797:2875" ph="UPDATE MatchDay... " />
               </folding>
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
       <file leaf-file-name="KnockoutBracket.java" pinned="false" current-in-tab="false">
@@ -324,12 +327,15 @@
                 <element signature="method#updateMatchResult#0;class#Match#0" />
               </folding>
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   <component name="FindInProjectRecents">
     <findStrings>
@@ -350,25 +356,16 @@
     </option>
 >>>>>>> Stashed changes
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-<<<<<<< Updated upstream
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
-        <option value="$PROJECT_DIR$/src/controller/ViewMatchScheduleController.java" />
-        <option value="$PROJECT_DIR$/src/controller/AdminPageController.java" />
-        <option value="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" />
-        <option value="$PROJECT_DIR$/src/controller/FrontPageController.java" />
-        <option value="$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java" />
         <option value="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" />
+<<<<<<< Updated upstream
         <option value="$PROJECT_DIR$/src/tournament/Result.java" />
         <option value="$PROJECT_DIR$/src/View/EditMatchSchedule.fxml" />
         <option value="$PROJECT_DIR$/src/tournament/matchschedule/GraphicalObjects/MatchContainer.java" />
@@ -382,31 +379,24 @@
         <option value="$PROJECT_DIR$/src/database/FieldDAO.java" />
         <option value="$PROJECT_DIR$/src/database/FieldDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/database/TournamentDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/AccountDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/database/TournamentDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/AccountDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/FieldDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/TournamentDAOImpl.java" />
-        <option value="$PROJECT_DIR$/Tests/tournament/matchschedule/FieldTest.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/FieldDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/GroupDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/GroupBracketDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/PoolDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/AccountDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/TournamentDAO.java" />
-        <option value="$PROJECT_DIR$/src/tournament/Tournament.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/PlayoffBracketDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/TeamDAO.java" />
+=======
         <option value="$PROJECT_DIR$/src/tournament/Match.java" />
-        <option value="$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/KnockoutBracketTest.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/ResultDAO.java" />
-        <option value="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/MatchDAO.java" />
-        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" />
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
 >>>>>>> Stashed changes
+        <option value="$PROJECT_DIR$/src/database/AccountDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/database/DAO/ResultDAO.java" />
+        <option value="$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java" />
+        <option value="$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java" />
+        <option value="$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java" />
+        <option value="$PROJECT_DIR$/src/database/DAO/MatchDAO.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" />
+        <option value="$PROJECT_DIR$/src/database/DAO/AccountDAO.java" />
+        <option value="$PROJECT_DIR$/src/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/tournament/TeamPointsComp.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" />
+        <option value="$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/GoldAndBronzeTest.java" />
+        <option value="$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/PlacementBracketTest.java" />
+        <option value="$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/KnockoutBracketTest.java" />
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
       </list>
     </option>
   </component>
@@ -415,22 +405,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-<<<<<<< Updated upstream
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="128" />
-    <option name="width" value="1440" />
-    <option name="height" value="774" />
-=======
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="777" />
->>>>>>> Stashed changes
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -449,6 +423,7 @@
     <panes>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <pane id="Scope" />
       <pane id="AndroidView" />
 =======
@@ -457,6 +432,9 @@
 =======
       <pane id="PackagesPane" />
       <pane id="Scope" />
+>>>>>>> Stashed changes
+=======
+      <pane id="PackagesPane" />
 >>>>>>> Stashed changes
       <pane id="ProjectPane">
         <subPane>
@@ -474,111 +452,13 @@
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-<<<<<<< Updated upstream
-=======
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
->>>>>>> Stashed changes
               <item name="sample" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
-              <item name="matchschedule" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
-<<<<<<< Updated upstream
-              <item name="matchschedule" type="462c0819:PsiDirectoryNode" />
-              <item name="GraphicalObjects" type="462c0819:PsiDirectoryNode" />
-=======
-              <item name="pool" type="462c0819:PsiDirectoryNode" />
->>>>>>> Stashed changes
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
-              <item name="pool" type="462c0819:PsiDirectoryNode" />
-<<<<<<< Updated upstream
-=======
-              <item name="bracket" type="462c0819:PsiDirectoryNode" />
->>>>>>> Stashed changes
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-<<<<<<< Updated upstream
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
-              <item name="pool" type="462c0819:PsiDirectoryNode" />
-              <item name="bracket" type="462c0819:PsiDirectoryNode" />
-=======
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
->>>>>>> Stashed changes
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-<<<<<<< Updated upstream
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-=======
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
-              <item name="pool" type="462c0819:PsiDirectoryNode" />
->>>>>>> Stashed changes
-            </path>
-            <path>
-              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-<<<<<<< Updated upstream
-=======
-              <item name="tournament" type="462c0819:PsiDirectoryNode" />
-              <item name="pool" type="462c0819:PsiDirectoryNode" />
-              <item name="knockoutbracket" type="462c0819:PsiDirectoryNode" />
->>>>>>> Stashed changes
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
       <pane id="PackagesPane" />
@@ -612,6 +492,15 @@
 =======
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
 >>>>>>> Stashed changes
+=======
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+>>>>>>> Stashed changes
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -625,46 +514,13 @@
       </list>
     </option>
   </component>
-<<<<<<< Updated upstream
-  <component name="RunManager">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
-      <module name="P3-Planing-for-sportsclubs-master" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-=======
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.KnockoutBracketTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
->>>>>>> Stashed changes
-        <pattern>
-          <option name="PATTERN" value="sample.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-<<<<<<< Updated upstream
-=======
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="P3-Planing-for-sportsclubs-master" />
-      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -679,6 +535,56 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+    </configuration>
+    <configuration name="GoldAndBronzeTest.testCreateKnockoutBracket01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tournament.pool.knockoutbracket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="P3-Planing-for-sportsclubs-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tournament.pool.knockoutbracket" />
+      <option name="MAIN_CLASS_NAME" value="tournament.pool.knockoutbracket.GoldAndBronzeTest" />
+      <option name="METHOD_NAME" value="testCreateKnockoutBracket01" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="GoldAndBronzeTest.testCreateNextRound01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tournament.pool.knockoutbracket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="P3-Planing-for-sportsclubs-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tournament.pool.knockoutbracket" />
+      <option name="MAIN_CLASS_NAME" value="tournament.pool.knockoutbracket.GoldAndBronzeTest" />
+      <option name="METHOD_NAME" value="testCreateNextRound01" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
     </configuration>
     <configuration name="KnockoutBracketTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -704,7 +610,56 @@
       </option>
       <envs />
       <patterns />
->>>>>>> Stashed changes
+    </configuration>
+    <configuration name="PlacementBracketTest.testCalculateResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tournament.pool.knockoutbracket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="P3-Planing-for-sportsclubs-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tournament.pool.knockoutbracket" />
+      <option name="MAIN_CLASS_NAME" value="tournament.pool.knockoutbracket.PlacementBracketTest" />
+      <option name="METHOD_NAME" value="testCalculateResult" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="PlacementBracketTest.testCreateNextRound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tournament.pool.knockoutbracket.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="P3-Planing-for-sportsclubs-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tournament.pool.knockoutbracket" />
+      <option name="MAIN_CLASS_NAME" value="tournament.pool.knockoutbracket.PlacementBracketTest" />
+      <option name="METHOD_NAME" value="testCreateNextRound" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -760,36 +715,26 @@
       <properties />
       <listeners />
     </configuration>
-<<<<<<< Updated upstream
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-=======
->>>>>>> Stashed changes
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-<<<<<<< Updated upstream
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-=======
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.KnockoutBracketTest" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.PlacementBracketTest.testCreateNextRound" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.GoldAndBronzeTest.testCreateKnockoutBracket01" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.GoldAndBronzeTest.testCreateNextRound01" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.PlacementBracketTest.testCalculateResult" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.KnockoutBracketTest" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.KnockoutBracketTest" />
->>>>>>> Stashed changes
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.KnockoutBracketTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.PlacementBracketTest.testCalculateResult" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.PlacementBracketTest.testCreateNextRound" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.GoldAndBronzeTest.testCreateNextRound01" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.GoldAndBronzeTest.testCreateKnockoutBracket01" />
       </list>
     </recent_temporary>
   </component>
@@ -800,6 +745,7 @@
     <configuration />
   </component>
   <component name="TaskManager">
+<<<<<<< Updated upstream
     <task active="true" id="Default" summary="Default task">
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -872,30 +818,44 @@
       <workItem from="1543913901518" duration="23472000" />
       <workItem from="1543997292757" duration="6109000" />
     </task>
+=======
+>>>>>>> Stashed changes
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="KnockoutBracketTest - 2018.12.03 at 16h 19m 00s.xml">
+    <history-entry file="GoldAndBronzeTest_testCreateNextRound01 - 2018.12.06 at 09h 46m 01s.xml">
+      <configuration name="GoldAndBronzeTest.testCreateNextRound01" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GoldAndBronzeTest_testCreateNextRound01 - 2018.12.06 at 09h 47m 59s.xml">
+      <configuration name="GoldAndBronzeTest.testCreateNextRound01" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GoldAndBronzeTest_testCreateNextRound01 - 2018.12.06 at 09h 48m 26s.xml">
+      <configuration name="GoldAndBronzeTest.testCreateNextRound01" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="KnockoutBracketTest - 2018.12.06 at 10h 22m 08s.xml">
       <configuration name="KnockoutBracketTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KnockoutBracketTest - 2018.12.03 at 16h 20m 02s.xml">
-      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    <history-entry file="PlacementBracketTest_testCalculateResult - 2018.12.06 at 10h 06m 39s.xml">
+      <configuration name="PlacementBracketTest.testCalculateResult" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KnockoutBracketTest - 2018.12.03 at 16h 20m 28s.xml">
-      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    <history-entry file="PlacementBracketTest_testCalculateResult - 2018.12.06 at 10h 07m 03s.xml">
+      <configuration name="PlacementBracketTest.testCalculateResult" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KnockoutBracketTest - 2018.12.03 at 16h 21m 51s.xml">
-      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    <history-entry file="PlacementBracketTest_testCalculateResult - 2018.12.06 at 10h 08m 59s.xml">
+      <configuration name="PlacementBracketTest.testCalculateResult" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KnockoutBracketTest - 2018.12.03 at 16h 22m 15s.xml">
-      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    <history-entry file="PlacementBracketTest_testCalculateResult - 2018.12.06 at 10h 12m 11s.xml">
+      <configuration name="PlacementBracketTest.testCalculateResult" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KnockoutBracketTest - 2018.12.04 at 13h 53m 53s.xml">
-      <configuration name="KnockoutBracketTest" configurationId="JUnit" />
+    <history-entry file="PlacementBracketTest_testCalculateResult - 2018.12.06 at 10h 12m 28s.xml">
+      <configuration name="PlacementBracketTest.testCalculateResult" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PlacementBracketTest_testCreateNextRound - 2018.12.06 at 09h 56m 03s.xml">
+      <configuration name="PlacementBracketTest.testCreateNextRound" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54579000" />
+    <option name="totallyTimeSpent" value="15686000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -914,8 +874,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2657512" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17851374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20759289" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -927,23 +888,20 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
->>>>>>> Stashed changes
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="39" />
-    </breakpoint-manager>
 <<<<<<< Updated upstream
+      <option name="time" value="39" />
+=======
+      <option name="time" value="4" />
+>>>>>>> Stashed changes
+    </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/src/controller/UpdateMatchController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2397">
@@ -980,17 +938,21 @@
         <state relative-caret-position="221">
           <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
         </state>
+=======
+    <entry file="file://$PROJECT_DIR$/src/View/Login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+>>>>>>> Stashed changes
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+        <state relative-caret-position="80">
+          <caret line="23" column="230" lean-forward="false" selection-start-line="23" selection-start-column="230" selection-end-line="23" selection-end-column="230" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/FrontPageController.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="1428">
           <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
         </state>
@@ -1092,6 +1054,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="77" column="0" lean-forward="true" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+=======
+        <state relative-caret-position="-74">
+          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
@@ -1106,12 +1072,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="70" column="8" lean-forward="true" selection-start-line="70" selection-start-column="8" selection-end-line="82" selection-end-column="22" />
->>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/AdminPageController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         <state relative-caret-position="221">
           <caret line="71" column="52" lean-forward="true" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
@@ -1259,6 +1225,8 @@
         <state relative-caret-position="326">
           <caret line="141" column="66" selection-start-line="141" selection-start-column="66" selection-end-line="141" selection-end-column="66" />
 =======
+=======
+>>>>>>> Stashed changes
         <state relative-caret-position="183">
           <caret line="47" column="26" lean-forward="true" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
         </state>
@@ -1303,22 +1271,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
         <state relative-caret-position="1092">
           <caret line="186" selection-start-line="186" selection-end-line="186" />
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1543929803694" expanded="true" signature="592:655" ph="select * fro... Tournament" />
-            <marker date="1543929803694" expanded="true" signature="1829:1983" ph="INSERT INTO Tournament... " />
-            <marker date="1543929803694" expanded="true" signature="2833:2945" ph="select * fro... Tournament" />
+            <element signature="imports" expanded="false" />
+            <marker date="1544003730814" expanded="true" signature="592:655" ph="select * fro... Tournament" />
+            <marker date="1544003730814" expanded="true" signature="1829:1983" ph="INSERT INTO Tournament... " />
+            <marker date="1544003730814" expanded="true" signature="2833:2945" ph="select * fro... Tournament" />
           </folding>
         </state>
       </provider>
     </entry>
-<<<<<<< Updated upstream
-=======
     <entry file="file://$PROJECT_DIR$/src/database/DAO/AccountDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -1378,35 +1347,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/FieldDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="73" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/GroupBracketDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="24" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1543923369031" expanded="true" signature="444:521" ph="INSERT INTO GroupTable... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/account/Administrator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="74">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/AccountDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1414,6 +1359,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1422,10 +1368,10 @@
         <state relative-caret-position="105">
           <caret line="51" column="65" lean-forward="false" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1543929803694" expanded="true" signature="592:655" ph="select * fro... Tournament" />
-            <marker date="1543929803694" expanded="true" signature="1829:1983" ph="INSERT INTO Tournament... " />
-            <marker date="1543929803694" expanded="true" signature="2833:2945" ph="select * fro... Tournament" />
+            <element signature="imports" expanded="false" />
+            <marker date="1544003730814" expanded="true" signature="592:655" ph="select * fro... Tournament" />
+            <marker date="1544003730814" expanded="true" signature="1829:1983" ph="INSERT INTO Tournament... " />
+            <marker date="1544003730814" expanded="true" signature="2833:2945" ph="select * fro... Tournament" />
           </folding>
         </state>
       </provider>
@@ -1434,13 +1380,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="67" column="23" lean-forward="false" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/GoldAndBronzePlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1448,90 +1388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="57" lean-forward="true" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/GroupDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1543921079053" expanded="true" signature="521:599" ph="INSERT INTO Group... " />
-            <marker date="1543921079053" expanded="true" signature="544:583" ph="INSERT INTO Group... " />
-            <marker date="1543921079053" expanded="true" signature="544:599" ph="INSERT INTO Group... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-508">
-          <caret line="94" column="41" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
-          <folding>
-            <element signature="e#1099#1100#0" expanded="false" />
-            <element signature="e#1134#1135#0" expanded="false" />
-            <element signature="e#1173#1174#0" expanded="false" />
-            <element signature="e#1200#1201#0" expanded="false" />
-            <element signature="e#2644#2645#0" expanded="false" />
-            <element signature="e#2671#2672#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="104" column="47" lean-forward="false" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/KnockoutBracketTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="59" column="78" lean-forward="false" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/ResultDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="22" column="14" lean-forward="false" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1543957594293" expanded="true" signature="488:570" ph="INSERT INTO Result... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="59" column="68" lean-forward="false" selection-start-line="59" selection-start-column="68" selection-end-line="59" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -1539,33 +1395,16 @@
     <entry file="file://$PROJECT_DIR$/src/database/DAO/PoolDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
-            <marker date="1543926372998" expanded="true" signature="314:354" ph="INSERT INTO Pool... " />
-            <marker date="1543926372998" expanded="true" signature="314:406" ph="INSERT INTO Pool... " />
-            <marker date="1543926372998" expanded="true" signature="1115:1149" ph="select * fro... Pool" />
-            <marker date="1543926372998" expanded="true" signature="1115:1151" ph="select * fro... Pool" />
-            <marker date="1543926372998" expanded="true" signature="1115:1196" ph="select * fro... Pool" />
-            <marker date="1543926372998" expanded="true" signature="1115:1197" ph="select * fro... Pool" />
-            <marker date="1543926372998" expanded="true" signature="1115:1198" ph="select * fro... Pool" />
-            <marker date="1543926372998" expanded="true" signature="1115:1227" ph="select * fro... Pool" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/TeamDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="53" column="129" lean-forward="true" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="129" />
-          <folding>
-            <marker date="1543947999841" expanded="true" signature="550:633" ph="INSERT INTO Team... " />
-            <marker date="1543947999841" expanded="true" signature="1823:1922" ph="INSERT INTO Team... " />
-            <marker date="1543947999841" expanded="true" signature="2683:2716" ph="select * fro... Team" />
-            <marker date="1543947999841" expanded="true" signature="2683:2737" ph="select * fro... Team" />
-            <marker date="1543947999841" expanded="true" signature="2683:2739" ph="select * fro... Team" />
-            <marker date="1543947999841" expanded="true" signature="2683:2762" ph="select * fro... Team" />
-            <marker date="1543947999841" expanded="true" signature="2683:2786" ph="select * fro... Team" />
-            <marker date="1543947999841" expanded="true" signature="2683:2791" ph="select * fro... Team" />
+            <marker date="1544003730811" expanded="true" signature="314:354" ph="INSERT INTO Pool... " />
+            <marker date="1544003730811" expanded="true" signature="314:406" ph="INSERT INTO Pool... " />
+            <marker date="1544003730811" expanded="true" signature="1115:1149" ph="select * fro... Pool" />
+            <marker date="1544003730811" expanded="true" signature="1115:1151" ph="select * fro... Pool" />
+            <marker date="1544003730811" expanded="true" signature="1115:1196" ph="select * fro... Pool" />
+            <marker date="1544003730811" expanded="true" signature="1115:1197" ph="select * fro... Pool" />
+            <marker date="1544003730811" expanded="true" signature="1115:1198" ph="select * fro... Pool" />
+            <marker date="1544003730811" expanded="true" signature="1115:1227" ph="select * fro... Pool" />
           </folding>
         </state>
       </provider>
@@ -1573,59 +1412,247 @@
     <entry file="file://$PROJECT_DIR$/src/database/DAO/PlayoffBracketDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
-          <caret line="24" column="39" lean-forward="true" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+          <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1543946451212" expanded="true" signature="569:621" ph="INSERT INTO PlayoffBracket... " />
+            <element signature="imports" expanded="false" />
+            <marker date="1544003730811" expanded="true" signature="569:621" ph="INSERT INTO PlayoffBracket... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/database/AccountDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="49" column="67" lean-forward="false" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
+        <state relative-caret-position="-413">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/GoldAndBronzePlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-199">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/ResultDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1544002702813" expanded="true" signature="468:587" ph="INSERT INTO MatchDay... " />
-            <marker date="1544002702813" expanded="true" signature="1928:2024" ph="select * fro... MatchTable" />
-            <marker date="1544002702813" expanded="true" signature="1928:2040" ph="select * fro... MatchTable" />
+            <marker date="1544007322228" expanded="true" signature="488:570" ph="INSERT INTO Result... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
+    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="70" column="36" lean-forward="false" selection-start-line="70" selection-start-column="36" selection-end-line="70" selection-end-column="36" />
+        <state relative-caret-position="152">
+          <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="37" column="50" lean-forward="false" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1544011077272" expanded="true" signature="649:737" ph="INSERT INTO MatchSchedule... " />
+            <marker date="1544011077272" expanded="true" signature="1407:1469" ph="select * fro... MatchSchedule" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/TeamDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-173">
+          <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+          <folding>
+            <marker date="1544003730813" expanded="true" signature="550:633" ph="INSERT INTO Team... " />
+            <marker date="1544003730813" expanded="true" signature="1823:1922" ph="INSERT INTO Team... " />
+            <marker date="1544003730813" expanded="true" signature="2683:2716" ph="select * fro... Team" />
+            <marker date="1544003730813" expanded="true" signature="2683:2737" ph="select * fro... Team" />
+            <marker date="1544003730813" expanded="true" signature="2683:2739" ph="select * fro... Team" />
+            <marker date="1544003730813" expanded="true" signature="2683:2762" ph="select * fro... Team" />
+            <marker date="1544003730813" expanded="true" signature="2683:2786" ph="select * fro... Team" />
+            <marker date="1544003730813" expanded="true" signature="2683:2791" ph="select * fro... Team" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="50" column="48" lean-forward="true" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="80" column="48" lean-forward="false" selection-start-line="80" selection-start-column="48" selection-end-line="80" selection-end-column="48" />
+        <state relative-caret-position="232">
+          <caret line="104" column="33" lean-forward="false" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1544003511398" expanded="true" signature="655:756" ph="INSERT INTO Match... " />
-            <marker date="1544003511398" expanded="true" signature="655:757" ph="INSERT INTO Match... " />
-            <marker date="1544003511398" expanded="true" signature="655:781" ph="INSERT INTO Match... " />
-            <marker date="1544003511398" expanded="true" signature="2235:2240" ph="select * fro... MatchTable" />
-            <marker date="1544003511398" expanded="true" signature="2235:2241" ph="select * fro... MatchTable" />
-            <marker date="1544003511398" expanded="true" signature="2877:2936" ph="UPDATE MatchTable... " />
+            <marker date="1544014811137" expanded="true" signature="655:756" ph="INSERT INTO Match... " />
+            <marker date="1544014811137" expanded="true" signature="655:757" ph="INSERT INTO Match... " />
+            <marker date="1544014811137" expanded="true" signature="655:781" ph="INSERT INTO Match... " />
+            <marker date="1544014811137" expanded="true" signature="2235:2240" ph="select * fro... MatchTable" />
+            <marker date="1544014811137" expanded="true" signature="2235:2241" ph="select * fro... MatchTable" />
+            <marker date="1544014811137" expanded="true" signature="2827:2886" ph="UPDATE MatchTable... " />
+            <marker date="1544014811137" expanded="true" signature="4103:4179" ph="UPDATE MatchTabel... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/GroupDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <marker date="1544003730810" expanded="true" signature="521:599" ph="INSERT INTO Group... " />
+            <marker date="1544003730810" expanded="true" signature="544:583" ph="INSERT INTO Group... " />
+            <marker date="1544003730810" expanded="true" signature="544:599" ph="INSERT INTO Group... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/GroupBracketDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1544003730808" expanded="true" signature="444:521" ph="INSERT INTO GroupTable... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/FieldDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="73" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="65" column="78" lean-forward="true" selection-start-line="65" selection-start-column="78" selection-end-line="65" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="48" column="82" lean-forward="false" selection-start-line="48" selection-start-column="82" selection-end-line="48" selection-end-column="82" />
+          <folding>
+            <marker date="1544011027571" expanded="true" signature="440:559" ph="INSERT INTO MatchDay... " />
+            <marker date="1544011027571" expanded="true" signature="1897:1993" ph="select * fro... MatchTable" />
+            <marker date="1544011027571" expanded="true" signature="1897:2009" ph="select * fro... MatchTable" />
+            <marker date="1544011027571" expanded="true" signature="2797:2875" ph="UPDATE MatchDay... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/TeamPointsComp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <marker date="1544017428597" expanded="true" signature="486:543" ph="select * fro... Account" />
+            <marker date="1544017428597" expanded="true" signature="486:562" ph="select * fro... Account" />
+            <marker date="1544017428597" expanded="true" signature="486:563" ph="select * fro... Account" />
+            <marker date="1544017428597" expanded="true" signature="1381:1434" ph="INSERT INTO Account... " />
+            <marker date="1544017428597" expanded="true" signature="2025:2082" ph="select * fro... Account" />
+            <marker date="1544017428597" expanded="true" signature="2025:2101" ph="select * fro... Account" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="37" column="31" lean-forward="true" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/GoldAndBronzeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1373">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-614">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/PlacementBracketTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="154" column="106" lean-forward="false" selection-start-line="154" selection-start-column="106" selection-end-line="154" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/KnockoutBracketTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4995">
+          <caret line="345" column="5" lean-forward="true" selection-start-line="345" selection-start-column="5" selection-end-line="345" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+        <state relative-caret-position="232">
+          <caret line="171" column="38" lean-forward="true" selection-start-line="171" selection-start-column="38" selection-end-line="171" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
->>>>>>> Stashed changes
   </component>
 </project>
