@@ -1,5 +1,6 @@
 package tournament.pool.bracket;
 
+import database.DAO.MatchDAO;
 import tournament.Match;
 import tournament.Team;
 
@@ -12,10 +13,11 @@ public class KnockoutPlay extends KnockoutBracket {
     @Override
     public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         int numberOfMatches = (groupBracket.getAmountOfGroups() * groupBracket.getAmountOfAdvancingTeamsPrGroup()) - 1;
+        int count = 1;
 
         for (int i = 0; i < numberOfMatches; i++) {
             super.getMatches().add(new Match.Builder(matchDurationInMinutes)
-                                                .setName("Knockout Match:")
+                                                .setName("Knockout Match: " + count)
                                                 .setFinished(false)
                                                 .setFirstTeam(new Team("TBD"
                                                         , groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup()
@@ -24,6 +26,7 @@ public class KnockoutPlay extends KnockoutBracket {
                                                         , groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup()
                                                         , groupBracket.getGroups().get(0).getTeamList().get(0).getSkillLevel()))
                                                 .build());
+            count++;
         }
         return this;
     }
