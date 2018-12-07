@@ -1,5 +1,6 @@
 package tournament.matchschedule.GraphicalObjects;
 
+import controller.CreatingMatchScheduleController;
 import javafx.scene.Parent;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
@@ -125,28 +126,29 @@ public class MatchContainer extends  HBox{
         this.match.setTimestamp(matchStartTime);
     }
 
+    /*
+    public void moveOneRowUpInGridPane(GridPane gridPane, int timeBetweenMatches) {
+        gridPane.getChildren().remove(this);
+        gridPane.add(this, GridPane.getColumnIndex(this), GridPane.getRowIndex(this) -1);
+        MatchContainer matchContainer = CreatingMatchScheduleController.
+                getMatchContainerFromGridPane(GridPane.getColumnIndex(this),
+                        GridPane.getRowIndex(this) -2, gridPane);
 
-    private void handleSelection() {
-        //Checks whether the matchContainer belongs to a GridPane or a ListView
-        if (this.getParent() instanceof GridPane)
-            handleSelectionInGridPane();
-        else if (this.getParent() instanceof ListView)
-            handleSelectionInListView();
-
-
+        this.setStartTimeFromPreviousMatchContainer(matchContainer,
+                timeBetweenMatches);
     }
 
-    private void handleSelectionInGridPane() {
-        GridPane gridPane = (GridPane) this.getParent();
-
-        selected = true;
-    }
-
-    private void handleSelectionInListView() {
-        ListView listView = (ListView) this.getParent();
-
-        selected = true;
-    }
+    private void setStartTimeFromPreviousMatchContainer(MatchContainer previousContainer, int timeBetweenMatches) {
+        GridPane gridPane = (GridPane) previousContainer.getParent();
+        if (!previousContainer.hasMatch() && !this.hasMatch())
+            gridPane.getChildren().remove(this);
+        LocalTime newMatchStartTime = previousContainer.getMatchEndTime().plusMinutes(timeBetweenMatches);
+        VBox box = (VBox) this.getChildren().get(0);
+        box.getChildren().remove(timeIntervalText);
+        this.timeIntervalText =
+                new Text(newMatchStartTime + " - " + newMatchStartTime.plusMinutes(this.getMatch().getDuration()));
+        box.getChildren().add(timeIntervalText);
+    } */
 
     private void setStyleOfText(Text text) {
         text.setWrappingWidth(80);
@@ -196,5 +198,12 @@ public class MatchContainer extends  HBox{
     @Override
     public int hashCode() {
         return Objects.hash(getMatch(), isSelected(), getTimeIntervalText());
+    }
+
+    public boolean hasMatch() {
+        if (this.match == null)
+            return false;
+        else
+            return true;
     }
 }

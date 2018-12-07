@@ -13,9 +13,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.TournamentType;
+import tournament.matchschedule.Field;
+import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 
 import java.io.IOException;
@@ -66,7 +70,7 @@ public class TournamentSetupController {
         tournamentTypeCombobox.setItems(FXCollections.observableArrayList(
                 TournamentType.values()));
         fieldNumberCombobox.setItems(fieldList);
-        highlightProgressBox();
+        progressBox.getChildren().add(new ProgressBox(stepNumber));
     }
 
     private ObservableList<String> fieldList = FXCollections.observableArrayList(
@@ -170,12 +174,6 @@ public class TournamentSetupController {
 
         }
         return poolList;
-    }
-
-    private void highlightProgressBox() {
-        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
-        stepBox.setStyle("-fx-border-color: #0000CD");
-        stepBox.setStyle("-fx-background-color: #A9A9A9");
     }
 
 }

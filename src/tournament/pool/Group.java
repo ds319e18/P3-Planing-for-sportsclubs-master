@@ -21,4 +21,8 @@ public class Group {
     public ArrayList<Team> getTeamList() {
         return teamList;
     }
+
+    public void sortPoints() {
+        this.getTeamList().sort(new TeamPointsComp());
+    }
 }

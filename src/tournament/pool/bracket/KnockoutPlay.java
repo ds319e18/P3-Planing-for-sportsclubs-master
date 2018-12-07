@@ -6,12 +6,11 @@ import tournament.Team;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 
-public class KnockoutPlay extends KnockoutBracket {
+public class KnockoutPlay extends PlayoffBracket {
     // This method creates the size of the match-array by creating empty matches
     @Override
-    public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
+    public PlayoffBracket createPlayoffBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         int numberOfMatches = (groupBracket.getAmountOfGroups() * groupBracket.getAmountOfAdvancingTeamsPrGroup()) - 1;
         int count = 1;
 
@@ -114,8 +113,12 @@ public class KnockoutPlay extends KnockoutBracket {
 
     @Override
     public void calculateResults() {
-        super.getResults().put(1, super.getMatches().get(super.getMatches().size() - 1).getWinner());
-        super.getResults().put(2, super.getMatches().get(super.getMatches().size() - 1).getLoser());
+        if (super.getMatches().get(super.getMatches().size() - 1).isFinished()) {
+            super.getResults().put(1, super.getMatches().get(super.getMatches().size() - 1).getWinner());
+            super.getResults().put(2, super.getMatches().get(super.getMatches().size() - 1).getLoser());
+        } else {
+            throw new MatchNotFinishedException();
+        }
     }
 
 }

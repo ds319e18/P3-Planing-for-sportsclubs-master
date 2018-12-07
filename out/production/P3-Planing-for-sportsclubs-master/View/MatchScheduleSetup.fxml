@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MatchScheduleSetupController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MatchScheduleSetupController">
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -28,147 +28,18 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af kampprogram" textAlignment="CENTER" wrappingWidth="1280.0">
                <font>
-                  <Font name="System Italic" size="20.0" />
+                  <Font name="System Bold Italic" size="20.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="30.0" top="10.0" />
                </VBox.margin>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin til oprettelse af turnering:" translateX="30.0" translateY="-5.0" wrappingWidth="641.13671875">
-               <font>
-                  <Font size="20.0" />
-               </font>
             </Text>
          </children>
       </VBox>
       <HBox minHeight="-Infinity" prefHeight="502.0" prefWidth="1280.0">
          <children>
             <VBox prefHeight="502.0" prefWidth="48.0" />
-            <VBox fx:id="progressBox" prefHeight="502.0" prefWidth="270.0" style="-fx-border-color: black;">
-               <children>
-                  <VBox maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turneringsopsætning" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 1" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="11.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tilføjelse af hold" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 2" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="11.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af grupper" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 3" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="82.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="235.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af slutspillet" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 4" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="153.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 5" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="224.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Verificering af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 6" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="295.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;" />
-               </children>
-            </VBox>
+            <VBox fx:id="progressBox" maxWidth="393.0" minWidth="250.0" prefHeight="483.0" prefWidth="266.0" style="-fx-border-color: white;" />
             <VBox layoutX="763.0" layoutY="10.0" prefHeight="502.0" prefWidth="36.0" />
             <VBox prefHeight="502.0" prefWidth="435.0">
                <children>
@@ -197,9 +68,9 @@
                         </Text>
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="200.0" text="Rediger dato for turneringen" />
+                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="200.0" text="Rediger dato for turneringen" textAlignment="CENTER" />
                   <VBox layoutX="10.0" layoutY="346.0" prefHeight="20.0" prefWidth="240.0" />
-                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="90.0" text="Back" />
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="90.0" text="Tilbage" textAlignment="CENTER" />
                </children>
             </VBox>
             <VBox prefHeight="502.0" prefWidth="36.0" />
@@ -225,24 +96,14 @@
                      </columns>
                   </TableView>
                   <VBox prefHeight="20.0" prefWidth="240.0" />
-                  <Button mnemonicParsing="false" onAction="#manuallyCreateMatchSchedule" prefHeight="39.0" prefWidth="211.0" text="Lav kampprogram manuelt" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lav kampprogrammet manuelt ved at trække kampe ind på kampdagene" wrappingWidth="268.9830722808838">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
+                  <Button mnemonicParsing="false" onAction="#manuallyCreateMatchSchedule" prefHeight="34.0" prefWidth="211.0" text="Lav kampprogram manuelt" textAlignment="CENTER" />
                   <VBox layoutX="10.0" layoutY="246.0" prefHeight="20.0" prefWidth="240.0" />
-                  <MenuButton mnemonicParsing="false" text="Autogenererer kampprogram">
+                  <MenuButton mnemonicParsing="false" prefHeight="34.0" text="Autogenererer kampprogram" textAlignment="CENTER">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#autogenerateMixedMatches" text="Blandede kampe" />
                         <MenuItem mnemonicParsing="false" onAction="#autogenerateNoMixedMatches" text="Kampe fra en pujle af gangen" />
                      </items>
                   </MenuButton>
-                  <Text layoutX="10.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kampene vil automatisk blive tilføjet til kampdagene" wrappingWidth="268.9830722808838">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Text>
                </children>
             </VBox>
          </children>

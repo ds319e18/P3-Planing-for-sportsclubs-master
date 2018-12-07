@@ -9,12 +9,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Team;
 import tournament.Tournament;
+import tournament.matchschedule.GraphicalObjects.DeleteButtonTableCell;
+import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 
 import java.io.IOException;
@@ -30,30 +31,49 @@ public class AddingTeamsController {
     @FXML
     private VBox progressBox;
     @FXML
-    GridPane gridPane;
+    private TextField teamNameTextField = new TextField();
     @FXML
-    TextField teamNameTextField = new TextField();
+    private ComboBox<String> yearGroupComboBox = new ComboBox<>();
     @FXML
-    ComboBox<String> yearGroupComboBox = new ComboBox<>();
+   private ComboBox<String> skillLevelComboBox = new ComboBox<>();
     @FXML
-    ComboBox<String> skillLevelComboBox = new ComboBox<>();
+    private ComboBox<String>  poolNameComboBox = new ComboBox<>();
     @FXML
-    ComboBox<String>  teamParticipants = new ComboBox<>();
+    private TextField phoneNumTextField = new TextField();
     @FXML
-    TextField contactTextField = new TextField();
+    private TableView<Team> teamTableView;
 
     private Tournament tournament;
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        setComboBoxItems();
-        setTeamparticipant();
+        progressBox.getChildren().add(new ProgressBox(stepNumber));
+        setPoolNameComboBox();
+        setYearGroupComboBox();
+        setTeamTable();
     }
 
-    @FXML
-    void initialize() {
-        highlightProgressBox();
+    private void setTeamTable() {
+        TableColumn<Team, String> teamNameColumn = new TableColumn<>("Holdnavn");
+        teamNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        teamNameColumn.setPrefWidth(190);
+
+        TableColumn<Team, String> phoneNumColumn = new TableColumn<>("Telefon nr.");
+        phoneNumColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNum"));
+        phoneNumColumn.setMaxWidth(100);
+
+        TableColumn<Team, Button> deleteButtonColumn = new TableColumn<>("");
+        deleteButtonColumn.setCellValueFactory(new PropertyValueFactory<>(""));
+        deleteButtonColumn.setCellFactory(DeleteButtonTableCell.forTableColumn((Team team) -> {
+            teamTableView.getItems().remove(team);
+            tournament.findCorrectPool(team.getYearGroup(), team.getSkillLevel()).getTeamList().remove(team);
+            return null;
+        }));
+        deleteButtonColumn.setMinWidth(110);
+
+        teamTableView.getColumns().addAll(teamNameColumn, phoneNumColumn, deleteButtonColumn);
     }
+
 
     @FXML
     public void backButtonClicked(ActionEvent event) throws IOException {
@@ -85,10 +105,20 @@ public class AddingTeamsController {
 
     @FXML
     void addTeam() {
-        tournament.findCorrectPool(Integer.parseInt(yearGroupComboBox.getValue()), skillLevelComboBox.getValue())
-                .addTeam(new Team(teamNameTextField.getText(), skillLevelComboBox.getValue(),
-                        Integer.parseInt(yearGroupComboBox.getValue()), contactTextField.getText()));
-        drawGridPane();
+        Pool selectedPool = tournament.findCorrectPool(Integer.parseInt(yearGroupComboBox.getValue()),
+                skillLevelComboBox.getValue());
+
+        selectedPool.addTeam(new Team(teamNameTextField.getText(), skillLevelComboBox.getValue(),
+                Integer.parseInt(yearGroupComboBox.getValue()), phoneNumTextField.getText()));
+
+        poolNameComboBox.getSelectionModel().select(selectedPool.getName());
+
+        //add teams to the table that have not been added before
+        for (Team team : selectedPool.getTeamList()) {
+            if (!teamTableView.getItems().contains(team))
+                teamTableView.getItems().add(team);
+        }
+
     }
 
 
@@ -105,50 +135,21 @@ public class AddingTeamsController {
     }
 
     @FXML
-    void drawGridPane() {
-        gridPane.getChildren().remove(0, gridPane.getChildren().size());
-
-        try {
-            String teamYearGroup = (teamParticipants.getValue().length() == 3 ? teamParticipants.getValue().substring(0, 2)
-            : teamParticipants.getValue().substring(0, 1));
-            String teamSkillLevel = (teamParticipants.getValue().length() == 3 ? teamParticipants.getValue().substring(2, 3)
-                    : teamParticipants.getValue().substring(1, 2));
-            for (Team team : tournament.findCorrectPool(Integer.parseInt(teamYearGroup), teamSkillLevel).getTeamList()) {
-                Text name = new Text(team.getName());
-                Text contact = new Text(team.getContact());
-                CheckBox checkBox = new CheckBox();
-
-                gridPane.addRow(gridPane.getRowCount(), name, contact, checkBox);
-            }
-        } catch (Exception e) {
-            System.out.println("No choice selected in the combobox!");
-        }
-        gridPane.setGridLinesVisible(false);
-        gridPane.setGridLinesVisible(true);
-    }
-
-    @FXML
     void removeTeams() {
-        // Goes through every row of the GridPane.
-        for (int i = gridPane.getRowCount() - 1; i >= 0; i--) {
-            // 3 Children in each Row. This finds the 3rd child in the row.
-            CheckBox checkBox = (CheckBox) gridPane.getChildren().get((i)*3 + 2);
 
-            if (checkBox.isSelected()) {
-                String teamYearGroup = (teamParticipants.getValue().length() == 3 ? teamParticipants.getValue().substring(0, 2)
-                        : teamParticipants.getValue().substring(0, 1));
-                String teamSkillLevel = (teamParticipants.getValue().length() == 3 ? teamParticipants.getValue().substring(2, 3)
-                        : teamParticipants.getValue().substring(1, 2));
-                Text teamName = (Text) gridPane.getChildren().get(i*3);
 
-                tournament.findCorrectPool(Integer.parseInt(teamYearGroup), teamSkillLevel)
-                        .removeTeam(teamName.getText());
-            }
-        }
-        drawGridPane();
     }
 
-    void setComboBoxItems() {
+    void setPoolNameComboBox() {
+        ObservableList<String> poolNameList = FXCollections.observableArrayList();
+
+        for (Pool pool : tournament.getPoolList()) {
+            poolNameList.add(pool.getName());
+        }
+        poolNameComboBox.setItems(poolNameList);
+    }
+
+    void setYearGroupComboBox() {
         Set<Integer> YearGroupComboSet = new HashSet<>();
         ObservableList<String> YearGroupComboBoxlist = FXCollections.observableArrayList();
 
@@ -158,10 +159,7 @@ public class AddingTeamsController {
 
         Collections.sort(YearGroupComboBoxlist);
 
-        ArrayList<Integer> list = new ArrayList<>();
-        for (Integer yearGroup : YearGroupComboSet) {
-            list.add(yearGroup);
-        }
+        ArrayList<Integer> list = new ArrayList<>(YearGroupComboSet);
 
         Collections.sort(list);
 
@@ -170,24 +168,20 @@ public class AddingTeamsController {
         }
 
         yearGroupComboBox.setItems(YearGroupComboBoxlist);
-
     }
 
-    void setTeamparticipant(){
-        ObservableList<String> poolList = FXCollections.observableArrayList();
-        for(Pool pool : tournament.getPoolList() ) {
-            poolList.add(Integer.toString(pool.getYearGroup()) + pool.getSkillLevel());
-        }
+    @FXML
+    private void setOnPoolSelected() {
+        //Remove all teams from the table before showing teams from another pool
+        teamTableView.getItems().clear();
 
-        teamParticipants.setItems(poolList);
+        String selectedPoolName = poolNameComboBox.getValue();
 
+        Pool selectedPool = tournament.findCorrectPool(selectedPoolName);
 
-    }
+        ObservableList<Team> observableTeamList = FXCollections.observableArrayList();
+        observableTeamList.addAll(selectedPool.getTeamList());
+        teamTableView.getItems().addAll(observableTeamList);
 
-
-    private void highlightProgressBox() {
-        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
-        stepBox.setStyle("-fx-border-color: #0000CD");
-        stepBox.setStyle("-fx-background-color: #A9A9A9");
     }
 }

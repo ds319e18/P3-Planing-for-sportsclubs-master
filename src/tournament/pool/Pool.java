@@ -2,7 +2,7 @@ package tournament.pool;
 
 import tournament.*;
 import tournament.pool.bracket.GroupBracket;
-import tournament.pool.bracket.KnockoutBracket;
+import tournament.pool.bracket.PlayoffBracket;
 
 import java.util.*;
 
@@ -12,15 +12,15 @@ public class Pool {
     private int yearGroup;
     private ArrayList<Team> teamList = new ArrayList<>();
     private GroupBracket groupBracket;
-    private KnockoutBracket knockoutBracket;
+    private PlayoffBracket playoffBracket;
     private int matchDuration;
 
     public void addGroupBracket(GroupBracket groupBracketType) {
         this.groupBracket = groupBracketType.createGroupBracket(teamList);
     }
 
-    public void addKnockoutBracket(KnockoutBracket knockoutBracketType) {
-        this.knockoutBracket = knockoutBracketType.createKnockoutBracket(this.groupBracket, matchDuration);
+    public void addPlayoffBracket(PlayoffBracket playoffBracketType) {
+        this.playoffBracket = playoffBracketType.createPlayoffBracket(this.groupBracket, matchDuration);
     }
 
     // Adding team to the correct pool
@@ -85,8 +85,8 @@ public class Pool {
         return matchDuration;
     }
 
-    public KnockoutBracket getKnockoutBracket() {
-        return knockoutBracket;
+    public PlayoffBracket getPlayoffBracket() {
+        return playoffBracket;
     }
 
     public void setMatchDuration(String matchDuration) {

@@ -9,15 +9,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Team;
 import tournament.Tournament;
+import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
-import tournament.pool.bracket.KnockoutBracket;
 import tournament.pool.bracket.KnockoutPlay;
+import tournament.pool.bracket.PlayoffBracket;
 import tournament.pool.bracket.PlacementPlay;
 
 import java.io.IOException;
@@ -25,6 +28,10 @@ import java.io.IOException;
 public class VerifyFinalStageController {
 
     Tournament tournament;
+    private final int stepNumber = 5;
+
+    @FXML
+    private VBox progressBox;
 
     @FXML
     GridPane poolKnockoutStatusGridPane;
@@ -38,6 +45,7 @@ public class VerifyFinalStageController {
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
+        progressBox.getChildren().add(new ProgressBox(stepNumber));
         drawPoolKnockoutStatusGridPane();
     }
 
@@ -56,10 +64,10 @@ public class VerifyFinalStageController {
         String poolSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
                 : poolClicked.substring(1, 2));
 
-        if (tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getKnockoutBracket()
+        if (tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getPlayoffBracket()
                 .getClass().equals(PlacementPlay.class)) {
             drawPlacementStageGridPane();
-        } else if (tournament.findCorrectPool(poolYearGroup,poolSkillLevel).getKnockoutBracket().getClass().equals(KnockoutPlay.class)) {
+        } else if (tournament.findCorrectPool(poolYearGroup,poolSkillLevel).getPlayoffBracket().getClass().equals(KnockoutPlay.class)) {
             drawKnockoutStageGridPane();
         }
 
@@ -72,7 +80,7 @@ public class VerifyFinalStageController {
             poolName.setTextAlignment(TextAlignment.CENTER);
             poolName.setWrappingWidth(82.93);
 
-            Text knockoutType = new Text(pool.getKnockoutBracket().getClass().getSimpleName());
+            Text knockoutType = new Text(pool.getPlayoffBracket().getClass().getSimpleName());
             knockoutType = new Text(knockoutType.getText().substring(0, knockoutType.getText().length() - 4));
             knockoutType.setTextAlignment(TextAlignment.CENTER);
             knockoutType.setWrappingWidth(82.93);
@@ -100,7 +108,7 @@ public class VerifyFinalStageController {
         finalStageGridPane.setHgap(30);
 
         int counter = 1;
-        for (Match match : tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getKnockoutBracket().getMatches()){
+        for (Match match : tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getPlayoffBracket().getMatches()){
             GridPane gridPane = new GridPane();
             Text groupNumberText = new Text("  Placeringspil  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
@@ -123,8 +131,8 @@ public class VerifyFinalStageController {
         String poolSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
                 : poolClicked.substring(1, 2));
 
-        int amountOfMatches = tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getKnockoutBracket().getMatches().size();
-        KnockoutBracket knockoutBracket = tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getKnockoutBracket();
+        int amountOfMatches = tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getPlayoffBracket().getMatches().size();
+        PlayoffBracket playoffBracket = tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getPlayoffBracket();
         finalStageGridPane.getChildren().clear();
         finalStageGridPane.setVgap(30);
         finalStageGridPane.setHgap(30);
@@ -134,8 +142,8 @@ public class VerifyFinalStageController {
         if (iter > 2) {
             int rowCount = 1;
             for (iter = iter; iter >= 3; iter--) {
-                Team team1 = knockoutBracket.getMatches().get(iter).getFirstTeam();
-                Team team2 = knockoutBracket.getMatches().get(iter).getSecondTeam();
+                Team team1 = playoffBracket.getMatches().get(iter).getFirstTeam();
+                Team team2 = playoffBracket.getMatches().get(iter).getSecondTeam();
                 GridPane gridPane = new GridPane();
                 Text groupNumberText = new Text("  Kvartfinale " + iter + "  ");
                 groupNumberText.setStyle("-fx-font-weight: bold;");
@@ -150,8 +158,8 @@ public class VerifyFinalStageController {
         if (3 > iter && iter > 0) {
             int rowCount = 1;
             for (iter = iter; iter >= 1; iter--) {
-                Team team1 = knockoutBracket.getMatches().get(iter).getFirstTeam();
-                Team team2 = knockoutBracket.getMatches().get(iter).getSecondTeam();
+                Team team1 = playoffBracket.getMatches().get(iter).getFirstTeam();
+                Team team2 = playoffBracket.getMatches().get(iter).getSecondTeam();
                 GridPane gridPane = new GridPane();
                 Text groupNumberText = new Text(" Semifinale " + iter + "  ");
                 groupNumberText.setStyle("-fx-font-weight: bold;");
@@ -166,8 +174,8 @@ public class VerifyFinalStageController {
         }
         if (iter == 0) {
             int rowCount = 1;
-            Team team1 = knockoutBracket.getMatches().get(0).getFirstTeam();
-            Team team2 = knockoutBracket.getMatches().get(0).getSecondTeam();
+            Team team1 = playoffBracket.getMatches().get(0).getFirstTeam();
+            Team team2 = playoffBracket.getMatches().get(0).getSecondTeam();
             GridPane gridPane = new GridPane();
             Text groupNumberText = new Text("  Finale "  + "  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
@@ -239,5 +247,4 @@ public class VerifyFinalStageController {
         }
 
     }
-
 }

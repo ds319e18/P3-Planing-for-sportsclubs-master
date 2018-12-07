@@ -19,6 +19,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalTimeStringConverter;
+import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 import tournament.Tournament;
 import tournament.pool.Pool;
@@ -27,7 +28,7 @@ import java.io.IOException;
 import java.time.LocalTime;
 
 public class MatchScheduleSetupController {
-    private final int stepNumber = 4;
+    private final int stepNumber = 6;
     private Tournament tournament;
 
     @FXML
@@ -44,13 +45,10 @@ public class MatchScheduleSetupController {
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
+        progressBox.getChildren().add(new ProgressBox(stepNumber));
         setPoolsTable();
         setMatchDaysTable();
         createGroupMatches();
-    }
-
-    public void initialize() {
-        highlightProgressBox();
     }
 
     private void createGroupMatches() {
@@ -158,12 +156,6 @@ public class MatchScheduleSetupController {
 
         window.setScene(newScene);
         window.show();
-    }
-
-    private void highlightProgressBox() {
-        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
-        stepBox.setStyle("-fx-border-color: #0000CD");
-        stepBox.setStyle("-fx-background-color: #A9A9A9");
     }
 
     @FXML

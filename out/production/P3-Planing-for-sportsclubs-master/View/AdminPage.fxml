@@ -22,7 +22,7 @@
             <Insets left="497.5" />
          </VBox.margin>
       </ImageView>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Admin menu" textAlignment="CENTER" wrappingWidth="1280.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hovedmenu" textAlignment="CENTER" wrappingWidth="1280.0">
          <font>
             <Font name="System Italic" size="20.0" />
          </font>
@@ -42,29 +42,29 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament" textAlignment="CENTER" wrappingWidth="176.0">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turnering" textAlignment="CENTER" wrappingWidth="176.0">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font size="18.0" />
                </font>
             </Text>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="1">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font size="18.0" />
                </font>
             </Text>
-            <Text layoutX="490.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="2">
+            <Text layoutX="490.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="2">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font size="18.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="View tournament" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="3">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Se turnering" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="3">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font size="18.0" />
                </font>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Edit tournament" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="4">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rediger turnering" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="4">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font size="17.0" />
                </font>
             </Text>
          </children>
@@ -88,12 +88,7 @@
             <Insets left="200.0" />
          </VBox.margin>
       </ScrollPane>
-      <Button fx:id="createTournamentBtn" mnemonicParsing="false" onAction="#setOnCreateTournamentButtonClicked" prefHeight="30.0" prefWidth="120.0" text="Create tournament">
-         <VBox.margin>
-            <Insets left="200.0" top="30.0" />
-         </VBox.margin>
-      </Button>
-      <Button fx:id="logoutBtn" layoutX="585.0" layoutY="548.0" mnemonicParsing="false" onAction="#setOnLogoutButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Log out">
+      <Button fx:id="logoutBtn" layoutX="585.0" layoutY="548.0" mnemonicParsing="false" onAction="#setOnLogoutButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Log in">
          <VBox.margin>
             <Insets left="200.0" top="30.0" />
          </VBox.margin>

@@ -3,15 +3,9 @@ package tournament;
 import tournament.pool.*;
 import tournament.matchschedule.*;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-
-import static java.time.temporal.ChronoUnit.DAYS;
 
 public class Tournament {
     private String name;
@@ -29,6 +23,17 @@ public class Tournament {
         for (Pool createdPools : poolList) {
             if (createdPools.getSkillLevel().equals(skill) && createdPools.getYearGroup() == yearGroup) {
                 return createdPools;
+            } else {
+                // Throw poolnotfoundexception
+            }
+        }
+        return null;
+    }
+
+    public Pool findCorrectPool(String name) {
+        for (Pool createdPool : poolList) {
+            if (createdPool.getName().equals(name)) {
+                return createdPool;
             }
         }
         return null;
@@ -70,7 +75,7 @@ public class Tournament {
 
         for (Pool pool : this.poolList) {
             allMatches.addAll(pool.getGroupBracket().getMatches());
-            allMatches.addAll(pool.getKnockoutBracket().getMatches());
+            allMatches.addAll(pool.getPlayoffBracket().getMatches());
         }
 
         return allMatches;
