@@ -13,7 +13,7 @@ public class Pool {
     private ArrayList<Team> teamList = new ArrayList<>();
     private GroupBracket groupBracket;
     private PlayoffBracket playoffBracket;
-    private int matchDuration;
+    private int matchDuration = 0;
 
     public void addGroupBracket(GroupBracket groupBracketType) {
         this.groupBracket = groupBracketType.createGroupBracket(teamList);
