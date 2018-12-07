@@ -1,12 +1,12 @@
 package controller;
 
-import database.AccountDAOImpl;
+import database.DAO.AccountDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class CreateAccountController {
-    AccountDAOImpl AccountDAO = new AccountDAOImpl();
+    database.DAO.AccountDAO AccountDAO = new AccountDAO();
 
     @FXML
     TextField name;

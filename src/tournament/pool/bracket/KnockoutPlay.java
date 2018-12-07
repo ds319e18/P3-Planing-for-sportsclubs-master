@@ -1,5 +1,6 @@
 package tournament.pool.bracket;
 
+import database.DAO.MatchDAO;
 import tournament.Match;
 import tournament.Team;
 
@@ -12,10 +13,11 @@ public class KnockoutPlay extends KnockoutBracket {
     @Override
     public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         int numberOfMatches = (groupBracket.getAmountOfGroups() * groupBracket.getAmountOfAdvancingTeamsPrGroup()) - 1;
+        int count = 1;
 
         for (int i = 0; i < numberOfMatches; i++) {
             super.getMatches().add(new Match.Builder(matchDurationInMinutes)
-                                                .setName("Knockout Match:")
+                                                .setName("Knockout Match: " + count)
                                                 .setFinished(false)
                                                 .setFirstTeam(new Team("TBD"
                                                         , groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup()
@@ -24,6 +26,7 @@ public class KnockoutPlay extends KnockoutBracket {
                                                         , groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup()
                                                         , groupBracket.getGroups().get(0).getTeamList().get(0).getSkillLevel()))
                                                 .build());
+            count++;
         }
         return this;
     }
@@ -45,6 +48,10 @@ public class KnockoutPlay extends KnockoutBracket {
             second = advancingTeams.size() - 1;
         }
 
+        if (advancingTeams.size() == 1) {
+            second = 0;
+        }
+
         for (Match match : super.getMatches()) {
             if (!match.isFinished() && first < second && match.getFirstTeam().getName().equals("TBD")) {
                 match.setFirstTeam(advancingTeams.get(first));
@@ -53,11 +60,20 @@ public class KnockoutPlay extends KnockoutBracket {
                     match.setSecondTeam(advancingTeams.get(second));
                     second--;
                 }
-            } else if (first == second) {
+            } else if (!match.isFinished() && first < second && match.getFirstTeam().getName().equals("TBD") && !match.getSecondTeam().getName().equals("TBD")) {
+                match.setFirstTeam(advancingTeams.get(first));
+                first++;
+            } else if (!match.isFinished() && first < second && !match.getFirstTeam().getName().equals("TBD") && match.getSecondTeam().getName().equals("TBD")) {
+                match.setSecondTeam(advancingTeams.get(second));
+                second--;
+            }
+            else if (first == second) {
                 if (!match.isFinished() && match.getFirstTeam().getName().equals("TBD")) {
                     match.setFirstTeam(advancingTeams.get(first));
+                    first++;
                 } else if (!match.isFinished() && match.getSecondTeam().getName().equals("TBD")) {
                     match.setSecondTeam(advancingTeams.get(first));
+                    second--;
                 }
             }
         }

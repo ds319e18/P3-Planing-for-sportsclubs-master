@@ -1,23 +1,23 @@
-package database;
+package database.DAO;
 
-import account.User;
 import account.Administrator;
-import tournament.Tournament;
-import tournament.TournamentType;
+import database.Database;
 
 import java.sql.*;
-import java.time.LocalDate;
+import java.util.Objects;
 
-public class AccountDAOImpl implements AccountDAO {
+public class AccountDAO {
     private Connection con = Database.connect();
-    @Override
+
     public Administrator findAccount(String username, String password) {
-        TournamentDAO tournamentSQL = new TournamentDAOImpl();
+        TournamentDAO tournamentSQL = new TournamentDAO();
 
         try {
             Statement stmt = con.createStatement();
-            //String sql = "select * from Account where username = '" + username + "'" + "where password = '" + password + "'";
-            String sql = "select * from Account where username = '" + username + "'";
+
+            int passwordHashed = Objects.hash(password);
+
+            String sql = "select * from Account where username = '" + username + "'" + "AND password = " + passwordHashed;
             ResultSet set = stmt.executeQuery(sql);
             Administrator user = new Administrator();
 
@@ -28,39 +28,53 @@ public class AccountDAOImpl implements AccountDAO {
 
                 user.setTournamens(tournamentSQL.getAllTournaments(user.getId()));
 
-                System.out.println(user.getTournamens().get(0).getName());
                 return user;
 
                 // Finding the tournaments the user has created
             }
-
-
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
 
+        // TODO kast exception
         return null;
     }
 
-    // TODO Create warning if something goes wrong or if the username is already occupied
-    @Override
+    // TODO skal slettes
     public void createAccount(String usernames, String passwords, String name) {
         try {
-            String query = "INSERT INTO Account (username, password, name) VALUES(?, ?, ?)";
+            String query = "INSERT INTO Account (username, password) VALUES(?, ?)";
             PreparedStatement stmt = con.prepareStatement(query);
 
+            int passwordHashed = Objects.hash(passwords);
+
             stmt.setString(1, usernames);
-            stmt.setString(2, passwords);
-            stmt.setString(3, name);
+            stmt.setInt(2, passwordHashed);
             stmt.executeUpdate();
             con.close();
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
 
+    public int findAccountID(String username, String password) {
+        try {
+            Statement stmt = con.createStatement();
 
+            int passwordHashed = Objects.hash(password);
 
+            String sql = "select * from Account where username = '" + username + "'" + "AND password =" + passwordHashed;
+            ResultSet set = stmt.executeQuery(sql);
+
+            if (set.next()) {
+                return set.getInt("idAccount");
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        //TODO Kast en exception
+        return 0;
     }
 }

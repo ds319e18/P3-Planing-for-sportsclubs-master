@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -15,12 +14,15 @@ import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.GraphicalObjects.MatchContainer;
 import tournament.matchschedule.MatchDay;
+import tournament.pool.Pool;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UpdateMatchController {
+    // Liste af Booleans. Hver pool har en Boolean, der beskriver om alle gruppekampene er spillet, og knockout fasen er begyndt.
+    private ArrayList<Boolean> knockoutPhaseStarted = new ArrayList<>();
 
     Tournament tournament;
 
@@ -48,6 +50,9 @@ public class UpdateMatchController {
         this.tournament = tournament;
         createMatchDayTabs();
         createMatchScheduleGridpanes();
+        for (Pool pool : tournament.getPoolList()) {
+            knockoutPhaseStarted.add(false);
+        }
     }
 
     private void createMatchDayTabs() {
@@ -103,6 +108,7 @@ public class UpdateMatchController {
             tab.setContent(scrollPane);
         }
     }
+
     private void handleMatchContainerSelection(MouseEvent event) {
         selectedMatchContainer.setSelected(false);
 
@@ -116,7 +122,7 @@ public class UpdateMatchController {
     @FXML
     private void updateButton() {
         if(!firstTeamResultTextField.getText().isEmpty() &&
-                !secondTeamText.getText().isEmpty()) {
+                !secondTeamResultTextField.getText().isEmpty()) {
 
             Result result = new Result(
                     Integer.parseInt(firstTeamResultTextField.getText()),
@@ -130,16 +136,87 @@ public class UpdateMatchController {
                 }
             }
 
-            GridPane gridPane = (GridPane) selectedMatchContainer.getParent();
+            // TODO: Kan kun kaldes ved ændring af resultat på gruppe kamp.
+            advanceTeamsBlahBlah(selectedMatchContainer.getMatch().getFirstTeam().getYearGroup(),
+                    selectedMatchContainer.getMatch().getFirstTeam().getSkillLevel());
 
-            MatchContainer newMatchContainer = new MatchContainer(selectedMatchContainer.getMatch(),
-                    true);
-            newMatchContainer.setOnMouseClicked(event -> handleMatchContainerSelection(event));
-
-            gridPane.add(newMatchContainer, GridPane.getColumnIndex(selectedMatchContainer),
-                    GridPane.getRowIndex(selectedMatchContainer));
-
-            gridPane.getChildren().remove(selectedMatchContainer);
+            updateGroupMatchContainer(selectedMatchContainer);
         }
     }
+
+    private void advanceTeamsBlahBlah(int yearGroup, String skillLevel) {
+        boolean allGroupMatchesHaveResults = true;
+        boolean allKnouckoutMatchesHaveResults = true;
+
+        int i;
+        for (i = 0; i < tournament.getPoolList().size(); i++) {
+            if (tournament.getPoolList().get(i).getYearGroup() == yearGroup &&
+                    tournament.getPoolList().get(i).getSkillLevel().equals(skillLevel)) {
+                break;
+            }
+        }
+
+        if (!knockoutPhaseStarted.get(i)) {
+            for (Match match : tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().getMatches()) {
+                if (!match.isFinished()) {
+                    allGroupMatchesHaveResults = false;
+                }
+            }
+
+            // TODO: KUN EN GANG - should work
+            if (allGroupMatchesHaveResults) {
+                tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket()
+                        .createNextRound(tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().advanceTeams());
+                knockoutPhaseStarted.add(i, true);
+                createMatchScheduleGridpanes();
+            }
+
+        } else {
+
+            for (Match match : tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getMatches()) {
+                if (!match.isFinished() && (!match.getFirstTeam().getName().equals("TBD") &&
+                        !match.getSecondTeam().getName().equals("TBD"))) {
+                    allKnouckoutMatchesHaveResults = false;
+                }
+            }
+
+
+            if (allKnouckoutMatchesHaveResults) {
+                if (tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getClass().getSimpleName()
+                        .equals("KnockoutPlay")) {
+                    tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket()
+                            .createNextRound(tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().advanceTeams());
+                } else if (tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getClass().getSimpleName()
+                        .equals("PlacementPlay")) {
+                    tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().calculateResults();
+                } else if (tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getClass().getSimpleName()
+                        .equals("GoldAndBronzePlay")) {
+                    tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().calculateResults();
+                }
+                createMatchScheduleGridpanes();
+            }
+
+        }
+    }
+
+    private void updateGroupMatchContainer(MatchContainer matchContainer) {
+        GridPane gridPane = (GridPane) matchContainer.getParent();
+
+        MatchContainer newMatchContainer = new MatchContainer(matchContainer.getMatch(),
+                true);
+        newMatchContainer.setOnMouseClicked(event -> handleMatchContainerSelection(event));
+
+        // TODO: What the fuck is going on? Crashes with one remove, works with two :-) Magic
+        try {
+            gridPane.getChildren().remove(matchContainer);
+        } catch (IllegalArgumentException e) {
+            System.out.println("TODO: What the fuck is going on? Crashes with one remove, works with two :-) Magic");
+        }
+
+        gridPane.getChildren().remove(matchContainer);
+
+        gridPane.add(newMatchContainer, GridPane.getColumnIndex(matchContainer),
+                GridPane.getRowIndex(matchContainer));
+    }
+
 }

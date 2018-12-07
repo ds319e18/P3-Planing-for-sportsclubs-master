@@ -19,9 +19,14 @@ public class MatchSchedule {
         createMatchDays();
     }
 
+    // Getters
     public long getNumberOfMatchDays() {
         return (DAYS.between(this.startDate, this.endDate) + 1);
     }
+
+    public LocalDate getStartDate() { return startDate; }
+
+    public LocalDate getEndDate() { return endDate; }
 
     public ArrayList<MatchDay> getMatchDays() {
         return matchDays;
@@ -41,7 +46,6 @@ public class MatchSchedule {
     }
 
     public void setMixedMatches() {
-
     }
 
     public void setNoMixedMatches(ArrayList<Pool> poolList) {

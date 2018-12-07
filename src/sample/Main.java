@@ -1,24 +1,31 @@
 package sample;
 
+import database.DAO.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import tournament.*;
+import tournament.matchschedule.Field;
+import tournament.matchschedule.MatchDay;
+import tournament.pool.Group;
+import tournament.pool.Pool;
+import tournament.pool.bracket.KnockoutPlay;
+import tournament.pool.bracket.StandardGroupPlay;
 
-import java.awt.*;
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Main extends Application {
+    static int accountID;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("../View/TournamentSetup.fxml"));
 
@@ -30,31 +37,142 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        /*Connection con = Database.connect();
+        // TODO Når man logger ind skal dette accountID sættes fra den account man er logget ind på
+        /*accountID = 1;
 
-        LocalDate date1 = LocalDate.now();
-        LocalDate date2 = LocalDate.now().plusDays(3);
+        // DAO Objekter
+        TournamentDAO tournamentSQL = new TournamentDAO();
+        TeamDAO teamSQL = new TeamDAO();
+        GroupDAO groupSQL = new GroupDAO();
+        GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
+        MatchDAO matchSQL = new MatchDAO();
+        PlayoffBracketDAO playoffSQL = new PlayoffBracketDAO();
+        ResultDAO resultSQL = new ResultDAO();
+        MatchDayDAO matchDaySQL = new MatchDayDAO();
+        MatchScheduleDAO matchScheduleSQL = new MatchScheduleDAO();
 
-        Date dateStart = Date.valueOf(date1);
-        Date dateEnd = Date.valueOf(date2);
+        // Hel turnering
+        Tournament tournament;
+        ArrayList<Pool> pools = new ArrayList<>();
+        pools.add(new Pool.Builder()
+                .setYearGroup(6)
+                .setSkilllLevel("A")
+                .setMatchDurationInMinutes(20)
+                .build());
 
-        try {
-            String query = "INSERT INTO Tournament (name, startDate, endDate, active, fieldNumber, Account_id) VALUES(?, ?, ?, ?, ?, ?)";
-            PreparedStatement stmt = con.prepareStatement(query);
-            stmt.setString(1, "Turnering");
-            stmt.setDate(2, dateStart);
-            stmt.setDate(3, dateEnd);
-            stmt.setBoolean(4, false);
-            stmt.setInt(5, 3);
-            stmt.setInt(6, 1);
+        tournament = new Tournament.Builder("A")
+                .setType(TournamentType.GroupAndKnockout)
+                .setActive(true)
+                .setStartDate(LocalDate.now())
+                .setEndDate(LocalDate.now().plusDays(1))
+                .setPoolList(pools)
+                .build();
 
-            stmt.executeUpdate();
-            con.close();
+        tournament.getFieldList().add(new Field("Bane 1", false));
+        tournament.getFieldList().add(new Field("Bane 2", false));
 
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+        // Indsætter turnering i databasen
+        tournamentSQL.insertTournament(tournament, accountID);
+
+        // Adding teams
+        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
+
+        // Indsætter team i databasen
+        teamSQL.insertTeam(tournament);
+
+        tournament.findCorrectPool(6, "A").addGroupBracket(new StandardGroupPlay(2));
+        tournament.findCorrectPool(6, "A").getGroupBracket().setAdvancingTeamsPrGroup(2);
+
+        // Adding groups to database
+        groupSQL.insertGroup(tournament);
+
+        // Inputting games between each opponent in group and the creating the matches for the group
+        tournament.findCorrectPool(6, "A").getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(1);
+        tournament.findCorrectPool(6, "A").getGroupBracket().createMatches(tournament.findCorrectPool(6, "A").getMatchDuration());
+
+        // Adding groupbracket to database
+        groupBracketSQL.insertGroupBracket(tournament);
+
+        // Adding matches
+        matchSQL.insertMatches(tournament, accountID, tournament.getAllGroupMatches());
+
+        // This test is for 2 groups and an even amount of teams in each group
+        tournament.findCorrectPool(6, "A").addKnockoutBracket(new KnockoutPlay());
+
+        // Adding both playoff bracket, TBD teams, and playoff matches to the database
+        playoffSQL.insertPlayoffBracket(tournament, accountID);
+
+        // Setting matchdays and calling auto generate "Nomix"
+        tournament.getMatchSchedule().getMatchDays().get(0).setStartTime("09:00");
+        tournament.getMatchSchedule().getMatchDays().get(0).setEndTime("16:00");
+        tournament.getMatchSchedule().getMatchDays().get(0).setTimeBetweenMatches(10);
+        tournament.getMatchSchedule().getMatchDays().get(1).setStartTime("09:00");
+        tournament.getMatchSchedule().getMatchDays().get(1).setEndTime("16:00");
+        tournament.getMatchSchedule().getMatchDays().get(1).setTimeBetweenMatches(10);
+        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
+
+        /*for (Match match : tournament.getMatchSchedule().getMatchDays().get(0).getMatches()) {
+            System.out.println(match.getName());
+        }*/
+
+        // Inserting matches
+        /*matchDaySQL.insertMatchDay(tournament);
+
+        // Inserting match schedule and updating matchScheduleID in MatchDay
+        matchScheduleSQL.insertMatchSchedule(tournament);
+
+        // Setting all results for group play, now group play is done
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(1).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(2).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(3).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(4).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(5).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(6).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(7).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(8).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(9).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(10).setResult(new Result(1, 2));
+        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(11).setResult(new Result(1, 2));
+
+
+
+        // Inserting all results in database
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(1), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(2), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(3), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(4), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(5), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(6), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(7), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(8), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(9), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(10), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+        resultSQL.insertResult(tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(11), tournament, tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getFirstTeamScore(), tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).getResult().getSecondTeamScore());
+
+        // Sorting the groups
+        for (Group group : tournament.getPoolList().get(0).getGroupBracket().getGroups()) {
+            group.getTeamList().sort(new TeamPointsComp());
+            for (Team team : group.getTeamList()) {
+                System.out.println(team);
+            }
         }
-*/
+
+        tournament.findCorrectPool(6, "A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6, "A").getGroupBracket().advanceTeams());
+
+        for (Match match : tournament.getMatchSchedule().getMatchDays().get(0).getMatches()) {
+            System.out.println(match);
+        }*/
+
+
         launch(args);
     }
 

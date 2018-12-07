@@ -1,5 +1,7 @@
 package controller;
 
+import account.Administrator;
+import database.DAO.TournamentDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,6 +29,12 @@ public class TournamentSetupController {
     private final int YEAR_GROUP_MAX = 16;
     private final int SKILL_LEVEL_MAX = 3;
     private final int stepNumber = 0;
+
+    Administrator user;
+
+    public void setUser(Administrator user) {
+        this.user = user;
+    }
 
     @FXML
     private VBox progressBox;
@@ -77,6 +85,9 @@ public class TournamentSetupController {
                 .createFieldList(Integer.parseInt(fieldNumberCombobox.getValue().toString()))
                 .setPoolList(getSelectedPoolsAndMatchLengths())
                 .build();
+
+        TournamentDAO tournamentSQL = new TournamentDAO();
+        tournamentSQL.insertTournament(tournament, user.getId());
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
