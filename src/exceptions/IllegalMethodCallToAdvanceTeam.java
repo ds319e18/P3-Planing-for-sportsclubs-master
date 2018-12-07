@@ -2,6 +2,6 @@ package exceptions;
 
 public class IllegalMethodCallToAdvanceTeam extends RuntimeException {
     public IllegalMethodCallToAdvanceTeam() {
-        System.out.println("The advanceTeams()-method is called from GoldAndBronzePlay which should not happen.");
+        System.out.println("Der forsøges at lave en anden runde i et turneringsformat hvor der ikke bør være anden runde.");
     }
 }
