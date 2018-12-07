@@ -50,11 +50,19 @@ public abstract class GroupBracket {
     public boolean areThereEqualAmountOfTeamsInEachGroup() {
         boolean answer = true;
         for (int iter = 0; iter < groups.size(); iter++) {
-            if (groups.get(iter).getTeamList().size() != groups.get(iter + 1).getTeamList().size()) {
-                answer = false;
+            if (iter + 1 < groups.size()) {
+                if (groups.get(iter).getTeamList().size() != groups.get(iter + 1).getTeamList().size()) {
+                    answer = false;
+                }
             }
         }
 
         return answer;
+    }
+
+    public void sortAfterPoints() {
+        for (Group group : this.getGroups()) {
+            group.sortPoints();
+        }
     }
 }

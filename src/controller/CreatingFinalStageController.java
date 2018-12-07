@@ -82,8 +82,8 @@ public class CreatingFinalStageController {
         tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
 
         if (knockoutRadioButton.isSelected()) {
-            tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new KnockoutPlay());
-            System.out.println("if " + tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getMatches().size());
+            tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new KnockoutPlay());
+            System.out.println("if " + tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().getMatches().size());
 
         } else if (placementRadioButton.isSelected()) {
             tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new PlacementPlay());
@@ -137,7 +137,7 @@ public class CreatingFinalStageController {
             Text text = new Text(pool.getYearGroup() + "" + pool.getSkillLevel());
             text.setWrappingWidth(80);
             text.setTextAlignment(TextAlignment.CENTER);
-            boolean isDone = pool.getKnockoutBracket() != null
+            boolean isDone = pool.getPlayoffBracket() != null
                     && pool.getGroupBracket().getAmountOfAdvancingTeamsPrGroup() > 0;
             Text status = (isDone ? new Text("Done") : new Text("Not done"));
             status.setWrappingWidth(80);

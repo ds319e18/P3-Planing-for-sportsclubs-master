@@ -2,18 +2,16 @@ package tournament.pool.bracket;
 
 import exceptions.IllegalAmountOfGroupsException;
 import exceptions.IllegalAmountOfTeamsException;
-import exceptions.IllegalMethodCallToAdvanceTeam;
+import exceptions.MatchNotFinishedException;
 import tournament.Match;
 import tournament.Team;
 import tournament.TeamPointsComp;
-import tournament.pool.Group;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class PlacementPlay extends KnockoutBracket {
+public class PlacementPlay extends PlayoffBracket {
     @Override
-    public PlacementPlay createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
+    public PlacementPlay createPlayoffBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         if (groupBracket.getAmountOfGroups() != 2) {
             throw new IllegalAmountOfGroupsException();
         }
@@ -71,6 +69,8 @@ public class PlacementPlay extends KnockoutBracket {
             if (match.isFinished()) {
                 super.getResults().put(winnerPlacement, match.getWinner());
                 super.getResults().put(loserPlacement, match.getLoser());
+            } else {
+                throw new MatchNotFinishedException();
             }
             winnerPlacement = winnerPlacement + 2;
             loserPlacement = loserPlacement + 2;
