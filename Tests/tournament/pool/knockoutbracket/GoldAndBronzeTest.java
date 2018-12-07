@@ -55,7 +55,7 @@ public class GoldAndBronzeTest {
         tournament.findCorrectPool(6, "A").getGroupBracket().createMatches(tournament.findCorrectPool(6, "A").getMatchDuration());
 
         // There must be 2 groups and an even amount of teams to play this type of knockout bracket
-        tournament.findCorrectPool(6, "A").addKnockoutBracket(new GoldAndBronzePlay());
+        tournament.findCorrectPool(6, "A").addPlayoffBracket(new GoldAndBronzePlay());
 
         // Setting the time for match schedules
         tournament.getMatchSchedule().getMatchDays().get(0).setStartTime("12:00");
@@ -86,7 +86,7 @@ public class GoldAndBronzeTest {
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(11).setResult(new Result(1, 2));
 
         // Creates final round after the group play has been played
-        tournament.findCorrectPool(6, "A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6, "A").getGroupBracket().advanceTeams());
+        tournament.findCorrectPool(6, "A").getPlayoffBracket().createNextRound(tournament.findCorrectPool(6, "A").getGroupBracket().advanceTeams());
 
         return tournament;
     }
@@ -100,7 +100,7 @@ public class GoldAndBronzeTest {
         tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(1).setResult(new Result(1, 2));
 
         // Gives the correct position in the tournament after the finals for the teams in the finals
-        tournament.findCorrectPool(6,"A").getKnockoutBracket().calculateResults();
+        tournament.findCorrectPool(6,"A").getPlayoffBracket().calculateResults();
 
         return tournament;
     }
@@ -112,7 +112,7 @@ public class GoldAndBronzeTest {
             Tournament tournament = createTournamentGoldAndBronze01();
 
             // Testing amount of final matches
-            assertEquals(tournament.findCorrectPool(6, "A").getKnockoutBracket().getMatches().size(), 2);
+            assertEquals(tournament.findCorrectPool(6, "A").getPlayoffBracket().getMatches().size(), 2);
         }
 
         // This test that the correct team advance to the finals
@@ -127,10 +127,10 @@ public class GoldAndBronzeTest {
             assertEquals("Jetsmark IF 6", tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(1).getSecondTeam().getName());
 
             // Testing method calculate result gives the correct teams their position in the tournament
-            assertEquals("Jetsmark IF 8", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(1).getName());
-            assertEquals("Jetsmark IF 7", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(2).getName());
-            assertEquals("Jetsmark IF 6", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(3).getName());
-            assertEquals("Jetsmark IF 5", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(4).getName());
+            assertEquals("Jetsmark IF 8", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(1).getName());
+            assertEquals("Jetsmark IF 7", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(2).getName());
+            assertEquals("Jetsmark IF 6", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(3).getName());
+            assertEquals("Jetsmark IF 5", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(4).getName());
 
         }
     }

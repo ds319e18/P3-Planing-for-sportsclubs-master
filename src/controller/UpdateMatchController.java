@@ -183,7 +183,7 @@ public class UpdateMatchController {
 
             // TODO: KUN EN GANG - should work
             if (allGroupMatchesHaveResults) {
-                tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket()
+                tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket()
                         .createNextRound(tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().advanceTeams());
                 knockoutPhaseStarted.add(i, true);
                 createMatchScheduleGridpanes();
@@ -191,7 +191,7 @@ public class UpdateMatchController {
 
         } else {
 
-            for (Match match : tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getMatches()) {
+            for (Match match : tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().getMatches()) {
                 if (!match.isFinished() && (!match.getFirstTeam().getName().equals("TBD") &&
                         !match.getSecondTeam().getName().equals("TBD"))) {
                     allKnouckoutMatchesHaveResults = false;
@@ -200,16 +200,16 @@ public class UpdateMatchController {
 
 
             if (allKnouckoutMatchesHaveResults) {
-                if (tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getClass().getSimpleName()
+                if (tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().getClass().getSimpleName()
                         .equals("KnockoutPlay")) {
-                    tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket()
-                            .createNextRound(tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().advanceTeams());
-                } else if (tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getClass().getSimpleName()
+                    tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket()
+                            .createNextRound(tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().advanceTeams());
+                } else if (tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().getClass().getSimpleName()
                         .equals("PlacementPlay")) {
-                    tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().calculateResults();
-                } else if (tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().getClass().getSimpleName()
+                    tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().calculateResults();
+                } else if (tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().getClass().getSimpleName()
                         .equals("GoldAndBronzePlay")) {
-                    tournament.findCorrectPool(yearGroup, skillLevel).getKnockoutBracket().calculateResults();
+                    tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().calculateResults();
                 }
                 createMatchScheduleGridpanes();
             }

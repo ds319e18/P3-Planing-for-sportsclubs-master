@@ -1,6 +1,7 @@
 package tournament.pool.bracket;
 
 import database.DAO.MatchDAO;
+import exceptions.MatchNotFinishedException;
 import tournament.Match;
 import tournament.Team;
 
