@@ -86,9 +86,9 @@ public class CreatingFinalStageController {
             System.out.println("if " + tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().getMatches().size());
 
         } else if (placementRadioButton.isSelected()) {
-            tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new PlacementPlay());
+            tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new PlacementPlay());
         } else if (goldAndBronzeRadioButton.isSelected()) {
-            tournament.findCorrectPool(yearGroup, skillLevel).addKnockoutBracket(new GoldAndBronzePlay());
+            tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new GoldAndBronzePlay());
         }
         setPoolStatusGridPane();
     }

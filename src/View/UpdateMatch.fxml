@@ -192,6 +192,15 @@
             </VBox>
             <VBox alignment="BOTTOM_CENTER" prefHeight="502.0" prefWidth="287.0">
                <children>
+                  <HBox prefHeight="257.0" prefWidth="273.0">
+                     <children>
+                        <ImageView fx:id="logo" fitHeight="260.0" fitWidth="268.0" onMouseClicked="#setAddSponser" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../sample/47575936_339166926671235_16868535594647552_n.png" />
+                           </image></ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" />
                   <HBox prefHeight="137.0" prefWidth="287.0">
                      <children>
                         <GridPane>
@@ -210,7 +219,8 @@
                               <TextField fx:id="secondTeamResultTextField" layoutX="110.0" layoutY="49.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Text fx:id="firstTeamText" layoutX="10.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hold 1" wrappingWidth="96.5367431640625" GridPane.rowIndex="1" />
                               <Text fx:id="secondTeamText" layoutX="10.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hold 2" wrappingWidth="96.5367431640625" GridPane.rowIndex="2" />
-                              <Button mnemonicParsing="false" onAction="#updateButton" prefHeight="30.0" prefWidth="95.0" text="Gem" GridPane.rowIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#updateButton" prefHeight="30.0" prefWidth="95.0" text="Gem" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Button layoutX="110.0" layoutY="115.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" text="Tilbage" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </children>

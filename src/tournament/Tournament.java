@@ -97,7 +97,7 @@ public class Tournament {
         ArrayList<Match> allMatches = new ArrayList<>();
 
         for (Pool pool : this.poolList) {
-            allMatches.addAll(pool.getKnockoutBracket().getMatches());
+            allMatches.addAll(pool.getPlayoffBracket().getMatches());
         }
         return allMatches;
     }

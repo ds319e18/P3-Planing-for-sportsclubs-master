@@ -59,7 +59,7 @@ public class TeamDAO {
                     stmt.setString(1, team.getName());
                     stmt.setInt(2, team.getYearGroup());
                     stmt.setString(3, team.getSkillLevel());
-                    stmt.setString(4, team.getContact());
+                    stmt.setString(4, team.getPhoneNum());
                     stmt.setInt(5, Objects.hash(tournament.getName()));
 
                     stmt.executeUpdate();

@@ -86,9 +86,6 @@ public class TournamentSetupController {
                 .setPoolList(getSelectedPoolsAndMatchLengths())
                 .build();
 
-        TournamentDAO tournamentSQL = new TournamentDAO();
-        tournamentSQL.insertTournament(tournament, user.getId());
-
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
         Parent newWindow = loader.load();

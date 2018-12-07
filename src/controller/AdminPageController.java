@@ -48,7 +48,6 @@ public class AdminPageController {
 
         // Sending the object user to TournamentSetup
         TournamentSetupController atc = loader.getController();
-        atc.setUser(user);
 
         Scene newScene = new Scene(newWindow);
 
