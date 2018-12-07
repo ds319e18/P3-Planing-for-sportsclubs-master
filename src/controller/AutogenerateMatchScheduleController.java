@@ -20,6 +20,7 @@ import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.GraphicalObjects.MatchContainer;
+import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 
 import java.io.IOException;
@@ -28,7 +29,7 @@ import java.util.List;
 
 public class AutogenerateMatchScheduleController {
     Tournament tournament;
-    private final int stepNumber = 5;
+    private final int stepNumber = 7;
 
     @FXML
     private VBox progressBox;
@@ -38,9 +39,9 @@ public class AutogenerateMatchScheduleController {
 
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
+        progressBox.getChildren().add(new ProgressBox(stepNumber));
         createMatchDayTabs();
         createMatchScheduleGridpane();
-        highlightProgressBox();
     }
 
     private void createMatchDayTabs() {
@@ -148,11 +149,6 @@ public class AutogenerateMatchScheduleController {
         return matchBoxContainer;
     }
 
-    private void highlightProgressBox() {
-        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
-        stepBox.setStyle("-fx-border-color: #0000CD");
-        stepBox.setStyle("-fx-background-color: #A9A9A9");
-    }
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();

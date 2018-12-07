@@ -14,10 +14,12 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import tournament.Tournament;
+import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Group;
 import tournament.pool.Pool;
 import tournament.pool.bracket.KnockoutPlay;
@@ -64,7 +66,7 @@ public class CreatingFinalStageController {
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         setPoolStatusGridPane();
-        highlightProgressBox();
+        progressBox.getChildren().add(new ProgressBox(stepNumber));
     }
 
 
@@ -198,7 +200,10 @@ public class CreatingFinalStageController {
 
     private void highlightProgressBox() {
         VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
-        stepBox.setStyle("-fx-border-color: #0000CD");
-        stepBox.setStyle("-fx-background-color: #A9A9A9");
+        Text text1 = (Text) stepBox.getChildren().get(0);
+        Text text2 = (Text) stepBox.getChildren().get(1);
+        text1.setFill(Color.WHITE);
+        text2.setFill(Color.WHITE);
+        stepBox.setStyle("-fx-background-color: #6E83CA");
     }
 }

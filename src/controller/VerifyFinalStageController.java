@@ -9,12 +9,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Team;
 import tournament.Tournament;
+import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 import tournament.pool.bracket.KnockoutBracket;
 import tournament.pool.bracket.KnockoutPlay;
@@ -25,6 +28,10 @@ import java.io.IOException;
 public class VerifyFinalStageController {
 
     Tournament tournament;
+    private final int stepNumber = 5;
+
+    @FXML
+    private VBox progressBox;
 
     @FXML
     GridPane poolKnockoutStatusGridPane;
@@ -38,6 +45,7 @@ public class VerifyFinalStageController {
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
+        progressBox.getChildren().add(new ProgressBox(stepNumber));
         drawPoolKnockoutStatusGridPane();
     }
 
@@ -239,5 +247,4 @@ public class VerifyFinalStageController {
         }
 
     }
-
 }

@@ -25,9 +25,18 @@ public class Tournament {
 
     // Method to find the correct pool when adding or removing teams to the tournament
     public Pool findCorrectPool(int yearGroup, String skill) {
-        for (Pool createdPools : poolList) {
-            if (createdPools.getSkillLevel().equals(skill) && createdPools.getYearGroup() == yearGroup) {
-                return createdPools;
+        for (Pool createdPool : poolList) {
+            if (createdPool.getSkillLevel().equals(skill) && createdPool.getYearGroup() == yearGroup) {
+                return createdPool;
+            }
+        }
+        return null;
+    }
+
+    public Pool findCorrectPool(String name) {
+        for (Pool createdPool : poolList) {
+            if (createdPool.getName().equals(name)) {
+                return createdPool;
             }
         }
         return null;

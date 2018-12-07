@@ -1,6 +1,5 @@
 package tournament;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 public class Team {
@@ -8,14 +7,14 @@ public class Team {
     private int points = 0;
     private String skillLevel;
     private int yearGroup;
-    private String contact;
+    private String phoneNum;
     private int groupNumber;
 
-    public Team(String name, String skillLevel, int yearGroup, String contact) {
+    public Team(String name, String skillLevel, int yearGroup, String phoneNum) {
         this.name = name;
         this.skillLevel = skillLevel;
         this.yearGroup = yearGroup;
-        this.contact = contact;
+        this.phoneNum = phoneNum;
     }
 
     public Team(String name, int yearGroup, String skillLevel) {
@@ -44,12 +43,12 @@ public class Team {
         return points;
     }
 
-    public String getContact() {
-        return contact;
+    public String getPhoneNum() {
+        return phoneNum;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setPhoneNum(String telefonNum) {
+        this.phoneNum = telefonNum;
     }
 
     public String getSkillLevel() {

@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginController {
-    Administrator user = new Administrator();
+    Administrator user;
 
     @FXML
     TextField username;
@@ -32,9 +32,6 @@ public class LoginController {
 
     @FXML
     Button backBtn;
-
-    @FXML
-    Button createAccountBtn;
 
     @FXML
     public void setOnBackButtonClicked(ActionEvent event) throws IOException {
