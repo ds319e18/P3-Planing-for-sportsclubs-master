@@ -23,6 +23,13 @@ public class Pool {
         this.playoffBracket = playoffBracketType.createPlayoffBracket(this.groupBracket, matchDuration);
     }
 
+    public String getGroupCreationStatus() {
+        if (groupBracket != null)
+            return "Færdig";
+        else
+            return "Ikke færdig";
+    }
+
     // Adding team to the correct pool
     public void addTeam(Team team) {
         int count = 1;

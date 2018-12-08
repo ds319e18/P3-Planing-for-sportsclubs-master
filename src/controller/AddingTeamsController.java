@@ -87,7 +87,7 @@ public class AddingTeamsController {
     }
 
     @FXML
-    public void nextButtonClicked(ActionEvent event) throws IOException {
+    public void nextButtonClicked() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/CreatingGroups.FXML"));
         Parent newWindow = loader.load();
@@ -97,7 +97,7 @@ public class AddingTeamsController {
 
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) progressBox.getScene().getWindow();
 
         window.setScene(newScene);
         window.show();

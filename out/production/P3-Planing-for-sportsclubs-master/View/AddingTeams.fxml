@@ -124,22 +124,18 @@
                   </HBox>
                   <VBox prefHeight="200.0" prefWidth="300.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#removeTeams" prefHeight="25.0" prefWidth="87.0" text="Fjern hold" textAlignment="RIGHT">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin></Button>
                         <HBox alignment="TOP_RIGHT" prefHeight="65.0" prefWidth="300.0">
                            <children>
                               <Button mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Tilbage">
                                  <HBox.margin>
-                                    <Insets right="20.0" />
+                                    <Insets right="20.0" top="10.2" />
                                  </HBox.margin>
                               </Button>
                               <VBox prefHeight="77.0" prefWidth="90.0">
                                  <children>
                                     <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Næste">
                                        <VBox.margin>
-                                          <Insets />
+                                          <Insets top="10.2" />
                                        </VBox.margin>
                                     </Button>
                                  </children></VBox>
