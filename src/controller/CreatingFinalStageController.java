@@ -1,5 +1,9 @@
 package controller;
 
+import exceptions.IllegalAmountOfGroupsException;
+import exceptions.IllegalAmountOfTeamsException;
+import exceptions.MissingInputException;
+import exceptions.MissingPressingSaveException;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,6 +13,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
@@ -24,7 +33,7 @@ import tournament.pool.bracket.PlacementPlay;
 
 import java.io.IOException;
 
-public class CreatingFinalStageController {
+public class CreatingFinalStageController implements CheckInput {
 
 
     private Tournament tournament;
@@ -170,14 +179,21 @@ public class CreatingFinalStageController {
         Parent newWindow = loader.load();
 
         VerifyFinalStageController atc = loader.getController();
-        atc.setTournament(tournament);
+        try {
+            atc.setTournament(tournament);
+            Scene newScene = new Scene(newWindow);
 
-        Scene newScene = new Scene(newWindow);
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(newScene);
+            window.show();
+        } catch (MissingPressingSaveException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input-fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
 
-        window.setScene(newScene);
-        window.show();
     }
 
     private void setComboBoxItemsAndLabels() {
