@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TournamentSetupController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TournamentSetupController">
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -34,166 +34,25 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turneringsopsætning" textAlignment="CENTER" wrappingWidth="1280.0">
                <font>
-                  <Font name="System Italic" size="20.0" />
+                  <Font name="System Bold Italic" size="20.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="30.0" top="10.0" />
                </VBox.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin til oprettelse af turnering:" translateX="30.0" translateY="-5.0" wrappingWidth="641.13671875">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
          </children>
       </VBox>
-      <HBox minHeight="-Infinity" prefHeight="502.0" prefWidth="1280.0">
+      <HBox prefHeight="474.0" prefWidth="1280.0">
          <children>
-            <VBox maxWidth="35.0" minWidth="35.0" prefHeight="502.0" prefWidth="35.0" />
-            <VBox fx:id="progressBox" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" style="-fx-border-color: black;">
+            <VBox maxWidth="127.0" minWidth="35.0" prefHeight="432.0" prefWidth="44.0" />
+            <VBox fx:id="progressBox" maxWidth="393.0" minWidth="250.0" prefHeight="432.0" prefWidth="266.0" style="-fx-border-color: white;" />
+            <VBox prefHeight="456.0" prefWidth="225.0" />
+            <VBox prefHeight="432.0" prefWidth="490.0">
                <children>
-                  <VBox maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turneringsopsætning" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 1" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="11.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tilføjelse af hold" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 2" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="11.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af grupper" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 3" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="295.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af grupper" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 4" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="82.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="235.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af slutspillet" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 5" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="153.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 6" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="224.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 7" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-            <VBox prefHeight="502.0" prefWidth="723.0">
-               <children>
-                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0">
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="512.0">
                      <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="471.20001220703125" minWidth="150.0" prefWidth="150.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="914.13329505921" minWidth="100.0" prefWidth="200.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="471.20001220703125" minWidth="150.0" prefWidth="252.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="914.13329505921" minWidth="100.0" prefWidth="225.0" />
                      </columnConstraints>
                      <rowConstraints>
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -204,725 +63,711 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turneringsnavn" wrappingWidth="334.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turneringsnavn" wrappingWidth="154.13671875">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turneringstype" wrappingWidth="334.13671875" GridPane.rowIndex="1">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turneringstype" wrappingWidth="173.13671875" GridPane.rowIndex="1">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Årrækker og niveauer" wrappingWidth="346.13671875" GridPane.rowIndex="2">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Årrækker og niveauer" wrappingWidth="176.13671875" GridPane.rowIndex="2">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Antal baner" wrappingWidth="334.13671875" GridPane.rowIndex="3">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Antal baner" wrappingWidth="132.13671875" GridPane.rowIndex="3">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Startdato" wrappingWidth="334.13671875" GridPane.rowIndex="4">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Startdato" wrappingWidth="163.13671875" GridPane.rowIndex="4">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Slutdato" wrappingWidth="334.13671875" GridPane.rowIndex="5">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Slutdato" wrappingWidth="164.13671875" GridPane.rowIndex="5">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="tournamentName" GridPane.columnIndex="1" />
-                        <ComboBox fx:id="tournamentTypeCombobox" prefHeight="26.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <ComboBox fx:id="fieldNumberCombobox" prefHeight="26.0" prefWidth="479.0" promptText="Vælg antal baner" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <DatePicker fx:id="startDatePicker" prefHeight="26.0" prefWidth="272.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <DatePicker fx:id="endDatePicker" prefHeight="26.0" prefWidth="603.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <TitledPane animated="false" prefHeight="273.0" prefWidth="378.0" text="Vælg årrække og niveau for puljer" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <ScrollPane hbarPolicy="NEVER" prefHeight="134.0" prefWidth="226.0">
-                                       <content>
-                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="375.0">
-                                             <children>
-                                                <Accordion fx:id="poolAccordion" maxWidth="-Infinity" prefHeight="474.0" prefWidth="378.0">
-                                                   <panes>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U6">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                        <TextField fx:id="tournamentName" prefHeight="25.0" prefWidth="210.0" GridPane.columnIndex="1" />
+                        <ComboBox fx:id="tournamentTypeCombobox" prefHeight="26.0" prefWidth="245.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="fieldNumberCombobox" prefHeight="26.0" prefWidth="158.0" promptText="Vælg antal baner" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <DatePicker fx:id="startDatePicker" prefHeight="26.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="endDatePicker" prefHeight="26.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="142.0" prefWidth="258.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="142.0" prefWidth="243.0">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="239.0">
+                                       <children>
+                                          <Accordion fx:id="poolAccordion" maxWidth="-Infinity" prefHeight="474.0" prefWidth="292.0">
+                                             <panes>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U6">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U7">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text=" minutter" />
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U8">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U7">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U9">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U10">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U8">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U11">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U12">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U9">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U13">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U14">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U10">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U15">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U16">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="99.0" prefWidth="279.0" text="U11">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U17">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U18">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U12">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U19">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U20">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U13">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                      <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U21">
-                                                         <content>
-                                                            <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                                                <children>
-                                                                  <HBox prefHeight="32.0" prefWidth="357.0">
-                                                                     <children>
-                                                                        <CheckBox mnemonicParsing="false" text="A" />
-                                                                        <CheckBox mnemonicParsing="false" text="B">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                        <CheckBox mnemonicParsing="false" text="C">
-                                                                           <HBox.margin>
-                                                                              <Insets left="50.0" />
-                                                                           </HBox.margin>
-                                                                        </CheckBox>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
-                                                                     <children>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
-                                                                           <HBox.margin>
-                                                                              <Insets />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <TextField prefHeight="25.0" prefWidth="36.0">
-                                                                           <HBox.margin>
-                                                                              <Insets left="10.0" />
-                                                                           </HBox.margin>
-                                                                        </TextField>
-                                                                     </children>
-                                                                     <VBox.margin>
-                                                                        <Insets top="10.0" />
-                                                                     </VBox.margin>
-                                                                  </HBox>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
                                                                </children>
-                                                            </VBox>
-                                                         </content>
-                                                      </TitledPane>
-                                                   </panes>
-                                                </Accordion>
-                                             </children>
-                                          </AnchorPane>
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </TitledPane>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U14">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
+                                                               <children>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="99.0" prefWidth="251.0" text="U15">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
+                                                               <children>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U16">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
+                                                               <children>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U17">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
+                                                               <children>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U18">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
+                                                               <children>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U19">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
+                                                               <children>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U20">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
+                                                               <children>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                                <TitledPane animated="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="378.0" text="U21">
+                                                   <content>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <HBox prefHeight="32.0" prefWidth="357.0">
+                                                               <children>
+                                                                  <CheckBox mnemonicParsing="false" text="A" />
+                                                                  <CheckBox mnemonicParsing="false" text="B">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                                  <CheckBox mnemonicParsing="false" text="C">
+                                                                     <HBox.margin>
+                                                                        <Insets left="50.0" />
+                                                                     </HBox.margin>
+                                                                  </CheckBox>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Kamplængde:">
+                                                                     <HBox.margin>
+                                                                        <Insets />
+                                                                     </HBox.margin>
+                                                                  </Text>
+                                                                  <TextField prefHeight="25.0" prefWidth="36.0">
+                                                                     <HBox.margin>
+                                                                        <Insets left="10.0" />
+                                                                     </HBox.margin>
+                                                                  </TextField>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="10.0" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </TitledPane>
+                                             </panes>
+                                          </Accordion>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
                      </children>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
                   </GridPane>
-                  <HBox alignment="TOP_RIGHT" maxWidth="-Infinity" prefHeight="100.0" prefWidth="400.0">
-                     <children>
-                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#setOnBackButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Tilbage">
-                           <HBox.margin>
-                              <Insets top="10.0" />
-                           </HBox.margin>
-                        </Button>
-                        <Button fx:id="nextButton" mnemonicParsing="false" onAction="#nextButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Næste">
-                           <HBox.margin>
-                              <Insets left="45.0" top="10.0" />
-                           </HBox.margin>
-                        </Button>
-                     </children>
-                  </HBox>
                </children>
-               <HBox.margin>
-                  <Insets left="300.0" />
-               </HBox.margin>
             </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="12.0" prefWidth="1280.0" />
+      <HBox prefHeight="93.0" prefWidth="1280.0">
+         <children>
+            <VBox prefHeight="93.0" prefWidth="806.0" />
+            <Button mnemonicParsing="false" onAction="#setOnBackButtonClicked" prefHeight="29.0" prefWidth="90.0" text="Tilbage" />
+            <VBox prefHeight="93.0" prefWidth="63.0" />
+            <Button mnemonicParsing="false" onAction="#nextButtonPressed" prefHeight="25.0" prefWidth="90.0" text="Næste" />
          </children>
       </HBox>
    </children>

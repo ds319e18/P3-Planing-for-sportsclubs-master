@@ -7,11 +7,11 @@ import tournament.Team;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public abstract class KnockoutBracket {
+public abstract class PlayoffBracket {
     private ArrayList<Match> matches = new ArrayList<>();
     private HashMap<Integer, Team> result = new HashMap<>();
 
-    abstract public KnockoutBracket createKnockoutBracket(GroupBracket groupBracket, int matchDurationInMinutes);
+    abstract public PlayoffBracket createPlayoffBracket(GroupBracket groupBracket, int matchDurationInMinutes);
 
     abstract public void calculateResults();
 
@@ -19,11 +19,6 @@ public abstract class KnockoutBracket {
 
     public ArrayList<Team> advanceTeams() {
         // Should be overridden in KnockoutPlay-class
-        throw new IllegalMethodCallToAdvanceTeam();
-    }
-
-    public void setAmountOfMatchesPrTeam(int amountOfMatchesPrTeam) {
-        //Write own exception
         throw new IllegalMethodCallToAdvanceTeam();
     }
 
@@ -35,4 +30,8 @@ public abstract class KnockoutBracket {
         return this.result;
     }
 
+    @Override
+    public String toString() {
+        return "slutspillene";
+    }
 }

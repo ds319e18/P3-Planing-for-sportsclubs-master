@@ -60,7 +60,7 @@ public class PlacementBracketTest {
         tournament.findCorrectPool(6, "A").getGroupBracket().createMatches(tournament.findCorrectPool(6, "A").getMatchDuration());
 
         // There must be 2 groups and an even amount of teams to play this type of knockout bracket
-        tournament.findCorrectPool(6, "A").addKnockoutBracket(new PlacementPlay());
+        tournament.findCorrectPool(6, "A").addPlayoffBracket(new PlacementPlay());
 
         // Setting the time for match schedules
         tournament.getMatchSchedule().getMatchDays().get(0).setStartTime("12:00");
@@ -91,7 +91,7 @@ public class PlacementBracketTest {
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(11).setResult(new Result(1, 2));
 
         // Calling createNextRound to create the first final rounds
-        tournament.findCorrectPool(6,"A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6,"A").getGroupBracket().advanceTeams());
+        tournament.findCorrectPool(6,"A").getPlayoffBracket().createNextRound(tournament.findCorrectPool(6,"A").getGroupBracket().advanceTeams());
 
         for (Group group : tournament.findCorrectPool(6,"A").getGroupBracket().getGroups()) {
             for (Team team : group.getTeamList()) {
@@ -113,7 +113,7 @@ public class PlacementBracketTest {
         tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(3).setResult(new Result(1, 2));
 
         // Setting the position after the finals for the teams in the finals
-        tournament.findCorrectPool(6,"A").getKnockoutBracket().calculateResults();
+        tournament.findCorrectPool(6,"A").getPlayoffBracket().calculateResults();
 
         return tournament;
 
@@ -124,7 +124,7 @@ public class PlacementBracketTest {
     @Test
     void testPlacementPlayCreateKnockoutBracket01() {
         // Testing the amount of final matches
-        assertEquals(4, createTournamentPlacement01().findCorrectPool(6, "A").getKnockoutBracket().getMatches().size());
+        assertEquals(4, createTournamentPlacement01().findCorrectPool(6, "A").getPlayoffBracket().getMatches().size());
     }
 
     // 8 teams, 2 groups - this test uses afterGroupPlay01 and tests that createNextRound
@@ -153,14 +153,14 @@ public class PlacementBracketTest {
         Tournament tournament = afterFinalPlay01();
 
         // Testing that every team in the finals get the correct position after the finals has been played
-        assertEquals("Jetsmark IF 8", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(1).getName());
-        assertEquals("Jetsmark IF 7", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(2).getName());
-        assertEquals("Jetsmark IF 6", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(3).getName());
-        assertEquals("Jetsmark IF 5", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(4).getName());
-        assertEquals("Jetsmark IF 4", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(5).getName());
-        assertEquals("Jetsmark IF 3", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(6).getName());
-        assertEquals("Jetsmark IF 2", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(7).getName());
-        assertEquals("Jetsmark IF 1", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(8).getName());
+        assertEquals("Jetsmark IF 8", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(1).getName());
+        assertEquals("Jetsmark IF 7", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(2).getName());
+        assertEquals("Jetsmark IF 6", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(3).getName());
+        assertEquals("Jetsmark IF 5", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(4).getName());
+        assertEquals("Jetsmark IF 4", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(5).getName());
+        assertEquals("Jetsmark IF 3", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(6).getName());
+        assertEquals("Jetsmark IF 2", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(7).getName());
+        assertEquals("Jetsmark IF 1", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(8).getName());
 
     }
 }

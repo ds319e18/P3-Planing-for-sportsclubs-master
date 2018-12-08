@@ -1,6 +1,8 @@
 package controller;
 
 import account.Administrator;
+import account.Spectator;
+import account.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,8 +26,9 @@ public class AdminPageController {
         this.user = user;
     }
 
-    public Administrator getUser() {
-        return user;
+    public void initialize() {
+        //get the tournaments from the database
+        user = new Administrator();
     }
 
     @FXML
@@ -45,7 +48,6 @@ public class AdminPageController {
 
         // Sending the object user to TournamentSetup
         TournamentSetupController atc = loader.getController();
-        atc.setUser(user);
 
         Scene newScene = new Scene(newWindow);
 
@@ -71,7 +73,7 @@ public class AdminPageController {
         String str;
         for (ColumnConstraints column : gp.getColumnConstraints())
             column.setHalignment(HPos.CENTER);
-            for (Tournament tournaments : user.getTournamens()) {
+            for (Tournament tournaments : user.getTournaments()) {
                 Text txt = new Text(tournaments.getName());
                 Text status = new Text(str = String.valueOf(tournaments.isActive()));
                 Text date = new Text(tournaments.getStartDate().toString() + "\n" + tournaments.getEndDate().toString());

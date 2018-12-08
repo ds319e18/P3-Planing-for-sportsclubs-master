@@ -5,7 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreatingFinalStageController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreatingFinalStageController">
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -31,235 +31,30 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af slutspil" textAlignment="CENTER" wrappingWidth="1280.0">
                <font>
-                  <Font name="System Italic" size="20.0" />
+                  <Font name="System Bold Italic" size="20.0" />
                </font>
                <VBox.margin>
                   <Insets bottom="30.0" top="10.0" />
                </VBox.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin til oprettelse af turnering:" translateX="30.0" translateY="-5.0" wrappingWidth="641.13671875">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
          </children>
       </VBox>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="1280.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="1280.0">
          <children>
             <VBox maxWidth="35.0" minWidth="35.0" prefHeight="502.0" prefWidth="35.0" />
-            <VBox fx:id="progressBox" maxWidth="250.0" minWidth="250.0" prefWidth="250.0" style="-fx-border-color: black;">
+            <VBox fx:id="progressBox" maxWidth="393.0" minWidth="250.0" prefHeight="483.0" prefWidth="266.0" style="-fx-border-color: white;" />
+            <VBox prefHeight="450.0" prefWidth="57.0" />
+            <VBox prefHeight="450.0" prefWidth="260.0">
                <children>
-                  <VBox maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turneringsopsætning" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 1" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="11.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tilføjelse af hold" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 2" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="11.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af grupper" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 3" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="295.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af grupper" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 4" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="82.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="235.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af slutspillet" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 5" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="153.0" maxHeight="-Infinity" prefHeight="71.5" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 6" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox layoutX="11.0" layoutY="224.0" maxHeight="-Infinity" prefHeight="71.0" prefWidth="220.0" style="-fx-border-color: Black; -fx-border-width: 1;">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rettelse af kampprogram" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="5.0" />
-                           </VBox.margin>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Trin 7" textAlignment="CENTER" wrappingWidth="246.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Text>
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" />
-            <VBox prefHeight="502.0" prefWidth="163.0">
-               <children>
-                  <GridPane>
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints />
-                    </rowConstraints>
-                     <VBox.margin>
-                        <Insets top="35.0" />
-                     </VBox.margin>
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pulje" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" GridPane.columnIndex="1" />
-                     </children>
-                  </GridPane>
-                  <ScrollPane prefHeight="372.0" prefWidth="290.0">
-                     <content>
-                        <GridPane fx:id="poolStatusGridPane" gridLinesVisible="true" onMouseClicked="#mouseClicked" prefHeight="368.0" prefWidth="160.0">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints />
-                              <RowConstraints />
-                           </rowConstraints>
-                        </GridPane>
-                     </content>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </ScrollPane>
+                  <HBox prefHeight="38.0" prefWidth="260.0" />
+                  <TableView fx:id="poolTableView" maxWidth="-Infinity" prefHeight="417.0" prefWidth="260.0" />
                </children>
             </VBox>
             <VBox layoutX="375.0" layoutY="10.0" prefHeight="502.0" prefWidth="30.0" />
             <VBox prefHeight="437.0" prefWidth="300.0">
                <children>
-                  <GridPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="16.0" prefWidth="285.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <VBox.margin>
-                        <Insets right="15.0" top="35.0" />
-                     </VBox.margin>
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grupper" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Antal hold" GridPane.columnIndex="1" />
-                     </children>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </GridPane>
-                  <HBox prefHeight="392.0" prefWidth="300.0">
-                     <children>
-                        <ScrollPane prefHeight="357.0" prefWidth="321.0">
-                           <content>
-                              <GridPane fx:id="groupsAndTeamsGridPane" gridLinesVisible="true" prefHeight="358.0" prefWidth="285.0">
-                                <columnConstraints>
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                </columnConstraints>
-                              </GridPane>
-                           </content>
-                        </ScrollPane>
-                     </children>
-                  </HBox>
-                  <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox alignment="TOP_RIGHT" prefHeight="271.0" prefWidth="300.0" />
+                  <TableView fx:id="groupTableView" maxWidth="-Infinity" prefHeight="649.0" prefWidth="260.0" />
                </children>
             </VBox>
             <VBox layoutX="774.0" layoutY="10.0" prefHeight="502.0" prefWidth="38.0" />
@@ -277,7 +72,7 @@
                   <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label layoutX="10.0" layoutY="153.0" prefHeight="17.0" prefWidth="270.0" text="Hold til slutspil for hver gruppe" GridPane.rowIndex="3">
+                  <Label fx:id="advancingTeamsLabel" layoutX="10.0" layoutY="153.0" prefHeight="17.0" prefWidth="270.0" text="Hold til slutspil for hver gruppe" visible="false" GridPane.rowIndex="3">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -294,7 +89,6 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label prefHeight="17.0" prefWidth="106.0" text="Pulje:" />
                         <Text fx:id="poolName" strokeType="OUTSIDE" strokeWidth="0.0" text="-" wrappingWidth="128.53675842285156" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
@@ -307,15 +101,17 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Antal af grupper:" />
-                        <Text fx:id="amountOfGroups" strokeType="OUTSIDE" strokeWidth="0.0" text="-" wrappingWidth="131.19886779785156" GridPane.columnIndex="1" />
+                        <Text fx:id="amountOfGroupsText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" wrappingWidth="131.19886779785156" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
                      <children>
                         <VBox>
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Slutspilstype:" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Slutspilstype:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></Text>
                            </children>
                            <VBox.margin>
                               <Insets top="15.0" />
@@ -340,7 +136,7 @@
                         </HBox>
                         <HBox prefHeight="30.0" prefWidth="208.0">
                            <children>
-                              <RadioButton fx:id="knockoutAndPlacementRadioButton" mnemonicParsing="false" text="Guld-bronze kamp" toggleGroup="$finalStageType" />
+                              <RadioButton fx:id="goldAndBronzeRadioButton" mnemonicParsing="false" text="Guld-bronze kamp" toggleGroup="$finalStageType" />
                            </children>
                         </HBox>
                      </children>
@@ -350,15 +146,20 @@
                         <Insets left="120.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#saveButton" prefHeight="30.0" prefWidth="90.0" text="Gem" GridPane.rowIndex="5" />
                   <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
                      <children>
-                        <ComboBox fx:id="advancingComboBox" prefWidth="150.0" />
+                        <ComboBox fx:id="advancingComboBox" prefWidth="150.0" visible="false" />
+                        <Button mnemonicParsing="false" onAction="#saveButton" prefHeight="30.0" prefWidth="90.0" text="Gem">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Button>
                      </children>
                   </VBox>
                </children>
             </GridPane>
          </children>
       </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" />
    </children>
 </VBox>

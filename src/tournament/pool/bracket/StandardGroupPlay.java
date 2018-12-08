@@ -17,7 +17,7 @@ public class StandardGroupPlay extends GroupBracket {
     public StandardGroupPlay createGroupBracket(ArrayList<Team> poolTeamList) {
         // The desired number of groups is created
         for (int i = 0; i < super.getAmountOfGroups(); i++) {
-            super.getGroups().add(new Group());
+            super.getGroups().add(new Group("Gruppe " + (i+1)));
         }
         // The teams is distributed in groups as equally as possible, switching between each group adding one team at a time
         for (int i = 0; i < poolTeamList.size(); i++) {

@@ -2,6 +2,7 @@ package controller;
 
 import account.Administrator;
 import database.DAO.TournamentDAO;
+import exceptions.MissingInputException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,15 +14,19 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.TournamentType;
+import tournament.matchschedule.Field;
+import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TournamentSetupController {
+public class TournamentSetupController implements CheckInput {
     private final int YEAR_GROUP_MAX = 16;
     private final int SKILL_LEVEL_MAX = 3;
     private final int stepNumber = 0;
@@ -66,38 +71,53 @@ public class TournamentSetupController {
         tournamentTypeCombobox.setItems(FXCollections.observableArrayList(
                 TournamentType.values()));
         fieldNumberCombobox.setItems(fieldList);
-        highlightProgressBox();
+        progressBox.getChildren().add(new ProgressBox(stepNumber));
     }
 
     private ObservableList<String> fieldList = FXCollections.observableArrayList(
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
+    public void checkAllInput() {
+        if (tournamentName.getText().trim().isEmpty() || startDatePicker.getEditor().getText().isEmpty()
+            || endDatePicker.getEditor().getText().isEmpty() || tournamentTypeCombobox.getSelectionModel().isEmpty()
+            || fieldNumberCombobox.getSelectionModel().isEmpty() || getSelectedPoolsAndMatchLengths().isEmpty()) {
+            throw new MissingInputException();
+        }
+    }
+
     @FXML
     private void nextButtonPressed(ActionEvent event) throws IOException {
-        Tournament tournament = new Tournament.Builder(tournamentName.getText())
-                .setStartDate(startDatePicker.getValue())
-                .setEndDate(endDatePicker.getValue())
-                .setType(tournamentTypeCombobox.getValue())
-                .createFieldList(Integer.parseInt(fieldNumberCombobox.getValue().toString()))
-                .setPoolList(getSelectedPoolsAndMatchLengths())
-                .build();
+        try {
+            // Tjekker om alt input er indtastet
+            checkAllInput();
+            Tournament tournament = new Tournament.Builder(tournamentName.getText())
+                    .setStartDate(startDatePicker.getValue())
+                    .setEndDate(endDatePicker.getValue())
+                    .setType(tournamentTypeCombobox.getValue())
+                    .createFieldList(Integer.parseInt(fieldNumberCombobox.getValue().toString()))
+                    .setPoolList(getSelectedPoolsAndMatchLengths())
+                    .build();
 
-        TournamentDAO tournamentSQL = new TournamentDAO();
-        tournamentSQL.insertTournament(tournament, user.getId());
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
+            Parent newWindow = loader.load();
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
-        Parent newWindow = loader.load();
-        
-        AddingTeamsController atc = loader.getController();
-        atc.setTournament(tournament);
+            AddingTeamsController atc = loader.getController();
+            atc.setTournament(tournament);
 
-        Scene newScene = new Scene(newWindow);
+            Scene newScene = new Scene(newWindow);
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(newScene);
+            window.show();
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
 
-        window.setScene(newScene);
-        window.show();
+
     }
 
     @FXML
@@ -155,8 +175,7 @@ public class TournamentSetupController {
             for (int j = 0; j < SKILL_LEVEL_MAX; j++) {
                 CheckBox checkBox = (CheckBox) hboxWithCheckboxes.getChildren().get(j);
 
-                if (checkBox.isSelected()) {
-
+                if (checkBox.isSelected() && !matchDurationTextField.getText().isEmpty()) {
                     yearString = titledPane.getText().replace(String.valueOf
                             (titledPane.getText().charAt(0)), "");
                     poolList.add(new Pool.Builder()
@@ -170,12 +189,6 @@ public class TournamentSetupController {
 
         }
         return poolList;
-    }
-
-    private void highlightProgressBox() {
-        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
-        stepBox.setStyle("-fx-border-color: #0000CD");
-        stepBox.setStyle("-fx-background-color: #A9A9A9");
     }
 
 }

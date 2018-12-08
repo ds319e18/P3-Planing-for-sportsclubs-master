@@ -61,4 +61,9 @@ public class MatchSchedule {
         }
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "kamprogrammet";
+    }
 }
