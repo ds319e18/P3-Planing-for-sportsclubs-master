@@ -98,7 +98,6 @@ public class AddingTeamsController implements CheckInput {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-
         try {
             checkThatAllPoolsHaveMinimumTeams();
 

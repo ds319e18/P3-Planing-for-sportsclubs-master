@@ -32,7 +32,7 @@ import java.io.IOException;
 
 
 public class CreatingGroupController implements CheckInput {
-    Tournament tournament;
+    private Tournament tournament;
     private final int stepNumber = 2;
 
     @FXML
@@ -70,10 +70,6 @@ public class CreatingGroupController implements CheckInput {
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         poolNameColumn.setMinWidth(200);
         poolNameColumn.setMaxWidth(200);
-    }
-
-    @FXML
-    private void saveButton() {
 
         TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
         poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("groupCreationStatus"));
@@ -110,33 +106,49 @@ public class CreatingGroupController implements CheckInput {
 
     @FXML
     private void saveButtonPressed() {
-        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+        try {
+            checkAllInput();
+            Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
-        selectedPool.addGroupBracket(new StandardGroupPlay(
-                Integer.parseInt(amountOfGroupsComboBox.getValue().toString())));
-        selectedPool.getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(
-                Integer.parseInt(matchesPrGroupsComboBox.getValue().toString()));
+            selectedPool.addGroupBracket(new StandardGroupPlay(
+                    Integer.parseInt(amountOfGroupsComboBox.getValue().toString())));
+            selectedPool.getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(
+                    Integer.parseInt(matchesPrGroupsComboBox.getValue().toString()));
 
-        poolTableView.getItems().remove(selectedPool);
-        poolTableView.getItems().add(selectedPool);
+            poolTableView.getItems().remove(selectedPool);
+            poolTableView.getItems().add(selectedPool);
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
 
+    }
+
+    @Override
+    public void checkAllInput() {
+        if (amountOfGroupsComboBox.getSelectionModel().isEmpty() || matchesPrGroupsComboBox.getSelectionModel().isEmpty()) {
+            throw new MissingInputException();
+        }
     }
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/VerifyGroupsAndPools.FXML"));
-        Parent newWindow = loader.load();
+        // Throw some exceotion here
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/VerifyGroupsAndPools.FXML"));
+            Parent newWindow = loader.load();
 
-        VerifyGroupsAndPoolsController atc = loader.getController();
-        atc.setTournament(tournament);
+            VerifyGroupsAndPoolsController atc = loader.getController();
+            atc.setTournament(tournament);
 
-        Scene newScene = new Scene(newWindow);
+            Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        window.setScene(newScene);
-        window.show();
+            window.setScene(newScene);
+            window.show();
     }
 
     @FXML
