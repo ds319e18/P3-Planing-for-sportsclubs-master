@@ -1,5 +1,6 @@
 package controller;
 
+import exceptions.MissingInputException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -30,9 +31,8 @@ import tournament.pool.bracket.StandardGroupPlay;
 import java.io.IOException;
 
 
-public class CreatingGroupController
-{
-    private Tournament tournament;
+public class CreatingGroupController implements CheckInput {
+    Tournament tournament;
     private final int stepNumber = 2;
 
     @FXML
@@ -70,6 +70,10 @@ public class CreatingGroupController
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         poolNameColumn.setMinWidth(200);
         poolNameColumn.setMaxWidth(200);
+    }
+
+    @FXML
+    private void saveButton() {
 
         TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
         poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("groupCreationStatus"));

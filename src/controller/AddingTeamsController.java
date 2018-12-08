@@ -1,5 +1,7 @@
 package controller;
 
+import exceptions.MissingInputException;
+import exceptions.NotEnoughTeamsAddedException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,7 +27,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public class AddingTeamsController {
+public class AddingTeamsController implements CheckInput {
     private final int stepNumber = 1;
 
     @FXML
@@ -86,41 +88,74 @@ public class AddingTeamsController {
         window.show();
     }
 
+    private void checkThatAllPoolsHaveMinimumTeams() {
+        for (Pool pool : tournament.getPoolList()) {
+            if (pool.getTeamList().isEmpty() || pool.getTeamList().size() < 2) {
+                throw new NotEnoughTeamsAddedException();
+            }
+        }
+    }
+
     @FXML
-    public void nextButtonClicked() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/CreatingGroups.FXML"));
-        Parent newWindow = loader.load();
+    public void nextButtonClicked(ActionEvent event) throws IOException {
 
-        CreatingGroupController atc = loader.getController();
-        atc.setTournament(tournament);
+        try {
+            checkThatAllPoolsHaveMinimumTeams();
 
-        Scene newScene = new Scene(newWindow);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/CreatingGroups.FXML"));
+            Parent newWindow = loader.load();
 
-        Stage window = (Stage) progressBox.getScene().getWindow();
+            CreatingGroupController atc = loader.getController();
+            atc.setTournament(tournament);
 
-        window.setScene(newScene);
-        window.show();
+            Scene newScene = new Scene(newWindow);
+
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            window.setScene(newScene);
+            window.show();
+        } catch (NotEnoughTeamsAddedException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
+    }
+
+    @Override
+    public void checkAllInput() {
+        if (teamNameTextField.getText().isEmpty() || skillLevelComboBox.getSelectionModel().isEmpty()
+            || yearGroupComboBox.getSelectionModel().isEmpty()) {
+            throw new MissingInputException();
+        }
+        // Maybe check if phoneNumTextField.getText is a valid phone number
     }
 
     @FXML
     void addTeam() {
-        Pool selectedPool = tournament.findCorrectPool(Integer.parseInt(yearGroupComboBox.getValue()),
-                skillLevelComboBox.getValue());
+        try {
+            checkAllInput();
+            Pool selectedPool = tournament.findCorrectPool(Integer.parseInt(yearGroupComboBox.getValue()),
+                    skillLevelComboBox.getValue());
 
-        selectedPool.addTeam(new Team(teamNameTextField.getText(), skillLevelComboBox.getValue(),
-                Integer.parseInt(yearGroupComboBox.getValue()), phoneNumTextField.getText()));
+            selectedPool.addTeam(new Team(teamNameTextField.getText(), skillLevelComboBox.getValue(),
+                    Integer.parseInt(yearGroupComboBox.getValue()), phoneNumTextField.getText()));
 
-        poolNameComboBox.getSelectionModel().select(selectedPool.getName());
+            poolNameComboBox.getSelectionModel().select(selectedPool.getName());
 
-        //add teams to the table that have not been added before
-        for (Team team : selectedPool.getTeamList()) {
-            if (!teamTableView.getItems().contains(team))
-                teamTableView.getItems().add(team);
+            // add teams to the table that have not been added before
+            for (Team team : selectedPool.getTeamList()) {
+                if (!teamTableView.getItems().contains(team))
+                    teamTableView.getItems().add(team);
+            }
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
         }
-
     }
-
 
     @FXML
     void setSkillLevelComboBoxItems() {
@@ -136,8 +171,6 @@ public class AddingTeamsController {
 
     @FXML
     void removeTeams() {
-
-
     }
 
     void setPoolNameComboBox() {
