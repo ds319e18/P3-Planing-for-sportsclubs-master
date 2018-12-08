@@ -80,36 +80,9 @@ public class TournamentSetupController implements CheckInput {
     public void checkAllInput() {
         if (tournamentName.getText().trim().isEmpty() || startDatePicker.getEditor().getText().isEmpty()
             || endDatePicker.getEditor().getText().isEmpty() || tournamentTypeCombobox.getSelectionModel().isEmpty()
-            || fieldNumberCombobox.getSelectionModel().isEmpty()) {
-
+            || fieldNumberCombobox.getSelectionModel().isEmpty() || getSelectedPoolsAndMatchLengths().isEmpty()) {
             throw new MissingInputException();
         }
-        if (checkPoolsInput(getSelectedPoolsAndMatchLengths())) {
-            throw new MissingInputException(); 
-        }
-    }
-
-    private Boolean checkPoolsInput(ArrayList<Pool> pools) {
-        boolean answer = false;
-
-        for (Pool pool : pools) {
-            if (!pool.getSkillLevel().isEmpty()) {
-                if (pool.getMatchDuration() == 0) {
-                    System.out.println("hello");
-                    answer = true;
-                    break;
-                }
-            }
-            if (pool.getMatchDuration() != 0) {
-                if (pool.getSkillLevel().isEmpty()) {
-                    System.out.println("goodbye");
-                    answer = true;
-                    break;
-                }
-            }
-        }
-
-        return answer;
     }
 
     @FXML
@@ -117,7 +90,6 @@ public class TournamentSetupController implements CheckInput {
         try {
             // Tjekker om alt input er indtastet
             checkAllInput();
-
             Tournament tournament = new Tournament.Builder(tournamentName.getText())
                     .setStartDate(startDatePicker.getValue())
                     .setEndDate(endDatePicker.getValue())
@@ -140,7 +112,7 @@ public class TournamentSetupController implements CheckInput {
             window.show();
         } catch (MissingInputException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-            warning.setHeaderText("Manglende input-fejl");
+            warning.setHeaderText("Manglende input fejl");
             warning.setTitle("Fejl");
             warning.showAndWait();
         }

@@ -1,5 +1,6 @@
 package controller;
 
+import exceptions.MissingInputException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,6 +10,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -17,6 +20,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.Scene;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import javafx.util.converter.DefaultStringConverter;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
@@ -26,97 +31,124 @@ import tournament.pool.bracket.StandardGroupPlay;
 import java.io.IOException;
 
 
-public class CreatingGroupController
-{
-    Tournament tournament;
+public class CreatingGroupController implements CheckInput {
+    private Tournament tournament;
     private final int stepNumber = 2;
 
     @FXML
     private VBox progressBox;
 
     @FXML
-    GridPane teamsInPoolGridPane;
+    private GridPane teamsInPoolGridPane;
 
     @FXML
-    GridPane poolStatusGridPane;
+    private GridPane poolStatusGridPane;
 
     @FXML
-    Text poolNameText;
+    private ComboBox amountOfGroupsComboBox;
 
     @FXML
-    Text amountOfTeamsText;
+    private ComboBox matchesPrGroupsComboBox;
+
+    private Text poolClicked;
 
     @FXML
-    ComboBox amountOfGroupsComboBox;
+    private TableView<Pool> poolTableView;
 
     @FXML
-    ComboBox matchesPrGroupsComboBox;
-
-    Text poolClicked;
+    private ListView<String> teamListView;
 
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        setPoolStatusGridPane();
+        setPoolTableView();
         progressBox.getChildren().add(new ProgressBox(stepNumber));
     }
 
-    @FXML
-    private void saveButton() {
-        String poolClickedString = poolClicked.getText();
-        int yearGroup = Integer.parseInt(poolClickedString.length() == 3 ? poolClickedString.substring(0, 2)
-                : poolClickedString.substring(0, 1));
-        String skillLevel = (poolClickedString.length() == 3 ? poolClickedString.substring(2, 3)
-                : poolClickedString.substring(1, 2));
-        tournament.findCorrectPool(yearGroup, skillLevel)
-                .addGroupBracket(new StandardGroupPlay(Integer.parseInt(amountOfGroupsComboBox.getValue().toString())));
-        tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(Integer.parseInt(matchesPrGroupsComboBox.getValue().toString()));
+    private void setPoolTableView() {
+        TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
+        poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        poolNameColumn.setMinWidth(200);
+        poolNameColumn.setMaxWidth(200);
 
-        for (int i = 0; i < poolStatusGridPane.getChildren().size(); i++) {
-            Text poolTextObject = (Text) poolStatusGridPane.getChildren().get(i);
+        TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
+        poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("groupCreationStatus"));
+        poolStatusColumn.setMaxWidth(90);
+        poolStatusColumn.setMinWidth(90);
 
-            if (poolTextObject.equals(poolClicked)) {
-                Text statusTextObject = (Text) poolStatusGridPane.getChildren().get(i + 1);
-                statusTextObject.setText("Færdig");
-                break;
-            }
-        }
+        poolTableView.getColumns().addAll(poolNameColumn, poolStatusColumn);
+        //add pools to tableView
+        addPoolsInTableView();
     }
 
-    private void setPoolStatusGridPane() {
-        poolStatusGridPane.getChildren().remove(0, poolStatusGridPane.getChildren().size());
-        for(Pool pool : tournament.getPoolList() ) {
-            Text text = new Text(pool.getYearGroup() + "" + pool.getSkillLevel());
-            text.setWrappingWidth(80);                      // The width of the Text-object.
-            text.setTextAlignment(TextAlignment.CENTER);    // The text of the Text-object is centered.
-            boolean isDone = pool.getGroupBracket() != null
-                    && pool.getGroupBracket().getAmountOfGroups() > 0
-                    && pool.getGroupBracket().getMatchesPrTeamAgainstOpponentInGroup() > 0;
-            Text status = (isDone ? new Text("Færdig") : new Text("Ikke færdig"));
-            status.setWrappingWidth(80);                    // The width of the Text-object.
-            status.setTextAlignment(TextAlignment.CENTER);  // The text of the Text-object is centered.
-            GridPane.setMargin(text, new Insets(10,0,10,0));
-            poolStatusGridPane.addRow(poolStatusGridPane.getRowCount(), text, status);
+    private void addPoolsInTableView() {
+        poolTableView.getItems().addAll(tournament.getPoolList());
+
+        //handle row selection for each pool in tableView
+        poolTableView.setRowFactory( table -> {
+            TableRow<Pool> row = new TableRow<>();
+            row.setOnMouseClicked(event -> handleRowSelection());
+            return row;
+        });
+    }
+
+    private void handleRowSelection() {
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+
+        teamListView.getItems().clear();
+        for (Team team : selectedPool.getTeamList()) {
+            teamListView.getItems().add(team.getName());
         }
-        poolStatusGridPane.setGridLinesVisible(false);
-        poolStatusGridPane.setGridLinesVisible(true);
+
+        setComboBoxes();
+    }
+
+
+    @FXML
+    private void saveButtonPressed() {
+        try {
+            checkAllInput();
+            Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+
+            selectedPool.addGroupBracket(new StandardGroupPlay(
+                    Integer.parseInt(amountOfGroupsComboBox.getValue().toString())));
+            selectedPool.getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(
+                    Integer.parseInt(matchesPrGroupsComboBox.getValue().toString()));
+
+            poolTableView.getItems().remove(selectedPool);
+            poolTableView.getItems().add(selectedPool);
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
+
+    }
+
+    @Override
+    public void checkAllInput() {
+        if (amountOfGroupsComboBox.getSelectionModel().isEmpty() || matchesPrGroupsComboBox.getSelectionModel().isEmpty()) {
+            throw new MissingInputException();
+        }
     }
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/VerifyGroupsAndPools.FXML"));
-        Parent newWindow = loader.load();
+        // Throw some exceotion here
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/VerifyGroupsAndPools.FXML"));
+            Parent newWindow = loader.load();
 
-        VerifyGroupsAndPoolsController atc = loader.getController();
-        atc.setTournament(tournament);
+            VerifyGroupsAndPoolsController atc = loader.getController();
+            atc.setTournament(tournament);
 
-        Scene newScene = new Scene(newWindow);
+            Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        window.setScene(newScene);
-        window.show();
+            window.setScene(newScene);
+            window.show();
     }
 
     @FXML
@@ -136,67 +168,17 @@ public class CreatingGroupController
         window.show();
     }
 
-    @FXML
-    private void mouseClicked(MouseEvent e) {
-        for(Node node : poolStatusGridPane.getChildren())
-            node.setStyle("-fx-font-weight: normal;");
-
-        poolClicked = (Text) poolStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2);
-        poolClicked.setStyle("-fx-font-weight: bold;");
-
-        setComboBoxItemsAndLabels();
-        drawTeamsInPoolGridPane();
-    }
-
-    @FXML
-    void drawTeamsInPoolGridPane() {
-        String poolClickedText = poolClicked.getText();
-        teamsInPoolGridPane.getChildren().remove(0, teamsInPoolGridPane.getChildren().size());
-        try {
-            // The following int- og String-values are found to be able to search for the chosen pool via. findCorrectPool.
-            // Finds the first part of the chosen pool's name. Etc, "10A" finds 10.
-            int teamYearGroup = Integer.parseInt(poolClickedText.length() == 3 ? poolClickedText.substring(0, 2)
-                    : poolClickedText.substring(0, 1));
-            // Finds the last part of the chosen pool's name. Etc, "10A" finds A.
-            String teamSkillLevel = (poolClickedText.length() == 3 ? poolClickedText.substring(2, 3)
-                    : poolClickedText.substring(1, 2));
-
-            // Runs through the teams in the chosen pool, in order to add them to a list in the GUI.
-            for (Team team : tournament.findCorrectPool(teamYearGroup, teamSkillLevel).getTeamList()) {
-                Text name = new Text(team.getName());
-                teamsInPoolGridPane.addRow(teamsInPoolGridPane.getRowCount(), name);
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        teamsInPoolGridPane.setGridLinesVisible(false);
-        teamsInPoolGridPane.setGridLinesVisible(true);
-    }
-
-    private void setComboBoxItemsAndLabels() {
-        String poolClickedText = poolClicked.getText();
-        // The year group and skill level of the chosen pool are described.
-        String yearGroup = (poolClickedText.length() == 3 ? poolClickedText.substring(0, 2) : poolClickedText.substring(0, 1));
-        String skillLevel = (poolClickedText.length() == 3 ? poolClickedText.substring(2, 3) : poolClickedText.substring(1, 2));
-        // The amount of teams in the pool is displayed.
-        amountOfTeamsText.setText(String.valueOf(tournament.findCorrectPool(Integer.parseInt(yearGroup), skillLevel).getTeamList().size()));
-        // The pool chosen is displayed.
-        poolNameText.setText(poolClickedText);
-
+    private void setComboBoxes() {
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
         // The combobox for choosing the amount of matches each team will play against other teams is filled.
         ObservableList<String> matchesAgainstOpponentsInGroup = FXCollections.observableArrayList("1", "2", "3", "4", "5");
         matchesPrGroupsComboBox.setItems(matchesAgainstOpponentsInGroup);
         // The combobox for choosing the amount of groups
-        ObservableList<String> amountOfGroups = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+        ObservableList<String> amountOfGroups = FXCollections.observableArrayList();
+        // Secures that there is not created a group with less than 2 teams in it
+        for (int i = 0; i < (selectedPool.getTeamList().size()) / 2; i++) {
+            amountOfGroups.add(Integer.toString(i + 1));
+        }
         amountOfGroupsComboBox.setItems(amountOfGroups);
-    }
-
-    private void highlightProgressBox() {
-        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
-        Text text1 = (Text) stepBox.getChildren().get(0);
-        Text text2 = (Text) stepBox.getChildren().get(1);
-        text1.setFill(Color.WHITE);
-        text2.setFill(Color.WHITE);
-        stepBox.setStyle("-fx-background-color: #6E83CA");
     }
 }
