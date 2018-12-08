@@ -261,7 +261,7 @@ public class VerifyFinalStageController {
             mss.setTournament(tournament);
 
             // Inserting all group matches in database
-            matchSQL.insertMatches(tournament, tournament.getAllGroupMatches());
+            //matchSQL.insertMatches(tournament, tournament.getAllGroupMatches());
 
             Scene newScene = new Scene(newWindow);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

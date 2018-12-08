@@ -11,7 +11,6 @@ import tournament.matchschedule.Field;
 import tournament.matchschedule.MatchDay;
 import tournament.pool.Group;
 import tournament.pool.Pool;
-import tournament.pool.bracket.KnockoutBracket;
 import tournament.pool.bracket.KnockoutPlay;
 import tournament.pool.bracket.StandardGroupPlay;
 
@@ -205,7 +204,7 @@ public class Main extends Application {
             System.out.println(match);
         }*/
 
-        //launch(args);
+        launch(args);
     }
 
 }

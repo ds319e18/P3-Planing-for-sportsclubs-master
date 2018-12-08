@@ -9,6 +9,8 @@ public class Group {
     private String name;
     private ArrayList<Team> teamList = new ArrayList<>();
 
+    public Group() { }
+
     public Group(String name) {
         this.name = name;
     }

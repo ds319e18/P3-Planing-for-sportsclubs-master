@@ -29,7 +29,7 @@ public class PlayoffBracketDAO {
                 PreparedStatement stmt = con.prepareStatement(query);
                 int poolID = poolSQL.findPoolID(pool, tournament, con);
                 stmt.setInt(1, poolID);
-                stmt.setString(2, pool.getKnockoutBracket().getClass().getSimpleName());
+                stmt.setString(2, pool.getPlayoffBracket().getClass().getSimpleName());
                 stmt.executeUpdate();
             }
 
@@ -50,15 +50,15 @@ public class PlayoffBracketDAO {
 
             if (set.next()) {
                 if (set.getString("typePlayoff").equals("KnockoutPlay")) {
-                    pool.addKnockoutBracket(new KnockoutPlay());
+                    pool.addPlayoffBracket(new KnockoutPlay());
                 } else if (set.getString("typePlayoff").equals("PlacementPlay")) {
-                    pool.addKnockoutBracket(new PlacementPlay());
+                    pool.addPlayoffBracket(new PlacementPlay());
                 } else if (set.getString("typePlayoff").equals("GoldAndBronzePlay")) {
-                    pool.addKnockoutBracket(new GoldAndBronzePlay());
+                    pool.addPlayoffBracket(new GoldAndBronzePlay());
                 }
             }
 
-            pool.getKnockoutBracket().getMatches().addAll(getMatches(tournament, pool, con));
+            pool.getPlayoffBracket().getMatches().addAll(getMatches(tournament, pool, con));
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -76,11 +76,11 @@ public class PlayoffBracketDAO {
             int poolID = poolSQL.findPoolID(pool, tournament, con);
             String typeOfMatch = "s";
 
-            if (pool.getKnockoutBracket().getClass().getSimpleName().equals("KnockoutPlay")) {
+            if (pool.getPlayoffBracket().getClass().getSimpleName().equals("KnockoutPlay")) {
                 typeOfMatch = "Knockout";
-            } else if (pool.getKnockoutBracket().getClass().getSimpleName().equals("PlacementPlay")) {
+            } else if (pool.getPlayoffBracket().getClass().getSimpleName().equals("PlacementPlay")) {
                 typeOfMatch = "Placement";
-            } else if (pool.getKnockoutBracket().getClass().getSimpleName().equals("GoldAndBronzePlay")) {
+            } else if (pool.getPlayoffBracket().getClass().getSimpleName().equals("GoldAndBronzePlay")) {
                 typeOfMatch = "s";
             }
 

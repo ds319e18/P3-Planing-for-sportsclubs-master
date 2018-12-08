@@ -129,7 +129,7 @@ public class KnockoutBracketTest {
     @Test
     void CreateKnockoutBracket01() {
         // 8 teams, 2 groups, 2 teams advancing from each group should give us two semifinals and a final: 3 matches
-        assertEquals(createEvenTournament().findCorrectPool(6, "A").getKnockoutBracket().getMatches().size(), 3);
+        assertEquals(createEvenTournament().findCorrectPool(6, "A").getPlayoffBracket().getMatches().size(), 3);
     }
 
     // Testing for first round in the finals, from method createEvenTournamentAfterGroup
@@ -292,7 +292,7 @@ public class KnockoutBracketTest {
     void testCreateKnockoutBracket02() {
         // This test is for 9 teams, 3 groups and with 2 teams advancing in each group. We would like one team to skip a match, giving us
         // 5 matches in total
-        assertEquals(createUnEvenTournament02().findCorrectPool(6, "A").getKnockoutBracket().getMatches().size(), 5);
+        assertEquals(createUnEvenTournament02().findCorrectPool(6, "A").getPlayoffBracket().getMatches().size(), 5);
     }
 
     // Testing that after group play that the correct teams advance in the finals, for createUnEvenTournament02
@@ -392,7 +392,7 @@ public class KnockoutBracketTest {
         tournament.findCorrectPool(6, "A").getGroupBracket().createMatches(tournament.findCorrectPool(6, "A").getMatchDuration());
 
         // This test is for 2 groups and an even amount of teams in each group
-        tournament.findCorrectPool(6, "A").addKnockoutBracket(new KnockoutPlay());
+        tournament.findCorrectPool(6, "A").addPlayoffBracket(new KnockoutPlay());
 
         // Setting the time for match schedules
         tournament.getMatchSchedule().getMatchDays().get(0).setStartTime("09:00");
@@ -427,7 +427,7 @@ public class KnockoutBracketTest {
         }
 
         // Creates first final round
-        tournament.findCorrectPool(6, "A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6, "A").getGroupBracket().advanceTeams());
+        tournament.findCorrectPool(6, "A").getPlayoffBracket().createNextRound(tournament.findCorrectPool(6, "A").getGroupBracket().advanceTeams());
 
         for (MatchDay day : tournament.getMatchSchedule().getMatchDays()) {
             System.out.println(day);
@@ -453,7 +453,7 @@ public class KnockoutBracketTest {
         tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(12).setResult(new Result(1, 2));
 
         // Creates final round 2 and advancing the correct teams
-        tournament.findCorrectPool(6,"A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6,"A").getKnockoutBracket().advanceTeams());
+        tournament.findCorrectPool(6,"A").getPlayoffBracket().createNextRound(tournament.findCorrectPool(6,"A").getPlayoffBracket().advanceTeams());
 
         for (MatchDay day : tournament.getMatchSchedule().getMatchDays()) {
             System.out.println(day);
@@ -471,7 +471,7 @@ public class KnockoutBracketTest {
         tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(14).setResult(new Result(1, 2));
 
         // Creates final round 3 and advancing the correct teams
-        tournament.findCorrectPool(6,"A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6,"A").getKnockoutBracket().advanceTeams());
+        tournament.findCorrectPool(6,"A").getPlayoffBracket().createNextRound(tournament.findCorrectPool(6,"A").getPlayoffBracket().advanceTeams());
 
         for (MatchDay day : tournament.getMatchSchedule().getMatchDays()) {
             System.out.println(day);
@@ -488,7 +488,7 @@ public class KnockoutBracketTest {
         tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(15).setResult(new Result(1, 2));
 
         // Creates final round 4 and advancing the correct teams
-        tournament.findCorrectPool(6,"A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6,"A").getKnockoutBracket().advanceTeams());
+        tournament.findCorrectPool(6,"A").getPlayoffBracket().createNextRound(tournament.findCorrectPool(6,"A").getPlayoffBracket().advanceTeams());
 
         return tournament;
     }
@@ -501,7 +501,7 @@ public class KnockoutBracketTest {
         tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(16).setResult(new Result(1, 2));
 
         // Calculate position for the teams in the final
-        tournament.findCorrectPool(6,"A").getKnockoutBracket().calculateResults();
+        tournament.findCorrectPool(6,"A").getPlayoffBracket().calculateResults();
 
         return tournament;
     }
@@ -511,7 +511,7 @@ public class KnockoutBracketTest {
     void testCreateKnockoutBracket03() {
         // This test is for 15 teams, 3 groups and with 3 teams advancing in each group. This would give us
         // 8 matches in total
-        assertEquals(createUnEvenTournament03().findCorrectPool(6, "A").getKnockoutBracket().getMatches().size(), 8);
+        assertEquals(createUnEvenTournament03().findCorrectPool(6, "A").getPlayoffBracket().getMatches().size(), 8);
     }
 
     // Testing that after group play that the correct teams advance in the first round in the final, for createUnEvenTournament03
@@ -576,8 +576,8 @@ public class KnockoutBracketTest {
         Tournament tournament = afterFinalRoundFour03();
 
         // Testing the knockout round 4
-        assertEquals("Jetsmark IF 9", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(1).getName());
-        assertEquals("Jetsmark IF 2", tournament.findCorrectPool(6,"A").getKnockoutBracket().getResults().get(2).getName());
+        assertEquals("Jetsmark IF 9", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(1).getName());
+        assertEquals("Jetsmark IF 2", tournament.findCorrectPool(6,"A").getPlayoffBracket().getResults().get(2).getName());
     }
 
 }

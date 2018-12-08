@@ -29,11 +29,6 @@ public class AdminPageController {
         user = new Administrator();
     }
 
-    public void initialize() {
-        //get the tournaments from the database
-        user = new Administrator();
-    }
-
     @FXML
     GridPane gp;
 
@@ -87,11 +82,9 @@ public class AdminPageController {
             }
     }
 
-    @FXML
+    /*@FXML
     public void initialize() {
         String str;
-
-        Administrator user = getUser();
 
         /*for (ColumnConstraints column : gp.getColumnConstraints())
             column.setHalignment(HPos.CENTER);
@@ -113,5 +106,5 @@ public class AdminPageController {
             Button btnEdit = new Button("Edit");
             gp.addRow(i, txt, status, date, btnView, btnEdit);
         }*/
-    }
+    /*}*/
 }
