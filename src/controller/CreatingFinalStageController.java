@@ -1,5 +1,9 @@
 package controller;
 
+import exceptions.IllegalAmountOfGroupsException;
+import exceptions.IllegalAmountOfTeamsException;
+import exceptions.MissingInputException;
+import exceptions.MissingPressingSaveException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,6 +13,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
@@ -28,7 +33,7 @@ import tournament.pool.bracket.PlacementPlay;
 
 import java.io.IOException;
 
-public class CreatingFinalStageController {
+public class CreatingFinalStageController implements CheckInput {
 
 
     Tournament tournament;
@@ -70,27 +75,66 @@ public class CreatingFinalStageController {
         progressBox.getChildren().add(new ProgressBox(stepNumber));
     }
 
+    @Override
+    public void checkAllInput() {
+        if (advancingComboBox.getSelectionModel().isEmpty() || !(placementRadioButton.isSelected() ||
+            knockoutRadioButton.isSelected() || goldAndBronzeRadioButton.isSelected())) {
+            throw new MissingInputException();
+        }
+    }
 
     @FXML
     private void saveButton() {
-        int yearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
-                : poolClicked.substring(0, 1));
-        String skillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
-                : poolClicked.substring(1, 2));
+        try {
+            checkAllInput();
+            int yearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
+                    : poolClicked.substring(0, 1));
+            String skillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
+                    : poolClicked.substring(1, 2));
 
-        // The amount of teams to advance on the the final stage is set
-        tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
+            // The amount of teams to advance on the the final stage is set
+            tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
 
-        if (knockoutRadioButton.isSelected()) {
-            tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new KnockoutPlay());
-            System.out.println("if " + tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().getMatches().size());
+            if (knockoutRadioButton.isSelected()) {
+                tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new KnockoutPlay());
+                System.out.println("if " + tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().getMatches().size());
 
-        } else if (placementRadioButton.isSelected()) {
-            tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new PlacementPlay());
-        } else if (goldAndBronzeRadioButton.isSelected()) {
-            tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new GoldAndBronzePlay());
+            } else if (placementRadioButton.isSelected()) {
+                try {
+                    tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new PlacementPlay());
+                } catch (IllegalAmountOfGroupsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input-fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                } catch (IllegalAmountOfTeamsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input-fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                }
+            } else if (goldAndBronzeRadioButton.isSelected()) {
+                try {
+                    tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new GoldAndBronzePlay());
+                } catch (IllegalAmountOfGroupsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input-fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                } catch (IllegalAmountOfTeamsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input-fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                }
+            }
+            setPoolStatusGridPane();
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input-fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
         }
-        setPoolStatusGridPane();
     }
 
 
@@ -120,14 +164,21 @@ public class CreatingFinalStageController {
         Parent newWindow = loader.load();
 
         VerifyFinalStageController atc = loader.getController();
-        atc.setTournament(tournament);
+        try {
+            atc.setTournament(tournament);
+            Scene newScene = new Scene(newWindow);
 
-        Scene newScene = new Scene(newWindow);
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            window.setScene(newScene);
+            window.show();
+        } catch (MissingPressingSaveException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input-fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
 
-        window.setScene(newScene);
-        window.show();
     }
 
     @FXML

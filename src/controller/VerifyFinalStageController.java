@@ -1,5 +1,7 @@
 package controller;
 
+import exceptions.MissingPressingSaveException;
+import exceptions.NotAllTeamsAreVerified;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +20,7 @@ import tournament.Match;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
+import tournament.pool.Group;
 import tournament.pool.Pool;
 import tournament.pool.bracket.KnockoutPlay;
 import tournament.pool.bracket.PlayoffBracket;
@@ -80,6 +83,9 @@ public class VerifyFinalStageController {
             poolName.setTextAlignment(TextAlignment.CENTER);
             poolName.setWrappingWidth(82.93);
 
+            if (pool.getPlayoffBracket() == null) {
+                throw new MissingPressingSaveException();
+            }
             Text knockoutType = new Text(pool.getPlayoffBracket().getClass().getSimpleName());
             knockoutType = new Text(knockoutType.getText().substring(0, knockoutType.getText().length() - 4));
             knockoutType.setTextAlignment(TextAlignment.CENTER);
@@ -222,11 +228,14 @@ public class VerifyFinalStageController {
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
         boolean value = true;
+        // Laver et gruppeobject bare for exceptions skyld
+        Group group = new Group();
         Text temp=new Text();
         for (int i = 0; i < poolKnockoutStatusGridPane.getRowCount(); i++) {
             temp = (Text) poolKnockoutStatusGridPane.getChildren().get(i*3 +2);
             if (!temp.getText().equals("Done")) {
                 value = false;
+                throw new NotAllTeamsAreVerified(group);
             }
 
         }

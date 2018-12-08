@@ -25,4 +25,9 @@ public class Group {
     public void sortPoints() {
         this.getTeamList().sort(new TeamPointsComp());
     }
+
+    @Override
+    public String toString() {
+        return "grupperne";
+    }
 }

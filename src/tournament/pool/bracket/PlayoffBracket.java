@@ -30,4 +30,8 @@ public abstract class PlayoffBracket {
         return this.result;
     }
 
+    @Override
+    public String toString() {
+        return "slutspillene";
+    }
 }
