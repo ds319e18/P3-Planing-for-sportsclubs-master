@@ -18,12 +18,15 @@ import javafx.stage.Stage;
 import tournament.Tournament;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class AdminPageController {
-    private Administrator user;
+    String id = "Jetsmark";
+    private Administrator user = new Administrator(Objects.hash(id));
 
-    public void setUser(Administrator user) {
-        this.user = user;
+    public void initialize() {
+        //get the tournaments from the database
+        user = new Administrator();
     }
 
     public void initialize() {
@@ -84,12 +87,11 @@ public class AdminPageController {
             }
     }
 
-    /*@FXML
+    @FXML
     public void initialize() {
         String str;
 
         Administrator user = getUser();
-        System.out.println(user.getId());
 
         /*for (ColumnConstraints column : gp.getColumnConstraints())
             column.setHalignment(HPos.CENTER);
@@ -110,6 +112,6 @@ public class AdminPageController {
             Button btnView = new Button("View");
             Button btnEdit = new Button("Edit");
             gp.addRow(i, txt, status, date, btnView, btnEdit);
-        }
-    }*/
+        }*/
+    }
 }

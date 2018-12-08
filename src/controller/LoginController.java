@@ -57,24 +57,25 @@ public class LoginController {
 
     @FXML
     public void setOnLogInButtonClicked(ActionEvent event) throws IOException {
+        // DAO object for account
         AccountDAO accountSQL = new AccountDAO();
 
         // Finding the correct user and the tournaments the user has created
-        user = accountSQL.findAccount(username.getText(), password.getText());
+        //user = accountSQL.findAccount(username.getText(), password.getText());
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/AdminPage.fxml"));
         Parent newWindow = loader.load();
 
         // Sender objektet user videre til adminPage
-        AdminPageController atc = loader.getController();
-        atc.setUser(user);
+       // AdminPageController atc = loader.getController();
+       // atc.setUser(user);
 
         Scene newScene = new Scene(newWindow);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         // Viser alle turneringer brugeren har haft lavet før
-        atc.draw();
+        //atc.draw();
 
 
         window.setScene(newScene);

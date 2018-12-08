@@ -2,6 +2,8 @@ package controller;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import database.DAO.GroupBracketDAO;
+import database.DAO.GroupDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -153,6 +155,14 @@ public class VerifyGroupsAndPoolsController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
+        // DAO for group and groupbracket
+        GroupDAO groupSQL = new GroupDAO();
+        GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
+
+        // Inserting groups and groupbracketin database
+        //groupSQL.insertGroup(tournament);
+        //groupBracketSQL.insertGroupBracket(tournament);
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/CreatingFinalStage.FXML"));
         Parent newWindow = loader.load();

@@ -75,23 +75,4 @@ public class StandardGroupPlay extends GroupBracket {
             }
         }
     }
-
-    /*
-    public void swapTeams(String name1, String name2) {
-        Team team1 = new Team(name1, 0, "Z");
-        Team team2 = new Team(name2, 0, "Z");
-        for (Group group : this.getGroups()) {
-            if (group.getTeamList().contains(new Team(name1, 0, "Z"))) {
-                group.getTeamList().add(team2);
-                group.getTeamList().remove(new Team(name1, 0, "Z"));
-
-            }
-            else if (group.getTeamList().contains(new Team(name2, 0, "Z"))) {
-                group.getTeamList().add(team1);
-                group.getTeamList().remove(new Team(name2, 0, "Z"));
-
-            }
-        }
-    }
-    */
 }

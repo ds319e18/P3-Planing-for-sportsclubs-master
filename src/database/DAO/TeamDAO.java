@@ -1,15 +1,14 @@
 package database.DAO;
 
+import com.sun.jdi.ArrayReference;
 import database.Database;
 import tournament.Match;
 import tournament.Team;
 import tournament.Tournament;
+import tournament.pool.Group;
 import tournament.pool.Pool;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -42,7 +41,7 @@ public class TeamDAO {
             }
 
 
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -50,7 +49,7 @@ public class TeamDAO {
 
     // Inserting all teams in a tournament
     public void insertTeam(Tournament tournament) {
-        try(Connection con = Database.connect()){
+        try (Connection con = Database.connect()) {
             String query = "INSERT INTO Team (name, yearGroup, skillLevel, phonenumber, idTournamentTeam) VALUES(?, ?, ?, ?, ?)";
 
             for (Pool pool : tournament.getPoolList()) {
@@ -65,14 +64,14 @@ public class TeamDAO {
                     stmt.executeUpdate();
                 }
             }
-        } catch(SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
 
     public int findTeamID(Team team, Connection con) {
-        try{
-            String sql = "select * from Team where name = '" + team.getName() + "'" + "AND skillLevel = '" + team.getSkillLevel() + "'";
+        try {
+            String sql = "select * from Team where name = '" + team.getName() + "'" + "AND skillLevel = '" + team.getSkillLevel() + "'" + "AND yearGroup =" + team.getYearGroup();
             ResultSet set = con.createStatement().executeQuery(sql);
 
             if (set.next()) {
@@ -85,4 +84,73 @@ public class TeamDAO {
         //TODO Throw en exception
         return 0;
     }
+
+    public void updateGroupIdTeam(Tournament tournament, Connection con) {
+        GroupDAO groupSQL = new GroupDAO();
+        PoolDAO poolSQL = new PoolDAO();
+        int poolID;
+        int groupID;
+        int teamID;
+        int groupNumber;
+
+        try {
+            // Going through all groups in all pools and adding group id to the team in the chosen group
+            for (Pool pool : tournament.getPoolList()) {
+                poolID = poolSQL.findPoolID(pool, tournament, con);
+                groupNumber = 0;
+                for (Group group : pool.getGroupBracket().getGroups()) {
+                    groupID = groupSQL.findID(poolID, groupNumber, con);
+                        for (Team team : group.getTeamList()) {
+                        teamID = findTeamID(team, con);
+                        String query = "UPDATE Team SET idGroupTeam = ? WHERE idTeam = ?";
+                        PreparedStatement stmt = con.prepareStatement(query);
+                        stmt.setInt(1, groupID);
+                        stmt.setInt(2, teamID);
+                        stmt.executeUpdate();
+                    }
+                    groupNumber++;
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    // Method to get all teams from a specific tournament and a specific pool from the database
+    public ArrayList<Team> getAllTeams(Tournament tournament, Pool pool, Connection con) {
+        ArrayList<Team> teams = new ArrayList<>();
+
+        try {
+            int tournamentID = Objects.hash(tournament.getName());
+            String sql = "select * from Team where idTournamentTeam = " + tournamentID + " AND skillLevel = '" + pool.getSkillLevel() + "'" +  "AND yearGroup =" + pool.getYearGroup();
+            Statement stmt = con.createStatement();
+
+            ResultSet set = stmt.executeQuery(sql);
+
+            while (set.next()) {
+                teams.add(new Team(set.getString("name"), set.getInt("yearGroup"), set.getString("skillLevel")));
+            }
+
+            return teams;
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public Team getTeam(int teamID, Connection con) {
+        try {
+            String sql = "select * from Team where idTeam = " + teamID;
+            ResultSet set = con.createStatement().executeQuery(sql);
+
+            if (set.next()) {
+                return new Team(set.getString("name"), set.getString("skillLevel"), set.getInt("yearGroup"), set.getString("phonenumber"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+
 }
