@@ -107,8 +107,8 @@ class TournamentTest {
             pool.getGroupBracket().createMatches(20);
         }
 
-        tournament.findCorrectPool(6,"A").addKnockoutBracket(new KnockoutPlay());
-        tournament.findCorrectPool(6, "B").addKnockoutBracket(new KnockoutPlay());
+        tournament.findCorrectPool(6,"A").addPlayoffBracket(new KnockoutPlay());
+        tournament.findCorrectPool(6, "B").addPlayoffBracket(new KnockoutPlay());
 
         // Virker indtil her
 
@@ -146,7 +146,7 @@ class TournamentTest {
 
 
         for (Pool pool : tournament.getPoolList()) {
-            pool.getKnockoutBracket().createNextRound(pool.getGroupBracket().advanceTeams());
+            pool.getPlayoffBracket().createNextRound(pool.getGroupBracket().advanceTeams());
         }
 
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(12).setResult(new Result(2, 3));
@@ -159,8 +159,8 @@ class TournamentTest {
         tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(6).setResult(new Result(2, 3));
 
         for (Pool pool : tournament.getPoolList()) {
-            pool.getKnockoutBracket().createNextRound(pool.getKnockoutBracket().advanceTeams());
-            System.out.println(pool.getKnockoutBracket().advanceTeams());
+            pool.getPlayoffBracket().createNextRound(pool.getPlayoffBracket().advanceTeams());
+            System.out.println(pool.getPlayoffBracket().advanceTeams());
         }
 
         for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
@@ -230,8 +230,8 @@ class TournamentTest {
             pool.getGroupBracket().createMatches(20);
         }
 
-        tournament.findCorrectPool(6,"A").addKnockoutBracket(new PlacementPlay());
-        tournament.findCorrectPool(6, "B").addKnockoutBracket(new PlacementPlay());
+        tournament.findCorrectPool(6,"A").addPlayoffBracket(new PlacementPlay());
+        tournament.findCorrectPool(6, "B").addPlayoffBracket(new PlacementPlay());
 
         // Virker indtil her
 
@@ -267,7 +267,7 @@ class TournamentTest {
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(27).setResult(new Result(2, 3));
 
         for (Pool pool : tournament.getPoolList()) {
-            pool.getKnockoutBracket().createNextRound(pool.getGroupBracket().advanceTeams());
+            pool.getPlayoffBracket().createNextRound(pool.getGroupBracket().advanceTeams());
         }
 
         for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
@@ -285,12 +285,12 @@ class TournamentTest {
         tournament.getMatchSchedule().getMatchDays().get(1).getMatches().get(3).setResult(new Result(2, 3));
 
         for (Pool pool : tournament.getPoolList()) {
-            pool.getKnockoutBracket().calculateResults();
+            pool.getPlayoffBracket().calculateResults();
         }
 
 
         for (Pool pool : tournament.getPoolList()) {
-            System.out.println(pool.getKnockoutBracket().getResults().toString());
+            System.out.println(pool.getPlayoffBracket().getResults().toString());
         }
     }
 
@@ -351,8 +351,8 @@ class TournamentTest {
             pool.getGroupBracket().createMatches(20);
         }
 
-        tournament.findCorrectPool(6,"A").addKnockoutBracket(new GoldAndBronzePlay());
-        tournament.findCorrectPool(6, "B").addKnockoutBracket(new GoldAndBronzePlay());
+        tournament.findCorrectPool(6,"A").addPlayoffBracket(new GoldAndBronzePlay());
+        tournament.findCorrectPool(6, "B").addPlayoffBracket(new GoldAndBronzePlay());
 
         /*for (int i = 0; i < tournament.getMatchSchedule().getNumberOfMatchDays(); i++) {
             tournament.getMatchSchedule().getMatchDays().add(new MatchDay.Builder(LocalTime.of(10, 0), LocalTime.of(16, 0))
@@ -396,7 +396,7 @@ class TournamentTest {
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(25).setResult(new Result(2, 3));
 
         for (Pool pool : tournament.getPoolList()) {
-            pool.getKnockoutBracket().createNextRound(pool.getGroupBracket().advanceTeams());
+            pool.getPlayoffBracket().createNextRound(pool.getGroupBracket().advanceTeams());
             for (Group group : pool.getGroupBracket().getGroups()) {
                 group.getTeamList().sort(new TeamPointsComp());
                 for (Team team : group.getTeamList()) {
@@ -417,12 +417,12 @@ class TournamentTest {
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(27).setResult(new Result(2, 3));
 
         for (Pool pool : tournament.getPoolList()) {
-            pool.getKnockoutBracket().calculateResults();
+            pool.getPlayoffBracket().calculateResults();
         }
 
 
         for (Pool pool : tournament.getPoolList()) {
-            System.out.println(pool.getKnockoutBracket().getResults().toString());
+            System.out.println(pool.getPlayoffBracket().getResults().toString());
         }
     }
 
@@ -467,7 +467,7 @@ class TournamentTest {
             pool.getGroupBracket().createMatches(20);
         }
 
-        tournament.findCorrectPool(6,"A").addKnockoutBracket(new KnockoutPlay());
+        tournament.findCorrectPool(6,"A").addPlayoffBracket(new KnockoutPlay());
 
         // Print af grupper
         for (Pool pool : tournament.getPoolList()) {
@@ -490,7 +490,7 @@ class TournamentTest {
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(8).setResult(new Result(1, 2));
 
         for (Pool pool : tournament.getPoolList()) {
-            pool.getKnockoutBracket().createNextRound(pool.getGroupBracket().advanceTeams());
+            pool.getPlayoffBracket().createNextRound(pool.getGroupBracket().advanceTeams());
         }
 
 
@@ -499,13 +499,13 @@ class TournamentTest {
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(11).setResult(new Result(1, 2));
 
         for (Pool pool : tournament.getPoolList()) {
-            pool.getKnockoutBracket().createNextRound(pool.getKnockoutBracket().advanceTeams());
+            pool.getPlayoffBracket().createNextRound(pool.getPlayoffBracket().advanceTeams());
         }
 
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(12).setResult(new Result(1, 2));
 
         for (Pool pool : tournament.getPoolList()) {
-            pool.getKnockoutBracket().createNextRound(pool.getKnockoutBracket().advanceTeams());
+            pool.getPlayoffBracket().createNextRound(pool.getPlayoffBracket().advanceTeams());
         }
 
         for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {

@@ -74,7 +74,7 @@ public class MatchDay {
         for (Pool pool : poolList) {
             ArrayList<Match> matches = new ArrayList<>();
             matches.addAll(pool.getGroupBracket().getMatches());
-            matches.addAll(pool.getKnockoutBracket().getMatches());
+            matches.addAll(pool.getPlayoffBracket().getMatches());
 
             for (Match match : matches) {
                 // Tjekker at der ikke tilføjes kampe såldes at tiden overskrider den endtime som er valgt

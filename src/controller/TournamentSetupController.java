@@ -2,6 +2,7 @@ package controller;
 
 import account.Administrator;
 import database.DAO.TournamentDAO;
+import exceptions.MissingInputException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,7 +26,7 @@ import tournament.pool.Pool;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class TournamentSetupController {
+public class TournamentSetupController implements CheckInput {
     private final int YEAR_GROUP_MAX = 16;
     private final int SKILL_LEVEL_MAX = 3;
     private final int stepNumber = 0;
@@ -76,29 +77,75 @@ public class TournamentSetupController {
     private ObservableList<String> fieldList = FXCollections.observableArrayList(
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
 
+    public void checkAllInput() {
+        if (tournamentName.getText().trim().isEmpty() || startDatePicker.getEditor().getText().isEmpty()
+            || endDatePicker.getEditor().getText().isEmpty() || tournamentTypeCombobox.getSelectionModel().isEmpty()
+            || fieldNumberCombobox.getSelectionModel().isEmpty()) {
+
+            throw new MissingInputException();
+        }
+        if (checkPoolsInput(getSelectedPoolsAndMatchLengths())) {
+            throw new MissingInputException(); 
+        }
+    }
+
+    private Boolean checkPoolsInput(ArrayList<Pool> pools) {
+        boolean answer = false;
+
+        for (Pool pool : pools) {
+            if (!pool.getSkillLevel().isEmpty()) {
+                if (pool.getMatchDuration() == 0) {
+                    System.out.println("hello");
+                    answer = true;
+                    break;
+                }
+            }
+            if (pool.getMatchDuration() != 0) {
+                if (pool.getSkillLevel().isEmpty()) {
+                    System.out.println("goodbye");
+                    answer = true;
+                    break;
+                }
+            }
+        }
+
+        return answer;
+    }
+
     @FXML
     private void nextButtonPressed(ActionEvent event) throws IOException {
-        Tournament tournament = new Tournament.Builder(tournamentName.getText())
-                .setStartDate(startDatePicker.getValue())
-                .setEndDate(endDatePicker.getValue())
-                .setType(tournamentTypeCombobox.getValue())
-                .createFieldList(Integer.parseInt(fieldNumberCombobox.getValue().toString()))
-                .setPoolList(getSelectedPoolsAndMatchLengths())
-                .build();
+        try {
+            // Tjekker om alt input er indtastet
+            checkAllInput();
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
-        Parent newWindow = loader.load();
-        
-        AddingTeamsController atc = loader.getController();
-        atc.setTournament(tournament);
+            Tournament tournament = new Tournament.Builder(tournamentName.getText())
+                    .setStartDate(startDatePicker.getValue())
+                    .setEndDate(endDatePicker.getValue())
+                    .setType(tournamentTypeCombobox.getValue())
+                    .createFieldList(Integer.parseInt(fieldNumberCombobox.getValue().toString()))
+                    .setPoolList(getSelectedPoolsAndMatchLengths())
+                    .build();
 
-        Scene newScene = new Scene(newWindow);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
+            Parent newWindow = loader.load();
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            AddingTeamsController atc = loader.getController();
+            atc.setTournament(tournament);
 
-        window.setScene(newScene);
-        window.show();
+            Scene newScene = new Scene(newWindow);
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            window.setScene(newScene);
+            window.show();
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input-fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
+
+
     }
 
     @FXML
@@ -156,8 +203,7 @@ public class TournamentSetupController {
             for (int j = 0; j < SKILL_LEVEL_MAX; j++) {
                 CheckBox checkBox = (CheckBox) hboxWithCheckboxes.getChildren().get(j);
 
-                if (checkBox.isSelected()) {
-
+                if (checkBox.isSelected() && !matchDurationTextField.getText().isEmpty()) {
                     yearString = titledPane.getText().replace(String.valueOf
                             (titledPane.getText().charAt(0)), "");
                     poolList.add(new Pool.Builder()
