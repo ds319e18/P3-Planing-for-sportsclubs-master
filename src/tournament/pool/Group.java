@@ -6,9 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Group {
+    private String name;
     private ArrayList<Team> teamList = new ArrayList<>();
 
-    public Group() { }
+    public Group(String name) {
+        this.name = name;
+    }
 
     public void addTeam(Team team) {
         teamList.add(team);
@@ -24,5 +27,13 @@ public class Group {
 
     public void sortPoints() {
         this.getTeamList().sort(new TeamPointsComp());
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAmountOfTeams() {
+        return teamList.size();
     }
 }

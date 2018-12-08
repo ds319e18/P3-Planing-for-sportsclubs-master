@@ -39,18 +39,10 @@ public class CreatingGroupController
     private VBox progressBox;
 
     @FXML
-    private GridPane teamsInPoolGridPane;
-
-    @FXML
-    private GridPane poolStatusGridPane;
-
-    @FXML
     private ComboBox amountOfGroupsComboBox;
 
     @FXML
     private ComboBox matchesPrGroupsComboBox;
-
-    private Text poolClicked;
 
     @FXML
     private TableView<Pool> poolTableView;
@@ -68,13 +60,13 @@ public class CreatingGroupController
     private void setPoolTableView() {
         TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        poolNameColumn.setMinWidth(200);
-        poolNameColumn.setMaxWidth(200);
+        poolNameColumn.setMinWidth(150);
+        poolNameColumn.setMaxWidth(150);
 
         TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
         poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("groupCreationStatus"));
-        poolStatusColumn.setMaxWidth(90);
-        poolStatusColumn.setMinWidth(90);
+        poolStatusColumn.setMaxWidth(150);
+        poolStatusColumn.setMinWidth(150);
 
         poolTableView.getColumns().addAll(poolNameColumn, poolStatusColumn);
         //add pools to tableView
@@ -113,8 +105,8 @@ public class CreatingGroupController
         selectedPool.getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(
                 Integer.parseInt(matchesPrGroupsComboBox.getValue().toString()));
 
-        poolTableView.getItems().remove(selectedPool);
-        poolTableView.getItems().add(selectedPool);
+        poolTableView.getItems().clear();
+        addPoolsInTableView();
 
     }
 

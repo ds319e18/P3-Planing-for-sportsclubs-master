@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +9,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -14,6 +18,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
@@ -23,72 +28,72 @@ import tournament.pool.Pool;
 import java.io.IOException;
 
 public class VerifyGroupsAndPoolsController {
-    Tournament tournament;
-    boolean isBeingEdited = false;
-    Text team1, team2;
-    String poolClicked;
+    private Tournament tournament;
+    private boolean isBeingEdited = false;
+    private Text team1, team2;
+    private Pool selectedPool;
+
     private final int stepNumber = 3;
 
     @FXML
     private VBox progressBox;
 
     @FXML
-    GridPane poolStatusGridPane;
+    GridPane groupsGridPane;
 
     @FXML
-    GridPane groupsGridPane;
+    TableView<Pool> poolTableView;
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         progressBox.getChildren().add(new ProgressBox(stepNumber));
-        setPoolStatusGridPane();
+        setPoolTableView();
     }
 
-    private void setPoolStatusGridPane() {
-        for(Pool pool : tournament.getPoolList() ) {
-            Text text = new Text(pool.getYearGroup() + "" + pool.getSkillLevel());
-            text.setWrappingWidth(80);
-            text.setTextAlignment(TextAlignment.CENTER);
-            Text status = new Text("Not done");
-            status.setWrappingWidth(80);
-            status.setTextAlignment(TextAlignment.CENTER);
-            GridPane.setMargin(text, new Insets(10,0,10,0));
-            poolStatusGridPane.addRow(poolStatusGridPane.getRowCount(), text, status);
-        }
+    private void setPoolTableView() {
+        TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
+        poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        poolNameColumn.setMinWidth(128);
+        poolNameColumn.setMaxWidth(128);
+
+        TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
+        poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("groupsVerificationStatus"));
+        poolStatusColumn.setMaxWidth(128);
+        poolStatusColumn.setMinWidth(128);
+
+        poolTableView.getColumns().addAll(poolNameColumn, poolStatusColumn);
+        //add pools to tableView
+        addPoolsInTableView();
     }
 
-    @FXML
-    private void mouseClicked(MouseEvent e) {
-        for(Node node : poolStatusGridPane.getChildren())
-            node.setStyle("-fx-font-weight: normal;");
+    private void addPoolsInTableView() {
+        poolTableView.getItems().addAll(tournament.getPoolList());
 
-        Text poolClickedText = (Text) poolStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2 + 1);
+        //handle row selection for each pool in tableView
+        poolTableView.setRowFactory( table -> {
+            TableRow<Pool> row = new TableRow<>();
+            row.setOnMouseClicked(event -> handleRowSelection());
+            return row;
+        });
+    }
 
-        poolClickedText.setStyle("-fx-font-weight: bold;");
-
-        poolClicked = poolClickedText.getText();
-
+    private void handleRowSelection() {
         drawGroupsGridPane();
     }
 
     @FXML
     void drawGroupsGridPane() {
-        int teamYearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
-                : poolClicked.substring(0, 1));
-        String teamSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
-                : poolClicked.substring(1, 2));
-        int amountOfGroups = tournament.findCorrectPool(teamYearGroup, teamSkillLevel).getGroupBracket().getAmountOfGroups();
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
         groupsGridPane.getChildren().remove(0, groupsGridPane.getChildren().size());
         groupsGridPane.setVgap(30);
         groupsGridPane.setHgap(30);
-        for (int i = 0; i < amountOfGroups; i++) {
 
-            Group group = tournament.findCorrectPool(teamYearGroup, teamSkillLevel).getGroupBracket().getGroups().get(i);
-
-
+        for (Group group : selectedPool.getGroupBracket().getGroups()) {
             GridPane gridPane = new GridPane();
-            Text groupNumberText = new Text("  Gruppe " + (i + 1) + "  ");
+
+            int groupNumber = Integer.parseInt(group.getName().substring(7, 8));
+            Text groupNumberText = new Text(group.getName() + "  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
             gridPane.add(groupNumberText, 0,0);
 
@@ -100,27 +105,17 @@ public class VerifyGroupsAndPoolsController {
             gridPane.setGridLinesVisible(false);
             gridPane.setGridLinesVisible(true);
 
-            groupsGridPane.add(gridPane, i % 4, (int)(Math.floor(i / 4)));
-
+            groupsGridPane.add(gridPane, groupNumber % 4, (int)(Math.floor(groupNumber / 4)));
         }
     }
 
     @FXML
-    private void verifyButton() {
-        for (int i = 1; i < poolStatusGridPane.getChildren().size(); i++) {
-            Text text = (Text) poolStatusGridPane.getChildren().get(i);
+    private void verifyButtonPressed() {
+        selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+        selectedPool.setGroupsVerificationStatus("Færdig");
 
-            if (text.getText().equals(poolClicked)) {
-                Text status = (Text) poolStatusGridPane.getChildren().get(i + 1);
-                status.setText("Done");
-                break;
-            }
-        }
-    }
-
-    @FXML
-    void setEditButton() {
-        isBeingEdited = true;
+        poolTableView.getItems().clear();
+        addPoolsInTableView();
     }
 
      @FXML
@@ -171,14 +166,5 @@ public class VerifyGroupsAndPoolsController {
 
         window.setScene(newScene);
         window.show();
-    }
-
-    private void highlightProgressBox() {
-        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
-        Text text1 = (Text) stepBox.getChildren().get(0);
-        Text text2 = (Text) stepBox.getChildren().get(1);
-        text1.setFill(Color.WHITE);
-        text2.setFill(Color.WHITE);
-        stepBox.setStyle("-fx-background-color: #6E83CA");
     }
 }
