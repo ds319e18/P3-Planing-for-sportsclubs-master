@@ -20,15 +20,15 @@ import tournament.Tournament;
 import java.io.IOException;
 
 public class AdminPageController {
-    private User user;
+    private Administrator user;
 
-    public void setUser(User user) {
+    public void setUser(Administrator user) {
         this.user = user;
     }
 
     public void initialize() {
         //get the tournaments from the database
-        user = new User();
+        user = new Administrator();
     }
 
     @FXML
