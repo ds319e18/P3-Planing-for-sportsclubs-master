@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class PlayoffBracketDAO {
 
+    // Inserting a playoff bracket in the database
     public void insertPlayoffBracket(Tournament tournament) {
         PoolDAO poolSQL = new PoolDAO();
         MatchDAO matchSQL = new MatchDAO();
@@ -39,6 +40,7 @@ public class PlayoffBracketDAO {
         }
     }
 
+    // Getting a playoff bracket for a pool in a premade tournament
     public void getKnockoutBracket(Tournament tournament, Pool pool, Connection con) {
         PoolDAO poolSQL = new PoolDAO();
         try{
@@ -67,6 +69,7 @@ public class PlayoffBracketDAO {
         }
     }
 
+    // Getting all matches for a playoff bracket in a premade tournament
     public ArrayList<Match> getMatches(Tournament tournament, Pool pool, Connection con) {
         ArrayList<Match> matches = new ArrayList<>();
         PoolDAO poolSQL = new PoolDAO();

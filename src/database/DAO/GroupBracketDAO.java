@@ -37,6 +37,7 @@ public class GroupBracketDAO {
         }
     }
 
+    // Getting all groupbrackets for all pools in premade tournaments
     public void getGroupBracket(Tournament tournament, Pool pool, Connection con) {
         PoolDAO poolSQL = new PoolDAO();
         try{
@@ -58,6 +59,7 @@ public class GroupBracketDAO {
         }
     }
 
+    // Getting all matches for groupbracket in a premade tournament
     public ArrayList<Match> getMatches(Tournament tournament, Pool pool, Connection con) {
         ArrayList<Match> matches = new ArrayList<>();
         PoolDAO poolSQL = new PoolDAO();

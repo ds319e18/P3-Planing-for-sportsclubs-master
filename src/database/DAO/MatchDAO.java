@@ -130,6 +130,8 @@ public class MatchDAO {
         }
     }
 
+    // When a match schedule has been created in a tournament with matches, this will be called to updated the matches
+    // in the database, so a match in the database gets a field and timestamp
     public void updateMatchesFromMatchsSchedule(Tournament tournament) {
         try (Connection con = Database.connect()) {
             MatchDAO matchSQL = new MatchDAO();
@@ -162,7 +164,7 @@ public class MatchDAO {
         }
     }
 
-    // Checking wether a match is in the currenct match day by their IDs
+    // Checking wether a match is in the current match day by their IDs
     public boolean checkIfMatchInMatchDay(int matchID, int matchDayID, Connection con) {
         try {
             String query = "select * from MatchTable where idMatch = " + matchID + " AND idMatchDayMatch =" + matchDayID;

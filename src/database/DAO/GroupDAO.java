@@ -9,6 +9,8 @@ import tournament.pool.Pool;
 import java.sql.*;
 
 public class GroupDAO {
+
+    // Inserting groups in database
     public void insertGroup(Tournament tournament) {
         PoolDAO poolSQL = new PoolDAO();
         TeamDAO teamSQL = new TeamDAO();

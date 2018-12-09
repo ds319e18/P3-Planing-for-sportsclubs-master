@@ -69,6 +69,7 @@ public class TeamDAO {
         }
     }
 
+    // Finding a team id in database
     public int findTeamID(Team team, Connection con) {
         try {
             String sql = "select * from Team where name = '" + team.getName() + "'" + "AND skillLevel = '" + team.getSkillLevel() + "'" + "AND yearGroup =" + team.getYearGroup();
@@ -85,6 +86,8 @@ public class TeamDAO {
         return 0;
     }
 
+    // When groups has been created, we need to update in the database which group a match is in, therefore
+    // we update groupId field in the matchTable
     public void updateGroupIdTeam(Tournament tournament, Connection con) {
         GroupDAO groupSQL = new GroupDAO();
         PoolDAO poolSQL = new PoolDAO();
@@ -138,6 +141,7 @@ public class TeamDAO {
         return null;
     }
 
+    // Getting a specific team in the database
     public Team getTeam(int teamID, Connection con) {
         try {
             String sql = "select * from Team where idTeam = " + teamID;

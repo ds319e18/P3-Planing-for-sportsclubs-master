@@ -12,6 +12,7 @@ import java.util.Objects;
 
 public class FieldDAO {
 
+    // Inserting fields in the database
     public void insertField(Tournament tournament, Connection con) {
         try{
                 String query = "INSERT INTO Field (name, idTournamentField) VALUES(?, ?)";
@@ -28,6 +29,7 @@ public class FieldDAO {
         }
     }
 
+    // Getting all fields for premade tournaments connected to a specific account
     public ArrayList<Field> getAllFields(Tournament tournament, Connection con) {
         ArrayList<Field> fields = new ArrayList<>();
 
@@ -49,6 +51,7 @@ public class FieldDAO {
         return null;
     }
 
+    // Finds field ID from database
     public int findFieldID(Tournament tournament, Match match, Connection con) {
 
         try {
@@ -65,6 +68,7 @@ public class FieldDAO {
         return 0;
     }
 
+    // Finds field name in the database and returns it
     public String getFieldName(Tournament tournament, int fieldID, Connection con) {
         try {
             String fieldName;

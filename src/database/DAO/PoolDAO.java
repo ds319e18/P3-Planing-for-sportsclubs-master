@@ -48,6 +48,7 @@ public class PoolDAO {
         return 0;
     }
 
+    // Get all pools for premade tournaments
     public ArrayList<Pool> getAllPools(Tournament tournament, Connection con) {
         ArrayList<Pool> pools = new ArrayList<>();
 
