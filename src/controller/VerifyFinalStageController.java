@@ -13,6 +13,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -265,6 +266,16 @@ public class VerifyFinalStageController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
+        try {
+            checkVerifyException();
+        } catch (NotAllTeamsAreVerified e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input-fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+            return;
+        }
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
         Parent newWindow = loader.load();
@@ -290,5 +301,13 @@ public class VerifyFinalStageController {
             window.setScene(newScene);
             window.show();
 
+    }
+
+    public void checkVerifyException() {
+        for (Pool pool : tournament.getPoolList()) {
+            if (pool.getPlayOffVerificationStatus().equals("Ikke færdig")) {
+                throw new NotAllTeamsAreVerified("Slutspil");
+            }
+        }
     }
 }

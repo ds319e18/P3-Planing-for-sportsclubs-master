@@ -106,7 +106,7 @@ public class FrontPageController {
     @FXML
     public void setViewButtonClicked(ActionEvent event, String tournamentName) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
+        loader.setLocation(getClass().getResource("../View/ViewPage.FXML"));
         Parent newWindow = loader.load();
 
         //TODO Dette er til database

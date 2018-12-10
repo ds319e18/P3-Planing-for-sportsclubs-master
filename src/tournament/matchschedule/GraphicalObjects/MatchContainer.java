@@ -18,7 +18,7 @@ public class MatchContainer extends  HBox{
     private boolean selected;
     private Text timeIntervalText;
 
-    //Creates an empty matchContainer with a startTime
+    //Creates an empty matchContainer with a startTime in the gridPane
     public MatchContainer(LocalTime matchStartTime) {
         Text matchNameText = new Text("Kamp --");
         timeIntervalText = new Text(matchStartTime.toString());

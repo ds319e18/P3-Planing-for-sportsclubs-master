@@ -93,6 +93,7 @@ public class CreatingMatchScheduleController {
 
             LocalTime matchDayStartTime = matchDay.getStartTime();
 
+            //For each field in each matchDay, an empty matchContainer is created
             for (Field field : matchDay.getFieldList()) {
                 emptyMatchContainer = new MatchContainer(matchDayStartTime);
 
@@ -159,24 +160,19 @@ public class CreatingMatchScheduleController {
 
         // checks if a matchContainer was selected before
         if (selectedMatchContainer != null) {
-
-            gridPane.getChildren().remove(selectedMatchContainer);
-            // remove the old matchContainer and replace with empty MatchContainer
-            MatchContainer newemptyMatchContainer = new MatchContainer(selectedMatchContainer.getMatch().getTimeStamp());
-            newemptyMatchContainer.setOnMouseClicked(event1 -> handleEmptyMatchContainerSelection(event1));
-            gridPane.add(newemptyMatchContainer, GridPane.getColumnIndex(selectedMatchContainer),
-                    GridPane.getRowIndex(selectedMatchContainer));
-
-            if (selectedMatchContainer.getParent() instanceof ListView){
+            // remove the selected matchContainer and the empty matchContainer
+            gridPane.getChildren().remove(emptyMatchContainer);
+            if (selectedMatchContainer.getParent() instanceof GridPane) {
+                gridPane.getChildren().remove(selectedMatchContainer);
+            } else if (selectedMatchContainer.getParent() instanceof ListView){
                 matchListView.getItems().remove(selectedMatchContainer);
             }
 
+            //create the new matchContainer
             MatchContainer newMatchContainer =
                     new MatchContainer(selectedMatchContainer.getMatch(), emptyMatchContainer);
-            // add the new matchContainer
             gridPane.add(newMatchContainer, GridPane.getColumnIndex(emptyMatchContainer),
                     GridPane.getRowIndex(emptyMatchContainer));
-
             newMatchContainer.setOnMouseClicked(event1 -> handleMatchContainerSelection(event1));
 
 

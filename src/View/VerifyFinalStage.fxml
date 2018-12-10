@@ -51,7 +51,7 @@
             <VBox layoutX="375.0" layoutY="10.0" prefHeight="502.0" prefWidth="40.0" />
             <VBox prefHeight="375.0" prefWidth="590.0">
                <children>
-                  <Label prefHeight="50.0" prefWidth="303.0" text="Verificer slutspil">
+                  <Label prefHeight="50.0" prefWidth="303.0" text="Godkend slutspil">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
@@ -77,15 +77,15 @@
                         <GridPane prefHeight="53.0" prefWidth="445.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="10.0" prefWidth="154.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="142.0" />
                           </columnConstraints>
                           <rowConstraints>
                               <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
                               <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Button mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Verify" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Godkend" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -112,8 +112,8 @@
                 <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button layoutX="862.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.columnIndex="4" />
-                  <Button layoutX="862.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.columnIndex="3" />
+                  <Button layoutX="862.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Næste" GridPane.columnIndex="4" />
+                  <Button layoutX="862.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" GridPane.columnIndex="3" />
                </children>
                <HBox.margin>
                   <Insets top="30.0" />
