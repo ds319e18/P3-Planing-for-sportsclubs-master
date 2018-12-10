@@ -31,8 +31,6 @@ public class FrontPageController {
 
     Tournament tournament;
 
-    private Spectator spectator = new Spectator();
-
     //TODO DENNE ER TIL UDEN DATABASE
     void setTournament(Tournament tournament) {
         this.tournament = tournament;

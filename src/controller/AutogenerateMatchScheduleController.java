@@ -172,6 +172,10 @@ public class AutogenerateMatchScheduleController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
+        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
+        warning.setHeaderText("Tillykke!");
+        warning.setTitle("Succesfuld Turnering");
+        warning.showAndWait();
         // DAO objects for match schedule and match day
        // MatchScheduleDAO matchScheduleSQL = new MatchScheduleDAO();
        // MatchDayDAO matchDaySQL = new MatchDayDAO();
@@ -188,7 +192,7 @@ public class AutogenerateMatchScheduleController {
         Parent newWindow = loader.load();
 
         //TODO DENNE ER TIL UDEN DATABASE
-        FrontPageController atc = loader.getController();
+        AdminPageController atc = loader.getController();
         atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);

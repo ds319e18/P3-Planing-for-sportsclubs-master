@@ -127,25 +127,6 @@ public class MatchScheduleSetupController implements CheckInput {
     }
 
     @FXML
-    private void autogenerateMixedMatches() {
-        try {
-            checkAllInput();
-            tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
-        } catch (MissingInputException e) {
-            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-            warning.setHeaderText("Manglende input fejl");
-            warning.setTitle("Fejl");
-            warning.showAndWait();
-        } catch (InvalidInputException e) {
-            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-            warning.setHeaderText("Ugyldigt input fejl");
-            warning.setTitle("Fejl");
-            warning.showAndWait();
-        }
-
-    }
-
-    @FXML
     private void autogenerateNoMixedMatches(ActionEvent event) throws IOException {
         try {
             checkAllInput();

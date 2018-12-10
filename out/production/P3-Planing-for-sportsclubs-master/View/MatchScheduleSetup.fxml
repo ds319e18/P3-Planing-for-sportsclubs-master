@@ -2,8 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -61,7 +59,7 @@
                   </TableView>
                   <HBox prefHeight="28.0" prefWidth="435.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Doubleclick på en celle for at redigere værdier for starttidspunkter og sluttidspunkter" wrappingWidth="423.9830722808838">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dobbeltklik på en celle for at redigere værdier for starttidspunkter og sluttidspunkter" wrappingWidth="423.9830722808838">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -97,12 +95,7 @@
                   <VBox prefHeight="20.0" prefWidth="240.0" />
                   <Button mnemonicParsing="false" onAction="#manuallyCreateMatchSchedule" prefHeight="34.0" prefWidth="211.0" text="Lav kampprogram manuelt" textAlignment="CENTER" />
                   <VBox layoutX="10.0" layoutY="246.0" prefHeight="20.0" prefWidth="240.0" />
-                  <MenuButton mnemonicParsing="false" prefHeight="34.0" prefWidth="211.0" text="Autogenererer kampprogram" textAlignment="CENTER">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#autogenerateMixedMatches" text="Blandede kampe" />
-                        <MenuItem mnemonicParsing="false" onAction="#autogenerateNoMixedMatches" text="Kampe fra en pujle af gangen" />
-                     </items>
-                  </MenuButton>
+                  <Button layoutX="10.0" layoutY="366.0" mnemonicParsing="false" onAction="#autogenerateNoMixedMatches" prefHeight="34.0" prefWidth="211.0" text="Autogenerer kampprogram " textAlignment="CENTER" />
                </children>
             </VBox>
          </children>

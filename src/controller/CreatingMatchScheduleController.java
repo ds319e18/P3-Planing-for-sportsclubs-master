@@ -288,6 +288,10 @@ public class CreatingMatchScheduleController {
 
     @FXML
     private void finishMatchScheduleButtonClicked(ActionEvent event) throws IOException {
+        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
+        warning.setHeaderText("Tillykke!");
+        warning.setTitle("Succesfuld Turnering");
+        warning.showAndWait();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
         Parent newWindow = loader.load();
