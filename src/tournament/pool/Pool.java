@@ -15,6 +15,7 @@ public class Pool {
     private PlayoffBracket playoffBracket;
     private int matchDuration = 0;
     private String groupsVerificationStatus = "Ikke færdig";
+    private String playOffVerificationStatus = "Ikke færdig";
 
     public void addGroupBracket(GroupBracket groupBracketType) {
         this.groupBracket = groupBracketType.createGroupBracket(teamList);
@@ -25,7 +26,7 @@ public class Pool {
     }
 
     public String getGroupCreationStatus() {
-        if (groupBracket != null && groupBracket.getMatchesPrTeamAgainstOpponentInGroup() != 0)
+        if (groupBracket != null)
             return "Færdig";
         else
             return "Ikke færdig";
@@ -42,8 +43,20 @@ public class Pool {
             return "Ikke færdig";
     }
 
+    public String getPlayOffType() {
+        return playoffBracket.getClass().getSimpleName();
+    }
+
+    public String getPlayOffVerificationStatus() {
+        return playOffVerificationStatus;
+    }
+
     public void setGroupsVerificationStatus(String statusString) {
         groupsVerificationStatus = statusString;
+    }
+
+    public void setPlayOffVerificationStatus(String statusString) {
+        this.playOffVerificationStatus = playOffVerificationStatus;
     }
 
     // Adding team to the correct pool
