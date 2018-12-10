@@ -33,9 +33,8 @@ public class FrontPageController {
 
     private Spectator spectator = new Spectator();
 
-
     //TODO DENNE ER TIL UDEN DATABASE
-    /*void setTournament(Tournament tournament) {
+    void setTournament(Tournament tournament) {
         this.tournament = tournament;
         for (ColumnConstraints column : gp.getColumnConstraints())
             column.setHalignment(HPos.CENTER);
@@ -57,7 +56,7 @@ public class FrontPageController {
             });
             gp.addRow(i, txt, status, date, btnView);
         }
-    }*/
+    }
 
     @FXML
     public void setOnLoginButtonClicked(ActionEvent event) throws IOException {
@@ -110,7 +109,7 @@ public class FrontPageController {
         Parent newWindow = loader.load();
 
         //TODO Dette er til database
-        for (Tournament tournament : spectator.getTournaments()) {
+        /*for (Tournament tournament : spectator.getTournaments()) {
             if (tournament.getName().equals(tournamentName)) {
                 UpdateMatchController atc = loader.getController();
                 atc.setTournament(tournament);
@@ -122,10 +121,10 @@ public class FrontPageController {
                 window.setScene(newScene);
                 window.show();
             }
-        }
+        }*/
 
         //TODO Dette er til hvis man ikke har database på
-        /*UpdateMatchController atc = loader.getController();
+        UpdateMatchController atc = loader.getController();
         atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
@@ -133,8 +132,6 @@ public class FrontPageController {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
-        window.show();*/
-
+        window.show();
     }
-
 }
