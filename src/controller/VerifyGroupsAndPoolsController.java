@@ -155,7 +155,7 @@ public class VerifyGroupsAndPoolsController {
     private void checkAllPoolsAreVerified() {
         for (Pool pool : poolTableView.getItems()) {
             if (pool.getGroupsVerificationStatus().equals("Ikke færdig")) {
-                throw new NotAllTeamsAreVerified(new Group());
+                throw new NotAllTeamsAreVerified("grupperne");
             }
         }
     }
