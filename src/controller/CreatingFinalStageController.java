@@ -4,12 +4,12 @@ import exceptions.IllegalAmountOfGroupsException;
 import exceptions.IllegalAmountOfTeamsException;
 import exceptions.MissingInputException;
 import exceptions.MissingPressingSaveException;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,10 +18,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
@@ -35,106 +35,120 @@ import java.io.IOException;
 
 public class CreatingFinalStageController implements CheckInput {
 
-
-    Tournament tournament;
-    String poolClicked;
+    private Tournament tournament;
     private final int stepNumber = 4;
 
     @FXML
     private VBox progressBox;
 
     @FXML
-    GridPane poolStatusGridPane;
+    private RadioButton knockoutRadioButton;
 
     @FXML
-    GridPane groupsAndTeamsGridPane;
+    private RadioButton placementRadioButton;
 
     @FXML
-    Text poolName;
+    private RadioButton goldAndBronzeRadioButton;
 
     @FXML
-    Text amountOfGroups;
+    private ComboBox advancingComboBox;
 
     @FXML
-    RadioButton knockoutRadioButton;
+    private TableView<Pool> poolTableView;
 
     @FXML
-    RadioButton placementRadioButton;
+    private TableView<Group> groupTableView;
 
     @FXML
-    RadioButton goldAndBronzeRadioButton;
-
-    @FXML
-    ComboBox advancingComboBox;
-
+    private Label advancingTeamsLabel;
 
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        setPoolStatusGridPane();
+        setPoolTableView();
+        setGroupTableView();
+        setComboBoxItemsAndLabels();
+        setRadioButtonListener();
         progressBox.getChildren().add(new ProgressBox(stepNumber));
+
+
     }
 
-    @Override
-    public void checkAllInput() {
-        if (advancingComboBox.getSelectionModel().isEmpty() || !(placementRadioButton.isSelected() ||
-            knockoutRadioButton.isSelected() || goldAndBronzeRadioButton.isSelected())) {
-            throw new MissingInputException();
-        }
+    private void setPoolTableView() {
+        TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
+        poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        setColumnWidth(poolNameColumn);
+
+        TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
+        poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("playOffCreationStatus"));
+        setColumnWidth(poolStatusColumn);
+
+        poolTableView.getColumns().addAll(poolNameColumn, poolStatusColumn);
+        //add pools to tableView
+        addPoolsInTableView();
     }
+
+    private void setColumnWidth(TableColumn tableColumn) {
+        tableColumn.setMaxWidth(128);
+        tableColumn.setMinWidth(128);
+    }
+    private void setGroupTableView() {
+        TableColumn<Group, String> groupNameColumn = new TableColumn<>("Gruppenavn");
+        groupNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        setColumnWidth(groupNameColumn);
+
+        TableColumn<Group, String> amountOfTeamsColumn = new TableColumn<>("Antal grupper");
+        amountOfTeamsColumn.setCellValueFactory(new PropertyValueFactory<>("amountOfTeams"));
+        setColumnWidth(amountOfTeamsColumn);
+
+        groupTableView.getColumns().addAll(groupNameColumn, amountOfTeamsColumn);
+    }
+
+    private void addPoolsInTableView() {
+        poolTableView.getItems().addAll(tournament.getPoolList());
+
+        //handle row selection for each pool in tableView
+        poolTableView.setRowFactory( table -> {
+            TableRow<Pool> row = new TableRow<>();
+            row.setOnMouseClicked(event -> handleRowSelection());
+            return row;
+        });
+    }
+
+    private void handleRowSelection() {
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+
+        if ( selectedPool != null)
+            groupTableView.getItems().clear();
+            groupTableView.getItems().addAll(selectedPool.getGroupBracket().getGroups());
+    }
+
 
     @FXML
     private void saveButton() {
-        try {
-            checkAllInput();
-            int yearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
-                    : poolClicked.substring(0, 1));
-            String skillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
-                    : poolClicked.substring(1, 2));
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
-            // The amount of teams to advance on the the final stage is set
-            tournament.findCorrectPool(yearGroup, skillLevel).getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
+        // The amount of teams to advance to the final stage is set
+        selectedPool.getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
 
-            if (knockoutRadioButton.isSelected()) {
-                tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new KnockoutPlay());
-                System.out.println("if " + tournament.findCorrectPool(yearGroup, skillLevel).getPlayoffBracket().getMatches().size());
+        if (knockoutRadioButton.isSelected()) {
+            selectedPool.addPlayoffBracket(new KnockoutPlay());
+            System.out.println("if " + selectedPool.getPlayoffBracket().getMatches().size());
 
-            } else if (placementRadioButton.isSelected()) {
-                try {
-                    tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new PlacementPlay());
-                } catch (IllegalAmountOfGroupsException e) {
-                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-                    warning.setHeaderText("Manglende input-fejl");
-                    warning.setTitle("Fejl");
-                    warning.showAndWait();
-                } catch (IllegalAmountOfTeamsException e) {
-                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-                    warning.setHeaderText("Manglende input-fejl");
-                    warning.setTitle("Fejl");
-                    warning.showAndWait();
-                }
-            } else if (goldAndBronzeRadioButton.isSelected()) {
-                try {
-                    tournament.findCorrectPool(yearGroup, skillLevel).addPlayoffBracket(new GoldAndBronzePlay());
-                } catch (IllegalAmountOfGroupsException e) {
-                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-                    warning.setHeaderText("Manglende input-fejl");
-                    warning.setTitle("Fejl");
-                    warning.showAndWait();
-                } catch (IllegalAmountOfTeamsException e) {
-                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-                    warning.setHeaderText("Manglende input-fejl");
-                    warning.setTitle("Fejl");
-                    warning.showAndWait();
-                }
-            }
-            setPoolStatusGridPane();
-        } catch (MissingInputException e) {
-            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-            warning.setHeaderText("Manglende input-fejl");
-            warning.setTitle("Fejl");
-            warning.showAndWait();
+        } else if (placementRadioButton.isSelected()) {
+            selectedPool.addPlayoffBracket(new PlacementPlay());
+        } else if (goldAndBronzeRadioButton.isSelected()) {
+            selectedPool.addPlayoffBracket(new GoldAndBronzePlay());
         }
+
+        poolTableView.getItems().clear();
+        addPoolsInTableView();
+    }
+
+    @FXML
+    private void setOnKnockoutChosen() {
+        advancingTeamsLabel.setVisible(true);
+        advancingComboBox.setVisible(true);
     }
 
 
@@ -181,83 +195,29 @@ public class CreatingFinalStageController implements CheckInput {
 
     }
 
-    @FXML
-    private void setPoolStatusGridPane() {
-        poolStatusGridPane.getChildren().remove(0, poolStatusGridPane.getChildren().size());
-        for(Pool pool : tournament.getPoolList() ) {
-            Text text = new Text(pool.getYearGroup() + "" + pool.getSkillLevel());
-            text.setWrappingWidth(80);
-            text.setTextAlignment(TextAlignment.CENTER);
-            boolean isDone = pool.getPlayoffBracket() != null
-                    && pool.getGroupBracket().getAmountOfAdvancingTeamsPrGroup() > 0;
-            Text status = (isDone ? new Text("Done") : new Text("Not done"));
-            status.setWrappingWidth(80);
-            status.setTextAlignment(TextAlignment.CENTER);
-            GridPane.setMargin(text, new Insets(10,0,10,0));
-            poolStatusGridPane.addRow(poolStatusGridPane.getRowCount(), text, status);
-        }
-
-        poolStatusGridPane.setGridLinesVisible(false);
-        poolStatusGridPane.setGridLinesVisible(true);
-    }
-
-    @FXML
-    void drawGroupsAndTeamsGridPane() {
-        int i = 1 ;
-        groupsAndTeamsGridPane.getChildren().remove(0, groupsAndTeamsGridPane.getChildren().size());
-        try {
-            int teamYearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
-                    : poolClicked.substring(0, 1));
-            String teamSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
-                    : poolClicked.substring(1, 2));
-            for (Group group : tournament.findCorrectPool(teamYearGroup, teamSkillLevel).getGroupBracket().getGroups()) {
-                Text groupName = new Text("Group" + i );
-                i++;
-                Text teamsInGroup = new Text(Integer.toString(group.getTeamList().size()));
-                groupsAndTeamsGridPane.addRow(groupsAndTeamsGridPane.getRowCount(), groupName,teamsInGroup);
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        groupsAndTeamsGridPane.setGridLinesVisible(false);
-        groupsAndTeamsGridPane.setGridLinesVisible(true);
-    }
-
-    @FXML
-    private void mouseClicked(MouseEvent e) {
-        for(Node node : poolStatusGridPane.getChildren())
-            node.setStyle("-fx-font-weight: normal;");
-
-        Text poolClickedText = (Text) poolStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 2);
-
-        poolClickedText.setStyle("-fx-font-weight: bold;");
-
-        poolClicked = poolClickedText.getText();
-
-        setComboBoxItemsAndLabels();
-        drawGroupsAndTeamsGridPane();
-    }
-
     private void setComboBoxItemsAndLabels() {
-        String poolClickedText = poolClicked;
-        // The year group and skill level of the chosen pool are described.
-        String yearGroup = (poolClickedText.length() == 3 ? poolClickedText.substring(0, 2) : poolClickedText.substring(0, 1));
-        String skillLevel = (poolClickedText.length() == 3 ? poolClickedText.substring(2, 3) : poolClickedText.substring(1, 2));
-        // The amount of teams in the pool is displayed.
-        amountOfGroups.setText(String.valueOf(tournament.findCorrectPool(Integer.parseInt(yearGroup), skillLevel).getGroupBracket().getGroups().size()));
-        // The pool chosen is displayed.
-        poolName.setText(poolClickedText);
         // The combobox for choosing the amount of groups
-        ObservableList<String> amountOfGroups = FXCollections.observableArrayList("1", "2", "3");
-        advancingComboBox.setItems(amountOfGroups);
+        ObservableList<String> amountOfGroupsList = FXCollections.observableArrayList("1", "2", "3");
+        advancingComboBox.setItems(amountOfGroupsList);
     }
 
-    private void highlightProgressBox() {
-        VBox stepBox = (VBox) progressBox.getChildren().get(stepNumber);
-        Text text1 = (Text) stepBox.getChildren().get(0);
-        Text text2 = (Text) stepBox.getChildren().get(1);
-        text1.setFill(Color.WHITE);
-        text2.setFill(Color.WHITE);
-        stepBox.setStyle("-fx-background-color: #6E83CA");
+    private void setRadioButtonListener() {
+        knockoutRadioButton.selectedProperty().addListener(new javafx.beans.value.ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if (knockoutRadioButton.isSelected()) {
+                    advancingTeamsLabel.setVisible(true);
+                    advancingComboBox.setVisible(true);
+                } else {
+                    advancingTeamsLabel.setVisible(false);
+                    advancingComboBox.setVisible(false);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void checkAllInput() {
+
     }
 }

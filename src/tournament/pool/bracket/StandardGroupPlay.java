@@ -17,7 +17,7 @@ public class StandardGroupPlay extends GroupBracket {
     public StandardGroupPlay createGroupBracket(ArrayList<Team> poolTeamList) {
         // The desired number of groups is created
         for (int i = 0; i < super.getAmountOfGroups(); i++) {
-            super.getGroups().add(new Group());
+            super.getGroups().add(new Group("Gruppe " + (i+1)));
         }
         // The teams is distributed in groups as equally as possible, switching between each group adding one team at a time
         for (int i = 0; i < poolTeamList.size(); i++) {
@@ -75,23 +75,4 @@ public class StandardGroupPlay extends GroupBracket {
             }
         }
     }
-
-    /*
-    public void swapTeams(String name1, String name2) {
-        Team team1 = new Team(name1, 0, "Z");
-        Team team2 = new Team(name2, 0, "Z");
-        for (Group group : this.getGroups()) {
-            if (group.getTeamList().contains(new Team(name1, 0, "Z"))) {
-                group.getTeamList().add(team2);
-                group.getTeamList().remove(new Team(name1, 0, "Z"));
-
-            }
-            else if (group.getTeamList().contains(new Team(name2, 0, "Z"))) {
-                group.getTeamList().add(team1);
-                group.getTeamList().remove(new Team(name2, 0, "Z"));
-
-            }
-        }
-    }
-    */
 }
