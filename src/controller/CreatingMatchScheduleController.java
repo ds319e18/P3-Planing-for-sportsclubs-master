@@ -40,7 +40,7 @@ public class CreatingMatchScheduleController {
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         progressBox.getChildren().add(new ProgressBox(stepNumber));
-        timeBetweenMatches = tournament.getMatchSchedule().getMatchDays().get(1).getTimeBetweenMatches();
+        timeBetweenMatches = tournament.getMatchSchedule().getMatchDays().get(0).getTimeBetweenMatches();
         createMatchListView();
         createMatchDayTabs();
         createMatchScheduleGridpanes();

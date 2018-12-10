@@ -165,8 +165,8 @@ public class VerifyGroupsAndPoolsController {
         try {
             checkAllPoolsAreVerified();
             // DAO for group and groupbracket
-            GroupDAO groupSQL = new GroupDAO();
-            GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
+            //GroupDAO groupSQL = new GroupDAO();
+            //GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
 
             // Inserting groups and groupbracketin database
             //groupSQL.insertGroup(tournament);

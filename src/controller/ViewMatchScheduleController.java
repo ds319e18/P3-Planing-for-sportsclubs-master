@@ -87,7 +87,6 @@ public class ViewMatchScheduleController {
             for (Match match : matchDay.getMatches()) {
                 MatchContainer matchContainer = new MatchContainer(match);
 
-
                 HBox matchHBox = createHBoxFromMatch(match, matchCounter);
 
                 matchDayGridPane.add(matchHBox, Integer.parseInt(match.getField().getName().substring(5)) - 1

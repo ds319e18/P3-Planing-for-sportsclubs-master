@@ -2,6 +2,7 @@ package controller;
 
 import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
+import exceptions.TooManyMatchesInTheMatchDay;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
@@ -21,6 +22,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalTimeStringConverter;
+import tournament.Match;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 import tournament.Tournament;
@@ -124,6 +126,51 @@ public class MatchScheduleSetupController implements CheckInput {
         if (!(timeBetweenMatches.getText().matches("\\d+"))) {
             throw new InvalidInputException("heltal", "tid i mellem kampene");
         }
+        checkMatchScheduleTime();
+    }
+
+    private void checkMatchScheduleTime() {
+        int wantedTime = 0;
+        int actualTime = 0;
+
+        for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
+            if (matchDay.getStartTime().getMinute() == 0 && matchDay.getEndTime().getMinute() == 0) {
+                wantedTime += (matchDay.getEndTime().getHour() - matchDay.getStartTime().getHour()) * 60;
+            } else {
+                wantedTime += (60 - matchDay.getStartTime().getMinute()) + matchDay.getEndTime().getMinute();
+            }
+        }
+            for (Match match : tournament.getAllMatches()) {
+                actualTime += match.getDuration();
+            }
+            actualTime += (tournament.getAllMatches().size() - 1) * Integer.parseInt(timeBetweenMatches.getText());
+
+        if (actualTime > wantedTime) {
+            throw new TooManyMatchesInTheMatchDay();
+        }
+    }
+
+    @FXML
+    private void autogenerateMixedMatches() {
+        try {
+            checkAllInput();
+            tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (TooManyMatchesInTheMatchDay e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Logistisk fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
     }
 
     @FXML
@@ -154,6 +201,11 @@ public class MatchScheduleSetupController implements CheckInput {
         } catch (InvalidInputException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (TooManyMatchesInTheMatchDay e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Logistisk fejl");
             warning.setTitle("Fejl");
             warning.showAndWait();
         }
@@ -188,6 +240,11 @@ public class MatchScheduleSetupController implements CheckInput {
         } catch (InvalidInputException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (TooManyMatchesInTheMatchDay e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Logistisk fejl");
             warning.setTitle("Fejl");
             warning.showAndWait();
         }
