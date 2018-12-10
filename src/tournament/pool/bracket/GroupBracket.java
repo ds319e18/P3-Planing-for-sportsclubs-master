@@ -9,8 +9,8 @@ public abstract class GroupBracket {
     private ArrayList<Group> groups = new ArrayList<>();
     private ArrayList<Match> matches = new ArrayList<>();
     private int advancingTeamsPrGroup;
-    private int matchesPrTeamAgainstOpponentInGroup;
-    private int amountOfGroups;
+    private int matchesPrTeamAgainstOpponentInGroup = 0;
+    private int amountOfGroups = 0;
 
     abstract public GroupBracket createGroupBracket(ArrayList<Team> poolTeamList);
     abstract public ArrayList<Team> advanceTeams();

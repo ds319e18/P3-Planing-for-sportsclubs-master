@@ -63,16 +63,18 @@ public class CreatingFinalStageController implements CheckInput {
     private Label advancingTeamsLabel;
 
 
+
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         setPoolTableView();
         setGroupTableView();
-        setComboBoxItemsAndLabels();
         setRadioButtonListener();
         progressBox.getChildren().add(new ProgressBox(stepNumber));
 
 
     }
+
+
 
     private void setPoolTableView() {
         TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
@@ -118,30 +120,70 @@ public class CreatingFinalStageController implements CheckInput {
     private void handleRowSelection() {
         Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
-        if ( selectedPool != null)
+        if (selectedPool != null) {
             groupTableView.getItems().clear();
             groupTableView.getItems().addAll(selectedPool.getGroupBracket().getGroups());
+            setComboBoxItemsAndLabels(selectedPool);
+        }
     }
 
-
-    @FXML
-    private void saveButton() {
-        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
-
-        if (knockoutRadioButton.isSelected()) {
-            // The amount of teams to advance to the final stage is set
-            selectedPool.getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
-            selectedPool.addPlayoffBracket(new KnockoutPlay());
-            System.out.println("if " + selectedPool.getPlayoffBracket().getMatches().size());
-
-        } else if (placementRadioButton.isSelected()) {
-            selectedPool.addPlayoffBracket(new PlacementPlay());
-        } else if (goldAndBronzeRadioButton.isSelected()) {
-            selectedPool.addPlayoffBracket(new GoldAndBronzePlay());
+    @Override
+    public void checkAllInput() {
+        if((!knockoutRadioButton.isSelected() || advancingComboBox.getSelectionModel().isEmpty())  && !placementRadioButton.isSelected() && !goldAndBronzeRadioButton.isSelected()){
+            throw new MissingInputException();
         }
 
-        poolTableView.getItems().clear();
-        addPoolsInTableView();
+
+    }
+    @FXML
+    private void saveButton() {
+        try {
+            checkAllInput();
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
+
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+            // The amount of teams to advance to the final stage is set
+            if (knockoutRadioButton.isSelected()) {
+                    selectedPool.getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
+                    selectedPool.addPlayoffBracket(new KnockoutPlay());
+                    System.out.println("if " + selectedPool.getPlayoffBracket().getMatches().size());
+            } else if (placementRadioButton.isSelected()) {
+                try {
+                    selectedPool.addPlayoffBracket(new PlacementPlay());
+                } catch (IllegalAmountOfTeamsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                } catch (IllegalAmountOfGroupsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                }
+            } else if (goldAndBronzeRadioButton.isSelected()) {
+                try {
+                    selectedPool.addPlayoffBracket(new GoldAndBronzePlay());
+                }catch (IllegalAmountOfGroupsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                }catch (IllegalAmountOfTeamsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                }
+            }
+
+            poolTableView.getItems().clear();
+            addPoolsInTableView();
     }
 
     @FXML
@@ -172,32 +214,45 @@ public class CreatingFinalStageController implements CheckInput {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/VerifyFinalStage.FXML"));
-        Parent newWindow = loader.load();
-
-        VerifyFinalStageController atc = loader.getController();
         try {
-            atc.setTournament(tournament);
-            Scene newScene = new Scene(newWindow);
-
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-            window.setScene(newScene);
-            window.show();
+            checkSaveException();
         } catch (MissingPressingSaveException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Manglende input-fejl");
             warning.setTitle("Fejl");
             warning.showAndWait();
+            return;
         }
 
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/VerifyFinalStage.FXML"));
+        Parent newWindow = loader.load();
+
+        VerifyFinalStageController atc = loader.getController();
+
+        atc.setTournament(tournament);
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 
-    private void setComboBoxItemsAndLabels() {
+    private void setComboBoxItemsAndLabels(Pool pool) {
         // The combobox for choosing the amount of groups
-        ObservableList<String> amountOfGroupsList = FXCollections.observableArrayList("1", "2", "3");
-        advancingComboBox.setItems(amountOfGroupsList);
+        ObservableList<String> amountOfTeamsInGroup = FXCollections.observableArrayList();
+        int teams = 0;
+
+        for (Group group : pool.getGroupBracket().getGroups()) {
+            teams += group.getAmountOfTeams();
+        }
+        teams = (teams / pool.getGroupBracket().getAmountOfGroups());
+
+        for (int i = 0; i < teams; i++) {
+            amountOfTeamsInGroup.add(Integer.toString(i + 1));
+        }
+        advancingComboBox.setItems(amountOfTeamsInGroup);
     }
 
     private void setRadioButtonListener() {
@@ -215,8 +270,13 @@ public class CreatingFinalStageController implements CheckInput {
         });
     }
 
-    @Override
-    public void checkAllInput() {
+    public void checkSaveException() {
+        for (Pool pool : tournament.getPoolList()) {
+            if (pool.getPlayOffCreationStatus().equals("Ikke færdig")) {
+                throw new MissingPressingSaveException();
+            }
 
+        }
     }
+
 }

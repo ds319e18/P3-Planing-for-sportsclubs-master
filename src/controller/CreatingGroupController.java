@@ -1,6 +1,7 @@
 package controller;
 
 import exceptions.MissingInputException;
+import exceptions.MissingPressingSaveException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -109,9 +110,7 @@ public class CreatingGroupController implements CheckInput {
 
         poolTableView.getItems().clear();
         addPoolsInTableView();
-
-        }
-        catch (MissingInputException e) {
+        } catch (MissingInputException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Manglende input fejl");
             warning.setTitle("Fejl");
@@ -127,9 +126,18 @@ public class CreatingGroupController implements CheckInput {
         }
     }
 
+    private void checkStatusForEachPool() {
+        for (Pool pool : poolTableView.getItems()) {
+            if (pool.getGroupCreationStatus().equals("Ikke færdig")) {
+                throw new MissingPressingSaveException();
+            }
+        }
+    }
+
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        // Throw some exceotion here
+        try {
+            checkStatusForEachPool();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../View/VerifyGroupsAndPools.FXML"));
             Parent newWindow = loader.load();
@@ -143,6 +151,12 @@ public class CreatingGroupController implements CheckInput {
 
             window.setScene(newScene);
             window.show();
+        } catch (MissingPressingSaveException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
     }
 
     @FXML
