@@ -181,15 +181,15 @@ public class AutogenerateMatchScheduleController {
        // matchScheduleSQL.insertMatchSchedule(tournament);
 
         //TODO TIL DATABASE
-        loadTournamentInDatabase(tournament);
+        //loadTournamentInDatabase(tournament);
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/AdminPage.FXML"));
         Parent newWindow = loader.load();
 
         //TODO DENNE ER TIL UDEN DATABASE
-        //FrontPageController atc = loader.getController();
-        //atc.setTournament(tournament);
+        FrontPageController atc = loader.getController();
+        atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
 

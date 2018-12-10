@@ -70,7 +70,7 @@ public class FrontPageController {
     }
 
     // TODO DENNE ER TIL DATABASE
-    @FXML
+    /*@FXML
     public void initialize() {
         TournamentDAO tournemantSQL = new TournamentDAO();
 
@@ -99,7 +99,7 @@ public class FrontPageController {
                 gp.addRow(gp.getRowCount(), txt, status, date, btnView);
 
         }
-    }
+    }*/
 
 
     @FXML
