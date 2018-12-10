@@ -181,7 +181,7 @@ public class AutogenerateMatchScheduleController {
        // matchScheduleSQL.insertMatchSchedule(tournament);
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/AdminPage.FXML"));
+        loader.setLocation(getClass().getResource("../View/FrontPage.FXML"));
         Parent newWindow = loader.load();
 
         //TODO DENNE ER TIL UDEN DATABASE

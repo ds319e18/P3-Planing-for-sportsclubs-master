@@ -63,7 +63,7 @@ public class AdminPageController {
         window.show();
     }
 
-    public void initialize() {
+    /*public void initialize() {
         // DAO for tournament
         TournamentDAO tournamentSQL = new TournamentDAO();
 
@@ -91,7 +91,7 @@ public class AdminPageController {
                 gp.addRow(gp.getRowCount(), txt, status, date, btnView);
 
         }
-    }
+    }*/
 
     @FXML
     public void setViewButtonClicked(ActionEvent event, String tournamentName) throws IOException {
