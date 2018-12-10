@@ -117,9 +117,6 @@ public class CreatingGroupController implements CheckInput {
             warning.setTitle("Fejl");
             warning.showAndWait();
         }
-        } catch (MissingInputException e) {
-
-        }
 
     }
 

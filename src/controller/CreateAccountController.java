@@ -19,9 +19,5 @@ public class CreateAccountController {
 
     @FXML
     Button createUserBtn;
-
-    @FXML
-    void setOnCreateAccountBtmClicked() {
-        AccountDAO.createAccount(username.getText(), password.getText(), name.getText());
-    }
+    
 }
