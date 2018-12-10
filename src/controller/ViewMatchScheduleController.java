@@ -161,8 +161,8 @@ public class ViewMatchScheduleController {
         loader.setLocation(getClass().getResource("../View/FrontPage.FXML"));
         Parent newWindow = loader.load();
 
-        FrontPageController atc = loader.getController();
-        atc.setTournament(tournament);
+        //FrontPageController atc = loader.getController();
+        //atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
 

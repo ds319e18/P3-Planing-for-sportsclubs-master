@@ -1,6 +1,7 @@
 package controller;
 
 import account.Administrator;
+import account.Spectator;
 import database.DAO.AccountDAO;
 import database.DAO.TournamentDAO;
 import javafx.event.ActionEvent;
@@ -29,8 +30,6 @@ public class FrontPageController {
     Button loginBtn;
 
     Tournament tournament;
-
-    Administrator user = new Administrator();
 
     //TODO DENNE ER TIL UDEN DATABASE
     void setTournament(Tournament tournament) {
@@ -76,11 +75,11 @@ public class FrontPageController {
         // Initiliasere user objektet
         String idToBeHashed = "Jetsmark";
         int id = Objects.hash(idToBeHashed);
-        user.setId(id);
+        spectator.setId(id);
 
-        user.setTournamens(tournemantSQL.getAllTournaments(user.getId()));
+        spectator.setTournaments(tournemantSQL.getAllTournaments(spectator.getId()));
 
-        for (Tournament tournament : user.getTournamens()) {
+        for (Tournament tournament : spectator.getTournaments()) {
             for (ColumnConstraints column : gp.getColumnConstraints()) {
                 column.setHalignment(HPos.CENTER);
             }
@@ -107,7 +106,23 @@ public class FrontPageController {
         loader.setLocation(getClass().getResource("../View/ViewPage.FXML"));
         Parent newWindow = loader.load();
 
-        ViewMatchScheduleController atc = loader.getController();
+        //TODO Dette er til database
+        /*for (Tournament tournament : spectator.getTournaments()) {
+            if (tournament.getName().equals(tournamentName)) {
+                UpdateMatchController atc = loader.getController();
+                atc.setTournament(tournament);
+
+                Scene newScene = new Scene(newWindow);
+
+                Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+                window.setScene(newScene);
+                window.show();
+            }
+        }*/
+
+        //TODO Dette er til hvis man ikke har database på
+        UpdateMatchController atc = loader.getController();
         atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
@@ -116,7 +131,5 @@ public class FrontPageController {
 
         window.setScene(newScene);
         window.show();
-
     }
-
 }

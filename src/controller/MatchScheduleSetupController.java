@@ -64,9 +64,13 @@ public class MatchScheduleSetupController implements CheckInput {
 
         TableColumn<Pool, ?> poolNameColumn = poolTableView.getColumns().get(0);
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        poolNameColumn.setMinWidth(60);
+        poolNameColumn.setMinWidth(60);
 
         TableColumn<Pool, Integer> matchDurationColumn = (TableColumn<Pool, Integer>) poolTableView.getColumns().get(1);
         matchDurationColumn.setCellValueFactory(new PropertyValueFactory<>("matchDuration"));
+        matchDurationColumn.setMinWidth(178);
+        matchDurationColumn.setMaxWidth(178);
 
         matchDurationColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 
@@ -82,12 +86,15 @@ public class MatchScheduleSetupController implements CheckInput {
 
         TableColumn<MatchDay, ?> matchDateColumn = matchDayTableView.getColumns().get(0);
         matchDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        matchDateColumn.setMinWidth(200);
+        matchDateColumn.setMaxWidth(200);
 
         TableColumn<MatchDay, LocalTime> startTimeColumn =
                 (TableColumn<MatchDay, LocalTime>) matchDayTableView.getColumns().get(1);
         startTimeColumn.setCellValueFactory(new PropertyValueFactory<>("startTime"));
         startTimeColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LocalTimeStringConverter()));
-        //startTimeColumn.setCellFactory();
+        startTimeColumn.setMinWidth(115);
+        startTimeColumn.setMaxWidth(115);
 
         TableColumn<MatchDay, LocalTime> endTimeColumn =
                 (TableColumn<MatchDay, LocalTime>) matchDayTableView.getColumns().get(2);
@@ -117,25 +124,6 @@ public class MatchScheduleSetupController implements CheckInput {
         if (!(timeBetweenMatches.getText().matches("\\d+"))) {
             throw new InvalidInputException("heltal", "tid i mellem kampene");
         }
-    }
-
-    @FXML
-    private void autogenerateMixedMatches() {
-        try {
-            checkAllInput();
-            tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
-        } catch (MissingInputException e) {
-            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-            warning.setHeaderText("Manglende input fejl");
-            warning.setTitle("Fejl");
-            warning.showAndWait();
-        } catch (InvalidInputException e) {
-            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-            warning.setHeaderText("Ugyldigt input fejl");
-            warning.setTitle("Fejl");
-            warning.showAndWait();
-        }
-
     }
 
     @FXML
@@ -207,7 +195,13 @@ public class MatchScheduleSetupController implements CheckInput {
 
     @FXML
     public void backButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/VerifyFinalStage.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/VerifyFinalStage.fxml"));
+        Parent newWindow = loader.load();
+
+        VerifyFinalStageController vfc = loader.getController();
+        vfc.setTournament(tournament);
+
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -36,6 +36,33 @@ public class AdminPageController {
     @FXML
     Button createTournamentBtn;
 
+    Tournament tournament;
+
+    //TODO DENNE ER TIL UDEN DATABASE
+    void setTournament(Tournament tournament) {
+        this.tournament = tournament;
+        for (ColumnConstraints column : gp.getColumnConstraints())
+            column.setHalignment(HPos.CENTER);
+
+        for (int i = 0; i < 5; i++) { // Iterates through a list of tournament-objects.
+            Text txt = new Text(tournament.getName());
+            Text status = new Text("NOT ACTIVE");
+            if (tournament.isActive()) {
+                status = new Text("ACTIVE");
+            }
+            Text date = new Text(tournament.getStartDate().toString() + "\n" + tournament.getEndDate().toString() );
+            Button btnView = new Button("View");
+            btnView.setOnAction(event -> {
+                try {
+                    setViewButtonClicked(event, txt.getText());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            gp.addRow(i, txt, status, date, btnView);
+        }
+    }
+
     @FXML
     public void setOnCreateTournamentButtonClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();

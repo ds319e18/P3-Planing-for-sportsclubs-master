@@ -99,7 +99,7 @@ public class CreatingFinalStageController implements CheckInput {
         groupNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         setColumnWidth(groupNameColumn);
 
-        TableColumn<Group, String> amountOfTeamsColumn = new TableColumn<>("Antal grupper");
+        TableColumn<Group, String> amountOfTeamsColumn = new TableColumn<>("Antal hold");
         amountOfTeamsColumn.setCellValueFactory(new PropertyValueFactory<>("amountOfTeams"));
         setColumnWidth(amountOfTeamsColumn);
 
