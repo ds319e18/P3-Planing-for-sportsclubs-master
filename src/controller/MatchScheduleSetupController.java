@@ -29,6 +29,7 @@ import tournament.Tournament;
 import tournament.pool.Pool;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.time.LocalTime;
 
 public class MatchScheduleSetupController implements CheckInput {
@@ -271,7 +272,6 @@ public class MatchScheduleSetupController implements CheckInput {
     private void changeStartTimeCell(TableColumn.CellEditEvent editEvent) {
         MatchDay matchDaySelected = matchDayTableView.getSelectionModel().getSelectedItem();
         matchDaySelected.setStartTime(editEvent.getNewValue().toString());
-
     }
 
     @FXML
