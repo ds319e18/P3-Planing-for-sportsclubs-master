@@ -33,18 +33,16 @@ public class VerifyGroupsAndPoolsController {
     private Tournament tournament;
     private boolean isBeingEdited = false;
     private Text team1, team2;
-    private Pool selectedPool;
-
     private final int stepNumber = 3;
 
     @FXML
     private VBox progressBox;
 
     @FXML
-    GridPane groupsGridPane;
+    private GridPane groupsGridPane;
 
     @FXML
-    TableView<Pool> poolTableView;
+    private TableView<Pool> poolTableView;
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
@@ -113,7 +111,7 @@ public class VerifyGroupsAndPoolsController {
 
     @FXML
     private void verifyButtonPressed() {
-        selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
         selectedPool.setGroupsVerificationStatus("Færdig");
 
         poolTableView.getItems().clear();

@@ -13,6 +13,10 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -38,24 +42,64 @@ public class VerifyFinalStageController {
     private final int stepNumber = 5;
 
     @FXML
+    private TableView<Pool> poolTableView;
+
+    @FXML
     private VBox progressBox;
 
     @FXML
-    GridPane poolKnockoutStatusGridPane;
-
-    @FXML
-    GridPane finalStageGridPane;
-
-    String poolClicked;
-
-
+    private GridPane finalStageGridPane;
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         progressBox.getChildren().add(new ProgressBox(stepNumber));
-        drawPoolKnockoutStatusGridPane();
+        setPoolTableView();
+
     }
 
+    private void setPoolTableView() {
+        TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
+        poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        poolNameColumn.setMinWidth(150);
+        poolNameColumn.setMaxWidth(150);
+
+        TableColumn<Pool, String> playOffTypeColumn = new TableColumn<>("Slutspilstype");
+        playOffTypeColumn.setCellValueFactory(new PropertyValueFactory<>("playOffType"));
+        playOffTypeColumn.setMaxWidth(150);
+        playOffTypeColumn.setMinWidth(150);
+
+        TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
+        poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("playOffVerificationStatus"));
+        poolStatusColumn.setMaxWidth(150);
+        poolStatusColumn.setMinWidth(150);
+
+        poolTableView.getColumns().addAll(poolNameColumn, poolStatusColumn);
+        //add pools to tableView
+        addPoolsInTableView();
+    }
+
+    private void addPoolsInTableView() {
+        poolTableView.getItems().addAll(tournament.getPoolList());
+
+        //handle row selection for each pool in tableView
+        poolTableView.setRowFactory( table -> {
+            TableRow<Pool> row = new TableRow<>();
+            row.setOnMouseClicked(event -> handleRowSelection());
+            return row;
+        });
+    }
+
+    private void handleRowSelection() {
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+
+        if (selectedPool.getPlayoffBracket().getClass().equals(PlacementPlay.class)) {
+            drawPlacementStageGridPane();
+        } else if (selectedPool.getPlayoffBracket().getClass().equals(KnockoutPlay.class)) {
+            drawKnockoutStageGridPane();
+        }
+    }
+
+    /*
     @FXML
     private void mouseClicked(MouseEvent e) {
         for (Node node : poolKnockoutStatusGridPane.getChildren())
@@ -78,8 +122,8 @@ public class VerifyFinalStageController {
             drawKnockoutStageGridPane();
         }
 
-    }
-
+    } */
+    /*
     void drawPoolKnockoutStatusGridPane() {
         poolKnockoutStatusGridPane.getChildren().remove(0, poolKnockoutStatusGridPane.getChildren().size());
         for (Pool pool : tournament.getPoolList()) {
@@ -105,20 +149,17 @@ public class VerifyFinalStageController {
         poolKnockoutStatusGridPane.setGridLinesVisible(true);
         System.out.println(poolKnockoutStatusGridPane.getChildren());
 
-    }
+    } */
 
     private void drawPlacementStageGridPane() {
-        int poolYearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
-                : poolClicked.substring(0, 1));
-        String poolSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
-                : poolClicked.substring(1, 2));
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
         finalStageGridPane.getChildren().clear();
         finalStageGridPane.setVgap(30);
         finalStageGridPane.setHgap(30);
 
         int counter = 1;
-        for (Match match : tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getPlayoffBracket().getMatches()){
+        for (Match match : selectedPool.getPlayoffBracket().getMatches()){
             GridPane gridPane = new GridPane();
             Text groupNumberText = new Text("  Placeringspil  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
@@ -136,13 +177,10 @@ public class VerifyFinalStageController {
     }
 
     private void drawKnockoutStageGridPane() {
-        int poolYearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
-                : poolClicked.substring(0, 1));
-        String poolSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
-                : poolClicked.substring(1, 2));
+       Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
-        int amountOfMatches = tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getPlayoffBracket().getMatches().size();
-        PlayoffBracket playoffBracket = tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getPlayoffBracket();
+        int amountOfMatches = selectedPool.getPlayoffBracket().getMatches().size();
+        PlayoffBracket playoffBracket = selectedPool.getPlayoffBracket();
         finalStageGridPane.getChildren().clear();
         finalStageGridPane.setVgap(30);
         finalStageGridPane.setHgap(30);
@@ -217,50 +255,33 @@ public class VerifyFinalStageController {
     }
 
     @FXML
-    private void verifyButton() {
-        for (int i = 0; i < poolKnockoutStatusGridPane.getChildren().size(); i++) {
-            Text text = (Text) poolKnockoutStatusGridPane.getChildren().get(i);
+    private void verifyButtonPressed() {
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+        selectedPool.setPlayOffVerificationStatus("Færdig");
 
-            if (text.getText().equals(poolClicked)) {
-                Text status = (Text) poolKnockoutStatusGridPane.getChildren().get(i + 2);
-                status.setText("Done");
-                break;
-            }
-        }
+        poolTableView.getItems().clear();
+        addPoolsInTableView();
     }
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        boolean value = true;
-        // Laver et gruppeobject bare for exceptions skyld
-        Group group = new Group();
-        Text temp=new Text();
-        for (int i = 0; i < poolKnockoutStatusGridPane.getRowCount(); i++) {
-            temp = (Text) poolKnockoutStatusGridPane.getChildren().get(i*3 +2);
-            if (!temp.getText().equals("Done")) {
-                value = false;
-                throw new NotAllTeamsAreVerified(group);
-            }
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
+        Parent newWindow = loader.load();
 
-        }
+        MatchScheduleSetupController mss = loader.getController();
+        mss.setTournament(tournament);
 
-        if (value) {
-            //TODO DAO objects for playoff and match
-            //PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
-            //MatchDAO matchSQL = new MatchDAO();
+
+            // DAO objects for playoff and match
+            PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
+            MatchDAO matchSQL = new MatchDAO();
 
 
             //TODO Inserting playoff bracket into database, this method also makes sure playoff matches will be added 0
             //playoffBracketSQL.insertPlayoffBracket(tournament);
 
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
-            Parent newWindow = loader.load();
-
-            MatchScheduleSetupController mss = loader.getController();
-            mss.setTournament(tournament);
-
-            //TODO Inserting all group matches in database
+            // Inserting all group matches in database
             //matchSQL.insertMatches(tournament, tournament.getAllGroupMatches());
 
             Scene newScene = new Scene(newWindow);
@@ -268,7 +289,6 @@ public class VerifyFinalStageController {
 
             window.setScene(newScene);
             window.show();
-        }
 
     }
 }

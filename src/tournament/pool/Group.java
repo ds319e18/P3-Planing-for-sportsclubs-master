@@ -38,4 +38,9 @@ public class Group {
     public int getAmountOfTeams() {
         return teamList.size();
     }
+
+    @Override
+    public String toString() {
+        return "grupperne";
+    }
 }

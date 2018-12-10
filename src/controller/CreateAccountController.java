@@ -17,4 +17,5 @@ public class CreateAccountController {
 
     @FXML
     Button createUserBtn;
+    
 }

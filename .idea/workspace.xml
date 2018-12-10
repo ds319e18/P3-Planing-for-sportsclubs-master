@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a12b3442-3727-40ad-96c0-70c2d29381df" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/View/AdminPage.fxml" afterPath="$PROJECT_DIR$/src/View/AdminPage.fxml" />
       <change beforePath="$PROJECT_DIR$/src/View/UpdateMatch.fxml" afterPath="$PROJECT_DIR$/src/View/UpdateMatch.fxml" />
@@ -16,6 +17,14 @@
       <change beforePath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" afterPath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" />
       <change beforePath="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" afterPath="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
+=======
+    <list default="true" id="6ef935cc-cef2-4bd1-8b4f-3d6c90a07eb4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CreateAccountController.java" afterPath="$PROJECT_DIR$/src/controller/CreateAccountController.java" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" afterPath="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CreatingGroupController.java" afterPath="$PROJECT_DIR$/src/controller/CreatingGroupController.java" />
+      <change beforePath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" afterPath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" />
+>>>>>>> Dev
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,6 +36,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="CreatingFinalStageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/CreatingFinalStageController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -42,11 +52,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
               <caret line="73" column="21" lean-forward="false" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="21" />
+=======
+      <file leaf-file-name="CreatingGroupController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="118" column="9" lean-forward="false" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="MatchScheduleSetupController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,21 +93,37 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="123">
               <caret line="70" column="27" lean-forward="true" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+=======
+      <file leaf-file-name="VerifyFinalStageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="571">
+              <caret line="282" column="0" lean-forward="true" selection-start-line="282" selection-start-column="0" selection-end-line="282" selection-end-column="0" />
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="VerifyFinalStageController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="363">
               <caret line="262" column="18" lean-forward="false" selection-start-line="262" selection-start-column="18" selection-end-line="262" selection-end-column="18" />
+=======
+      <file leaf-file-name="CreateAccountController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/CreateAccountController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="CreatingGroupController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -105,6 +139,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+=======
+      <file leaf-file-name="CreatingFinalStageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/CreatingFinalStageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="35" column="65" lean-forward="false" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
@@ -130,6 +171,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/database/DAO/AccountDAO.java" />
         <option value="$PROJECT_DIR$/src/database/DAO/FieldDAO.java" />
         <option value="$PROJECT_DIR$/src/database/DAO/GroupBracketDAO.java" />
@@ -151,19 +193,20 @@
         <option value="$PROJECT_DIR$/src/controller/TournamentSetupController.java" />
         <option value="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" />
         <option value="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" />
+=======
+        <option value="$PROJECT_DIR$/src/controller/CreatingGroupController.java" />
+        <option value="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" />
+        <option value="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" />
+        <option value="$PROJECT_DIR$/src/controller/CreateAccountController.java" />
+>>>>>>> Dev
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="777" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="703" />
+    <option name="y" value="39" />
+    <option name="width" value="1224" />
+    <option name="height" value="981" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -180,10 +223,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,19 +241,21 @@
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> Dev
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+              <item name="sample" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
@@ -225,11 +267,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -358,10 +399,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a12b3442-3727-40ad-96c0-70c2d29381df" name="Default" comment="" />
-      <created>1544312489394</created>
+      <changelist id="6ef935cc-cef2-4bd1-8b4f-3d6c90a07eb4" name="Default" comment="" />
+      <created>1544431151369</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1544312489394</updated>
       <workItem from="1544312490973" duration="9675000" />
     </task>
@@ -370,12 +412,19 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="9675000" />
   </component>
+=======
+      <updated>1544431151369</updated>
+    </task>
+    <servers />
+  </component>
+>>>>>>> Dev
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -390,21 +439,37 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767764" sideWeight="0.48455805" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5058939" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27465534" sideWeight="0.69056976" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.165625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> Dev
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3974359" sideWeight="0.4970458" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+>>>>>>> Dev
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962587" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.49410608" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -414,6 +479,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/database/DAO/FieldDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -466,81 +532,36 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1148">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <marker date="1544311068449" expanded="true" signature="493:612" ph="INSERT INTO MatchDay... " />
-            <marker date="1544311068449" expanded="true" signature="1950:2046" ph="select * fro... MatchDay" />
-            <marker date="1544311068449" expanded="true" signature="2850:2928" ph="UPDATE MatchDay... " />
-          </folding>
+        <state relative-caret-position="392">
+          <caret line="118" column="9" lean-forward="false" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingFinalStageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-369">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <marker date="1544088211253" expanded="true" signature="649:737" ph="INSERT INTO MatchSchedule... " />
-            <marker date="1544088211253" expanded="true" signature="1407:1469" ph="select * fro... MatchSchedule" />
-          </folding>
+        <state relative-caret-position="72">
+          <caret line="35" column="65" lean-forward="false" selection-start-line="35" selection-start-column="65" selection-end-line="35" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/PlayoffBracketDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
+>>>>>>> Dev
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-260">
-          <caret line="71" column="72" lean-forward="false" selection-start-line="71" selection-start-column="72" selection-end-line="71" selection-end-column="72" />
-          <folding>
-            <marker date="1544363898584" expanded="true" signature="815:883" ph="INSERT INTO PlayoffBracket... " />
-            <marker date="1544363898584" expanded="true" signature="1673:1724" ph="select * fro... PlayoffBracket" />
-            <marker date="1544363898584" expanded="true" signature="3436:3533" ph="select * fro... MatchTable" />
-          </folding>
+        <state relative-caret-position="571">
+          <caret line="282" column="0" lean-forward="true" selection-start-line="282" selection-start-column="0" selection-end-line="282" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/PoolDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/CreateAccountController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
-          <folding>
-            <marker date="1544363898613" expanded="true" signature="408:500" ph="INSERT INTO Pool... " />
-            <marker date="1544363898613" expanded="true" signature="1329:1468" ph="select * fro... Pool" />
-            <marker date="1544363898613" expanded="true" signature="2048:2113" ph="select * fro... Pool" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/ResultDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <marker date="1544088211254" expanded="true" signature="488:570" ph="INSERT INTO Result... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/TeamDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="143" column="46" lean-forward="false" selection-start-line="143" selection-start-column="46" selection-end-line="143" selection-end-column="46" />
-          <folding>
-            <marker date="1544363898566" expanded="true" signature="514:597" ph="INSERT INTO Team... " />
-            <marker date="1544363898566" expanded="true" signature="1790:1889" ph="INSERT INTO Team... " />
-            <marker date="1544363898566" expanded="true" signature="2690:2818" ph="select * fro... Team" />
-            <marker date="1544363898566" expanded="true" signature="4142:4190" ph="UPDATE Team... " />
-            <marker date="1544363898566" expanded="true" signature="4949:5082" ph="select * fro... Team" />
-            <marker date="1544363898566" expanded="true" signature="5662:5696" ph="select * fro... Team" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="10" column="100" lean-forward="false" selection-start-line="10" selection-start-column="100" selection-end-line="10" selection-end-column="100" />
+        <state relative-caret-position="324">
+          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
           <folding />
         </state>
       </provider>
