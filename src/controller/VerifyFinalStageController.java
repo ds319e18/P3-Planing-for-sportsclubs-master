@@ -306,7 +306,7 @@ public class VerifyFinalStageController {
     public void checkVerifyException() {
         for (Pool pool : tournament.getPoolList()) {
             if (pool.getPlayOffVerificationStatus().equals("Ikke færdig")) {
-                throw new NotAllTeamsAreVerified("Slutspil");
+                throw new NotAllTeamsAreVerified("slutspil");
             }
         }
     }
