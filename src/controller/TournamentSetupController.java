@@ -31,7 +31,7 @@ public class TournamentSetupController implements CheckInput {
     private final int SKILL_LEVEL_MAX = 3;
     private final int stepNumber = 0;
 
-    Administrator user;
+    private Administrator user;
 
     public void setUser(Administrator user) {
         this.user = user;
@@ -97,10 +97,15 @@ public class TournamentSetupController implements CheckInput {
                     .createFieldList(Integer.parseInt(fieldNumberCombobox.getValue().toString()))
                     .setPoolList(getSelectedPoolsAndMatchLengths())
                     .build();
+        // DAO for tournament
+        TournamentDAO tournamentSQL = new TournamentDAO();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
             Parent newWindow = loader.load();
+        // Inserting tournament in the database, this method also calls field DAO and pool DAO which
+        // inserts all pool and fields for the corrosponding tournament in the database
+        //tournamentSQL.insertTournament(tournament, user.getId());
 
             AddingTeamsController atc = loader.getController();
             atc.setTournament(tournament);

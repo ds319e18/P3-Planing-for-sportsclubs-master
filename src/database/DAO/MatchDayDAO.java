@@ -1,10 +1,12 @@
 package database.DAO;
 
 import database.Database;
+import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.MatchDay;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class MatchDayDAO {
@@ -79,4 +81,30 @@ public class MatchDayDAO {
             System.out.println(e.getMessage());
         }
     }
+
+    // method that adds all matches to their currect matchDay from the database
+    public void addMatchToMatchDay(Tournament tournament) {
+        MatchDayDAO matchDaySQL = new MatchDayDAO();
+        MatchDAO matchSQL = new MatchDAO();
+        ArrayList<Match> matches = new ArrayList<>();
+
+        try(Connection con = Database.connect()) {
+            for (MatchDay day : tournament.getMatchSchedule().getMatchDays()) {
+                day.setMatches();
+                int matchDayID = matchDaySQL.findMatchDayID(day, tournament, con);
+
+                for (Match match : tournament.getAllMatches()) {
+                    int matchID = matchSQL.findMatchID(match, tournament, con);
+
+                    if (matchSQL.checkIfMatchInMatchDay(matchID, matchDayID, con)) {
+                        day.getMatches().add(match);
+                    }
+                }
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 }

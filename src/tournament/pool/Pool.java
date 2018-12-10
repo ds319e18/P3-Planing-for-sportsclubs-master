@@ -73,7 +73,6 @@ public class Pool {
         this.teamList.sort(new TeamNameComp());
     }
 
-
     // Removes a team by first finding the correct pool, then after removing the correct team in the pool.
     public void removeTeam(String name) {
         for (int i = teamList.size() - 1; i >= 0; i--) {

@@ -35,6 +35,10 @@ import java.io.IOException;
 
 public class CreatingFinalStageController implements CheckInput {
 
+    @Override
+    public void checkAllInput() {
+
+    }
 
     private Tournament tournament;
     private final int stepNumber = 4;

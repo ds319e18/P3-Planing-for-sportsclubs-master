@@ -1,5 +1,7 @@
 package controller;
 
+import database.DAO.MatchDayDAO;
+import database.DAO.MatchScheduleDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -170,6 +172,14 @@ public class AutogenerateMatchScheduleController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
+        // DAO objects for match schedule and match day
+        MatchScheduleDAO matchScheduleSQL = new MatchScheduleDAO();
+        MatchDayDAO matchDaySQL = new MatchDayDAO();
+
+        // Adding matchdays and matchschedule to database.
+        //matchDaySQL.insertMatchDay(tournament);
+        //matchScheduleSQL.insertMatchSchedule(tournament);
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/FrontPage.FXML"));
         Parent newWindow = loader.load();

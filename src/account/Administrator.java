@@ -11,6 +11,10 @@ public class Administrator extends account.User {
     private int id;
     private ArrayList<Tournament> tournamens;
 
+    public Administrator(int id) {
+        this.id = id;
+    }
+
     public Administrator() {
     }
 

@@ -2,6 +2,10 @@ package controller;
 
 import exceptions.MissingPressingSaveException;
 import exceptions.NotAllTeamsAreVerified;
+import database.DAO.MatchDAO;
+import database.DAO.MatchDayDAO;
+import database.DAO.MatchScheduleDAO;
+import database.DAO.PlayoffBracketDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -268,10 +272,31 @@ public class VerifyFinalStageController {
         MatchScheduleSetupController mss = loader.getController();
         mss.setTournament(tournament);
 
-       Scene newScene = new Scene(newWindow);
-       Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        if (value) {
+            // DAO objects for playoff and match
+            PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
+            MatchDAO matchSQL = new MatchDAO();
 
-       window.setScene(newScene);
-       window.show();
+
+            // Inserting playoff bracket into database, this method also makes sure playoff matches will be added 0
+            //playoffBracketSQL.insertPlayoffBracket(tournament);
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
+            Parent newWindow = loader.load();
+
+            MatchScheduleSetupController mss = loader.getController();
+            mss.setTournament(tournament);
+
+            // Inserting all group matches in database
+            //matchSQL.insertMatches(tournament, tournament.getAllGroupMatches());
+
+            Scene newScene = new Scene(newWindow);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            window.setScene(newScene);
+            window.show();
+        }
+
     }
 }
