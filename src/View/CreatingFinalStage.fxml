@@ -141,7 +141,7 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Godkend" GridPane.rowIndex="6">
+                  <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Næste" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets left="120.0" />
                      </GridPane.margin>

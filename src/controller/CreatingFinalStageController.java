@@ -97,7 +97,7 @@ public class CreatingFinalStageController implements CheckInput {
         groupNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         setColumnWidth(groupNameColumn);
 
-        TableColumn<Group, String> amountOfTeamsColumn = new TableColumn<>("Antal grupper");
+        TableColumn<Group, String> amountOfTeamsColumn = new TableColumn<>("Antal hold");
         amountOfTeamsColumn.setCellValueFactory(new PropertyValueFactory<>("amountOfTeams"));
         setColumnWidth(amountOfTeamsColumn);
 
@@ -128,10 +128,9 @@ public class CreatingFinalStageController implements CheckInput {
     private void saveButton() {
         Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
-        // The amount of teams to advance to the final stage is set
-        selectedPool.getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
-
         if (knockoutRadioButton.isSelected()) {
+            // The amount of teams to advance to the final stage is set
+            selectedPool.getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
             selectedPool.addPlayoffBracket(new KnockoutPlay());
             System.out.println("if " + selectedPool.getPlayoffBracket().getMatches().size());
 

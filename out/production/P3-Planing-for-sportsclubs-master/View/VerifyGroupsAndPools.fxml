@@ -51,14 +51,14 @@
             <VBox layoutX="375.0" layoutY="10.0" prefHeight="502.0" prefWidth="40.0" />
             <VBox prefHeight="375.0" prefWidth="590.0">
                <children>
-                  <Label prefHeight="34.0" prefWidth="303.0">
+                  <Label prefHeight="34.0" prefWidth="303.0" text="Godkend slutspil">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Label>
                   <HBox prefHeight="383.0" prefWidth="508.0">
                      <children>
-                        <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#mouseClickedEdit" prefHeight="383.0" prefWidth="495.0">
+                        <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#mouseClickedEdit" prefHeight="383.0" prefWidth="486.0">
                            <content>
                               <GridPane fx:id="groupsGridPane" prefWidth="586.0">
                                  <rowConstraints>
@@ -96,9 +96,9 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Verify" GridPane.columnIndex="6" />
+                  <Button mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Godkend" GridPane.columnIndex="6" />
                   <Button layoutX="862.0" layoutY="12.0" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                  <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.columnIndex="4" />
+                  <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" GridPane.columnIndex="4" />
                </children>
                <HBox.margin>
                   <Insets top="30.0" />
