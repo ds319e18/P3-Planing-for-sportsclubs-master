@@ -13,23 +13,61 @@ public class TournamentDAO {
 
     // Method to find alle tournaments in the database for the correct user
     public ArrayList<Tournament> getAllTournaments(int accountId) {
-        Connection con = Database.connect();
+        PoolDAO poolSQL = new PoolDAO();
+        FieldDAO fieldSQL = new FieldDAO();
+        TeamDAO teamSQL = new TeamDAO();
+        GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
+        PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
+        MatchDAO matchSQL = new MatchDAO();
+        MatchDayDAO matchDaySQL = new MatchDayDAO();
+
+
         ArrayList<Tournament> tournaments = new ArrayList<>();
 
-        try {
+        try (Connection con = Database.connect()) {
             Statement stmt = con.createStatement();
-            String sql = "select * from Tournament where Account_id = '" + accountId + "'";
+            String sql = "select * from Tournament where idAccountTournament = '" + accountId + "'";
 
             ResultSet set = stmt.executeQuery(sql);
 
             while (set.next()) {
                 tournaments.add(new Tournament.Builder(set.getString("name"))
                         .setType(TournamentType.Group)
-                        .setActive(set.getBoolean("active"))
+                        .setActive(set.getBoolean("status"))
                         .setStartDate(set.getDate("startDate").toLocalDate())
                         .setEndDate(set.getDate("endDate").toLocalDate())
                         .build());
             }
+
+            // Adding all pools and fields from database
+            for (Tournament tournament : tournaments) {
+                tournament.getPoolList().addAll(poolSQL.getAllPools(tournament, con));
+                tournament.getFieldList().addAll(fieldSQL.getAllFields(tournament, con));
+            }
+
+            // Adding all teams from database and groupbracket and groups.
+            for (Tournament tournament : tournaments) {
+                for (Pool pool : tournament.getPoolList()) {
+                    pool.getTeamList().addAll(teamSQL.getAllTeams(tournament, pool, con));
+
+                    // Adding group bracket, and if there is, group matches
+                    groupBracketSQL.getGroupBracket(tournament, pool, con);
+
+                    // Adding knockoutbracket and knockout matches
+                    playoffBracketSQL.getKnockoutBracket(tournament, pool, con);
+                }
+            }
+
+            for (Tournament tournament : tournaments) {
+                // Should be called when a match schedule has been created
+                matchSQL.updateMatchesFromMatchsSchedule(tournament);
+                matchDaySQL.addMatchToMatchDay(tournament);
+
+            }
+
+
+
+            // Kaldes til allersidst
             return tournaments;
 
         } catch (SQLException e) {
@@ -61,6 +99,7 @@ public class TournamentDAO {
 
             stmt.executeUpdate();
 
+            // Inserting pools and fields
             poolSQL.insertPool(tournament, con);
             fieldDAO.insertField(tournament, con);
 
