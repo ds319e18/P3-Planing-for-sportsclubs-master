@@ -278,7 +278,7 @@ public class VerifyFinalStageController {
             MatchDAO matchSQL = new MatchDAO();
 
 
-            // Inserting playoff bracket into database, this method also makes sure playoff matches will be added 0
+            //TODO Inserting playoff bracket into database, this method also makes sure playoff matches will be added 0
             //playoffBracketSQL.insertPlayoffBracket(tournament);
 
             // Inserting all group matches in database

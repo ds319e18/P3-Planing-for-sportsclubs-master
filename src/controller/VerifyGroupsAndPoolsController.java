@@ -153,11 +153,11 @@ public class VerifyGroupsAndPoolsController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        // DAO for group and groupbracket
-        GroupDAO groupSQL = new GroupDAO();
-        GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
+        //TODO DAO for group and groupbracket
+        //GroupDAO groupSQL = new GroupDAO();
+        //GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
 
-        // Inserting groups and groupbracketin database
+        //TODO Inserting groups and groupbracketin database
         //groupSQL.insertGroup(tournament);
         //groupBracketSQL.insertGroupBracket(tournament);
 
