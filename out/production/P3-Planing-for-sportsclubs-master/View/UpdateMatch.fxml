@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TabPane?>
@@ -14,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateMatchController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateMatchController">
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -220,7 +226,7 @@
                               <Text fx:id="firstTeamText" layoutX="10.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hold 1" wrappingWidth="96.5367431640625" GridPane.rowIndex="1" />
                               <Text fx:id="secondTeamText" layoutX="10.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hold 2" wrappingWidth="96.5367431640625" GridPane.rowIndex="2" />
                               <Button mnemonicParsing="false" onAction="#updateButton" prefHeight="30.0" prefWidth="95.0" text="Gem" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Button layoutX="110.0" layoutY="115.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" text="Tilbage" GridPane.rowIndex="3" />
+                              <Button fx:id="backBtn" layoutX="110.0" layoutY="115.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="95.0" text="Tilbage" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </children>

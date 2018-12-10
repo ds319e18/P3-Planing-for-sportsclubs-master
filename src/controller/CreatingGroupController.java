@@ -109,9 +109,7 @@ public class CreatingGroupController implements CheckInput {
 
         poolTableView.getItems().clear();
         addPoolsInTableView();
-
-        }
-        catch (MissingInputException e) {
+        } catch (MissingInputException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Manglende input fejl");
             warning.setTitle("Fejl");

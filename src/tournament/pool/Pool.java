@@ -56,7 +56,7 @@ public class Pool {
     }
 
     public void setPlayOffVerificationStatus(String statusString) {
-        this.playOffVerificationStatus = playOffVerificationStatus;
+        this.playOffVerificationStatus = statusString;
     }
 
     // Adding team to the correct pool

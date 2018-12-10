@@ -8,7 +8,8 @@ import javafx.scene.text.TextAlignment;
 
 import java.util.ArrayList;
 
-public class ProgressBox extends VBox {
+public class
+ProgressBox extends VBox {
     private ArrayList<VBox> vBoxList = new ArrayList<>();
     private final int stepNumber;
 

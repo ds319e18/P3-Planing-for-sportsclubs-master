@@ -2,7 +2,6 @@ package controller;
 
 import account.Administrator;
 import database.DAO.AccountDAO;
-import database.DAO.TournamentDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -60,25 +59,22 @@ public class LoginController {
         // DAO object for account
         AccountDAO accountSQL = new AccountDAO();
         Boolean logInSucess;
+
         // Finding the correct user and the tournaments the user has created
-        // logInSucess = accountSQL.findAccount(username.getText(), password.getText());
+        logInSucess = accountSQL.findAccount(username.getText(), password.getText());
 
         //TODO lav en try catch hvor vi tjekker om login er rigtigt.
+        if (logInSucess) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/AdminPage.fxml"));
+            Parent newWindow = loader.load();
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/AdminPage.fxml"));
-        Parent newWindow = loader.load();
+            Scene newScene = new Scene(newWindow);
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
-        Scene newScene = new Scene(newWindow);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        // Viser alle turneringer brugeren har haft lavet før
-        //atc.draw();
-
-
-        window.setScene(newScene);
-        window.show();
-
+            window.setScene(newScene);
+            window.show();
+        }
     }
 
     @FXML

@@ -5,6 +5,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -29,6 +31,7 @@ import tournament.pool.Pool;
 
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.LinkOption;
 import java.time.LocalTime;
@@ -63,6 +66,23 @@ public class UpdateMatchController {
 
     @FXML
     private ImageView logo;
+
+    @FXML
+    private Button backBtn;
+
+    @FXML
+    public void setBackButtonPressed(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/AdminPage.FXML"));
+        Parent newWindow = loader.load();
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
+    }
 
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
