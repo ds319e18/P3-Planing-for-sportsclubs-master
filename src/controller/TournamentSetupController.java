@@ -2,6 +2,7 @@ package controller;
 
 import account.Administrator;
 import database.DAO.TournamentDAO;
+import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -120,6 +121,11 @@ public class TournamentSetupController implements CheckInput {
             warning.setHeaderText("Manglende input fejl");
             warning.setTitle("Fejl");
             warning.showAndWait();
+        } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
         }
 
 
@@ -181,6 +187,9 @@ public class TournamentSetupController implements CheckInput {
                 CheckBox checkBox = (CheckBox) hboxWithCheckboxes.getChildren().get(j);
 
                 if (checkBox.isSelected() && !matchDurationTextField.getText().isEmpty()) {
+                    if (!(matchDurationTextField.getText().matches("\\d+"))) {
+                        throw new InvalidInputException("heltal", "kamplængde");
+                    }
                     yearString = titledPane.getText().replace(String.valueOf
                             (titledPane.getText().charAt(0)), "");
                     poolList.add(new Pool.Builder()

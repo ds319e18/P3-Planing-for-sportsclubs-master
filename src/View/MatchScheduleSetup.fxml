@@ -18,7 +18,7 @@
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../sample/45398293_468759136948179_6752360962147221504_n.png" />
+            <Image url="@../sample/545398293_468759136948179_6752360962147221504_n.png" />
          </image>
          <VBox.margin>
             <Insets left="497.5" />
@@ -68,9 +68,8 @@
                         </Text>
                      </children>
                   </HBox>
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="200.0" text="Rediger dato for turneringen" textAlignment="CENTER" />
                   <VBox layoutX="10.0" layoutY="346.0" prefHeight="20.0" prefWidth="240.0" />
-                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="90.0" text="Tilbage" textAlignment="CENTER" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="90.0" text="Tilbage" textAlignment="CENTER" />
                </children>
             </VBox>
             <VBox prefHeight="502.0" prefWidth="36.0" />
@@ -89,7 +88,7 @@
                            </font>
                         </TextField>
                      </children></HBox>
-                  <TableView fx:id="poolTableView" prefHeight="300.0" prefWidth="269.0" style="-fx-border-color: black;">
+                  <TableView fx:id="poolTableView" prefHeight="300.0" prefWidth="240.0" style="-fx-border-color: black;">
                      <columns>
                         <TableColumn minWidth="-Infinity" prefWidth="82.0" text="Pulje" />
                         <TableColumn onEditCommit="#changeMatchDurationCell" prefWidth="185.0" text="Kampvarighed (minutter)" />
@@ -98,7 +97,7 @@
                   <VBox prefHeight="20.0" prefWidth="240.0" />
                   <Button mnemonicParsing="false" onAction="#manuallyCreateMatchSchedule" prefHeight="34.0" prefWidth="211.0" text="Lav kampprogram manuelt" textAlignment="CENTER" />
                   <VBox layoutX="10.0" layoutY="246.0" prefHeight="20.0" prefWidth="240.0" />
-                  <MenuButton mnemonicParsing="false" prefHeight="34.0" text="Autogenererer kampprogram" textAlignment="CENTER">
+                  <MenuButton mnemonicParsing="false" prefHeight="34.0" prefWidth="211.0" text="Autogenererer kampprogram" textAlignment="CENTER">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#autogenerateMixedMatches" text="Blandede kampe" />
                         <MenuItem mnemonicParsing="false" onAction="#autogenerateNoMixedMatches" text="Kampe fra en pujle af gangen" />

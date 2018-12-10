@@ -68,7 +68,6 @@ public class CreatingFinalStageController implements CheckInput {
         this.tournament = tournament;
         setPoolTableView();
         setGroupTableView();
-        setComboBoxItemsAndLabels();
         setRadioButtonListener();
         progressBox.getChildren().add(new ProgressBox(stepNumber));
 
@@ -100,7 +99,7 @@ public class CreatingFinalStageController implements CheckInput {
         groupNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         setColumnWidth(groupNameColumn);
 
-        TableColumn<Group, String> amountOfTeamsColumn = new TableColumn<>("Antal grupper");
+        TableColumn<Group, String> amountOfTeamsColumn = new TableColumn<>("Antal hold");
         amountOfTeamsColumn.setCellValueFactory(new PropertyValueFactory<>("amountOfTeams"));
         setColumnWidth(amountOfTeamsColumn);
 
@@ -121,9 +120,11 @@ public class CreatingFinalStageController implements CheckInput {
     private void handleRowSelection() {
         Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
-        if ( selectedPool != null)
+        if (selectedPool != null) {
             groupTableView.getItems().clear();
             groupTableView.getItems().addAll(selectedPool.getGroupBracket().getGroups());
+            setComboBoxItemsAndLabels(selectedPool);
+        }
     }
 
     @Override
@@ -238,10 +239,20 @@ public class CreatingFinalStageController implements CheckInput {
         window.show();
     }
 
-    private void setComboBoxItemsAndLabels() {
+    private void setComboBoxItemsAndLabels(Pool pool) {
         // The combobox for choosing the amount of groups
-        ObservableList<String> amountOfGroupsList = FXCollections.observableArrayList("1", "2", "3");
-        advancingComboBox.setItems(amountOfGroupsList);
+        ObservableList<String> amountOfTeamsInGroup = FXCollections.observableArrayList();
+        int teams = 0;
+
+        for (Group group : pool.getGroupBracket().getGroups()) {
+            teams += group.getAmountOfTeams();
+        }
+        teams = (teams / pool.getGroupBracket().getAmountOfGroups());
+
+        for (int i = 0; i < teams; i++) {
+            amountOfTeamsInGroup.add(Integer.toString(i + 1));
+        }
+        advancingComboBox.setItems(amountOfTeamsInGroup);
     }
 
     private void setRadioButtonListener() {

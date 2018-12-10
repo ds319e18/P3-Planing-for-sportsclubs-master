@@ -32,7 +32,7 @@ public class TournamentDAO {
 
             while (set.next()) {
                 tournaments.add(new Tournament.Builder(set.getString("name"))
-                        .setType(TournamentType.Group)
+                        .setType(TournamentType.GroupAndKnockout)
                         .setActive(set.getBoolean("status"))
                         .setStartDate(set.getDate("startDate").toLocalDate())
                         .setEndDate(set.getDate("endDate").toLocalDate())
