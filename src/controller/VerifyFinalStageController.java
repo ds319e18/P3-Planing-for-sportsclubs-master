@@ -245,12 +245,12 @@ public class VerifyFinalStageController {
         }
 
         if (value) {
-            // DAO objects for playoff and match
-            PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
-            MatchDAO matchSQL = new MatchDAO();
+            //TODO DAO objects for playoff and match
+            //PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
+            //MatchDAO matchSQL = new MatchDAO();
 
 
-            // Inserting playoff bracket into database, this method also makes sure playoff matches will be added 0
+            //TODO Inserting playoff bracket into database, this method also makes sure playoff matches will be added 0
             //playoffBracketSQL.insertPlayoffBracket(tournament);
 
             FXMLLoader loader = new FXMLLoader();
@@ -260,7 +260,7 @@ public class VerifyFinalStageController {
             MatchScheduleSetupController mss = loader.getController();
             mss.setTournament(tournament);
 
-            // Inserting all group matches in database
+            //TODO Inserting all group matches in database
             //matchSQL.insertMatches(tournament, tournament.getAllGroupMatches());
 
             Scene newScene = new Scene(newWindow);

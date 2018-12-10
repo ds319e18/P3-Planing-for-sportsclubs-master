@@ -23,12 +23,10 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Main extends Application {
-    static int accountID;
-
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("../View/TournamentSetup.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../View/FrontPage.fxml"));
 
         primaryStage.setTitle("Tournament planner");
         primaryStage.setScene(new Scene(root, 1280, 800));

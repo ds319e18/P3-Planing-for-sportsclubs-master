@@ -79,8 +79,8 @@ public class TournamentSetupController implements CheckInput {
 
     public void checkAllInput() {
         if (tournamentName.getText().trim().isEmpty() || startDatePicker.getEditor().getText().isEmpty()
-            || endDatePicker.getEditor().getText().isEmpty() || tournamentTypeCombobox.getSelectionModel().isEmpty()
-            || fieldNumberCombobox.getSelectionModel().isEmpty() || getSelectedPoolsAndMatchLengths().isEmpty()) {
+                || endDatePicker.getEditor().getText().isEmpty() || tournamentTypeCombobox.getSelectionModel().isEmpty()
+                || fieldNumberCombobox.getSelectionModel().isEmpty() || getSelectedPoolsAndMatchLengths().isEmpty()) {
             throw new MissingInputException();
         }
     }
@@ -97,21 +97,21 @@ public class TournamentSetupController implements CheckInput {
                     .createFieldList(Integer.parseInt(fieldNumberCombobox.getValue().toString()))
                     .setPoolList(getSelectedPoolsAndMatchLengths())
                     .build();
-        // DAO for tournament
-        TournamentDAO tournamentSQL = new TournamentDAO();
+            //TODO DAO for tournament
+            //TournamentDAO tournamentSQL = new TournamentDAO();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
             Parent newWindow = loader.load();
-        // Inserting tournament in the database, this method also calls field DAO and pool DAO which
-        // inserts all pool and fields for the corrosponding tournament in the database
-        //tournamentSQL.insertTournament(tournament, user.getId());
+            //TODO Inserting tournament in the database, this method also calls field DAO and pool DAO which
+            // inserts all pool and fields for the corrosponding tournament in the database
+            //tournamentSQL.insertTournament(tournament, user.getId());
 
             AddingTeamsController atc = loader.getController();
             atc.setTournament(tournament);
 
             Scene newScene = new Scene(newWindow);
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
             window.setScene(newScene);
             window.show();
@@ -130,7 +130,7 @@ public class TournamentSetupController implements CheckInput {
         Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
         window.show();

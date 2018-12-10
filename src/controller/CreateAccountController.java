@@ -6,8 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class CreateAccountController {
-    database.DAO.AccountDAO AccountDAO = new AccountDAO();
-
     @FXML
     TextField name;
 
@@ -19,9 +17,4 @@ public class CreateAccountController {
 
     @FXML
     Button createUserBtn;
-
-    @FXML
-    void setOnCreateAccountBtmClicked() {
-        AccountDAO.createAccount(username.getText(), password.getText(), name.getText());
-    }
 }
