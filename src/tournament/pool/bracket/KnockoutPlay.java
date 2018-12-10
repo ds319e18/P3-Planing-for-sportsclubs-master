@@ -36,13 +36,13 @@ public class KnockoutPlay extends PlayoffBracket {
     // We can add the teams one at a time because they are already sorted correctly by the group stage
     @Override
     public void createNextRound(ArrayList<Team> advancingTeams) {
+        System.out.println(advancingTeams);
         int first = 0;
         int second = 0;
         // When amount of group is uneven first sort it differently
         if (advancingTeams.get(advancingTeams.size() - 1).getGroupNumber() % 2 != 0) {
             advancingTeams = sortAdvancingTeams(advancingTeams);
         }
-
 
         if (advancingTeams.size() > 1) {
             second = advancingTeams.size() - 1;
@@ -72,6 +72,7 @@ public class KnockoutPlay extends PlayoffBracket {
                     match.setFirstTeam(advancingTeams.get(first));
                     first++;
                 } else if (!match.isFinished() && match.getSecondTeam().getName().equals("TBD")) {
+                    System.out.println("VIRKE");
                     match.setSecondTeam(advancingTeams.get(first));
                     second--;
                 }

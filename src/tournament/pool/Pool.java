@@ -14,6 +14,8 @@ public class Pool {
     private GroupBracket groupBracket;
     private PlayoffBracket playoffBracket;
     private int matchDuration = 0;
+    private String groupsVerificationStatus = "Ikke færdig";
+    private String playOffVerificationStatus = "Ikke færdig";
 
     public void addGroupBracket(GroupBracket groupBracketType) {
         this.groupBracket = groupBracketType.createGroupBracket(teamList);
@@ -30,6 +32,33 @@ public class Pool {
             return "Ikke færdig";
     }
 
+    public String getGroupsVerificationStatus() {
+        return groupsVerificationStatus;
+    }
+
+    public String getPlayOffCreationStatus() {
+        if (playoffBracket != null && groupBracket.getAmountOfAdvancingTeamsPrGroup() != 0)
+            return "Færdig";
+        else
+            return "Ikke færdig";
+    }
+
+    public String getPlayOffType() {
+        return playoffBracket.getClass().getSimpleName();
+    }
+
+    public String getPlayOffVerificationStatus() {
+        return playOffVerificationStatus;
+    }
+
+    public void setGroupsVerificationStatus(String statusString) {
+        groupsVerificationStatus = statusString;
+    }
+
+    public void setPlayOffVerificationStatus(String statusString) {
+        this.playOffVerificationStatus = playOffVerificationStatus;
+    }
+
     // Adding team to the correct pool
     public void addTeam(Team team) {
         int count = 1;
@@ -43,7 +72,6 @@ public class Pool {
         this.teamList.add(team);
         this.teamList.sort(new TeamNameComp());
     }
-
 
     // Removes a team by first finding the correct pool, then after removing the correct team in the pool.
     public void removeTeam(String name) {

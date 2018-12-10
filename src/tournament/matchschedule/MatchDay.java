@@ -41,6 +41,8 @@ public class MatchDay {
         this.fieldList = fieldList;
     }
 
+    public void setMatches() { this.matches = new ArrayList<>(); }
+
     public void setStartTime(String startTimeText) {
         this.startTime = LocalTime.parse(startTimeText);
     }
