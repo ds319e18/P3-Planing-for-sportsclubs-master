@@ -63,6 +63,7 @@ public class CreatingFinalStageController implements CheckInput {
     private Label advancingTeamsLabel;
 
 
+
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         setPoolTableView();
@@ -73,6 +74,8 @@ public class CreatingFinalStageController implements CheckInput {
 
 
     }
+
+
 
     private void setPoolTableView() {
         TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
@@ -126,23 +129,49 @@ public class CreatingFinalStageController implements CheckInput {
 
     @FXML
     private void saveButton() {
-        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+        @Override
+        public void checkAllInput() {
 
-        // The amount of teams to advance to the final stage is set
-        selectedPool.getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
-
-        if (knockoutRadioButton.isSelected()) {
-            selectedPool.addPlayoffBracket(new KnockoutPlay());
-            System.out.println("if " + selectedPool.getPlayoffBracket().getMatches().size());
-
-        } else if (placementRadioButton.isSelected()) {
-            selectedPool.addPlayoffBracket(new PlacementPlay());
-        } else if (goldAndBronzeRadioButton.isSelected()) {
-            selectedPool.addPlayoffBracket(new GoldAndBronzePlay());
         }
 
-        poolTableView.getItems().clear();
-        addPoolsInTableView();
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+            // The amount of teams to advance to the final stage is set
+            selectedPool.getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
+            if (knockoutRadioButton.isSelected()) {
+                    selectedPool.addPlayoffBracket(new KnockoutPlay());
+                    System.out.println("if " + selectedPool.getPlayoffBracket().getMatches().size());
+            } else if (placementRadioButton.isSelected()) {
+                try {
+                    selectedPool.addPlayoffBracket(new PlacementPlay());
+                } catch (IllegalAmountOfTeamsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                } catch (IllegalAmountOfGroupsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                }
+            } else if (goldAndBronzeRadioButton.isSelected()) {
+                try {
+                    selectedPool.addPlayoffBracket(new GoldAndBronzePlay());
+                }catch (IllegalAmountOfGroupsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                }catch (IllegalAmountOfTeamsException e) {
+                    Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                    warning.setHeaderText("Manglende input fejl");
+                    warning.setTitle("Fejl");
+                    warning.showAndWait();
+                }
+            }
+
+            poolTableView.getItems().clear();
+            addPoolsInTableView();
     }
 
     @FXML
@@ -216,8 +245,4 @@ public class CreatingFinalStageController implements CheckInput {
         });
     }
 
-    @Override
-    public void checkAllInput() {
-
-    }
 }
