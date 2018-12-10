@@ -7,6 +7,8 @@ import java.util.Properties;
 public class Database {
     Connection con;
 
+    // This method is used to get connection to the database, this method is static so there is no need to
+    // create a object of Database, but just call this method and it will return a Connection object
     public static Connection connect() {
         Connection con = null;
 

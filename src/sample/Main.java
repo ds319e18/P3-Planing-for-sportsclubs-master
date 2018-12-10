@@ -20,6 +20,7 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Main extends Application {
     static int accountID;
@@ -38,7 +39,8 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         // TODO Når man logger ind skal dette accountID sættes fra den account man er logget ind på
-        /*accountID = 1;
+       /* accountID = 1;
+
 
         // DAO Objekter
         TournamentDAO tournamentSQL = new TournamentDAO();
@@ -56,6 +58,12 @@ public class Main extends Application {
         ArrayList<Pool> pools = new ArrayList<>();
         pools.add(new Pool.Builder()
                 .setYearGroup(6)
+                .setSkilllLevel("A")
+                .setMatchDurationInMinutes(20)
+                .build());
+
+        pools.add(new Pool.Builder()
+                .setYearGroup(7)
                 .setSkilllLevel("A")
                 .setMatchDurationInMinutes(20)
                 .build());
@@ -79,16 +87,20 @@ public class Main extends Application {
         tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
         tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
         tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
-        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
-        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
-        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
-        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(7, "A").addTeam(new Team("FCK", 7, "A"));
+        tournament.findCorrectPool(7, "A").addTeam(new Team("FCK", 7, "A"));
+        tournament.findCorrectPool(7, "A").addTeam(new Team("FCK", 7, "A"));
+        tournament.findCorrectPool(7, "A").addTeam(new Team("FCK", 7, "A"));
 
         // Indsætter team i databasen
         teamSQL.insertTeam(tournament);
 
         tournament.findCorrectPool(6, "A").addGroupBracket(new StandardGroupPlay(2));
-        tournament.findCorrectPool(6, "A").getGroupBracket().setAdvancingTeamsPrGroup(2);
+        tournament.findCorrectPool(6, "A").getGroupBracket().setAdvancingTeamsPrGroup(1);
+
+
+        tournament.findCorrectPool(7, "A").addGroupBracket(new StandardGroupPlay(2));
+        tournament.findCorrectPool(7, "A").getGroupBracket().setAdvancingTeamsPrGroup(1);
 
         // Adding groups to database
         groupSQL.insertGroup(tournament);
@@ -97,39 +109,59 @@ public class Main extends Application {
         tournament.findCorrectPool(6, "A").getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(1);
         tournament.findCorrectPool(6, "A").getGroupBracket().createMatches(tournament.findCorrectPool(6, "A").getMatchDuration());
 
+        tournament.findCorrectPool(7, "A").getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(1);
+        tournament.findCorrectPool(7, "A").getGroupBracket().createMatches(tournament.findCorrectPool(7, "A").getMatchDuration());
+
         // Adding groupbracket to database
         groupBracketSQL.insertGroupBracket(tournament);
 
         // Adding matches
-        matchSQL.insertMatches(tournament, accountID, tournament.getAllGroupMatches());
+        matchSQL.insertMatches(tournament, tournament.getAllGroupMatches());
 
         // This test is for 2 groups and an even amount of teams in each group
         tournament.findCorrectPool(6, "A").addKnockoutBracket(new KnockoutPlay());
+        tournament.findCorrectPool(7, "A").addKnockoutBracket(new KnockoutPlay());
 
         // Adding both playoff bracket, TBD teams, and playoff matches to the database
-        playoffSQL.insertPlayoffBracket(tournament, accountID);
+        playoffSQL.insertPlayoffBracket(tournament);
 
         // Setting matchdays and calling auto generate "Nomix"
         tournament.getMatchSchedule().getMatchDays().get(0).setStartTime("09:00");
-        tournament.getMatchSchedule().getMatchDays().get(0).setEndTime("16:00");
+        tournament.getMatchSchedule().getMatchDays().get(0).setEndTime("09:40");
         tournament.getMatchSchedule().getMatchDays().get(0).setTimeBetweenMatches(10);
         tournament.getMatchSchedule().getMatchDays().get(1).setStartTime("09:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setEndTime("16:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setTimeBetweenMatches(10);
         tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
 
-        /*for (Match match : tournament.getMatchSchedule().getMatchDays().get(0).getMatches()) {
-            System.out.println(match.getName());
-        }*/
+        for (MatchDay match : tournament.getMatchSchedule().getMatchDays()) {
+            System.out.println(match);
+        }
 
         // Inserting matches
-        /*matchDaySQL.insertMatchDay(tournament);
+        matchDaySQL.insertMatchDay(tournament);
 
         // Inserting match schedule and updating matchScheduleID in MatchDay
         matchScheduleSQL.insertMatchSchedule(tournament);
 
+
+        /*TournamentDAO tournamentSQL = new TournamentDAO();
+        ArrayList<Tournament> tournaments = new ArrayList<>();
+
+        //Skal kaldes med Jetsmark hash
+        int accountID = 1;
+
+        tournaments.addAll(tournamentSQL.getAllTournaments(accountID));
+        // Pools, Fields,
+        for (Tournament tournament : tournaments) {
+            for (MatchDay day : tournament.getMatchSchedule().getMatchDays()) {
+                System.out.println(day);
+            }
+        }/*
+
+
         // Setting all results for group play, now group play is done
-        tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).setResult(new Result(1, 2));
+        /*tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(0).setResult(new Result(1, 2));
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(1).setResult(new Result(1, 2));
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(2).setResult(new Result(1, 2));
         tournament.getMatchSchedule().getMatchDays().get(0).getMatches().get(3).setResult(new Result(1, 2));
@@ -164,14 +196,13 @@ public class Main extends Application {
             for (Team team : group.getTeamList()) {
                 System.out.println(team);
             }
-        }
+        }*/
 
-        tournament.findCorrectPool(6, "A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6, "A").getGroupBracket().advanceTeams());
+        /*tournament.findCorrectPool(6, "A").getKnockoutBracket().createNextRound(tournament.findCorrectPool(6, "A").getGroupBracket().advanceTeams());
 
         for (Match match : tournament.getMatchSchedule().getMatchDays().get(0).getMatches()) {
             System.out.println(match);
         }*/
-
 
         launch(args);
     }

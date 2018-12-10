@@ -47,8 +47,7 @@
             <VBox prefHeight="450.0" prefWidth="31.0" />
             <VBox prefHeight="463.0" prefWidth="185.0">
                <children>
-                  <VBox prefHeight="63.0" prefWidth="185.0" />
-                  <HBox alignment="TOP_RIGHT" prefHeight="53.0" prefWidth="185.0" style="-fx-background-color: D4D4D4; -fx-border-color: B2B2B2;">
+                  <HBox alignment="TOP_RIGHT" prefHeight="24.0" prefWidth="187.0" style="-fx-background-color: D4D4D4; -fx-border-color: B2B2B2;">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Holdnavn" textAlignment="CENTER" wrappingWidth="184.13671875">
                            <font>
@@ -56,7 +55,7 @@
                            </font>
                         </Text>
                      </children></HBox>
-                  <ListView fx:id="teamListView" prefHeight="415.0" prefWidth="185.0" />
+                  <ListView fx:id="teamListView" prefHeight="432.0" prefWidth="187.0" />
                </children>
             </VBox>
             <VBox layoutX="774.0" layoutY="10.0" prefHeight="450.0" prefWidth="71.0" />

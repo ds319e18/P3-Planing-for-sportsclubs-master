@@ -2,6 +2,7 @@ package controller;
 
 import exceptions.MissingInputException;
 import exceptions.NotEnoughTeamsAddedException;
+import database.DAO.TeamDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -100,6 +101,11 @@ public class AddingTeamsController implements CheckInput {
     public void nextButtonClicked(ActionEvent event) throws IOException {
         try {
             checkThatAllPoolsHaveMinimumTeams();
+        // DAO for team
+        TeamDAO teamSQl = new TeamDAO();
+
+        // Inserting all teams in the tournament in the database
+        //teamSQl.insertTeam(tournament);
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../View/CreatingGroups.FXML"));
