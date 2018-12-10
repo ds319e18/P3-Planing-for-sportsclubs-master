@@ -1,5 +1,7 @@
 package controller;
 
+import exceptions.InvalidInputException;
+import exceptions.MissingInputException;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
@@ -27,7 +29,7 @@ import tournament.pool.Pool;
 import java.io.IOException;
 import java.time.LocalTime;
 
-public class MatchScheduleSetupController {
+public class MatchScheduleSetupController implements CheckInput {
     private final int stepNumber = 6;
     private Tournament tournament;
 
@@ -100,51 +102,107 @@ public class MatchScheduleSetupController {
         matchDayTableView.getSelectionModel().selectedItemProperty().addListener(new RowSelectInvalidationListener());
     }
 
+    @Override
+    public void checkAllInput() {
+        if (timeBetweenMatches.getText().trim().isEmpty()) {
+            throw new MissingInputException();
+        }
+
+        for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
+            if (matchDay.getStartTime().equals(LocalTime.MIN)) {
+                throw new MissingInputException();
+            }
+        }
+
+        if (!(timeBetweenMatches.getText().matches("\\d+"))) {
+            throw new InvalidInputException("heltal", "tid i mellem kampene");
+        }
+    }
+
     @FXML
     private void autogenerateMixedMatches() {
-        tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+        try {
+            checkAllInput();
+            tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
 
     }
 
     @FXML
     private void autogenerateNoMixedMatches(ActionEvent event) throws IOException {
-        tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
+        try {
+            checkAllInput();
+            tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+            tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));
-        Parent newWindow = loader.load();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));
+            Parent newWindow = loader.load();
 
-        AutogenerateMatchScheduleController msc = loader.getController();
-        msc.setTournament(tournament);
+            AutogenerateMatchScheduleController msc = loader.getController();
+            msc.setTournament(tournament);
 
-        Scene newScene = new Scene(newWindow);
+            Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)(timeBetweenMatches).getScene().getWindow();
+            Stage window = (Stage) (timeBetweenMatches).getScene().getWindow();
 
-        window.setScene(newScene);
-        window.show();
+            window.setScene(newScene);
+            window.show();
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
     }
 
 
     @FXML
     private void manuallyCreateMatchSchedule(ActionEvent event) throws IOException {
-        tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+        try {
+            checkAllInput();
+            tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
 
-        System.out.println(String.valueOf(tournament.getMatchSchedule().getMatchDays().size()));
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/CreatingMatchSchedule.fxml"));
-        Parent newWindow = loader.load();
+            System.out.println(String.valueOf(tournament.getMatchSchedule().getMatchDays().size()));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/CreatingMatchSchedule.fxml"));
+            Parent newWindow = loader.load();
 
-        CreatingMatchScheduleController msc = loader.getController();
-        msc.setTournament(tournament);
+            CreatingMatchScheduleController msc = loader.getController();
+            msc.setTournament(tournament);
 
-        Scene newScene = new Scene(newWindow);
+            Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        window.setScene(newScene);
-        window.show();
+            window.setScene(newScene);
+            window.show();
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
     }
 
     @FXML
@@ -175,6 +233,7 @@ public class MatchScheduleSetupController {
     private void changeMatchDurationCell(TableColumn.CellEditEvent editEvent) {
         Pool poolSelected = poolTableView.getSelectionModel().getSelectedItem();
         poolSelected.setMatchDuration(editEvent.getNewValue().toString());
+
     }
     /*
     private Callback<TableColumn<MatchDay, LocalTime>, TableCell<MatchDay, LocalTime>> getCellColorFactory() {

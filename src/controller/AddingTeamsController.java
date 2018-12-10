@@ -1,5 +1,6 @@
 package controller;
 
+import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import exceptions.NotEnoughTeamsAddedException;
 import database.DAO.TeamDAO;
@@ -134,7 +135,11 @@ public class AddingTeamsController implements CheckInput {
             || yearGroupComboBox.getSelectionModel().isEmpty()) {
             throw new MissingInputException();
         }
-        // Maybe check if phoneNumTextField.getText is a valid phone number
+        if (!phoneNumTextField.getText().trim().isEmpty()) {
+            if (!(phoneNumTextField.getText().matches("\\d+")) || (phoneNumTextField.getText().length() != 8)) {
+                throw new InvalidInputException("telefonnummer", "telefon nr");
+            }
+        }
     }
 
     @FXML
@@ -157,6 +162,11 @@ public class AddingTeamsController implements CheckInput {
         } catch (MissingInputException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Forkert input fejl");
             warning.setTitle("Fejl");
             warning.showAndWait();
         }
