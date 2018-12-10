@@ -126,13 +126,13 @@ public class CreatingFinalStageController implements CheckInput {
             groupTableView.getItems().addAll(selectedPool.getGroupBracket().getGroups());
     }
 
+    @Override
+    public void checkAllInput() {
 
+    }
     @FXML
     private void saveButton() {
-        @Override
-        public void checkAllInput() {
 
-        }
 
         Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
             // The amount of teams to advance to the final stage is set
