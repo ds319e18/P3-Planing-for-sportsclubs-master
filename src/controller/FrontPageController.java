@@ -1,6 +1,7 @@
 package controller;
 
 import account.Administrator;
+import account.Spectator;
 import database.DAO.AccountDAO;
 import database.DAO.TournamentDAO;
 import javafx.event.ActionEvent;
@@ -30,10 +31,11 @@ public class FrontPageController {
 
     Tournament tournament;
 
-    Administrator user = new Administrator();
+    private Spectator spectator = new Spectator();
+
 
     //TODO DENNE ER TIL UDEN DATABASE
-    void setTournament(Tournament tournament) {
+    /*void setTournament(Tournament tournament) {
         this.tournament = tournament;
         for (ColumnConstraints column : gp.getColumnConstraints())
             column.setHalignment(HPos.CENTER);
@@ -55,7 +57,7 @@ public class FrontPageController {
             });
             gp.addRow(i, txt, status, date, btnView);
         }
-    }
+    }*/
 
     @FXML
     public void setOnLoginButtonClicked(ActionEvent event) throws IOException {
@@ -69,18 +71,18 @@ public class FrontPageController {
     }
 
     // TODO DENNE ER TIL DATABASE
-    /*@FXML
+    @FXML
     public void initialize() {
         TournamentDAO tournemantSQL = new TournamentDAO();
 
         // Initiliasere user objektet
         String idToBeHashed = "Jetsmark";
         int id = Objects.hash(idToBeHashed);
-        user.setId(id);
+        spectator.setId(id);
 
-        user.setTournamens(tournemantSQL.getAllTournaments(user.getId()));
+        spectator.setTournaments(tournemantSQL.getAllTournaments(spectator.getId()));
 
-        for (Tournament tournament : user.getTournamens()) {
+        for (Tournament tournament : spectator.getTournaments()) {
             for (ColumnConstraints column : gp.getColumnConstraints()) {
                 column.setHalignment(HPos.CENTER);
             }
@@ -98,7 +100,7 @@ public class FrontPageController {
                 gp.addRow(gp.getRowCount(), txt, status, date, btnView);
 
         }
-    }*/
+    }
 
 
     @FXML
@@ -108,7 +110,7 @@ public class FrontPageController {
         Parent newWindow = loader.load();
 
         //TODO Dette er til database
-        /*for (Tournament tournament : user.getTournamens()) {
+        for (Tournament tournament : spectator.getTournaments()) {
             if (tournament.getName().equals(tournamentName)) {
                 UpdateMatchController atc = loader.getController();
                 atc.setTournament(tournament);
@@ -120,10 +122,10 @@ public class FrontPageController {
                 window.setScene(newScene);
                 window.show();
             }
-        }*/
+        }
 
         //TODO Dette er til hvis man ikke har database på
-        UpdateMatchController atc = loader.getController();
+        /*UpdateMatchController atc = loader.getController();
         atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
@@ -131,7 +133,7 @@ public class FrontPageController {
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
-        window.show();
+        window.show();*/
 
     }
 
