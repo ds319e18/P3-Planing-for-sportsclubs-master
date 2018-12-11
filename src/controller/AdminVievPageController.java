@@ -31,7 +31,7 @@ public class AdminVievPageController {
 
     @FXML
     public void setConfirmButtonPressed(ActionEvent event) throws IOException{
-        
+
     }
 
     @FXML

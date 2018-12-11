@@ -58,7 +58,7 @@ public class ViewMatchScheduleController {
         //createMatchDayTabs();
         //createMatchScheduleGridpane();
     }
-
+/*
     private void createMatchDayTabs() {
         for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
             matchDayTabPane.getTabs().add(new Tab(matchDay.getName()));
@@ -166,7 +166,7 @@ public class ViewMatchScheduleController {
 
         return returnHBox;
     }
-
+*/
     //Error!
     @FXML
     public void setMenuButtonPressed(ActionEvent event) throws IOException {
