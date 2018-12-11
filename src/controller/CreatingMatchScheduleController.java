@@ -305,7 +305,7 @@ public class CreatingMatchScheduleController {
             checkAllMatches();
 
             //TODO TIL DATABASE
-            //loadTournamentInDatabase(tournament);
+            loadTournamentInDatabase(tournament);
 
             loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
             Parent newWindow = loader.load();

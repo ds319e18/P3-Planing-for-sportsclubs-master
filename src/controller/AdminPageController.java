@@ -60,7 +60,7 @@ public class AdminPageController {
         user.setTournamens(tournamentSQL.getAllTournaments(user.getId()));
         setTournamentTableView();
         addPoolsInTableView();
-    }*/
+    }
 
     @FXML
     private void setTournamentTableView() {
