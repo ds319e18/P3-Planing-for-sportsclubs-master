@@ -1,15 +1,16 @@
 package controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -26,24 +27,44 @@ import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.GraphicalObjects.MatchContainer;
 import tournament.matchschedule.MatchDay;
+import tournament.pool.Pool;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ViewMatchScheduleController {
+
+    private String imageFile = null;
+    private String logo = null;
+    private ImageView iw = null;
 
     Tournament tournament;
 
     @FXML
     private TabPane matchDayTabPane;
 
+    @FXML
+    private ImageView logo1 = null;
+
+    @FXML
+    private ImageView logo2 = null;
+
+    @FXML
+    private ImageView logo3 = null;
+
+    @FXML
+    private ImageView logo4 = null;
+
+
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        createMatchDayTabs();
-        createMatchScheduleGridpane();
+        setImages();
+        //createMatchDayTabs();
+        //createMatchScheduleGridpane();
     }
 
     private void createMatchDayTabs() {
@@ -154,24 +175,23 @@ public class ViewMatchScheduleController {
         return returnHBox;
     }
 
+    //Error!
     @FXML
-    public void setBackButtonPressed(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/FrontPage.FXML"));
-        Parent newWindow = loader.load();
-
+    public void setMenuButtonPressed(ActionEvent event) throws IOException {
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
         //FrontPageController atc = loader.getController();
         //atc.setTournament(tournament);
 
+
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
         window.show();
     }
 
-    @FXML
+    /*@FXML
     public void setAddSponser(MouseEvent event) throws MalformedURLException {
         String imageFile;
         FileChooser fileChooser = new FileChooser();
@@ -188,6 +208,79 @@ public class ViewMatchScheduleController {
             ImageView iw = (ImageView) event.getSource();
             iw.setImage(im);
         }
+    }*/
+    /*
+    //set Image files
+    //Needs to be save in a list
+    String imageFile;
+    ArrayList<String> imageFileList = new ArrayList<>();
+    @FXML
+    public String setAddSponser(MouseEvent event) throws MalformedURLException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Image File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files",
+                        "*.bmp", "*.png", "*.jpg", "*.gif")); // limit fileChooser options to image files
+        Node node = (Node) event.getSource();
+        File selectedFile = fileChooser.showOpenDialog(node.getScene().getWindow());
+
+        if (selectedFile != null) {
+            imageFile = selectedFile.toURI().toURL().toString();
+            return imageFile;
+        }
+        else {
+            return null;
+        }
+
+    }
+    */
+
+    public void setImages() {
+        for(int i = 1; i < 5; i++) {
+            AdminVievPageController logoSetter = new AdminVievPageController();
+            if (i == 1) {
+                logo = ("logo1");
+                imageFile = logoSetter.getlogo1();
+            } else if (i == 2){
+                logo = ("logo2");
+                imageFile = logoSetter.getlogo2();
+            } else if (i == 3) {
+                logo = ("logo3");
+                imageFile = logoSetter.getlogo3();
+            } else if (i == 4) {
+                logo = ("logo4");
+                imageFile = logoSetter.getlogo4();
+            } else {
+                imageFile =  null;
+            }
+            getAddSponser(logo, imageFile);
+        }
     }
 
+    //get Image files
+    public void getAddSponser(String fxId, String selectedFile) {
+        if (selectedFile != null) {
+            Image im = new Image(selectedFile);
+            if(fxId == ("logo1")){
+                iw = (ImageView) logo1;
+            }
+            else if(fxId == ("logo2")){
+                iw = (ImageView) logo2;
+            }
+            else if(fxId == ("logo3")){
+                iw = (ImageView) logo3;
+            }
+            else if(fxId == ("logo4")){
+                iw = (ImageView) logo4;
+            }
+            else{
+                System.out.println("Error fx:id Not found");
+            }
+            iw.setImage(im);
+
+        }
+        else {
+            System.out.println("Error logo not found");
+        }
+    }
 }

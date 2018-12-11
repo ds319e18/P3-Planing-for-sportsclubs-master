@@ -1,7 +1,7 @@
 package controller;
 
 import account.Administrator;
-import database.DAO.TournamentDAO;
+import exceptions.BackInDateException;
 import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import javafx.collections.FXCollections;
@@ -15,12 +15,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.TournamentType;
-import tournament.matchschedule.Field;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 
@@ -83,6 +80,8 @@ public class TournamentSetupController implements CheckInput {
                 || endDatePicker.getEditor().getText().isEmpty() || tournamentTypeCombobox.getSelectionModel().isEmpty()
                 || fieldNumberCombobox.getSelectionModel().isEmpty() || getSelectedPoolsAndMatchLengths().isEmpty()) {
             throw new MissingInputException();
+        } else if(startDatePicker.getValue().isAfter(endDatePicker.getValue())) {
+            throw new BackInDateException();
         }
     }
 
@@ -100,7 +99,7 @@ public class TournamentSetupController implements CheckInput {
                     .build();
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
+            loader.setLocation(getClass().getResource("../view/AddingTeams.FXML"));
             Parent newWindow = loader.load();
 
             AddingTeamsController atc = loader.getController();
@@ -121,6 +120,11 @@ public class TournamentSetupController implements CheckInput {
             warning.setHeaderText("Ugyldigt input fejl");
             warning.setTitle("Fejl");
             warning.showAndWait();
+        } catch (BackInDateException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
         }
 
 
@@ -128,7 +132,7 @@ public class TournamentSetupController implements CheckInput {
 
     @FXML
     public void setOnBackButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/AdminPage.FXML"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

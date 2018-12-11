@@ -336,7 +336,7 @@ public class CreatingMatchScheduleController {
     @FXML
     private void backButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
+        loader.setLocation(getClass().getResource("../view/MatchScheduleSetup.FXML"));
         Parent newWindow = loader.load();
 
         MatchScheduleSetupController msc = loader.getController();

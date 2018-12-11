@@ -50,32 +50,6 @@ public class AdminPageController {
     @FXML
     private Button createTournamentBtn;
 
-    //TODO DENNE ER TIL UDEN DATABASE
-    /*void setTournament(Tournament tournament) {
-        this.tournament = tournament;
-        for (ColumnConstraints column : gp.getColumnConstraints())
-            column.setHalignment(HPos.CENTER);
-
-
-        for (int i = 0; i < 5; i++) { // Iterates through a list of tournament-objects.
-            Text txt = new Text(tournament.getName());
-            Text status = new Text("NOT ACTIVE");
-            if (tournament.isActive()) {
-                status = new Text("ACTIVE");
-            }
-            Text date = new Text(tournament.getStartDate().toString() + "\n" + tournament.getEndDate().toString() );
-            Button btnView = new Button("View");
-            btnView.setOnAction(event -> {
-                try {
-                    setViewButtonClicked(event, txt.getText());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
-            gp.addRow(i, txt, status, date, btnView);
-        }
-    }*/
-
     @FXML
     private TableView<Tournament> tournamentTableView;
 
@@ -86,7 +60,7 @@ public class AdminPageController {
         user.setTournamens(tournamentSQL.getAllTournaments(user.getId()));
         setTournamentTableView();
         addPoolsInTableView();
-    }
+    }*/
 
     @FXML
     private void setTournamentTableView() {
@@ -126,7 +100,7 @@ public class AdminPageController {
     @FXML
     public void setOnCreateTournamentButtonClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/TournamentSetup.fxml"));
+        loader.setLocation(getClass().getResource("../view/TournamentSetup.fxml"));
         Parent newWindow = loader.load();
 
         TournamentSetupController atc = loader.getController();
@@ -142,7 +116,7 @@ public class AdminPageController {
 
     @FXML
     public void setOnLogoutButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/FrontPage.fxml"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/FrontPage.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -154,7 +128,7 @@ public class AdminPageController {
     @FXML
     public void setViewButtonClicked(ActionEvent event, String tournamentName) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
+        loader.setLocation(getClass().getResource("../view/UpdateMatch.FXML"));
         Parent newWindow = loader.load();
 
         //TODO Dette er til database

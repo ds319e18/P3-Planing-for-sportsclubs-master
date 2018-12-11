@@ -1,6 +1,8 @@
 package controller;
 
 import database.DAO.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -18,13 +21,18 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import tournament.Match;
+import tournament.Result;
+import tournament.Team;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.GraphicalObjects.MatchContainer;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
+import tournament.pool.Pool;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -37,124 +45,74 @@ public class AutogenerateMatchScheduleController {
     private VBox progressBox;
 
     @FXML
-    private TabPane matchDayTabPane;
+    private TableView<Match> matchTableView;
+
+    @FXML
+    private ComboBox<MatchDay> matchDayComboBox;
+
 
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
         progressBox.getChildren().add(new ProgressBox(stepNumber));
-        createMatchDayTabs();
-        createMatchScheduleGridpane();
+        setMatchDayComboBox();
+        setMatchTable();
     }
 
-    private void createMatchDayTabs() {
+    private void setMatchTable() {
+        TableColumn<Match, String> matchNameColumn = new TableColumn<>("Kamp");
+        matchNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        matchNameColumn.setPrefWidth(80);
+
+        TableColumn<Match, LocalTime> timeColumn = new TableColumn<>("Tid");
+        timeColumn.setCellValueFactory(new PropertyValueFactory<>("timestamp"));
+        timeColumn.setPrefWidth(50);
+
+        TableColumn<Match, Team> firstTeamColumn = new TableColumn<>("Hjemmehold");
+        firstTeamColumn.setCellValueFactory(new PropertyValueFactory<>("firstTeam"));
+        firstTeamColumn.setPrefWidth(106);
+
+        TableColumn<Match, Team> secondTeamColumn = new TableColumn<>("Udehold");
+        secondTeamColumn.setCellValueFactory(new PropertyValueFactory<>("secondTeam"));
+        secondTeamColumn.setPrefWidth(106);
+
+        TableColumn<Match, Result> resultColumn = new TableColumn<>("Resultat");
+        resultColumn.setCellValueFactory(new PropertyValueFactory<>("result"));
+        resultColumn.setPrefWidth(67);
+
+        TableColumn<Match, Field> fieldColumn = new TableColumn<>("Bane");
+        fieldColumn.setCellValueFactory(new PropertyValueFactory<>("field"));
+        fieldColumn.setPrefWidth(55);
+
+        matchTableView.getColumns().addAll(matchNameColumn, timeColumn, firstTeamColumn, secondTeamColumn, resultColumn, fieldColumn);
+    }
+
+    private void setMatchDayComboBox() {
+        ObservableList<MatchDay> matchDayList = FXCollections.observableArrayList();
+
         for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
-            matchDayTabPane.getTabs().add(new Tab(matchDay.getName()));
+            matchDayList.add(matchDay);
         }
-
-        for (Tab tab : matchDayTabPane.getTabs()) {
-            tab.setStyle("-fx-pref-width: " +
-                    String.valueOf(matchDayTabPane.getPrefWidth()/tournament.getMatchSchedule().
-                            getMatchDays().size()-10));
-        }
+        matchDayComboBox.setItems(matchDayList);
     }
 
-    private void createMatchScheduleGridpane() {
-        GridPane matchDayGridPane;
-        ScrollPane scrollPane;
-        int matchCounter = 1;
+    @FXML
+    private void setOnMatchDaySelected() {
+        // Removes all matches from the table when selecting a new day
+        matchTableView.getItems().clear();
 
-        for (Tab tab : matchDayTabPane.getTabs()) {
-            matchDayGridPane = new GridPane();
-            scrollPane = new ScrollPane();
-        // Text-objects containing field numbers are inserted at the top of the GridPane.
-            for (int i = 0; i < tournament.getFieldList().size(); i++) {
-                Text fieldText = new Text("Bane " + (i + 1));
-                fieldText.setWrappingWidth(267);
-                fieldText.setTextAlignment(TextAlignment.CENTER);
-                fieldText.setStyle("-fx-font-style: BOLD;");
-                fieldText.setFont(Font.font(15));
+        MatchDay selectedMatchDay = matchDayComboBox.getValue();
 
-                matchDayGridPane.add(fieldText, i, 0);
-            }
+        ObservableList<Match> observableMatchList = FXCollections.observableArrayList();
+        observableMatchList.addAll(selectedMatchDay.getMatches());
 
-            List<Integer> indexList = new ArrayList<>();
-
-            for (Field f : tournament.getFieldList())
-                indexList.add(1);
-
-            MatchDay matchDay = tournament.getMatchSchedule().findMatchDay(tab.getText());
-
-            for (Match match : matchDay.getMatches()) {
-                HBox matchHBox = createHBoxFromMatch(match, matchCounter);
-
-                matchDayGridPane.add(matchHBox, Integer.parseInt(match.getField().getName().substring(5)) - 1
-                        , indexList.get(Integer.parseInt(match.getField().getName().substring(5)) - 1));
-
-                indexList.set(Integer.parseInt(match.getField().getName().substring(5)) - 1
-                        , indexList.get(Integer.parseInt(match.getField().getName().substring(5)) - 1) + 1);
-                matchCounter++;
-            }
-
-            scrollPane.setContent(matchDayGridPane);
-            tab.setContent(scrollPane);
-        }
+        matchTableView.getItems().addAll(observableMatchList);
     }
 
-    private HBox createHBoxFromMatch(Match match, int matchCounter) {
-        HBox matchBoxContainer = new HBox();
-
-        VBox matchTypeBox = new VBox();
-        matchTypeBox.setStyle("-fx-border-color: BLACK;");
-
-        Text matchNameText = new Text("Kamp " + matchCounter);
-        Text timeIntervalText = new Text(match.getTimeStamp() + " - " + match.getTimeStamp().plusMinutes(match.getDuration()));
-        matchNameText.setWrappingWidth(80);
-        timeIntervalText.setWrappingWidth(80);
-        matchNameText.setTextAlignment(TextAlignment.CENTER);
-        timeIntervalText.setTextAlignment(TextAlignment.CENTER);
-
-        matchTypeBox.getChildren().addAll(matchNameText, timeIntervalText);
-
-        // match object Hbox
-        HBox matchBox = new HBox();
-
-        VBox teamTextBox = new VBox();
-        //vBox2.setStyle("-fx-border-color: BLACK;");
-
-        Text firstTeamText = new Text(match.getFirstTeam().getName());
-        Text secondTeamText = new Text(match.getSecondTeam().getName());
-        firstTeamText.setWrappingWidth(107);
-        secondTeamText.setWrappingWidth(107);
-        firstTeamText.setTextAlignment(TextAlignment.CENTER);
-        secondTeamText.setTextAlignment(TextAlignment.CENTER);
-        teamTextBox.getChildren().addAll(firstTeamText, secondTeamText);
-
-        VBox teamNameBox = new VBox();
-        //vBox3.setStyle("-fx-border-color: BLACK;");
-
-        Text poolText = new Text("U" + match.getFirstTeam().getYearGroup() + " - " + match.getFirstTeam().getSkillLevel());
-        Text fieldText = new Text(match.getField().getName());
-        poolText.setWrappingWidth(80);
-        fieldText.setWrappingWidth(80);
-        poolText.setTextAlignment(TextAlignment.CENTER);
-        fieldText.setTextAlignment(TextAlignment.CENTER);
-        teamNameBox.getChildren().addAll(poolText, fieldText);
-
-        matchBox.getChildren().addAll(teamTextBox, teamNameBox);
-        matchBox.setStyle("-fx-border-color: BLACK;");
-
-        matchBoxContainer.getChildren().add(matchTypeBox);
-        matchBoxContainer.getChildren().add(matchBox);
-
-        matchBoxContainer.setMargin(matchBox, new Insets(0, 30, 0, 0));
-
-        return matchBoxContainer;
-    }
 
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
+        loader.setLocation(getClass().getResource("../view/MatchScheduleSetup.FXML"));
         Parent newWindow = loader.load();
 
         MatchScheduleSetupController atc = loader.getController();
@@ -176,7 +134,7 @@ public class AutogenerateMatchScheduleController {
         loadTournamentInDatabase(tournament);
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/AdminPage.FXML"));
+        loader.setLocation(getClass().getResource("../view/AdminPage.FXML"));
         Parent newWindow = loader.load();
 
         // Sender boolean videre hvis tournament created succesfuld
@@ -189,6 +147,11 @@ public class AutogenerateMatchScheduleController {
 
         window.setScene(newScene);
         window.show();
+
+        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
+        warning.setHeaderText("Tillykke!");
+        warning.setTitle("Succesfuld Turnering");
+        warning.showAndWait();
     }
 
     // Bruges til at hente alle turneringer for en bruger
