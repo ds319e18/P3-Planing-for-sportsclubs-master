@@ -17,7 +17,7 @@ public class Match implements Comparable<Match> {
     private Field field;
     private Team firstTeam;
     private Team secondTeam;
-    private Result result;
+    private Result result = new Result(100, 100); //Dette resultat kommer aldrig, og betyder at kampen ikke har et resultat
     private Team winner;
     private Team loser;
     private boolean drawn;
@@ -71,6 +71,10 @@ public class Match implements Comparable<Match> {
             secondTeam.setPoints(1);
         }
         this.finished = true;
+    }
+
+    public LocalTime getTimestamp() {
+        return timestamp;
     }
 
     public boolean isChecked() {

@@ -135,8 +135,7 @@ public class MatchDay {
 
     @Override
     public String toString() {
-        return "                   " + name + ": " + startTime + "-" + endTime + " " + date + '\n' +
-                matches.toString().replace(",", "").replace("[", " ").replace("]", "");
+        return name;
     }
 
     @Override

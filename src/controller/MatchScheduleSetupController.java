@@ -182,7 +182,7 @@ public class MatchScheduleSetupController implements CheckInput {
             tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));
+            loader.setLocation(getClass().getResource("../View/AutoMatchSchedule.fxml"));
             Parent newWindow = loader.load();
 
             AutogenerateMatchScheduleController msc = loader.getController();
@@ -221,7 +221,7 @@ public class MatchScheduleSetupController implements CheckInput {
 
             System.out.println(String.valueOf(tournament.getMatchSchedule().getMatchDays().size()));
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/CreatingMatchSchedule.fxml"));
+            loader.setLocation(getClass().getResource("../view/CreatingMatchSchedule.fxml"));
             Parent newWindow = loader.load();
 
             CreatingMatchScheduleController msc = loader.getController();
@@ -254,7 +254,7 @@ public class MatchScheduleSetupController implements CheckInput {
     @FXML
     public void backButtonClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/VerifyFinalStage.fxml"));
+        loader.setLocation(getClass().getResource("../view/VerifyFinalStage.fxml"));
         Parent newWindow = loader.load();
 
         VerifyFinalStageController vfc = loader.getController();

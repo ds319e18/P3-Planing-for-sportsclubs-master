@@ -78,7 +78,7 @@ public class FrontPageController {
 
     @FXML
     public void setOnLoginButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/Login.fxml"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/Login.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -106,7 +106,7 @@ public class FrontPageController {
                 Text txt = new Text(tournament.getName());
                 Text status = new Text(String.valueOf(tournament.isActive()));
                 Text date = new Text(tournament.getStartDate().toString() + "\n" + tournament.getEndDate().toString());
-                Button btnView = new Button("View");
+                Button btnView = new Button("view");
                 btnView.setOnAction(event -> {
                     try {
                         setViewButtonClicked(event, txt.getText());
@@ -123,7 +123,7 @@ public class FrontPageController {
     @FXML
     public void setViewButtonClicked(ActionEvent event, String tournamentName) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/ViewPage.FXML"));
+        loader.setLocation(getClass().getResource("../view/ViewPage.FXML"));
         Parent newWindow = loader.load();
 
         //TODO Dette er til database

@@ -73,7 +73,7 @@ public class UpdateMatchController {
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/AdminPage.FXML"));
+        loader.setLocation(getClass().getResource("../view/AdminPage.FXML"));
         Parent newWindow = loader.load();
 
         Scene newScene = new Scene(newWindow);
