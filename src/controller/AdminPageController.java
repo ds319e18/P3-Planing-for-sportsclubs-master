@@ -47,37 +47,11 @@ public class AdminPageController {
     @FXML
     private Button createTournamentBtn;
 
-    //TODO DENNE ER TIL UDEN DATABASE
-    void setTournament(Tournament tournament) {
-        this.tournament = tournament;
-        for (ColumnConstraints column : gp.getColumnConstraints())
-            column.setHalignment(HPos.CENTER);
-
-
-        for (int i = 0; i < 5; i++) { // Iterates through a list of tournament-objects.
-            Text txt = new Text(tournament.getName());
-            Text status = new Text("NOT ACTIVE");
-            if (tournament.isActive()) {
-                status = new Text("ACTIVE");
-            }
-            Text date = new Text(tournament.getStartDate().toString() + "\n" + tournament.getEndDate().toString() );
-            Button btnView = new Button("View");
-            btnView.setOnAction(event -> {
-                try {
-                    setViewButtonClicked(event, txt.getText());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
-            gp.addRow(i, txt, status, date, btnView);
-        }
-    }
-
     @FXML
     private TableView<Tournament> tournamentTableView;
 
 
-    public void initialize() {
+    /*public void initialize() {
         TournamentDAO tournamentSQL = new TournamentDAO();
         user.setTournamens(tournamentSQL.getAllTournaments(user.getId()));
         
@@ -85,7 +59,7 @@ public class AdminPageController {
 
         setTournamentTableView();
         addPoolsInTableView();
-    }
+    }*/
 
     @FXML
     private void setTournamentTableView() {
@@ -123,8 +97,6 @@ public class AdminPageController {
     }
 
 
-    Tournament tournament;
-
     //TODO DENNE ER TIL UDEN DATABASE
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
@@ -149,6 +121,7 @@ public class AdminPageController {
             gp.addRow(i, txt, status, date, btnView);
         }
     }
+
 
     @FXML
     public void setOnCreateTournamentButtonClicked(ActionEvent event) throws IOException {
