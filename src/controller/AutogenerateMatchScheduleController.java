@@ -172,10 +172,6 @@ public class AutogenerateMatchScheduleController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
-        warning.setHeaderText("Tillykke!");
-        warning.setTitle("Succesfuld Turnering");
-        warning.showAndWait();
         //TODO TIL DATABASE
         //loadTournamentInDatabase(tournament);
 
@@ -193,6 +189,11 @@ public class AutogenerateMatchScheduleController {
 
         window.setScene(newScene);
         window.show();
+
+        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
+        warning.setHeaderText("Tillykke!");
+        warning.setTitle("Succesfuld Turnering");
+        warning.showAndWait();
     }
 
     public void loadTournamentInDatabase(Tournament tournament) {

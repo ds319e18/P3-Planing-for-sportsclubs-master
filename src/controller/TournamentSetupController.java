@@ -1,7 +1,7 @@
 package controller;
 
 import account.Administrator;
-import database.DAO.TournamentDAO;
+import exceptions.BackInDateException;
 import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import javafx.collections.FXCollections;
@@ -15,15 +15,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.TournamentType;
-import tournament.matchschedule.Field;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
-import controller.CheckInput;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -84,6 +80,8 @@ public class TournamentSetupController implements CheckInput {
                 || endDatePicker.getEditor().getText().isEmpty() || tournamentTypeCombobox.getSelectionModel().isEmpty()
                 || fieldNumberCombobox.getSelectionModel().isEmpty() || getSelectedPoolsAndMatchLengths().isEmpty()) {
             throw new MissingInputException();
+        } else if(startDatePicker.getValue().isAfter(endDatePicker.getValue())) {
+            throw new BackInDateException();
         }
     }
 
@@ -118,6 +116,11 @@ public class TournamentSetupController implements CheckInput {
             warning.setTitle("Fejl");
             warning.showAndWait();
         } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (BackInDateException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Ugyldigt input fejl");
             warning.setTitle("Fejl");

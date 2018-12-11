@@ -1,5 +1,6 @@
 package controller;
 
+import exceptions.BackInTimeException;
 import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import exceptions.TooManyMatchesInTheMatchDay;
@@ -121,6 +122,8 @@ public class MatchScheduleSetupController implements CheckInput {
         for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
             if (matchDay.getStartTime().equals(LocalTime.MIN)) {
                 throw new MissingInputException();
+            } else if(matchDay.getStartTime().isAfter(matchDay.getEndTime())) {
+                throw new BackInTimeException();
             }
         }
 
@@ -128,6 +131,7 @@ public class MatchScheduleSetupController implements CheckInput {
             throw new InvalidInputException("heltal", "tid i mellem kampene");
         }
         checkMatchScheduleTime();
+
     }
 
     private void checkMatchScheduleTime() {
@@ -209,6 +213,11 @@ public class MatchScheduleSetupController implements CheckInput {
             warning.setHeaderText("Logistisk fejl");
             warning.setTitle("Fejl");
             warning.showAndWait();
+        } catch (BackInTimeException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Logistisk fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
         }
     }
 
@@ -268,10 +277,13 @@ public class MatchScheduleSetupController implements CheckInput {
         window.show();
     }
 
+
+
     @FXML
     private void changeStartTimeCell(TableColumn.CellEditEvent editEvent) {
         MatchDay matchDaySelected = matchDayTableView.getSelectionModel().getSelectedItem();
         matchDaySelected.setStartTime(editEvent.getNewValue().toString());
+
     }
 
     @FXML
