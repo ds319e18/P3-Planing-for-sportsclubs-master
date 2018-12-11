@@ -23,6 +23,7 @@ import tournament.TournamentType;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
+import controller.CheckInput;
 
 import java.io.IOException;
 import java.util.ArrayList;

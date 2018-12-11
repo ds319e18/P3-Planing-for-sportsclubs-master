@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +9,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -26,6 +29,7 @@ import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.GraphicalObjects.MatchContainer;
 import tournament.matchschedule.MatchDay;
+import tournament.pool.Pool;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,8 +46,8 @@ public class ViewMatchScheduleController {
 
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        createMatchDayTabs();
-        createMatchScheduleGridpane();
+        //createMatchDayTabs();
+        //createMatchScheduleGridpane();
     }
 
     private void createMatchDayTabs() {
@@ -154,24 +158,23 @@ public class ViewMatchScheduleController {
         return returnHBox;
     }
 
+    //Error!
     @FXML
-    public void setBackButtonPressed(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/FrontPage.FXML"));
-        Parent newWindow = loader.load();
-
+    public void setMenuButtonPressed(ActionEvent event) throws IOException {
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
         //FrontPageController atc = loader.getController();
         //atc.setTournament(tournament);
 
+
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
         window.show();
     }
 
-    @FXML
+    /*@FXML
     public void setAddSponser(MouseEvent event) throws MalformedURLException {
         String imageFile;
         FileChooser fileChooser = new FileChooser();
@@ -188,6 +191,39 @@ public class ViewMatchScheduleController {
             ImageView iw = (ImageView) event.getSource();
             iw.setImage(im);
         }
-    }
+    }*/
+    /*
+    //set Image files
+    //Needs to be save in a list
+    String imageFile;
+    ArrayList<String> imageFileList = new ArrayList<>();
+    @FXML
+    public String setAddSponser(MouseEvent event) throws MalformedURLException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Image File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files",
+                        "*.bmp", "*.png", "*.jpg", "*.gif")); // limit fileChooser options to image files
+        Node node = (Node) event.getSource();
+        File selectedFile = fileChooser.showOpenDialog(node.getScene().getWindow());
 
+        if (selectedFile != null) {
+            imageFile = selectedFile.toURI().toURL().toString();
+            return imageFile;
+        }
+        else {
+            return null;
+        }
+
+    }
+    */
+    //get Image files
+    @FXML
+    public void getAddSponser(String selectedFile, MouseEvent event) throws MalformedURLException {
+        if (selectedFile != null) {
+            Image im = new Image(selectedFile);
+            ImageView iw = (ImageView) event.getSource();
+            iw.setImage(im);
+        }
+    }
 }
