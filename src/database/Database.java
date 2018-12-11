@@ -14,7 +14,7 @@ public class Database {
 
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "markussql");
+        properties.setProperty("password", "password");
         properties.setProperty("useSSL", "false");
         properties.setProperty("useUnicode", "true");
         properties.setProperty("useJDBCCompliantTimezoneShift", "true");

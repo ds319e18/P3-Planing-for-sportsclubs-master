@@ -16,6 +16,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import tournament.Match;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.matchschedule.GraphicalObjects.DeleteButtonTableCell;
@@ -118,7 +119,7 @@ public class AddingTeamsController implements CheckInput {
             window.show();
         } catch (NotEnoughTeamsAddedException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-            warning.setHeaderText("Manglende input fejl");
+            warning.setHeaderText("Mangler at tilføje kampe til kampprogrammet");
             warning.setTitle("Fejl");
             warning.showAndWait();
         }

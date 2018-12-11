@@ -172,20 +172,16 @@ public class AutogenerateMatchScheduleController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
-        warning.setHeaderText("Tillykke!");
-        warning.setTitle("Succesfuld Turnering");
-        warning.showAndWait();
         //TODO TIL DATABASE
-        //loadTournamentInDatabase(tournament);
+        loadTournamentInDatabase(tournament);
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/AdminPage.FXML"));
         Parent newWindow = loader.load();
 
-        //TODO DENNE ER TIL UDEN DATABASE
+        // Sender boolean videre hvis tournament created succesfuld
         AdminPageController atc = loader.getController();
-        atc.setTournament(tournament);
+        atc.setTournamentCreated(true);
 
         Scene newScene = new Scene(newWindow);
 
@@ -195,6 +191,7 @@ public class AutogenerateMatchScheduleController {
         window.show();
     }
 
+    // Bruges til at hente alle turneringer for en bruger
     public void loadTournamentInDatabase(Tournament tournament) {
         String idToBeHashed = "Jetsmark";
         int userID = Objects.hash(idToBeHashed);
