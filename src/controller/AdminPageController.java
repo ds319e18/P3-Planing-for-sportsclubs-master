@@ -8,8 +8,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.ComboBoxTableCell;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -21,8 +23,14 @@ import java.util.Objects;
 
 public class AdminPageController {
     // Laver nyt user objekt
-    String id = "Jetsmark";
+    private String id = "Jetsmark";
     private Administrator user = new Administrator(Objects.hash(id));
+
+    private Boolean tournamentCreated = false;
+
+    public void setTournamentCreated(Boolean s) {
+        tournamentCreated = s;
+    }
 
     @FXML
     private GridPane gp;
@@ -39,12 +47,10 @@ public class AdminPageController {
     private TableView<Tournament> tournamentTableView;
 
 
+    // TIL DATABASE
     public void initialize() {
         TournamentDAO tournamentSQL = new TournamentDAO();
         user.setTournamens(tournamentSQL.getAllTournaments(user.getId()));
-        
-        System.out.println(user.getTournamens().size());
-
         setTournamentTableView();
         addTournamentssInTableView();
     }
@@ -101,17 +107,18 @@ public class AdminPageController {
 
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
         window.show();
     }
+
     @FXML
     public void setOnLogoutButtonClicked(ActionEvent event) throws IOException {
         Parent newWindow = FXMLLoader.load(getClass().getResource("../view/FrontPage.fxml"));
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
         window.show();

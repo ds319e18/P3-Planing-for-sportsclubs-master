@@ -119,7 +119,7 @@ public class AutogenerateMatchScheduleController {
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
         //TODO TIL DATABASE
-        //loadTournamentInDatabase(tournament);
+        loadTournamentInDatabase(tournament);
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../view/AdminPage.FXML"));
@@ -138,6 +138,7 @@ public class AutogenerateMatchScheduleController {
         warning.showAndWait();
     }
 
+    // Bruges til at hente alle turneringer for en bruger
     public void loadTournamentInDatabase(Tournament tournament) {
         String idToBeHashed = "Jetsmark";
         int userID = Objects.hash(idToBeHashed);
