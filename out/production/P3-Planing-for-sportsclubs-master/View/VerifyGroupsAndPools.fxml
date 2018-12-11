@@ -51,7 +51,7 @@
             <VBox layoutX="375.0" layoutY="10.0" prefHeight="502.0" prefWidth="40.0" />
             <VBox prefHeight="375.0" prefWidth="590.0">
                <children>
-                  <Label prefHeight="34.0" prefWidth="303.0" text="Godkend slutspil">
+                  <Label prefHeight="34.0" prefWidth="303.0">
                      <font>
                         <Font name="System Bold Italic" size="18.0" />
                      </font>

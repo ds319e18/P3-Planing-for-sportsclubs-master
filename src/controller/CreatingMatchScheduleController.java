@@ -158,13 +158,21 @@ public class CreatingMatchScheduleController {
 
         MatchContainer selectedMatchContainer = getSelectedMatchContainer();
 
-        // checks if a matchContainer was selected before
-        if (selectedMatchContainer != null) {
+        // checks if a matchContainer was selected before and if the match fits the empty matchContainer
+        if (selectedMatchContainer != null && emptyMatchContainer.fitsForMatch(selectedMatchContainer.getMatch(),
+                timeBetweenMatches)) {
+
             // remove the selected matchContainer and the empty matchContainer
             gridPane.getChildren().remove(emptyMatchContainer);
             if (selectedMatchContainer.getParent() instanceof GridPane) {
                 gridPane.getChildren().remove(selectedMatchContainer);
-            } else if (selectedMatchContainer.getParent() instanceof ListView){
+
+                MatchContainer secondEmptyMatchContainer = new MatchContainer(selectedMatchContainer.getMatch().getTimeStamp());
+                secondEmptyMatchContainer.setOnMouseClicked(event1 -> handleEmptyMatchContainerSelection(event1));
+                gridPane.add(secondEmptyMatchContainer, GridPane.getColumnIndex(selectedMatchContainer),
+                        GridPane.getRowIndex(selectedMatchContainer));
+            }
+            if (matchListView.getItems().contains(selectedMatchContainer)){
                 matchListView.getItems().remove(selectedMatchContainer);
             }
 
@@ -179,8 +187,7 @@ public class CreatingMatchScheduleController {
             // add a new empty matchContainer below the new matchContainer
             if (newMatchContainer.getMatchEndTime().plusMinutes(newMatchContainer.getMatch().getDuration()).
                     isBefore(getMatchDayEndTimeFromSelectedTab()) &&
-                    getMatchContainerFromGridPane(GridPane.getColumnIndex(emptyMatchContainer),
-                            GridPane.getRowIndex(emptyMatchContainer) +1, gridPane) == null) {
+                    newMatchContainer.getNextMatchContainerInGridPane() == null) {
 
                 MatchContainer newEmptyMatchContainer = new MatchContainer(newMatchContainer.getMatchEndTime().
                         plusMinutes(timeBetweenMatches));
@@ -227,7 +234,7 @@ public class CreatingMatchScheduleController {
 
                     gridPane.add(newOtherMatchContainer, GridPane.getColumnIndex(otherMatchContainer),
                             GridPane.getRowIndex(otherMatchContainer));
-                } else if (otherMatchContainer.getParent() instanceof ListView) {
+                } else if (matchListView.getItems().contains(otherMatchContainer)) {
                     swapMatchContainerListAndGrid(otherMatchContainer, selectedMatchContainer);
                 }
 

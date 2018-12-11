@@ -37,7 +37,7 @@ public class Pool {
     }
 
     public String getPlayOffCreationStatus() {
-        if (playoffBracket != null && groupBracket.getAmountOfAdvancingTeamsPrGroup() != 0)
+        if (playoffBracket != null)
             return "Færdig";
         else
             return "Ikke færdig";

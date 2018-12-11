@@ -61,20 +61,20 @@ public class VerifyFinalStageController {
     private void setPoolTableView() {
         TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        poolNameColumn.setMinWidth(150);
-        poolNameColumn.setMaxWidth(150);
+        poolNameColumn.setMinWidth(90);
+        poolNameColumn.setMaxWidth(90);
 
         TableColumn<Pool, String> playOffTypeColumn = new TableColumn<>("Slutspilstype");
         playOffTypeColumn.setCellValueFactory(new PropertyValueFactory<>("playOffType"));
-        playOffTypeColumn.setMaxWidth(150);
-        playOffTypeColumn.setMinWidth(150);
+        playOffTypeColumn.setMaxWidth(118);
+        playOffTypeColumn.setMinWidth(118);
 
         TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
         poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("playOffVerificationStatus"));
-        poolStatusColumn.setMaxWidth(150);
-        poolStatusColumn.setMinWidth(150);
+        poolStatusColumn.setMaxWidth(118);
+        poolStatusColumn.setMinWidth(118);
 
-        poolTableView.getColumns().addAll(poolNameColumn, poolStatusColumn);
+        poolTableView.getColumns().addAll(poolNameColumn, playOffTypeColumn, poolStatusColumn);
         //add pools to tableView
         addPoolsInTableView();
     }
