@@ -15,10 +15,11 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import tournament.Match;
 import tournament.Team;
 import tournament.Tournament;
-import tournament.matchschedule.GraphicalObjects.DeleteButtonTableCell;
-import tournament.matchschedule.GraphicalObjects.ProgressBox;
+import View.GraphicalObjects.ActionButtonTableCell;
+import View.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 
 import java.io.IOException;
@@ -67,7 +68,7 @@ public class AddingTeamsController implements CheckInput {
 
         TableColumn<Team, Button> deleteButtonColumn = new TableColumn<>("");
         deleteButtonColumn.setCellValueFactory(new PropertyValueFactory<>(""));
-        deleteButtonColumn.setCellFactory(DeleteButtonTableCell.forTableColumn((Team team) -> {
+        deleteButtonColumn.setCellFactory(ActionButtonTableCell.forTableColumn((Team team) -> {
             teamTableView.getItems().remove(team);
             tournament.findCorrectPool(team.getYearGroup(), team.getSkillLevel()).getTeamList().remove(team);
             return null;
@@ -117,7 +118,7 @@ public class AddingTeamsController implements CheckInput {
             window.show();
         } catch (NotEnoughTeamsAddedException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-            warning.setHeaderText("Manglende input fejl");
+            warning.setHeaderText("Mangler at tilføje kampe til kampprogrammet");
             warning.setTitle("Fejl");
             warning.showAndWait();
         }

@@ -1,4 +1,4 @@
-package tournament.matchschedule.GraphicalObjects;
+package View.GraphicalObjects;
 
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;

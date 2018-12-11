@@ -1,5 +1,6 @@
 package tournament.matchschedule;
 
+import javafx.scene.control.ComboBox;
 import tournament.Match;
 import tournament.pool.Pool;
 
@@ -8,7 +9,9 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class MatchDay {
+public class
+
+MatchDay {
     private String name;
     private LocalTime startTime = LocalTime.MIN;
     private LocalTime endTime = LocalTime.MIN;

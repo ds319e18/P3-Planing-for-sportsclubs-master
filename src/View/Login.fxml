@@ -19,7 +19,7 @@
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../sample/545398293_468759136948179_6752360962147221504_n.png" />
+            <Image url="@../images/545398293_468759136948179_6752360962147221504_n.png" />
          </image>
          <VBox.margin>
             <Insets left="497.5" top="30.0" />
@@ -80,7 +80,7 @@
             <VBox prefHeight="293.0" prefWidth="261.0" />
             <ImageView fitHeight="293.0" fitWidth="768.0">
                <image>
-                  <Image url="@../sample/tourInfo.png" />
+                  <Image url="@../images/tourInfo.png" />
                </image>
             </ImageView>
          </children>

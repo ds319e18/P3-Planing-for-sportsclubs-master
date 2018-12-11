@@ -1,17 +1,16 @@
-package tournament.matchschedule.GraphicalObjects;
+package View.GraphicalObjects;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.util.Callback;
 
 import java.util.function.Function;
 
-public class DeleteButtonTableCell<E> extends TableCell<E, Button> {
+public class ActionButtonTableCell<E> extends TableCell<E, Button> {
     private final Button button;
 
-    public DeleteButtonTableCell(Function <E, E> function) {
+    public ActionButtonTableCell(Function <E, E> function) {
         button = new Button("Fjern");
 
         this.button.setOnAction( event -> {
@@ -22,11 +21,11 @@ public class DeleteButtonTableCell<E> extends TableCell<E, Button> {
     }
 
     public E getCurrentItem() {
-        return (E) this.getTableView().getItems().get(this.getIndex());
+        return this.getTableView().getItems().get(this.getIndex());
     }
 
     public static <E> Callback<TableColumn<E, Button>, TableCell<E, Button>> forTableColumn(Function <E, E> function) {
-        return p -> new DeleteButtonTableCell<E>(function);
+        return p -> new ActionButtonTableCell<E>(function);
     }
 
     @Override

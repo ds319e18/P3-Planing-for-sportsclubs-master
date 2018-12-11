@@ -1,14 +1,9 @@
 package controller;
 
 import exceptions.NotAllTeamsAreVerified;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import database.DAO.GroupBracketDAO;
-import database.DAO.GroupDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,14 +12,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import tournament.Team;
 import tournament.Tournament;
-import tournament.matchschedule.GraphicalObjects.ProgressBox;
+import View.GraphicalObjects.ProgressBox;
 import tournament.pool.Group;
 import tournament.pool.Pool;
 
