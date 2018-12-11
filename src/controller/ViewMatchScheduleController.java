@@ -42,6 +42,7 @@ public class ViewMatchScheduleController {
     private String logo = null;
     private ImageView iw = null;
 
+    AdminVievPageController logoSetter;
     Tournament tournament;
 
     @FXML
@@ -237,7 +238,7 @@ public class ViewMatchScheduleController {
 
     public void setImages() {
         for(int i = 1; i < 5; i++) {
-            AdminVievPageController logoSetter = new AdminVievPageController();
+            //AdminVievPageController logoSetter = new AdminVievPageController();
             if (i == 1) {
                 logo = ("logo1");
                 imageFile = logoSetter.getlogo1();
