@@ -74,8 +74,6 @@ public class CreatingFinalStageController implements CheckInput {
 
     }
 
-
-
     private void setPoolTableView() {
         TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -151,7 +149,6 @@ public class CreatingFinalStageController implements CheckInput {
             if (knockoutRadioButton.isSelected()) {
                     selectedPool.getGroupBracket().setAdvancingTeamsPrGroup(Integer.parseInt(advancingComboBox.getValue().toString()));
                     selectedPool.addPlayoffBracket(new KnockoutPlay());
-                    System.out.println("if " + selectedPool.getPlayoffBracket().getMatches().size());
             } else if (placementRadioButton.isSelected()) {
                 try {
                     selectedPool.addPlayoffBracket(new PlacementPlay());

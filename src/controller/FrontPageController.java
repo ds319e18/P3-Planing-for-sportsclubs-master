@@ -111,7 +111,7 @@ public class FrontPageController {
         //TODO Dette er til database
         /*for (Tournament tournament : spectator.getTournaments()) {
             if (tournament.getName().equals(tournamentName)) {
-                UpdateMatchController atc = loader.getController();
+                ViewMatchScheduleController atc = loader.getController();
                 atc.setTournament(tournament);
 
                 Scene newScene = new Scene(newWindow);

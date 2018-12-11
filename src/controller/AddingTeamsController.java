@@ -102,11 +102,6 @@ public class AddingTeamsController implements CheckInput {
     public void nextButtonClicked(ActionEvent event) throws IOException {
         try {
             checkThatAllPoolsHaveMinimumTeams();
-        //TODO DAO for team
-        //TeamDAO teamSQl = new TeamDAO();
-
-        //TODO Inserting all teams in the tournament in the database
-        //teamSQl.insertTeam(tournament);
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../View/CreatingGroups.FXML"));

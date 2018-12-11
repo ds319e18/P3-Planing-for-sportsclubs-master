@@ -164,13 +164,6 @@ public class VerifyGroupsAndPoolsController {
     public void nextButtonClicked(ActionEvent event) throws IOException {
         try {
             checkAllPoolsAreVerified();
-            // DAO for group and groupbracket
-            GroupDAO groupSQL = new GroupDAO();
-            GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
-
-            // Inserting groups and groupbracketin database
-            //groupSQL.insertGroup(tournament);
-            //groupBracketSQL.insertGroupBracket(tournament);
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../View/CreatingFinalStage.FXML"));

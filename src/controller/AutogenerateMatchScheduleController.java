@@ -172,14 +172,6 @@ public class AutogenerateMatchScheduleController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        // DAO objects for match schedule and match day
-       // MatchScheduleDAO matchScheduleSQL = new MatchScheduleDAO();
-       // MatchDayDAO matchDaySQL = new MatchDayDAO();
-
-        //Adding matchdays and matchschedule to database.
-       // matchDaySQL.insertMatchDay(tournament);
-       // matchScheduleSQL.insertMatchSchedule(tournament);
-
         //TODO TIL DATABASE
         //loadTournamentInDatabase(tournament);
 
@@ -188,7 +180,7 @@ public class AutogenerateMatchScheduleController {
         Parent newWindow = loader.load();
 
         //TODO DENNE ER TIL UDEN DATABASE
-        FrontPageController atc = loader.getController();
+        AdminPageController atc = loader.getController();
         atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
