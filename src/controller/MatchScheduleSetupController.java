@@ -182,7 +182,7 @@ public class MatchScheduleSetupController implements CheckInput {
             tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../view/AutoMatchSchedule.fxml"));
+            loader.setLocation(getClass().getResource("../View/AutoMatchSchedule.fxml"));
             Parent newWindow = loader.load();
 
             AutogenerateMatchScheduleController msc = loader.getController();

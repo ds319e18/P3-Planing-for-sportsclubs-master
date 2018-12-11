@@ -88,9 +88,11 @@ public class CreatingGroupController implements CheckInput {
     private void handleRowSelection() {
         Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
-        teamListView.getItems().clear();
-        for (Team team : selectedPool.getTeamList()) {
-            teamListView.getItems().add(team.getName());
+        if (selectedPool != null) {
+            teamListView.getItems().clear();
+            for (Team team : selectedPool.getTeamList()) {
+                teamListView.getItems().add(team.getName());
+            }
         }
 
         setComboBoxes();
