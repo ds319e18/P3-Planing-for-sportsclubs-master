@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Dev
     <list default="true" id="a1bd8bf4-304a-4dae-bcde-f1acec9b751c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/AdminPageController.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/AdminPageController.class" />
@@ -102,6 +106,47 @@
       <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/knockoutbracket/KnockoutBracketTest.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/knockoutbracket/PlacementBracketTest.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/controller/AdminPageController.java" afterPath="$PROJECT_DIR$/src/controller/AdminPageController.java" />
+<<<<<<< HEAD
+=======
+=======
+    <list default="true" id="0ae2904b-a846-4f24-bdad-e91ba48d46de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddingTeams.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddingTeams.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AdminPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AdminPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AutogenerateMatchSchedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AutogenerateMatchSchedule.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CreatingFinalStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatingFinalStage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CreatingGroups.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatingGroups.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/CreatingMatchSchedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatingMatchSchedule.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/FrontPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/FrontPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MatchScheduleSetup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MatchScheduleSetup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/TournamentSetup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TournamentSetup.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/UpdateMatch.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/UpdateMatch.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/VerifyFinalStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VerifyFinalStage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/VerifyGroupsAndPools.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VerifyGroupsAndPools.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ViewPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AddingTeamsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddingTeamsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AdminPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AdminPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CreatingGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CreatingGroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/FrontPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/FrontPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/TournamentSetupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/TournamentSetupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UpdateMatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateMatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ViewMatchScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewMatchScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" afterDir="false" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
     </list>
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,6 +154,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
@@ -117,16 +163,65 @@
             <state relative-caret-position="84">
               <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
               <folding />
+=======
+<<<<<<< Updated upstream
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <folding />
+=======
+  <component name="FUSProjectUsageTrigger">
+    <session id="-962742517">
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="317" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="3" />
+          <entry key="XML" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="188" selection-start-line="188" selection-end-line="188" />
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1027">
+              <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+>>>>>>> Stashed changes
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< Updated upstream
+>>>>>>> Dev
       <file leaf-file-name="FrontPageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/FrontPageController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="723">
               <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
+<<<<<<< HEAD
             </state>
           </provider>
         </entry>
@@ -148,35 +243,127 @@
               <caret line="163" column="93" lean-forward="false" selection-start-line="163" selection-start-column="93" selection-end-line="163" selection-end-column="93" />
               <folding>
                 <element signature="imports" expanded="true" />
+=======
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="137" column="20" selection-start-line="137" selection-start-column="20" selection-end-line="137" selection-end-column="20" />
+              <folding>
+                <element signature="e#5046#5047#0" expanded="true" />
+                <element signature="e#5073#5074#0" expanded="true" />
+>>>>>>> Dev
               </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="AdminPageController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/AdminPageController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
               <folding />
+=======
+<<<<<<< Updated upstream
+      <file leaf-file-name="TournamentSetupController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/TournamentSetupController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1890">
+              <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+              <folding />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/AddingTeamsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TournamentDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/DAO/TournamentDAO.java">
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+      <file leaf-file-name="ViewMatchScheduleController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/ViewMatchScheduleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="265">
+              <caret line="163" column="93" lean-forward="false" selection-start-line="163" selection-start-column="93" selection-end-line="163" selection-end-column="93" />
               <folding>
-                <marker date="1544516943528" expanded="true" signature="946:1018" ph="select * fro... Tournament" />
-                <marker date="1544516943528" expanded="true" signature="3443:3597" ph="INSERT INTO Tournament... " />
-                <marker date="1544516943528" expanded="true" signature="4489:4601" ph="select * fro... Tournament" />
+                <element signature="imports" expanded="true" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/Team.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="514">
+              <caret line="75" column="37" lean-forward="true" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+              <folding>
+                <element signature="e#1466#1467#0" expanded="true" />
+                <element signature="e#1494#1495#0" expanded="true" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
+      <file leaf-file-name="AdminPageController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/AdminPageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+              <folding />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/Field.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+>>>>>>> Stashed changes
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< Updated upstream
+>>>>>>> Dev
+      <file leaf-file-name="TournamentDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/database/DAO/TournamentDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+<<<<<<< HEAD
+              <folding>
+                <marker date="1544516943528" expanded="true" signature="946:1018" ph="select * fro... Tournament" />
+                <marker date="1544516943528" expanded="true" signature="3443:3597" ph="INSERT INTO Tournament... " />
+                <marker date="1544516943528" expanded="true" signature="4489:4601" ph="select * fro... Tournament" />
+=======
+              <folding>
+                <marker date="1544516943528" expanded="true" signature="946:1018" ph="select * fro... Tournament" />
+                <marker date="1544516943528" expanded="true" signature="3443:3597" ph="INSERT INTO Tournament... " />
+                <marker date="1544516943528" expanded="true" signature="4489:4601" ph="select * fro... Tournament" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="27" />
+              <folding>
+                <element signature="e#2062#2063#0" expanded="true" />
+                <element signature="e#2094#2095#0" expanded="true" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="ViewPage.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/ViewPage.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
@@ -188,10 +375,21 @@
               <folding>
                 <marker date="1544516944250" expanded="true" signature="1094:4860" ph="..." />
               </folding>
+<<<<<<< HEAD
+=======
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/Result.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file leaf-file-name="AdminVievPage.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/AdminVievPage.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
@@ -211,6 +409,25 @@
             <state relative-caret-position="819">
               <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
               <folding />
+<<<<<<< HEAD
+=======
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/AutogenerateMatchSchedule.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-776" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/AutoMatchSchedule.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-656">
+              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
@@ -230,7 +447,25 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/controller/ViewMatchScheduleController.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/controller/AdminPageController.java" />
+=======
+<<<<<<< Updated upstream
+        <option value="$PROJECT_DIR$/src/controller/AdminPageController.java" />
+=======
+        <option value="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
+        <option value="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" />
+        <option value="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" />
+        <option value="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" />
+        <option value="$PROJECT_DIR$/src/view/AutoMatchSchedule.fxml" />
+        <option value="$PROJECT_DIR$/src/tournament/Match.java" />
+        <option value="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" />
+        <option value="$PROJECT_DIR$/src/tournament/Team.java" />
+        <option value="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" />
+        <option value="$PROJECT_DIR$/src/tournament/Result.java" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
       </list>
     </option>
   </component>
@@ -280,20 +515,46 @@
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="database" type="462c0819:PsiDirectoryNode" />
+=======
+<<<<<<< Updated upstream
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="tournament" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="DAO" type="462c0819:PsiDirectoryNode" />
+=======
+<<<<<<< Updated upstream
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="tournament" type="462c0819:PsiDirectoryNode" />
+              <item name="matchschedule" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="sample" type="462c0819:PsiDirectoryNode" />
+=======
+<<<<<<< Updated upstream
+              <item name="sample" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
             </path>
           </expand>
           <select />
@@ -302,6 +563,17 @@
       <pane id="PackagesPane" />
     </panes>
   </component>
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544523513417" />
+  </component>
+>>>>>>> Stashed changes
+>>>>>>> Dev
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -353,7 +625,70 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
+<<<<<<< HEAD
+=======
       <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+>>>>>>> Dev
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -428,15 +763,44 @@
     <configuration />
   </component>
   <component name="TaskManager">
+<<<<<<< HEAD
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="570000" />
+=======
+<<<<<<< Updated upstream
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="570000" />
+=======
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0ae2904b-a846-4f24-bdad-e91ba48d46de" name="Default Changelist" comment="" />
+      <created>1544281707977</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544281707977</updated>
+      <workItem from="1544281715135" duration="3746000" />
+      <workItem from="1544429474247" duration="16938000" />
+      <workItem from="1544516277253" duration="893000" />
+      <workItem from="1544518368831" duration="4812000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2634000" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> Dev
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -465,6 +829,39 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26171243" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32892805" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32892805" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39941263" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
     </layout>
   </component>
   <component name="XDebuggerManager">
@@ -472,8 +869,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+=======
+    <entry file="file://$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+>>>>>>> Dev
         <state relative-caret-position="84">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding />
@@ -518,6 +921,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2100">
           <caret line="131" column="5" lean-forward="false" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+<<<<<<< HEAD
+=======
           <folding />
         </state>
       </provider>
@@ -534,10 +939,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+>>>>>>> Dev
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingFinalStageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="131" column="5" lean-forward="false" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CheckInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> Dev
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -580,14 +1005,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="91" column="46" lean-forward="false" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="46" />
+<<<<<<< HEAD
           <folding>
             <marker date="1544516944250" expanded="true" signature="1094:4860" ph="..." />
+=======
+          <folding>
+            <marker date="1544516944250" expanded="true" signature="1094:4860" ph="..." />
+=======
+        <state relative-caret-position="136">
+          <caret line="188" selection-start-line="188" selection-end-line="188" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AddingTeamsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="75" column="37" lean-forward="true" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+          <folding>
+            <element signature="e#1466#1467#0" expanded="true" />
+            <element signature="e#1494#1495#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/Field.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="27" />
+          <folding>
+            <element signature="e#2062#2063#0" expanded="true" />
+            <element signature="e#2094#2095#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="137" column="20" selection-start-line="137" selection-start-column="20" selection-end-line="137" selection-end-column="20" />
+          <folding>
+            <element signature="e#5046#5047#0" expanded="true" />
+            <element signature="e#5073#5074#0" expanded="true" />
+>>>>>>> Stashed changes
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/AddingTeams.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="819">
           <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding />
@@ -604,6 +1092,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/TournamentDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <marker date="1544516943528" expanded="true" signature="946:1018" ph="select * fro... Tournament" />
+            <marker date="1544516943528" expanded="true" signature="3443:3597" ph="INSERT INTO Tournament... " />
+            <marker date="1544516943528" expanded="true" signature="4489:4601" ph="select * fro... Tournament" />
+>>>>>>> Dev
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/ViewMatchScheduleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="163" column="93" lean-forward="false" selection-start-line="163" selection-start-column="93" selection-end-line="163" selection-end-column="93" />
+          <folding>
+            <element signature="imports" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/controller/AdminVievPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+>>>>>>> Dev
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/database/DAO/TournamentDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -641,6 +1172,53 @@
         <state relative-caret-position="0">
           <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/controller/TournamentSetupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1890">
+          <caret line="30" column="30" lean-forward="false" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AdminPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="47" column="39" lean-forward="false" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+          <folding />
+=======
+        <state relative-caret-position="134">
+          <caret line="118" column="64" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/AutoMatchSchedule.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-656">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/AutogenerateMatchSchedule.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-776" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1027">
+          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+>>>>>>> Stashed changes
+>>>>>>> Dev
         </state>
       </provider>
     </entry>

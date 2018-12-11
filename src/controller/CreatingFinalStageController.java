@@ -191,7 +191,7 @@ public class CreatingFinalStageController implements CheckInput {
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/VerifyGroupsAndPools.FXML"));
+        loader.setLocation(getClass().getResource("../view/VerifyGroupsAndPools.FXML"));
         Parent newWindow = loader.load();
 
         VerifyGroupsAndPoolsController atc = loader.getController();
@@ -220,7 +220,7 @@ public class CreatingFinalStageController implements CheckInput {
         }
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/VerifyFinalStage.FXML"));
+        loader.setLocation(getClass().getResource("../view/VerifyFinalStage.FXML"));
         Parent newWindow = loader.load();
 
         VerifyFinalStageController atc = loader.getController();

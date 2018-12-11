@@ -110,7 +110,7 @@ public class AdminPageController {
                 status = new Text("ACTIVE");
             }
             Text date = new Text(tournament.getStartDate().toString() + "\n" + tournament.getEndDate().toString() );
-            Button btnView = new Button("View");
+            Button btnView = new Button("view");
             btnView.setOnAction(event -> {
                 try {
                     setViewButtonClicked(event, txt.getText());
@@ -126,7 +126,7 @@ public class AdminPageController {
     @FXML
     public void setOnCreateTournamentButtonClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/TournamentSetup.fxml"));
+        loader.setLocation(getClass().getResource("../view/TournamentSetup.fxml"));
         Parent newWindow = loader.load();
 
         TournamentSetupController atc = loader.getController();
@@ -141,7 +141,7 @@ public class AdminPageController {
     }
     @FXML
     public void setOnLogoutButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/FrontPage.fxml"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/FrontPage.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -168,7 +168,7 @@ public class AdminPageController {
                 Text txt = new Text(tournament.getName());
                 Text status = new Text(String.valueOf(tournament.isActive()));
                 Text date = new Text(tournament.getStartDate().toString() + "\n" + tournament.getEndDate().toString());
-                Button btnView = new Button("View");
+                Button btnView = new Button("view");
                 btnView.setOnAction(event -> {
                     try {
                         setViewButtonClicked(event, txt.getText());
@@ -184,7 +184,7 @@ public class AdminPageController {
     @FXML
     public void setViewButtonClicked(ActionEvent event, String tournamentName) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
+        loader.setLocation(getClass().getResource("../view/UpdateMatch.FXML"));
         Parent newWindow = loader.load();
 
         //TODO Dette er til database

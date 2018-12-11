@@ -36,9 +36,32 @@
       </Text>
       <HBox prefHeight="399.0" prefWidth="1280.0">
          <children>
+<<<<<<< Updated upstream
             <VBox prefHeight="399.0" prefWidth="190.0" />
             <TableView fx:id="tournamentTableView" prefHeight="400.0" prefWidth="900.0" />
             <VBox layoutX="10.0" layoutY="10.0" prefHeight="399.0" prefWidth="190.0" />
+=======
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tournament" textAlignment="CENTER" wrappingWidth="220.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER" wrappingWidth="220.0" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="490.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" textAlignment="CENTER" wrappingWidth="220.0" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="view tournament" textAlignment="CENTER" wrappingWidth="220.0" GridPane.columnIndex="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+>>>>>>> Stashed changes
          </children>
       </HBox>
       <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#setOnLoginButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Log in">
