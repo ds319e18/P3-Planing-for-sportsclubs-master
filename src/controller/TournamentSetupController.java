@@ -1,6 +1,7 @@
 package controller;
 
 import account.Administrator;
+import exceptions.BackInDateException;
 import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import javafx.collections.FXCollections;
@@ -19,7 +20,6 @@ import tournament.Tournament;
 import tournament.TournamentType;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
-import controller.CheckInput;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -80,6 +80,8 @@ public class TournamentSetupController implements CheckInput {
                 || endDatePicker.getEditor().getText().isEmpty() || tournamentTypeCombobox.getSelectionModel().isEmpty()
                 || fieldNumberCombobox.getSelectionModel().isEmpty() || getSelectedPoolsAndMatchLengths().isEmpty()) {
             throw new MissingInputException();
+        } else if(startDatePicker.getValue().isAfter(endDatePicker.getValue())) {
+            throw new BackInDateException();
         }
     }
 
@@ -114,6 +116,11 @@ public class TournamentSetupController implements CheckInput {
             warning.setTitle("Fejl");
             warning.showAndWait();
         } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (BackInDateException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Ugyldigt input fejl");
             warning.setTitle("Fejl");

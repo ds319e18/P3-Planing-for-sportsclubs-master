@@ -8,7 +8,9 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class MatchDay {
+public class
+
+MatchDay {
     private String name;
     private LocalTime startTime = LocalTime.MIN;
     private LocalTime endTime = LocalTime.MIN;
