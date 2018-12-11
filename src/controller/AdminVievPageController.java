@@ -5,14 +5,16 @@ import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import tournament.Tournament;
-
 import java.io.File;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
+import javafx.scene.control.Control;
 
 public class AdminVievPageController {
 
-    ArrayList<String> imageFileList = new ArrayList<>();
+    private String logo1 = null;
+    private String logo2 = null;
+    private String logo3 = null;
+    private String logo4 = null;
 
     Tournament tournament;
     //private final int stepNumber = 6;
@@ -23,12 +25,27 @@ public class AdminVievPageController {
 
     @FXML
     public void setImages(MouseEvent event) throws MalformedURLException {
-        imageFileList.add(setAddSponser(event));
+        String tempLogo = ((Control)event.getSource()).getId();
+        if(tempLogo == ("logo1")){
+            logo1 = setAddSponser(event);
+        }
+        else if(tempLogo == ("logo2")){
+            logo2 = setAddSponser(event);
+        }
+        else if(tempLogo == ("logo3")){
+            logo3 = setAddSponser(event);
+        }
+        else if(tempLogo == ("logo4")){
+            logo4 = setAddSponser(event);
+        }
+        else{
+            System.out.println("Error " + tempLogo + " Not found");
+        }
     }
 
     //set Image files
     public String setAddSponser(MouseEvent event) throws MalformedURLException {
-        String imageFile;
+        String imageFile = null;
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Image File");
         fileChooser.getExtensionFilters().addAll(
@@ -45,6 +62,19 @@ public class AdminVievPageController {
             return null;
         }
 
+    }
+
+    public String getlogo1(){
+        return logo1;
+    }
+    public String getlogo2(){
+        return logo2;
+    }
+    public String getlogo3(){
+        return logo3;
+    }
+    public String getlogo4(){
+        return logo4;
     }
 
 }

@@ -40,7 +40,7 @@
                <children>
                   <HBox prefHeight="262.0" prefWidth="278.0">
                      <children>
-                        <ImageView fitHeight="262.0" fitWidth="290.4" onMouseClicked="#setAddSponser" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="logo1" fitHeight="262.0" fitWidth="290.4" onMouseClicked="#setAddSponser" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../sample/sponsor.PNG" />
                            </image></ImageView>
@@ -48,7 +48,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="10.0" prefHeight="262.0" prefWidth="278.0">
                      <children>
-                        <ImageView fitHeight="262.0" fitWidth="290.4" onMouseClicked="#setAddSponser" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="logo2" fitHeight="262.0" fitWidth="290.4" onMouseClicked="#setAddSponser" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../sample/sponsor.PNG" />
                            </image></ImageView>

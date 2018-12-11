@@ -3,16 +3,14 @@ package controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -34,18 +32,37 @@ import tournament.pool.Pool;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ViewMatchScheduleController {
+
+    private String imageFile = null;
+    private String logo = null;
+    private ImageView iw = null;
 
     Tournament tournament;
 
     @FXML
     private TabPane matchDayTabPane;
 
+    @FXML
+    private ImageView logo1 = null;
+
+    @FXML
+    private ImageView logo2 = null;
+
+    @FXML
+    private ImageView logo3 = null;
+
+    @FXML
+    private ImageView logo4 = null;
+
+
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
+        setImages();
         //createMatchDayTabs();
         //createMatchScheduleGridpane();
     }
@@ -217,13 +234,53 @@ public class ViewMatchScheduleController {
 
     }
     */
+
+    public void setImages() {
+        for(int i = 1; i < 5; i++) {
+            AdminVievPageController logoSetter = new AdminVievPageController();
+            if (i == 1) {
+                logo = ("logo1");
+                imageFile = logoSetter.getlogo1();
+            } else if (i == 2){
+                logo = ("logo2");
+                imageFile = logoSetter.getlogo2();
+            } else if (i == 3) {
+                logo = ("logo3");
+                imageFile = logoSetter.getlogo3();
+            } else if (i == 4) {
+                logo = ("logo4");
+                imageFile = logoSetter.getlogo4();
+            } else {
+                imageFile =  null;
+            }
+            getAddSponser(logo, imageFile);
+        }
+    }
+
     //get Image files
-    @FXML
-    public void getAddSponser(String selectedFile, MouseEvent event) throws MalformedURLException {
+    public void getAddSponser(String fxId, String selectedFile) {
         if (selectedFile != null) {
             Image im = new Image(selectedFile);
-            ImageView iw = (ImageView) event.getSource();
+            if(fxId == ("logo1")){
+                iw = (ImageView) logo1;
+            }
+            else if(fxId == ("logo2")){
+                iw = (ImageView) logo2;
+            }
+            else if(fxId == ("logo3")){
+                iw = (ImageView) logo3;
+            }
+            else if(fxId == ("logo4")){
+                iw = (ImageView) logo4;
+            }
+            else{
+                System.out.println("Error fx:id Not found");
+            }
             iw.setImage(im);
+
+        }
+        else {
+            System.out.println("Error logo not found");
         }
     }
 }
