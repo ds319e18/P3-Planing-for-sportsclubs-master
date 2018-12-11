@@ -22,7 +22,7 @@ public class PlacementPlay extends PlayoffBracket {
             groupBracket.setAdvancingTeamsPrGroup(groupBracket.getGroups().get(0).getTeamList().size());
             while (iter < groupBracket.getAmountOfAdvancingTeamsPrGroup() && iter < groupBracket.getAmountOfAdvancingTeamsPrGroup()) {
                 super.getMatches().add(new Match.Builder(matchDurationInMinutes)
-                        .setName("Placement Match " + (iter + 1) + ":")
+                        .setName("Placement Match " + (iter + 1))
                         .setFinished(false)
                         .setFirstTeam(new Team("TBD"
                                 , groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup()

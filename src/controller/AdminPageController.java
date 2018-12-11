@@ -1,9 +1,6 @@
 package controller;
 
 import account.Administrator;
-import account.Spectator;
-import account.User;
-import database.DAO.AccountDAO;
 import database.DAO.TournamentDAO;
 import database.Database;
 import javafx.collections.FXCollections;
@@ -43,6 +40,8 @@ public class AdminPageController {
     @FXML
     private GridPane gp;
 
+    Tournament tournament;
+
     @FXML
     private Button logoutBtn;
 
@@ -53,7 +52,7 @@ public class AdminPageController {
     private TableView<Tournament> tournamentTableView;
 
 
-    public void initialize() {
+    /*public void initialize() {
         TournamentDAO tournamentSQL = new TournamentDAO();
         user.setTournamens(tournamentSQL.getAllTournaments(user.getId()));
         
@@ -61,7 +60,7 @@ public class AdminPageController {
 
         setTournamentTableView();
         addPoolsInTableView();
-    }
+    }*/
 
     @FXML
     private void setTournamentTableView() {
@@ -105,8 +104,6 @@ public class AdminPageController {
     }
 
 
-    Tournament tournament;
-
     //TODO DENNE ER TIL UDEN DATABASE
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
@@ -120,7 +117,7 @@ public class AdminPageController {
                 status = new Text("ACTIVE");
             }
             Text date = new Text(tournament.getStartDate().toString() + "\n" + tournament.getEndDate().toString() );
-            Button btnView = new Button("View");
+            Button btnView = new Button("view");
             btnView.setOnAction(event -> {
                 try {
                     setViewButtonClicked(event, txt.getText());
@@ -132,10 +129,11 @@ public class AdminPageController {
         }
     }
 
+
     @FXML
     public void setOnCreateTournamentButtonClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/TournamentSetup.fxml"));
+        loader.setLocation(getClass().getResource("../view/TournamentSetup.fxml"));
         Parent newWindow = loader.load();
 
         TournamentSetupController atc = loader.getController();
@@ -150,7 +148,7 @@ public class AdminPageController {
     }
     @FXML
     public void setOnLogoutButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/FrontPage.fxml"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/FrontPage.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -162,11 +160,11 @@ public class AdminPageController {
     @FXML
     public void setViewButtonClicked(ActionEvent event, String tournamentName) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
+        loader.setLocation(getClass().getResource("../view/UpdateMatch.FXML"));
         Parent newWindow = loader.load();
 
-        // Dette er til database
-        for (Tournament tournament : user.getTournamens()) {
+        //TODO Dette er til database
+        /*for (Tournament tournament : user.getTournamens()) {
             if (tournament.getName().equals(tournamentName)) {
                 UpdateMatchController atc = loader.getController();
                 atc.setTournament(tournament);

@@ -84,7 +84,7 @@ public class VerifyFinalStageController {
         poolTableView.getItems().addAll(tournament.getPoolList());
 
         //handle row selection for each pool in tableView
-        poolTableView.setRowFactory( table -> {
+        poolTableView.setRowFactory(table -> {
             TableRow<Pool> row = new TableRow<>();
             row.setOnMouseClicked(event -> handleRowSelection());
             return row;
@@ -164,7 +164,7 @@ public class VerifyFinalStageController {
         finalStageGridPane.setHgap(30);
 
         int counter = 1;
-        for (Match match : selectedPool.getPlayoffBracket().getMatches()){
+        for (Match match : selectedPool.getPlayoffBracket().getMatches()) {
             GridPane gridPane = new GridPane();
             Text groupNumberText = new Text("  Placeringspil  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
@@ -172,9 +172,8 @@ public class VerifyFinalStageController {
             gridPane.add(new Text("  " + counter + ". plads af gruppe 1" + "  "), 1, 0);
             gridPane.add(new Text("  " + counter + ". plads af gruppe 2" + "  "), 1, 1);
             counter++;
-            finalStageGridPane.add(gridPane, 0,finalStageGridPane.getRowCount());
+            finalStageGridPane.add(gridPane, 0, finalStageGridPane.getRowCount());
         }
-
 
 
         finalStageGridPane.setGridLinesVisible(false);
@@ -209,7 +208,7 @@ public class VerifyFinalStageController {
     }
 
     private void drawKnockoutStageGridPane() {
-       Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
         int amountOfMatches = selectedPool.getPlayoffBracket().getMatches().size();
         PlayoffBracket playoffBracket = selectedPool.getPlayoffBracket();
@@ -257,7 +256,7 @@ public class VerifyFinalStageController {
             Team team1 = playoffBracket.getMatches().get(0).getFirstTeam();
             Team team2 = playoffBracket.getMatches().get(0).getSecondTeam();
             GridPane gridPane = new GridPane();
-            Text groupNumberText = new Text("  Finale "  + "  ");
+            Text groupNumberText = new Text("  Finale " + "  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
             gridPane.add(groupNumberText, 0, 0);
             gridPane.add(new Text("  " + team1.getName() + "  "), 1, 0);
@@ -272,7 +271,7 @@ public class VerifyFinalStageController {
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/CreatingFinalStage.FXML"));
+        loader.setLocation(getClass().getResource("../view/CreatingFinalStage.FXML"));
         Parent newWindow = loader.load();
 
         CreatingFinalStageController atc = loader.getController();
@@ -280,7 +279,7 @@ public class VerifyFinalStageController {
 
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
         window.show();
@@ -308,29 +307,17 @@ public class VerifyFinalStageController {
         }
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
+        loader.setLocation(getClass().getResource("../view/MatchScheduleSetup.FXML"));
         Parent newWindow = loader.load();
 
         MatchScheduleSetupController mss = loader.getController();
         mss.setTournament(tournament);
 
+        Scene newScene = new Scene(newWindow);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // DAO objects for playoff and match
-            PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
-            MatchDAO matchSQL = new MatchDAO();
-
-
-            //TODO Inserting playoff bracket into database, this method also makes sure playoff matches will be added 0
-            //playoffBracketSQL.insertPlayoffBracket(tournament);
-
-            // Inserting all group matches in database
-            //matchSQL.insertMatches(tournament, tournament.getAllGroupMatches());
-
-            Scene newScene = new Scene(newWindow);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            window.setScene(newScene);
-            window.show();
+        window.setScene(newScene);
+        window.show();
 
     }
 

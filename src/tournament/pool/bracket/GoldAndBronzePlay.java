@@ -21,18 +21,18 @@ public class GoldAndBronzePlay extends PlayoffBracket {
             throw new IllegalAmountOfTeamsException();
         } else {
             goldMatch = new Match.Builder(matchDurationInMinutes)
-                    .setName("Final Match:" + '\t')
-                    .setFirstTeam(new Team("TBD"))
-                    .setSecondTeam(new Team("TBD"))
+                    .setName("Final Match 1")
+                    .setFirstTeam(new Team("TBD", groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup(), groupBracket.getGroups().get(0).getTeamList().get(0).getSkillLevel()))
+                    .setSecondTeam(new Team("TBD", groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup(), groupBracket.getGroups().get(0).getTeamList().get(0).getSkillLevel()))
                     .setFinished(false)
                     .build();
 
             super.getMatches().add(goldMatch);
 
             bronzeMatch = new Match.Builder(matchDurationInMinutes)
-                    .setName("Bronze Match:" + '\t')
-                    .setFirstTeam(new Team("TBD"))
-                    .setSecondTeam(new Team("TBD"))
+                    .setName("Bronze Match 1")
+                    .setFirstTeam(new Team("TBD", groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup(), groupBracket.getGroups().get(0).getTeamList().get(0).getSkillLevel()))
+                    .setSecondTeam(new Team("TBD", groupBracket.getGroups().get(0).getTeamList().get(0).getYearGroup(), groupBracket.getGroups().get(0).getTeamList().get(0).getSkillLevel()))
                     .setFinished(false)
                     .build();
 

@@ -60,6 +60,9 @@ public class PlayoffBracketDAO {
                 }
             }
 
+            // Clearing arraylist before getting matches since when creating a playoff bracket matches will be made
+            pool.getPlayoffBracket().getMatches().clear();
+
             pool.getPlayoffBracket().getMatches().addAll(getMatches(tournament, pool, con));
 
         } catch (SQLException e) {
@@ -78,17 +81,17 @@ public class PlayoffBracketDAO {
         try{
             int poolID = poolSQL.findPoolID(pool, tournament, con);
             String typeOfMatch = "s";
+            String query;
 
             if (pool.getPlayoffBracket().getClass().getSimpleName().equals("KnockoutPlay")) {
-                typeOfMatch = "Knockout";
+                query = "select * from MatchTable where idPoolMatchTable = " + poolID + " AND name = '" + "Knockout" + "'";
             } else if (pool.getPlayoffBracket().getClass().getSimpleName().equals("PlacementPlay")) {
-                typeOfMatch = "Placement";
-            } else if (pool.getPlayoffBracket().getClass().getSimpleName().equals("GoldAndBronzePlay")) {
-                typeOfMatch = "s";
+                query = "select * from MatchTable where idPoolMatchTable = " + poolID + " AND name = '" + "Placement" + "'";
+            } else {
+                query = "select * from MatchTable where idPoolMatchTable = " + poolID + " AND name = '" + "Gold" + "'" + "OR name = '" + "Bronze" + "'";
             }
 
 
-            String query = "select * from MatchTable where idPoolMatchTable = " + poolID + " AND name = '" + typeOfMatch + "'";
 
 
             ResultSet set = con.createStatement().executeQuery(query);

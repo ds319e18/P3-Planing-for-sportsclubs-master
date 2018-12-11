@@ -1,5 +1,6 @@
 package controller;
 
+import exceptions.BackInTimeException;
 import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import exceptions.TooManyMatchesInTheMatchDay;
@@ -121,6 +122,8 @@ public class MatchScheduleSetupController implements CheckInput {
         for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
             if (matchDay.getStartTime().equals(LocalTime.MIN)) {
                 throw new MissingInputException();
+            } else if(matchDay.getStartTime().isAfter(matchDay.getEndTime())) {
+                throw new BackInTimeException();
             }
         }
 
@@ -128,6 +131,7 @@ public class MatchScheduleSetupController implements CheckInput {
             throw new InvalidInputException("heltal", "tid i mellem kampene");
         }
         checkMatchScheduleTime();
+
     }
 
     private void checkMatchScheduleTime() {
@@ -182,7 +186,7 @@ public class MatchScheduleSetupController implements CheckInput {
             tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));
+            loader.setLocation(getClass().getResource("../View/AutoMatchSchedule.fxml"));
             Parent newWindow = loader.load();
 
             AutogenerateMatchScheduleController msc = loader.getController();
@@ -209,6 +213,11 @@ public class MatchScheduleSetupController implements CheckInput {
             warning.setHeaderText("Logistisk fejl");
             warning.setTitle("Fejl");
             warning.showAndWait();
+        } catch (BackInTimeException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Logistisk fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
         }
     }
 
@@ -221,7 +230,7 @@ public class MatchScheduleSetupController implements CheckInput {
 
             System.out.println(String.valueOf(tournament.getMatchSchedule().getMatchDays().size()));
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/CreatingMatchSchedule.fxml"));
+            loader.setLocation(getClass().getResource("../view/CreatingMatchSchedule.fxml"));
             Parent newWindow = loader.load();
 
             CreatingMatchScheduleController msc = loader.getController();
@@ -254,7 +263,7 @@ public class MatchScheduleSetupController implements CheckInput {
     @FXML
     public void backButtonClicked(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/VerifyFinalStage.fxml"));
+        loader.setLocation(getClass().getResource("../view/VerifyFinalStage.fxml"));
         Parent newWindow = loader.load();
 
         VerifyFinalStageController vfc = loader.getController();
@@ -268,10 +277,13 @@ public class MatchScheduleSetupController implements CheckInput {
         window.show();
     }
 
+
+
     @FXML
     private void changeStartTimeCell(TableColumn.CellEditEvent editEvent) {
         MatchDay matchDaySelected = matchDayTableView.getSelectionModel().getSelectedItem();
         matchDaySelected.setStartTime(editEvent.getNewValue().toString());
+
     }
 
     @FXML
