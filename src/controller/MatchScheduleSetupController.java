@@ -1,5 +1,8 @@
 package controller;
 
+import exceptions.InvalidInputException;
+import exceptions.MissingInputException;
+import exceptions.TooManyMatchesInTheMatchDay;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
@@ -19,15 +22,17 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalTimeStringConverter;
+import tournament.Match;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 import tournament.Tournament;
 import tournament.pool.Pool;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.time.LocalTime;
 
-public class MatchScheduleSetupController {
+public class MatchScheduleSetupController implements CheckInput {
     private final int stepNumber = 6;
     private Tournament tournament;
 
@@ -62,9 +67,13 @@ public class MatchScheduleSetupController {
 
         TableColumn<Pool, ?> poolNameColumn = poolTableView.getColumns().get(0);
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        poolNameColumn.setMinWidth(60);
+        poolNameColumn.setMinWidth(60);
 
         TableColumn<Pool, Integer> matchDurationColumn = (TableColumn<Pool, Integer>) poolTableView.getColumns().get(1);
         matchDurationColumn.setCellValueFactory(new PropertyValueFactory<>("matchDuration"));
+        matchDurationColumn.setMinWidth(178);
+        matchDurationColumn.setMaxWidth(178);
 
         matchDurationColumn.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 
@@ -80,12 +89,15 @@ public class MatchScheduleSetupController {
 
         TableColumn<MatchDay, ?> matchDateColumn = matchDayTableView.getColumns().get(0);
         matchDateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        matchDateColumn.setMinWidth(200);
+        matchDateColumn.setMaxWidth(200);
 
         TableColumn<MatchDay, LocalTime> startTimeColumn =
                 (TableColumn<MatchDay, LocalTime>) matchDayTableView.getColumns().get(1);
         startTimeColumn.setCellValueFactory(new PropertyValueFactory<>("startTime"));
         startTimeColumn.setCellFactory(TextFieldTableCell.forTableColumn(new LocalTimeStringConverter()));
-        //startTimeColumn.setCellFactory();
+        startTimeColumn.setMinWidth(115);
+        startTimeColumn.setMaxWidth(115);
 
         TableColumn<MatchDay, LocalTime> endTimeColumn =
                 (TableColumn<MatchDay, LocalTime>) matchDayTableView.getColumns().get(2);
@@ -100,56 +112,154 @@ public class MatchScheduleSetupController {
         matchDayTableView.getSelectionModel().selectedItemProperty().addListener(new RowSelectInvalidationListener());
     }
 
+    @Override
+    public void checkAllInput() {
+        if (timeBetweenMatches.getText().trim().isEmpty()) {
+            throw new MissingInputException();
+        }
+
+        for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
+            if (matchDay.getStartTime().equals(LocalTime.MIN)) {
+                throw new MissingInputException();
+            }
+        }
+
+        if (!(timeBetweenMatches.getText().matches("\\d+"))) {
+            throw new InvalidInputException("heltal", "tid i mellem kampene");
+        }
+        checkMatchScheduleTime();
+    }
+
+    private void checkMatchScheduleTime() {
+        int wantedTime = 0;
+        int actualTime = 0;
+
+        for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
+            if (matchDay.getStartTime().getMinute() == 0 && matchDay.getEndTime().getMinute() == 0) {
+                wantedTime += (matchDay.getEndTime().getHour() - matchDay.getStartTime().getHour()) * 60;
+            } else {
+                wantedTime += (60 - matchDay.getStartTime().getMinute()) + matchDay.getEndTime().getMinute();
+            }
+        }
+            for (Match match : tournament.getAllMatches()) {
+                actualTime += match.getDuration();
+            }
+            actualTime += (tournament.getAllMatches().size() - 1) * Integer.parseInt(timeBetweenMatches.getText());
+
+        if (actualTime > wantedTime) {
+            throw new TooManyMatchesInTheMatchDay();
+        }
+    }
+
     @FXML
     private void autogenerateMixedMatches() {
-        tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
-
+        try {
+            checkAllInput();
+            tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (TooManyMatchesInTheMatchDay e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Logistisk fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
     }
 
     @FXML
     private void autogenerateNoMixedMatches(ActionEvent event) throws IOException {
-        tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
+        try {
+            checkAllInput();
+            tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+            tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));
-        Parent newWindow = loader.load();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/AutogenerateMatchSchedule.fxml"));
+            Parent newWindow = loader.load();
 
-        AutogenerateMatchScheduleController msc = loader.getController();
-        msc.setTournament(tournament);
+            AutogenerateMatchScheduleController msc = loader.getController();
+            msc.setTournament(tournament);
 
-        Scene newScene = new Scene(newWindow);
+            Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)(timeBetweenMatches).getScene().getWindow();
+            Stage window = (Stage) (timeBetweenMatches).getScene().getWindow();
 
-        window.setScene(newScene);
-        window.show();
+            window.setScene(newScene);
+            window.show();
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (TooManyMatchesInTheMatchDay e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Logistisk fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
     }
 
 
     @FXML
     private void manuallyCreateMatchSchedule(ActionEvent event) throws IOException {
-        tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
+        try {
+            checkAllInput();
+            tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
 
-        System.out.println(String.valueOf(tournament.getMatchSchedule().getMatchDays().size()));
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/CreatingMatchSchedule.fxml"));
-        Parent newWindow = loader.load();
+            System.out.println(String.valueOf(tournament.getMatchSchedule().getMatchDays().size()));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/CreatingMatchSchedule.fxml"));
+            Parent newWindow = loader.load();
 
-        CreatingMatchScheduleController msc = loader.getController();
-        msc.setTournament(tournament);
+            CreatingMatchScheduleController msc = loader.getController();
+            msc.setTournament(tournament);
 
-        Scene newScene = new Scene(newWindow);
+            Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        window.setScene(newScene);
-        window.show();
+            window.setScene(newScene);
+            window.show();
+        } catch (MissingInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (TooManyMatchesInTheMatchDay e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Logistisk fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
     }
 
     @FXML
     public void backButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/VerifyFinalStage.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/VerifyFinalStage.fxml"));
+        Parent newWindow = loader.load();
+
+        VerifyFinalStageController vfc = loader.getController();
+        vfc.setTournament(tournament);
+
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -162,7 +272,6 @@ public class MatchScheduleSetupController {
     private void changeStartTimeCell(TableColumn.CellEditEvent editEvent) {
         MatchDay matchDaySelected = matchDayTableView.getSelectionModel().getSelectedItem();
         matchDaySelected.setStartTime(editEvent.getNewValue().toString());
-
     }
 
     @FXML
@@ -175,6 +284,7 @@ public class MatchScheduleSetupController {
     private void changeMatchDurationCell(TableColumn.CellEditEvent editEvent) {
         Pool poolSelected = poolTableView.getSelectionModel().getSelectedItem();
         poolSelected.setMatchDuration(editEvent.getNewValue().toString());
+
     }
     /*
     private Callback<TableColumn<MatchDay, LocalTime>, TableCell<MatchDay, LocalTime>> getCellColorFactory() {

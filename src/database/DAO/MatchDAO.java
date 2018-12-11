@@ -30,9 +30,10 @@ public class MatchDAO {
                 teamSQL.insertTBDTeams(tournament, matchesToBeInserted, con);
             }
 
+            int number;
             for (Match match : matchesToBeInserted) {
                 String name = match.getName().split(" ")[0];
-                int number = Integer.parseInt(match.getName().split(" ")[2]);
+                number = Integer.parseInt(match.getName().split(" ")[2]);
                 int firstTeamID = teamSQL.findTeamID(match.getFirstTeam(), con);
                 int secondTeamID = teamSQL.findTeamID(match.getSecondTeam(), con);
                 int tournamentID = Objects.hash(tournament.getName());

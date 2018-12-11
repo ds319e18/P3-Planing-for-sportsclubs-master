@@ -1,7 +1,7 @@
 package tournament;
 
 public enum TournamentType {
-    Group("Kun gruppespil"), Knockout("Kun slutspil"), GroupAndKnockout("Gruppe- og slutspil");
+    GroupAndKnockout("Gruppe- og slutspil");
 
     private String tournamentTypeName;
 

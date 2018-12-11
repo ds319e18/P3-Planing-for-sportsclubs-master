@@ -18,7 +18,7 @@ public class MatchContainer extends  HBox{
     private boolean selected;
     private Text timeIntervalText;
 
-    //Creates an empty matchContainer with a startTime
+    //Creates an empty matchContainer with a startTime in the gridPane
     public MatchContainer(LocalTime matchStartTime) {
         Text matchNameText = new Text("Kamp --");
         timeIntervalText = new Text(matchStartTime.toString());
@@ -183,6 +183,29 @@ public class MatchContainer extends  HBox{
 
     public LocalTime getMatchEndTime() {
         return this.match.getTimeStamp().plusMinutes(match.getDuration());
+    }
+
+    public boolean fitsForMatch(Match match, int timeBetweenMatches) {
+
+        //check if there exits a matchContainer after this matchContainer
+        MatchContainer nextMatchContainer = getNextMatchContainerInGridPane();
+        if (nextMatchContainer != null) {
+            LocalTime currentMatchStartTime = LocalTime.parse(this.timeIntervalText.getText().substring(0, 5));
+            LocalTime currentMatchEndTime = currentMatchStartTime.plusMinutes(match.getDuration());
+            LocalTime nextMatchStartTime = LocalTime.parse(nextMatchContainer.getTimeIntervalText().
+                    getText().substring(0, 5));
+            if (!currentMatchEndTime.plusMinutes(timeBetweenMatches).isAfter(nextMatchStartTime))
+                return true;
+            else
+                return false;
+        } else
+            return true;
+    }
+
+    public MatchContainer getNextMatchContainerInGridPane() {
+        GridPane gridPane = (GridPane) this.getParent();
+        return CreatingMatchScheduleController.getMatchContainerFromGridPane
+                (GridPane.getColumnIndex(this), GridPane.getRowIndex(this) + 1, gridPane);
     }
 
     @Override

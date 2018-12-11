@@ -40,7 +40,7 @@ public class CreatingMatchScheduleController {
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         progressBox.getChildren().add(new ProgressBox(stepNumber));
-        timeBetweenMatches = tournament.getMatchSchedule().getMatchDays().get(1).getTimeBetweenMatches();
+        timeBetweenMatches = tournament.getMatchSchedule().getMatchDays().get(0).getTimeBetweenMatches();
         createMatchListView();
         createMatchDayTabs();
         createMatchScheduleGridpanes();
@@ -93,6 +93,7 @@ public class CreatingMatchScheduleController {
 
             LocalTime matchDayStartTime = matchDay.getStartTime();
 
+            //For each field in each matchDay, an empty matchContainer is created
             for (Field field : matchDay.getFieldList()) {
                 emptyMatchContainer = new MatchContainer(matchDayStartTime);
 
@@ -157,34 +158,36 @@ public class CreatingMatchScheduleController {
 
         MatchContainer selectedMatchContainer = getSelectedMatchContainer();
 
-        // checks if a matchContainer was selected before
-        if (selectedMatchContainer != null) {
+        // checks if a matchContainer was selected before and if the match fits the empty matchContainer
+        if (selectedMatchContainer != null && emptyMatchContainer.fitsForMatch(selectedMatchContainer.getMatch(),
+                timeBetweenMatches)) {
 
-            gridPane.getChildren().remove(selectedMatchContainer);
-            // remove the old matchContainer and replace with empty MatchContainer
-            MatchContainer newemptyMatchContainer = new MatchContainer(selectedMatchContainer.getMatch().getTimeStamp());
-            newemptyMatchContainer.setOnMouseClicked(event1 -> handleEmptyMatchContainerSelection(event1));
-            gridPane.add(newemptyMatchContainer, GridPane.getColumnIndex(selectedMatchContainer),
-                    GridPane.getRowIndex(selectedMatchContainer));
+            // remove the selected matchContainer and the empty matchContainer
+            gridPane.getChildren().remove(emptyMatchContainer);
+            if (selectedMatchContainer.getParent() instanceof GridPane) {
+                gridPane.getChildren().remove(selectedMatchContainer);
 
-            if (selectedMatchContainer.getParent() instanceof ListView){
+                MatchContainer secondEmptyMatchContainer = new MatchContainer(selectedMatchContainer.getMatch().getTimeStamp());
+                secondEmptyMatchContainer.setOnMouseClicked(event1 -> handleEmptyMatchContainerSelection(event1));
+                gridPane.add(secondEmptyMatchContainer, GridPane.getColumnIndex(selectedMatchContainer),
+                        GridPane.getRowIndex(selectedMatchContainer));
+            }
+            if (matchListView.getItems().contains(selectedMatchContainer)){
                 matchListView.getItems().remove(selectedMatchContainer);
             }
 
+            //create the new matchContainer
             MatchContainer newMatchContainer =
                     new MatchContainer(selectedMatchContainer.getMatch(), emptyMatchContainer);
-            // add the new matchContainer
             gridPane.add(newMatchContainer, GridPane.getColumnIndex(emptyMatchContainer),
                     GridPane.getRowIndex(emptyMatchContainer));
-
             newMatchContainer.setOnMouseClicked(event1 -> handleMatchContainerSelection(event1));
 
 
             // add a new empty matchContainer below the new matchContainer
             if (newMatchContainer.getMatchEndTime().plusMinutes(newMatchContainer.getMatch().getDuration()).
                     isBefore(getMatchDayEndTimeFromSelectedTab()) &&
-                    getMatchContainerFromGridPane(GridPane.getColumnIndex(emptyMatchContainer),
-                            GridPane.getRowIndex(emptyMatchContainer) +1, gridPane) == null) {
+                    newMatchContainer.getNextMatchContainerInGridPane() == null) {
 
                 MatchContainer newEmptyMatchContainer = new MatchContainer(newMatchContainer.getMatchEndTime().
                         plusMinutes(timeBetweenMatches));
@@ -231,7 +234,7 @@ public class CreatingMatchScheduleController {
 
                     gridPane.add(newOtherMatchContainer, GridPane.getColumnIndex(otherMatchContainer),
                             GridPane.getRowIndex(otherMatchContainer));
-                } else if (otherMatchContainer.getParent() instanceof ListView) {
+                } else if (matchListView.getItems().contains(otherMatchContainer)) {
                     swapMatchContainerListAndGrid(otherMatchContainer, selectedMatchContainer);
                 }
 
@@ -292,6 +295,10 @@ public class CreatingMatchScheduleController {
 
     @FXML
     private void finishMatchScheduleButtonClicked(ActionEvent event) throws IOException {
+        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
+        warning.setHeaderText("Tillykke!");
+        warning.setTitle("Succesfuld Turnering");
+        warning.showAndWait();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
         Parent newWindow = loader.load();

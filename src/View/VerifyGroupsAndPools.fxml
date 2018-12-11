@@ -19,7 +19,7 @@
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../sample/45398293_468759136948179_6752360962147221504_n.png" />
+            <Image url="@../sample/545398293_468759136948179_6752360962147221504_n.png" />
          </image>
          <VBox.margin>
             <Insets left="497.5" />
@@ -58,7 +58,7 @@
                   </Label>
                   <HBox prefHeight="383.0" prefWidth="508.0">
                      <children>
-                        <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#mouseClickedEdit" prefHeight="383.0" prefWidth="495.0">
+                        <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#mouseClickedEdit" prefHeight="383.0" prefWidth="486.0">
                            <content>
                               <GridPane fx:id="groupsGridPane" prefWidth="586.0">
                                  <rowConstraints>
@@ -96,9 +96,9 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Verify" GridPane.columnIndex="6" />
+                  <Button mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Godkend" GridPane.columnIndex="6" />
                   <Button layoutX="862.0" layoutY="12.0" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                  <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Back" GridPane.columnIndex="4" />
+                  <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" GridPane.columnIndex="4" />
                </children>
                <HBox.margin>
                   <Insets top="30.0" />

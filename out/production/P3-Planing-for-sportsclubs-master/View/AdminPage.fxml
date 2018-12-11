@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminPageController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminPageController">
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
          <image>
-            <Image url="@../sample/45398293_468759136948179_6752360962147221504_n.png" />
+            <Image url="@../sample/545398293_468759136948179_6752360962147221504_n.png" />
          </image>
          <VBox.margin>
             <Insets left="497.5" />
@@ -36,64 +28,13 @@
             <Insets bottom="30.0" top="10.0" />
          </VBox.margin>
       </Text>
-      <GridPane maxWidth="-Infinity" prefHeight="30.0" prefWidth="880.0">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         </rowConstraints>
+      <HBox prefHeight="400.0" prefWidth="1280.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turnering" textAlignment="CENTER" wrappingWidth="176.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="1">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <Text layoutX="490.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dato" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="2">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Se turnering" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="3">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rediger turnering" textAlignment="CENTER" wrappingWidth="176.0" GridPane.columnIndex="4">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Text>
+            <VBox prefHeight="400.0" prefWidth="190.0" />
+            <TableView fx:id="tournamentTableView" prefHeight="200.0" prefWidth="900.0" />
+            <VBox prefHeight="400.0" prefWidth="190.0" />
          </children>
-         <VBox.margin>
-            <Insets left="200.0" />
-         </VBox.margin>
-      </GridPane>
-      <ScrollPane hbarPolicy="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="264.0" prefWidth="880.0">
-         <content>
-            <GridPane fx:id="gp" gridLinesVisible="true" maxHeight="-Infinity" prefHeight="90.0" prefWidth="880.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-            </GridPane>
-         </content>
-         <VBox.margin>
-            <Insets left="200.0" />
-         </VBox.margin>
-      </ScrollPane>
+      </HBox>
       <Button fx:id="createTournamentBtn" layoutX="585.0" layoutY="548.0" mnemonicParsing="false" onAction="#setOnCreateTournamentButtonClicked" prefHeight="30.0" prefWidth="160.0" text="Create Tournament">
          <VBox.margin>
             <Insets left="200.0" top="30.0" />

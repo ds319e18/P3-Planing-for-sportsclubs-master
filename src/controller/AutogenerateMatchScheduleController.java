@@ -1,7 +1,6 @@
 package controller;
 
-import database.DAO.MatchDayDAO;
-import database.DAO.MatchScheduleDAO;
+import database.DAO.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +27,7 @@ import tournament.matchschedule.MatchDay;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class AutogenerateMatchScheduleController {
     Tournament tournament;
@@ -172,20 +172,19 @@ public class AutogenerateMatchScheduleController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        // DAO objects for match schedule and match day
-       // MatchScheduleDAO matchScheduleSQL = new MatchScheduleDAO();
-       // MatchDayDAO matchDaySQL = new MatchDayDAO();
-
-        //TODO Adding matchdays and matchschedule to database.
-       // matchDaySQL.insertMatchDay(tournament);
-       // matchScheduleSQL.insertMatchSchedule(tournament);
+        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
+        warning.setHeaderText("Tillykke!");
+        warning.setTitle("Succesfuld Turnering");
+        warning.showAndWait();
+        //TODO TIL DATABASE
+        //loadTournamentInDatabase(tournament);
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/FrontPage.FXML"));
+        loader.setLocation(getClass().getResource("../View/AdminPage.FXML"));
         Parent newWindow = loader.load();
 
         //TODO DENNE ER TIL UDEN DATABASE
-        FrontPageController atc = loader.getController();
+        AdminPageController atc = loader.getController();
         atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
@@ -194,6 +193,51 @@ public class AutogenerateMatchScheduleController {
 
         window.setScene(newScene);
         window.show();
+    }
+
+    public void loadTournamentInDatabase(Tournament tournament) {
+        String idToBeHashed = "Jetsmark";
+        int userID = Objects.hash(idToBeHashed);
+
+        // DAO for tournament
+        TournamentDAO tournamentSQL = new TournamentDAO();
+
+        // Inserting tournament in the database, this method also calls field DAO and pool DAO which
+        // inserts all pool and fields for the corrosponding tournament in the database
+        tournamentSQL.insertTournament(tournament, userID);
+
+        // DAO for team
+        TeamDAO teamSQl = new TeamDAO();
+
+        // Inserting all teams in the tournament in the database
+        teamSQl.insertTeam(tournament);
+
+        // DAO for group and groupbracket
+        GroupDAO groupSQL = new GroupDAO();
+        GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
+
+        // Inserting groups and groupbracketin database
+        groupSQL.insertGroup(tournament);
+        groupBracketSQL.insertGroupBracket(tournament);
+
+        // DAO objects for playoff and match
+        PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
+        MatchDAO matchSQL = new MatchDAO();
+
+
+        // Inserting playoff bracket into database, this method also makes sure playoff matches will be added 0
+        playoffBracketSQL.insertPlayoffBracket(tournament);
+
+        // Inserting all group matches in database
+        matchSQL.insertMatches(tournament, tournament.getAllGroupMatches());
+
+        // DAO objects for match schedule and match day
+        MatchScheduleDAO matchScheduleSQL = new MatchScheduleDAO();
+        MatchDayDAO matchDaySQL = new MatchDayDAO();
+
+        // Adding matchdays and matchschedule to database.
+        matchDaySQL.insertMatchDay(tournament);
+        matchScheduleSQL.insertMatchSchedule(tournament);
     }
 
 }

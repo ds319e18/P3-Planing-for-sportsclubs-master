@@ -2,6 +2,7 @@ package controller;
 
 import account.Administrator;
 import database.DAO.TournamentDAO;
+import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -97,15 +98,10 @@ public class TournamentSetupController implements CheckInput {
                     .createFieldList(Integer.parseInt(fieldNumberCombobox.getValue().toString()))
                     .setPoolList(getSelectedPoolsAndMatchLengths())
                     .build();
-            //TODO DAO for tournament
-            //TournamentDAO tournamentSQL = new TournamentDAO();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
             Parent newWindow = loader.load();
-            //TODO Inserting tournament in the database, this method also calls field DAO and pool DAO which
-            // inserts all pool and fields for the corrosponding tournament in the database
-            //tournamentSQL.insertTournament(tournament, user.getId());
 
             AddingTeamsController atc = loader.getController();
             atc.setTournament(tournament);
@@ -118,6 +114,11 @@ public class TournamentSetupController implements CheckInput {
         } catch (MissingInputException e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Manglende input fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        } catch (InvalidInputException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Ugyldigt input fejl");
             warning.setTitle("Fejl");
             warning.showAndWait();
         }
@@ -181,6 +182,9 @@ public class TournamentSetupController implements CheckInput {
                 CheckBox checkBox = (CheckBox) hboxWithCheckboxes.getChildren().get(j);
 
                 if (checkBox.isSelected() && !matchDurationTextField.getText().isEmpty()) {
+                    if (!(matchDurationTextField.getText().matches("\\d+"))) {
+                        throw new InvalidInputException("heltal", "kamplængde");
+                    }
                     yearString = titledPane.getText().replace(String.valueOf
                             (titledPane.getText().charAt(0)), "");
                     poolList.add(new Pool.Builder()

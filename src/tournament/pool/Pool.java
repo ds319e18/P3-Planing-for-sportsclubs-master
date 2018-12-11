@@ -37,7 +37,7 @@ public class Pool {
     }
 
     public String getPlayOffCreationStatus() {
-        if (playoffBracket != null && groupBracket.getAmountOfAdvancingTeamsPrGroup() != 0)
+        if (playoffBracket != null)
             return "Færdig";
         else
             return "Ikke færdig";
@@ -56,15 +56,16 @@ public class Pool {
     }
 
     public void setPlayOffVerificationStatus(String statusString) {
-        this.playOffVerificationStatus = playOffVerificationStatus;
+        this.playOffVerificationStatus = statusString;
     }
 
     // Adding team to the correct pool
     public void addTeam(Team team) {
-        int count = 1;
-        for (Team createdTeams : this.teamList) {
-            if (createdTeams.getName().equals(team.getName() + " " + Integer.toString(count))) {
-                count++;
+        int count;
+        for (count = 1; count <= this.teamList.size(); count++) {
+            Team tempTeam = new Team(team.getName() + " " + count, team.getYearGroup(), team.getSkillLevel());
+            if (!this.teamList.contains(tempTeam)) {
+                break;
             }
         }
 

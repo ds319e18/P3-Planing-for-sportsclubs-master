@@ -87,7 +87,6 @@ public class ViewMatchScheduleController {
             for (Match match : matchDay.getMatches()) {
                 MatchContainer matchContainer = new MatchContainer(match);
 
-
                 HBox matchHBox = createHBoxFromMatch(match, matchCounter);
 
                 matchDayGridPane.add(matchHBox, Integer.parseInt(match.getField().getName().substring(5)) - 1
@@ -161,8 +160,8 @@ public class ViewMatchScheduleController {
         loader.setLocation(getClass().getResource("../View/FrontPage.FXML"));
         Parent newWindow = loader.load();
 
-        FrontPageController atc = loader.getController();
-        atc.setTournament(tournament);
+        //FrontPageController atc = loader.getController();
+        //atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
 

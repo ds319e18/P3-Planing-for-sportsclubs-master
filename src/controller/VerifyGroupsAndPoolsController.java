@@ -1,5 +1,6 @@
 package controller;
 
+import exceptions.NotAllTeamsAreVerified;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import database.DAO.GroupBracketDAO;
@@ -112,7 +113,9 @@ public class VerifyGroupsAndPoolsController {
     @FXML
     private void verifyButtonPressed() {
         Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
-        selectedPool.setGroupsVerificationStatus("Færdig");
+        if (selectedPool != null) {
+            selectedPool.setGroupsVerificationStatus("Færdig");
+        }
 
         poolTableView.getItems().clear();
         addPoolsInTableView();
@@ -151,28 +154,37 @@ public class VerifyGroupsAndPoolsController {
         window.show();
     }
 
+    private void checkAllPoolsAreVerified() {
+        for (Pool pool : poolTableView.getItems()) {
+            if (pool.getGroupsVerificationStatus().equals("Ikke færdig")) {
+                throw new NotAllTeamsAreVerified("grupperne");
+            }
+        }
+    }
+
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
-        //TODO DAO for group and groupbracket
-        //GroupDAO groupSQL = new GroupDAO();
-        //GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
+        try {
+            checkAllPoolsAreVerified();
 
-        //TODO Inserting groups and groupbracketin database
-        //groupSQL.insertGroup(tournament);
-        //groupBracketSQL.insertGroupBracket(tournament);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../View/CreatingFinalStage.FXML"));
+            Parent newWindow = loader.load();
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/CreatingFinalStage.FXML"));
-        Parent newWindow = loader.load();
+            CreatingFinalStageController atc = loader.getController();
+            atc.setTournament(tournament);
 
-        CreatingFinalStageController atc = loader.getController();
-        atc.setTournament(tournament);
+            Scene newScene = new Scene(newWindow);
 
-        Scene newScene = new Scene(newWindow);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(newScene);
-        window.show();
+            window.setScene(newScene);
+            window.show();
+        } catch (NotAllTeamsAreVerified e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende godkendelse fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+        }
     }
 }

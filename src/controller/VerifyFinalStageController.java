@@ -13,6 +13,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -30,6 +31,7 @@ import tournament.Tournament;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Group;
 import tournament.pool.Pool;
+import tournament.pool.bracket.GoldAndBronzePlay;
 import tournament.pool.bracket.KnockoutPlay;
 import tournament.pool.bracket.PlayoffBracket;
 import tournament.pool.bracket.PlacementPlay;
@@ -60,20 +62,20 @@ public class VerifyFinalStageController {
     private void setPoolTableView() {
         TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        poolNameColumn.setMinWidth(150);
-        poolNameColumn.setMaxWidth(150);
+        poolNameColumn.setMinWidth(90);
+        poolNameColumn.setMaxWidth(90);
 
         TableColumn<Pool, String> playOffTypeColumn = new TableColumn<>("Slutspilstype");
         playOffTypeColumn.setCellValueFactory(new PropertyValueFactory<>("playOffType"));
-        playOffTypeColumn.setMaxWidth(150);
-        playOffTypeColumn.setMinWidth(150);
+        playOffTypeColumn.setMaxWidth(118);
+        playOffTypeColumn.setMinWidth(118);
 
         TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
         poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("playOffVerificationStatus"));
-        poolStatusColumn.setMaxWidth(150);
-        poolStatusColumn.setMinWidth(150);
+        poolStatusColumn.setMaxWidth(118);
+        poolStatusColumn.setMinWidth(118);
 
-        poolTableView.getColumns().addAll(poolNameColumn, poolStatusColumn);
+        poolTableView.getColumns().addAll(poolNameColumn, playOffTypeColumn, poolStatusColumn);
         //add pools to tableView
         addPoolsInTableView();
     }
@@ -82,7 +84,7 @@ public class VerifyFinalStageController {
         poolTableView.getItems().addAll(tournament.getPoolList());
 
         //handle row selection for each pool in tableView
-        poolTableView.setRowFactory( table -> {
+        poolTableView.setRowFactory(table -> {
             TableRow<Pool> row = new TableRow<>();
             row.setOnMouseClicked(event -> handleRowSelection());
             return row;
@@ -96,6 +98,9 @@ public class VerifyFinalStageController {
             drawPlacementStageGridPane();
         } else if (selectedPool.getPlayoffBracket().getClass().equals(KnockoutPlay.class)) {
             drawKnockoutStageGridPane();
+        } else if (selectedPool.getPlayoffBracket().getClass().equals(GoldAndBronzePlay.class)) {
+            drawGoldAndBronzeStageGridPane();
+
         }
     }
 
@@ -159,7 +164,7 @@ public class VerifyFinalStageController {
         finalStageGridPane.setHgap(30);
 
         int counter = 1;
-        for (Match match : selectedPool.getPlayoffBracket().getMatches()){
+        for (Match match : selectedPool.getPlayoffBracket().getMatches()) {
             GridPane gridPane = new GridPane();
             Text groupNumberText = new Text("  Placeringspil  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
@@ -167,6 +172,32 @@ public class VerifyFinalStageController {
             gridPane.add(new Text("  " + counter + ". plads af gruppe 1" + "  "), 1, 0);
             gridPane.add(new Text("  " + counter + ". plads af gruppe 2" + "  "), 1, 1);
             counter++;
+            finalStageGridPane.add(gridPane, 0, finalStageGridPane.getRowCount());
+        }
+
+
+        finalStageGridPane.setGridLinesVisible(false);
+        finalStageGridPane.setGridLinesVisible(true);
+    }
+
+    private void drawGoldAndBronzeStageGridPane() {
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+
+        finalStageGridPane.getChildren().clear();
+        finalStageGridPane.setVgap(30);
+        finalStageGridPane.setHgap(30);
+
+        int counter = 1;
+        for (Match match : selectedPool.getPlayoffBracket().getMatches()){
+            GridPane gridPane = new GridPane();
+            Text groupNumberText = new Text("  Guld og Bronze  ");
+            groupNumberText.setStyle("-fx-font-weight: bold;");
+            gridPane.add(groupNumberText, 0, 0);
+            gridPane.add(new Text("  " + counter + ". plads af gruppe 1" + "  "), 1, 0);
+            gridPane.add(new Text("  " + counter + ". plads af gruppe 2" + "  "), 1, 1);
+            if(counter <= 2) {
+                counter++;
+            }
             finalStageGridPane.add(gridPane, 0,finalStageGridPane.getRowCount());
         }
 
@@ -177,7 +208,7 @@ public class VerifyFinalStageController {
     }
 
     private void drawKnockoutStageGridPane() {
-       Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
         int amountOfMatches = selectedPool.getPlayoffBracket().getMatches().size();
         PlayoffBracket playoffBracket = selectedPool.getPlayoffBracket();
@@ -225,7 +256,7 @@ public class VerifyFinalStageController {
             Team team1 = playoffBracket.getMatches().get(0).getFirstTeam();
             Team team2 = playoffBracket.getMatches().get(0).getSecondTeam();
             GridPane gridPane = new GridPane();
-            Text groupNumberText = new Text("  Finale "  + "  ");
+            Text groupNumberText = new Text("  Finale " + "  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
             gridPane.add(groupNumberText, 0, 0);
             gridPane.add(new Text("  " + team1.getName() + "  "), 1, 0);
@@ -248,7 +279,7 @@ public class VerifyFinalStageController {
 
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
         window.show();
@@ -265,6 +296,16 @@ public class VerifyFinalStageController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
+        try {
+            checkVerifyException();
+        } catch (NotAllTeamsAreVerified e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Manglende input-fejl");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
+            return;
+        }
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/MatchScheduleSetup.FXML"));
         Parent newWindow = loader.load();
@@ -272,23 +313,19 @@ public class VerifyFinalStageController {
         MatchScheduleSetupController mss = loader.getController();
         mss.setTournament(tournament);
 
+        Scene newScene = new Scene(newWindow);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // DAO objects for playoff and match
-            PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
-            MatchDAO matchSQL = new MatchDAO();
+        window.setScene(newScene);
+        window.show();
 
+    }
 
-            //TODO Inserting playoff bracket into database, this method also makes sure playoff matches will be added 0
-            //playoffBracketSQL.insertPlayoffBracket(tournament);
-
-            // Inserting all group matches in database
-            //matchSQL.insertMatches(tournament, tournament.getAllGroupMatches());
-
-            Scene newScene = new Scene(newWindow);
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            window.setScene(newScene);
-            window.show();
-
+    public void checkVerifyException() {
+        for (Pool pool : tournament.getPoolList()) {
+            if (pool.getPlayOffVerificationStatus().equals("Ikke færdig")) {
+                throw new NotAllTeamsAreVerified("slutspil");
+            }
+        }
     }
 }
