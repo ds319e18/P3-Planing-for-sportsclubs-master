@@ -1,11 +1,17 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import tournament.Tournament;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import javafx.scene.control.Control;
 
@@ -17,11 +23,29 @@ public class AdminVievPageController {
     private String logo4 = null;
 
     Tournament tournament;
-    //private final int stepNumber = 6;
 
-    public void setTournament(Tournament tournament) {
+    void setTournament(Tournament tournament) {
         this.tournament = tournament;
     }
+
+
+    @FXML
+    public void setConfirmButtonPressed(ActionEvent event) throws IOException{
+        
+    }
+
+    @FXML
+    public void setBackButtonPressed(ActionEvent event) throws IOException{
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
+    }
+
 
     @FXML
     public void setImages(MouseEvent event) throws MalformedURLException {
