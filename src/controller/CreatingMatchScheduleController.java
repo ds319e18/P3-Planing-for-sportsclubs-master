@@ -26,6 +26,7 @@ import tournament.matchschedule.MatchDay;
 import java.io.IOException;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class CreatingMatchScheduleController {
     private final int stepNumber = 6;
@@ -388,7 +389,7 @@ public class CreatingMatchScheduleController {
         }
         return matchList;
     }
-    } */
+
 
     // Bruges til at hente alle turneringer for en bruger
     public void loadTournamentInDatabase(Tournament tournament) {

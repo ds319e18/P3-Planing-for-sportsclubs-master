@@ -21,7 +21,7 @@ public class ActionButtonTableCell<E> extends TableCell<E, Button> {
     }
 
     public E getCurrentItem() {
-        return (E) this.getTableView().getItems().get(this.getIndex());
+        return this.getTableView().getItems().get(this.getIndex());
     }
 
     public static <E> Callback<TableColumn<E, Button>, TableCell<E, Button>> forTableColumn(Function <E, E> function) {

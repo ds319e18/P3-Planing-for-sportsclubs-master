@@ -1,5 +1,8 @@
 package tournament.matchschedule;
 
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.scene.control.ComboBox;
 import tournament.Match;
 import tournament.pool.Pool;
 
@@ -35,8 +38,15 @@ public class MatchSchedule {
     private void createMatchDays() {
         for (int iter = 0; iter < getNumberOfMatchDays(); iter++) {
             this.matchDays.add(new MatchDay(startDate.plusDays(iter)));
-            this.matchDays.get(iter).setName("Day " + (iter + 1));
+            this.matchDays.get(iter).setName("Dag " + (iter + 1));
         }
+    }
+
+    public ObservableValue<ComboBox> getMatchDaysAsComboBox() {
+        ComboBox<MatchDay> matchDayComboBox = new ComboBox<>();
+        matchDayComboBox.getItems().addAll(matchDays);
+        ObservableValue<ComboBox> comboBoxObservableValue = new SimpleObjectProperty<>(matchDayComboBox);
+        return comboBoxObservableValue;
     }
 
     public void setTimeBetweenMatchDays(int timeBetweenMatchDays) {

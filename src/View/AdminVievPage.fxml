@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../sample/545398293_468759136948179_6752360962147221504_n.png" />
+            <Image url="@../images/545398293_468759136948179_6752360962147221504_n.png" />
          </image>
          <VBox.margin>
             <Insets left="497.5" />
@@ -57,7 +57,7 @@
                                     <Insets bottom="20.0" top="10.0" />
                                  </HBox.margin>
                                  <image>
-                                    <Image url="@../sample/47398204_745301389177366_2251635926323167232_n2.png" />
+                                    <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
                                  </image>
                               </ImageView>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -66,7 +66,7 @@
                                     <Insets bottom="20.0" top="10.0" />
                                  </HBox.margin>
                                  <image>
-                                    <Image url="@../sample/47398204_745301389177366_2251635926323167232_n2.png" />
+                                    <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
                                  </image>
                               </ImageView>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -75,7 +75,7 @@
                                     <Insets bottom="20.0" top="10.0" />
                                  </HBox.margin>
                                  <image>
-                                    <Image url="@../sample/47398204_745301389177366_2251635926323167232_n2.png" />
+                                    <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
                                  </image>
                               </ImageView>
                               <Pane HBox.hgrow="ALWAYS" />
@@ -84,7 +84,7 @@
                                     <Insets bottom="20.0" top="10.0" />
                                  </HBox.margin>
                                  <image>
-                                    <Image url="@../sample/47398204_745301389177366_2251635926323167232_n2.png" />
+                                    <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
                                  </image>
                               </ImageView>
                               <Pane HBox.hgrow="ALWAYS" />
