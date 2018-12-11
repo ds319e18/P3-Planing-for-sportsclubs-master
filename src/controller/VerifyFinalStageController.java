@@ -31,6 +31,7 @@ import tournament.Tournament;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Group;
 import tournament.pool.Pool;
+import tournament.pool.bracket.GoldAndBronzePlay;
 import tournament.pool.bracket.KnockoutPlay;
 import tournament.pool.bracket.PlayoffBracket;
 import tournament.pool.bracket.PlacementPlay;
@@ -97,6 +98,9 @@ public class VerifyFinalStageController {
             drawPlacementStageGridPane();
         } else if (selectedPool.getPlayoffBracket().getClass().equals(KnockoutPlay.class)) {
             drawKnockoutStageGridPane();
+        } else if (selectedPool.getPlayoffBracket().getClass().equals(GoldAndBronzePlay.class)) {
+            drawGoldAndBronzeStageGridPane();
+
         }
     }
 
@@ -168,6 +172,33 @@ public class VerifyFinalStageController {
             gridPane.add(new Text("  " + counter + ". plads af gruppe 1" + "  "), 1, 0);
             gridPane.add(new Text("  " + counter + ". plads af gruppe 2" + "  "), 1, 1);
             counter++;
+            finalStageGridPane.add(gridPane, 0,finalStageGridPane.getRowCount());
+        }
+
+
+
+        finalStageGridPane.setGridLinesVisible(false);
+        finalStageGridPane.setGridLinesVisible(true);
+    }
+
+    private void drawGoldAndBronzeStageGridPane() {
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+
+        finalStageGridPane.getChildren().clear();
+        finalStageGridPane.setVgap(30);
+        finalStageGridPane.setHgap(30);
+
+        int counter = 1;
+        for (Match match : selectedPool.getPlayoffBracket().getMatches()){
+            GridPane gridPane = new GridPane();
+            Text groupNumberText = new Text("  Guld og Bronze  ");
+            groupNumberText.setStyle("-fx-font-weight: bold;");
+            gridPane.add(groupNumberText, 0, 0);
+            gridPane.add(new Text("  " + counter + ". plads af gruppe 1" + "  "), 1, 0);
+            gridPane.add(new Text("  " + counter + ". plads af gruppe 2" + "  "), 1, 1);
+            if(counter <= 2) {
+                counter++;
+            }
             finalStageGridPane.add(gridPane, 0,finalStageGridPane.getRowCount());
         }
 
@@ -306,7 +337,7 @@ public class VerifyFinalStageController {
     public void checkVerifyException() {
         for (Pool pool : tournament.getPoolList()) {
             if (pool.getPlayOffVerificationStatus().equals("Ikke færdig")) {
-                throw new NotAllTeamsAreVerified("Slutspil");
+                throw new NotAllTeamsAreVerified("slutspil");
             }
         }
     }

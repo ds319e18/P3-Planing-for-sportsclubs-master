@@ -113,7 +113,9 @@ public class VerifyGroupsAndPoolsController {
     @FXML
     private void verifyButtonPressed() {
         Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
-        selectedPool.setGroupsVerificationStatus("Færdig");
+        if (selectedPool != null) {
+            selectedPool.setGroupsVerificationStatus("Færdig");
+        }
 
         poolTableView.getItems().clear();
         addPoolsInTableView();
@@ -165,8 +167,8 @@ public class VerifyGroupsAndPoolsController {
         try {
             checkAllPoolsAreVerified();
             // DAO for group and groupbracket
-            GroupDAO groupSQL = new GroupDAO();
-            GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
+            //GroupDAO groupSQL = new GroupDAO();
+            //GroupBracketDAO groupBracketSQL = new GroupBracketDAO();
 
             // Inserting groups and groupbracketin database
             //groupSQL.insertGroup(tournament);

@@ -40,7 +40,7 @@ public class CreatingMatchScheduleController {
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         progressBox.getChildren().add(new ProgressBox(stepNumber));
-        timeBetweenMatches = tournament.getMatchSchedule().getMatchDays().get(1).getTimeBetweenMatches();
+        timeBetweenMatches = tournament.getMatchSchedule().getMatchDays().get(0).getTimeBetweenMatches();
         createMatchListView();
         createMatchDayTabs();
         createMatchScheduleGridpanes();
@@ -295,6 +295,10 @@ public class CreatingMatchScheduleController {
 
     @FXML
     private void finishMatchScheduleButtonClicked(ActionEvent event) throws IOException {
+        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
+        warning.setHeaderText("Tillykke!");
+        warning.setTitle("Succesfuld Turnering");
+        warning.showAndWait();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
         Parent newWindow = loader.load();
