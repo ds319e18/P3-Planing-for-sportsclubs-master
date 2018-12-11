@@ -113,7 +113,9 @@ public class VerifyGroupsAndPoolsController {
     @FXML
     private void verifyButtonPressed() {
         Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
-        selectedPool.setGroupsVerificationStatus("Færdig");
+        if (selectedPool != null) {
+            selectedPool.setGroupsVerificationStatus("Færdig");
+        }
 
         poolTableView.getItems().clear();
         addPoolsInTableView();

@@ -62,8 +62,6 @@ public class CreatingFinalStageController implements CheckInput {
     @FXML
     private Label advancingTeamsLabel;
 
-
-
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         setPoolTableView();

@@ -31,6 +31,7 @@ import tournament.Tournament;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Group;
 import tournament.pool.Pool;
+import tournament.pool.bracket.GoldAndBronzePlay;
 import tournament.pool.bracket.KnockoutPlay;
 import tournament.pool.bracket.PlayoffBracket;
 import tournament.pool.bracket.PlacementPlay;
@@ -61,20 +62,20 @@ public class VerifyFinalStageController {
     private void setPoolTableView() {
         TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        poolNameColumn.setMinWidth(150);
-        poolNameColumn.setMaxWidth(150);
+        poolNameColumn.setMinWidth(90);
+        poolNameColumn.setMaxWidth(90);
 
         TableColumn<Pool, String> playOffTypeColumn = new TableColumn<>("Slutspilstype");
         playOffTypeColumn.setCellValueFactory(new PropertyValueFactory<>("playOffType"));
-        playOffTypeColumn.setMaxWidth(150);
-        playOffTypeColumn.setMinWidth(150);
+        playOffTypeColumn.setMaxWidth(118);
+        playOffTypeColumn.setMinWidth(118);
 
         TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
         poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("playOffVerificationStatus"));
-        poolStatusColumn.setMaxWidth(150);
-        poolStatusColumn.setMinWidth(150);
+        poolStatusColumn.setMaxWidth(118);
+        poolStatusColumn.setMinWidth(118);
 
-        poolTableView.getColumns().addAll(poolNameColumn, poolStatusColumn);
+        poolTableView.getColumns().addAll(poolNameColumn, playOffTypeColumn, poolStatusColumn);
         //add pools to tableView
         addPoolsInTableView();
     }
@@ -97,6 +98,9 @@ public class VerifyFinalStageController {
             drawPlacementStageGridPane();
         } else if (selectedPool.getPlayoffBracket().getClass().equals(KnockoutPlay.class)) {
             drawKnockoutStageGridPane();
+        } else if (selectedPool.getPlayoffBracket().getClass().equals(GoldAndBronzePlay.class)) {
+            drawGoldAndBronzeStageGridPane();
+
         }
     }
 
@@ -170,6 +174,33 @@ public class VerifyFinalStageController {
             counter++;
             finalStageGridPane.add(gridPane, 0, finalStageGridPane.getRowCount());
         }
+
+
+        finalStageGridPane.setGridLinesVisible(false);
+        finalStageGridPane.setGridLinesVisible(true);
+    }
+
+    private void drawGoldAndBronzeStageGridPane() {
+        Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
+
+        finalStageGridPane.getChildren().clear();
+        finalStageGridPane.setVgap(30);
+        finalStageGridPane.setHgap(30);
+
+        int counter = 1;
+        for (Match match : selectedPool.getPlayoffBracket().getMatches()){
+            GridPane gridPane = new GridPane();
+            Text groupNumberText = new Text("  Guld og Bronze  ");
+            groupNumberText.setStyle("-fx-font-weight: bold;");
+            gridPane.add(groupNumberText, 0, 0);
+            gridPane.add(new Text("  " + counter + ". plads af gruppe 1" + "  "), 1, 0);
+            gridPane.add(new Text("  " + counter + ". plads af gruppe 2" + "  "), 1, 1);
+            if(counter <= 2) {
+                counter++;
+            }
+            finalStageGridPane.add(gridPane, 0,finalStageGridPane.getRowCount());
+        }
+
 
 
         finalStageGridPane.setGridLinesVisible(false);
@@ -293,7 +324,7 @@ public class VerifyFinalStageController {
     public void checkVerifyException() {
         for (Pool pool : tournament.getPoolList()) {
             if (pool.getPlayOffVerificationStatus().equals("Ikke færdig")) {
-                throw new NotAllTeamsAreVerified("Slutspil");
+                throw new NotAllTeamsAreVerified("slutspil");
             }
         }
     }

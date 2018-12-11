@@ -172,6 +172,10 @@ public class AutogenerateMatchScheduleController {
 
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
+        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
+        warning.setHeaderText("Tillykke!");
+        warning.setTitle("Succesfuld Turnering");
+        warning.showAndWait();
         //TODO TIL DATABASE
         //loadTournamentInDatabase(tournament);
 
