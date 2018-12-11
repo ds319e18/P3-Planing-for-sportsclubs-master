@@ -55,7 +55,7 @@
                         <HBox VBox.vgrow="ALWAYS">
                            <children>
                               <Pane HBox.hgrow="ALWAYS" />
-                              <ImageView fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="logo1" fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
                                     <Insets bottom="20.0" top="10.0" />
                                  </HBox.margin>
@@ -64,7 +64,7 @@
                                  </image>
                               </ImageView>
                               <Pane HBox.hgrow="ALWAYS" />
-                              <ImageView fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="logo2" fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
                                     <Insets bottom="20.0" top="10.0" />
                                  </HBox.margin>
@@ -73,7 +73,7 @@
                                  </image>
                               </ImageView>
                               <Pane HBox.hgrow="ALWAYS" />
-                              <ImageView fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="logo3" fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
                                     <Insets bottom="20.0" top="10.0" />
                                  </HBox.margin>
@@ -82,7 +82,7 @@
                                  </image>
                               </ImageView>
                               <Pane HBox.hgrow="ALWAYS" />
-                              <ImageView fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="logo4" fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
                                     <Insets bottom="20.0" top="10.0" />
                                  </HBox.margin>
