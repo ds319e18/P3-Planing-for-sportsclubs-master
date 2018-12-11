@@ -3,7 +3,6 @@ package controller;
 import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import exceptions.NotEnoughTeamsAddedException;
-import database.DAO.TeamDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,7 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import tournament.Team;
 import tournament.Tournament;
-import tournament.matchschedule.GraphicalObjects.DeleteButtonTableCell;
+import tournament.matchschedule.GraphicalObjects.ActionButtonTableCell;
 import tournament.matchschedule.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 
@@ -68,7 +67,7 @@ public class AddingTeamsController implements CheckInput {
 
         TableColumn<Team, Button> deleteButtonColumn = new TableColumn<>("");
         deleteButtonColumn.setCellValueFactory(new PropertyValueFactory<>(""));
-        deleteButtonColumn.setCellFactory(DeleteButtonTableCell.forTableColumn((Team team) -> {
+        deleteButtonColumn.setCellFactory(ActionButtonTableCell.forTableColumn((Team team) -> {
             teamTableView.getItems().remove(team);
             tournament.findCorrectPool(team.getYearGroup(), team.getSkillLevel()).getTeamList().remove(team);
             return null;

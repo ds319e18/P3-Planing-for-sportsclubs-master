@@ -119,7 +119,7 @@ public class FrontPageController {
         }
     }*/
 
-
+    /*
     @FXML
     public void setViewButtonClicked(ActionEvent event, String tournamentName) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -140,7 +140,7 @@ public class FrontPageController {
                 window.show();
             }
         }*/
-
+        /*
         //TODO Dette er til hvis man ikke har database på
         UpdateMatchController atc = loader.getController();
         atc.setTournament(tournament);
@@ -151,5 +151,6 @@ public class FrontPageController {
 
         window.setScene(newScene);
         window.show();
-    }
+    } */
+
 }

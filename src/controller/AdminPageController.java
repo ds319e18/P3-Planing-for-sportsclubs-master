@@ -25,6 +25,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Tournament;
+import tournament.matchschedule.GraphicalObjects.ActionButtonTableCell;
 import tournament.pool.Pool;
 
 import java.io.IOException;
@@ -82,6 +83,12 @@ public class AdminPageController {
         tournamentTypeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
+        viewMatchScheduleColumn.setCellValueFactory(new PropertyValueFactory<>(""));
+
+        viewMatchScheduleColumn.setCellFactory(ActionButtonTableCell.forTableColumn((Tournament tournament) -> {
+
+                }
+        ));
 
         tournamentTableView.getColumns().addAll(tournamentNameColumn, tournamentActiveColumn, tournamentTypeColumn,
                 startDateColumn, endDateColumn, viewMatchScheduleColumn);
@@ -152,36 +159,6 @@ public class AdminPageController {
         window.show();
     }
 
-    /*public void initialize() {
-        // DAO for tournament
-        TournamentDAO tournamentSQL = new TournamentDAO();
-
-        // Getting all tournaments from database
-        user.setTournamens(tournamentSQL.getAllTournaments(user.getId()));
-
-        for (Tournament tournament : user.getTournamens()) {
-            // Dette skal er til hvis man ikke har database
-            //this.tournament = tournament;
-            for (ColumnConstraints column : gp.getColumnConstraints()) {
-                column.setHalignment(HPos.CENTER);
-            }
-
-                Text txt = new Text(tournament.getName());
-                Text status = new Text(String.valueOf(tournament.isActive()));
-                Text date = new Text(tournament.getStartDate().toString() + "\n" + tournament.getEndDate().toString());
-                Button btnView = new Button("View");
-                btnView.setOnAction(event -> {
-                    try {
-                        setViewButtonClicked(event, txt.getText());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
-                gp.addRow(gp.getRowCount(), txt, status, date, btnView);
-
-        }
-    }*/
-
     @FXML
     public void setViewButtonClicked(ActionEvent event, String tournamentName) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -203,47 +180,4 @@ public class AdminPageController {
             }
         }
     }
-
-    /*@FXML
-    public void draw() {
-        int i = 0;
-        String str;
-        for (ColumnConstraints column : gp.getColumnConstraints())
-            column.setHalignment(HPos.CENTER);
-            for (Tournament tournaments : user.getTournaments()) {
-                Text txt = new Text(tournaments.getName());
-                Text status = new Text(str = String.valueOf(tournaments.isActive()));
-                Text date = new Text(tournaments.getStartDate().toString() + "\n" + tournaments.getEndDate().toString());
-                Button btnView = new Button("View");
-                Button btnEdit = new Button("Edit");
-                gp.addRow(i, txt, status, date, btnView, btnEdit);
-                i++;
-            }
-    }*/
-
-    /*@FXML
-    public void initialize() {
-        String str;
-
-        /*for (ColumnConstraints column : gp.getColumnConstraints())
-            column.setHalignment(HPos.CENTER);
-            for (Tournament tournaments : user.getTournamens()) {
-                Text txt = new Text(tournaments.getName());
-                Text status = new Text(str = String.valueOf(tournaments.isActive()));
-                Text date = new Text(tournaments.getStartDate().toString() + "\n" + tournaments.getEndDate().toString());
-                Button btnView = new Button("View");
-                Button btnEdit = new Button("Edit");
-                gp.addRow(i, txt, status, date, btnView, btnEdit);
-                i++;
-            }*/
-
-        /*for (int i = 0; i < 10; i++) { // Iterates through a list of tournament-objects.
-            Text txt = new Text("Tournament name " + i);
-            Text status = new Text("ACTIVE");
-            Text date = new Text("Start: 26/2/2008\nEnd: 27/2/2009");
-            Button btnView = new Button("View");
-            Button btnEdit = new Button("Edit");
-            gp.addRow(i, txt, status, date, btnView, btnEdit);
-        }*/
-        /*}*/
 }

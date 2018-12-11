@@ -44,7 +44,7 @@ public class MatchContainer extends  HBox{
         timeIntervalText = new Text(String.valueOf(match.getDuration()) + " minutter");
         Text firstTeamText = new Text(match.getFirstTeam().getName());
         Text secondTeamText = new Text(match.getSecondTeam().getName());
-        Text poolText = new Text(match.getName());
+        Text poolText = new Text("U" + match.getFirstTeam().getYearGroup() + " - " + match.getFirstTeam().getSkillLevel());
         Text fieldText = new Text("Bane: --");
 
         setStyleOfText(matchNameText);
@@ -106,7 +106,7 @@ public class MatchContainer extends  HBox{
         timeIntervalText = new Text(matchStartTime + " - " + matchStartTime.plusMinutes(this.match.getDuration()));
         Text firstTeamText = new Text(match.getFirstTeam().getName());
         Text secondTeamText = new Text(match.getSecondTeam().getName());
-        Text poolText = new Text(match.getName());
+        Text poolText = new Text("U" + match.getFirstTeam().getYearGroup() + " - " + match.getFirstTeam().getSkillLevel());
         Text fieldText = new Text("Bane: " + String.valueOf(GridPane.getColumnIndex(matchContainer) +1));
 
         setStyleOfText(matchNameText);

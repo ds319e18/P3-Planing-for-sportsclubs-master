@@ -22,6 +22,8 @@ import tournament.matchschedule.MatchDay;
 
 import java.io.IOException;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CreatingMatchScheduleController {
     private final int stepNumber = 6;
@@ -295,15 +297,15 @@ public class CreatingMatchScheduleController {
 
     @FXML
     private void finishMatchScheduleButtonClicked(ActionEvent event) throws IOException {
-        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
-        warning.setHeaderText("Tillykke!");
-        warning.setTitle("Succesfuld Turnering");
-        warning.showAndWait();
+        for (Tab tab : matchDayTabPane.getTabs()) {
+            setAllMatchesFromTab(tab);
+        }
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
         Parent newWindow = loader.load();
 
-        UpdateMatchController msc = loader.getController();
+        UpdateMatchScheduleController msc = loader.getController();
         msc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
@@ -345,40 +347,24 @@ public class CreatingMatchScheduleController {
         gridPane.add(emptyMatchContainer, GridPane.getColumnIndex(selectedMatchContainer),
                 GridPane.getRowIndex(selectedMatchContainer));
     }
-/*
-    public void replaceMatchContainerWithEmptyMatchContainer(MatchContainer matchContainer) {
-        if (matchContainer.getParent() instanceof GridPane) {
-            GridPane gridPane = (GridPane) matchContainer.getParent();
 
-            gridPane.getChildren().remove(matchContainer);
+    private void setAllMatchesFromTab(Tab tab) {
+        ScrollPane tabScrollPane = (ScrollPane) tab.getContent();
+        GridPane tabGridPane = (GridPane) tabScrollPane.getContent();
+        MatchDay matchDay = tournament.getMatchSchedule().findMatchDay(tab.getText());
 
-            //Check for empty matchContainers above and below the matchContainer
-            if (getMatchContainerFromGridPane(GridPane.getColumnIndex(matchContainer),
-                    GridPane.getRowIndex(matchContainer) +1, gridPane) != null && (
-                    !getMatchContainerFromGridPane(GridPane.getColumnIndex(matchContainer),
-                    GridPane.getRowIndex(matchContainer) +1, gridPane).hasMatch() ||
-                     !getMatchContainerFromGridPane(GridPane.getColumnIndex(matchContainer),
-                    GridPane.getRowIndex(matchContainer) -1, gridPane).hasMatch())) {
+        matchDay.getMatches().addAll(getAllMatchesFromGridPane(tabGridPane));
+    }
 
-                int rowCounter = 1;
-                MatchContainer movingMatchContainer = getMatchContainerFromGridPane(GridPane.getColumnIndex(matchContainer),
-                        GridPane.getRowIndex(matchContainer) + rowCounter, gridPane);
-
-                while (movingMatchContainer != null) {
-                    movingMatchContainer.moveOneRowUpInGridPane(gridPane, timeBetweenMatches);
-
-                    rowCounter++;
-                    movingMatchContainer = getMatchContainerFromGridPane(GridPane.getColumnIndex(matchContainer),
-                            GridPane.getRowIndex(matchContainer) + rowCounter, gridPane);
-                }
-
-            } else {
-                MatchContainer emptyMatchContainer = new MatchContainer(matchContainer.getMatch().getTimeStamp());
-                emptyMatchContainer.setOnMouseClicked(event -> handleEmptyMatchContainerSelection(event));
-                gridPane.add(emptyMatchContainer, GridPane.getColumnIndex(matchContainer),
-                        GridPane.getRowIndex(matchContainer));
+    private ArrayList<Match> getAllMatchesFromGridPane(GridPane gridPane) {
+        ArrayList<Match> matchList = new ArrayList<>();
+        for (Node node : gridPane.getChildren()) {
+            if (node instanceof MatchContainer) {
+                MatchContainer matchContainer = (MatchContainer) node;
+                if (matchContainer.hasMatch())
+                    matchList.add(matchContainer.getMatch());
             }
         }
-    } */
-
+        return matchList;
+    }
 }
