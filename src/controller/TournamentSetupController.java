@@ -99,7 +99,7 @@ public class TournamentSetupController implements CheckInput {
                     .build();
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
+            loader.setLocation(getClass().getResource("../view/AddingTeams.FXML"));
             Parent newWindow = loader.load();
 
             AddingTeamsController atc = loader.getController();
@@ -132,7 +132,7 @@ public class TournamentSetupController implements CheckInput {
 
     @FXML
     public void setOnBackButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/AdminPage.FXML"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

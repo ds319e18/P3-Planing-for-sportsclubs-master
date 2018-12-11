@@ -33,7 +33,7 @@ public class LoginController {
     @FXML
     public void setOnBackButtonClicked(ActionEvent event) throws IOException {
 
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/FrontPage.fxml"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/FrontPage.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -45,7 +45,7 @@ public class LoginController {
     @FXML
     public void setOnCreateButtonClicked(ActionEvent event) throws IOException {
 
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/CreateAccount.fxml"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/CreateAccount.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -66,7 +66,7 @@ public class LoginController {
         //TODO lav en try catch hvor vi tjekker om login er rigtigt.
         if (logInSucess) {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/AdminPage.fxml"));
+            loader.setLocation(getClass().getResource("../view/AdminPage.fxml"));
             Parent newWindow = loader.load();
 
             Scene newScene = new Scene(newWindow);
@@ -80,7 +80,7 @@ public class LoginController {
     @FXML
     public void checkPassword(ActionEvent event) throws IOException {
         if(username.getText().equals("username") && password.getText().equals("password")) {
-            Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.fxml"));
+            Parent newWindow = FXMLLoader.load(getClass().getResource("../view/AdminPage.fxml"));
             Scene newScene = new Scene(newWindow);
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

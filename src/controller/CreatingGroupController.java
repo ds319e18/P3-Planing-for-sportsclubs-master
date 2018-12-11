@@ -88,9 +88,11 @@ public class CreatingGroupController implements CheckInput {
     private void handleRowSelection() {
         Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
 
-        teamListView.getItems().clear();
-        for (Team team : selectedPool.getTeamList()) {
-            teamListView.getItems().add(team.getName());
+        if (selectedPool != null) {
+            teamListView.getItems().clear();
+            for (Team team : selectedPool.getTeamList()) {
+                teamListView.getItems().add(team.getName());
+            }
         }
 
         setComboBoxes();
@@ -139,7 +141,7 @@ public class CreatingGroupController implements CheckInput {
         try {
             checkStatusForEachPool();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/VerifyGroupsAndPools.FXML"));
+            loader.setLocation(getClass().getResource("../view/VerifyGroupsAndPools.FXML"));
             Parent newWindow = loader.load();
 
             VerifyGroupsAndPoolsController atc = loader.getController();
@@ -162,7 +164,7 @@ public class CreatingGroupController implements CheckInput {
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/AddingTeams.FXML"));
+        loader.setLocation(getClass().getResource("../view/AddingTeams.FXML"));
         Parent newWindow = loader.load();
 
         AddingTeamsController atc = loader.getController();

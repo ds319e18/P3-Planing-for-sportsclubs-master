@@ -3,7 +3,6 @@ package controller;
 import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import exceptions.NotEnoughTeamsAddedException;
-import database.DAO.TeamDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -81,7 +80,7 @@ public class AddingTeamsController implements CheckInput {
 
     @FXML
     public void backButtonClicked(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/TournamentSetup.fxml"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/TournamentSetup.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -104,7 +103,7 @@ public class AddingTeamsController implements CheckInput {
             checkThatAllPoolsHaveMinimumTeams();
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/CreatingGroups.FXML"));
+            loader.setLocation(getClass().getResource("../view/CreatingGroups.FXML"));
             Parent newWindow = loader.load();
 
             CreatingGroupController atc = loader.getController();
