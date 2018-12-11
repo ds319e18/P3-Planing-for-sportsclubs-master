@@ -18,7 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.TournamentType;
-import tournament.matchschedule.GraphicalObjects.ProgressBox;
+import View.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 
 import java.io.IOException;

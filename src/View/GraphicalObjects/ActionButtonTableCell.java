@@ -1,4 +1,4 @@
-package tournament.matchschedule.GraphicalObjects;
+package View.GraphicalObjects;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;

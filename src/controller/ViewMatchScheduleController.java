@@ -1,9 +1,6 @@
 package controller;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -13,26 +10,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
-import tournament.matchschedule.GraphicalObjects.MatchContainer;
+import View.GraphicalObjects.MatchContainer;
 import tournament.matchschedule.MatchDay;
-import tournament.pool.Pool;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package controller;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -25,15 +24,13 @@ import tournament.Match;
 import tournament.Result;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
-import tournament.matchschedule.GraphicalObjects.MatchContainer;
+import View.GraphicalObjects.MatchContainer;
 import tournament.matchschedule.MatchDay;
 import tournament.pool.Pool;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.nio.file.LinkOption;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;

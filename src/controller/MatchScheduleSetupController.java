@@ -24,13 +24,12 @@ import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalTimeStringConverter;
 import tournament.Match;
-import tournament.matchschedule.GraphicalObjects.ProgressBox;
+import View.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 import tournament.Tournament;
 import tournament.pool.Pool;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.time.LocalTime;
 
 public class MatchScheduleSetupController implements CheckInput {

@@ -6,35 +6,23 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Result;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
-import tournament.matchschedule.GraphicalObjects.MatchContainer;
-import tournament.matchschedule.GraphicalObjects.ProgressBox;
+import View.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
-import tournament.pool.Pool;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class AutogenerateMatchScheduleController {
@@ -136,10 +124,6 @@ public class AutogenerateMatchScheduleController {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../view/AdminPage.FXML"));
         Parent newWindow = loader.load();
-
-        //TODO DENNE ER TIL UDEN DATABASE
-        AdminPageController atc = loader.getController();
-        atc.setTournament(tournament);
 
         Scene newScene = new Scene(newWindow);
 

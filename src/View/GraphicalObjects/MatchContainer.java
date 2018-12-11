@@ -1,8 +1,6 @@
-package tournament.matchschedule.GraphicalObjects;
+package View.GraphicalObjects;
 
 import controller.CreatingMatchScheduleController;
-import javafx.scene.Parent;
-import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;

@@ -16,14 +16,13 @@ import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
-import tournament.matchschedule.GraphicalObjects.MatchContainer;
-import tournament.matchschedule.GraphicalObjects.ProgressBox;
+import View.GraphicalObjects.MatchContainer;
+import View.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 
 import java.io.IOException;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.List;
 
 public class CreatingMatchScheduleController {
     private final int stepNumber = 6;
