@@ -4,9 +4,9 @@ public class Result {
     private int firstTeamScore;
     private int secondTeamScore;
 
-    public Result(int firstTeam, int secondTeam) {
-        this.firstTeamScore = firstTeam;
-        this.secondTeamScore = secondTeam;
+    public Result(int firstTeamScore, int secondTeamScore) {
+        this.firstTeamScore = firstTeamScore;
+        this.secondTeamScore = secondTeamScore;
     }
 
     public int getFirstTeamScore() {
@@ -17,12 +17,20 @@ public class Result {
         return secondTeamScore;
     }
 
+    public void setFirstTeamScore(int firstTeamScore) {
+        this.firstTeamScore = firstTeamScore;
+    }
+
+    public void setSecondTeamScore(int secondTeamScore) {
+        this.secondTeamScore = secondTeamScore;
+    }
+
     @Override
     public String toString() {
         if (firstTeamScore == 100 && secondTeamScore == 100) {
-            return "       - ";
+            return "-";
         } else {
-            return "      " + Integer.toString(firstTeamScore) + " - " + Integer.toString(secondTeamScore);
+            return Integer.toString(firstTeamScore) + "-" + Integer.toString(secondTeamScore);
         }
     }
 }

@@ -16,11 +16,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-import javafx.util.converter.LocalTimeStringConverter;
 import tournament.Match;
 import tournament.Result;
 import tournament.Team;
-import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.MatchDay;
 
@@ -29,7 +27,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.LocalTime;
 
-public class UpdateTournamentController {
+public class SpectatorViewController {
 
     @FXML
     private ImageView logo01;
@@ -74,21 +72,6 @@ public class UpdateTournamentController {
         TableColumn<Match, Result> resultColumn = new TableColumn<>("Resultat");
         resultColumn.setCellValueFactory(new PropertyValueFactory<>("result"));
         resultColumn.setStyle("-fx-alignment: CENTER");
-        resultColumn.setCellFactory(TextFieldTableCell.forTableColumn(new StringConverter<>() {
-            @Override
-            public String toString(Result object) {
-                return object.toString();
-            }
-
-            @Override
-            public Result fromString(String string) {
-                // split string at -
-                String[] resultString = string.split("-");
-                return new Result(Integer.parseInt(resultString[0]), Integer.parseInt(resultString[1]));
-            }
-        }));
-
-        resultColumn.setOnEditCommit(event -> changeResultCell(event));
 
         TableColumn<Match, Field> fieldColumn = new TableColumn<>("Bane");
         fieldColumn.setCellValueFactory(new PropertyValueFactory<>("field"));
@@ -113,15 +96,7 @@ public class UpdateTournamentController {
     }
 
     @FXML
-    private void changeResultCell(TableColumn.CellEditEvent editEvent) {
-        Match matchSelected = matchTableView.getSelectionModel().getSelectedItem();
-        String[] resultString = editEvent.getNewValue().toString().split("-");
-        matchSelected.getResult().setFirstTeamScore(Integer.parseInt(resultString[0]));
-        matchSelected.getResult().setSecondTeamScore(Integer.parseInt(resultString[1]));
-    }
-
-    @FXML
-    public void setBackButtonPressed(ActionEvent event) throws IOException{
+    public void setBackButtonPressed(ActionEvent event) throws IOException {
         Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
 
         Scene newScene = new Scene(newWindow);

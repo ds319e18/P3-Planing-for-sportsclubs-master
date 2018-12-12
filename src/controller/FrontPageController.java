@@ -25,10 +25,6 @@ public class FrontPageController {
     private String id = "Jetsmark";
     private Spectator user = new Spectator(Objects.hash(id));
 
-    // Laver nyt user objekt
-    private String id = "Jetsmark";
-    private Spectator user = new Spectator(Objects.hash(id));
-
     @FXML
     private Button loginBtn;
 
@@ -44,14 +40,6 @@ public class FrontPageController {
 
     private void addTournamentsInTableView() {
         tournamentTableView.getItems().addAll(user.getTournaments());
-    }
-
-    // TIL DATABASE
-    public void initialize() {
-        TournamentDAO tournamentSQL = new TournamentDAO();
-        user.setTournaments(tournamentSQL.getAllTournaments(user.getId()));
-        setTournamentTableView();
-        addTournamentssInTableView();
     }
 
     private void addTournamentssInTableView() {
@@ -89,10 +77,10 @@ public class FrontPageController {
                 menuButton.setMinWidth(145);
                 for (MatchDay matchDay : param.getValue().getMatchSchedule().getMatchDays()) {
                     MenuItem menuItem = new MenuItem(matchDay.getName());
-                    menuItem.setStyle("-fx-padding: 0 40 0 40");
+                    menuItem.setStyle("-fx-padding: 0 30 0 30");
                     menuItem.setOnAction(event -> {
                         try {
-                            handleMatchDaySelection(matchDay);
+                            viewMatchDaySelection(matchDay);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -109,12 +97,12 @@ public class FrontPageController {
                 startDateColumn, endDateColumn, viewMatchScheduleColumn);
     }
 
-    private void handleMatchDaySelection(MatchDay matchDay) throws IOException {
+    private void viewMatchDaySelection(MatchDay matchDay) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/UpdateTournament.FXML"));
+        loader.setLocation(getClass().getResource("../View/SpectatorView.FXML"));
         Parent newWindow = loader.load();
 
-        UpdateTournamentController controller = loader.getController();
+        SpectatorViewController controller = loader.getController();
         controller.setMatchDay(matchDay);
 
         Scene newScene = new Scene(newWindow);
