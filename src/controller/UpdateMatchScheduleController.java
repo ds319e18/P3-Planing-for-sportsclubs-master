@@ -22,7 +22,7 @@ public class UpdateMatchScheduleController {
 
     Tournament tournament;
 
-    MatchContainer selectedMatchContainer = new MatchContainer(LocalTime.now());
+    MatchContainer selectedMatchContainer;
 
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {

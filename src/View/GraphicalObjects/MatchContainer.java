@@ -1,12 +1,15 @@
 package View.GraphicalObjects;
 
 import controller.CreatingMatchScheduleController;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import tournament.Match;
+import tournament.matchschedule.Field;
 
 import java.time.LocalTime;
 import java.util.Objects;
@@ -15,15 +18,17 @@ public class MatchContainer extends  HBox{
     private Match match;
     private boolean selected;
     private Text timeIntervalText;
+    private Field field;
 
     //Creates an empty matchContainer with a startTime in the gridPane
-    public MatchContainer(LocalTime matchStartTime) {
+    public MatchContainer(LocalTime matchStartTime, Field field) {
         Text matchNameText = new Text("Kamp --");
         timeIntervalText = new Text(matchStartTime.toString());
         Text guidingText = new Text("Tilføj kamp her");
         setStyleOfText(matchNameText);
         setStyleOfText(timeIntervalText);
         guidingText.setStyle("-fx-font-size: 18");
+        this.field = field;
 
         VBox box1 = new VBox(matchNameText, timeIntervalText);
         HBox box2 = new HBox(guidingText);
@@ -98,6 +103,7 @@ public class MatchContainer extends  HBox{
 
     public MatchContainer(Match match, MatchContainer matchContainer) {
         this.match = match;
+        this.field = matchContainer.getField();
         LocalTime matchStartTime = LocalTime.parse(matchContainer.getTimeIntervalText().getText().substring(0,5));
 
         Text matchNameText = new Text(match.getName());
@@ -122,31 +128,13 @@ public class MatchContainer extends  HBox{
         box1.setStyle("-fx-border-color: BLACK;");
         this.setSelected(false);
         this.match.setTimestamp(matchStartTime);
+        this.match.setField(matchContainer.getField());
+        System.out.println(match.getField());
     }
 
-    /*
-    public void moveOneRowUpInGridPane(GridPane gridPane, int timeBetweenMatches) {
-        gridPane.getChildren().remove(this);
-        gridPane.add(this, GridPane.getColumnIndex(this), GridPane.getRowIndex(this) -1);
-        MatchContainer matchContainer = CreatingMatchScheduleController.
-                getMatchContainerFromGridPane(GridPane.getColumnIndex(this),
-                        GridPane.getRowIndex(this) -2, gridPane);
-
-        this.setStartTimeFromPreviousMatchContainer(matchContainer,
-                timeBetweenMatches);
+    public Field getField() {
+        return field;
     }
-
-    private void setStartTimeFromPreviousMatchContainer(MatchContainer previousContainer, int timeBetweenMatches) {
-        GridPane gridPane = (GridPane) previousContainer.getParent();
-        if (!previousContainer.hasMatch() && !this.hasMatch())
-            gridPane.getChildren().remove(this);
-        LocalTime newMatchStartTime = previousContainer.getMatchEndTime().plusMinutes(timeBetweenMatches);
-        VBox box = (VBox) this.getChildren().get(0);
-        box.getChildren().remove(timeIntervalText);
-        this.timeIntervalText =
-                new Text(newMatchStartTime + " - " + newMatchStartTime.plusMinutes(this.getMatch().getDuration()));
-        box.getChildren().add(timeIntervalText);
-    } */
 
     private void setStyleOfText(Text text) {
         text.setWrappingWidth(80);

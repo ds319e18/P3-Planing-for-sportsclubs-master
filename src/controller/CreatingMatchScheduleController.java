@@ -100,7 +100,7 @@ public class CreatingMatchScheduleController {
 
             //For each field in each matchDay, an empty matchContainer is created
             for (Field field : matchDay.getFieldList()) {
-                emptyMatchContainer = new MatchContainer(matchDayStartTime);
+                emptyMatchContainer = new MatchContainer(matchDayStartTime, field);
 
                 emptyMatchContainer.setOnMouseClicked(event -> handleEmptyMatchContainerSelection(event));
 
@@ -172,7 +172,7 @@ public class CreatingMatchScheduleController {
             if (selectedMatchContainer.getParent() instanceof GridPane) {
                 gridPane.getChildren().remove(selectedMatchContainer);
 
-                MatchContainer secondEmptyMatchContainer = new MatchContainer(selectedMatchContainer.getMatch().getTimeStamp());
+                MatchContainer secondEmptyMatchContainer = new MatchContainer(selectedMatchContainer.getMatch().getTimeStamp(), emptyMatchContainer.getField());
                 secondEmptyMatchContainer.setOnMouseClicked(event1 -> handleEmptyMatchContainerSelection(event1));
                 gridPane.add(secondEmptyMatchContainer, GridPane.getColumnIndex(selectedMatchContainer),
                         GridPane.getRowIndex(selectedMatchContainer));
@@ -195,7 +195,7 @@ public class CreatingMatchScheduleController {
                     newMatchContainer.getNextMatchContainerInGridPane() == null) {
 
                 MatchContainer newEmptyMatchContainer = new MatchContainer(newMatchContainer.getMatchEndTime().
-                        plusMinutes(timeBetweenMatches));
+                        plusMinutes(timeBetweenMatches), emptyMatchContainer.getField());
 
                 gridPane.add(newEmptyMatchContainer,
                         GridPane.getColumnIndex(emptyMatchContainer),
@@ -300,23 +300,30 @@ public class CreatingMatchScheduleController {
 
     @FXML
     private void finishMatchScheduleButtonClicked(ActionEvent event) throws IOException {
-        for (Tab tab : matchDayTabPane.getTabs()) {
-            setAllMatchesFromTab(tab);
-        }
+
+
+
 
         FXMLLoader loader = new FXMLLoader();
 
         try {
             checkAllMatches();
 
+            for (Tab tab : matchDayTabPane.getTabs()) {
+                setAllMatchesFromTab(tab);
+            }
+
+            for (MatchDay day : tournament.getMatchSchedule().getMatchDays()) {
+                for (Match match : day.getMatches()) {
+                    System.out.println(match.getField());
+                }
+            }
+
             //TODO TIL DATABASE
             loadTournamentInDatabase(tournament);
 
-            loader.setLocation(getClass().getResource("../View/UpdateMatch.FXML"));
+            loader.setLocation(getClass().getResource("../View/AdminPage.FXML"));
             Parent newWindow = loader.load();
-
-            UpdateMatchController msc = loader.getController();
-            msc.setTournament(tournament);
 
             Scene newScene = new Scene(newWindow);
 
@@ -364,7 +371,7 @@ public class CreatingMatchScheduleController {
         matchListView.getItems().add(selectedMatchContainer);
 
         //add empty match container
-        MatchContainer emptyMatchContainer = new MatchContainer(selectedMatchContainer.getMatch().getTimeStamp());
+        MatchContainer emptyMatchContainer = new MatchContainer(selectedMatchContainer.getMatch().getTimeStamp(), selectedMatchContainer.getField());
         emptyMatchContainer.setOnMouseClicked(event -> handleEmptyMatchContainerSelection(event));
         gridPane.add(emptyMatchContainer, GridPane.getColumnIndex(selectedMatchContainer),
                 GridPane.getRowIndex(selectedMatchContainer));
@@ -375,6 +382,7 @@ public class CreatingMatchScheduleController {
         GridPane tabGridPane = (GridPane) tabScrollPane.getContent();
         MatchDay matchDay = tournament.getMatchSchedule().findMatchDay(tab.getText());
 
+        matchDay.setMatches();
         matchDay.getMatches().addAll(getAllMatchesFromGridPane(tabGridPane));
     }
 
@@ -383,13 +391,13 @@ public class CreatingMatchScheduleController {
         for (Node node : gridPane.getChildren()) {
             if (node instanceof MatchContainer) {
                 MatchContainer matchContainer = (MatchContainer) node;
-                if (matchContainer.hasMatch())
+                if (matchContainer.hasMatch()) {
                     matchList.add(matchContainer.getMatch());
+                }
             }
         }
         return matchList;
     }
-
 
     // Bruges til at hente alle turneringer for en bruger
     public void loadTournamentInDatabase(Tournament tournament) {
