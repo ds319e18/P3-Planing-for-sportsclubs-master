@@ -46,13 +46,13 @@ public class VerifyGroupsAndPoolsController {
     private void setPoolTableView() {
         TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        poolNameColumn.setMinWidth(128);
-        poolNameColumn.setMaxWidth(128);
+        poolNameColumn.setMinWidth(93.25);
+        poolNameColumn.setMaxWidth(93.25);
 
         TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
         poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("groupsVerificationStatus"));
-        poolStatusColumn.setMaxWidth(128);
-        poolStatusColumn.setMinWidth(128);
+        poolStatusColumn.setMaxWidth(93.25);
+        poolStatusColumn.setMinWidth(93.25);
 
         poolTableView.getColumns().addAll(poolNameColumn, poolStatusColumn);
         //add pools to tableView
@@ -85,8 +85,8 @@ public class VerifyGroupsAndPoolsController {
         for (Group group : selectedPool.getGroupBracket().getGroups()) {
             GridPane gridPane = new GridPane();
 
-            int groupNumber = Integer.parseInt(group.getName().substring(7, 8));
-            Text groupNumberText = new Text(group.getName() + "  ");
+            int groupNumber = Integer.parseInt(group.getName().substring(7));
+            Text groupNumberText = new Text("  " + group.getName() + "  ");
             groupNumberText.setStyle("-fx-font-weight: bold;");
             gridPane.add(groupNumberText, 0,0);
 
@@ -98,7 +98,7 @@ public class VerifyGroupsAndPoolsController {
             gridPane.setGridLinesVisible(false);
             gridPane.setGridLinesVisible(true);
 
-            groupsGridPane.add(gridPane, groupNumber % 4, (int)(Math.floor(groupNumber / 4)));
+            groupsGridPane.add(gridPane, (groupNumber-1) % 4, (int)(Math.floor((groupNumber-1) / 4)));
         }
     }
 

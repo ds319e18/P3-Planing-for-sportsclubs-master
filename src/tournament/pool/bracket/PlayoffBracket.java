@@ -29,9 +29,4 @@ public abstract class PlayoffBracket {
     public HashMap<Integer, Team> getResults() {
         return this.result;
     }
-
-    @Override
-    public String toString() {
-        return "slutspillene";
-    }
 }

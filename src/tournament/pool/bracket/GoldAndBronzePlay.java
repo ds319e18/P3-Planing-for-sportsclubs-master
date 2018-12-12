@@ -66,4 +66,9 @@ public class GoldAndBronzePlay extends PlayoffBracket {
             throw new MatchNotFinishedException();
         }
     }
+
+    @Override
+    public String toString() {
+        return "Guld- & bronzespil";
+    }
 }

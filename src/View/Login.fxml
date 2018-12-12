@@ -17,22 +17,26 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
-      <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/545398293_468759136948179_6752360962147221504_n.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="497.5" top="30.0" />
-         </VBox.margin>
-      </ImageView>
-      <Label alignment="CENTER" prefHeight="86.0" prefWidth="1280.0" text="Log in for fuld adgang">
+      <HBox prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #DCDCDC;">
+         <children>
+            <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../sample/LOGODONE.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="497.5" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" prefHeight="58.0" prefWidth="1280.0" text="Log in for fuld adgang">
          <font>
-            <Font name="System Italic" size="17.0" />
+            <Font name="Arial Italic" size="17.0" />
          </font>
       </Label>
-      <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="215.0" prefWidth="1280.0">
+      <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="206.0" prefWidth="1280.0">
          <children>
-            <VBox prefHeight="298.0" prefWidth="459.0" />
+            <VBox prefHeight="24.0" prefWidth="459.0" />
             <GridPane maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="124.0" prefWidth="399.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
@@ -75,15 +79,19 @@
             </GridPane>
          </children>
       </HBox>
-      <HBox prefHeight="293.0" prefWidth="1280.0">
+      <HBox prefHeight="273.0" prefWidth="1280.0">
          <children>
-            <VBox prefHeight="293.0" prefWidth="261.0" />
-            <ImageView fitHeight="293.0" fitWidth="768.0">
+            <VBox prefHeight="273.0" prefWidth="393.0" />
+            <ImageView fitHeight="199.0" fitWidth="522.0">
                <image>
                   <Image url="@../images/tourInfo.png" />
                </image>
+               <HBox.margin>
+                  <Insets bottom="5.0" />
+               </HBox.margin>
             </ImageView>
          </children>
       </HBox>
+      <HBox prefHeight="41.0" prefWidth="1280.0" />
    </children>
 </VBox>

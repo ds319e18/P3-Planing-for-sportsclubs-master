@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -17,50 +16,48 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VerifyGroupsAndPoolsController">
    <children>
-      <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/545398293_468759136948179_6752360962147221504_n.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="497.5" />
-         </VBox.margin>
-      </ImageView>
+      <HBox prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #DCDCDC;">
+         <children>
+            <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../sample/LOGODONE.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="497.5" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
       <VBox prefHeight="66.0" prefWidth="1280.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Godkendelse af grupper" textAlignment="CENTER" wrappingWidth="1280.0">
                <font>
-                  <Font name="System Bold Italic" size="20.0" />
+                  <Font name="Arial Italic" size="20.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="30.0" top="10.0" />
+                  <Insets bottom="30.0" top="20.0" />
                </VBox.margin>
             </Text>
          </children>
       </VBox>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="1280.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="1280.0">
          <children>
             <VBox layoutX="774.0" layoutY="10.0" prefHeight="502.0" prefWidth="38.0" />
             <VBox fx:id="progressBox" maxWidth="393.0" minWidth="250.0" prefHeight="483.0" prefWidth="266.0" style="-fx-border-color: white;" />
-            <VBox maxWidth="35.0" minWidth="44.0" prefHeight="502.0" prefWidth="35.0" />
-            <VBox prefHeight="412.0" prefWidth="260.0">
+            <VBox maxWidth="115.0" minWidth="44.0" prefHeight="412.0" prefWidth="115.0" />
+            <VBox prefHeight="465.0" prefWidth="187.0">
                <children>
-                  <HBox prefHeight="27.0" prefWidth="260.0" />
-                  <TableView fx:id="poolTableView" prefHeight="392.0" prefWidth="260.0" />
+                  <TableView fx:id="poolTableView" prefHeight="483.0" prefWidth="186.5" />
                </children>
             </VBox>
-            <VBox layoutX="375.0" layoutY="10.0" prefHeight="502.0" prefWidth="40.0" />
-            <VBox prefHeight="375.0" prefWidth="590.0">
+            <VBox layoutX="375.0" layoutY="10.0" prefHeight="502.0" prefWidth="38.0" />
+            <VBox prefHeight="412.0" prefWidth="488.0">
                <children>
-                  <Label prefHeight="34.0" prefWidth="303.0">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <HBox prefHeight="383.0" prefWidth="508.0">
+                  <HBox prefHeight="537.0" prefWidth="590.0">
                      <children>
-                        <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#mouseClickedEdit" prefHeight="383.0" prefWidth="486.0">
+                        <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#mouseClickedEdit" prefHeight="460.0" prefWidth="486.0">
                            <content>
-                              <GridPane fx:id="groupsGridPane" prefWidth="586.0">
+                              <GridPane fx:id="groupsGridPane" prefHeight="40.0" prefWidth="484.0">
                                  <rowConstraints>
                                     <RowConstraints />
                                  </rowConstraints>
@@ -86,7 +83,6 @@
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.5" minWidth="10.0" prefWidth="95.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="97.5" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="76.5" minWidth="10.0" prefWidth="25.5" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
@@ -96,9 +92,18 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Godkend" GridPane.columnIndex="6" />
-                  <Button layoutX="862.0" layoutY="12.0" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Next" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                  <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" GridPane.columnIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Godkend" GridPane.columnIndex="5">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+                  <Button layoutX="862.0" layoutY="12.0" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Næste" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+                  <Button layoutX="862.0" layoutY="10.0" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="50.0" />
+                     </GridPane.margin></Button>
                </children>
                <HBox.margin>
                   <Insets top="30.0" />

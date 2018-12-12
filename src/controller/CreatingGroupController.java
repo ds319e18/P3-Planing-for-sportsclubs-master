@@ -52,13 +52,13 @@ public class CreatingGroupController implements CheckInput {
     private void setPoolTableView() {
         TableColumn<Pool, String> poolNameColumn = new TableColumn<>("Puljenavn");
         poolNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        poolNameColumn.setMinWidth(150);
-        poolNameColumn.setMaxWidth(150);
+        poolNameColumn.setMinWidth(93.25);
+        poolNameColumn.setMaxWidth(93.25);
 
         TableColumn<Pool, String> poolStatusColumn = new TableColumn<>("Status");
         poolStatusColumn.setCellValueFactory(new PropertyValueFactory<>("groupCreationStatus"));
-        poolStatusColumn.setMaxWidth(150);
-        poolStatusColumn.setMinWidth(150);
+        poolStatusColumn.setMaxWidth(93.25);
+        poolStatusColumn.setMinWidth(93.25);
 
         poolTableView.getColumns().addAll(poolNameColumn, poolStatusColumn);
         //add pools to tableView
@@ -177,8 +177,10 @@ public class CreatingGroupController implements CheckInput {
         // The combobox for choosing the amount of groups
         ObservableList<String> amountOfGroups = FXCollections.observableArrayList();
         // Secures that there is not created a group with less than 2 teams in it
-        for (int i = 0; i < (selectedPool.getTeamList().size()) / 2; i++) {
-            amountOfGroups.add(Integer.toString(i + 1));
+        if (selectedPool != null) {
+            for (int i = 0; i < (selectedPool.getTeamList().size()) / 2; i++) {
+                amountOfGroups.add(Integer.toString(i + 1));
+            }
         }
         amountOfGroupsComboBox.setItems(amountOfGroups);
     }

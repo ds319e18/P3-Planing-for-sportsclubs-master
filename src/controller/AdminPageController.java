@@ -110,7 +110,6 @@ public class AdminPageController {
 
     private void addTournamentssInTableView() {
         tournamentTableView.getItems().addAll(user.getTournamens());
-
     }
 
     @FXML

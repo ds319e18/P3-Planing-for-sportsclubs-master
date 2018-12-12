@@ -14,25 +14,32 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MatchScheduleSetupController">
    <children>
-      <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/545398293_468759136948179_6752360962147221504_n.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="497.5" />
-         </VBox.margin>
-      </ImageView>
+      <HBox prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #DCDCDC;">
+         <children>
+            <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../sample/LOGODONE.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="497.5" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
       <VBox prefHeight="66.0" prefWidth="1280.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af kampprogram" textAlignment="CENTER" wrappingWidth="1280.0">
                <font>
-                  <Font name="System Bold Italic" size="20.0" />
+                  <Font name="Arial Italic" size="20.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="30.0" top="10.0" />
+                  <Insets bottom="30.0" top="20.0" />
                </VBox.margin>
             </Text>
          </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </VBox>
       <HBox minHeight="-Infinity" prefHeight="502.0" prefWidth="1280.0">
          <children>
@@ -41,11 +48,11 @@
             <VBox layoutX="763.0" layoutY="10.0" prefHeight="502.0" prefWidth="36.0" />
             <VBox prefHeight="502.0" prefWidth="435.0">
                <children>
-                  <HBox prefHeight="24.0" prefWidth="435.0">
+                  <HBox prefHeight="28.0" prefWidth="435.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Indtast starttidspunkter og sluttidspunkter for kampdage:">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dobbeltklik på en celle for at redigere værdier for starttidspunkter og sluttidspunkter Brug punktum mellem timer og minutter" wrappingWidth="423.9830722808838">
                            <font>
-                              <Font size="15.0" />
+                              <Font name="Arial Italic" size="11.0" />
                            </font>
                         </Text>
                      </children>
@@ -57,46 +64,51 @@
                         <TableColumn onEditCommit="#changeEndTimeCell" prefWidth="120.0" text="Sluttidspunkt" />
                      </columns>
                   </TableView>
-                  <HBox prefHeight="28.0" prefWidth="435.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dobbeltklik på en celle for at redigere værdier for starttidspunkter og sluttidspunkter" wrappingWidth="423.9830722808838">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </HBox>
+                  <HBox prefHeight="28.0" prefWidth="435.0" />
                   <VBox layoutX="10.0" layoutY="346.0" prefHeight="20.0" prefWidth="240.0" />
-                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="90.0" text="Tilbage" textAlignment="CENTER" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="90.0" text="Tilbage" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets left="350.0" top="85.0" />
+                     </VBox.margin></Button>
                </children>
             </VBox>
             <VBox prefHeight="502.0" prefWidth="36.0" />
             <VBox prefHeight="502.0" prefWidth="240.0">
                <children>
-                  <HBox prefHeight="36.0" prefWidth="269.0">
+                  <TableView fx:id="poolTableView" prefHeight="300.0" prefWidth="240.0" style="-fx-border-color: black;">
+                     <columns>
+                        <TableColumn minWidth="-Infinity" prefWidth="82.0" text="Pulje" />
+                        <TableColumn onEditCommit="#changeMatchDurationCell" prefWidth="185.0" text="Kampvarighed (min)" />
+                     </columns>
+                  </TableView>
+                  <VBox prefHeight="20.0" prefWidth="240.0" />
+                  <HBox alignment="CENTER" prefHeight="20.0" prefWidth="269.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="  Tid mellem kampe (min):  " wrappingWidth="185.13671875">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tid mellem kampe (min):  " wrappingWidth="185.13671875">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="timeBetweenMatches" prefHeight="18.0" prefWidth="160.0">
+                        <TextField fx:id="timeBetweenMatches" prefHeight="15.0" prefWidth="160.0">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </TextField>
-                     </children></HBox>
-                  <TableView fx:id="poolTableView" prefHeight="300.0" prefWidth="240.0" style="-fx-border-color: black;">
-                     <columns>
-                        <TableColumn minWidth="-Infinity" prefWidth="82.0" text="Pulje" />
-                        <TableColumn onEditCommit="#changeMatchDurationCell" prefWidth="185.0" text="Kampvarighed (minutter)" />
-                     </columns>
-                  </TableView>
-                  <VBox prefHeight="20.0" prefWidth="240.0" />
-                  <Button mnemonicParsing="false" onAction="#manuallyCreateMatchSchedule" prefHeight="34.0" prefWidth="211.0" text="Lav kampprogram manuelt" textAlignment="CENTER" />
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#manuallyCreateMatchSchedule" prefHeight="34.0" prefWidth="211.0" text="Lav kampprogram manuelt" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets left="30.0" top="30.0" />
+                     </VBox.margin></Button>
                   <VBox layoutX="10.0" layoutY="246.0" prefHeight="20.0" prefWidth="240.0" />
-                  <Button layoutX="10.0" layoutY="366.0" mnemonicParsing="false" onAction="#autogenerateNoMixedMatches" prefHeight="34.0" prefWidth="211.0" text="Autogenerer kampprogram " textAlignment="CENTER" />
+                  <Button layoutX="10.0" layoutY="366.0" mnemonicParsing="false" onAction="#autogenerateNoMixedMatches" prefHeight="34.0" prefWidth="211.0" text="Autogenerer kampprogram " textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin></Button>
                </children>
+               <HBox.margin>
+                  <Insets top="28.0" />
+               </HBox.margin>
             </VBox>
          </children>
       </HBox>
