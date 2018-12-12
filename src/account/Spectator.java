@@ -8,7 +8,8 @@ public class Spectator extends User{
     private ArrayList<Tournament> tournaments;
     private int id;
 
-    public Spectator() {
+    public Spectator(int id) {
+        this.id = id;
     }
 
     @Override

@@ -32,6 +32,10 @@ import java.util.Objects;
 
 public class FrontPageController {
 
+    // Laver nyt user objekt
+    private String id = "Jetsmark";
+    private Spectator user = new Spectator(Objects.hash(id));
+
     @FXML
     private Button loginBtn;
 
@@ -44,6 +48,18 @@ public class FrontPageController {
     public void setTournament(Tournament tournament) {
         this.tournament = tournament;
         setTournamentTableView();
+    }
+
+    // TIL DATABASE
+    public void initialize() {
+        TournamentDAO tournamentSQL = new TournamentDAO();
+        user.setTournaments(tournamentSQL.getAllTournaments(user.getId()));
+        setTournamentTableView();
+        addTournamentssInTableView();
+    }
+
+    private void addTournamentssInTableView() {
+        tournamentTableView.getItems().addAll(user.getTournaments());
     }
 
     @FXML
