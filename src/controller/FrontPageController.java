@@ -25,6 +25,10 @@ public class FrontPageController {
     private String id = "Jetsmark";
     private Spectator user = new Spectator(Objects.hash(id));
 
+    // Laver nyt user objekt
+    private String id = "Jetsmark";
+    private Spectator user = new Spectator(Objects.hash(id));
+
     @FXML
     private Button loginBtn;
 
@@ -39,6 +43,18 @@ public class FrontPageController {
     }
 
     private void addTournamentsInTableView() {
+        tournamentTableView.getItems().addAll(user.getTournaments());
+    }
+
+    // TIL DATABASE
+    public void initialize() {
+        TournamentDAO tournamentSQL = new TournamentDAO();
+        user.setTournaments(tournamentSQL.getAllTournaments(user.getId()));
+        setTournamentTableView();
+        addTournamentssInTableView();
+    }
+
+    private void addTournamentssInTableView() {
         tournamentTableView.getItems().addAll(user.getTournaments());
     }
 
