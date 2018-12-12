@@ -227,7 +227,6 @@ public class MatchScheduleSetupController implements CheckInput {
             checkAllInput();
             tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
 
-            System.out.println(String.valueOf(tournament.getMatchSchedule().getMatchDays().size()));
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../view/CreatingMatchSchedule.fxml"));
             Parent newWindow = loader.load();
@@ -282,7 +281,6 @@ public class MatchScheduleSetupController implements CheckInput {
     private void changeStartTimeCell(TableColumn.CellEditEvent editEvent) {
         MatchDay matchDaySelected = matchDayTableView.getSelectionModel().getSelectedItem();
         matchDaySelected.setStartTime(editEvent.getNewValue().toString());
-
     }
 
     @FXML

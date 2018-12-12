@@ -2,12 +2,14 @@ package controller;
 
 import account.Administrator;
 import database.DAO.AccountDAO;
+import exceptions.LogInFailed;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -54,17 +56,21 @@ public class LoginController {
         window.show();
     }
 
-    @FXML
-    public void setOnLogInButtonClicked(ActionEvent event) throws IOException {
-        // DAO object for account
-        AccountDAO accountSQL = new AccountDAO();
+    private void checkLogIn() {
         Boolean logInSucess;
+        AccountDAO accountSQL = new AccountDAO();
 
-        // Finding the correct user and the tournaments the user has created
         logInSucess = accountSQL.findAccount(username.getText(), password.getText());
 
-        //TODO lav en try catch hvor vi tjekker om login er rigtigt.
-        if (logInSucess) {
+        if (!logInSucess) {
+            throw new LogInFailed();
+        }
+    }
+
+    @FXML
+    public void setOnLogInButtonClicked(ActionEvent event) throws IOException {
+        try {
+            checkLogIn();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../view/AdminPage.fxml"));
             Parent newWindow = loader.load();
@@ -74,6 +80,12 @@ public class LoginController {
 
             window.setScene(newScene);
             window.show();
+
+        } catch(LogInFailed e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Fejl under login");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
         }
     }
 

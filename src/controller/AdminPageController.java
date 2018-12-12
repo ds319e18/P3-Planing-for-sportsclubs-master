@@ -2,26 +2,19 @@ package controller;
 
 import account.Administrator;
 import database.DAO.TournamentDAO;
-import javafx.beans.InvalidationListener;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.ComboBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import javafx.util.converter.DefaultStringConverter;
 import tournament.Tournament;
 import tournament.matchschedule.MatchDay;
 
@@ -60,7 +53,7 @@ public class AdminPageController {
         TournamentDAO tournamentSQL = new TournamentDAO();
         user.setTournamens(tournamentSQL.getAllTournaments(user.getId()));
         setTournamentTableView();
-        addTournamentssInTableView();
+        addTournamentsInTableView();
     }
 
     @FXML
@@ -73,7 +66,7 @@ public class AdminPageController {
         TableColumn<Tournament, LocalDate> startDateColumn = new TableColumn<>("Startdato");
         TableColumn<Tournament, LocalDate> endDateColumn = new TableColumn<>("Slutdato");
         TableColumn<Tournament, MenuButton> viewMatchScheduleColumn = new TableColumn<>("Se kampprogram");
-        TableColumn<Tournament, Button> editTournamentColumn = new TableColumn<>("Rediger turnering");
+        TableColumn<Tournament, MenuButton> editTournamentColumn = new TableColumn<>("Rediger turnering");
 
         setWidthOfColumn(tournamentNameColumn);
         setWidthOfColumn(tournamentActiveColumn);
@@ -81,6 +74,7 @@ public class AdminPageController {
         setWidthOfColumn(startDateColumn);
         setWidthOfColumn(endDateColumn);
         setWidthOfColumn(viewMatchScheduleColumn);
+        setWidthOfColumn(editTournamentColumn);
 
         tournamentNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         tournamentActiveColumn.setCellValueFactory(new PropertyValueFactory<>("active"));
@@ -92,26 +86,73 @@ public class AdminPageController {
             @Override
             public ObservableValue<MenuButton> call(TableColumn.CellDataFeatures<Tournament, MenuButton> param) {
                 MenuButton menuButton = new MenuButton();
-                param.getValue().getMatchSchedule().getMatchDays().stream().
-                        forEach(matchDay -> menuButton.getItems().add(new MenuItem(matchDay.getName())));
+                menuButton.setMinWidth(120);
+                for (MatchDay matchDay : param.getValue().getMatchSchedule().getMatchDays()) {
+                    MenuItem menuItem = new MenuItem(matchDay.getName());
+                    menuItem.setStyle("-fx-padding: 0 50 0 50");
+                    menuItem.setOnAction(event -> {
+                        try {
+                            updateMatchDay(matchDay);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    });
+                    menuButton.getItems().add(menuItem);
+                }
                 return new SimpleObjectProperty<>(menuButton);
             }
         });
 
-        //viewMatchScheduleColumn.setCellFactory(
+        editTournamentColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Tournament, MenuButton>, ObservableValue<MenuButton>>() {
+            @Override
+            public ObservableValue<MenuButton> call(TableColumn.CellDataFeatures<Tournament, MenuButton> param) {
+                MenuButton menuButton = new MenuButton();
+                menuButton.setMinWidth(120);
+                for (MatchDay matchDay : param.getValue().getMatchSchedule().getMatchDays()) {
+                    MenuItem menuItem = new MenuItem(matchDay.getName());
+                    menuItem.setStyle("-fx-padding: 0 50 0 50");
+                    menuItem.setOnAction(event -> {
+                        try {
+                            updateMatchDay(matchDay);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    });
+                    menuButton.getItems().add(menuItem);
+                }
+                return new SimpleObjectProperty<>(menuButton);
+            }
+        });
+
+
 
         tournamentTableView.getColumns().addAll(tournamentNameColumn, tournamentActiveColumn, tournamentTypeColumn,
-                startDateColumn, endDateColumn, viewMatchScheduleColumn);
+                startDateColumn, endDateColumn, viewMatchScheduleColumn, editTournamentColumn);
+    }
+
+    private void updateMatchDay(MatchDay matchDay) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../View/UpdateTournament.FXML"));
+        Parent newWindow = loader.load();
+
+        UpdateTournamentController controller = loader.getController();
+        controller.setMatchDay(matchDay);
+
+        Scene newScene = new Scene(newWindow);
+
+        Stage window = (Stage) logoutBtn.getScene().getWindow();
+
+        window.setScene(newScene);
+        window.show();
     }
 
     private void setWidthOfColumn(TableColumn tableColumn) {
-        tableColumn.setMinWidth(150);
-        tableColumn.setMaxWidth(150);
+        tableColumn.setMinWidth(128);
+        tableColumn.setMaxWidth(128);
     }
 
-    private void addTournamentssInTableView() {
+    private void addTournamentsInTableView() {
         tournamentTableView.getItems().addAll(user.getTournamens());
-
     }
 
     @FXML

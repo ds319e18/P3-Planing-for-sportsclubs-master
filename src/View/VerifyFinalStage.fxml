@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -17,50 +16,44 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VerifyFinalStageController">
    <children>
-      <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/545398293_468759136948179_6752360962147221504_n.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="497.5" />
-         </VBox.margin>
-      </ImageView>
+      <HBox prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #DCDCDC;">
+         <children>
+            <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../sample/LOGODONE.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="497.5" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Godkendelse af slutspil" textAlignment="CENTER" wrappingWidth="1280.0">
          <font>
-            <Font name="System Bold Italic" size="20.0" />
+            <Font name="Arial Italic" size="20.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="30.0" top="10.0" />
+            <Insets bottom="30.0" top="20.0" />
          </VBox.margin>
       </Text>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="1280.0">
          <children>
             <VBox minWidth="-Infinity" prefHeight="200.0" prefWidth="44.0" />
             <VBox fx:id="progressBox" maxWidth="393.0" minWidth="250.0" prefHeight="483.0" prefWidth="266.0" style="-fx-border-color: white;" />
-            <VBox prefHeight="450.0" prefWidth="68.0" />
-            <VBox prefHeight="450.0" prefWidth="356.0">
+            <VBox prefHeight="450.0" prefWidth="145.0" />
+            <VBox prefHeight="450.0" prefWidth="280.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="155.88231658935547">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Text>
-                  <TableView fx:id="poolTableView" prefHeight="374.0" prefWidth="273.0" />
+                  <TableView fx:id="poolTableView" prefHeight="450.0" prefWidth="186.5" />
                </children>
             </VBox>
             <VBox layoutX="375.0" layoutY="10.0" prefHeight="450.0" prefWidth="46.0" />
-            <VBox prefHeight="375.0" prefWidth="590.0">
+            <VBox prefHeight="375.0" prefWidth="300.0">
                <children>
-                  <Label prefHeight="50.0" prefWidth="303.0">
-                     <font>
-                        <Font name="System Bold Italic" size="18.0" />
-                     </font>
-                  </Label>
-                  <HBox prefHeight="360.0" prefWidth="586.0">
+                  <HBox prefHeight="450.0" prefWidth="300.0">
                      <children>
-                        <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="370.0" prefWidth="454.0">
+                        <ScrollPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="450.0" prefWidth="300.0">
                            <content>
-                              <GridPane fx:id="finalStageGridPane" prefWidth="450.0">
+                              <GridPane fx:id="finalStageGridPane" prefWidth="298.0">
                                  <rowConstraints>
                                     <RowConstraints />
                                  </rowConstraints>
@@ -72,23 +65,17 @@
                         </ScrollPane>
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="40.0" prefWidth="300.0">
                      <children>
-                        <GridPane prefHeight="53.0" prefWidth="445.0">
-                          <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="168.0" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="146.0" />
-                          </columnConstraints>
-                          <rowConstraints>
-                              <RowConstraints maxHeight="21.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <children>
-                              <Button mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Godkend" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                           </children>
-                        </GridPane>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#verifyButtonPressed" prefHeight="25.0" prefWidth="90.0" text="Godkend">
+                           <HBox.margin>
+                              <Insets left="210.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
                      </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </HBox>
                </children>
             </VBox>
@@ -107,18 +94,35 @@
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.0" minWidth="10.0" prefWidth="138.0" />
               </columnConstraints>
               <rowConstraints>
+                  <RowConstraints />
                   <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button layoutX="850.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Næste" GridPane.columnIndex="4" />
-                  <Button layoutX="862.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" GridPane.columnIndex="3" />
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="850.0" layoutY="12.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="25.0" prefWidth="90.0" text="Næste" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="20.0" left="22.0" />
+                     </GridPane.margin></Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="25.0" prefWidth="90.0" text="Tilbage" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="20.0" left="65.0" />
+                     </GridPane.margin>
+                  </Button>
                </children>
                <HBox.margin>
                   <Insets top="30.0" />
                </HBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </GridPane>
-         </children></HBox>
+         </children>
+         <VBox.margin>
+            <Insets top="40.0" />
+         </VBox.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></HBox>
    </children>
 </VBox>

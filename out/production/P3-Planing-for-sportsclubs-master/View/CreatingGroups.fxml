@@ -18,32 +18,36 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreatingGroupController">
    <children>
-      <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/545398293_468759136948179_6752360962147221504_n.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="497.5" />
-         </VBox.margin>
-      </ImageView>
+      <HBox prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #DCDCDC;">
+         <children>
+            <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../sample/LOGODONE.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="497.5" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
       <VBox prefHeight="66.0" prefWidth="1280.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Oprettelse af grupper" textAlignment="CENTER" wrappingWidth="1280.0">
                <font>
-                  <Font name="System Bold Italic" size="20.0" />
+                  <Font name="Arial Italic" size="20.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="30.0" top="10.0" />
+                  <Insets bottom="30.0" top="20.0" />
                </VBox.margin>
             </Text>
          </children>
       </VBox>
-      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="1280.0">
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="1280.0">
          <children>
             <VBox maxWidth="35.0" minWidth="44.0" prefHeight="502.0" prefWidth="35.0" />
             <VBox fx:id="progressBox" maxWidth="393.0" minWidth="250.0" prefHeight="483.0" prefWidth="266.0" style="-fx-border-color: white;" />
-            <VBox prefHeight="450.0" prefWidth="29.0" />
-            <TableView fx:id="poolTableView" prefHeight="450.0" prefWidth="292.0" />
+            <VBox prefHeight="450.0" prefWidth="137.0" />
+            <TableView fx:id="poolTableView" prefHeight="450.0" prefWidth="186.5" />
             <VBox prefHeight="450.0" prefWidth="31.0" />
             <VBox prefHeight="463.0" prefWidth="185.0">
                <children>
@@ -59,7 +63,7 @@
                </children>
             </VBox>
             <VBox layoutX="774.0" layoutY="10.0" prefHeight="450.0" prefWidth="71.0" />
-            <GridPane prefHeight="485.0" prefWidth="200.0">
+            <GridPane prefHeight="430.0" prefWidth="200.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="117.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="83.0" />
@@ -72,16 +76,24 @@
                   <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label layoutX="10.0" layoutY="52.0" prefHeight="17.0" prefWidth="106.0" text="Antal af grupper:" />
+                  <Label layoutX="10.0" layoutY="52.0" prefHeight="63.0" prefWidth="112.0" text="Antal af grupper:" />
                   <Label layoutX="10.0" layoutY="153.0" prefHeight="173.0" prefWidth="117.0" text="Indbyrdes kampe:" GridPane.rowIndex="1" />
                   <Button mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Gem" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="30.0" prefWidth="83.0" text="Næste" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Button mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="27.0" prefWidth="105.0" text="Næste" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets top="45.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="27.0" prefWidth="83.0" text="Tilbage" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets top="45.0" />
+                     </GridPane.margin>
+                  </Button>
                   <ComboBox fx:id="amountOfGroupsComboBox" prefHeight="25.0" prefWidth="459.0" GridPane.columnIndex="1" />
                   <ComboBox fx:id="matchesPrGroupsComboBox" layoutX="110.0" layoutY="101.0" prefHeight="25.0" prefWidth="132.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
                <HBox.margin>
-                  <Insets top="50.0" />
+                  <Insets />
                </HBox.margin>
             </GridPane>
          </children>

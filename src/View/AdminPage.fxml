@@ -12,20 +12,24 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminPageController">
    <children>
-      <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
-         <image>
-            <Image url="@../sample/545398293_468759136948179_6752360962147221504_n.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="497.5" />
-         </VBox.margin>
-      </ImageView>
+      <HBox prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #DCDCDC;">
+         <children>
+            <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../sample/LOGODONE.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="497.5" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hovedmenu" textAlignment="CENTER" wrappingWidth="1280.0">
          <font>
-            <Font name="System Italic" size="20.0" />
+            <Font name="Arial Italic" size="20.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="30.0" top="10.0" />
+            <Insets bottom="30.0" top="20.0" />
          </VBox.margin>
       </Text>
       <HBox prefHeight="400.0" prefWidth="1280.0">
@@ -35,12 +39,12 @@
             <VBox prefHeight="400.0" prefWidth="190.0" />
          </children>
       </HBox>
-      <Button fx:id="createTournamentBtn" layoutX="585.0" layoutY="548.0" mnemonicParsing="false" onAction="#setOnCreateTournamentButtonClicked" prefHeight="30.0" prefWidth="160.0" text="Create Tournament">
+      <Button fx:id="createTournamentBtn" layoutX="585.0" layoutY="548.0" mnemonicParsing="false" onAction="#setOnCreateTournamentButtonClicked" prefHeight="27.0" prefWidth="132.0" text="Opret ny turnering">
          <VBox.margin>
             <Insets left="200.0" top="30.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#setOnLogoutButtonClicked" text="Log out">
+      <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#setOnLogoutButtonClicked" text="Log ud">
          <VBox.margin>
             <Insets left="200.0" top="10.0" />
          </VBox.margin>

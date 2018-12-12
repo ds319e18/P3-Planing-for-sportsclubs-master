@@ -123,4 +123,8 @@ public class KnockoutPlay extends PlayoffBracket {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Knockoutspil";
+    }
 }
