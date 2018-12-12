@@ -26,8 +26,11 @@ public class MatchContainer extends  HBox{
         timeIntervalText = new Text(matchStartTime.toString());
         Text guidingText = new Text("Tilføj kamp her");
         setStyleOfText(matchNameText);
+        setStyleOfText(guidingText);
         setStyleOfText(timeIntervalText);
-        guidingText.setStyle("-fx-font-size: 18");
+        guidingText.setTextAlignment(TextAlignment.CENTER);
+        // maybe guidingText.setWrappingWith(80);
+
         this.field = field;
 
         VBox box1 = new VBox(matchNameText, timeIntervalText);
@@ -35,7 +38,7 @@ public class MatchContainer extends  HBox{
         box1.setStyle("-fx-border-color: BLACK;");
 
         this.getChildren().addAll(box1, box2);
-        this.setMaxWidth(270);
+        this.setMaxWidth(200);
         this.setStyle("-fx-border-color: BLACK;");
         this.setSelected(false);
     }
@@ -137,8 +140,9 @@ public class MatchContainer extends  HBox{
     }
 
     private void setStyleOfText(Text text) {
-        text.setWrappingWidth(80);
+        text.setWrappingWidth(80); //var 80
         text.setTextAlignment(TextAlignment.CENTER);
+        text.setStyle("-fx-font-size: 10");
     }
 
     public Match getMatch() {

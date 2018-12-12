@@ -2,6 +2,8 @@ package controller;
 
 import account.Spectator;
 import database.DAO.TournamentDAO;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,6 +18,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import tournament.Tournament;
+import tournament.matchschedule.MatchDay;
 import tournament.pool.Pool;
 
 import java.io.IOException;
@@ -24,7 +27,7 @@ import java.util.Objects;
 
 public class FrontPageController {
     private String id = "Jetsmark";
-    private Administrator user = new Administrator(Objects.hash(id));
+    private Spectator user = new Spectator(Objects.hash(id));
 
 
     @FXML
@@ -40,15 +43,8 @@ public class FrontPageController {
         addTournamentsInTableView();
     }
 
-    public void initialize() {
-        TournamentDAO tournamentSQL = new TournamentDAO();
-        user.setTournamens(tournamentSQL.getAllTournaments(user.getId()));
-        setTournamentTableView();
-        addTournamentssInTableView();
-    }
-
-    private void addTournamentssInTableView() {
-        tournamentTableView.getItems().addAll(user.getTournamens());
+    private void addTournamentsInTableView() {
+        tournamentTableView.getItems().addAll(user.getTournaments());
     }
 
     @FXML
@@ -75,15 +71,6 @@ public class FrontPageController {
         tournamentTypeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
-        viewMatchScheduleColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Tournament, ComboBox>, ObservableValue<ComboBox>>() {
-            @Override
-            public ObservableValue<ComboBox> call(TableColumn.CellDataFeatures<Tournament, ComboBox> param) {
-                ComboBox<MatchDay> matchDayComboBox = new ComboBox<>();
-                matchDayComboBox.getItems().addAll(param.getValue().getMatchSchedule().getMatchDays());
-                return new SimpleObjectProperty<>(matchDayComboBox);
-            }
-        });
-
         viewMatchScheduleColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Tournament, MenuButton>, ObservableValue<MenuButton>>() {
             @Override
             public ObservableValue<MenuButton> call(TableColumn.CellDataFeatures<Tournament, MenuButton> param) {
@@ -95,6 +82,7 @@ public class FrontPageController {
                     menuItem.setOnAction(event -> {
                         try {
                             handleMatchDaySelection(matchDay);
+                            throw new IOException();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -109,6 +97,9 @@ public class FrontPageController {
 
         tournamentTableView.getColumns().addAll(tournamentNameColumn, tournamentActiveColumn, tournamentTypeColumn,
                 startDateColumn, endDateColumn, viewMatchScheduleColumn);
+    }
+
+    private void handleMatchDaySelection(MatchDay matchDay) {
     }
 
     @FXML
@@ -136,23 +127,6 @@ public class FrontPageController {
         tableColumn.setMinWidth(150);
         tableColumn.setMinWidth(150);
     }
-
-        UpdateTournamentController controller = loader.getController();
-        controller.setMatchDay(matchDay);
-
-        Scene newScene = new Scene(newWindow);
-
-        Stage window = (Stage) loginBtn.getScene().getWindow();
-
-        window.setScene(newScene);
-        window.show();
-    }
-
-
-    // TODO DENNE ER TIL DATABASE
-    /*@FXML
-    public void initialize() {
-        TournamentDAO tournemantSQL = new TournamentDAO();
 
     @FXML
     public void setOnLoginButtonClicked(ActionEvent event) throws IOException {

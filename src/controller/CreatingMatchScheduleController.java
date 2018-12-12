@@ -82,14 +82,16 @@ public class CreatingMatchScheduleController {
 
         for (Tab tab : matchDayTabPane.getTabs()) {
             matchDayGridPane = new GridPane();
+            matchDayGridPane.setVgap(5);
+            matchDayGridPane.setHgap(5);
             scrollPane = new ScrollPane();
             // Text-objects containing field numbers are inserted at the top of the GridPane.
             for (int i = 0; i < tournament.getFieldList().size(); i++) {
                 Text fieldText = new Text("Bane " + (i + 1));
-                fieldText.setWrappingWidth(267);
+                fieldText.setWrappingWidth(200); //var 200
                 fieldText.setTextAlignment(TextAlignment.CENTER);
                 fieldText.setStyle("-fx-font-style: BOLD;");
-                fieldText.setFont(Font.font(15));
+                fieldText.setFont(Font.font(10)); // var 15 før
 
                 matchDayGridPane.add(fieldText, i, 0);
             }
@@ -300,10 +302,6 @@ public class CreatingMatchScheduleController {
 
     @FXML
     private void finishMatchScheduleButtonClicked(ActionEvent event) throws IOException {
-
-
-
-
         FXMLLoader loader = new FXMLLoader();
 
         try {

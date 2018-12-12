@@ -50,7 +50,7 @@
                <children>
                   <HBox prefHeight="28.0" prefWidth="435.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dobbeltklik på en celle for at redigere værdier for starttidspunkter og sluttidspunkter Brug punktum mellem timer og minutter" wrappingWidth="423.9830722808838">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dobbeltklik på en celle for at redigere værdier for starttidspunkter og sluttidspunkter Brug punktum mellem timer og minutter og afslut med 'Enter-knappen'" wrappingWidth="423.9830722808838">
                            <font>
                               <Font name="Arial Italic" size="11.0" />
                            </font>

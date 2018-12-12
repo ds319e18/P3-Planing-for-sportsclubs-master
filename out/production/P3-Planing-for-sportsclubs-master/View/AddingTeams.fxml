@@ -129,7 +129,7 @@
                      <children>
                         <Button mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="30.0" prefWidth="90.0" text="Tilbage">
                            <HBox.margin>
-                              <Insets right="220.0" top="40.0" />
+                              <Insets right="40.0" top="40.0" />
                            </HBox.margin>
                         </Button>
                         <VBox prefHeight="77.0" prefWidth="90.0">
