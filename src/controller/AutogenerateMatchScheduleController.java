@@ -11,7 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Result;
@@ -21,7 +25,10 @@ import tournament.matchschedule.Field;
 import View.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 
+import javafx.scene.control.Control;
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.time.LocalTime;
 import java.util.Objects;
 
@@ -182,6 +189,82 @@ public class AutogenerateMatchScheduleController {
         // Adding matchdays and matchschedule to database.
         matchDaySQL.insertMatchDay(tournament);
         matchScheduleSQL.insertMatchSchedule(tournament);
+    }
+
+    //LOGO
+    @FXML
+    private ImageView logo01;
+    @FXML
+    private ImageView logo02;
+    @FXML
+    private ImageView logo03;
+    @FXML
+    private ImageView logo04;
+
+    private String logo1 = null;
+    private String logo2 = null;
+    private String logo3 = null;
+    private String logo4 = null;
+
+
+
+    @FXML
+    public void setImages(MouseEvent event) throws MalformedURLException {
+        System.out.println("Test");
+        String tempLogo = ((ImageView)event.getSource()).getId();
+        System.out.println(tempLogo);
+        if(tempLogo == (logo01.getId())){
+            logo1 = setAddSponser(event);
+        }
+        else if(tempLogo == (logo02.getId())){
+            logo2 = setAddSponser(event);
+        }
+        else if(tempLogo == (logo03.getId())){
+            logo3 = setAddSponser(event);
+        }
+        else if(tempLogo == (logo04.getId())){
+            logo4 = setAddSponser(event);
+        }
+        else{
+            System.out.println("Error " + tempLogo + " Not found");
+        }
+    }
+
+    //set Image files
+    public String setAddSponser(MouseEvent event) throws MalformedURLException {
+        String imageFile = null;
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Image File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files",
+                        "*.bmp", "*.png", "*.jpg", "*.gif")); // limit fileChooser options to image files
+        Node node = (Node) event.getSource();
+        File selectedFile = fileChooser.showOpenDialog(node.getScene().getWindow());
+
+        if (selectedFile != null) {
+            imageFile = selectedFile.toURI().toURL().toString();
+            Image im = new Image(imageFile);
+            ImageView iw = (ImageView) event.getSource();
+            iw.setImage(im);
+            return imageFile;
+        }
+        else {
+            return null;
+        }
+
+    }
+
+    public String getlogo1(){
+        return logo1;
+    }
+    public String getlogo2(){
+        return logo2;
+    }
+    public String getlogo3(){
+        return logo3;
+    }
+    public String getlogo4(){
+        return logo4;
     }
 
 }
