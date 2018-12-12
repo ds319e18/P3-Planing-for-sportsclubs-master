@@ -72,7 +72,7 @@ public class AdminPageController {
         TableColumn<Tournament, String> tournamentTypeColumn = new TableColumn<>("Turneringstype");
         TableColumn<Tournament, LocalDate> startDateColumn = new TableColumn<>("Startdato");
         TableColumn<Tournament, LocalDate> endDateColumn = new TableColumn<>("Slutdato");
-        TableColumn<Tournament, ComboBox> viewMatchScheduleColumn = new TableColumn<>("Se kampprogram");
+        TableColumn<Tournament, MenuButton> viewMatchScheduleColumn = new TableColumn<>("Se kampprogram");
         TableColumn<Tournament, Button> editTournamentColumn = new TableColumn<>("Rediger turnering");
 
         setWidthOfColumn(tournamentNameColumn);
@@ -82,18 +82,19 @@ public class AdminPageController {
         setWidthOfColumn(endDateColumn);
         setWidthOfColumn(viewMatchScheduleColumn);
 
-
         tournamentNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         tournamentActiveColumn.setCellValueFactory(new PropertyValueFactory<>("active"));
         tournamentTypeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
-        viewMatchScheduleColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Tournament, ComboBox>, ObservableValue<ComboBox>>() {
+
+        viewMatchScheduleColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Tournament, MenuButton>, ObservableValue<MenuButton>>() {
             @Override
-            public ObservableValue<ComboBox> call(TableColumn.CellDataFeatures<Tournament, ComboBox> param) {
-                ComboBox<MatchDay> matchDayComboBox = new ComboBox<>();
-                matchDayComboBox.getItems().addAll(param.getValue().getMatchSchedule().getMatchDays());
-                return new SimpleObjectProperty<>(matchDayComboBox);
+            public ObservableValue<MenuButton> call(TableColumn.CellDataFeatures<Tournament, MenuButton> param) {
+                MenuButton menuButton = new MenuButton();
+                param.getValue().getMatchSchedule().getMatchDays().stream().
+                        forEach(matchDay -> menuButton.getItems().add(new MenuItem(matchDay.getName())));
+                return new SimpleObjectProperty<>(menuButton);
             }
         });
 
