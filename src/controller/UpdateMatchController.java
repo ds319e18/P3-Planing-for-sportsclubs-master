@@ -41,7 +41,7 @@ public class UpdateMatchController {
 
     Tournament tournament;
 
-    MatchContainer selectedMatchContainer = new MatchContainer(LocalTime.now());
+    MatchContainer selectedMatchContainer;
 
     @FXML
     private VBox progressBox;
