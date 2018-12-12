@@ -44,7 +44,7 @@ public class Pool {
     }
 
     public String getPlayOffType() {
-        return playoffBracket.getClass().getSimpleName();
+        return playoffBracket.toString();
     }
 
     public String getPlayOffVerificationStatus() {

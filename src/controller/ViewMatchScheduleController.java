@@ -54,7 +54,7 @@ public class ViewMatchScheduleController {
 
     void setTournament(Tournament tournament) {
         this.tournament = tournament;
-        setImages();
+        getImages();
         //createMatchDayTabs();
         //createMatchScheduleGridpane();
     }
@@ -227,7 +227,7 @@ public class ViewMatchScheduleController {
     }
     */
 
-    public void setImages() {
+    public void getImages() {
         for(int i = 1; i < 5; i++) {
             //AdminVievPageController logoSetter = new AdminVievPageController();
             if (i == 1) {
@@ -249,7 +249,7 @@ public class ViewMatchScheduleController {
         }
     }
 
-    //get Image files
+
     public void getAddSponser(String fxId, String selectedFile) {
         if (selectedFile != null) {
             Image im = new Image(selectedFile);

@@ -76,4 +76,9 @@ public class PlacementPlay extends PlayoffBracket {
             loserPlacement = loserPlacement + 2;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Placeringsspil";
+    }
 }

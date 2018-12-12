@@ -84,8 +84,8 @@ public class CreatingFinalStageController implements CheckInput {
     }
 
     private void setColumnWidth(TableColumn tableColumn) {
-        tableColumn.setMaxWidth(128);
-        tableColumn.setMinWidth(128);
+        tableColumn.setMaxWidth(93.25);
+        tableColumn.setMinWidth(93.25);
     }
     private void setGroupTableView() {
         TableColumn<Group, String> groupNameColumn = new TableColumn<>("Gruppenavn");

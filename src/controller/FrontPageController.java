@@ -4,7 +4,10 @@ import account.Spectator;
 import database.DAO.TournamentDAO;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -16,6 +19,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import tournament.Tournament;
 import tournament.matchschedule.MatchDay;
+import tournament.pool.Pool;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -42,10 +46,6 @@ public class FrontPageController {
         tournamentTableView.getItems().addAll(user.getTournaments());
     }
 
-    private void addTournamentssInTableView() {
-        tournamentTableView.getItems().addAll(user.getTournaments());
-    }
-
     @FXML
     private void setTournamentTableView() {
         tournamentTableView.setEditable(true);
@@ -64,12 +64,12 @@ public class FrontPageController {
         setWidthOfColumn(endDateColumn);
         setWidthOfColumn(viewMatchScheduleColumn);
 
+
         tournamentNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         tournamentActiveColumn.setCellValueFactory(new PropertyValueFactory<>("active"));
         tournamentTypeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
-
         viewMatchScheduleColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Tournament, MenuButton>, ObservableValue<MenuButton>>() {
             @Override
             public ObservableValue<MenuButton> call(TableColumn.CellDataFeatures<Tournament, MenuButton> param) {
@@ -107,10 +107,11 @@ public class FrontPageController {
 
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage) loginBtn.getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
         window.show();
+
     }
 
     private void setWidthOfColumn(TableColumn tableColumn) {

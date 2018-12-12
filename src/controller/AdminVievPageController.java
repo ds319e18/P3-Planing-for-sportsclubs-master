@@ -7,6 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import tournament.Tournament;
@@ -15,7 +17,17 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import javafx.scene.control.Control;
 
+
 public class AdminVievPageController {
+
+    @FXML
+    private ImageView logo01;
+    @FXML
+    private ImageView logo02;
+    @FXML
+    private ImageView logo03;
+    @FXML
+    private ImageView logo04;
 
     private String logo1 = null;
     private String logo2 = null;
@@ -48,8 +60,29 @@ public class AdminVievPageController {
 
 
     @FXML
+    public void setAddSponsers(MouseEvent event) throws MalformedURLException {
+        String imageFile;
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Select Image File");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files",
+                        "*.bmp", "*.png", "*.jpg", "*.gif")); // limit fileChooser options to image files
+        Node node = (Node) event.getSource();
+        File selectedFile = fileChooser.showOpenDialog(node.getScene().getWindow());
+
+        if (selectedFile != null) {
+            imageFile = selectedFile.toURI().toURL().toString();
+            Image im = new Image(imageFile);
+            ImageView iw = (ImageView) event.getSource();
+            iw.setImage(im);
+        }
+    }
+
+    @FXML
     public void setImages(MouseEvent event) throws MalformedURLException {
+        System.out.println("Test");
         String tempLogo = ((Control)event.getSource()).getId();
+        System.out.println(tempLogo);
         if(tempLogo == ("logo1")){
             logo1 = setAddSponser(event);
         }

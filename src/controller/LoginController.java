@@ -83,8 +83,8 @@ public class LoginController {
 
         } catch(LogInFailed e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
-            warning.setHeaderText("");
-            warning.setTitle("");
+            warning.setHeaderText("Fejl under login");
+            warning.setTitle("Fejl");
             warning.showAndWait();
         }
     }

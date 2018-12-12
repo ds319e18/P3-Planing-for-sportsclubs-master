@@ -13,51 +13,64 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreatingMatchScheduleController">
    <children>
-      <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/545398293_468759136948179_6752360962147221504_n.png" />
-         </image>
-         <VBox.margin>
-            <Insets left="497.5" />
-         </VBox.margin>
-      </ImageView>
+      <HBox prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #DCDCDC;">
+         <children>
+            <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../sample/LOGODONE.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="497.5" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
       <VBox prefHeight="78.0" prefWidth="1280.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Manuel tilføjelse af kampe" textAlignment="CENTER" wrappingWidth="1280.0">
                <font>
-                  <Font name="System Italic" size="20.0" />
+                  <Font name="Arial Italic" size="20.0" />
                </font>
                <VBox.margin>
-                  <Insets bottom="30.0" top="10.0" />
+                  <Insets bottom="30.0" top="20.0" />
                </VBox.margin>
             </Text>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <VBox prefHeight="30.0" prefWidth="49.0" />
-                  <VBox prefHeight="200.0" prefWidth="316.0" />
-                  <Text layoutX="10.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste over alle kampe i turningen:" wrappingWidth="379.13671875">
+                  <VBox prefHeight="16.0" prefWidth="45.0" />
+                  <VBox prefHeight="16.0" prefWidth="600.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Alle kampe i turningen:" wrappingWidth="325.03631591796875">
+                           <font>
+                              <Font name="Arial Italic" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="315.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children></VBox>
+                  <Text layoutX="376.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tryk på en kamp og derefter på hvor den skal spilles" wrappingWidth="409.43292236328125">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Arial Italic" size="14.0" />
                      </font>
-                  </Text>
-                  <Text layoutX="376.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Træk kampene ind i kampprogrammet" wrappingWidth="379.13671875">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </Text>
                </children>
             </HBox>
          </children>
       </VBox>
-      <HBox minHeight="-Infinity" prefHeight="502.0" prefWidth="1280.0">
+      <HBox minHeight="-Infinity" prefHeight="460.0" prefWidth="1280.0">
          <children>
             <VBox prefHeight="502.0" prefWidth="48.0" />
             <VBox fx:id="progressBox" maxWidth="393.0" minWidth="250.0" prefHeight="483.0" prefWidth="266.0" style="-fx-border-color: white;" />
             <VBox prefHeight="502.0" prefWidth="47.0" />
             <ListView fx:id="matchListView" prefHeight="502.0" prefWidth="281.0" />
-            <VBox prefHeight="502.0" prefWidth="689.0">
+            <VBox prefHeight="502.0" prefWidth="44.0" />
+            <VBox prefHeight="502.0" prefWidth="478.0">
                <children>
-                  <TabPane fx:id="matchDayTabPane" prefHeight="604.0" prefWidth="689.0" tabClosingPolicy="UNAVAILABLE" />
+                  <TabPane fx:id="matchDayTabPane" prefHeight="502.0" prefWidth="421.0" tabClosingPolicy="UNAVAILABLE" />
                </children>
             </VBox>
          </children>
@@ -65,12 +78,26 @@
       <HBox prefHeight="20.0" prefWidth="1280.0" />
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <VBox prefHeight="100.0" prefWidth="589.0" />
-            <Button mnemonicParsing="false" onAction="#RemoveMatchButtonClicked" prefHeight="32.0" prefWidth="114.0" text="Fjern kamp" />
+            <VBox prefHeight="100.0" prefWidth="684.0" />
             <VBox prefHeight="100.0" prefWidth="53.0" />
-            <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="32.0" prefWidth="120.0" text="Tilbage" />
-            <VBox prefHeight="33.0" prefWidth="100.0" />
-            <Button mnemonicParsing="false" onAction="#finishMatchScheduleButtonClicked" prefHeight="32.0" prefWidth="166.0" text="Færdiggør kampprogram" />
+            <VBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="231.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="32.0" prefWidth="120.0" text="Tilbage">
+                     <VBox.margin>
+                        <Insets right="40.0" top="51.0" />
+                     </VBox.margin>
+                  </Button>
+               </children></VBox>
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#RemoveMatchButtonClicked" prefHeight="32.0" prefWidth="114.0" text="Fjern kamp" />
+                  <Button mnemonicParsing="false" onAction="#finishMatchScheduleButtonClicked" prefHeight="32.0" prefWidth="177.0" text="Færdiggør kampprogram">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
          </children>
       </HBox>
    </children>
