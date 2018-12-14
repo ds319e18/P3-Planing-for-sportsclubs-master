@@ -8,9 +8,6 @@ public abstract class User {
     private ArrayList<Tournament> tournaments;
     private int id;
 
-    public User() {
-        }
-
     public void setId(int id) {
         this.id = id;
     }
