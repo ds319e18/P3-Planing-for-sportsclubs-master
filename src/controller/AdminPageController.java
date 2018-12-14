@@ -86,14 +86,15 @@ public class AdminPageController {
         viewMatchScheduleColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Tournament, MenuButton>, ObservableValue<MenuButton>>() {
             @Override
             public ObservableValue<MenuButton> call(TableColumn.CellDataFeatures<Tournament, MenuButton> param) {
-                MenuButton menuButton = new MenuButton();
+                MenuButton menuButton = new MenuButton("Vælg kampdag");
                 menuButton.setMinWidth(120);
-                for (MatchDay matchDay : param.getValue().getMatchSchedule().getMatchDays()) {
+                Tournament tournament = param.getValue();
+                for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
                     MenuItem menuItem = new MenuItem(matchDay.getName());
                     menuItem.setStyle("-fx-padding: 0 50 0 50");
                     menuItem.setOnAction(event -> {
                         try {
-                            viewMatchDaySelection(matchDay);
+                            viewMatchDaySelection(tournament, matchDay);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -107,14 +108,15 @@ public class AdminPageController {
         editTournamentColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Tournament, MenuButton>, ObservableValue<MenuButton>>() {
             @Override
             public ObservableValue<MenuButton> call(TableColumn.CellDataFeatures<Tournament, MenuButton> param) {
-                MenuButton menuButton = new MenuButton();
+                MenuButton menuButton = new MenuButton("Vælg kampdag");
                 menuButton.setMinWidth(120);
-                for (MatchDay matchDay : param.getValue().getMatchSchedule().getMatchDays()) {
+                Tournament tournament = param.getValue();
+                for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
                     MenuItem menuItem = new MenuItem(matchDay.getName());
                     menuItem.setStyle("-fx-padding: 0 50 0 50");
                     menuItem.setOnAction(event -> {
                         try {
-                            updateMatchDay(matchDay);
+                            updateMatchDay(tournament, matchDay);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -131,13 +133,13 @@ public class AdminPageController {
                 startDateColumn, endDateColumn, viewMatchScheduleColumn, editTournamentColumn);
     }
 
-    private void updateMatchDay(MatchDay matchDay) throws IOException {
+    private void updateMatchDay(Tournament tournament, MatchDay matchDay) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/UpdateTournament.FXML"));
         Parent newWindow = loader.load();
 
         UpdateTournamentController controller = loader.getController();
-        controller.setMatchDay(matchDay);
+        controller.setMatchDay(matchDay, tournament);
 
         Scene newScene = new Scene(newWindow);
 
@@ -147,13 +149,13 @@ public class AdminPageController {
         window.show();
     }
 
-    private void viewMatchDaySelection(MatchDay matchDay) throws IOException {
+    private void viewMatchDaySelection(Tournament tournament, MatchDay matchDay) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../View/SpectatorView.FXML"));
         Parent newWindow = loader.load();
 
         SpectatorViewController controller = loader.getController();
-        controller.setMatchDay(matchDay, user);
+        controller.setMatchDay(matchDay, user, tournament);
 
         Scene newScene = new Scene(newWindow);
 

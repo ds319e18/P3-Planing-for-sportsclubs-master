@@ -2,93 +2,102 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SpectatorViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: white;">
+      <VBox prefHeight="679.0" prefWidth="1216.0" VBox.vgrow="ALWAYS">
          <children>
-            <ImageView fitHeight="203.0" fitWidth="285.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/545398293_468759136948179_6752360962147221504_n.png" />
-               </image>
-               <VBox.margin>
-                  <Insets left="497.5" />
-               </VBox.margin>
-            </ImageView>
-            <VBox prefHeight="679.0" prefWidth="1216.0" VBox.vgrow="ALWAYS">
+            <VBox prefHeight="100.0" prefWidth="1280.0">
                <children>
-                  <HBox minHeight="-Infinity" prefHeight="429.0" prefWidth="1280.0" VBox.vgrow="ALWAYS">
+                  <VBox prefHeight="50.0" prefWidth="1280.0">
                      <children>
-                        <VBox prefHeight="429.0" prefWidth="240.0" />
-                        <TableView fx:id="matchTableView" prefHeight="429.0" prefWidth="800.0" />
-                        <VBox layoutX="736.0" layoutY="10.0" prefHeight="429.0" prefWidth="240.0" />
+                        <Label fx:id="tournamentNameLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="1309.0">
+                           <font>
+                              <Font size="38.0" />
+                           </font></Label>
                      </children>
-                  </HBox>
-                  <HBox prefHeight="250.0">
+                  </VBox>
+                  <VBox prefHeight="50.0" prefWidth="1280.0">
                      <children>
-                        <VBox HBox.hgrow="ALWAYS">
-                           <children>
-                              <HBox>
-                                 <children>
-                                    <Pane prefHeight="30.0" prefWidth="116.0" />
-                                    <Button mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" />
-                                 </children>
-                              </HBox>
-                              <HBox VBox.vgrow="ALWAYS">
-                                 <children>
-                                    <Pane HBox.hgrow="ALWAYS" />
-                                    <ImageView fx:id="logo01" fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets bottom="20.0" top="10.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Pane HBox.hgrow="ALWAYS" />
-                                    <ImageView fx:id="logo02" fitHeight="180.0" fitWidth="200.0" onMouseClicked="#setImages" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets bottom="20.0" top="10.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Pane HBox.hgrow="ALWAYS" />
-                                    <ImageView fx:id="logo03" fitHeight="180.0" fitWidth="200.0" onMouseClicked="#setImages" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets bottom="20.0" top="10.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Pane HBox.hgrow="ALWAYS" />
-                                    <ImageView fx:id="logo04" fitHeight="180.0" fitWidth="200.0" onMouseClicked="#setImages" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets bottom="20.0" top="10.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Pane HBox.hgrow="ALWAYS" />
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
+                        <Label fx:id="matchDayDateLabel" alignment="CENTER" prefHeight="50.0" prefWidth="1354.0">
+                           <font>
+                              <Font name="Arial Italic" size="18.0" />
+                           </font></Label>
                      </children>
-                  </HBox>
+                  </VBox>
                </children>
             </VBox>
+            <HBox minHeight="-Infinity" prefHeight="429.0" prefWidth="1280.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox prefHeight="429.0" prefWidth="240.0" />
+                  <TableView fx:id="matchTableView" prefHeight="429.0" prefWidth="800.0" />
+                  <VBox layoutX="736.0" layoutY="10.0" prefHeight="429.0" prefWidth="240.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="250.0">
+               <children>
+                  <VBox HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox>
+                           <children>
+                              <Pane prefHeight="30.0" prefWidth="116.0" />
+                              <Button mnemonicParsing="false" onAction="#setBackButtonPressed" prefHeight="30.0" prefWidth="90.0" text="Tilbage" />
+                           </children>
+                        </HBox>
+                        <HBox VBox.vgrow="ALWAYS">
+                           <children>
+                              <Pane HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="logo01" fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" top="10.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="logo02" fitHeight="180.0" fitWidth="200.0" onMouseClicked="#setImages" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" top="10.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="logo03" fitHeight="180.0" fitWidth="200.0" onMouseClicked="#setImages" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" top="10.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane HBox.hgrow="ALWAYS" />
+                              <ImageView fx:id="logo04" fitHeight="180.0" fitWidth="200.0" onMouseClicked="#setImages" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets bottom="20.0" top="10.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../images/47398204_745301389177366_2251635926323167232_n2.png" />
+                                 </image>
+                              </ImageView>
+                              <Pane HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
          </children>
       </VBox>
    </children>
-</AnchorPane>
+</VBox>

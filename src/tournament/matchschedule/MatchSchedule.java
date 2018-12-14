@@ -42,13 +42,6 @@ public class MatchSchedule {
         }
     }
 
-    public ObservableValue<ComboBox> getMatchDaysAsComboBox() {
-        ComboBox<MatchDay> matchDayComboBox = new ComboBox<>();
-        matchDayComboBox.getItems().addAll(matchDays);
-        ObservableValue<ComboBox> comboBoxObservableValue = new SimpleObjectProperty<>(matchDayComboBox);
-        return comboBoxObservableValue;
-    }
-
     public void setTimeBetweenMatchDays(int timeBetweenMatchDays) {
         for (MatchDay matchDay : matchDays) {
             matchDay.setTimeBetweenMatches(timeBetweenMatchDays);
@@ -60,7 +53,46 @@ public class MatchSchedule {
 
     public void setNoMixedMatches(ArrayList<Pool> poolList) {
         for (MatchDay matchDay : matchDays) {
-            matchDay.setNoMixedMatches(poolList);
+            ArrayList<Match> outputMatches = new ArrayList<>();
+            int fieldNumber = 0;
+
+            for (Field field : matchDay.getFieldList()) {
+                field.setFieldEndTime(matchDay.getStartTime());
+            }
+
+            for (Pool pool : poolList) {
+                ArrayList<Match> matches = new ArrayList<>();
+                matches.addAll(pool.getGroupBracket().getMatches());
+                matches.addAll(pool.getPlayoffBracket().getMatches());
+
+                for (Match match : matches) {
+                    // Tjekker at der ikke tilføjes kampe såldes at tiden overskrider den endtime som er valgt
+                    if (fieldNumber < matchDay.getFieldList().size() &&
+                            !((matchDay.getFieldList().get(fieldNumber).getFieldEndTime().plusMinutes(match.getDuration()
+                                    + matchDay.getTimeBetweenMatches()).isAfter(matchDay.getEndTime())))) {
+
+                        if (!match.isPlanned()) {
+                            matchDay.getFieldList().get(fieldNumber).setOccupied(true);
+                            match.setTimestamp(matchDay.getFieldList().get(fieldNumber).getFieldEndTime()); // Tiden kampen skal spilles sættes.
+                            match.setField(matchDay.getFieldList().get(fieldNumber));    // Kampens bane sættes.
+                            match.setDate(matchDay.getDate());
+                            match.setPlanned(true); // Kampen sættes til at være planlagt.
+                            // MatchDay'ens
+                            matchDay.getFieldList().get(fieldNumber).setFieldEndTime(matchDay.getFieldList().get(fieldNumber).getFieldEndTime()
+                                    .plusMinutes((match.getDuration() + matchDay.getTimeBetweenMatches())));
+                            outputMatches.add(match); // Kampen tilføjes til outputMatches.
+                        }
+
+                    }
+                }
+
+                if (fieldNumber < matchDay.getFieldList().size() &&
+                        matchDay.getFieldList().get(fieldNumber).isOccupied()) {
+                    matchDay.getFieldList().get(fieldNumber).setOccupied(false);
+                    fieldNumber++;
+                }
+            }
+            matchDay.setMatches(outputMatches);
         }
     }
 

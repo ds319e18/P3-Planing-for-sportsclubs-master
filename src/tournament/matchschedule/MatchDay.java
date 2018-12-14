@@ -22,6 +22,7 @@ MatchDay {
 
     public MatchDay(LocalDate date) {
         this.date = date;
+        matches = new ArrayList<>();
     }
 
     public ArrayList<Match> getMatches() {
@@ -44,7 +45,9 @@ MatchDay {
         this.fieldList = fieldList;
     }
 
-    public void setMatches() { this.matches = new ArrayList<>(); }
+    public void setMatches(ArrayList<Match> matches) {
+        this.matches = matches;
+    }
 
     public void setStartTime(String startTimeText) {
         this.startTime = LocalTime.parse(startTimeText);
@@ -70,46 +73,6 @@ MatchDay {
         this.matches = matches;
     }
 
-    public void setNoMixedMatches(ArrayList<Pool> poolList) {
-        ArrayList<Match> outputMatches = new ArrayList<>();
-        int fieldNumber = 0;
-
-        setFieldsEndTime();
-
-        for (Pool pool : poolList) {
-            ArrayList<Match> matches = new ArrayList<>();
-            matches.addAll(pool.getGroupBracket().getMatches());
-            matches.addAll(pool.getPlayoffBracket().getMatches());
-
-            for (Match match : matches) {
-                // Tjekker at der ikke tilføjes kampe såldes at tiden overskrider den endtime som er valgt
-                if (fieldNumber < fieldList.size() &&
-                        !((fieldList.get(fieldNumber).getFieldEndTime().plusMinutes(match.getDuration() + this.timeBetweenMatches).isAfter(this.endTime)))) {
-
-                    if (!match.isPlanned()) {
-                        fieldList.get(fieldNumber).setOccupied(true);
-                        match.setTimestamp(this.fieldList.get(fieldNumber).getFieldEndTime()); // Tiden kampen skal spilles sættes.
-                        match.setField(this.fieldList.get(fieldNumber));    // Kampens bane sættes.
-                        match.setDate(this.date);
-                        match.setPlanned(true); // Kampen sættes til at være planlagt.
-                        // MatchDay'ens
-                        this.fieldList.get(fieldNumber).setFieldEndTime(this.fieldList.get(fieldNumber).getFieldEndTime()
-                                .plusMinutes((match.getDuration() + this.timeBetweenMatches)));
-                        outputMatches.add(match); // Kampen tilføjes til outputMatches.
-                    }
-
-                }
-            }
-
-            if (fieldNumber < fieldList.size() &&
-                    fieldList.get(fieldNumber).isOccupied()) {
-                fieldList.get(fieldNumber).setOccupied(false);
-                fieldNumber++;
-            }
-        }
-        this.matches = outputMatches;
-    }
-
     private boolean sameTeamInMatches(Match match1, Match match2) {
         return (match2.getFirstTeam().equals(match1.getFirstTeam())
                 || match2.getFirstTeam().equals(match1.getSecondTeam())
@@ -124,12 +87,6 @@ MatchDay {
                 plannedMatch.getTimeStamp().isAfter(this.fieldList.get(fieldNumber).getFieldEndTime())) ||    // Før sluttidspunkt
                 plannedMatch.getTimeStamp().equals(this.fieldList.get(fieldNumber).getFieldEndTime()) ||      // På starttidspunkt
                 plannedMatch.getTimeStamp().equals(this.fieldList.get(fieldNumber).getFieldEndTime().plusMinutes(newMatch.getDuration()));// På sluttidpunkt
-    }
-
-    private void setFieldsEndTime() {
-        for (Field field : this.fieldList) {
-            field.setFieldEndTime(this.startTime);
-        }
     }
 
     public String getName() {

@@ -10,18 +10,22 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Control;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import tournament.Match;
 import tournament.Result;
 import tournament.Team;
+import tournament.Tournament;
 import tournament.matchschedule.Field;
 import tournament.matchschedule.MatchDay;
 
@@ -41,6 +45,12 @@ public class SpectatorViewController {
     @FXML
     private ImageView logo04;
 
+    @FXML
+    private Label tournamentNameLabel;
+
+    @FXML
+    private Label matchDayDateLabel;
+
     private String logo1 = null;
     private String logo2 = null;
     private String logo3 = null;
@@ -50,10 +60,14 @@ public class SpectatorViewController {
     private TableView<Match> matchTableView;
     private User user;
     private MatchDay matchDay;
+    private Tournament tournament;
 
-    void setMatchDay(MatchDay matchDay, User user) {
+    void setMatchDay(MatchDay matchDay, User user, Tournament tournament) {
         this.matchDay = matchDay;
         this.user = user;
+        this.tournament = tournament;
+        tournamentNameLabel.setText(tournament.getName());
+        matchDayDateLabel.setText(matchDay.getName());
         setMatchTableView();
         addMatchesInTable();
     }

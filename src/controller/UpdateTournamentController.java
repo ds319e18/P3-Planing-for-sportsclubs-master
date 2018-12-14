@@ -1,5 +1,6 @@
 package controller;
 
+import account.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,12 +8,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Control;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
@@ -46,12 +50,22 @@ public class UpdateTournamentController {
     private String logo4 = null;
 
     @FXML
+    private Label tournamentNameLabel;
+
+    @FXML
+    private Label matchDayDateLabel;
+
+    @FXML
     private TableView<Match> matchTableView;
 
     private MatchDay matchDay;
+    private Tournament tournament;
 
-    void setMatchDay(MatchDay matchDay) {
+    void setMatchDay(MatchDay matchDay, Tournament tournament) {
         this.matchDay = matchDay;
+        this.tournament = tournament;
+        tournamentNameLabel.setText(tournament.getName());
+        matchDayDateLabel.setText(matchDay.getName());
         setMatchTableView();
         addMatchesInTable();
     }
