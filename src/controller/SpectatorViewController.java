@@ -1,5 +1,8 @@
 package controller;
 
+import account.Administrator;
+import account.Spectator;
+import account.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,11 +48,12 @@ public class SpectatorViewController {
 
     @FXML
     private TableView<Match> matchTableView;
-
+    private User user;
     private MatchDay matchDay;
 
-    void setMatchDay(MatchDay matchDay) {
+    void setMatchDay(MatchDay matchDay, User user) {
         this.matchDay = matchDay;
+        this.user = user;
         setMatchTableView();
         addMatchesInTable();
     }
@@ -97,10 +101,14 @@ public class SpectatorViewController {
 
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
+        Parent newWindow = null;
+
+        if (user instanceof Administrator)
+            newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
+        else if (user instanceof Spectator)
+            newWindow = FXMLLoader.load(getClass().getResource("../View/FrontPage.FXML"));
 
         Scene newScene = new Scene(newWindow);
-
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);

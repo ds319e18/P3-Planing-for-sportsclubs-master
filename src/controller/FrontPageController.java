@@ -1,6 +1,7 @@
 package controller;
 
 import account.Spectator;
+import account.User;
 import database.DAO.TournamentDAO;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
@@ -27,7 +28,7 @@ import java.util.Objects;
 
 public class FrontPageController {
     private String id = "Jetsmark";
-    private Spectator user = new Spectator(Objects.hash(id));
+    private User user = new Spectator(Objects.hash(id));
 
     @FXML
     private Button loginBtn;
@@ -103,11 +104,11 @@ public class FrontPageController {
         Parent newWindow = loader.load();
 
         SpectatorViewController controller = loader.getController();
-        controller.setMatchDay(matchDay);
+        controller.setMatchDay(matchDay, user);
 
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage window = (Stage) loginBtn.getScene().getWindow();
 
         window.setScene(newScene);
         window.show();

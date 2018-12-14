@@ -29,12 +29,6 @@ public class TournamentSetupController implements CheckInput {
     private final int SKILL_LEVEL_MAX = 3;
     private final int stepNumber = 0;
 
-    private Administrator user;
-
-    public void setUser(Administrator user) {
-        this.user = user;
-    }
-
     @FXML
     private VBox progressBox;
 

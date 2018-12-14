@@ -13,8 +13,8 @@ public class Database {
         Connection con = null;
 
         Properties properties = new Properties();
-        properties.setProperty("user", "4909");
-        properties.setProperty("password", "Fourninezeronine");
+        properties.setProperty("user", "root");
+        properties.setProperty("password", "markussql");
         properties.setProperty("useSSL", "false");
         properties.setProperty("useUnicode", "true");
         properties.setProperty("useJDBCCompliantTimezoneShift", "true");
