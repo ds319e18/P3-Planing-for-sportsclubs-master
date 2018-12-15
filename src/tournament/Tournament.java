@@ -106,6 +106,10 @@ public class Tournament {
         return poolList;
     }
 
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public String getName() {
         return name;
     }

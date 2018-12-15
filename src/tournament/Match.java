@@ -119,10 +119,6 @@ public class Match implements Comparable<Match> {
 
     public LocalDate getDate() { return date; }
 
-    public void updateMatchResult() {
-
-    }
-
     public void setDate(LocalDate date) { this.date = date; }
 
     // Sorting matches based on year group to sort in the MatchDay class

@@ -21,6 +21,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class TournamentTest {
     private final int poolNumber = 6;
 
+    private static Tournament createEmptyTournament() {
+        Tournament tournament = new Tournament.Builder("Jetsmark IF tournament").setStartDate(LocalDate.now())
+                .setEndDate(LocalDate.now().plusDays(1)).build();
+        return tournament;
+    }
+
     @Test
     void findCorrectPool() {
         Tournament tournament = new Tournament.Builder("Jetsmark IF tournament").build();
@@ -35,16 +41,15 @@ class TournamentTest {
 
     @Test
     void isInActive() {
-        Tournament tournament = new Tournament.Builder("Jetsmark IF tournament").build();
+        Tournament tournament = createEmptyTournament();
         assertFalse(tournament.isActive());
-
     }
 
     @Test
     void isActive() {
-        Tournament tournament = new Tournament.Builder("Jetsmark IF tournament").setActive(true).build();
+        Tournament tournament = createEmptyTournament();
+        tournament.setActive(true);
         assertTrue(tournament.isActive());
-
     }
 
     // IKKE SLET DENNE TEST
