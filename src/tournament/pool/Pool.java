@@ -25,6 +25,10 @@ public class Pool {
         this.playoffBracket = playoffBracketType.createPlayoffBracket(this.groupBracket, matchDuration);
     }
 
+    public String getPlayOffType() {
+        return playoffBracket.toString();
+    }
+
     // Adding team to the correct pool
     public void addTeam(Team team) {
         int count;

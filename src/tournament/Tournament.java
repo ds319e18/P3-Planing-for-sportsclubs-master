@@ -19,6 +19,8 @@ public class Tournament {
     private ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
 
+
+
     // Method to find the correct pool when adding or removing teams to the tournament
     public Pool findCorrectPool(int yearGroup, String skill) {
         try {
@@ -76,6 +78,8 @@ public class Tournament {
     public boolean isActive() {
         return active;
     }
+
+
 
     public ArrayList<Field> getFieldList() {
         return fieldList;

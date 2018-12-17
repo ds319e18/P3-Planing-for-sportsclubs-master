@@ -13,26 +13,30 @@ public class PlacementPlay extends PlayoffBracket {
     @Override
     public PlacementPlay createPlayoffBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
         if (groupBracket.getAmountOfGroups() > 2) {
-            throw new IllegalAmountOfGroupsException();
-        } else if (groupBracket.getAmountOfGroups() == 2) {
-            if (groupBracket.getGroups().get(0).getTeamList().size() != groupBracket.getGroups().get(1).getTeamList().size()) {
-                throw new IllegalAmountOfTeamsException();
-            }
+            throw new IllegalAmountOfGroupsException("placeringsspil");
         } else {
             // Hvis der er ulige hold og kun én gruppe
-            if ((groupBracket.getGroups().get(0).getTeamList().size() % 2) != 0) {
-                throw new IllegalAmountOfTeamsException();
+            if (groupBracket.getGroups().size() == 1) {
+                if (((groupBracket.getGroups().get(0).getTeamList().size() % 2) != 0)) {
+                    throw new IllegalAmountOfTeamsException();
+                }
+            }
+            if (groupBracket.getAmountOfGroups() == 2) {
+                if (groupBracket.getGroups().get(0).getTeamList().size() != groupBracket.getGroups().get(1).getTeamList().size()) {
+                    throw new IllegalAmountOfTeamsException();
+                }
             }
 
-            int iter;
+            int noOfMatches;
             groupBracket.setAdvancingTeamsPrGroup(groupBracket.getGroups().get(0).getTeamList().size());
             if (groupBracket.getAmountOfGroups() == 1) {
-                iter = groupBracket.getAmountOfAdvancingTeamsPrGroup() / 2;
+                noOfMatches = groupBracket.getAmountOfAdvancingTeamsPrGroup() / 2;
             } else {
-                iter = groupBracket.getAmountOfAdvancingTeamsPrGroup();
+                noOfMatches = groupBracket.getAmountOfAdvancingTeamsPrGroup();
             }
 
-            while (iter < groupBracket.getAmountOfAdvancingTeamsPrGroup()) {
+            int iter = 0; 
+            while (iter < noOfMatches) {
                 super.getMatches().add(new Match.Builder(matchDurationInMinutes)
                         .setName("Placement Match " + (iter + 1))
                         .setFinished(false)
