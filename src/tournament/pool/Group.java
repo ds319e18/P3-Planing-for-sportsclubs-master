@@ -15,6 +15,10 @@ public class Group {
         this.name = name;
     }
 
+    public void sortPoints() {
+        this.getTeamList().sort(new TeamPointsComp());
+    }
+
     public void addTeam(Team team) {
         teamList.add(team);
     }
@@ -23,12 +27,14 @@ public class Group {
         teamList.remove(team);
     }
 
-    public ArrayList<Team> getTeamList() {
-        return teamList;
+    @Override
+    public String toString() {
+        return "grupperne";
     }
 
-    public void sortPoints() {
-        this.getTeamList().sort(new TeamPointsComp());
+    // Getters
+    public ArrayList<Team> getTeamList() {
+        return teamList;
     }
 
     public String getName() {
@@ -37,10 +43,5 @@ public class Group {
 
     public int getAmountOfTeams() {
         return teamList.size();
-    }
-
-    @Override
-    public String toString() {
-        return "grupperne";
     }
 }

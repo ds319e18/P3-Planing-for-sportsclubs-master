@@ -21,11 +21,6 @@ public class Database {
         properties.setProperty("useLegacyDatetimeCode", "false");
         properties.setProperty("serverTimezone", "UTC");
         properties.setProperty("allowPublicKeyRetrieval", "true");
-        properties.setProperty("", "");
-        properties.setProperty("", "");
-        properties.setProperty("", "");
-        properties.setProperty("", "");
-        properties.setProperty("", "");
 
         try {
             con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Tournament", properties);

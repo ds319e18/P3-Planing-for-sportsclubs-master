@@ -85,6 +85,7 @@ public class Match implements Comparable<Match> {
         this.checked = checked;
     }
 
+    // Getters
     public Team getWinner() {
         return winner;
     }
@@ -153,7 +154,6 @@ public class Match implements Comparable<Match> {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(timestamp, date, firstTeam, secondTeam);
     }
 

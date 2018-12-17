@@ -24,52 +24,6 @@ MatchDay {
         this.date = date;
     }
 
-    public ArrayList<Match> getMatches() {
-        return matches;
-    }
-
-    public ArrayList<Field> getFieldList() {
-        return fieldList;
-    }
-
-    public LocalTime getStartTime() {
-        return startTime;
-    }
-
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public void setFieldList(ArrayList<Field> fieldList) {
-        this.fieldList = fieldList;
-    }
-
-    public void setMatches() { this.matches = new ArrayList<>(); }
-
-    public void setStartTime(String startTimeText) {
-        this.startTime = LocalTime.parse(startTimeText);
-    }
-
-    public void setEndTime(String endTimeText) {
-        this.endTime = LocalTime.parse(endTimeText);
-    }
-
-    public void setName(String name) { this.name = name; }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public int getTimeBetweenMatches() { return timeBetweenMatches; }
-
-    public void setTimeBetweenMatches(int timeBetweenMatches) {
-        this.timeBetweenMatches = timeBetweenMatches;
-    }
-
-    public void setMatchesMix(ArrayList<Match> matches) {
-        this.matches = matches;
-    }
-
     public void setNoMixedMatches(ArrayList<Pool> poolList) {
         ArrayList<Match> outputMatches = new ArrayList<>();
         int fieldNumber = 0;
@@ -154,4 +108,53 @@ MatchDay {
 
         return Objects.hash(getDate());
     }
+
+    // Getters
+    public ArrayList<Match> getMatches() {
+        return matches;
+    }
+
+    public ArrayList<Field> getFieldList() {
+        return fieldList;
+    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public int getTimeBetweenMatches() { return timeBetweenMatches; }
+
+    // Setters
+    public void setFieldList(ArrayList<Field> fieldList) {
+        this.fieldList = fieldList;
+    }
+
+    public void setMatches() { this.matches = new ArrayList<>(); }
+
+    public void setStartTime(String startTimeText) {
+        this.startTime = LocalTime.parse(startTimeText);
+    }
+
+    public void setEndTime(String endTimeText) {
+        this.endTime = LocalTime.parse(endTimeText);
+    }
+
+    public void setName(String name) { this.name = name; }
+
+    public void setTimeBetweenMatches(int timeBetweenMatches) {
+        this.timeBetweenMatches = timeBetweenMatches;
+    }
+
+    public void setMatchesMix(ArrayList<Match> matches) {
+        this.matches = matches;
+    }
+
 }
