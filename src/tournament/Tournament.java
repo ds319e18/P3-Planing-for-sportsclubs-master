@@ -1,5 +1,7 @@
 package tournament;
 
+import exceptions.PoolNotFoundException;
+import javafx.scene.control.Alert;
 import tournament.pool.*;
 import tournament.matchschedule.*;
 
@@ -16,36 +18,45 @@ public class Tournament {
     private ArrayList<Field> fieldList;
     private ArrayList<Pool> poolList;
     private MatchSchedule matchSchedule;
-    private int tournamentID;
 
     // Method to find the correct pool when adding or removing teams to the tournament
     public Pool findCorrectPool(int yearGroup, String skill) {
-        for (Pool createdPools : poolList) {
-            if (createdPools.getSkillLevel().equals(skill) && createdPools.getYearGroup() == yearGroup) {
-                return createdPools;
-            } else {
-                // Throw poolnotfoundexception
+        try {
+            for (Pool createdPools : poolList) {
+                if (createdPools.getSkillLevel().equals(skill) && createdPools.getYearGroup() == yearGroup) {
+                    return createdPools;
+                }
             }
+            throw new PoolNotFoundException();
+        } catch (PoolNotFoundException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Der opstod en fejl mens der søgtes efter en pulje.");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
         }
+
         return null;
     }
 
     public Pool findCorrectPool(String name) {
-        for (Pool createdPool : poolList) {
-            if (createdPool.getName().equals(name)) {
-                return createdPool;
+        try {
+            for (Pool createdPool : poolList) {
+                if (createdPool.getName().equals(name)) {
+                    return createdPool;
+                }
             }
+            throw new PoolNotFoundException();
+        } catch (PoolNotFoundException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Der opstod en fejl mens der søgtes efter en pulje.");
+            warning.setTitle("Fejl");
+            warning.showAndWait();
         }
-        return null;
+
+        throw new PoolNotFoundException();
     }
 
     // Getters
-
-
-    public int getTournamentID() {
-        return tournamentID;
-    }
-
     public TournamentType getType() {
         return type;
     }
@@ -114,12 +125,6 @@ public class Tournament {
         return name;
     }
 
-    public void setTournamentID(int tournamentID) {
-        this.tournamentID = tournamentID;
-    }
-
-    // This next part of the class deals with updating the tournament while active
-
     // Inner Tournament-builder
     public static class Builder {
         private String name = "MyTournament";
@@ -129,7 +134,6 @@ public class Tournament {
         private TournamentType type;
         private ArrayList<Field> fieldList = new ArrayList<>();
         private ArrayList<Pool> poolList = new ArrayList<>();
-        private MatchSchedule matchSchedule;
 
         public Builder(String name) {
             this.name = name;

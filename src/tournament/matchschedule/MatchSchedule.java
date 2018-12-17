@@ -35,6 +35,7 @@ public class MatchSchedule {
         }
     }
 
+    // Future work
     public void setMixedMatches() {
     }
 
@@ -97,10 +98,6 @@ public class MatchSchedule {
     }
 
     // Getters
-    public LocalDate getStartDate() { return startDate; }
-
-    public LocalDate getEndDate() { return endDate; }
-
     public ArrayList<MatchDay> getMatchDays() {
         return matchDays;
     }
@@ -108,6 +105,4 @@ public class MatchSchedule {
     public long getNumberOfMatchDays() {
         return (DAYS.between(this.startDate, this.endDate) + 1);
     }
-
-
 }

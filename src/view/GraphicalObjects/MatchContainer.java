@@ -1,8 +1,6 @@
-package View.GraphicalObjects;
+package view.GraphicalObjects;
 
 import controller.CreatingMatchScheduleController;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tab;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -132,7 +130,6 @@ public class MatchContainer extends  HBox{
         this.setSelected(false);
         this.match.setTimestamp(matchStartTime);
         this.match.setField(matchContainer.getField());
-        System.out.println(match.getField());
     }
 
     public Field getField() {

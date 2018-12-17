@@ -46,7 +46,6 @@ public class TeamDAO {
         }
     }
 
-
     // Inserting all teams in a tournament
     public void insertTeam(Tournament tournament) {
         try (Connection con = Database.connect()) {
@@ -155,6 +154,4 @@ public class TeamDAO {
         }
         return null;
     }
-
-
 }

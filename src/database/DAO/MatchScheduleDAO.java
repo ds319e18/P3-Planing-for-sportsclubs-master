@@ -49,8 +49,6 @@ public class MatchScheduleDAO {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
-        //TODO lav exception
         return 0;
     }
 

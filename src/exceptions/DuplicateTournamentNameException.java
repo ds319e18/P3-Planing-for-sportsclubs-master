@@ -1,7 +1,7 @@
 package exceptions;
 
-public class DuplicateTournamentNameException extends RuntimeException {
+public class DuplicateTournamentNameException extends RuntimeException { // Future work
     public DuplicateTournamentNameException() {
-        System.out.println("Der findes allerede en turnering med dette navn.");
+        super("Der findes allerede en turnering med dette navn.");
     }
 }

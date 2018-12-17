@@ -12,15 +12,27 @@ import java.util.ArrayList;
 public class PlacementPlay extends PlayoffBracket {
     @Override
     public PlacementPlay createPlayoffBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
-        if (groupBracket.getAmountOfGroups() != 2) {
+        if (groupBracket.getAmountOfGroups() > 2) {
             throw new IllegalAmountOfGroupsException();
-        }
-        else if (groupBracket.getGroups().get(0).getTeamList().size() != groupBracket.getGroups().get(1).getTeamList().size()) {
-            throw new IllegalAmountOfTeamsException();
+        } else if (groupBracket.getAmountOfGroups() == 2) {
+            if (groupBracket.getGroups().get(0).getTeamList().size() != groupBracket.getGroups().get(1).getTeamList().size()) {
+                throw new IllegalAmountOfTeamsException();
+            }
         } else {
-            int iter = 0;
+            // Hvis der er ulige hold og kun én gruppe
+            if ((groupBracket.getGroups().get(0).getTeamList().size() % 2) != 0) {
+                throw new IllegalAmountOfTeamsException();
+            }
+
+            int iter;
             groupBracket.setAdvancingTeamsPrGroup(groupBracket.getGroups().get(0).getTeamList().size());
-            while (iter < groupBracket.getAmountOfAdvancingTeamsPrGroup() && iter < groupBracket.getAmountOfAdvancingTeamsPrGroup()) {
+            if (groupBracket.getAmountOfGroups() == 1) {
+                iter = groupBracket.getAmountOfAdvancingTeamsPrGroup() / 2;
+            } else {
+                iter = groupBracket.getAmountOfAdvancingTeamsPrGroup();
+            }
+
+            while (iter < groupBracket.getAmountOfAdvancingTeamsPrGroup()) {
                 super.getMatches().add(new Match.Builder(matchDurationInMinutes)
                         .setName("Placement Match " + (iter + 1))
                         .setFinished(false)

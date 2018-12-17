@@ -14,14 +14,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
 import tournament.Match;
 import tournament.Result;
 import tournament.Team;
@@ -118,9 +114,9 @@ public class SpectatorViewController {
         Parent newWindow = null;
 
         if (user instanceof Administrator)
-            newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
+            newWindow = FXMLLoader.load(getClass().getResource("../view/AdminPage.FXML"));
         else if (user instanceof Spectator)
-            newWindow = FXMLLoader.load(getClass().getResource("../View/FrontPage.FXML"));
+            newWindow = FXMLLoader.load(getClass().getResource("../view/FrontPage.FXML"));
 
         Scene newScene = new Scene(newWindow);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

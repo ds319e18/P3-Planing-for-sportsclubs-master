@@ -14,11 +14,12 @@ public class GoldAndBronzePlay extends PlayoffBracket {
 
     @Override
     public PlayoffBracket createPlayoffBracket(GroupBracket groupBracket, int matchDurationInMinutes) {
-        if (groupBracket.getAmountOfGroups() != 2) {
+        if (groupBracket.getAmountOfGroups() > 2) {
             throw new IllegalAmountOfGroupsException();
-        }
-        else if (groupBracket.getGroups().get(0).getTeamList().size() != groupBracket.getGroups().get(1).getTeamList().size()) {
-            throw new IllegalAmountOfTeamsException();
+        } else if (groupBracket.getAmountOfGroups() == 2) {
+            if (groupBracket.getGroups().get(0).getTeamList().size() != groupBracket.getGroups().get(1).getTeamList().size()) {
+                throw new IllegalAmountOfTeamsException();
+            }
         } else {
             goldMatch = new Match.Builder(matchDurationInMinutes)
                     .setName("Final Match 1")

@@ -1,6 +1,5 @@
 package controller;
 
-import account.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,12 +14,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-import javafx.util.converter.LocalTimeStringConverter;
 import tournament.Match;
 import tournament.Result;
 import tournament.Team;
@@ -136,7 +132,7 @@ public class UpdateTournamentController {
 
     @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException{
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
+        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/AdminPage.FXML"));
 
         Scene newScene = new Scene(newWindow);
 

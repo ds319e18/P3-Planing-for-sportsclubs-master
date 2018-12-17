@@ -1,4 +1,4 @@
-package View.GraphicalObjects;
+package view.GraphicalObjects;
 
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;

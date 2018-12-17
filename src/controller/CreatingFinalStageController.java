@@ -21,7 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import tournament.Tournament;
-import View.GraphicalObjects.ProgressBox;
+import view.GraphicalObjects.ProgressBox;
 import tournament.pool.Group;
 import tournament.pool.Pool;
 import tournament.pool.bracket.GoldAndBronzePlay;
@@ -179,13 +179,6 @@ public class CreatingFinalStageController implements CheckInput {
     }
 
     @FXML
-    private void setOnKnockoutChosen() {
-        advancingTeamsLabel.setVisible(true);
-        advancingComboBox.setVisible(true);
-    }
-
-
-    @FXML
     public void setBackButtonPressed(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../view/VerifyGroupsAndPools.FXML"));
@@ -267,8 +260,6 @@ public class CreatingFinalStageController implements CheckInput {
             if (pool.getPlayOffCreationStatus().equals("Ikke færdig")) {
                 throw new MissingPressingSaveException();
             }
-
         }
     }
-
 }

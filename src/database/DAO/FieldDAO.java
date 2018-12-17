@@ -56,8 +56,6 @@ public class FieldDAO {
 
         try {
             int tournamentID = Objects.hash(tournament.getName());
-            System.out.println(tournamentID);
-            System.out.println(match.getField().getName());
             String query = "select * from Field where idTournamentField = " + tournamentID + " AND name = '" + match.getField().getName() + "'";
             ResultSet set = con.createStatement().executeQuery(query);
 
@@ -71,7 +69,7 @@ public class FieldDAO {
     }
 
     // Finds field name in the database and returns it
-    public String getFieldName(Tournament tournament, int fieldID, Connection con) {
+    public String getFieldName(int fieldID, Connection con) {
         try {
             String fieldName;
             String sql = "select * from Field where idField =" + fieldID;

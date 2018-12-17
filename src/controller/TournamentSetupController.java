@@ -1,6 +1,5 @@
 package controller;
 
-import account.Administrator;
 import exceptions.BackInDateException;
 import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
@@ -18,7 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import tournament.Tournament;
 import tournament.TournamentType;
-import View.GraphicalObjects.ProgressBox;
+import view.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 
 import java.io.IOException;
@@ -134,33 +133,6 @@ public class TournamentSetupController implements CheckInput {
         window.setScene(newScene);
         window.show();
     }
-
-    /*private ArrayList<Pool> getSelectedPools() {
-        ArrayList<Pool> poolList = new ArrayList<>();
-
-        String yearString;
-
-        // the selected pools will be saved in a list
-        for (int i = 0; i < YEAR_GROUP_MAX; i++) {
-            TitledPane titledPane = poolAccordion.getPanes().get(i);
-            HBox hbox = (HBox) titledPane.getContent();
-
-            for (int j = 0; j < SKILL_LEVEL_MAX; j++) {
-                CheckBox checkBox = (CheckBox) hbox.getChildren().get(j);
-
-                if (checkBox.isSelected()) {
-
-                    yearString = titledPane.getText().replace(String.valueOf
-                            (titledPane.getText().charAt(0)), "");
-                    poolList.add(new Pool.Builder()
-                                                    .setSkilllLevel(checkBox.getText())
-                                                    .setYearGroup(Integer.parseInt(yearString))
-                                                    .build());
-                }
-            }
-        }
-        return poolList;
-    }*/
 
     private ArrayList<Pool> getSelectedPoolsAndMatchLengths() { // and match lengths
         ArrayList<Pool> poolList = new ArrayList<>();

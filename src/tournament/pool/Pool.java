@@ -64,10 +64,6 @@ public class Pool {
     }
 
     // Getters
-    public String getPlayOffType() {
-        return playoffBracket.toString();
-    }
-
     public String getPlayOffVerificationStatus() {
         return playOffVerificationStatus;
     }

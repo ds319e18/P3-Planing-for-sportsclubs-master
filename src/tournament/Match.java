@@ -20,7 +20,7 @@ public class Match implements Comparable<Match> {
     private Result result = new Result(100, 100); //Dette resultat kommer aldrig, og betyder at kampen ikke har et resultat
     private Team winner;
     private Team loser;
-    private boolean drawn;
+    private boolean drawn = false;
     // This field is used when checking whether or not a match has been checked when creating the next round in a knockout play
     private boolean checked;
     private boolean planned;
@@ -73,10 +73,6 @@ public class Match implements Comparable<Match> {
         this.finished = true;
     }
 
-    public LocalTime getTimestamp() {
-        return timestamp;
-    }
-
     public boolean isChecked() {
         return checked;
     }
@@ -117,8 +113,6 @@ public class Match implements Comparable<Match> {
     public boolean isFinished() {
         return finished;
     }
-
-    public LocalDate getDate() { return date; }
 
     public void setDate(LocalDate date) { this.date = date; }
 
@@ -212,6 +206,5 @@ public class Match implements Comparable<Match> {
 
             return match;
         }
-
     }
 }

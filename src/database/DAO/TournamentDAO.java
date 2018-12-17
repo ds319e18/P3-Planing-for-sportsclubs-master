@@ -20,8 +20,6 @@ public class TournamentDAO {
         PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
         MatchDAO matchSQL = new MatchDAO();
         MatchDayDAO matchDaySQL = new MatchDayDAO();
-
-
         ArrayList<Tournament> tournaments = new ArrayList<>();
 
         try (Connection con = Database.connect()) {
@@ -65,8 +63,6 @@ public class TournamentDAO {
 
             }
 
-
-
             // Kaldes til allersidst
             return tournaments;
 
@@ -106,21 +102,5 @@ public class TournamentDAO {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    public int findTournamentID(Tournament tournament, int accountID, Connection con) {
-
-        try {
-            String sql = "select * from Tournament where idAccountTournament = " + accountID + " AND name = '" + tournament.getName() + "'";
-
-            ResultSet set = con.createStatement().executeQuery(sql);
-
-            if (set.next()) {
-                return set.getInt("idTournament");
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return 0;
     }
 }

@@ -22,10 +22,9 @@ import tournament.Result;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
-import View.GraphicalObjects.ProgressBox;
+import view.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 
-import javafx.scene.control.Control;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -210,9 +209,7 @@ public class AutogenerateMatchScheduleController {
 
     @FXML
     public void setImages(MouseEvent event) throws MalformedURLException {
-        System.out.println("Test");
         String tempLogo = ((ImageView)event.getSource()).getId();
-        System.out.println(tempLogo);
         if(tempLogo == (logo01.getId())){
             logo1 = setAddSponser(event);
         }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class MatchDayDAO {
-    MatchDAO matchSQL = new MatchDAO();
+    private MatchDAO matchSQL = new MatchDAO();
 
     // Inserting all match days from the tournament in the database
     public void insertMatchDay(Tournament tournament) {

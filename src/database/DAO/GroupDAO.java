@@ -47,7 +47,6 @@ public class GroupDAO {
             System.out.println(e.getMessage());
         }
 
-        //TODO KAST EXCEPTION
         return 0;
     }
 }

@@ -1,4 +1,4 @@
-package View.GraphicalObjects;
+package view.GraphicalObjects;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;

@@ -4,10 +4,6 @@ import exceptions.BackInTimeException;
 import exceptions.InvalidInputException;
 import exceptions.MissingInputException;
 import exceptions.TooManyMatchesInTheMatchDay;
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,7 +20,7 @@ import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalTimeStringConverter;
 import tournament.Match;
-import View.GraphicalObjects.ProgressBox;
+import view.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 import tournament.Tournament;
 import tournament.pool.Pool;
@@ -108,8 +104,6 @@ public class MatchScheduleSetupController implements CheckInput {
         matchDayList.addAll(tournament.getMatchSchedule().getMatchDays());
 
         matchDayTableView.setItems(matchDayList);
-
-        matchDayTableView.getSelectionModel().selectedItemProperty().addListener(new RowSelectInvalidationListener());
     }
 
     @Override
@@ -156,6 +150,7 @@ public class MatchScheduleSetupController implements CheckInput {
 
     @FXML
     private void autogenerateMixedMatches() {
+        // Fremtidigt arbejde
         try {
             checkAllInput();
             tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
@@ -185,7 +180,7 @@ public class MatchScheduleSetupController implements CheckInput {
             tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("../View/AutoMatchSchedule.fxml"));
+            loader.setLocation(getClass().getResource("../view/AutoMatchSchedule.fxml"));
             Parent newWindow = loader.load();
 
             AutogenerateMatchScheduleController msc = loader.getController();
@@ -275,8 +270,6 @@ public class MatchScheduleSetupController implements CheckInput {
         window.show();
     }
 
-
-
     @FXML
     private void changeStartTimeCell(TableColumn.CellEditEvent editEvent) {
         MatchDay matchDaySelected = matchDayTableView.getSelectionModel().getSelectedItem();
@@ -293,37 +286,5 @@ public class MatchScheduleSetupController implements CheckInput {
     private void changeMatchDurationCell(TableColumn.CellEditEvent editEvent) {
         Pool poolSelected = poolTableView.getSelectionModel().getSelectedItem();
         poolSelected.setMatchDuration(editEvent.getNewValue().toString());
-
-    }
-    /*
-    private Callback<TableColumn<MatchDay, LocalTime>, TableCell<MatchDay, LocalTime>> getCellColorFactory() {
-        Callback<TableColumn<MatchDay, LocalTime>, TableCell<MatchDay, LocalTime>> cellFactory;
-        TableCell<MatchDay, LocalTime> tableCell;
-
-        tableCell.itemProperty().addListener((observable, oldValue, newValue) -> {
-                if (newValue ==
-
-                )
-        });
-
-        return cellFactory;
-
-    } */
-    private class RowSelectChangeListener implements ChangeListener {
-
-        @Override
-        public void changed(ObservableValue observable, Object oldValue, Object newValue) {
-            MatchDay matchDay = (MatchDay) observable.getValue();
-            MatchDay newStartTime = (MatchDay) newValue;
-            System.out.println(matchDay.getStartTime().toString());
-            System.out.println(newStartTime.getStartTime().toString());
-        }
-    }
-
-    private class RowSelectInvalidationListener implements InvalidationListener {
-
-        @Override
-        public void invalidated(Observable observable) {
-        }
     }
 }

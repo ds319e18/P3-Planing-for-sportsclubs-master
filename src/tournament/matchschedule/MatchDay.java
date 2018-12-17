@@ -25,22 +25,6 @@ MatchDay {
         matches = new ArrayList<>();
     }
 
-    private boolean sameTeamInMatches(Match match1, Match match2) {
-        return (match2.getFirstTeam().equals(match1.getFirstTeam())
-                || match2.getFirstTeam().equals(match1.getSecondTeam())
-                || match2.getSecondTeam().equals(match1.getFirstTeam())
-                || match2.getSecondTeam().equals(match1.getSecondTeam()));
-    }
-
-    // Check whether a new match will be placed within the timespan of a planned match.
-    private boolean doMatchesOverlap(Match newMatch, Match plannedMatch, int fieldNumber) {
-        return (plannedMatch.getTimeStamp().isBefore(this.fieldList.get(fieldNumber).getFieldEndTime()
-                .plusMinutes(newMatch.getDuration())) &&                                                  // Efter starttidpunkt
-                plannedMatch.getTimeStamp().isAfter(this.fieldList.get(fieldNumber).getFieldEndTime())) ||    // Før sluttidspunkt
-                plannedMatch.getTimeStamp().equals(this.fieldList.get(fieldNumber).getFieldEndTime()) ||      // På starttidspunkt
-                plannedMatch.getTimeStamp().equals(this.fieldList.get(fieldNumber).getFieldEndTime().plusMinutes(newMatch.getDuration()));// På sluttidpunkt
-    }
-
     public String getName() {
         return name;
     }
