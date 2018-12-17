@@ -1,6 +1,8 @@
 package database.DAO;
 
 import database.Database;
+import exceptions.ServerNotAvailableException;
+import javafx.scene.control.Alert;
 import tournament.Tournament;
 import tournament.TournamentType;
 import tournament.pool.Pool;
@@ -23,6 +25,9 @@ public class TournamentDAO {
         ArrayList<Tournament> tournaments = new ArrayList<>();
 
         try (Connection con = Database.connect()) {
+            if (con == null) {
+                throw new ServerNotAvailableException();
+            }
             Statement stmt = con.createStatement();
             String sql = "select * from Tournament where idAccountTournament = '" + accountId + "'";
 
@@ -82,6 +87,9 @@ public class TournamentDAO {
         Date dateEnd = Date.valueOf(tournament.getEndDate());
 
         try (Connection con = Database.connect()) {
+            if (con == null) {
+                throw new ServerNotAvailableException();
+            }
             String query = "INSERT INTO Tournament (name, startDate, endDate, status, amountOfField, idAccountTournament, idTournament, tournamentType) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setString(1, tournament.getName());

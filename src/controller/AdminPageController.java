@@ -3,6 +3,7 @@ package controller;
 import account.Administrator;
 import account.User;
 import database.DAO.TournamentDAO;
+import exceptions.ServerNotAvailableException;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -38,10 +39,19 @@ public class AdminPageController {
 
     // TIL DATABASE
     public void initialize() {
-        TournamentDAO tournamentSQL = new TournamentDAO();
-        user.setTournaments(tournamentSQL.getAllTournaments(user.getId()));
-        setTournamentTableView();
-        addTournamentsInTableView();
+        try {
+            TournamentDAO tournamentSQL = new TournamentDAO();
+            user.setTournaments(tournamentSQL.getAllTournaments(user.getId()));
+            setTournamentTableView();
+            addTournamentsInTableView();
+        } catch (ServerNotAvailableException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Kunne ikke oprette forbindelse til databasen.");
+            warning.setTitle("Serverfejl");
+            warning.showAndWait();
+        }
+
+
     }
 
     @FXML

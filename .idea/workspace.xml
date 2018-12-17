@@ -2,125 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97b7cf4b-bb05-4bcd-8c51-90a977b53ffb" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/ServerNotAvailableException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/AddingTeamsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/AddingTeamsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/AdminPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/AdminPageController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/AutogenerateMatchScheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/AutogenerateMatchScheduleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingFinalStageController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/CreatingFinalStageController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/FrontPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/FrontPageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/MatchScheduleSetupController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/MatchScheduleSetupController$RowSelectChangeListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/MatchScheduleSetupController$RowSelectInvalidationListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/MatchScheduleSetupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/MatchScheduleSetupController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/TournamentSetupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/TournamentSetupController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/VerifyGroupsAndPoolsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/Controller/VerifyGroupsAndPoolsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/GraphicalObjects/ActionButtonTableCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/GraphicalObjects/ActionButtonTableCell.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/GraphicalObjects/MatchContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/GraphicalObjects/MatchContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/GraphicalObjects/ProgressBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/View/GraphicalObjects/ProgressBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/account/Administrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/account/Administrator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/account/Spectator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/account/Spectator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/AdminPageController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/AdminPageController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/AdminPageController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/AdminPageController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/CreatingFinalStageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/CreatingFinalStageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/CreatingGroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/CreatingGroupController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/CreatingMatchScheduleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/CreatingMatchScheduleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/FrontPageController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/FrontPageController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/SpectatorViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/SpectatorViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/UpdateTournamentController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/UpdateTournamentController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/UpdateTournamentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/UpdateTournamentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/VerifyFinalStageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/controller/VerifyFinalStageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/AccountDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/AccountDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/FieldDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/FieldDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/GroupDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/GroupDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchDayDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchDayDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchScheduleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/MatchScheduleDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/PlayoffBracketDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/PlayoffBracketDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/ResultDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/ResultDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/TeamDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/TeamDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/TournamentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/DAO/TournamentDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/BackInDateException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/BackInDateException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/BackInTimeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/BackInTimeException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/DuplicateTournamentNameException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/DuplicateTournamentNameException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/IllegalMethodCallToAdvanceTeam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/IllegalMethodCallToAdvanceTeam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/MatchNotFinishedException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/MatchNotFinishedException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/NoGroupsFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/NoGroupsFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/PoolNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/exceptions/PoolNotFoundException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Tournament.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchDay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchDay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchSchedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchSchedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GoldAndBronzePlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GoldAndBronzePlay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GroupBracket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GroupBracket.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/PlacementPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/PlacementPlay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/PlayoffGroupPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/PlayoffGroupPlay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/StandardGroupPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/StandardGroupPlay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddingTeams.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AddingTeams.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AdminPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AdminPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AutoMatchSchedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/AutoMatchSchedule.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/CreatingFinalStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatingFinalStage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/CreatingGroups.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatingGroups.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/CreatingMatchSchedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatingMatchSchedule.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/FrontPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/FrontPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/GraphicalObjects/ActionButtonTableCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GraphicalObjects/ActionButtonTableCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/GraphicalObjects/MatchContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GraphicalObjects/MatchContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/GraphicalObjects/ProgressBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GraphicalObjects/ProgressBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MatchScheduleSetup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MatchScheduleSetup.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/SpectatorView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SpectatorView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/TournamentSetup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/TournamentSetup.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/UpdateTournament.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/UpdateTournament.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/VerifyFinalStage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VerifyFinalStage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/VerifyGroupsAndPools.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/VerifyGroupsAndPools.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/Administrator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/account/Spectator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/account/Spectator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/AddingTeamsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AddingTeamsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutPlay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutPlay.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/AdminPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AdminPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/CreatingGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CreatingGroupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/FrontPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/FrontPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/SpectatorViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/SpectatorViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/TournamentSetupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/TournamentSetupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/UpdateTournamentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UpdateTournamentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/VerifyFinalStageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/VerifyGroupsAndPoolsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DAO/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DAO/AccountDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DAO/FieldDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DAO/FieldDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DAO/GroupDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DAO/GroupDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DAO/MatchDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DAO/MatchDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DAO/PlayoffBracketDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DAO/PlayoffBracketDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DAO/ResultDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DAO/ResultDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DAO/TeamDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DAO/TeamDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/DAO/TournamentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DAO/TournamentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/BackInDateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/BackInDateException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/BackInTimeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/BackInTimeException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/DuplicateTournamentNameException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/DuplicateTournamentNameException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/IllegalMethodCallToAdvanceTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/IllegalMethodCallToAdvanceTeam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/MatchNotFinishedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/MatchNotFinishedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/NoGroupsFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/NoGroupsFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exceptions/PoolNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/PoolNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/Match.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/Tournament.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/Pool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/pool/Pool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/GoldAndBronzePlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/GoldAndBronzePlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/PlayoffGroupPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/PlayoffGroupPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -139,13 +44,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="106" />
-          <entry key="Markdown" value="1" />
+          <entry key="JAVA" value="118" />
+          <entry key="Markdown" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="642" />
+          <entry key="JAVA" value="1232" />
+          <entry key="Markdown" value="614" />
         </counts>
       </usages-collector>
     </session>
@@ -153,100 +59,128 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exceptions/IllegalMethodCallToAdvanceTeam.java">
+        <entry file="file://$PROJECT_DIR$/src/controller/AdminPageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exceptions/IllegalAmountOfTeamsException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exceptions/IllegalAmountOfGroupsException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exceptions/DuplicateTournamentNameException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="491">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
               <folding>
-                <element signature="e#155#156#0" expanded="true" />
-                <element signature="e#228#229#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#6711#6712#0" expanded="true" />
+                <element signature="e#6787#6788#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exceptions/BackInTimeException.java">
+        <entry file="file://$PROJECT_DIR$/src/controller/AddingTeamsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+            <state relative-caret-position="228">
+              <caret line="117" column="13" selection-start-line="117" selection-start-column="13" selection-end-line="120" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/exceptions/BackInDateException.java">
+        <entry file="file://$PROJECT_DIR$/src/database/DAO/TournamentDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="73" selection-start-line="4" selection-start-column="73" selection-end-line="4" selection-end-column="73" />
+            <state relative-caret-position="323">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java">
+        <entry file="file://$PROJECT_DIR$/src/exceptions/ServerNotAvailableException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="108" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="68">
+              <caret line="4" column="95" selection-start-line="4" selection-start-column="95" selection-end-line="4" selection-end-column="95" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/database/DAO/FieldDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="136">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="e#608#609#0" expanded="true" />
+                <element signature="e#636#637#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/GraphicalObjects/MatchContainer.java">
+        <entry file="file://$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="132" selection-start-line="132" selection-end-line="132" />
+            <state relative-caret-position="424">
+              <caret line="149" column="34" lean-forward="true" selection-start-line="146" selection-start-column="11" selection-end-line="149" selection-end-column="34" />
+              <folding>
+                <element signature="e#8784#8785#0" expanded="true" />
+                <element signature="e#8812#8813#0" expanded="true" />
+                <element signature="e#8844#8845#0" expanded="true" />
+                <element signature="e#8872#8873#0" expanded="true" />
+                <element signature="e#8904#8905#0" expanded="true" />
+                <element signature="e#8932#8933#0" expanded="true" />
+                <element signature="e#8964#8965#0" expanded="true" />
+                <element signature="e#8992#8993#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5066">
+              <caret line="324" column="38" selection-start-line="324" selection-start-column="38" selection-end-line="324" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/database/DAO/ResultDAO.java">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="102">
+                <caret line="6" column="146" selection-start-line="6" selection-start-column="146" selection-end-line="6" selection-end-column="146" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/SpectatorViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="-297">
+              <caret line="32" column="38" lean-forward="true" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="137" column="12" selection-start-line="137" selection-start-column="12" selection-end-line="138" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -266,10 +200,8 @@
         <option value="$PROJECT_DIR$/src/account/Administrator.java" />
         <option value="$PROJECT_DIR$/src/account/Spectator.java" />
         <option value="$PROJECT_DIR$/src/controller/AddingTeamsController.java" />
-        <option value="$PROJECT_DIR$/src/controller/AdminPageController.java" />
         <option value="$PROJECT_DIR$/src/controller/CreatingFinalStageController.java" />
         <option value="$PROJECT_DIR$/src/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java" />
         <option value="$PROJECT_DIR$/src/controller/TournamentSetupController.java" />
         <option value="$PROJECT_DIR$/src/controller/UpdateTournamentController.java" />
@@ -281,8 +213,6 @@
         <option value="$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java" />
         <option value="$PROJECT_DIR$/src/database/DAO/PlayoffBracketDAO.java" />
         <option value="$PROJECT_DIR$/src/database/DAO/TeamDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/DAO/TournamentDAO.java" />
-        <option value="$PROJECT_DIR$/src/database/Database.java" />
         <option value="$PROJECT_DIR$/src/exceptions/BackInDateException.java" />
         <option value="$PROJECT_DIR$/src/exceptions/BackInTimeException.java" />
         <option value="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" />
@@ -293,10 +223,8 @@
         <option value="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
         <option value="$PROJECT_DIR$/src/tournament/Match.java" />
         <option value="$PROJECT_DIR$/src/tournament/Tournament.java" />
-        <option value="$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java" />
         <option value="$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java" />
         <option value="$PROJECT_DIR$/src/tournament/pool/bracket/GoldAndBronzePlay.java" />
-        <option value="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" />
         <option value="$PROJECT_DIR$/src/exceptions/MatchNotFinishedException.java" />
         <option value="$PROJECT_DIR$/src/exceptions/PoolNotFoundException.java" />
         <option value="$PROJECT_DIR$/src/exceptions/NoGroupsFoundException.java" />
@@ -306,6 +234,15 @@
         <option value="$PROJECT_DIR$/src/database/DAO/FieldDAO.java" />
         <option value="$PROJECT_DIR$/src/view/GraphicalObjects/MatchContainer.java" />
         <option value="$PROJECT_DIR$/src/database/DAO/ResultDAO.java" />
+        <option value="$PROJECT_DIR$/src/database/Database.java" />
+        <option value="$PROJECT_DIR$/src/controller/FrontPageController.java" />
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/database/DAO/TournamentDAO.java" />
+        <option value="$PROJECT_DIR$/src/exceptions/ServerNotAvailableException.java" />
+        <option value="$PROJECT_DIR$/src/controller/AdminPageController.java" />
+        <option value="$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java" />
+        <option value="$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -347,7 +284,26 @@
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sample" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -360,7 +316,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545049021999" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545052606987" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -471,7 +427,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545035248729</updated>
-      <workItem from="1545042928887" duration="5945000" />
+      <workItem from="1545042928887" duration="9051000" />
     </task>
     <servers />
   </component>
@@ -499,13 +455,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5945000" />
+    <option name="totallyTimeSpent" value="9051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1981402" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1981402" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -515,7 +470,7 @@
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49410608" weight="0.3290653" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.69056976" visible="true" weight="0.27400768" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.69056976" visible="true" weight="0.29193342" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4970458" weight="0.3974359" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -543,73 +498,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/database/DAO/TeamDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="155" column="5" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/AddingTeamsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="163" column="34" lean-forward="true" selection-start-line="160" selection-start-column="12" selection-end-line="163" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-509">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <element signature="e#1864#1865#0" expanded="true" />
-            <element signature="e#1891#1892#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
-          <folding>
-            <element signature="e#4046#4047#0" expanded="true" />
-            <element signature="e#4078#4079#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/PlayoffBracket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/PlayoffGroupPlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
@@ -680,16 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/AdminPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -726,13 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="422" column="50" lean-forward="true" selection-start-line="422" selection-start-column="50" selection-end-line="422" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -747,27 +618,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/TournamentSetupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="211" column="65" selection-start-line="211" selection-start-column="65" selection-end-line="211" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -884,17 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/exceptions/DuplicateTournamentNameException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#155#156#0" expanded="true" />
-            <element signature="e#228#229#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/exceptions/BackInTimeException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -932,8 +771,139 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/DAO/ResultDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="289">
+          <caret line="23" column="10" lean-forward="true" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exceptions/DuplicateTournamentNameException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#155#156#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/TournamentSetupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-772">
+          <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/FrontPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="36" column="75" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
+          <folding>
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AddingTeamsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="117" column="13" selection-start-line="117" selection-start-column="13" selection-end-line="120" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/TournamentDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/exceptions/ServerNotAvailableException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="95" selection-start-line="4" selection-start-column="95" selection-end-line="4" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AdminPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6711#6712#0" expanded="true" />
+            <element signature="e#6787#6788#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AutogenerateMatchScheduleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="149" column="34" lean-forward="true" selection-start-line="146" selection-start-column="11" selection-end-line="149" selection-end-column="34" />
+          <folding>
+            <element signature="e#8784#8785#0" expanded="true" />
+            <element signature="e#8812#8813#0" expanded="true" />
+            <element signature="e#8844#8845#0" expanded="true" />
+            <element signature="e#8872#8873#0" expanded="true" />
+            <element signature="e#8904#8905#0" expanded="true" />
+            <element signature="e#8932#8933#0" expanded="true" />
+            <element signature="e#8964#8965#0" expanded="true" />
+            <element signature="e#8992#8993#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="137" column="12" selection-start-line="137" selection-start-column="12" selection-end-line="138" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/SpectatorViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297">
+          <caret line="32" column="38" lean-forward="true" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5066">
+          <caret line="324" column="38" selection-start-line="324" selection-start-column="38" selection-end-line="324" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="146" selection-start-line="6" selection-start-column="146" selection-end-line="6" selection-end-column="146" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

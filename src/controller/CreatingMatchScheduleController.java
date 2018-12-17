@@ -2,6 +2,7 @@ package controller;
 
 import database.DAO.*;
 import exceptions.MissingMatchesToAdd;
+import exceptions.ServerNotAvailableException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -308,17 +309,21 @@ public class CreatingMatchScheduleController {
             }
 
             //TODO TIL DATABASE
-            loadTournamentInDatabase(tournament);
+            try {
+                loadTournamentInDatabase(tournament);
 
-            loader.setLocation(getClass().getResource("../view/AdminPage.FXML"));
-            Parent newWindow = loader.load();
-
-            Scene newScene = new Scene(newWindow);
-
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-            window.setScene(newScene);
-            window.show();
+                loader.setLocation(getClass().getResource("../view/AdminPage.FXML"));
+                Parent newWindow = loader.load();
+                Scene newScene = new Scene(newWindow);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(newScene);
+                window.show();
+            } catch (ServerNotAvailableException e) {
+                Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                warning.setHeaderText("Kunne ikke oprette forbindelse til databasen.");
+                warning.setTitle("Serverfejl");
+                warning.showAndWait();
+            }
         } catch (MissingMatchesToAdd e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Manglende input fejl");
