@@ -4,12 +4,14 @@ import tournament.Tournament;
 
 import java.util.ArrayList;
 
-public class User {
+public abstract class User {
     private ArrayList<Tournament> tournaments;
+    private int id;
 
-    public User() {
-        }
-
+    public void setId(int id) {
+        this.id = id;
+    }
+    public int getId() { return id; }
 
     public ArrayList<Tournament> getTournaments() {
         return tournaments;

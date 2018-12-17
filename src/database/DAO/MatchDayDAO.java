@@ -90,7 +90,6 @@ public class MatchDayDAO {
 
         try(Connection con = Database.connect()) {
             for (MatchDay day : tournament.getMatchSchedule().getMatchDays()) {
-                day.setMatches();
                 int matchDayID = matchDaySQL.findMatchDayID(day, tournament, con);
 
                 for (Match match : tournament.getAllMatches()) {

@@ -380,7 +380,6 @@ public class CreatingMatchScheduleController {
         GridPane tabGridPane = (GridPane) tabScrollPane.getContent();
         MatchDay matchDay = tournament.getMatchSchedule().findMatchDay(tab.getText());
 
-        matchDay.setMatches();
         matchDay.getMatches().addAll(getAllMatchesFromGridPane(tabGridPane));
     }
 

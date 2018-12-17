@@ -1,5 +1,7 @@
 package controller;
 
+import account.Administrator;
+import account.Spectator;
 import account.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +22,6 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-import javafx.util.converter.LocalTimeStringConverter;
 import tournament.Match;
 import tournament.Result;
 import tournament.Team;
@@ -33,7 +34,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.time.LocalTime;
 
-public class UpdateTournamentController {
+public class SpectatorViewController {
 
     @FXML
     private ImageView logo01;
@@ -44,25 +45,26 @@ public class UpdateTournamentController {
     @FXML
     private ImageView logo04;
 
-    private String logo1 = null;
-    private String logo2 = null;
-    private String logo3 = null;
-    private String logo4 = null;
-
     @FXML
     private Label tournamentNameLabel;
 
     @FXML
     private Label matchDayDateLabel;
 
+    private String logo1 = null;
+    private String logo2 = null;
+    private String logo3 = null;
+    private String logo4 = null;
+
     @FXML
     private TableView<Match> matchTableView;
-
+    private User user;
     private MatchDay matchDay;
     private Tournament tournament;
 
-    void setMatchDay(MatchDay matchDay, Tournament tournament) {
+    void setMatchDay(MatchDay matchDay, User user, Tournament tournament) {
         this.matchDay = matchDay;
+        this.user = user;
         this.tournament = tournament;
         tournamentNameLabel.setText(tournament.getName());
         matchDayDateLabel.setText(matchDay.getName());
@@ -88,21 +90,6 @@ public class UpdateTournamentController {
         TableColumn<Match, Result> resultColumn = new TableColumn<>("Resultat");
         resultColumn.setCellValueFactory(new PropertyValueFactory<>("result"));
         resultColumn.setStyle("-fx-alignment: CENTER");
-        resultColumn.setCellFactory(TextFieldTableCell.forTableColumn(new StringConverter<>() {
-            @Override
-            public String toString(Result object) {
-                return object.toString();
-            }
-
-            @Override
-            public Result fromString(String string) {
-                // split string at -
-                String[] resultString = string.split("-");
-                return new Result(Integer.parseInt(resultString[0]), Integer.parseInt(resultString[1]));
-            }
-        }));
-
-        resultColumn.setOnEditCommit(event -> changeResultCell(event));
 
         TableColumn<Match, Field> fieldColumn = new TableColumn<>("Bane");
         fieldColumn.setCellValueFactory(new PropertyValueFactory<>("field"));
@@ -127,19 +114,15 @@ public class UpdateTournamentController {
     }
 
     @FXML
-    private void changeResultCell(TableColumn.CellEditEvent editEvent) {
-        Match matchSelected = matchTableView.getSelectionModel().getSelectedItem();
-        String[] resultString = editEvent.getNewValue().toString().split("-");
-        matchSelected.getResult().setFirstTeamScore(Integer.parseInt(resultString[0]));
-        matchSelected.getResult().setSecondTeamScore(Integer.parseInt(resultString[1]));
-    }
+    public void setBackButtonPressed(ActionEvent event) throws IOException {
+        Parent newWindow = null;
 
-    @FXML
-    public void setBackButtonPressed(ActionEvent event) throws IOException{
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
+        if (user instanceof Administrator)
+            newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
+        else if (user instanceof Spectator)
+            newWindow = FXMLLoader.load(getClass().getResource("../View/FrontPage.FXML"));
 
         Scene newScene = new Scene(newWindow);
-
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);

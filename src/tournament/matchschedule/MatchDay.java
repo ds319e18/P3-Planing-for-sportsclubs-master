@@ -22,6 +22,7 @@ MatchDay {
 
     public MatchDay(LocalDate date) {
         this.date = date;
+        matches = new ArrayList<>();
     }
 
     public void setNoMixedMatches(ArrayList<Pool> poolList) {
@@ -78,12 +79,6 @@ MatchDay {
                 plannedMatch.getTimeStamp().isAfter(this.fieldList.get(fieldNumber).getFieldEndTime())) ||    // Før sluttidspunkt
                 plannedMatch.getTimeStamp().equals(this.fieldList.get(fieldNumber).getFieldEndTime()) ||      // På starttidspunkt
                 plannedMatch.getTimeStamp().equals(this.fieldList.get(fieldNumber).getFieldEndTime().plusMinutes(newMatch.getDuration()));// På sluttidpunkt
-    }
-
-    private void setFieldsEndTime() {
-        for (Field field : this.fieldList) {
-            field.setFieldEndTime(this.startTime);
-        }
     }
 
     public String getName() {

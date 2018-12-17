@@ -1,6 +1,7 @@
 package controller;
 
 import account.Spectator;
+import account.User;
 import database.DAO.TournamentDAO;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
@@ -27,8 +28,7 @@ import java.util.Objects;
 
 public class FrontPageController {
     private String id = "Jetsmark";
-    private Spectator user = new Spectator(Objects.hash(id));
-
+    private User user = new Spectator(Objects.hash(id));
 
     @FXML
     private Button loginBtn;
@@ -74,15 +74,15 @@ public class FrontPageController {
         viewMatchScheduleColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Tournament, MenuButton>, ObservableValue<MenuButton>>() {
             @Override
             public ObservableValue<MenuButton> call(TableColumn.CellDataFeatures<Tournament, MenuButton> param) {
-                MenuButton menuButton = new MenuButton();
+                MenuButton menuButton = new MenuButton("Vælg kampdag");
                 menuButton.setMinWidth(145);
-                for (MatchDay matchDay : param.getValue().getMatchSchedule().getMatchDays()) {
+                Tournament tournament = param.getValue();
+                for (MatchDay matchDay : tournament.getMatchSchedule().getMatchDays()) {
                     MenuItem menuItem = new MenuItem(matchDay.getName());
-                    menuItem.setStyle("-fx-padding: 0 40 0 40");
+                    menuItem.setStyle("-fx-padding: 0 30 0 30");
                     menuItem.setOnAction(event -> {
                         try {
-                            handleMatchDaySelection(matchDay);
-                            throw new IOException();
+                            viewMatchDaySelection(tournament, matchDay);
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -99,24 +99,17 @@ public class FrontPageController {
                 startDateColumn, endDateColumn, viewMatchScheduleColumn);
     }
 
-    private void handleMatchDaySelection(MatchDay matchDay) {
-    }
-
-    @FXML
-    private void changeWatchTournamentCell(TableColumn.CellEditEvent editEvent, ActionEvent event) throws IOException {
-        Tournament tournamentSelected = tournamentTableView.getSelectionModel().getSelectedItem();
-        MatchDay matchDaySelected = (MatchDay) (editEvent.getNewValue());
-
+    private void viewMatchDaySelection(Tournament tournament, MatchDay matchDay) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../view/SpectatorView.fxml"));
+        loader.setLocation(getClass().getResource("../View/SpectatorView.FXML"));
         Parent newWindow = loader.load();
 
-        ViewSpectatorController msc = loader.getController();
-        msc.setMatchDay(tournamentSelected, matchDaySelected);
+        SpectatorViewController controller = loader.getController();
+        controller.setMatchDay(matchDay, user, tournament);
 
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage window = (Stage) loginBtn.getScene().getWindow();
 
         window.setScene(newScene);
         window.show();
