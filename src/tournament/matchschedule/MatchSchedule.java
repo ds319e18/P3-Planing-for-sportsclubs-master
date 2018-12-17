@@ -22,19 +22,6 @@ public class MatchSchedule {
         createMatchDays();
     }
 
-    // Getters
-    public long getNumberOfMatchDays() {
-        return (DAYS.between(this.startDate, this.endDate) + 1);
-    }
-
-    public LocalDate getStartDate() { return startDate; }
-
-    public LocalDate getEndDate() { return endDate; }
-
-    public ArrayList<MatchDay> getMatchDays() {
-        return matchDays;
-    }
-
     private void createMatchDays() {
         for (int iter = 0; iter < getNumberOfMatchDays(); iter++) {
             this.matchDays.add(new MatchDay(startDate.plusDays(iter)));
@@ -108,4 +95,19 @@ public class MatchSchedule {
     public String toString() {
         return "kamprogrammet";
     }
+
+    // Getters
+    public LocalDate getStartDate() { return startDate; }
+
+    public LocalDate getEndDate() { return endDate; }
+
+    public ArrayList<MatchDay> getMatchDays() {
+        return matchDays;
+    }
+
+    public long getNumberOfMatchDays() {
+        return (DAYS.between(this.startDate, this.endDate) + 1);
+    }
+
+
 }

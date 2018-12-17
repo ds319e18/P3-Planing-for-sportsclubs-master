@@ -38,8 +38,8 @@ public class PlayoffGroupPlay extends PlayoffBracket {
             int noOfMatches = this.matchesPrTeam * noOfTeams / 2;
             for (int matchCount = 0; matchCount < noOfMatches; matchCount++) {
                 super.getMatches().add(new Match.Builder(matchDurationInMinutes)
-                        .setFirstTeam(new Team("TBD"))
-                        .setSecondTeam(new Team("TBD"))
+                        .setFirstTeam(new team("TBD"))
+                        .setSecondTeam(new team("TBD"))
                         .setFinished(false)
                         .setName("Playoff Match: ")
                         .build());
@@ -60,7 +60,7 @@ public class PlayoffGroupPlay extends PlayoffBracket {
     public void calculateResults() {
         /*int placement = 1;
         for (Group group : this.playoffGroups) {
-            for (Team team : group.getTeamList()) {
+            for (team team : group.getTeamList()) {
                 super.getResults().put(placement, team);
                 placement++;
             }

@@ -67,14 +67,14 @@ public class Main extends Application {
         tournamentSQL.insertTournament(tournament, accountID);
 
         // Adding teams
-        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
-        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
-        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
-        tournament.findCorrectPool(6, "A").addTeam(new Team("Jetsmark IF", 6, "A"));
-        tournament.findCorrectPool(7, "A").addTeam(new Team("FCK", 7, "A"));
-        tournament.findCorrectPool(7, "A").addTeam(new Team("FCK", 7, "A"));
-        tournament.findCorrectPool(7, "A").addTeam(new Team("FCK", 7, "A"));
-        tournament.findCorrectPool(7, "A").addTeam(new Team("FCK", 7, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(6, "A").addTeam(new team("Jetsmark IF", 6, "A"));
+        tournament.findCorrectPool(7, "A").addTeam(new team("FCK", 7, "A"));
+        tournament.findCorrectPool(7, "A").addTeam(new team("FCK", 7, "A"));
+        tournament.findCorrectPool(7, "A").addTeam(new team("FCK", 7, "A"));
+        tournament.findCorrectPool(7, "A").addTeam(new team("FCK", 7, "A"));
 
         // Indsætter team i databasen
         teamSQL.insertTeam(tournament);
@@ -177,7 +177,7 @@ public class Main extends Application {
         // Sorting the groups
         for (Group group : tournament.getPoolList().get(0).getGroupBracket().getGroups()) {
             group.getTeamList().sort(new TeamPointsComp());
-            for (Team team : group.getTeamList()) {
+            for (team team : group.getTeamList()) {
                 System.out.println(team);
             }
         }*/

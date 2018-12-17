@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PoolTest {
-    Pool pool;
+    private Pool pool;
 
     @BeforeEach
     void addToTeamList() {
@@ -18,15 +18,6 @@ class PoolTest {
         pool.addTeam(new Team("Jetsmark IF", 16,"A"));
         pool.addTeam(new Team("Jetsmark IF", 16,"A"));
         pool.addTeam(new Team("Silkeborg IF", 16,"A"));
-    }
-
-    @Test
-    void addGroupBracket() {
-
-    }
-
-    @Test
-    void addKnockoutBracket() {
     }
 
     @Test

@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="c0c655b6-1c46-4989-bc5a-3fd8e37e1375" name="Default Changelist" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Tests/tournament/Database/InsertAndLoad.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Tests/tournament/team/TeamPointSort.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Tests/controller/TournamentSetupControllerTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Tests/tournament/TournamentTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Tests/tournament/pool/PoolTest.java" afterPath="$PROJECT_DIR$/Tests/tournament/pool/PoolTest.java" />
+      <change beforePath="$PROJECT_DIR$/Tests/tournament/pool/bracket/GroupBracketTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Tests/tournament/pool/bracket/KnockoutBracketTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Tests/tournament/pool/groupbracket/StandardGroupPlayTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Tests/tournament/pool/playoffbracket/PlayoffGroupPlayTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/Database.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/database/Database.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/Match.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchDay.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchDay.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchSchedule.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/matchschedule/MatchSchedule.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Group.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Group.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool$Builder.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool$Builder.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" afterPath="$PROJECT_DIR$/out/production/P3-Planing-for-sportsclubs-master/tournament/pool/Pool.class" />
+      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/controller/TournamentSetupControllerTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/TournamentTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/PoolTest.class" afterPath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/PoolTest.class" />
+      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/GroupBracketTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/bracket/KnockoutBracketTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/test/P3-Planing-for-sportsclubs-master/tournament/pool/groupbracket/StandardGroupPlayTest.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/database/Database.java" afterPath="$PROJECT_DIR$/src/database/Database.java" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/Match.java" afterPath="$PROJECT_DIR$/src/tournament/Match.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" afterPath="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java" afterPath="$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/Group.java" afterPath="$PROJECT_DIR$/src/tournament/pool/Group.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/Pool.java" afterPath="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
+      <change beforePath="$PROJECT_DIR$/src/tournament/pool/bracket/PlayoffGroupPlay.java" afterPath="$PROJECT_DIR$/src/tournament/pool/bracket/PlayoffGroupPlay.java" />
+    </list>
+=======
     <list default="true" id="f9697acc-dd59-40c1-aa69-06b117d00b91" name="Default" comment="">
       <change beforePath="" afterPath="$PROJECT_DIR$/Tests/database/DatabaseTest.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -11,6 +47,7 @@
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> Dev
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,101 +56,296 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="AdminPageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/AdminPageController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2412">
               <caret line="157" column="57" lean-forward="false" selection-start-line="157" selection-start-column="57" selection-end-line="157" selection-end-column="57" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-804">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+=======
+      <file leaf-file-name="TournamentTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/tournament/TournamentTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+>>>>>>> Dev
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
               <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="InsertAndLoad.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/tournament/Database/InsertAndLoad.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3900">
+              <caret line="260" column="30" lean-forward="true" selection-start-line="260" selection-start-column="30" selection-end-line="260" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1544864219294" expanded="true" signature="1857:1900" ph="INSERT INTO Test... " />
+                <marker date="1544864219294" expanded="true" signature="2254:2295" ph="select * fro... Test" />
+                <marker date="1544864219294" expanded="true" signature="2254:2301" ph="select * fro... Test" />
+                <marker date="1544864219294" expanded="true" signature="2603:2642" ph="DELETE FROM Test... " />
+                <marker date="1544864219294" expanded="true" signature="3012:3058" ph="INSERT INTO TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="3429:3473" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="3791:3833" ph="DELETE FROM TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="4217:4263" ph="INSERT INTO TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="4633:4677" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="4633:4678" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="4633:4687" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="4633:4697" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="5006:5048" ph="DELETE FROM TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="5006:5049" ph="DELETE FROM TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="5006:5062" ph="DELETE FROM TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="5006:5068" ph="DELETE FROM TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="5638:5682" ph="INSERT INTO TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="6171:6213" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="6171:6214" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="6171:6236" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="6171:6241" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="6575:6616" ph="DELETE FROM TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="6575:6643" ph="DELETE FROM TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="7057:7101" ph="INSERT INTO TestObjects... " />
+                <marker date="1544864219294" expanded="true" signature="7596:7639" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="7596:7666" ph="select * fro... TestObjects" />
+                <marker date="1544864219294" expanded="true" signature="8028:8096" ph="DELETE FROM TestObjects... " />
+=======
+      <file leaf-file-name="Tournament.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="133" column="34" lean-forward="true" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
+              <folding>
+                <element signature="e#2797#2798#0" expanded="true" />
+                <element signature="e#2833#2834#0" expanded="true" />
+                <element signature="e#3548#3549#0" expanded="true" />
+                <element signature="e#3588#3589#0" expanded="true" />
+>>>>>>> Dev
+              </folding>
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="MatchTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/tournament/MatchTest.java">
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="PoolTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/PoolTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-42">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+=======
+      <file leaf-file-name="P3-Planing-for-sportsclubs-master.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/P3-Planing-for-sportsclubs-master.iml">
+>>>>>>> Dev
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="705">
               <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
               <folding />
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="TournamentTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/tournament/TournamentTest.java">
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="TeamPointSort.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/tournament/team/TeamPointSort.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+=======
+      <file leaf-file-name="MatchScheduleTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/tournament/matchschedule/MatchScheduleTest.java">
+>>>>>>> Dev
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="212">
               <caret line="31" column="56" lean-forward="false" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
               <folding />
+>>>>>>> Dev
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/database/Database.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="Pool.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/Pool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+=======
+      <file leaf-file-name="GoldAndBronzeTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/GoldAndBronzeTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="40" column="69" lean-forward="true" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="74" />
+>>>>>>> Dev
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="DatabaseTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests/database/DatabaseTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="TeamPointsComp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/TeamPointsComp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+=======
+      <file leaf-file-name="Match.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1262">
+              <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+>>>>>>> Dev
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="MatchDay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-357">
               <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="Team.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/Team.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+=======
+      <file leaf-file-name="MatchTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/tournament/MatchTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="828">
+              <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+>>>>>>> Dev
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="MatchSchedule.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="Tournament.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+=======
+      <file leaf-file-name="Result.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/Result.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+>>>>>>> Dev
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="LogInFailed.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/exceptions/LogInFailed.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
               <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="Result.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/Result.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+=======
+      <file leaf-file-name="Group.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tournament/pool/Group.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+>>>>>>> Dev
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="CreatingGroupController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="MatchDay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1072">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+=======
+      <file leaf-file-name="TournamentType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tournament/TournamentType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+>>>>>>> Dev
+>>>>>>> Dev
               <folding />
             </state>
           </provider>
@@ -144,6 +376,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/Tests/tournament/TournamentTest.java" />
+        <option value="$PROJECT_DIR$/src/controller/FrontPageController.java" />
+        <option value="$PROJECT_DIR$/src/database/Database.java" />
+        <option value="$PROJECT_DIR$/Tests/tournament/pool/PoolTest.java" />
+        <option value="$PROJECT_DIR$/src/database/DAO/MatchDAO.java" />
+        <option value="$PROJECT_DIR$/Tests/tournament/Database/InsertAndLoad.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/Pool.java" />
+        <option value="$PROJECT_DIR$/src/tournament/pool/Group.java" />
+        <option value="$PROJECT_DIR$/src/tournament/Match.java" />
+        <option value="$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java" />
+        <option value="$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java" />
+        <option value="$PROJECT_DIR$/Tests/tournament/Team/TeamTests.java" />
+        <option value="$PROJECT_DIR$/Tests/tournament/team/TeamTests.java" />
+        <option value="$PROJECT_DIR$/Tests/tournament/team/TeamPointSort.java" />
+=======
         <option value="$PROJECT_DIR$/src/database/Database.java" />
         <option value="$PROJECT_DIR$/src/controller/TournamentSetupController.java" />
         <option value="$PROJECT_DIR$/src/account/Spectator.java" />
@@ -162,10 +410,14 @@
         <option value="$PROJECT_DIR$/Tests/tournament/matchschedule/MatchScheduleTest.java" />
         <option value="$PROJECT_DIR$/src/tournament/Match.java" />
         <option value="$PROJECT_DIR$/Tests/tournament/MatchTest.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/exceptions/LogInFailed.java" />
         <option value="$PROJECT_DIR$/Tests/tournament/TournamentTest.java" />
         <option value="$PROJECT_DIR$/Tests/database/DatabaseTest.java" />
+=======
+>>>>>>> Dev
+>>>>>>> Dev
       </list>
     </option>
   </component>
@@ -174,6 +426,10 @@
     <option name="y" value="56" />
     <option name="width" value="1446" />
     <option name="height" value="879" />
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -190,10 +446,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
       <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="Scope" />
+<<<<<<< HEAD
       <pane id="PackagesPane" />
+=======
+>>>>>>> Dev
+>>>>>>> Dev
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -204,6 +466,9 @@
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+=======
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -217,18 +482,32 @@
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Dev
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="sample" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Dev
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="tournament" type="462c0819:PsiDirectoryNode" />
+>>>>>>> Dev
             </path>
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
@@ -236,6 +515,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tournament" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
             <path>
               <item name="P3-Planing-for-sportsclubs-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="P3-Planing-for-sportsclubs-master" type="462c0819:PsiDirectoryNode" />
@@ -247,10 +528,22 @@
               <item name="Tests" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
+>>>>>>> Dev
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+<<<<<<< HEAD
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+=======
+>>>>>>> Dev
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -266,6 +559,7 @@
       <recent name="" />
     </key>
   </component>
+>>>>>>> Dev
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -278,7 +572,15 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="JUnit.All in P3-Planing-for-sportsclubs-master">
+=======
+<<<<<<< HEAD
+  <component name="RunManager" selected="JUnit.TeamPointSort">
+=======
+  <component name="RunManager" selected="Application.Main">
+>>>>>>> Dev
+>>>>>>> Dev
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -286,6 +588,11 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
+<<<<<<< HEAD
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+=======
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -294,6 +601,7 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
+>>>>>>> Dev
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -302,6 +610,95 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
+<<<<<<< HEAD
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration name="All in P3-Planing-for-sportsclubs-master" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="P3-Planing-for-sportsclubs-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="InsertAndLoad" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tournament.Database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="P3-Planing-for-sportsclubs-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tournament.Database" />
+      <option name="MAIN_CLASS_NAME" value="tournament.Database.InsertAndLoad" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TeamPointSort" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tournament.team.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="P3-Planing-for-sportsclubs-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tournament.team" />
+      <option name="MAIN_CLASS_NAME" value="tournament.team.TeamPointSort" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="TeamPointSort.testSortPoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tournament.team.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="P3-Planing-for-sportsclubs-master" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tournament.team" />
+      <option name="MAIN_CLASS_NAME" value="tournament.team.TeamPointSort" />
+      <option name="METHOD_NAME" value="testSortPoint" />
+      <option name="TEST_OBJECT" value="method" />
+=======
       <module name="P3-Planing-for-sportsclubs-master" />
       <envs />
     </configuration>
@@ -328,6 +725,7 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
+>>>>>>> Dev
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -339,19 +737,32 @@
       <envs />
       <patterns />
     </configuration>
+<<<<<<< HEAD
+    <configuration name="TeamPointSort.testSortPoint02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tournament.team.*" />
+=======
     <configuration name="MatchTest.getLoser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="tournament.*" />
+>>>>>>> Dev
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="P3-Planing-for-sportsclubs-master" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
+<<<<<<< HEAD
+      <option name="PACKAGE_NAME" value="tournament.team" />
+      <option name="MAIN_CLASS_NAME" value="tournament.team.TeamPointSort" />
+      <option name="METHOD_NAME" value="testSortPoint02" />
+=======
       <option name="PACKAGE_NAME" value="tournament" />
       <option name="MAIN_CLASS_NAME" value="tournament.MatchTest" />
       <option name="METHOD_NAME" value="getLoser" />
+>>>>>>> Dev
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -363,6 +774,29 @@
       </option>
       <envs />
       <patterns />
+<<<<<<< HEAD
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+=======
     </configuration>
     <configuration name="MatchTest.isFinished" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
@@ -434,6 +868,7 @@
       <envs />
       <patterns />
     </configuration>
+>>>>>>> Dev
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -475,6 +910,21 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="5">
+<<<<<<< HEAD
+      <item index="0" class="java.lang.String" itemvalue="JUnit.InsertAndLoad" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.All in P3-Planing-for-sportsclubs-master" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TeamPointSort.testSortPoint" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TeamPointSort.testSortPoint02" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TeamPointSort" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TeamPointSort" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TeamPointSort.testSortPoint02" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in P3-Planing-for-sportsclubs-master" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.InsertAndLoad" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TeamPointSort.testSortPoint" />
+=======
       <item index="0" class="java.lang.String" itemvalue="JUnit.MatchTest.getLoser" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.MatchTest.isFinished" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.MatchTest.isNotFinished" />
@@ -488,6 +938,7 @@
         <item index="2" class="java.lang.String" itemvalue="JUnit.MatchTest.isNotFinished" />
         <item index="3" class="java.lang.String" itemvalue="JUnit.MatchTest.isFinished" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.MatchTest.getLoser" />
+>>>>>>> Dev
       </list>
     </recent_temporary>
   </component>
@@ -498,6 +949,76 @@
     <configuration />
   </component>
   <component name="TaskManager">
+<<<<<<< HEAD
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="All_in_P3-Planing-for-sportsclubs-master - 2018.12.15 at 09h 59m 02s.xml">
+      <configuration name="All in P3-Planing-for-sportsclubs-master" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_P3-Planing-for-sportsclubs-master - 2018.12.15 at 12h 12m 17s.xml">
+      <configuration name="All in P3-Planing-for-sportsclubs-master" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="InsertAndLoad - 2018.12.15 at 12h 11m 53s.xml">
+      <configuration name="InsertAndLoad" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeamPointSort - 2018.12.15 at 12h 08m 30s.xml">
+      <configuration name="TeamPointSort" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeamPointSort - 2018.12.15 at 12h 12m 58s.xml">
+      <configuration name="TeamPointSort" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeamPointSort_testSortPoint02 - 2018.12.15 at 12h 06m 20s.xml">
+      <configuration name="TeamPointSort.testSortPoint02" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeamPointSort_testSortPoint02 - 2018.12.15 at 12h 09m 43s.xml">
+      <configuration name="TeamPointSort.testSortPoint02" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeamPointSort_testSortPoint02 - 2018.12.15 at 12h 12m 38s.xml">
+      <configuration name="TeamPointSort.testSortPoint02" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeamPointSort_testSortPoint02 - 2018.12.15 at 12h 12m 55s.xml">
+      <configuration name="TeamPointSort.testSortPoint02" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TeamTests_testSortPoint - 2018.12.15 at 12h 03m 45s.xml">
+      <configuration name="TeamTests.testSortPoint" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="10687000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3741403" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767368" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+=======
     <task active="true" id="Default" summary="Default task">
       <changelist id="f9697acc-dd59-40c1-aa69-06b117d00b91" name="Default" comment="" />
       <created>1544626411277</created>
@@ -570,10 +1091,17 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962587" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873806" sideWeight="0.49410608" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> Dev
     </layout>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -656,6 +1184,74 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2055">
+          <caret line="167" column="69" lean-forward="false" selection-start-line="167" selection-start-column="69" selection-end-line="167" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/FrontPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/tournament/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/GroupBracket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="88" column="53" lean-forward="true" selection-start-line="88" selection-start-column="53" selection-end-line="88" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6390">
+          <caret line="381" column="0" lean-forward="false" selection-start-line="381" selection-start-column="0" selection-end-line="381" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/View/UpdateMatchSchedule.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/controller/FrontPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="106" column="68" lean-forward="true" selection-start-line="106" selection-start-column="68" selection-end-line="106" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/AdminPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="157" column="57" lean-forward="false" selection-start-line="157" selection-start-column="57" selection-end-line="157" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> Dev
     <entry file="file://$PROJECT_DIR$/src/controller/SpectatorViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -721,11 +1317,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1836">
           <caret line="137" column="19" lean-forward="false" selection-start-line="137" selection-start-column="19" selection-end-line="137" selection-end-column="19" />
+<<<<<<< HEAD
+=======
+>>>>>>> Dev
+          <folding />
+>>>>>>> Dev
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1065">
+          <caret line="86" column="37" lean-forward="true" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+=======
         <state relative-caret-position="72">
           <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
         </state>
@@ -767,6 +1372,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+>>>>>>> Dev
+          <folding />
+>>>>>>> Dev
         </state>
       </provider>
     </entry>
@@ -780,6 +1390,12 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/exceptions/LogInFailed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+=======
     <entry file="file://$PROJECT_DIR$/src/View/ViewPage.fxml" />
     <entry file="file://$PROJECT_DIR$/src/View/UpdateTournament.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
@@ -795,11 +1411,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+<<<<<<< HEAD
+=======
+>>>>>>> Dev
+          <folding />
+>>>>>>> Dev
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/pool/Pool.java">
+    <entry file="file://$PROJECT_DIR$/src/View/GraphicalObjects/MatchContainer.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="420">
+          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+=======
         <state relative-caret-position="72">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
@@ -830,46 +1455,155 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+<<<<<<< HEAD
+=======
+>>>>>>> Dev
+          <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/PlacementPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="80" column="30" lean-forward="false" selection-start-line="80" selection-start-column="30" selection-end-line="80" selection-end-column="30" />
+          <folding>
+            <element signature="e#3508#3509#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/KnockoutPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="128" column="5" lean-forward="false" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+          <folding>
+            <element signature="e#5668#5669#0" expanded="false" />
+            <element signature="e#5705#5706#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/bracket/StandardGroupPlay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+>>>>>>> Dev
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingMatchScheduleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="89" column="61" lean-forward="true" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="186" column="1" lean-forward="false" selection-start-line="186" selection-start-column="1" selection-end-line="186" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/MatchScheduleSetupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2055">
+          <caret line="167" column="69" lean-forward="false" selection-start-line="167" selection-start-column="69" selection-end-line="167" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/VerifyFinalStageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3828">
+          <caret line="58" column="73" lean-forward="false" selection-start-line="58" selection-start-column="73" selection-end-line="58" selection-end-column="86" />
+=======
     <entry file="file://$PROJECT_DIR$/P3-Planing-for-sportsclubs-master.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+          <folding />
+>>>>>>> Dev
+>>>>>>> Dev
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/tournament/matchschedule/MatchScheduleTest.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="274">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+=======
         <state relative-caret-position="720">
           <caret line="45" column="91" lean-forward="false" selection-start-line="45" selection-start-column="91" selection-end-line="45" selection-end-column="91" />
+<<<<<<< HEAD
+=======
+          <folding />
+>>>>>>> Dev
+>>>>>>> Dev
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/GoldAndBronzeTest.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="504">
           <caret line="40" column="69" lean-forward="false" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="74" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="45">
+          <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+=======
+        <state relative-caret-position="180">
+          <caret line="40" column="69" lean-forward="true" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="74" />
+>>>>>>> Dev
+          <folding />
+>>>>>>> Dev
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1908">
           <caret line="133" column="34" lean-forward="false" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="325">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="e#2978#2979#0" expanded="false" />
+            <element signature="e#3022#3023#0" expanded="false" />
+=======
+        <state relative-caret-position="22">
+          <caret line="133" column="34" lean-forward="true" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
+>>>>>>> Dev
           <folding>
             <element signature="e#2797#2798#0" expanded="true" />
             <element signature="e#2833#2834#0" expanded="true" />
             <element signature="e#3548#3549#0" expanded="true" />
             <element signature="e#3588#3589#0" expanded="true" />
+>>>>>>> Dev
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1440">
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="272">
+          <caret line="103" column="5" lean-forward="false" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+=======
+        <state relative-caret-position="-1262">
+>>>>>>> Dev
           <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
         </state>
       </provider>
@@ -879,13 +1613,24 @@
         <state relative-caret-position="36">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
           <folding />
+>>>>>>> Dev
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tournament/Result.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="36">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="420">
+          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+=======
+        <state relative-caret-position="216">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+>>>>>>> Dev
+>>>>>>> Dev
           <folding />
         </state>
       </provider>
@@ -940,65 +1685,360 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/CreatingGroupController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="90">
           <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="272">
+          <caret line="89" column="61" lean-forward="false" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/bracket/GroupBracketTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/bracket/KnockoutBracketTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+>>>>>>> Dev
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="18">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+=======
+        <state relative-caret-position="350">
+          <caret line="86" column="37" lean-forward="false" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/tournament/MatchTest.java">
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/knockoutbracket/KnockoutBracketTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+        <state relative-caret-position="199">
+          <caret line="154" column="136" lean-forward="false" selection-start-line="154" selection-start-column="8" selection-end-line="154" selection-end-column="136" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/TournamentSetupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        <state relative-caret-position="-790">
+          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java">
+    <entry file="file://$PROJECT_DIR$/src/controller/FrontPageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="138">
+          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="44" lean-forward="false" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding>
+            <marker date="1544363898689" expanded="true" signature="410:487" ph="SELECT * FRO... Account" />
+            <marker date="1544363898689" expanded="true" signature="970:1046" ph="select * fro... Account" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/FieldDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="36" column="55" lean-forward="false" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+          <folding>
+            <marker date="1544624931796" expanded="true" signature="426:482" ph="INSERT INTO Field... " />
+            <marker date="1544624931796" expanded="true" signature="1277:1344" ph="select * fro... Field" />
+            <marker date="1544624931796" expanded="true" signature="2050:2164" ph="select * fro... Field" />
+            <marker date="1544624931796" expanded="true" signature="2656:2691" ph="select * fro... Field" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/controller/TournamentSetupControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/tournament/TournamentTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="31" column="56" lean-forward="false" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+        <state relative-caret-position="135">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchScheduleDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <marker date="1544088211253" expanded="true" signature="649:737" ph="INSERT INTO MatchSchedule... " />
+            <marker date="1544088211253" expanded="true" signature="1407:1469" ph="select * fro... MatchSchedule" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="93" column="90" lean-forward="false" selection-start-line="93" selection-start-column="90" selection-end-line="93" selection-end-column="90" />
+          <folding>
+            <marker date="1544603299098" expanded="true" signature="831:989" ph="INSERT INTO MatchTable... " />
+            <marker date="1544603299098" expanded="true" signature="3055:3217" ph="select * fro... MatchTable" />
+            <marker date="1544603299098" expanded="true" signature="4455:4542" ph="UPDATE MatchTable... " />
+            <marker date="1544603299098" expanded="true" signature="5507:5583" ph="UPDATE MatchTabel... " />
+            <marker date="1544603299098" expanded="true" signature="6496:6537" ph="select * fro... MatchTable" />
+            <marker date="1544603299098" expanded="true" signature="7683:7761" ph="select * fro... MatchTable" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/TournamentDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-89">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <marker date="1544448736611" expanded="true" signature="946:1018" ph="select * fro... Tournament" />
+            <marker date="1544448736611" expanded="true" signature="3443:3597" ph="INSERT INTO Tournament... " />
+            <marker date="1544448736611" expanded="true" signature="4489:4601" ph="select * fro... Tournament" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/DAO/MatchDayDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="62" />
+          <folding>
+            <marker date="1544447953143" expanded="true" signature="493:612" ph="INSERT INTO MatchDay... " />
+            <marker date="1544447953143" expanded="true" signature="1950:2046" ph="select * fro... MatchDay" />
+            <marker date="1544447953143" expanded="true" signature="2850:2928" ph="UPDATE MatchDay... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-804">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+>>>>>>> Dev
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/MatchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="49" column="38" lean-forward="false" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/tournament/Match.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="124" column="5" lean-forward="true" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
+          <folding>
+            <element signature="e#3965#3966#0" expanded="true" />
+            <element signature="e#4040#4041#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="45" column="5" lean-forward="false" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+>>>>>>> Dev
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchDay.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-357">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+=======
+        <state relative-caret-position="-1072">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+>>>>>>> Dev
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/matchschedule/MatchSchedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="345">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+=======
+        <state relative-caret-position="643">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#2215#2216#0" expanded="true" />
+            <element signature="e#2286#2287#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/TeamNameComp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+>>>>>>> Dev
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/TournamentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="31" column="56" lean-forward="false" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/tournament/TeamPointsComp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+>>>>>>> Dev
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/database/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/tournament/Result.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/Tournament.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/Database/InsertAndLoad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3900">
+          <caret line="260" column="30" lean-forward="true" selection-start-line="260" selection-start-column="30" selection-end-line="260" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1544864219294" expanded="true" signature="1857:1900" ph="INSERT INTO Test... " />
+            <marker date="1544864219294" expanded="true" signature="2254:2295" ph="select * fro... Test" />
+            <marker date="1544864219294" expanded="true" signature="2254:2301" ph="select * fro... Test" />
+            <marker date="1544864219294" expanded="true" signature="2603:2642" ph="DELETE FROM Test... " />
+            <marker date="1544864219294" expanded="true" signature="3012:3058" ph="INSERT INTO TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="3429:3473" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="3791:3833" ph="DELETE FROM TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="4217:4263" ph="INSERT INTO TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="4633:4677" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="4633:4678" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="4633:4687" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="4633:4697" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="5006:5048" ph="DELETE FROM TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="5006:5049" ph="DELETE FROM TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="5006:5062" ph="DELETE FROM TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="5006:5068" ph="DELETE FROM TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="5638:5682" ph="INSERT INTO TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="6171:6213" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="6171:6214" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="6171:6236" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="6171:6241" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="6575:6616" ph="DELETE FROM TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="6575:6643" ph="DELETE FROM TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="7057:7101" ph="INSERT INTO TestObjects... " />
+            <marker date="1544864219294" expanded="true" signature="7596:7639" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="7596:7666" ph="select * fro... TestObjects" />
+            <marker date="1544864219294" expanded="true" signature="8028:8096" ph="DELETE FROM TestObjects... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/team/TeamPointSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tournament/pool/Pool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+>>>>>>> Dev
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Tests/database/DatabaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+=======
+    <entry file="file://$PROJECT_DIR$/Tests/tournament/pool/PoolTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-42">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+=======
+        <state relative-caret-position="60">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+>>>>>>> Dev
           <folding />
+>>>>>>> Dev
         </state>
       </provider>
     </entry>

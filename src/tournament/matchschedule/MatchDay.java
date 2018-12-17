@@ -25,52 +25,44 @@ MatchDay {
         matches = new ArrayList<>();
     }
 
-    public ArrayList<Match> getMatches() {
-        return matches;
-    }
+    public void setNoMixedMatches(ArrayList<Pool> poolList) {
+        ArrayList<Match> outputMatches = new ArrayList<>();
+        int fieldNumber = 0;
 
-    public ArrayList<Field> getFieldList() {
-        return fieldList;
-    }
+        setFieldsEndTime();
 
-    public LocalTime getStartTime() {
-        return startTime;
-    }
+        for (Pool pool : poolList) {
+            ArrayList<Match> matches = new ArrayList<>();
+            matches.addAll(pool.getGroupBracket().getMatches());
+            matches.addAll(pool.getPlayoffBracket().getMatches());
 
-    public LocalTime getEndTime() {
-        return endTime;
-    }
+            for (Match match : matches) {
+                // Tjekker at der ikke tilføjes kampe såldes at tiden overskrider den endtime som er valgt
+                if (fieldNumber < fieldList.size() &&
+                        !((fieldList.get(fieldNumber).getFieldEndTime().plusMinutes(match.getDuration() + this.timeBetweenMatches).isAfter(this.endTime)))) {
 
-    public void setFieldList(ArrayList<Field> fieldList) {
-        this.fieldList = fieldList;
-    }
+                    if (!match.isPlanned()) {
+                        fieldList.get(fieldNumber).setOccupied(true);
+                        match.setTimestamp(this.fieldList.get(fieldNumber).getFieldEndTime()); // Tiden kampen skal spilles sættes.
+                        match.setField(this.fieldList.get(fieldNumber));    // Kampens bane sættes.
+                        match.setDate(this.date);
+                        match.setPlanned(true); // Kampen sættes til at være planlagt.
+                        // MatchDay'ens
+                        this.fieldList.get(fieldNumber).setFieldEndTime(this.fieldList.get(fieldNumber).getFieldEndTime()
+                                .plusMinutes((match.getDuration() + this.timeBetweenMatches)));
+                        outputMatches.add(match); // Kampen tilføjes til outputMatches.
+                    }
 
-    public void setMatches(ArrayList<Match> matches) {
-        this.matches = matches;
-    }
+                }
+            }
 
-    public void setStartTime(String startTimeText) {
-        this.startTime = LocalTime.parse(startTimeText);
-    }
-
-    public void setEndTime(String endTimeText) {
-        this.endTime = LocalTime.parse(endTimeText);
-    }
-
-    public void setName(String name) { this.name = name; }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public int getTimeBetweenMatches() { return timeBetweenMatches; }
-
-    public void setTimeBetweenMatches(int timeBetweenMatches) {
-        this.timeBetweenMatches = timeBetweenMatches;
-    }
-
-    public void setMatchesMix(ArrayList<Match> matches) {
-        this.matches = matches;
+            if (fieldNumber < fieldList.size() &&
+                    fieldList.get(fieldNumber).isOccupied()) {
+                fieldList.get(fieldNumber).setOccupied(false);
+                fieldNumber++;
+            }
+        }
+        this.matches = outputMatches;
     }
 
     private boolean sameTeamInMatches(Match match1, Match match2) {
@@ -111,4 +103,53 @@ MatchDay {
 
         return Objects.hash(getDate());
     }
+
+    // Getters
+    public ArrayList<Match> getMatches() {
+        return matches;
+    }
+
+    public ArrayList<Field> getFieldList() {
+        return fieldList;
+    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public int getTimeBetweenMatches() { return timeBetweenMatches; }
+
+    // Setters
+    public void setFieldList(ArrayList<Field> fieldList) {
+        this.fieldList = fieldList;
+    }
+
+    public void setMatches() { this.matches = new ArrayList<>(); }
+
+    public void setStartTime(String startTimeText) {
+        this.startTime = LocalTime.parse(startTimeText);
+    }
+
+    public void setEndTime(String endTimeText) {
+        this.endTime = LocalTime.parse(endTimeText);
+    }
+
+    public void setName(String name) { this.name = name; }
+
+    public void setTimeBetweenMatches(int timeBetweenMatches) {
+        this.timeBetweenMatches = timeBetweenMatches;
+    }
+
+    public void setMatchesMix(ArrayList<Match> matches) {
+        this.matches = matches;
+    }
+
 }
