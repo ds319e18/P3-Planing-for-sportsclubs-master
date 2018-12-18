@@ -16,7 +16,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import tournament.Team;
 import tournament.Tournament;
-import View.GraphicalObjects.ProgressBox;
+import view.GraphicalObjects.ProgressBox;
 import tournament.pool.Group;
 import tournament.pool.Pool;
 

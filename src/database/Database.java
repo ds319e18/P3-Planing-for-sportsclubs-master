@@ -5,8 +5,6 @@ import java.sql.*;
 import java.util.Properties;
 
 public class Database {
-    Connection con;
-
     // This method is used to get connection to the database, this method is static so there is no need to
     // create a object of Database, but just call this method and it will return a Connection object
     public static Connection connect() {
@@ -14,18 +12,13 @@ public class Database {
 
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "markussql");
+        properties.setProperty("password", "password");
         properties.setProperty("useSSL", "false");
         properties.setProperty("useUnicode", "true");
         properties.setProperty("useJDBCCompliantTimezoneShift", "true");
         properties.setProperty("useLegacyDatetimeCode", "false");
         properties.setProperty("serverTimezone", "UTC");
         properties.setProperty("allowPublicKeyRetrieval", "true");
-        properties.setProperty("", "");
-        properties.setProperty("", "");
-        properties.setProperty("", "");
-        properties.setProperty("", "");
-        properties.setProperty("", "");
 
         try {
             con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/Tournament", properties);

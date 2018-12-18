@@ -145,7 +145,7 @@ public class MatchDAO {
                 ResultSet set = con.createStatement().executeQuery(query);
 
                 if (set.next()) {
-                    String fieldName = fieldSQL.getFieldName(tournament, set.getInt("idField"), con);
+                    String fieldName = fieldSQL.getFieldName(set.getInt("idField"), con);
                     int indexOfField = 0;
 
                     // Finder field i vores field liste

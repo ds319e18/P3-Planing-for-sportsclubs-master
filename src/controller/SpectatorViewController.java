@@ -14,14 +14,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
 import tournament.Match;
 import tournament.Result;
 import tournament.Team;
@@ -45,16 +42,12 @@ public class SpectatorViewController {
     @FXML
     private ImageView logo04;
 
+
     @FXML
     private Label tournamentNameLabel;
 
     @FXML
     private Label matchDayDateLabel;
-
-    private String logo1 = null;
-    private String logo2 = null;
-    private String logo3 = null;
-    private String logo4 = null;
 
     @FXML
     private TableView<Match> matchTableView;
@@ -118,9 +111,9 @@ public class SpectatorViewController {
         Parent newWindow = null;
 
         if (user instanceof Administrator)
-            newWindow = FXMLLoader.load(getClass().getResource("../View/AdminPage.FXML"));
+            newWindow = FXMLLoader.load(getClass().getResource("../view/AdminPage.FXML"));
         else if (user instanceof Spectator)
-            newWindow = FXMLLoader.load(getClass().getResource("../View/FrontPage.FXML"));
+            newWindow = FXMLLoader.load(getClass().getResource("../view/FrontPage.FXML"));
 
         Scene newScene = new Scene(newWindow);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -129,58 +122,75 @@ public class SpectatorViewController {
         window.show();
     }
 
-
     @FXML
-    public void setImages(MouseEvent event) throws MalformedURLException {
-        String tempLogo = ((Control)event.getSource()).getId();
-        if(tempLogo == ("logo1")){
-            logo1 = setAddSponser(event);
-        }
-        else if(tempLogo == ("logo2")){
-            logo2 = setAddSponser(event);
-        }
-        else if(tempLogo == ("logo3")){
-            logo3 = setAddSponser(event);
-        }
-        else if(tempLogo == ("logo4")){
-            logo4 = setAddSponser(event);
-        }
-        else{
-            System.out.println("Error " + tempLogo + " Not found");
-        }
-    }
-
-    //set Image files
-    public String setAddSponser(MouseEvent event) throws MalformedURLException {
-        String imageFile = null;
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select Image File");
-        fileChooser.getExtensionFilters().addAll(
+    public void setAddSponser01(MouseEvent event) throws MalformedURLException {
+        String imageFile;
+        FileChooser fileChooser01 = new FileChooser();
+        fileChooser01.setTitle("Select Image File");
+        fileChooser01.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Image Files",
                         "*.bmp", "*.png", "*.jpg", "*.gif")); // limit fileChooser options to image files
         Node node = (Node) event.getSource();
-        File selectedFile = fileChooser.showOpenDialog(node.getScene().getWindow());
+        File selectedFile = fileChooser01.showOpenDialog(node.getScene().getWindow());
 
         if (selectedFile != null) {
             imageFile = selectedFile.toURI().toURL().toString();
-            return imageFile;
+            Image im = new Image(imageFile);
+            logo01.setImage(im);
         }
-        else {
-            return null;
-        }
-
     }
 
-    public String getlogo1(){
-        return logo1;
+    @FXML
+    public void setAddSponser02(MouseEvent event) throws MalformedURLException {
+        String imageFile;
+        FileChooser fileChooser01 = new FileChooser();
+        fileChooser01.setTitle("Select Image File");
+        fileChooser01.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files",
+                        "*.bmp", "*.png", "*.jpg", "*.gif")); // limit fileChooser options to image files
+        Node node = (Node) event.getSource();
+        File selectedFile = fileChooser01.showOpenDialog(node.getScene().getWindow());
+
+        if (selectedFile != null) {
+            imageFile = selectedFile.toURI().toURL().toString();
+            Image im = new Image(imageFile);
+            logo02.setImage(im);
+        }
     }
-    public String getlogo2(){
-        return logo2;
+
+    @FXML
+    public void setAddSponser03(MouseEvent event) throws MalformedURLException {
+        String imageFile;
+        FileChooser fileChooser01 = new FileChooser();
+        fileChooser01.setTitle("Select Image File");
+        fileChooser01.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files",
+                        "*.bmp", "*.png", "*.jpg", "*.gif")); // limit fileChooser options to image files
+        Node node = (Node) event.getSource();
+        File selectedFile = fileChooser01.showOpenDialog(node.getScene().getWindow());
+
+        if (selectedFile != null) {
+            imageFile = selectedFile.toURI().toURL().toString();
+            Image im = new Image(imageFile);
+            logo03.setImage(im);
+        }
     }
-    public String getlogo3(){
-        return logo3;
-    }
-    public String getlogo4(){
-        return logo4;
+
+    @FXML
+    public void setAddSponser04(MouseEvent event) throws MalformedURLException {
+        String imageFile;
+        FileChooser fileChooser01 = new FileChooser();
+        fileChooser01.setTitle("Select Image File");
+        fileChooser01.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Image Files",
+                        "*.bmp", "*.png", "*.jpg", "*.gif")); // limit fileChooser options to image files
+        Node node = (Node) event.getSource();
+        File selectedFile = fileChooser01.showOpenDialog(node.getScene().getWindow());
+
+        if (selectedFile != null) {
+            imageFile = selectedFile.toURI().toURL().toString();
+            Image im = new Image(imageFile);
+            logo04.setImage(im);
+        }
     }
 }

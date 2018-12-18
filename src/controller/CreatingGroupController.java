@@ -16,7 +16,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import tournament.Team;
 import tournament.Tournament;
-import View.GraphicalObjects.ProgressBox;
+import view.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 import tournament.pool.bracket.StandardGroupPlay;
 
@@ -95,7 +95,6 @@ public class CreatingGroupController implements CheckInput {
         try {
             checkAllInput();
             Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();
-
             selectedPool.addGroupBracket(new StandardGroupPlay(
                     Integer.parseInt(amountOfGroupsComboBox.getValue().toString())));
             selectedPool.getGroupBracket().setMatchesPrTeamAgainstOpponentInGroup(

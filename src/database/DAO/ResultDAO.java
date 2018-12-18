@@ -8,16 +8,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class ResultDAO {
+public class ResultDAO { // Future work
     MatchDAO matchSQL = new MatchDAO();
 
-    // TODO LAV FØRST UPDATE MATCH
     public void insertResult(Match match, Tournament tournament, int firstTeamScore, int secondTeamScore) {
 
         try(Connection con = Database.connect()) {
             String query = "INSERT INTO Result(idMatchResult, firstTeamScore, secondTeamScore) VALUES(?, ?, ?)";
             int matchID = matchSQL.findMatchID(match, tournament, con);
-            //System.out.println(matchID);
             PreparedStatement stmt = con.prepareStatement(query);
 
             stmt.setInt(1, matchID);

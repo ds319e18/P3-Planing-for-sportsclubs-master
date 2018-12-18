@@ -25,23 +25,4 @@ public class AccountDAO {
 
         return false;
     }
-
-    public int findAccountID(String username, String password) {
-        try (Connection con = Database.connect()){
-            Statement stmt = con.createStatement();
-
-            int passwordHashed = Objects.hash(password);
-
-            String sql = "select * from Account where username = '" + username + "'" + "AND password =" + passwordHashed;
-            ResultSet set = stmt.executeQuery(sql);
-
-            if (set.next()) {
-                return set.getInt("idAccount");
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-
-        return 0;
-    }
 }

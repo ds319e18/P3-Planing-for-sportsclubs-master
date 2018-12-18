@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Team;
 import tournament.Tournament;
-import View.GraphicalObjects.ProgressBox;
+import view.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
 import tournament.pool.bracket.GoldAndBronzePlay;
 import tournament.pool.bracket.KnockoutPlay;
@@ -93,58 +93,6 @@ public class VerifyFinalStageController {
 
         }
     }
-
-    /*
-    @FXML
-    private void mouseClicked(MouseEvent e) {
-        for (Node node : poolKnockoutStatusGridPane.getChildren())
-            node.setStyle("-fx-font-weight: normal;");
-        Text poolClickedText = (Text) poolKnockoutStatusGridPane.getChildren().get((int) Math.floor(e.getY() / 36) * 3);
-
-        poolClickedText.setStyle("-fx-font-weight: bold;");
-
-        poolClicked = poolClickedText.getText();
-
-        int poolYearGroup = Integer.parseInt(poolClicked.length() == 3 ? poolClicked.substring(0, 2)
-                : poolClicked.substring(0, 1));
-        String poolSkillLevel = (poolClicked.length() == 3 ? poolClicked.substring(2, 3)
-                : poolClicked.substring(1, 2));
-
-        if (tournament.findCorrectPool(poolYearGroup, poolSkillLevel).getPlayoffBracket()
-                .getClass().equals(PlacementPlay.class)) {
-            drawPlacementStageGridPane();
-        } else if (tournament.findCorrectPool(poolYearGroup,poolSkillLevel).getPlayoffBracket().getClass().equals(KnockoutPlay.class)) {
-            drawKnockoutStageGridPane();
-        }
-
-    } */
-    /*
-    void drawPoolKnockoutStatusGridPane() {
-        poolKnockoutStatusGridPane.getChildren().remove(0, poolKnockoutStatusGridPane.getChildren().size());
-        for (Pool pool : tournament.getPoolList()) {
-            Text poolName = new Text(pool.getYearGroup() + pool.getSkillLevel());
-            poolName.setTextAlignment(TextAlignment.CENTER);
-            poolName.setWrappingWidth(82.93);
-
-            if (pool.getPlayoffBracket() == null) {
-                throw new MissingPressingSaveException();
-            }
-            Text knockoutType = new Text(pool.getPlayoffBracket().getClass().getSimpleName());
-            knockoutType = new Text(knockoutType.getText().substring(0, knockoutType.getText().length() - 4));
-            knockoutType.setTextAlignment(TextAlignment.CENTER);
-            knockoutType.setWrappingWidth(82.93);
-
-            Text status = new Text("Not done");
-            status.setWrappingWidth(82.93);
-            status.setTextAlignment(TextAlignment.CENTER);
-            GridPane.setMargin(poolName, new Insets(10, 0, 10, 0));
-            poolKnockoutStatusGridPane.addRow(poolKnockoutStatusGridPane.getRowCount(), poolName, knockoutType, status);
-        }
-        poolKnockoutStatusGridPane.setGridLinesVisible(false);
-        poolKnockoutStatusGridPane.setGridLinesVisible(true);
-        System.out.println(poolKnockoutStatusGridPane.getChildren());
-
-    } */
 
     private void drawPlacementStageGridPane() {
         Pool selectedPool = poolTableView.getSelectionModel().getSelectedItem();

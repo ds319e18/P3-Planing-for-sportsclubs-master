@@ -3,6 +3,7 @@ package controller;
 import account.Administrator;
 import account.User;
 import database.DAO.TournamentDAO;
+import exceptions.ServerNotAvailableException;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -13,7 +14,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import tournament.Tournament;
@@ -28,22 +28,10 @@ public class AdminPageController {
     private String id = "Jetsmark";
     private User user = new Administrator(Objects.hash(id));
 
-    private Boolean tournamentCreated = false;
-
-    public void setTournamentCreated(Boolean s) {
-        tournamentCreated = s;
-    }
-
-    @FXML
-    private GridPane gp;
-
     Tournament tournament;
 
     @FXML
     private Button logoutBtn;
-
-    @FXML
-    private Button createTournamentBtn;
 
     @FXML
     private TableView<Tournament> tournamentTableView;
@@ -51,10 +39,19 @@ public class AdminPageController {
 
     // TIL DATABASE
     public void initialize() {
-        TournamentDAO tournamentSQL = new TournamentDAO();
-        user.setTournaments(tournamentSQL.getAllTournaments(user.getId()));
-        setTournamentTableView();
-        addTournamentsInTableView();
+        try {
+            TournamentDAO tournamentSQL = new TournamentDAO();
+            user.setTournaments(tournamentSQL.getAllTournaments(user.getId()));
+            setTournamentTableView();
+            addTournamentsInTableView();
+        } catch (ServerNotAvailableException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Kunne ikke oprette forbindelse til databasen.");
+            warning.setTitle("Serverfejl");
+            warning.showAndWait();
+        }
+
+
     }
 
     @FXML
@@ -135,7 +132,7 @@ public class AdminPageController {
 
     private void updateMatchDay(Tournament tournament, MatchDay matchDay) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/UpdateTournament.FXML"));
+        loader.setLocation(getClass().getResource("../view/UpdateTournament.FXML"));
         Parent newWindow = loader.load();
 
         UpdateTournamentController controller = loader.getController();
@@ -151,7 +148,7 @@ public class AdminPageController {
 
     private void viewMatchDaySelection(Tournament tournament, MatchDay matchDay) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/SpectatorView.FXML"));
+        loader.setLocation(getClass().getResource("../view/SpectatorView.FXML"));
         Parent newWindow = loader.load();
 
         SpectatorViewController controller = loader.getController();
@@ -199,6 +196,4 @@ public class AdminPageController {
         window.setScene(newScene);
         window.show();
     }
-
-
 }

@@ -5,10 +5,7 @@ import account.User;
 import database.DAO.TournamentDAO;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -20,7 +17,6 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import tournament.Tournament;
 import tournament.matchschedule.MatchDay;
-import tournament.pool.Pool;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -101,7 +97,7 @@ public class FrontPageController {
 
     private void viewMatchDaySelection(Tournament tournament, MatchDay matchDay) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../View/SpectatorView.FXML"));
+        loader.setLocation(getClass().getResource("../view/SpectatorView.FXML"));
         Parent newWindow = loader.load();
 
         SpectatorViewController controller = loader.getController();

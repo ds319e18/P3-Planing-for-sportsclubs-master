@@ -25,38 +25,8 @@ public class Pool {
         this.playoffBracket = playoffBracketType.createPlayoffBracket(this.groupBracket, matchDuration);
     }
 
-    public String getGroupCreationStatus() {
-        if (groupBracket != null)
-            return "Færdig";
-        else
-            return "Ikke færdig";
-    }
-
-    public String getGroupsVerificationStatus() {
-        return groupsVerificationStatus;
-    }
-
-    public String getPlayOffCreationStatus() {
-        if (playoffBracket != null)
-            return "Færdig";
-        else
-            return "Ikke færdig";
-    }
-
     public String getPlayOffType() {
         return playoffBracket.toString();
-    }
-
-    public String getPlayOffVerificationStatus() {
-        return playOffVerificationStatus;
-    }
-
-    public void setGroupsVerificationStatus(String statusString) {
-        groupsVerificationStatus = statusString;
-    }
-
-    public void setPlayOffVerificationStatus(String statusString) {
-        this.playOffVerificationStatus = statusString;
     }
 
     // Adding team to the correct pool
@@ -97,6 +67,11 @@ public class Pool {
         return Objects.hash(yearGroup);
     }
 
+    // Getters
+    public String getPlayOffVerificationStatus() {
+        return playOffVerificationStatus;
+    }
+
     public String getSkillLevel() {
         return skillLevel;
     }
@@ -125,8 +100,35 @@ public class Pool {
         return playoffBracket;
     }
 
+    public String getGroupsVerificationStatus() {
+        return groupsVerificationStatus;
+    }
+
+    public String getPlayOffCreationStatus() {
+        if (playoffBracket != null)
+            return "Færdig";
+        else
+            return "Ikke færdig";
+    }
+
+    public String getGroupCreationStatus() {
+        if (groupBracket != null)
+            return "Færdig";
+        else
+            return "Ikke færdig";
+    }
+
+    // Setters
     public void setMatchDuration(String matchDuration) {
         this.matchDuration = Integer.parseInt(matchDuration);
+    }
+
+    public void setGroupsVerificationStatus(String statusString) {
+        groupsVerificationStatus = statusString;
+    }
+
+    public void setPlayOffVerificationStatus(String statusString) {
+        this.playOffVerificationStatus = statusString;
     }
 
     //This next part of the class deals with updating the tournament while active

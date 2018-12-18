@@ -15,13 +15,11 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import tournament.Match;
 import tournament.Team;
 import tournament.Tournament;
-import View.GraphicalObjects.ActionButtonTableCell;
-import View.GraphicalObjects.ProgressBox;
+import view.GraphicalObjects.ActionButtonTableCell;
+import view.GraphicalObjects.ProgressBox;
 import tournament.pool.Pool;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -177,10 +175,6 @@ public class AddingTeamsController implements CheckInput {
 
         }
         skillLevelComboBox.setItems(SkillLevelComboBoxlist);
-    }
-
-    @FXML
-    void removeTeams() {
     }
 
     void setPoolNameComboBox() {

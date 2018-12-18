@@ -1,8 +1,8 @@
 package controller;
 
 import database.DAO.*;
-import exceptions.InvalidInputException;
 import exceptions.MissingMatchesToAdd;
+import exceptions.ServerNotAvailableException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,8 +19,8 @@ import javafx.stage.Stage;
 import tournament.Match;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
-import View.GraphicalObjects.MatchContainer;
-import View.GraphicalObjects.ProgressBox;
+import view.GraphicalObjects.MatchContainer;
+import view.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 
 import java.io.IOException;
@@ -76,9 +76,7 @@ public class CreatingMatchScheduleController {
     private void createMatchScheduleGridpanes() {
         GridPane matchDayGridPane;
         ScrollPane scrollPane;
-        int matchCounter = 1;
         HBox emptyMatchContainer;
-        int columnIndex = 0;
 
         for (Tab tab : matchDayTabPane.getTabs()) {
             matchDayGridPane = new GridPane();
@@ -259,8 +257,7 @@ public class CreatingMatchScheduleController {
     }
 
     private LocalTime getMatchDayEndTimeFromSelectedTab() {
-        MatchDay matchDay =getMatchDayFromSelectedTab();
-        LocalTime endTime = matchDay.getEndTime();
+        MatchDay matchDay = getMatchDayFromSelectedTab();
         return matchDay.getEndTime();
     }
 
@@ -311,24 +308,22 @@ public class CreatingMatchScheduleController {
                 setAllMatchesFromTab(tab);
             }
 
-            for (MatchDay day : tournament.getMatchSchedule().getMatchDays()) {
-                for (Match match : day.getMatches()) {
-                    System.out.println(match.getField());
-                }
-            }
-
             //TODO TIL DATABASE
-            loadTournamentInDatabase(tournament);
+            try {
+                loadTournamentInDatabase(tournament);
 
-            loader.setLocation(getClass().getResource("../View/AdminPage.FXML"));
-            Parent newWindow = loader.load();
-
-            Scene newScene = new Scene(newWindow);
-
-            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-            window.setScene(newScene);
-            window.show();
+                loader.setLocation(getClass().getResource("../view/AdminPage.FXML"));
+                Parent newWindow = loader.load();
+                Scene newScene = new Scene(newWindow);
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(newScene);
+                window.show();
+            } catch (ServerNotAvailableException e) {
+                Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+                warning.setHeaderText("Kunne ikke oprette forbindelse til databasen.");
+                warning.setTitle("Serverfejl");
+                warning.showAndWait();
+            }
         } catch (MissingMatchesToAdd e) {
             Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
             warning.setHeaderText("Manglende input fejl");

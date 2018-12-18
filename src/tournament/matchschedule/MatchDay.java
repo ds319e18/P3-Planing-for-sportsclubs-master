@@ -25,70 +25,6 @@ MatchDay {
         matches = new ArrayList<>();
     }
 
-    public ArrayList<Match> getMatches() {
-        return matches;
-    }
-
-    public ArrayList<Field> getFieldList() {
-        return fieldList;
-    }
-
-    public LocalTime getStartTime() {
-        return startTime;
-    }
-
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public void setFieldList(ArrayList<Field> fieldList) {
-        this.fieldList = fieldList;
-    }
-
-    public void setMatches(ArrayList<Match> matches) {
-        this.matches = matches;
-    }
-
-    public void setStartTime(String startTimeText) {
-        this.startTime = LocalTime.parse(startTimeText);
-    }
-
-    public void setEndTime(String endTimeText) {
-        this.endTime = LocalTime.parse(endTimeText);
-    }
-
-    public void setName(String name) { this.name = name; }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public int getTimeBetweenMatches() { return timeBetweenMatches; }
-
-    public void setTimeBetweenMatches(int timeBetweenMatches) {
-        this.timeBetweenMatches = timeBetweenMatches;
-    }
-
-    public void setMatchesMix(ArrayList<Match> matches) {
-        this.matches = matches;
-    }
-
-    private boolean sameTeamInMatches(Match match1, Match match2) {
-        return (match2.getFirstTeam().equals(match1.getFirstTeam())
-                || match2.getFirstTeam().equals(match1.getSecondTeam())
-                || match2.getSecondTeam().equals(match1.getFirstTeam())
-                || match2.getSecondTeam().equals(match1.getSecondTeam()));
-    }
-
-    // Check whether a new match will be placed within the timespan of a planned match.
-    private boolean doMatchesOverlap(Match newMatch, Match plannedMatch, int fieldNumber) {
-        return (plannedMatch.getTimeStamp().isBefore(this.fieldList.get(fieldNumber).getFieldEndTime()
-                .plusMinutes(newMatch.getDuration())) &&                                                  // Efter starttidpunkt
-                plannedMatch.getTimeStamp().isAfter(this.fieldList.get(fieldNumber).getFieldEndTime())) ||    // Før sluttidspunkt
-                plannedMatch.getTimeStamp().equals(this.fieldList.get(fieldNumber).getFieldEndTime()) ||      // På starttidspunkt
-                plannedMatch.getTimeStamp().equals(this.fieldList.get(fieldNumber).getFieldEndTime().plusMinutes(newMatch.getDuration()));// På sluttidpunkt
-    }
-
     public String getName() {
         return name;
     }
@@ -111,4 +47,55 @@ MatchDay {
 
         return Objects.hash(getDate());
     }
+
+    // Getters
+    public ArrayList<Match> getMatches() {
+        return matches;
+    }
+
+    public ArrayList<Field> getFieldList() {
+        return fieldList;
+    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public int getTimeBetweenMatches() { return timeBetweenMatches; }
+
+    // Setters
+    public void setFieldList(ArrayList<Field> fieldList) {
+        this.fieldList = fieldList;
+    }
+
+    public void setMatches(ArrayList<Match> matches) {
+        this.matches = matches;
+    }
+
+    public void setStartTime(String startTimeText) {
+        this.startTime = LocalTime.parse(startTimeText);
+    }
+
+    public void setEndTime(String endTimeText) {
+        this.endTime = LocalTime.parse(endTimeText);
+    }
+
+    public void setName(String name) { this.name = name; }
+
+    public void setTimeBetweenMatches(int timeBetweenMatches) {
+        this.timeBetweenMatches = timeBetweenMatches;
+    }
+
+    public void setMatchesMix(ArrayList<Match> matches) {
+        this.matches = matches;
+    }
+
 }

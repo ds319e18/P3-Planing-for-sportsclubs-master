@@ -1,6 +1,8 @@
 package database.DAO;
 
 import database.Database;
+import exceptions.ServerNotAvailableException;
+import javafx.scene.control.Alert;
 import tournament.Tournament;
 import tournament.TournamentType;
 import tournament.pool.Pool;
@@ -20,11 +22,12 @@ public class TournamentDAO {
         PlayoffBracketDAO playoffBracketSQL = new PlayoffBracketDAO();
         MatchDAO matchSQL = new MatchDAO();
         MatchDayDAO matchDaySQL = new MatchDayDAO();
-
-
         ArrayList<Tournament> tournaments = new ArrayList<>();
 
         try (Connection con = Database.connect()) {
+            if (con == null) {
+                throw new ServerNotAvailableException();
+            }
             Statement stmt = con.createStatement();
             String sql = "select * from Tournament where idAccountTournament = '" + accountId + "'";
 
@@ -65,8 +68,6 @@ public class TournamentDAO {
 
             }
 
-
-
             // Kaldes til allersidst
             return tournaments;
 
@@ -86,6 +87,9 @@ public class TournamentDAO {
         Date dateEnd = Date.valueOf(tournament.getEndDate());
 
         try (Connection con = Database.connect()) {
+            if (con == null) {
+                throw new ServerNotAvailableException();
+            }
             String query = "INSERT INTO Tournament (name, startDate, endDate, status, amountOfField, idAccountTournament, idTournament, tournamentType) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setString(1, tournament.getName());
@@ -106,21 +110,5 @@ public class TournamentDAO {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    public int findTournamentID(Tournament tournament, int accountID, Connection con) {
-
-        try {
-            String sql = "select * from Tournament where idAccountTournament = " + accountID + " AND name = '" + tournament.getName() + "'";
-
-            ResultSet set = con.createStatement().executeQuery(sql);
-
-            if (set.next()) {
-                return set.getInt("idTournament");
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return 0;
     }
 }

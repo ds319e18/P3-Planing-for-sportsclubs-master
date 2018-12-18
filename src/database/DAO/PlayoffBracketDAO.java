@@ -80,7 +80,6 @@ public class PlayoffBracketDAO {
 
         try{
             int poolID = poolSQL.findPoolID(pool, tournament, con);
-            String typeOfMatch = "s";
             String query;
 
             if (pool.getPlayoffBracket().getClass().getSimpleName().equals("KnockoutPlay")) {
@@ -90,9 +89,6 @@ public class PlayoffBracketDAO {
             } else {
                 query = "select * from MatchTable where idPoolMatchTable = " + poolID + " AND name = '" + "Gold" + "'" + "OR name = '" + "Bronze" + "'";
             }
-
-
-
 
             ResultSet set = con.createStatement().executeQuery(query);
 

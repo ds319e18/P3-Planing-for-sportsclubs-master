@@ -1,6 +1,5 @@
 package controller;
 
-import account.Administrator;
 import database.DAO.AccountDAO;
 import exceptions.LogInFailed;
 import javafx.event.ActionEvent;
@@ -18,7 +17,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginController {
-    Administrator user;
 
     @FXML
     TextField username;
@@ -36,18 +34,6 @@ public class LoginController {
     public void setOnBackButtonClicked(ActionEvent event) throws IOException {
 
         Parent newWindow = FXMLLoader.load(getClass().getResource("../view/FrontPage.fxml"));
-        Scene newScene = new Scene(newWindow);
-
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        window.setScene(newScene);
-        window.show();
-    }
-
-    @FXML
-    public void setOnCreateButtonClicked(ActionEvent event) throws IOException {
-
-        Parent newWindow = FXMLLoader.load(getClass().getResource("../view/CreateAccount.fxml"));
         Scene newScene = new Scene(newWindow);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -87,23 +73,5 @@ public class LoginController {
             warning.setTitle("Fejl");
             warning.showAndWait();
         }
-    }
-
-    @FXML
-    public void checkPassword(ActionEvent event) throws IOException {
-        if(username.getText().equals("username") && password.getText().equals("password")) {
-            Parent newWindow = FXMLLoader.load(getClass().getResource("../view/AdminPage.fxml"));
-            Scene newScene = new Scene(newWindow);
-
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            window.setScene(newScene);
-            window.show();
-        }
-    }
-
-    @FXML
-    public void initialize() {
-
     }
 }

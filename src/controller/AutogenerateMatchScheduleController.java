@@ -1,6 +1,7 @@
 package controller;
 
 import database.DAO.*;
+import exceptions.ServerNotAvailableException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -22,10 +23,9 @@ import tournament.Result;
 import tournament.Team;
 import tournament.Tournament;
 import tournament.matchschedule.Field;
-import View.GraphicalObjects.ProgressBox;
+import view.GraphicalObjects.ProgressBox;
 import tournament.matchschedule.MatchDay;
 
-import javafx.scene.control.Control;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -115,34 +115,40 @@ public class AutogenerateMatchScheduleController {
 
         Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         window.setScene(newScene);
         window.show();
     }
 
 
-
     @FXML
     public void nextButtonClicked(ActionEvent event) throws IOException {
         //TODO TIL DATABASE
-        loadTournamentInDatabase(tournament);
+        try {
+            loadTournamentInDatabase(tournament);
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../view/AdminPage.FXML"));
-        Parent newWindow = loader.load();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../view/AdminPage.FXML"));
+            Parent newWindow = loader.load();
 
-        Scene newScene = new Scene(newWindow);
+            Scene newScene = new Scene(newWindow);
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        window.setScene(newScene);
-        window.show();
+            window.setScene(newScene);
+            window.show();
 
-        Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
-        warning.setHeaderText("Tillykke!");
-        warning.setTitle("Succesfuld Turnering");
-        warning.showAndWait();
+            Alert warning = new Alert(Alert.AlertType.INFORMATION, "Du har nu succesfuldt lavet din turnering!");
+            warning.setHeaderText("Tillykke!");
+            warning.setTitle("Succesfuld Turnering");
+            warning.showAndWait();
+        } catch (ServerNotAvailableException e) {
+            Alert warning = new Alert(Alert.AlertType.WARNING, e.getMessage());
+            warning.setHeaderText("Kunne ikke oprette forbindelse til databasen.");
+            warning.setTitle("Serverfejl");
+            warning.showAndWait();
+        }
     }
 
     // Bruges til at hente alle turneringer for en bruger
@@ -156,7 +162,6 @@ public class AutogenerateMatchScheduleController {
         // Inserting tournament in the database, this method also calls field DAO and pool DAO which
         // inserts all pool and fields for the corrosponding tournament in the database
         tournamentSQL.insertTournament(tournament, userID);
-
         // DAO for team
         TeamDAO teamSQl = new TeamDAO();
 
@@ -207,25 +212,18 @@ public class AutogenerateMatchScheduleController {
     private String logo4 = null;
 
 
-
     @FXML
     public void setImages(MouseEvent event) throws MalformedURLException {
-        System.out.println("Test");
-        String tempLogo = ((ImageView)event.getSource()).getId();
-        System.out.println(tempLogo);
-        if(tempLogo == (logo01.getId())){
+        String tempLogo = ((ImageView) event.getSource()).getId();
+        if (tempLogo == (logo01.getId())) {
             logo1 = setAddSponser(event);
-        }
-        else if(tempLogo == (logo02.getId())){
+        } else if (tempLogo == (logo02.getId())) {
             logo2 = setAddSponser(event);
-        }
-        else if(tempLogo == (logo03.getId())){
+        } else if (tempLogo == (logo03.getId())) {
             logo3 = setAddSponser(event);
-        }
-        else if(tempLogo == (logo04.getId())){
+        } else if (tempLogo == (logo04.getId())) {
             logo4 = setAddSponser(event);
-        }
-        else{
+        } else {
             System.out.println("Error " + tempLogo + " Not found");
         }
     }
@@ -247,23 +245,25 @@ public class AutogenerateMatchScheduleController {
             ImageView iw = (ImageView) event.getSource();
             iw.setImage(im);
             return imageFile;
-        }
-        else {
+        } else {
             return null;
         }
 
     }
 
-    public String getlogo1(){
+    public String getlogo1() {
         return logo1;
     }
-    public String getlogo2(){
+
+    public String getlogo2() {
         return logo2;
     }
-    public String getlogo3(){
+
+    public String getlogo3() {
         return logo3;
     }
-    public String getlogo4(){
+
+    public String getlogo4() {
         return logo4;
     }
 
