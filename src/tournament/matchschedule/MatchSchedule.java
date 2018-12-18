@@ -35,10 +35,6 @@ public class MatchSchedule {
         }
     }
 
-    // Future work
-    public void setMixedMatches() {
-    }
-
     public void planNoMixedMatches(ArrayList<Pool> poolList) {
         for (MatchDay matchDay : matchDays) {
             ArrayList<Match> outputMatches = new ArrayList<>();
