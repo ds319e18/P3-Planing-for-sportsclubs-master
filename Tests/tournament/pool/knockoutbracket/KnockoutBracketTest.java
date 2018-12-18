@@ -66,7 +66,7 @@ public class KnockoutBracketTest {
         tournament.getMatchSchedule().getMatchDays().get(1).setStartTime("09:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setEndTime("16:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setTimeBetweenMatches(10);
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
+        tournament.getMatchSchedule().planNoMixedMatches(tournament.getPoolList());
 
         // Printer kampe ud hvor de første to knockout matches er lavet.
         for (MatchDay dage : tournament.getMatchSchedule().getMatchDays()) {
@@ -216,7 +216,7 @@ public class KnockoutBracketTest {
         tournament.getMatchSchedule().getMatchDays().get(0).setEndTime("16:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setStartTime("12:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setEndTime("16:00");
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
+        tournament.getMatchSchedule().planNoMixedMatches(tournament.getPoolList());
 
         return tournament;
     }
@@ -399,7 +399,7 @@ public class KnockoutBracketTest {
         tournament.getMatchSchedule().getMatchDays().get(0).setEndTime("16:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setStartTime("09:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setEndTime("16:00");
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
+        tournament.getMatchSchedule().planNoMixedMatches(tournament.getPoolList());
 
         for (MatchDay day : tournament.getMatchSchedule().getMatchDays()) {
             System.out.println(day);

@@ -177,7 +177,7 @@ public class MatchScheduleSetupController implements CheckInput {
         try {
             checkAllInput();
             tournament.getMatchSchedule().setTimeBetweenMatchDays(Integer.parseInt(timeBetweenMatches.getText()));
-            tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
+            tournament.getMatchSchedule().planNoMixedMatches(tournament.getPoolList());
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../view/AutoMatchSchedule.fxml"));

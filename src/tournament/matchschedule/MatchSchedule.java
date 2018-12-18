@@ -39,7 +39,7 @@ public class MatchSchedule {
     public void setMixedMatches() {
     }
 
-    public void setNoMixedMatches(ArrayList<Pool> poolList) {
+    public void planNoMixedMatches(ArrayList<Pool> poolList) {
         for (MatchDay matchDay : matchDays) {
             ArrayList<Match> outputMatches = new ArrayList<>();
             int fieldNumber = 0;

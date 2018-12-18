@@ -67,7 +67,7 @@ public class PlacementBracketTest {
         tournament.getMatchSchedule().getMatchDays().get(0).setEndTime("16:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setStartTime("12:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setEndTime("16:00");
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
+        tournament.getMatchSchedule().planNoMixedMatches(tournament.getPoolList());
 
         return tournament;
     }

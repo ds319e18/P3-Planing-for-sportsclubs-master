@@ -3,8 +3,6 @@ package tournament.pool.knockoutbracket;
 import org.junit.jupiter.api.Test;
 import tournament.*;
 import tournament.matchschedule.Field;
-import tournament.matchschedule.MatchDay;
-import tournament.pool.Group;
 import tournament.pool.Pool;
 import tournament.pool.bracket.GoldAndBronzePlay;
 import tournament.pool.bracket.StandardGroupPlay;
@@ -62,7 +60,7 @@ public class GoldAndBronzeTest {
         tournament.getMatchSchedule().getMatchDays().get(0).setEndTime("16:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setStartTime("12:00");
         tournament.getMatchSchedule().getMatchDays().get(1).setEndTime("16:00");
-        tournament.getMatchSchedule().setNoMixedMatches(tournament.getPoolList());
+        tournament.getMatchSchedule().planNoMixedMatches(tournament.getPoolList());
 
         return tournament;
     }
