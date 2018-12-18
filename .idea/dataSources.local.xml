@@ -2,10 +2,10 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="Tournament@127.0.0.1" uuid="cc9b62b4-698a-41a3-b830-e75ab0ab620a">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MYSQL" exact-version="0.0" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
     </data-source>
     <data-source name="Tournament@127.0.0.1 [2]" uuid="1797f2e8-6832-45a6-a3cf-878b55aeea4d">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MYSQL" exact-version="0.0" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
     </data-source>
   </component>
 </project>
